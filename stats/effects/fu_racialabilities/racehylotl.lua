@@ -28,10 +28,13 @@ function update(dt)
 local mouthPosition = vec2.add(mcontroller.position(), status.statusProperty("mouthPosition"))
 
 local mouthful = world.liquidAt(mouthposition)
- local summationForDebug = "Liq:" .. mouthful .. "/" .. inWater
+local summationForDebug = ""
 
- 
-
+if mouthful then 
+summationForDebug = "Liq:" .. mouthful .. "/" .. inWater
+else 
+summationForDebug = "Liq:nil/" .. inWater 
+end
 world.debugText(summationForDebug,{mouthPosition[1]-(string.len(summationForDebug)*0.25),mouthPosition[2]},"red")
 
 	if world.liquidAt(mouthPosition) and inWater == 0 then
