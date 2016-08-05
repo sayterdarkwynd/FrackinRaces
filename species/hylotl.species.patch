@@ -1,0 +1,8 @@
+[
+
+    { "op": "replace", 
+    "path" : "/charCreationTooltip/description" , 
+    "value" : "The peaceful Hylotl place great value on ancestral tradition and take great comfort in the arts. ^red;-20% Energy^reset;, ^green;+10% HP^reset;, ^green;Immune: Wet^reset;, ^orange;With Shield^reset;: ^purple;Perfect Blocks^reset; restore HP. (Stacks).^orange;In Water^reset;: ^green;+9 Protection^reset;, ^green;+20 HP^reset;, ^green;+1400 Air^reset;, ^green;Swim Boost^reset;."
+    }
+
+]

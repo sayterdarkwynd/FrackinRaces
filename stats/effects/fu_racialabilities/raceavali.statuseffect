@@ -1,0 +1,12 @@
+{
+  "name" : "raceavali",
+  "effectConfig" : {
+  "powerModifier" : 1.05
+  },
+  "defaultDuration" : 3,
+
+  "scripts" : [
+    "raceavali.lua"
+  ]
+
+}

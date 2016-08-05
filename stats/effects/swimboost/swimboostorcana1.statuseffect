@@ -1,0 +1,11 @@
+{
+  "name" : "swimboostorcana1",
+  "effectConfig" : {
+
+  },
+  "defaultDuration" : 5,
+
+  "scripts" : [
+    "swimboost.lua"
+  ]
+}

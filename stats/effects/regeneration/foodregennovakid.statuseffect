@@ -1,0 +1,13 @@
+{
+  "name" : "foodregennovakid",
+  "effectConfig" : {
+    "healTime" : 130
+  },
+  "defaultDuration" : 1,
+
+  "scripts" : [
+    "foodregen.lua"
+  ],
+
+  "animationConfig" : "foodregen.animation"
+}

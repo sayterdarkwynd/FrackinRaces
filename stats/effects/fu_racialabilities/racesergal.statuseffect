@@ -1,0 +1,13 @@
+{
+  "name" : "racesergal",
+  "effectConfig" : {
+
+  },
+  
+  "defaultDuration" : 3,
+
+  "scripts" : [
+    "racesergal.lua"
+  ]
+
+}

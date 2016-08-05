@@ -1,0 +1,8 @@
+[
+
+    { "op": "replace", 
+    "path" : "/charCreationTooltip/description" , 
+    "value" : "In spite of their long and turbulent history, humans tend to possess a lighthearted and optimistic outlook towards life and the universe. ^red;No penalties^reset;. ^green;+20% HP^reset;, ^green;+30% Energy^reset;, ^green;-25% Knockback^reset;, ^green;+30 Max Food^reset;^orange; Increased jump time^reset;."
+    }
+
+]

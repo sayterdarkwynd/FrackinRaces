@@ -1,0 +1,10 @@
+{
+  "name" : "raceviera",
+  "effectConfig" : {},
+  "defaultDuration" : 3,
+
+  "scripts" : [
+    "raceviera.lua"
+  ]
+
+}

@@ -1,0 +1,13 @@
+{
+  "name" : "raceglitch",
+  "effectConfig" : {
+  "healthBonus" : 0.10,
+  "energyBonus" : -0.10
+  },
+  "defaultDuration" : 3,
+
+  "scripts" : [
+    "raceglitch.lua"
+  ]
+
+}

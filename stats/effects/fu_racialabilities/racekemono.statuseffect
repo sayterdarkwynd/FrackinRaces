@@ -1,0 +1,13 @@
+{
+  "name" : "racekemono",
+  "effectConfig" : {
+      "powerModifier" : 1.08,
+      "healthDown" : 3
+      },
+  "defaultDuration" : 3,
+
+  "scripts" : [
+    "racekemono.lua"
+  ]
+
+}

@@ -1,0 +1,9 @@
+{
+  "name" : "hpedge",
+  "effectConfig" : {},
+  "defaultDuration" : 3,
+
+  "scripts" : [
+    "hpedge.lua"
+  ]
+}

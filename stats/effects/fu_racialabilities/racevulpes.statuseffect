@@ -1,0 +1,13 @@
+{
+  "name" : "racevulpes",
+  "effectConfig" : {
+    "healthBonus" : 0.12
+  },
+  
+  "defaultDuration" : 3,
+
+  "scripts" : [
+    "racevulpes.lua"
+  ]
+
+}

@@ -1,0 +1,14 @@
+{
+  "name" : "racefenerox",
+  "effectConfig" : {
+      "powerModifier" : 1.06,
+      "healthBonus" : -0.05,
+      "energyBonus" : 0.10
+      },
+  "defaultDuration" : 3,
+
+  "scripts" : [
+    "racefenerox.lua"
+  ]
+
+}

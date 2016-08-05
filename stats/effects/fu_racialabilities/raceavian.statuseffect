@@ -1,0 +1,14 @@
+{
+  "name" : "raceavian",
+  "effectConfig" : {
+    "powerModifier" : 1.075,
+    "healthBonus" : -0.1,
+    "energyBonus" : 0.1
+  },
+  "defaultDuration" : 3,
+
+  "scripts" : [
+    "raceavian.lua"
+  ]
+
+}

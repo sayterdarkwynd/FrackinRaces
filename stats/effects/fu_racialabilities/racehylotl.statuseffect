@@ -1,0 +1,13 @@
+{
+  "name" : "racehylotl",
+  "effectConfig" : {
+  "healthBonus" : 0.10,
+  "energyBonus" : -0.20
+  },
+  "defaultDuration" : 3,
+
+  "scripts" : [
+    "racehylotl.lua"
+  ]
+
+}

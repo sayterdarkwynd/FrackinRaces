@@ -1,0 +1,12 @@
+{
+  "name" : "racefelins",
+  "effectConfig" : {
+      "powerModifier" : 1.08
+      },
+  "defaultDuration" : 3,
+
+  "scripts" : [
+    "racefelins.lua"
+  ]
+
+}

@@ -1,0 +1,9 @@
+{
+  "name" : "starvingedge",
+  "effectConfig" : {},
+  "defaultDuration" : 3,
+
+  "scripts" : [
+    "starvingedge.lua"
+  ]
+}

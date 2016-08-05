@@ -1,0 +1,16 @@
+{
+  "name" : "carnivorefoodcooked",
+  "blockingStat" : "poisonStatusImmunity",
+
+  "effectConfig" : {},
+  "defaultDuration" : 60,
+
+  "scripts" : [
+    "carnivorefoodcooked.lua"
+  ],
+
+  "animationConfig" : "carnivorefoodcooked.animation",
+
+  "label" : "Food Poisoning",
+  "icon" : "/interface/statuses/foodpoison.png"
+}

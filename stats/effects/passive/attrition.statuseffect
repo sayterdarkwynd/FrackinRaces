@@ -1,0 +1,9 @@
+{
+  "name" : "attrition",
+  "effectConfig" : {},
+  "defaultDuration" : 1,
+
+  "scripts" : [
+    "attrition.lua"
+  ]
+}

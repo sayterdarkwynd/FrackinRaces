@@ -1,0 +1,13 @@
+{
+  "name" : "racevespoid",
+  "effectConfig" : {
+
+  },
+  
+  "defaultDuration" : 3,
+
+  "scripts" : [
+    "racevespoid.lua"
+  ]
+
+}

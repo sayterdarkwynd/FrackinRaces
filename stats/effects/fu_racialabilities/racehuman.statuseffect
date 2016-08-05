@@ -1,0 +1,14 @@
+{
+  "name" : "racehuman",
+  "effectConfig" : {
+  "healthBonus" : 0.2,
+  "energyBonus" : 0.3,
+  "gritBonus" : 0.25
+  },
+  "defaultDuration" : 3,
+
+  "scripts" : [
+    "racehuman.lua"
+  ]
+
+}

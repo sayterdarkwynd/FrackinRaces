@@ -1,0 +1,14 @@
+{
+  "name" : "racenovakid",
+  "effectConfig" : {
+  "healthBonus" : -0.10,
+  "energyBonus" : 0.40,
+  "gritBonus" : 0.60
+  },
+  "defaultDuration" : 3,
+
+  "scripts" : [
+    "racenovakid.lua"
+  ]
+
+}

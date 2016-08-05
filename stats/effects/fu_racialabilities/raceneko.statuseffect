@@ -1,0 +1,11 @@
+{
+  "name" : "raceneko",
+  "effectConfig" : {},
+  
+  "defaultDuration" : 3,
+
+  "scripts" : [
+    "raceneko.lua"
+  ]
+
+}

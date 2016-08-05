@@ -1,0 +1,10 @@
+{
+  "name" : "racefamiliar",
+  "effectConfig" : {},
+  "defaultDuration" : 3,
+
+  "scripts" : [
+    "racefamiliar.lua"
+  ]
+
+}

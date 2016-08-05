@@ -1,0 +1,10 @@
+{
+  "name" : "racepeglaci",
+  "effectConfig" : {},
+  "defaultDuration" : 3,
+
+  "scripts" : [
+    "racepeglaci.lua"
+  ]
+
+}

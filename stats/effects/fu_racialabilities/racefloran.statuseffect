@@ -1,0 +1,13 @@
+{
+  "name" : "racefloran",
+  "effectConfig" : {
+  "healthBonus" : -0.1,
+  "energyBonus" : 0.15
+  },
+  "defaultDuration" : 3,
+
+  "scripts" : [
+    "racefloran.lua"
+  ]
+
+}

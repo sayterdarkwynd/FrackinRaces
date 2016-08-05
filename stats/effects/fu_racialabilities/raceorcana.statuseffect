@@ -1,0 +1,10 @@
+{
+  "name" : "raceorcana",
+  "effectConfig" : {},
+  "defaultDuration" : 3,
+
+  "scripts" : [
+    "raceorcana.lua"
+  ]
+
+}

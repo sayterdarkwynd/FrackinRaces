@@ -1,0 +1,13 @@
+{
+  "name" : "darkregenfenerox",
+  "effectConfig" : {
+    "healTime" : 220
+  },
+  "defaultDuration" : 60,
+
+  "scripts" : [
+    "darkregenfenerox.lua"
+  ],
+
+  "animationConfig" : "darkregeneration.animation"
+}
