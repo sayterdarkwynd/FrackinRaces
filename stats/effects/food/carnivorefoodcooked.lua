@@ -33,7 +33,14 @@ function update(dt)
       speedModifier = 0.80,
       airJumpModifier = 0.80
     })
+    
+  end  
+    
+    
+    
 end
+
+
 
 function uninit()
 

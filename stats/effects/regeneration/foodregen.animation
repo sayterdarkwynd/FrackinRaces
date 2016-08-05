@@ -33,7 +33,7 @@
         {
           "particle" : {
             "type" : "text",
-            "text" : "Lightheal",
+            "text" : "regen",
             "size" : 0.75,
             "color" : [225, 25, 225, 255],
             "fade" : 1,
