@@ -41,7 +41,7 @@ end
 world.debugText(summationForDebug,{mouthPosition[1]-(string.len(summationForDebug)*0.25),mouthPosition[2]},"red")
 
 	if world.liquidAt(mouthPosition) and inWater == 0 then
-            status.setPersistentEffects("glitchweaken", {{stat = "protection", amount = -7}})
+            status.setPersistentEffects("glitchweaken", {{stat = "protection", amount = -5}})
             status.setPersistentEffects("glitchweaken2", {{stat = "maxHealth", amount = -10}})
             status.setPersistentEffects("glitchweaken3", {{stat = "maxEnergy", amount = -20}})
 	    inWater = 1
