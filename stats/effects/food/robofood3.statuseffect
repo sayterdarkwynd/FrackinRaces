@@ -1,14 +1,14 @@
 {
-  "name" : "robofood",
+  "name" : "robofood3",
 
   "effectConfig" : {
-  "healthBonus" : 0.05,
-  "energyBonus" : 0.08,
-  "protectionBonus" : 3,
-  "healthPenalty" : -0.05,
-  "energyPenalty" : -0.08,
-  "protectionPenalty" : -3,  
-  "fallBonus" : -0.5
+  "healthBonus" : 0.10,
+  "energyBonus" : 0.20,
+  "protectionBonus" : 9,
+  "healthPenalty" : -0.10,
+  "energyPenalty" : -0.20,
+  "protectionPenalty" : -9,
+  "fallBonus" : -0.15
   },
   "defaultDuration" : 60,
 

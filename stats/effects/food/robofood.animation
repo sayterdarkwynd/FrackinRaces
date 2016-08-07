@@ -2,13 +2,13 @@
   "particleEmitters" : {
     "drips" : {
       "enabled" : true,
-      "emissionRate" : 1.0,
+      "emissionRate" : 12.0,
       "particles" : [
         {
           "particle" : {
             "type" : "ember",
             "size" : 1.0,
-            "color" : [30, 250, 30, 120],
+            "color" : [20, 30, 230, 120],
             "fade" : 0.9,
             "destructionAction" : "shrink",
             "destructionTime" : 0.8,
