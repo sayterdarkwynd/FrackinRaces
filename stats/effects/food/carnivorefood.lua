@@ -11,7 +11,7 @@ end
 
 function update(dt)
 
-  if not world.entitySpecies(entity.id()) == "floran" then
+  if not world.entitySpecies(entity.id()) == "floran"  then
   
   self.tickTimer = self.tickTimer - dt
   if self.tickTimer <= 0 then

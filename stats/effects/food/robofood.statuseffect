@@ -1,0 +1,15 @@
+{
+  "name" : "robofood",
+
+  "effectConfig" : {},
+  "defaultDuration" : 30,
+
+  "scripts" : [
+    "carnivorefood.lua"
+  ],
+
+  "animationConfig" : "robofood.animation",
+
+  "label" : "Food Poisoning",
+  "icon" : "/interface/statuses/foodpoison.png"
+}
