@@ -106,7 +106,17 @@
         { "particle" : "redcartoonstar"},
         { "particle" : "redcartoonstar"}
       ]
-    }    
+    },
+    "bonusBlock4" : {
+      "active" : false,
+      "transformationGroups" : ["shield"],
+      "emissionRate" : 90,
+      "offsetRegion" : [-0.5, -1.0, 0.5, 1.0],
+      "particles" : [
+        { "particle" : "greencartoonstar"},
+        { "particle" : "greencartoonstar"}
+      ]
+    }     
     
   }
 }

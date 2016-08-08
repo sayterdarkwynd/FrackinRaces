@@ -141,7 +141,7 @@ function raiseShield()
           -- *******************************************************
           -- *******************************************************
           -- *******************************************************
-          
+       
           if world.entitySpecies(activeItem.ownerEntityId()) == "glitch" then
             self.blockCount = self.blockCount + 0.03
             status.setPersistentEffects("glitchprotection", {{stat = "powerMultiplier", amount = self.blockCount}})  --glitch get a power bonus when perfectly blocking
@@ -154,7 +154,12 @@ function raiseShield()
           if world.entitySpecies(activeItem.ownerEntityId()) == "viera" then
             status.modifyResourcePercentage("energy", 0.07 + self.blockCount )  --viera get energy when they perfectly block
             animator.burstParticleEmitter("bonusBlock2")
-          end         
+          end  
+          if world.entitySpecies(activeItem.ownerEntityId()) == "avali" then
+            self.blockCount = self.blockCount + 2
+            status.setPersistentEffects("avaliprotection", {{stat = "protection", amount = self.blockCount}})  --avali get a defense bonus when perfectly blocking
+            animator.burstParticleEmitter("bonusBlock4")
+          end             
           -- *******************************************************
           -- *******************************************************
           -- *******************************************************
@@ -170,6 +175,10 @@ function raiseShield()
               self.blockCount = 0  --reset bonus here
               status.clearPersistentEffects("glitchprotection")
             end
+            if world.entitySpecies(activeItem.ownerEntityId()) == "avali" then   --avali dont stack more bonus if they miss blocking
+              self.blockCount = 0  --reset bonus here
+              status.clearPersistentEffects("avaliprotection")
+            end            
           -- *******************************************************    
           
         else
@@ -181,6 +190,10 @@ function raiseShield()
               self.blockCount = 0  --reset bonus here
               status.clearPersistentEffects("glitchprotection")
             end
+            if world.entitySpecies(activeItem.ownerEntityId()) == "avali" then   --avali dont stack more bonus if they miss blocking
+              self.blockCount = 0  --reset bonus here
+              status.clearPersistentEffects("avaliprotection")
+            end              
           -- *******************************************************
           
         end

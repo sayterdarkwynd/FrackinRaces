@@ -45,8 +45,6 @@ world.debugText(summationForDebug,{mouthPosition[1]-(string.len(summationForDebu
             status.setPersistentEffects("glitchweaken2", {{stat = "maxHealth", amount = -10}})
             status.setPersistentEffects("glitchweaken3", {{stat = "maxEnergy", amount = -20}})
 	    inWater = 1
-	     
-
 	else
 	  isDry()
         end 

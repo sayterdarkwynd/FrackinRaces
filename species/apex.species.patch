@@ -2,7 +2,7 @@
 
     { "op": "replace", 
     "path" : "/charCreationTooltip/description" , 
-    "value" : "A race of highly intelligent primates. ^orange;High Metabolism^reset;: ^red;Needs to eat more often^reset; than other races, but gains ^green;+11% speed^reset; and ^green;+15% jump^reset;. ^green;Immune to mud and jungle effects^reset;. ^green;+8% HP bonus^reset;."
+    "value" : "A race of highly intelligent primates. ^orange;High Metabolism^reset;: ^red;Needs to eat more often^reset; than other races, but gains ^green;+11% speed^reset; and ^green;+15% jump^reset;. ^green;Immune: Mud tiles, Jungle tiles^reset;. ^green;+20% HP bonus^reset;."
     }
 
 ]

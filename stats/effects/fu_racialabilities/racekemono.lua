@@ -9,8 +9,8 @@ end
 
 function update(dt)
 		mcontroller.controlModifiers({
-				 speedModifier = 1.05,
-				airJumpModifier = 1.05
+				 speedModifier = 1.10,
+				airJumpModifier = 1.10
 			})
 end
 
