@@ -1,7 +1,13 @@
 {
   "name" : "raceavali",
   "effectConfig" : {
-  "powerModifier" : 1.05
+  "powerModifier" : 1.05,
+  "fallingParameters" : {
+    "airForce" : 34,
+    "runSpeed" : 12,
+    "walkSpeed" : 12
+  },
+  "maxFallSpeed" : -22
   },
   "defaultDuration" : 3,
 

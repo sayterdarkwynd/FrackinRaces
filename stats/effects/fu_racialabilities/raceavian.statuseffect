@@ -3,7 +3,15 @@
   "effectConfig" : {
     "powerModifier" : 1.075,
     "healthBonus" : -0.15,
-    "energyBonus" : 0.1
+    "energyBonus" : 0.1,
+    
+  "fallingParameters" : {
+    "airForce" : 30,
+    "runSpeed" : 14,
+    "walkSpeed" : 14
+  },
+  "maxFallSpeed" : -24
+  
   },
   "defaultDuration" : 3,
 

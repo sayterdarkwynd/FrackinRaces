@@ -10,11 +10,15 @@ function init()
       jumpSpeed = 30
     }
   }  
+
 end
 
 function update(dt)
 mcontroller.controlParameters(self.liquidMovementParameter)
-
+    if mcontroller.falling() then
+      mcontroller.controlParameters(config.getParameter("fallingParameters"))
+      mcontroller.setYVelocity(math.max(mcontroller.yVelocity(), config.getParameter("maxFallSpeed")))
+    end
 end
 
 function uninit()

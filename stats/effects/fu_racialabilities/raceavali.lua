@@ -9,6 +9,10 @@ function init()
 end
 
 function update(dt)
+    if mcontroller.falling() then
+      mcontroller.controlParameters(config.getParameter("fallingParameters"))
+      mcontroller.setYVelocity(math.max(mcontroller.yVelocity(), config.getParameter("maxFallSpeed")))
+    end
 	mcontroller.controlModifiers({
 			speedModifier = 1.08,
 			airJumpModifier = 1.05
