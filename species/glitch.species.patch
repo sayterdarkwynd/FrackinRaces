@@ -2,7 +2,7 @@
 
     { "op": "replace", 
     "path" : "/charCreationTooltip/description" , 
-    "value" : "Hardy, strong automatons. ^red;+30% Fall Dmg^reset;, ^red;-1s energy regen^reset;, ^green;+5% Energy^reset;, ^green;-Hunger^reset;, ^green;+10% HP^reset;, ^green;Protection +7^reset;, ^orange;Doesn't Breathe^reset;, ^green;Immune: Poison^reset;, ^green;Immune: Stings^reset;. ^orange;With Shield^reset;: ^green;Perfect blocks^reset; increase damage^reset;(stacks).^red;Weakened when submerged^reset;."
+    "value" : "Hardy, strong automatons. ^red;+30% Fall Dmg^reset;, ^red;-1s energy regen^reset;, ^green;+5% Energy^reset;, ^green;-Hunger^reset;, ^green;+10% HP^reset;, ^green;Protection +7^reset;, ^orange;Doesn't Breathe^reset;, ^green;Immune: Poison^reset;, ^green;Immune: Stings^reset;. ^orange;With Shield^reset;: ^green;Perfect blocks^reset; increase damage^reset;. ^red;Weakened when submerged^reset;."
     }
 
 ]

@@ -2,7 +2,7 @@
   "name" : "raceavali",
   "effectConfig" : {
   "healthBonus" : -0.10,
-  "energyBonus" : 0.05
+  "energyBonus" : 0.05,
   "fallingParameters" : {
     "airForce" : 40,
     "runSpeed" : 16,
