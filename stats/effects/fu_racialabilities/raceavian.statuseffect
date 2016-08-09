@@ -10,7 +10,7 @@
     "runSpeed" : 14,
     "walkSpeed" : 14
   },
-  "maxFallSpeed" : -24
+  "maxFallSpeed" : -39
   
   },
   "defaultDuration" : 3,

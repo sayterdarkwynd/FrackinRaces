@@ -1,7 +1,7 @@
 function init()
   self.powerModifier = config.getParameter("powerModifier", 0)
   effect.addStatModifierGroup({{stat = "powerMultiplier", baseMultiplier = self.powerModifier}})
-  effect.addStatModifierGroup({{stat = "fallDamageMultiplier", effectiveMultiplier = 0.35}})
+  effect.addStatModifierGroup({{stat = "fallDamageMultiplier", baseMultiplier = 0.35}})
   self.movementParams = mcontroller.baseParameters()  
   local bounds = mcontroller.boundBox()
   script.setUpdateDelta(5)

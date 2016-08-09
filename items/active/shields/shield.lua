@@ -28,6 +28,10 @@ function init()
   setStance(self.stances.idle)
   
   self.blockCount = 0.01 
+  
+  
+  self.startHealth = status.resource("health")
+  
   updateAim()
 end
 
@@ -74,6 +78,10 @@ function uninit()
   status.clearPersistentEffects(activeItem.hand().."Shield")
   activeItem.setItemShieldPolys({})
   activeItem.setItemDamageSources({})
+  status.clearPersistentEffects("avaliprotection")
+  status.clearPersistentEffects("vieraprotection")
+  status.clearPersistentEffects("hylotlprotection")
+  status.clearPersistentEffects("glitchprotection")
 end
 
 function updateAim()
@@ -155,7 +163,7 @@ function raiseShield()
             status.modifyResourcePercentage("energy", 0.07 + self.blockCount )  --viera get energy when they perfectly block
             animator.burstParticleEmitter("bonusBlock2")
           end  
-          if world.entitySpecies(activeItem.ownerEntityId()) == "avali" then
+          if world.entitySpecies(activeItem.ownerEntityId()) == "apex" then
             self.blockCount = self.blockCount + 2
             status.setPersistentEffects("avaliprotection", {{stat = "protection", amount = self.blockCount}})  --avali get a defense bonus when perfectly blocking
             animator.burstParticleEmitter("bonusBlock4")
@@ -175,7 +183,7 @@ function raiseShield()
               self.blockCount = 0  --reset bonus here
               status.clearPersistentEffects("glitchprotection")
             end
-            if world.entitySpecies(activeItem.ownerEntityId()) == "avali" then   --avali dont stack more bonus if they miss blocking
+            if world.entitySpecies(activeItem.ownerEntityId()) == "apex" then   --avali dont stack more bonus if they miss blocking
               self.blockCount = 0  --reset bonus here
               status.clearPersistentEffects("avaliprotection")
             end            
@@ -190,7 +198,7 @@ function raiseShield()
               self.blockCount = 0  --reset bonus here
               status.clearPersistentEffects("glitchprotection")
             end
-            if world.entitySpecies(activeItem.ownerEntityId()) == "avali" then   --avali dont stack more bonus if they miss blocking
+            if world.entitySpecies(activeItem.ownerEntityId()) == "apex" then   --avali dont stack more bonus if they miss blocking
               self.blockCount = 0  --reset bonus here
               status.clearPersistentEffects("avaliprotection")
             end              
