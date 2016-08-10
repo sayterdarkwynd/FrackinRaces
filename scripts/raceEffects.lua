@@ -121,6 +121,7 @@ function update(dt)
 	--familiar (stuffed animal type things)
 	if world.entitySpecies(entity.id()) == "familiar" then
 	  status.addEphemeralEffect("racefamiliar",math.huge)
+	  status.addEphemeralEffect("novakidglow",math.huge)
 	end	
 	
 	--neko (cat girls)

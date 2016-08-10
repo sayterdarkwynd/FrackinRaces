@@ -1,6 +1,7 @@
 function init()
   effect.addStatModifierGroup({{stat = "snowslowImmunity", amount = 1}})
   effect.addStatModifierGroup({{stat = "biomecoldImmunity", amount = 1}})
+  effect.addStatModifierGroup({{stat = "iceStatusImmunity", amount = 1}})
   local bounds = mcontroller.boundBox()
   script.setUpdateDelta(10)
 end
