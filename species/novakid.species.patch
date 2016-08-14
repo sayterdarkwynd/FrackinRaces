@@ -2,7 +2,7 @@
 
     { "op": "replace", 
     "path" : "/charCreationTooltip/description" , 
-    "value" : "The Novakids are a mysterious race of 'interstellar gas-bag people'. They have no charted settlements and no documented history. ^red;-10% HP^reset;, ^green;+40% Energy^reset;, ^green;-60% Knockback^reset;, ^green;+5% Speed^reset;, ^green;Immune: All Radiation^reset;, ^green;Immune: Burning^reset;. ^orange;Glow in the dark^reset;."
+    "value" : "The Novakids are a mysterious race of 'interstellar gas-bag people'. They have no charted settlements and no documented history. ^red;-10% HP^reset;, ^green;+40% Energy^reset;, ^green;-60% Knockback^reset;, ^green;+5% Speed^reset;, ^green;Immune: All Radiation^reset;, ^green;Immune: Burning^reset;. ^orange;Glow in the dark^reset;. ^yellow;+8% dmg with all firearms^reset;."
     }
 
 ]

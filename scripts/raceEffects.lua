@@ -13,16 +13,20 @@ end
 
 function update(dt)
   fuoldUpdate(dt)
-  
+
 	--Human
 	if world.entitySpecies(entity.id()) == "human" then
 		status.addEphemeralEffect("racehuman",math.huge)
+		--if player.primaryHandItemTags()== "spear" then
+		-- status.addEphermalEffect("runboost",math.huge)
+		--end
 	end
 	
 	--Avian
 	if world.entitySpecies(entity.id()) == "avian" then
 		status.addEphemeralEffect("raceavian",math.huge)
 		status.addEphemeralEffect("hpedge",math.huge)
+		
 	end
 
 	--Apex
