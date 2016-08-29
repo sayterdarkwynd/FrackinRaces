@@ -29,8 +29,9 @@ function init()
   self.stances = config.getParameter("stances")
   setStance(self.stances.idle)
   
-  self.blockCount = 0.01 
-  
+  self.blockCount = 0.01
+  self.ownerRace = world.entitySpecies(activeItem.ownerEntityId())
+
   
   self.startHealth = status.resource("health")
   
@@ -84,7 +85,6 @@ function uninit()
   status.clearPersistentEffects("vieraprotection")
   status.clearPersistentEffects("hylotlprotection")
   status.clearPersistentEffects("glitchprotection")
-  self.blockCount = 0
 end
 
 function updateAim()
@@ -152,26 +152,23 @@ function raiseShield()
           -- *******************************************************
           -- *******************************************************
           -- *******************************************************
-		  if self.debug then sb.logInfo("(FR) shield.lua: Perfect block! blockCount now %s",self.blockCount) end
        
-          if world.entitySpecies(activeItem.ownerEntityId()) == "glitch" then
+          if self.ownerRace == "glitch" then
             self.blockCount = self.blockCount + 0.03
             status.setPersistentEffects("glitchprotection", {{stat = "powerMultiplier", amount = self.blockCount}})  --glitch get a power bonus when perfectly blocking
             animator.burstParticleEmitter("bonusBlock3")
-          end
-          if world.entitySpecies(activeItem.ownerEntityId()) == "hylotl" then
+          elseif self.ownerRace == "hylotl" then
             status.modifyResourcePercentage("health", 0.05 + self.blockCount )  --hylotl get a heal when they perfectly block
             animator.burstParticleEmitter("bonusBlock")
-          end
-          if world.entitySpecies(activeItem.ownerEntityId()) == "viera" then
+          elseif self.ownerRace == "viera" then
             status.modifyResourcePercentage("energy", 0.07 + self.blockCount )  --viera get energy when they perfectly block
             animator.burstParticleEmitter("bonusBlock2")
-          end  
-          if world.entitySpecies(activeItem.ownerEntityId()) == "human" then
+          elseif self.ownerRace == "human" then
             self.blockCount = self.blockCount + 2
             status.setPersistentEffects("humanprotection", {{stat = "protection", amount = self.blockCount}})  --human get a defense bonus when perfectly blocking
             animator.burstParticleEmitter("bonusBlock4")
-          end             
+          end
+		  if self.debug then sb.logInfo("(FR) shield.lua: Perfect block! blockCount now %s",self.blockCount) end
           -- *******************************************************
           -- *******************************************************
           -- *******************************************************
@@ -183,15 +180,7 @@ function raiseShield()
           
           -- *******************************************************
 		  if self.debug then sb.logInfo("(FR) shield.lua: hitType %s received, blockCount = %s, blockCount reset",notification.hitType, self.blockCount) end
-          self.blockCount = 0 --reset the blockCount here 
-            if world.entitySpecies(activeItem.ownerEntityId()) == "glitch" then   --glitch dont stack more bonus if they miss blocking
-              self.blockCount = 0  --reset bonus here
-              status.clearPersistentEffects("glitchprotection")
-            end
-            if world.entitySpecies(activeItem.ownerEntityId()) == "human" then   --human dont stack more bonus if they miss blocking
-              self.blockCount = 0  --reset bonus here
-              status.clearPersistentEffects("humanprotection")
-            end            
+		  clearEffects()
           -- *******************************************************    
           
         else
@@ -199,15 +188,7 @@ function raiseShield()
 
           -- *******************************************************
 		  if self.debug then sb.logInfo("(FR) shield.lua: hitType %s received, blockCount = %s, blockCount reset",notification.hitType, self.blockCount) end
-          self.blockCount = 0  --reset the blockCount here  
-            if world.entitySpecies(activeItem.ownerEntityId()) == "glitch" then   --glitch dont stack more bonus if they miss blocking
-              self.blockCount = 0  --reset bonus here
-              status.clearPersistentEffects("glitchprotection")
-            end
-            if world.entitySpecies(activeItem.ownerEntityId()) == "human" then   --human dont stack more bonus if they miss blocking
-              self.blockCount = 0  --reset bonus here
-              status.clearPersistentEffects("humanprotection")
-            end              
+		  clearEffects()
           -- *******************************************************
           
         end
@@ -215,7 +196,7 @@ function raiseShield()
         return
 	  elseif self.blockCount > 0.01 then
 		  if self.debug then sb.logInfo("(FR) shield.lua: hitType %s received, blockCount = %s, blockCount reset",notification.hitType, self.blockCount) end
-		  self.blockCount = 0.01
+		  clearEffects()
       end
     end
   end)
@@ -223,7 +204,10 @@ function raiseShield()
   refreshPerfectBlock()
 end
 
-
+function clearEffects()
+  status.clearPersistentEffects(self.ownerRace .. "protection")
+  self.blockCount = 0.01
+end
 
 function refreshPerfectBlock()
   local perfectBlockTimeAdded = math.max(0, math.min(status.resource("perfectBlockLimit"), self.perfectBlockTime - status.resource("perfectBlock")))
