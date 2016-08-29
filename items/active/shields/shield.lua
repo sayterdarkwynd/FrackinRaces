@@ -4,6 +4,8 @@ require "/scripts/status.lua"
 function init()
   self.debug = true
 
+  if self.debug then sb.logInfo("(FR) shield.lua init() for %s", activeItem.hand()) end
+
   self.aimAngle = 0
   self.aimDirection = 1
 
@@ -82,6 +84,7 @@ function uninit()
   status.clearPersistentEffects("vieraprotection")
   status.clearPersistentEffects("hylotlprotection")
   status.clearPersistentEffects("glitchprotection")
+  self.blockCount = 0
 end
 
 function updateAim()
@@ -149,6 +152,7 @@ function raiseShield()
           -- *******************************************************
           -- *******************************************************
           -- *******************************************************
+		  if self.debug then sb.logInfo("(FR) shield.lua: Perfect block! blockCount now %s",self.blockCount) end
        
           if world.entitySpecies(activeItem.ownerEntityId()) == "glitch" then
             self.blockCount = self.blockCount + 0.03
@@ -178,6 +182,7 @@ function raiseShield()
           animator.playSound("block")
           
           -- *******************************************************
+		  if self.debug then sb.logInfo("(FR) shield.lua: hitType %s received, blockCount = %s, blockCount reset",notification.hitType, self.blockCount) end
           self.blockCount = 0 --reset the blockCount here 
             if world.entitySpecies(activeItem.ownerEntityId()) == "glitch" then   --glitch dont stack more bonus if they miss blocking
               self.blockCount = 0  --reset bonus here
@@ -193,6 +198,7 @@ function raiseShield()
           animator.playSound("break")
 
           -- *******************************************************
+		  if self.debug then sb.logInfo("(FR) shield.lua: hitType %s received, blockCount = %s, blockCount reset",notification.hitType, self.blockCount) end
           self.blockCount = 0  --reset the blockCount here  
             if world.entitySpecies(activeItem.ownerEntityId()) == "glitch" then   --glitch dont stack more bonus if they miss blocking
               self.blockCount = 0  --reset bonus here
@@ -207,6 +213,9 @@ function raiseShield()
         end
         animator.setAnimationState("shield", "block")
         return
+	  elseif self.blockCount > 0.01 then
+		  if self.debug then sb.logInfo("(FR) shield.lua: hitType %s received, blockCount = %s, blockCount reset",notification.hitType, self.blockCount) end
+		  self.blockCount = 0.01
       end
     end
   end)
