@@ -140,7 +140,8 @@ function raiseShield()
 
   self.damageListener = damageListener("damageTaken", function(notifications)
     for _,notification in pairs(notifications) do
-      if notification.hitType == "ShieldHit" then
+	  self.ownerRace = world.entitySpecies(activeItem.ownerEntityId()) or sb.logInfo("(FR) shield.lua:update() DANGER! Race is nil!")
+	  if notification.hitType == "ShieldHit" then
         if status.resourcePositive("perfectBlock") then
           animator.playSound("perfectBlock")
           animator.burstParticleEmitter("perfectBlock")
@@ -157,13 +158,16 @@ function raiseShield()
             self.blockCount = self.blockCount + 0.03
             status.setPersistentEffects("glitchprotection", {{stat = "powerMultiplier", amount = self.blockCount}})  --glitch get a power bonus when perfectly blocking
             animator.burstParticleEmitter("bonusBlock3")
-          elseif self.ownerRace == "hylotl" then
+          end
+		  if self.ownerRace == "hylotl" then
             status.modifyResourcePercentage("health", 0.05 + self.blockCount )  --hylotl get a heal when they perfectly block
             animator.burstParticleEmitter("bonusBlock")
-          elseif self.ownerRace == "viera" then
+          end
+		  if self.ownerRace == "viera" then
             status.modifyResourcePercentage("energy", 0.07 + self.blockCount )  --viera get energy when they perfectly block
             animator.burstParticleEmitter("bonusBlock2")
-          elseif self.ownerRace == "human" then
+          end
+		  if self.ownerRace == "human" then
             self.blockCount = self.blockCount + 2
             status.setPersistentEffects("humanprotection", {{stat = "protection", amount = self.blockCount}})  --human get a defense bonus when perfectly blocking
             animator.burstParticleEmitter("bonusBlock4")
@@ -194,9 +198,12 @@ function raiseShield()
         end
         animator.setAnimationState("shield", "block")
         return
-	  elseif self.blockCount > 0.01 then
+	  else
+		sb.logInfo("(FR) shield.lua: non-ShieldHit")
+		if self.blockCount > 0.01 then
 		  if self.debug then sb.logInfo("(FR) shield.lua: hitType %s received, blockCount = %s, blockCount reset",notification.hitType, self.blockCount) end
 		  clearEffects(self.ownerRace)
+		end
       end
     end
   end)
