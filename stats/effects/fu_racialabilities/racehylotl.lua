@@ -38,7 +38,7 @@ end
 world.debugText(summationForDebug,{mouthPosition[1]-(string.len(summationForDebug)*0.25),mouthPosition[2]},"red")
 
 	if world.liquidAt(mouthPosition) and inWater == 0 then
-            status.setPersistentEffects("hylotlprotection", {{stat = "protection", amount = 9}})
+            status.setPersistentEffects("hylotlprotection", {{stat = "protection", amount = 4}})
             status.setPersistentEffects("hylotlprotection2", {{stat = "perfectBlockLimit", amount = 2}})
             status.setPersistentEffects("hylotlprotection3", {{stat = "maxHealth", amount = 20}})
             status.setPersistentEffects("hylotlprotection4", {{stat = "fallDamageMultiplier", amount = 0.0}})

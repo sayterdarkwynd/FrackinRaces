@@ -28,6 +28,14 @@ function init()
               self.blockCount = self.blockCount + 0.20
               status.setPersistentEffects("floranbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}})  
             end   
+            if world.entitySpecies(activeItem.ownerEntityId()) == "viera" then      --15% more damage with viera
+              self.blockCount = self.blockCount + 0.15
+              status.setPersistentEffects("vierabonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}})  
+            end   
+            if world.entitySpecies(activeItem.ownerEntityId()) == "sergal" then      --15% more damage with sergal
+              self.blockCount = self.blockCount + 0.15
+              status.setPersistentEffects("vierabonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}})  
+            end             
 --************************************** 
 end
 
@@ -38,6 +46,8 @@ end
 
 function uninit()
   status.clearPersistentEffects("floranbonusdmg")
+  status.clearPersistentEffects("vierabonusdmg")
+  status.clearPersistentEffects("sergalbonusdmg")
   self.blockCount = 0
   self.weapon:uninit()
 end

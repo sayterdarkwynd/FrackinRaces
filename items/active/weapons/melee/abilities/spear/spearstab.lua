@@ -21,10 +21,14 @@ function SpearStab:fire()
    self.blockCount = 5 
  end
 
-          if world.entitySpecies(activeItem.ownerEntityId()) == "floran" then      --each 1-handed combo swing slightly increases hylotl damage output
+          if world.entitySpecies(activeItem.ownerEntityId()) == "floran" then      
             self.blockCount = self.blockCount + 2
             status.setPersistentEffects("floranbonusdmg", {{stat = "protection", amount = self.blockCount}})  
           end   
+          if world.entitySpecies(activeItem.ownerEntityId()) == "sergal" then      
+            self.blockCount = self.blockCount + 5
+            status.setPersistentEffects("sergalbonusdmg", {{stat = "protection", amount = self.blockCount}})  
+          end             
 --************************************** 
   end
 end
@@ -44,5 +48,6 @@ end
 
 function SpearStab:uninit()
   status.clearPersistentEffects("floranbonusdmg")
+  status.clearPersistentEffects("sergalbonusdmg")
   self.blockCount = 0
 end

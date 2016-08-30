@@ -1,7 +1,7 @@
 {
   "name" : "raceapex",
   "effectConfig" : {
-    "healthBonus" : 0.20
+    "healthBonus" : 0.22
   },
   
   "defaultDuration" : 3,

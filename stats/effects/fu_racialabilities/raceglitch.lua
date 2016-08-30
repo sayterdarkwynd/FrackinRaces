@@ -2,9 +2,7 @@ require("/scripts/vec2.lua")
 
 function init()
 inWater=0
-effect.addStatModifierGroup({{stat = "protection", amount = 7}})
-effect.addStatModifierGroup({{stat = "waterbreathProtection", amount = 1}})
-effect.addStatModifierGroup({{stat = "breathProtection", amount = 1}})
+effect.addStatModifierGroup({{stat = "protection", amount = 3}})
 effect.addStatModifierGroup({{stat = "poisonStatusImmunity", amount = 1}})
 effect.addStatModifierGroup({{stat = "beestingImmunity", amount = 1}})
 

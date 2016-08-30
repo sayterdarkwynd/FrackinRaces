@@ -2,8 +2,8 @@
   "name" : "racenovakid",
   "effectConfig" : {
   "healthBonus" : -0.10,
-  "energyBonus" : 0.40,
-  "gritBonus" : 0.60
+  "energyBonus" : 0.30,
+  "gritBonus" : 0.25
   },
   "defaultDuration" : 3,
 

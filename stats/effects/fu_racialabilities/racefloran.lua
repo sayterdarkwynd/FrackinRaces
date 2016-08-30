@@ -3,7 +3,6 @@ function init()
   effect.addStatModifierGroup({{stat = "maxHealth", amount = baseValue }})
   baseValue2 = config.getParameter("energyBonus",0)*(status.resourceMax("energy"))
   effect.addStatModifierGroup({{stat = "maxEnergy", amount = baseValue2 }}) 
-  effect.addStatModifierGroup({{stat = "breathDepletionRate", amount = 2.0 }}) 
   effect.addStatModifierGroup({{stat = "electricStatusImmunity", amount = 1}})
 script.setUpdateDelta(0)
 
