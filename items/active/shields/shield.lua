@@ -2,7 +2,7 @@ require "/scripts/util.lua"
 require "/scripts/status.lua"
 
 function init()
-  self.debug = true
+  self.debug = false
 
   if self.debug then sb.logInfo("(FR) shield.lua init() for %s", activeItem.hand()) end
 
