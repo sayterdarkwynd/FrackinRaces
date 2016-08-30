@@ -180,7 +180,7 @@ function raiseShield()
           
           -- *******************************************************
 		  if self.debug then sb.logInfo("(FR) shield.lua: hitType %s received, blockCount = %s, blockCount reset",notification.hitType, self.blockCount) end
-		  clearEffects()
+		  clearEffects(self.ownerRace)
           -- *******************************************************    
           
         else
@@ -188,7 +188,7 @@ function raiseShield()
 
           -- *******************************************************
 		  if self.debug then sb.logInfo("(FR) shield.lua: hitType %s received, blockCount = %s, blockCount reset",notification.hitType, self.blockCount) end
-		  clearEffects()
+		  clearEffects(self.ownerRace)
           -- *******************************************************
           
         end
@@ -196,7 +196,7 @@ function raiseShield()
         return
 	  elseif self.blockCount > 0.01 then
 		  if self.debug then sb.logInfo("(FR) shield.lua: hitType %s received, blockCount = %s, blockCount reset",notification.hitType, self.blockCount) end
-		  clearEffects()
+		  clearEffects(self.ownerRace)
       end
     end
   end)
@@ -204,8 +204,8 @@ function raiseShield()
   refreshPerfectBlock()
 end
 
-function clearEffects()
-  status.clearPersistentEffects(self.ownerRace .. "protection")
+function clearEffects(playerRace)
+  status.clearPersistentEffects(playerRace .. "protection")
   self.blockCount = 0.01
 end
 
