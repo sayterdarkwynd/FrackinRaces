@@ -2,7 +2,7 @@ require "/scripts/util.lua"
 require "/scripts/status.lua"
 
 function init()
-  self.debug = true
+  self.debug = false
 
   if self.debug then sb.logInfo("(FR) shield.lua init() for %s", activeItem.hand()) end
 
@@ -72,6 +72,8 @@ function update(dt, fireMode, shiftHeld)
     if (fireMode ~= "primary" and self.activeTimer >= self.minActiveTime) or not status.resourcePositive("shieldStamina") then
       lowerShield()
     end
+  elseif self.damageListener and self.damageListener.update then
+    self.damageListener:update()
   end
 
   updateAim()
@@ -199,8 +201,9 @@ function raiseShield()
         animator.setAnimationState("shield", "block")
         return
 	  else
-		sb.logInfo("(FR) shield.lua: non-ShieldHit")
-		if self.blockCount > 0.01 then
+		if self.debug then sb.logInfo("(FR) shield.lua: non-ShieldHit: %s", notification.hitType) end
+		-- hit is required to do damage, else collisions with, e.g., rain could trigger the reset
+		if self.blockCount > 0.01 and notification.healthLost --[[.damageDealt?]] > 0 then
 		  if self.debug then sb.logInfo("(FR) shield.lua: hitType %s received, blockCount = %s, blockCount reset",notification.hitType, self.blockCount) end
 		  clearEffects(self.ownerRace)
 		end

@@ -1,7 +1,7 @@
 {
   "name" : "raceglitch",
   "effectConfig" : {
-  "healthBonus" : 0.10,
+  "healthBonus" : 0.14,
   "energyBonus" : 0.05
   },
   "defaultDuration" : 3,

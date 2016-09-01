@@ -1,7 +1,7 @@
 {
   "name" : "raceavian",
   "effectConfig" : {
-    "powerModifier" : 1.075,
+    "powerModifier" : 1.055,
     "healthBonus" : -0.15,
     "energyBonus" : 0.1,
     

@@ -2,7 +2,7 @@
 
     { "op": "replace", 
     "path" : "/charCreationTooltip/description" , 
-    "value" : "Don't be fooled by their peaceful appearance! Florans are known throughout the universe to be aggressive, carnivorous hunters. ^red;-10% HP^reset;, ^green;+15% Energy^reset;, ^orange;+Hold Breath^reset;, ^green;Regenerate during daylight hours^reset;, ^green;Shock Immunity^reset;, ^green;Damage increases^reset; ^orange;the more you starve^reset;. ^yellow;Bows +20% dmg^reset;. ^yellow;Spear can increase defense^reset;."
+    "value" : "Don't be fooled by their peaceful appearance! Florans are known throughout the universe to be aggressive, carnivorous hunters. ^red;-10% HP^reset;, ^green;+15% Energy^reset;, ^green;Regenerate during daylight hours^reset;, ^green;Shock Immunity^reset;, ^green;Damage increases^reset; ^orange;the more you starve^reset;. ^yellow;Bows +20% dmg^reset;. ^yellow;Spear can increase def^reset;."
     }
 
 ]

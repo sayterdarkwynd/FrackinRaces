@@ -1,12 +1,12 @@
 {
-  "name" : "immunesting",
+  "name" : "beestingImmunity",
   "effectConfig" : {},
   "defaultDuration" : 120,
 
   "scripts" : [
-    "immunesting.lua"
+    "beestingimmunity.lua"
   ],
 
-  "label" : "Sting Immunity",
+  "label" : "X-Sting",
   "icon" : "/interface/statuses/StingImmune.png"
 }
