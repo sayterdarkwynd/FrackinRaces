@@ -17,9 +17,6 @@ function update(dt)
 	--Human
 	if world.entitySpecies(entity.id()) == "human" then
 		status.addEphemeralEffect("racehuman",math.huge)
-		--if player.primaryHandItemTags()== "spear" then
-		-- status.addEphermalEffect("runboost",math.huge)
-		--end
 	end
 	
 	--Avian
@@ -90,7 +87,7 @@ function update(dt)
 
 	--Munari
 	if world.entitySpecies(entity.id()) == "munari" then
-	        status.addEphemeralEffect("raceorcana",math.huge)
+	        status.addEphemeralEffect("racemunari",math.huge)
 		status.addEphemeralEffect("swimboost2",math.huge)
 	end
 	
