@@ -1,6 +1,9 @@
 {
   "name" : "raceorcana",
-  "effectConfig" : {},
+  "effectConfig" : {
+  "healthBonus" : 0.25,
+  "energyBonus" : -0.08
+  },
   "defaultDuration" : 3,
 
   "scripts" : [

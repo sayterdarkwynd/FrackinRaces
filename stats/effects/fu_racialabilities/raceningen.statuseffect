@@ -1,15 +1,15 @@
 {
-  "name" : "racehuman",
+  "name" : "raceningen",
   "effectConfig" : {
-  "healthBonus" : 0.15,
-  "energyBonus" : 0.15,
+  "healthBonus" : -0.10,
+  "energyBonus" : 0.20,
   "gritBonus" : 0.15,
   "foodBonus" : 30
   },
   "defaultDuration" : 3,
 
   "scripts" : [
-    "racehuman.lua"
+    "raceningen.lua"
   ]
 
 }

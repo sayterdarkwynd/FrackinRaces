@@ -1,0 +1,16 @@
+{
+  "name" : "regenerationfist",
+  "effectConfig" : {
+    "healTime" : 200
+  },
+  "defaultDuration" : 1,
+
+  "scripts" : [
+    "regeneration01.lua"
+  ],
+
+  "animationConfig" : "regeneration.animation",
+
+  "label" : "Regen",
+  "icon" : "/interface/statuses/heal.png"
+}

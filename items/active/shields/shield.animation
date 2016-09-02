@@ -61,6 +61,7 @@
     "raiseShield" : [ ],
     "lowerShield" : [ ],
     "perfectBlock" : [ ],
+    "bonusEffect" : [ "/sfx/statuseffect/powerup.ogg" ],
     "block" : [ ],
     "break" : [ ]
   },

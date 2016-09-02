@@ -19,14 +19,18 @@ function init()
   end
   --*************************************    
   -- FU/FR ADDONS
-   if self.blockCount == nil then 
-     self.blockCount = 0 
+   if self.staffCount == nil then 
+     self.staffCount = 0 
    end
   
-            if world.entitySpecies(activeItem.ownerEntityId()) == "avian" then      --20% more damage with floran
-              self.blockCount = self.blockCount + 0.20
-              status.setPersistentEffects("avianbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}})  
+            if world.entitySpecies(activeItem.ownerEntityId()) == "avian" then      
+              self.staffCount = self.staffCount + 0.20
+              status.setPersistentEffects("avianbonusdmg", {{stat = "powerMultiplier", amount = self.staffCount}})  
             end   
+            if world.entitySpecies(activeItem.ownerEntityId()) == "ningen" then     
+              self.staffCount = self.staffCount + 0.15
+              status.setPersistentEffects("ningenbonusdmg", {{stat = "powerMultiplier", amount = self.staffCount}})  
+            end               
 --************************************** 
   self.weapon:init()
 end
@@ -37,6 +41,8 @@ end
 
 function uninit()
   status.clearPersistentEffects("avianbonusdmg")
-  self.blockCount = 0
+  status.clearPersistentEffects("ningenbonusdmg")
+  self.staffCount = 0
+  self.bonusCount = 0
   self.weapon:uninit()
 end

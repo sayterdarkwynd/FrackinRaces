@@ -1,0 +1,14 @@
+{
+  "name" : "raceargonian",
+  "effectConfig" : {
+    "healthBonus" : -0.12,
+    "energyBonus" : 0.16
+  },
+  
+  "defaultDuration" : 3,
+
+  "scripts" : [
+    "raceargonian.lua"
+  ]
+
+}

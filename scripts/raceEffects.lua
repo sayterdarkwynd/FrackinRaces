@@ -17,16 +17,12 @@ function update(dt)
 	--Human
 	if world.entitySpecies(entity.id()) == "human" then
 		status.addEphemeralEffect("racehuman",math.huge)
-		--if player.primaryHandItemTags()== "spear" then
-		-- status.addEphermalEffect("runboost",math.huge)
-		--end
 	end
 	
 	--Avian
 	if world.entitySpecies(entity.id()) == "avian" then
 		status.addEphemeralEffect("raceavian",math.huge)
 		status.addEphemeralEffect("hpedge",math.huge)
-		
 	end
 
 	--Apex
@@ -90,8 +86,13 @@ function update(dt)
 
 	--Munari
 	if world.entitySpecies(entity.id()) == "munari" then
-	        status.addEphemeralEffect("raceorcana",math.huge)
+	        status.addEphemeralEffect("racemunari",math.huge)
 		status.addEphemeralEffect("swimboost2",math.huge)
+	end
+
+	--Bunnykin
+	if world.entitySpecies(entity.id()) == "bunnykin" then
+	        status.addEphemeralEffect("racebunnykin",math.huge)
 	end
 	
 	--ponex 
@@ -138,13 +139,7 @@ function update(dt)
 	if world.entitySpecies(entity.id()) == "sergal" then
 	  status.addEphemeralEffect("racesergal",math.huge)
 	end	
-	
-	--inkling    already has racial abilities in its own native mod. no need for this.
-	--if world.entitySpecies(entity.id()) == "inkling" then
-	--  status.addEphemeralEffect("raceinkling",math.huge)
-        --  status.addEphemeralEffect("swimboost1",math.huge)
-	--end	
-	
+
 	--vulpes (fox people)
 	if world.entitySpecies(entity.id()) == "vulpes" then
           status.addEphemeralEffect("racevulpes",math.huge)
@@ -155,20 +150,23 @@ function update(dt)
           status.addEphemeralEffect("racekemono",math.huge)
 	end	
 	
-	--ningen  (exact same as fucking humans)
+	--ningen  
 	if world.entitySpecies(entity.id()) == "ningen" then
-
+          status.addEphemeralEffect("raceningen",math.huge)
 	end
-	
-	--LLL (wolves  , Locus Les Loupes)
-	if world.entitySpecies(entity.id()) == "loupes" then
 
-	end		
-	
-	--mephetor (skunk)
-	if world.entitySpecies(entity.id()) == "mephetor" then
-        
-	end		
+	--argonian  
+	if world.entitySpecies(entity.id()) == "argonian" then
+          status.addEphemeralEffect("raceargonian",math.huge)
+          status.addEphemeralEffect("metabolismargonian",math.huge)
+          status.addEphemeralEffect("swimboost1",math.huge)
+	end
+
+	--Nightar
+	if world.entitySpecies(entity.id()) == "nightar" then
+		status.addEphemeralEffect("racenightar",math.huge)
+		status.addEphemeralEffect("novakidglow",math.huge)
+	end	
 	
   local mouthPosition = vec2.add(mcontroller.position(), status.statusProperty("mouthPosition"))
   if status.statPositive("breathProtection") or world.breathable(mouthPosition) 

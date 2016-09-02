@@ -1,0 +1,14 @@
+{
+  "name" : "racenightar",
+  "effectConfig" : {
+  "healthBonus" : -0.10,
+  "energyBonus" : 0.25,
+  "gritBonus" : 0.15
+  },
+  "defaultDuration" : 3,
+
+  "scripts" : [
+    "racenightar.lua"
+  ]
+
+}
