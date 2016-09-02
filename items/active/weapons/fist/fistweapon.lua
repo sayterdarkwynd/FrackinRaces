@@ -30,6 +30,8 @@ function init()
   self.weapon.freezesLeft = self.weapon.freezeLimit
   
   self.blockCount = 0
+  self.blockCount2 = 0
+  
   updateHand()
 end
 
@@ -53,16 +55,35 @@ function update(dt, fireMode, shiftHeld)
 
   if fireMode == "primary" and (not self.needsEdgeTrigger or self.edgeTriggerTimer > 0) then
     if self.comboStep > 0 then  
+    
      	-- *************** FR SPECIAL ********************************
+     	   -- ***** bonus defense when swinging two fist weapons
  	   if self.blockCount == nil then 
- 	     self.blockCount = 1
+ 	     self.blockCount = 0.01
  	   end    	
-             if world.entitySpecies(activeItem.ownerEntityId()) == "human" then
-               self.blockCount = self.blockCount + 2
-               status.setPersistentEffects("munaribonusdmg", {{stat = "grit", amount = self.blockCount}}) 
-               status.setPersistentEffects("munaribonusdmg2", {{stat = "protection", amount = self.blockCount}})
-             end       
-        -- **********************************************************      
+ 	     
+             if world.entitySpecies(activeItem.ownerEntityId()) == "bunnykin" then
+               self.blockCount = self.blockCount + 0.5
+               status.setPersistentEffects("fistbonusdmg", {{stat = "grit", amount = self.blockCount}}) 
+               status.setPersistentEffects("fistbonusdmg2", {{stat = "protection", amount = self.blockCount}})
+             end      
+             
+ 	   -- ***** bonus attack when swinging two fist weapons
+ 	   if self.blockCount2 == nil then 
+ 	     self.blockCount2 = 0.003
+ 	   end    	
+ 	     -- ***** bonus defense when swinging two fist weapons
+             if world.entitySpecies(activeItem.ownerEntityId()) == "munari" then
+               self.blockCount2 = self.blockCount2 + 0.0045
+               status.setPersistentEffects("munaribonusdmg", {{stat = "powerMultiplier", amount = self.blockCount2}})
+             end      	     
+             
+ 	     -- ***** life leech when swinging two fist weapons
+ 	     -- ***** knockback increase with each swing of fist weapon
+ 	     -- ***** increased immunity after damage
+ 	     
+        -- **********************************************************  
+        
       if self.comboTimer >= self.comboTiming[1] then        
         if self.comboStep % 2 == 0 then
           if self.primaryAbility:canStartAttack() then
@@ -98,9 +119,11 @@ end
 function uninit()
   if unloaded then
     activeItem.callOtherHandScript("resetFistCombo")
+    status.clearPersistentEffects("fistbonusdmg")
+    status.clearPersistentEffects("fistbonusdmg2")
     status.clearPersistentEffects("munaribonusdmg")
-    status.clearPersistentEffects("munaribonusdmg2")
     self.blockCount = 0
+    self.blockCount2 = 0
   end
   self.weapon:uninit()
   
@@ -120,7 +143,7 @@ function triggerComboAttack(comboStep)
   if self.primaryAbility:canStartAttack() then
     -- sb.logInfo("%s fist received combo trigger for combostep %s", activeItem.hand(), comboStep)
     if comboStep == self.comboSteps then    
-      self.comboFinisher:startAttack()
+      self.comboFinisher:startAttack()    
     else
       self.primaryAbility:startAttack()
     end
@@ -145,9 +168,11 @@ function resetFistCombo()
   -- sb.logInfo("%s fist resetting combo from step %s to 0", activeItem.hand(), self.comboStep)
   self.comboStep = 0
   self.comboTimer = nil
+    status.clearPersistentEffects("fistbonusdmg")
+    status.clearPersistentEffects("fistbonusdmg2") 
     status.clearPersistentEffects("munaribonusdmg")
-    status.clearPersistentEffects("munaribonusdmg2")  
     self.blockCount = 0
+    self.blockCount2 = 0
   return true
 end
 

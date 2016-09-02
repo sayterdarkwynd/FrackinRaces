@@ -20,7 +20,12 @@ function SpearStab:fire()
  if self.blockCount == nil then 
    self.blockCount = 5 
  end
-
+ if self.blockCount2 == nil then 
+   self.blockCount2 = 0
+ end
+ if self.blockCount3 == nil then 
+   self.blockCount3 = 0
+ end 
           if world.entitySpecies(activeItem.ownerEntityId()) == "floran" then      
             self.blockCount = self.blockCount + 2
             status.setPersistentEffects("floranbonusdmg", {{stat = "protection", amount = self.blockCount}})  
@@ -28,7 +33,15 @@ function SpearStab:fire()
           if world.entitySpecies(activeItem.ownerEntityId()) == "sergal" then      
             self.blockCount = self.blockCount + 5
             status.setPersistentEffects("sergalbonusdmg", {{stat = "protection", amount = self.blockCount}})  
-          end             
+          end  
+          if world.entitySpecies(activeItem.ownerEntityId()) == "orcana" then      
+            self.blockCount2 = self.blockCount2 + 0.25
+            status.setPersistentEffects("orcanabonusdmg", {{stat = "powerMultiplier", amount = self.blockCount2}})  
+          end   
+          if world.entitySpecies(activeItem.ownerEntityId()) == "argonian" then      
+            self.blockCount3 = self.blockCount3 + 0.08
+            status.setPersistentEffects("argonianbonusdmg", {{stat = "damageAbsorption", amount = self.blockCount3}})  
+          end 
 --************************************** 
   end
 end
@@ -49,5 +62,7 @@ end
 function SpearStab:uninit()
   status.clearPersistentEffects("floranbonusdmg")
   status.clearPersistentEffects("sergalbonusdmg")
+  status.clearPersistentEffects("orcanabonusdmg")
+  status.clearPersistentEffects("argonianbonusdmg")
   self.blockCount = 0
 end

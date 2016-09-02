@@ -84,6 +84,7 @@ function uninit()
   activeItem.setItemShieldPolys({})
   activeItem.setItemDamageSources({})
   status.clearPersistentEffects("humanprotection")
+  status.clearPersistentEffects("ningenprotection")
   status.clearPersistentEffects("vieraprotection")
   status.clearPersistentEffects("hylotlprotection")
   status.clearPersistentEffects("glitchprotection")
@@ -155,29 +156,35 @@ function raiseShield()
           -- *******************************************************
           -- *******************************************************
           -- *******************************************************
-       
+
           if self.ownerRace == "glitch" then
             self.blockCount = self.blockCount + 0.03
             status.setPersistentEffects("glitchprotection", {{stat = "powerMultiplier", amount = self.blockCount}})  --glitch get a power bonus when perfectly blocking
             animator.burstParticleEmitter("bonusBlock3")
             animator.playSound("bonusEffect")
           end
-		  if self.ownerRace == "hylotl" then
+	  if self.ownerRace == "hylotl" then
             status.modifyResourcePercentage("health", 0.05 + self.blockCount )  --hylotl get a heal when they perfectly block
             animator.burstParticleEmitter("bonusBlock")
             animator.playSound("bonusEffect")
           end
-		  if self.ownerRace == "viera" then
+	  if self.ownerRace == "viera" then
             status.modifyResourcePercentage("energy", 0.07 + self.blockCount )  --viera get energy when they perfectly block
             animator.burstParticleEmitter("bonusBlock2")
             animator.playSound("bonusEffect")
           end
-		  if self.ownerRace == "human" then
+	  if self.ownerRace == "human" then
             self.blockCount = self.blockCount + 2
             status.setPersistentEffects("humanprotection", {{stat = "protection", amount = self.blockCount}})  --human get a defense bonus when perfectly blocking
             animator.burstParticleEmitter("bonusBlock4")
             animator.playSound("bonusEffect")
           end
+          if self.ownerRace == "ningen" then
+            self.blockCount = self.blockCount + 2
+            status.setPersistentEffects("ningenprotection", {{stat = "protection", amount = self.blockCount}})  --human get a defense bonus when perfectly blocking
+            animator.burstParticleEmitter("bonusBlock4")
+            animator.playSound("bonusEffect")
+          end          
 		  if self.debug then sb.logInfo("(FR) shield.lua: Perfect block! blockCount now %s",self.blockCount) end
           -- *******************************************************
           -- *******************************************************

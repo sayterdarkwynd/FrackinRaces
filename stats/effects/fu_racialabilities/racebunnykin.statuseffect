@@ -1,0 +1,14 @@
+{
+  "name" : "racebunnykin",
+  "effectConfig" : {
+    "healthBonus" : -0.20,
+    "energyBonus" : 0.20
+  },
+  
+  "defaultDuration" : 3,
+
+  "scripts" : [
+    "racebunnykin.lua"
+  ]
+
+}
