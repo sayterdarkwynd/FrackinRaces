@@ -2,7 +2,6 @@ require("/scripts/vec2.lua")
 
 function init()
 inWater=0
-effect.addStatModifierGroup({{stat = "protection", amount = 3}})
 effect.addStatModifierGroup({{stat = "poisonStatusImmunity", amount = 1}})
 effect.addStatModifierGroup({{stat = "beestingImmunity", amount = 1}})
 
@@ -17,6 +16,7 @@ end
 
 function isDry()
 local mouthPosition = vec2.add(mcontroller.position(), status.statusProperty("mouthPosition"))
+status.setPersistentEffects("glitchpower", {{stat = "protection", amount = 3}})
 	if not world.liquidAt(mouthPosition) then
             status.clearPersistentEffects("glitchweaken")
             status.clearPersistentEffects("glitchweaken2")
@@ -39,6 +39,7 @@ end
 world.debugText(summationForDebug,{mouthPosition[1]-(string.len(summationForDebug)*0.25),mouthPosition[2]},"red")
 
 	if world.liquidAt(mouthPosition) and inWater == 0 then
+	    status.clearPersistentEffects("glitchpower")
             status.setPersistentEffects("glitchweaken", {{stat = "protection", amount = -5}})
             status.setPersistentEffects("glitchweaken2", {{stat = "maxHealth", amount = -10}})
             status.setPersistentEffects("glitchweaken3", {{stat = "maxEnergy", amount = -20}})
@@ -49,6 +50,7 @@ world.debugText(summationForDebug,{mouthPosition[1]-(string.len(summationForDebu
 end
 
 function uninit()
+              status.clearPersistentEffects("glitchpower")
               status.clearPersistentEffects("glitchweaken")
               status.clearPersistentEffects("glitchweaken2")
               status.clearPersistentEffects("glitchweaken3")

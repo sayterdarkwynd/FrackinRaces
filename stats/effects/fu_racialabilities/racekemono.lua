@@ -1,7 +1,7 @@
 function init()
   effect.addStatModifierGroup({{stat = "shieldRegen", amount = 2}})
   effect.addStatModifierGroup({{stat = "perfectBlockLimitRegen", amount = 1}})
-  effect.addStatModifierGroup({{stat = "foodDelta", amount = -0.062}})	
+  effect.addStatModifierGroup({{stat = "foodDelta", amount = 0.062}})	
   local bounds = mcontroller.boundBox()
   script.setUpdateDelta(10)
   
