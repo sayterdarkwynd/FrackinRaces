@@ -3,7 +3,7 @@
   "effectConfig" : {
     "energyAmount" : 20
   },
-  "defaultDuration" : 5,
+  "defaultDuration" : 300,
 
   "scripts" : [ "maxenergyboost.lua"]
 }
