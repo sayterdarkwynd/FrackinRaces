@@ -1,11 +1,17 @@
 {
   "name" : "swimboostorcana1",
   "effectConfig" : {
-
+    "boostAmount" : 3.5,
+    "riseAmount" : 2
   },
   "defaultDuration" : 5,
 
   "scripts" : [
-    "swimboost.lua"
-  ]
+    "swimboost1.lua"
+  ],
+
+  "animationConfig" : "swimboost1.animation",
+  
+  "label" : "Orcana",
+  "icon" : "/interface/statuses/wet.png"
 }
