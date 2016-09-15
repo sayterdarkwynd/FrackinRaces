@@ -202,7 +202,6 @@ end
 
 function MeleeCombo:uninit()
   self.weapon:setDamage()
-  status.clearPersistentEffects("floranbonusdmg")   -- Why is this here?
   status.clearPersistentEffects("glitchbonusdmg")
   status.clearPersistentEffects("humanbonusdmg")
   self.blockCount = 0
