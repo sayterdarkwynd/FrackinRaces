@@ -167,6 +167,11 @@ function update(dt)
 		status.addEphemeralEffect("racenightar",math.huge)
 		status.addEphemeralEffect("novakidglow",math.huge)
 	end	
+
+	--Slimeperson
+	if world.entitySpecies(entity.id()) == "slimeperson" then
+		status.addEphemeralEffect("raceslimeperson",math.huge)
+	end
 	
   local mouthPosition = vec2.add(mcontroller.position(), status.statusProperty("mouthPosition"))
   if status.statPositive("breathProtection") or world.breathable(mouthPosition) 

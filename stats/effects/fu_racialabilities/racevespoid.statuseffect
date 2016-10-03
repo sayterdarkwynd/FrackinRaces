@@ -1,7 +1,9 @@
 {
   "name" : "racevespoid",
   "effectConfig" : {
-
+  "healthBonus" : 0.15,
+  "energyBonus" : 0.20,
+  "foodBonus" : 30
   },
   
   "defaultDuration" : 3,

@@ -1,0 +1,17 @@
+{
+  "name" : "raceslimeperson",
+  "effectConfig" : {
+  "healthBonus" : 0.15,
+  "energyBonus" : -0.15,
+  "energyRegenBonus" : -0.25,
+  "gritBonus" : 0.75,
+  "shieldBoost" : -0.75
+  },
+  
+  "defaultDuration" : 3,
+
+  "scripts" : [
+    "raceslimeperson.lua"
+  ]
+
+}
