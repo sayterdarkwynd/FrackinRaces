@@ -1,7 +1,7 @@
 {
   "name" : "raceslimeperson",
   "effectConfig" : {
-  "healthBonus" : 0.15,
+  "healthBonus" : 0.30,
   "energyBonus" : -0.15,
   "energyRegenBonus" : -0.25,
   "gritBonus" : 0.75,

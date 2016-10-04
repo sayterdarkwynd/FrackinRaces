@@ -7,13 +7,12 @@ end
 function update(dt)
 
 	if world.entitySpecies(entity.id()) == "slimeperson" then
-	self.healingRate = 0.015
+	self.healingRate = 0.025
 	status.modifyResourcePercentage("health", self.healingRate * dt)
-        
 		  mcontroller.controlModifiers({
 		      groundMovementModifier = 0.9,
 		      speedModifier = 0.9,
-		      airJumpModifier = 0.9
+		      airJumpModifier = 1.4
 		    })
         else
 		  mcontroller.controlModifiers({
