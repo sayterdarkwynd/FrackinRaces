@@ -1,6 +1,6 @@
 function init()
   effect.addStatModifierGroup({{stat = "poisonStatusImmunity", amount = 1 }})
-  --effect.addStatModifierGroup({{stat = "slimeImmunity", amount = 1 }})
+  effect.addStatModifierGroup({{stat = "slimeImmunity", amount = 1 }})
   effect.addStatModifierGroup({{stat = "slimestickImmunity", amount = 1 }})
   effect.addStatModifierGroup({{stat = "webstickImmunity", amount = 1 }})
   effect.addStatModifierGroup({{stat = "fallDamageMultiplier", baseMultiplier = 0.15}})
