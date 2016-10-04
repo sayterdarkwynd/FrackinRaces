@@ -1,0 +1,10 @@
+[
+
+    { "op": "replace", 
+    "path" : "/charCreationTooltip/description" , 
+    "value" : "Sturdy reptilian people. ^orange;High Metabolism^reset;: ^red;Needs to eat more often^reset; than other races, but gains ^green;+6% speed^reset; and ^green;+11% jump^reset;. ^red;HP -12%^reset;. ^green;Energy +16%^reset; ^green;Immune: Poison, Wet^reset;. ^green;+1100 breath^reset;."
+    }
+
+]
+
+

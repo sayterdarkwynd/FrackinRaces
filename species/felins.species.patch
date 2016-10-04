@@ -1,0 +1,8 @@
+[
+
+    { "op": "replace", 
+    "path" : "/charCreationTooltip/description" , 
+    "value" : "Meow. Space-cats. Good times. ^green;+7% Speed^reset;, ^green;+15% Jump^reset;, ^green;+50% Fall Damage Reduction^reset;, ^green;Immune: Insanity^reset;, ^green;+8% Bonus Damage^reset;."
+    }
+
+]
