@@ -27,7 +27,11 @@ function init()
             if world.entitySpecies(activeItem.ownerEntityId()) == "nightar" then      
               self.whipCount = self.whipCount + 0.19
               status.setPersistentEffects("nightarbonusdmg", {{stat = "powerMultiplier", amount = self.whipCount}})            
-            end   
+            end  
+            if world.entitySpecies(activeItem.ownerEntityId()) == "slimeperson" then      
+              self.whipCount = self.whipCount + 0.25
+              status.setPersistentEffects("nightarbonusdmg", {{stat = "powerMultiplier", amount = self.whipCount}})            
+            end               
 --************************************** 
 
   self.weapon:init()

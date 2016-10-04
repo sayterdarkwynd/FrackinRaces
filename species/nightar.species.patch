@@ -2,7 +2,7 @@
 
     { "op": "replace", 
     "path" : "/charCreationTooltip/description" , 
-    "value" : "An offshoot of humanity that loves the dark. ^red;-10% HP^reset;, ^green;+25% Energy^reset;, ^green;-15% Knockback^reset;, ^green;Immune: Bio-Ooze^reset;, ^orange;Glow in the dark^reset;."
+    "value" : "An offshoot of humanity that loves the dark. ^red;-10% HP^reset;, ^green;+25% Energy^reset;, ^green;-15% Knockback^reset;, ^green;Immune: Bio-Ooze^reset;, ^green;+20% whip damage^reset; ^orange;Glow in the dark^reset;."
     }
 
 ]
