@@ -2,7 +2,7 @@
   "name" : "racemlp",
   "effectConfig" : {
     "healthBonus" : -0.99,
-    "energyBonus" : -0.99,
+    "energyBonus" : -0.99
   },
   
   "defaultDuration" : 3,
