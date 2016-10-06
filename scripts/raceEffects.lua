@@ -174,27 +174,27 @@ function update(dt)
 	end
 	
 	-- all ridiculously stupid MLP races get the same effect. enjoy having no HP or energy you weirdos :)
-	if world.entitySpecies(entity.id()) == "unicorn" then
-		status.addEphemeralEffect("racemlp",math.huge)
-	end	
-	if world.entitySpecies(entity.id()) == "alicorn" then
-		status.addEphemeralEffect("racemlp",math.huge)
-	end	
-	if world.entitySpecies(entity.id()) == "pegasus" then
-		status.addEphemeralEffect("racemlp",math.huge)
-	end	
-	if world.entitySpecies(entity.id()) == "changeling" then
-		status.addEphemeralEffect("racemlp",math.huge)
-	end		
-	if world.entitySpecies(entity.id()) == "batpony" then
-		status.addEphemeralEffect("racemlp",math.huge)
-	end	
-	if world.entitySpecies(entity.id()) == "horseoid" then
-		status.addEphemeralEffect("racemlp",math.huge)
-	end	
-	if world.entitySpecies(entity.id()) == "pony" then
-		status.addEphemeralEffect("racemlp",math.huge)
-	end	
+	--if world.entitySpecies(entity.id()) == "unicorn" then
+	--	status.addEphemeralEffect("racemlp",math.huge)
+	--end	
+	--if world.entitySpecies(entity.id()) == "alicorn" then
+	--	status.addEphemeralEffect("racemlp",math.huge)
+	--end	
+	--if world.entitySpecies(entity.id()) == "pegasus" then
+	--	status.addEphemeralEffect("racemlp",math.huge)
+	--end	
+	--if world.entitySpecies(entity.id()) == "changeling" then
+	--	status.addEphemeralEffect("racemlp",math.huge)
+	--end		
+	--if world.entitySpecies(entity.id()) == "batpony" then
+	--	status.addEphemeralEffect("racemlp",math.huge)
+	--end	
+	--if world.entitySpecies(entity.id()) == "horseoid" then
+	--	status.addEphemeralEffect("racemlp",math.huge)
+	--end	
+	--if world.entitySpecies(entity.id()) == "pony" then
+	--	status.addEphemeralEffect("racemlp",math.huge)
+	--end	
 	
   local mouthPosition = vec2.add(mcontroller.position(), status.statusProperty("mouthPosition"))
   if status.statPositive("breathProtection") or world.breathable(mouthPosition) 
