@@ -1,11 +1,23 @@
 {
   "name" : "swimboosthylotl1",
   "effectConfig" : {
-
+    "movementParameters" : {
+      "liquidImpedance" : 0.325,
+      "liquidForce" : 130,
+      "liquidJumpProfile" : {
+        "jumpSpeed" : 70.0
+      },
+      "speedModifier" : 1.8
+    }
   },
   "defaultDuration" : 5,
 
   "scripts" : [
     "swimboost.lua"
-  ]
+  ],
+
+  "animationConfig" : "swimboost1.animation",
+  
+  "label" : "Hylotl",
+  "icon" : "/interface/statuses/wet.png"
 }

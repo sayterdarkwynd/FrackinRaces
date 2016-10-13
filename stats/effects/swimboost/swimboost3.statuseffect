@@ -1,17 +1,21 @@
 {
   "name" : "swimboost3",
   "effectConfig" : {
-    "boostAmount" : 3,
-    "riseAmount" : 2
+    "movementParameters" : {
+      "liquidImpedance" : 0.15,
+      "liquidForce" : 160,
+      "liquidJumpProfile" : {
+        "jumpSpeed" : 75.0
+      },
+      "speedModifier" : 2.2
+    }
   },
-  "defaultDuration" : 300,
+  "defaultDuration" : 220,
 
   "scripts" : [
-    "swimboost1.lua"
+    "swimboost.lua"
   ],
-
   "animationConfig" : "swimboost1.animation",
-  
   "label" : "Swim +",
-  "icon" : "/interface/statuses/wet.png"
+  "icon" : "/interface/statuses/swimboost.png"
 }

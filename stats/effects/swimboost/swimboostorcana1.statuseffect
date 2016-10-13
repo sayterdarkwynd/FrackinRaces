@@ -1,13 +1,19 @@
 {
   "name" : "swimboostorcana1",
   "effectConfig" : {
-    "boostAmount" : 3.5,
-    "riseAmount" : 2
+    "movementParameters" : {
+      "liquidImpedance" : 0.1,
+      "liquidForce" : 170,
+      "liquidJumpProfile" : {
+        "jumpSpeed" : 90.0
+      },
+      "speedModifier" : 2.57
+    }
   },
-  "defaultDuration" : 5,
+  "defaultDuration" : 2,
 
   "scripts" : [
-    "swimboost1.lua"
+    "swimboost.lua"
   ],
 
   "animationConfig" : "swimboost1.animation",
@@ -15,3 +21,6 @@
   "label" : "Orcana",
   "icon" : "/interface/statuses/wet.png"
 }
+
+
+
