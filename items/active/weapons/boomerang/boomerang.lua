@@ -12,7 +12,7 @@ function init()
               self.blockCount = self.blockCount + 0.15
               status.setPersistentEffects("humanbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}})  
             end    
-            if world.entitySpecies(activeItem.ownerEntityId()) == "human" then      --20% more damage with floran
+            if world.entitySpecies(activeItem.ownerEntityId()) == "fenerox" then      --20% more damage with floran
               self.blockCount = self.blockCount + 0.20
               status.setPersistentEffects("humanbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}})  
             end   
