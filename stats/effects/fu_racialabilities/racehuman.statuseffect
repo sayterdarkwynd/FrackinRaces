@@ -1,8 +1,8 @@
 {
   "name" : "racehuman",
   "effectConfig" : {
-  "healthBonus" : 0.15,
-  "energyBonus" : 0.15,
+  "healthBonus" : 0,
+  "energyBonus" : 0,
   "gritBonus" : 0.15,
   "foodBonus" : 30
   },

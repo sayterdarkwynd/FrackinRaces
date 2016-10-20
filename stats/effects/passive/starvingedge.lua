@@ -13,17 +13,17 @@ end
   self.foodvalue = status.resource("food")
 
   if self.foodvalue < 0.3 then
-    status.setPersistentEffects("starvationpower", {{stat = "powerMultiplier", baseMultiplier = 1.30}})
-  elseif self.foodvalue < 10 then
     status.setPersistentEffects("starvationpower", {{stat = "powerMultiplier", baseMultiplier = 1.25}})
+  elseif self.foodvalue < 10 then
+    status.setPersistentEffects("starvationpower", {{stat = "powerMultiplier", baseMultiplier = 1.22}})
   elseif self.foodvalue < 20 then
-    status.setPersistentEffects("starvationpower", {{stat = "powerMultiplier", baseMultiplier = 1.20}}) 
+    status.setPersistentEffects("starvationpower", {{stat = "powerMultiplier", baseMultiplier = 1.175}}) 
   elseif self.foodvalue < 30 then
-    status.setPersistentEffects("starvationpower", {{stat = "powerMultiplier", baseMultiplier = 1.16}})  
+    status.setPersistentEffects("starvationpower", {{stat = "powerMultiplier", baseMultiplier = 1.13}})  
   elseif self.foodvalue < 40 then
-    status.setPersistentEffects("starvationpower", {{stat = "powerMultiplier", baseMultiplier = 1.12}})    
+    status.setPersistentEffects("starvationpower", {{stat = "powerMultiplier", baseMultiplier = 1.09}})    
   elseif self.foodvalue < 50 then
-    status.setPersistentEffects("starvationpower", {{stat = "powerMultiplier", baseMultiplier = 1.07}}) 
+    status.setPersistentEffects("starvationpower", {{stat = "powerMultiplier", baseMultiplier = 1.05}}) 
   elseif self.foodvalue < 60 then
     status.setPersistentEffects("starvationpower", {{stat = "powerMultiplier", baseMultiplier = 1.03}})        
   else
