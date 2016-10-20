@@ -2,6 +2,11 @@
 
     { "op": "replace", 
     "path" : "/charCreationTooltip/description" , 
-    "value" : "Adorable fuzzy space raptors with wings. ^red;-10% HP^reset;, ^green;+5% Energy^reset;, ^green;Immunities: Snow and Cold^reset;,^orange;Limited Flight^reset;: 0% fall damage, and can Glide."
+    "value" : "Adorable fuzzy space raptors with wings.
+    
+    ^red;-10% HP^reset;
+    ^green;+5% Energy^reset;
+    ^green;Immunities: Snow and Cold^reset;
+    ^orange;Limited Flight^reset;: 0% fall damage, and fall much slower thanks to their feathered wings."
     }
 ]

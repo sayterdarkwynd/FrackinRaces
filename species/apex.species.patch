@@ -2,7 +2,12 @@
 
     { "op": "replace", 
     "path" : "/charCreationTooltip/description" , 
-    "value" : "A race of highly intelligent primates. ^orange;High Metabolism^reset;: ^red;Needs to eat more often^reset; than other races, but gains ^green;+11% speed^reset; and ^green;+15% jump^reset;. ^green;Immune: Mud tiles, Jungle tiles^reset;. ^green;+22% HP bonus^reset;. ^yellow;Hammer/Axe +20% dmg^reset;."
+    "value" : "A race of highly intelligent primates. They've spent a long time modifying their genes to become better...stronger...more apey. They are intelligent, dangerous and technologically advanced.
+    
+    ^orange;High Metabolism^reset;: ^red;Needs to eat more often^reset; than other races, but gains ^green;+11% speed^reset; and ^green;+15% jump^reset; 
+    ^green;Immune: Mud tiles, Jungle tiles^reset; 
+    ^green;+22% HP bonus^reset; 
+    ^yellow;Hammer/Axe +20% dmg^reset;"
     }
 
 ]

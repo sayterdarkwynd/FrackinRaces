@@ -1,6 +1,16 @@
 [
     { "op": "replace", 
     "path" : "/charCreationTooltip/description" , 
-    "value" : "Humans are well rounded, and have excellent defensive ability. ^red;No penalties^reset;. ^green;+15% HP^reset;, ^green;+15% Energy^reset;, ^green;-15% Knockback^reset;, ^green;+30 Max Food^reset;^orange; +0.07 jump time^reset;, ^orange;Perfect Blocks^reset;^green; increase defense^reset;. ^yellow;+20% boomerang damage^reset;. ^yellow;1h combos increase damage^reset;."
+    "value" : "Humans are well rounded, and have excellent defensive ability. Ever met one of these things? They are a strange bunch. I advise avoiding them.
+    
+    ^red;No penalties^reset;
+    ^green;+15% HP^reset;
+    ^green;+15% Energy^reset;
+    ^green;-15% Knockback^reset;
+    ^green;+30 Max Food^reset;
+    ^orange; +0.07 jump time^reset;
+    ^orange;Perfect Blocks^reset;^green; increase defense^reset;
+    ^yellow;+20% boomerang damage^reset;
+    ^yellow;1h combos increase damage^reset;"
     }
 ]
