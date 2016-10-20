@@ -14,19 +14,19 @@ function update(dt)
 
 
   if self.healthRatio < 0.2 then
-    status.setPersistentEffects("healthpower", {{stat = "powerMultiplier", baseMultiplier = 1.25}})
-  elseif self.healthRatio < 0.3 then
     status.setPersistentEffects("healthpower", {{stat = "powerMultiplier", baseMultiplier = 1.20}})
+  elseif self.healthRatio < 0.3 then
+    status.setPersistentEffects("healthpower", {{stat = "powerMultiplier", baseMultiplier = 1.17}})
   elseif self.healthRatio < 0.4 then
-    status.setPersistentEffects("healthpower", {{stat = "powerMultiplier", baseMultiplier = 1.17}}) 
+    status.setPersistentEffects("healthpower", {{stat = "powerMultiplier", baseMultiplier = 1.15}}) 
   elseif self.healthRatio < 0.5 then
-    status.setPersistentEffects("healthpower", {{stat = "powerMultiplier", baseMultiplier = 1.14}})  
+    status.setPersistentEffects("healthpower", {{stat = "powerMultiplier", baseMultiplier = 1.12}})  
   elseif self.healthRatio < 0.6 then
-    status.setPersistentEffects("healthpower", {{stat = "powerMultiplier", baseMultiplier = 1.10}})    
+    status.setPersistentEffects("healthpower", {{stat = "powerMultiplier", baseMultiplier = 1.09}})    
   elseif self.healthRatio < 0.7 then
-    status.setPersistentEffects("healthpower", {{stat = "powerMultiplier", baseMultiplier = 1.07}}) 
+    status.setPersistentEffects("healthpower", {{stat = "powerMultiplier", baseMultiplier = 1.06}}) 
   elseif self.healthRatio < 0.75 then
-    status.setPersistentEffects("healthpower", {{stat = "powerMultiplier", baseMultiplier = 1.04}})        
+    status.setPersistentEffects("healthpower", {{stat = "powerMultiplier", baseMultiplier = 1.03}})        
   else
     status.clearPersistentEffects("healthpower") 
   end
