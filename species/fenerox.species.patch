@@ -8,6 +8,7 @@
     ^red;Needs to eat more often ^green; but gains 11% speed and 15% jump height^reset;
     ^green;+10% Energy^reset;
     ^green;+6% damage^reset;
-    ^green;Regenerate at night^reset;"
+    ^green;Regenerate at night^reset;
+    ^green;+20% boomerang damage^reset;"
     }
 ]

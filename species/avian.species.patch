@@ -2,7 +2,7 @@
 
     { "op": "replace", 
     "path" : "/charCreationTooltip/description" , 
-    "value" : "Avians are a race of colourful birdfolk whose tribal culture revolves around the worship of Kluex - the winged god of the Aether. They are natruals with staves and wands, and have a mean-streak when threatened that makes them quite dangerous. Their lithe bodies give them great jump and thanks to (nearly useless) wings they are less at risk from a fall.
+    "value" : "Avians are a race of colourful birdfolk whose tribal culture revolves around the worship of Kluex - the winged god of the Aether. They are natruals with staves and wands, and have a mean-streak when threatened that makes them quite dangerous. Their lithe bodies give them great jumping and thanks to (nearly useless) wings they are less at risk from a long fall.
     
     ^red;-15% HP^reset;
     ^red;Weakness: Ice^reset;
