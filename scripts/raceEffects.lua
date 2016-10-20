@@ -52,6 +52,7 @@ function update(dt)
 	if world.entitySpecies(entity.id()) == "glitch" then
 		status.addEphemeralEffect("raceglitch",math.huge)
 		status.addEphemeralEffect("attrition",math.huge)
+		status.addEphemeralEffect("weak_electric",math.huge)
 	end
 	
 	--Novakid

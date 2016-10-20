@@ -6,6 +6,7 @@
     
     ^red;-1s energy regen^reset;
     ^red;Weakened when submerged^reset;
+    ^red;Weakness: Electric^reset;
     ^green;+5% Energy^reset;
     ^green;Reduced hunger rate^reset;
     ^green;+14% HP^reset;
