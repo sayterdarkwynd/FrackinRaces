@@ -5,6 +5,7 @@
     "value" : "Don't be fooled by their peaceful appearance! Florans are known throughout the universe to be aggressive, carnivorous hunters. Thanks to photosynthesis they regenerate during the day, which coincides with their favorite time to hunt. They are adept with bows and spears, and grow more dangerous the hungrier they get.
     
     ^red;-10% HP^reset;
+    ^red;Weakness: Fire^reset;
     ^green;+15% Energy^reset;
     ^green;Regenerate during daylight hours^reset;
     ^green;Shock Immunity^reset;

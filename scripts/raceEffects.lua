@@ -35,6 +35,7 @@ function update(dt)
 	if world.entitySpecies(entity.id()) == "floran" then
 		status.addEphemeralEffect("racefloran",math.huge)
 		status.addEphemeralEffect("starvingedge",math.huge)
+		status.addEphemeralEffect("weak_fire",math.huge)
 		status.addEphemeralEffect("lightregenfloran",math.huge)
 		
 	end
@@ -43,6 +44,7 @@ function update(dt)
 	if world.entitySpecies(entity.id()) == "hylotl" then
 		status.addEphemeralEffect("racehylotl",math.huge)
 		status.addEphemeralEffect("swimboost2",math.huge)
+		status.addEphemeralEffect("weak_electric",math.huge)
 	end
 	
 	--Glitch
@@ -55,6 +57,7 @@ function update(dt)
 	if world.entitySpecies(entity.id()) == "novakid" then
 		status.addEphemeralEffect("racenovakid",math.huge)
 		status.addEphemeralEffect("foodregennovakid",math.huge)
+		status.addEphemeralEffect("weak_poison",math.huge)
 	end
 
 
@@ -171,30 +174,9 @@ function update(dt)
 	--Slimeperson
 	if world.entitySpecies(entity.id()) == "slimeperson" then
 		status.addEphemeralEffect("raceslimeperson",math.huge)
+		status.addEphemeralEffect("weak_fire",math.huge)
 	end
 	
-	-- all ridiculously stupid MLP races get the same effect. enjoy having no HP or energy you weirdos :)
-	--if world.entitySpecies(entity.id()) == "unicorn" then
-	--	status.addEphemeralEffect("racemlp",math.huge)
-	--end	
-	--if world.entitySpecies(entity.id()) == "alicorn" then
-	--	status.addEphemeralEffect("racemlp",math.huge)
-	--end	
-	--if world.entitySpecies(entity.id()) == "pegasus" then
-	--	status.addEphemeralEffect("racemlp",math.huge)
-	--end	
-	--if world.entitySpecies(entity.id()) == "changeling" then
-	--	status.addEphemeralEffect("racemlp",math.huge)
-	--end		
-	--if world.entitySpecies(entity.id()) == "batpony" then
-	--	status.addEphemeralEffect("racemlp",math.huge)
-	--end	
-	--if world.entitySpecies(entity.id()) == "horseoid" then
-	--	status.addEphemeralEffect("racemlp",math.huge)
-	--end	
-	--if world.entitySpecies(entity.id()) == "pony" then
-	--	status.addEphemeralEffect("racemlp",math.huge)
-	--end	
 	
   local mouthPosition = vec2.add(mcontroller.position(), status.statusProperty("mouthPosition"))
   if status.statPositive("breathProtection") or world.breathable(mouthPosition) 

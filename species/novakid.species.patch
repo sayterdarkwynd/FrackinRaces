@@ -5,6 +5,7 @@
     "value" : "The Novakids are a mysterious race of 'interstellar gas-bag people'. They have no charted settlements and no documented history. They have a love of gunslinging and humanities wild west. No one knows why. I'd guess John Wayne. 
     
     ^red;-10% HP^reset;
+    ^red;Weakness: Poison^reset;
     ^green;+30% Energy^reset;
     ^green;-25% Knockback^reset;
     ^green;+5% Speed^reset;
