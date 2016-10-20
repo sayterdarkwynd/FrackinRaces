@@ -23,6 +23,7 @@ function update(dt)
 	if world.entitySpecies(entity.id()) == "avian" then
 		status.addEphemeralEffect("raceavian",math.huge)
 		status.addEphemeralEffect("hpedge",math.huge)
+		status.addEphemeralEffect("weak_ice",math.huge)
 	end
 
 	--Apex
@@ -113,6 +114,7 @@ function update(dt)
 		status.addEphemeralEffect("racefenerox",math.huge)
 		status.addEphemeralEffect("darkregenfenerox",math.huge)
 		status.addEphemeralEffect("metabolism",math.huge)
+		status.addEphemeralEffect("weak_fire",math.huge)
 	end	
 	
 	--kineptic (mage cats)
