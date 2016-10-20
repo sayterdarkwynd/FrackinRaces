@@ -8,9 +8,9 @@
     ^green;+15% Energy^reset;
     ^green;-15% Knockback^reset;
     ^green;+30 Max Food^reset;
-    ^orange; +0.07 jump time^reset;
-    ^orange;Perfect Blocks^reset;^green; increase defense^reset;
-    ^yellow;+20% boomerang damage^reset;
-    ^yellow;1h combos increase damage^reset;"
+    ^green; +0.07 jump time^reset;
+    ^green;Perfect Blocks^reset;^green; increase defense^reset;
+    ^green;+20% boomerang damage^reset;
+    ^green;1h combos increase damage^reset;"
     }
 ]

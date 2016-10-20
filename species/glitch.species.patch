@@ -4,7 +4,6 @@
     "path" : "/charCreationTooltip/description" , 
     "value" : "Hardy, strong automatons. Their creation is lost to history. This suits them just fine, as they prefer a primitive state of being. They run on their own energy source, which means they need to ingest little food, and are quite hardy so long as they aren't soaking wet.
     
-    ^red;+10% Fall Dmg^reset;
     ^red;-1s energy regen^reset;
     ^green;+5% Energy^reset;
     ^green;-Hunger^reset;
@@ -12,8 +11,8 @@
     ^green;Protection +3^reset;
     ^green;+Heal in Oil^reset; 
     ^green;Immune: Poison, Bee Stings^reset;
-    ^orange;^green;Perfect Blocks^reset; with shields increase damage^reset;
-    ^yellow;1h combos increase defense^reset;
+    ^green;Perfect Blocks increase damage (stacks)^reset;
+    ^green;1h combos increase defense^reset;
     ^red;Weakened when submerged^reset;"
     }
 

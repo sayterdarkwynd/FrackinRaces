@@ -6,7 +6,7 @@
     
     ^red;-15% HP^reset;
     ^green;+10% Energy^reset;
-    ^orange;Jump Power^reset;
+    ^green;Jump Boost^reset;
     ^green;-65% Fall Damage + Slowed Fall^reset;
     ^orange;+5.5% Damage^reset;^green;(increases as your HP depletes)^reset;
     ^yellow;+20% Wand/Staff damage^reset;"

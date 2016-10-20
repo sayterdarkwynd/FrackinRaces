@@ -7,9 +7,9 @@
     ^red;-20% Energy^reset;
     ^green;+10% HP^reset;
     ^green;Immune: Wet^reset;
-    ^purple;Perfect Blocks^reset; restore HP
-    ^yellow;Hammer/Axe/Spear swings increase defense^reset;
-    ^orange;In Water^reset;: ^green;+4 Protection^reset;, ^green;+20 HP^reset;, ^green;+1400 Air^reset;, ^green;Swim Boost^reset;."
+    ^green;Perfect Blocks restore HP (stacks)^reset; 
+    ^green;Hammer/Axe/Spear swings increase defense^reset;
+    ^green;In Water: +4 Protection, +20 HP, +1400 Air, Swim Boost^reset;"
     }
 
 ]
