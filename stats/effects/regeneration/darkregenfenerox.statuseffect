@@ -9,5 +9,8 @@
     "darkregenfenerox.lua"
   ],
 
-  "animationConfig" : "darkregeneration.animation"
+  "animationConfig" : "darkregeneration.animation",
+  
+  "label" : "Night Heal",
+  "icon" : "/interface/statuses/heal.png"
 }

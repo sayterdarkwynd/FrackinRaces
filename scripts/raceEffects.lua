@@ -114,7 +114,8 @@ function update(dt)
 	if world.entitySpecies(entity.id()) == "fenerox" then
 		status.addEphemeralEffect("racefenerox",math.huge)
 		status.addEphemeralEffect("darkregenfenerox",math.huge)
-		status.addEphemeralEffect("metabolism",math.huge)
+		status.addEphemeralEffect("darkhunter",math.huge)
+		status.addEphemeralEffect("metabolismfenerox",math.huge)
 		status.addEphemeralEffect("weak_fire",math.huge)
 	end	
 	

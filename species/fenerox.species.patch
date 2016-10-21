@@ -1,13 +1,18 @@
 [
     { "op": "replace", 
+    "path" : "/charCreationTooltip/description" ,
+    "value" : ""
+    },
+    { "op": "replace", 
     "path" : "/charCreationTooltip/description" , 
     "value" : "Primitive, the Fenerox are new to the established galactic order. Their tech is generally rather low, and only a few have moved beyond their hunter-gatherer lifestyle. These nocturnal hunters are exceptional at their craft, and are agile and deadly.
     
     ^red;-5% HP^reset;
     ^red;Weakness: Poison^reset;
-    ^red;Needs to eat more often ^green; but gains 11% speed and 15% jump height^reset;
+    ^red;Needs to eat more often ^green; but gains 6% speed and 11% jump height^reset;
     ^green;+10% Energy^reset;
     ^green;+6% damage^reset;
+    ^green;Increased damage, speed and health at night^reset;
     ^green;Regenerate at night^reset;
     ^green;+20% boomerang damage^reset;"
     }
