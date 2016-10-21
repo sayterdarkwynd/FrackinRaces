@@ -9,7 +9,7 @@ baseValue = config.getParameter("healthBonus",0)*(status.resourceMax("health"))
 effect.addStatModifierGroup({{stat = "maxHealth", amount = baseValue }})
 baseValue2 = config.getParameter("energyBonus",0)*(status.resourceMax("energy"))
 effect.addStatModifierGroup({{stat = "maxEnergy", amount = baseValue2 }})
-  
+local bounds = mcontroller.boundBox()
 script.setUpdateDelta(5)
 
 end
@@ -22,6 +22,7 @@ status.setPersistentEffects("glitchpower", {{stat = "protection", amount = 3}})
             status.clearPersistentEffects("glitchweaken2")
             status.clearPersistentEffects("glitchweaken3")
 	    inWater = 0
+	    deactivateVisualEffects()
 	end
 end
 
@@ -39,19 +40,34 @@ end
 world.debugText(summationForDebug,{mouthPosition[1]-(string.len(summationForDebug)*0.25),mouthPosition[2]},"red")
 
 	if world.liquidAt(mouthPosition) and inWater == 0 then
+
 	    status.clearPersistentEffects("glitchpower")
-            status.setPersistentEffects("glitchweaken", {{stat = "protection", amount = -5}})
-            status.setPersistentEffects("glitchweaken2", {{stat = "maxHealth", amount = -10}})
-            status.setPersistentEffects("glitchweaken3", {{stat = "maxEnergy", amount = -20}})
+            status.setPersistentEffects("glitchweaken", 
+            {
+            {stat = "protection", amount = -5},
+            {stat = "maxHealth", amount = -10},
+            {stat = "maxEnergy", amount = -20},
+            {stat = "enumbrance", amount = 1},
+            {stat = "foodDelta", amount = -0.07}
+            })
 	    inWater = 1
+	    activateVisualEffects()
 	else
 	  isDry()
         end 
 end
 
+
+function deactivateVisualEffects()
+  animator.setParticleEmitterActive("sparks", false)	
+end
+
+function activateVisualEffects()
+  animator.setParticleEmitterOffsetRegion("sparks", mcontroller.boundBox())
+  animator.setParticleEmitterActive("sparks", true)	
+end
+
 function uninit()
               status.clearPersistentEffects("glitchpower")
               status.clearPersistentEffects("glitchweaken")
-              status.clearPersistentEffects("glitchweaken2")
-              status.clearPersistentEffects("glitchweaken3")
 end

@@ -86,7 +86,7 @@ function update(dt)
 	--Orcana
 	if world.entitySpecies(entity.id()) == "orcana" then
 		status.addEphemeralEffect("raceorcana",math.huge)
-		status.addEphemeralEffect("swimboost2",math.huge)
+		status.addEphemeralEffect("swimboost3",math.huge)
 	end
 
 	--Munari
