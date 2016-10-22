@@ -2,7 +2,9 @@ function init()
   effect.addStatModifierGroup({{stat = "grit", amount = 0.4 }})
   effect.addStatModifierGroup({{stat = "jungleslowImmunity", amount = 1 }})
   baseValue = config.getParameter("healthBonus",0)*(status.resourceMax("health"))
-  effect.addStatModifierGroup({{stat = "maxEnergy", amount = baseValue }})
+  effect.addStatModifierGroup({{stat = "maxHealth", amount = baseValue }})
+  baseValue2 = config.getParameter("energyBonus",0)*(status.resourceMax("energy"))
+  effect.addStatModifierGroup({{stat = "maxEnergy", amount = baseValue2 }})  
   
 
   local bounds = mcontroller.boundBox()

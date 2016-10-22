@@ -26,7 +26,15 @@ function init()
             if world.entitySpecies(activeItem.ownerEntityId()) == "avian" then      
               self.staffCount = self.staffCount + 0.20
               status.setPersistentEffects("avianbonusdmg", {{stat = "powerMultiplier", amount = self.staffCount}})  
-            end   
+            end 
+            if world.entitySpecies(activeItem.ownerEntityId()) == "nightar" then     
+              self.staffCount = self.staffCount + 0.12
+              status.setPersistentEffects("ningenbonusdmg", {{stat = "protection", amount = self.staffCount}})  
+            end              
+            if world.entitySpecies(activeItem.ownerEntityId()) == "kineptic" then     
+              self.staffCount = self.staffCount + 0.25
+              status.setPersistentEffects("ningenbonusdmg", {{stat = "powerMultiplier", amount = self.staffCount}})  
+            end             
             if world.entitySpecies(activeItem.ownerEntityId()) == "ningen" then     
               self.staffCount = self.staffCount + 0.15
               status.setPersistentEffects("ningenbonusdmg", {{stat = "powerMultiplier", amount = self.staffCount}})  

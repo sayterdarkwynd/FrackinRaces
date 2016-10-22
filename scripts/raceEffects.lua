@@ -71,6 +71,7 @@ function update(dt)
 	--avikan
 	if world.entitySpecies(entity.id()) == "avikan" then
 		status.addEphemeralEffect("raceavikan",math.huge)
+		status.addEphemeralEffect("weak_ice",math.huge)
 	end
 	
 	--peglaci
@@ -87,11 +88,13 @@ function update(dt)
 	if world.entitySpecies(entity.id()) == "orcana" then
 		status.addEphemeralEffect("raceorcana",math.huge)
 		status.addEphemeralEffect("swimboost3",math.huge)
+		status.addEphemeralEffect("weak_fire",math.huge)
 	end
 
 	--Munari
 	if world.entitySpecies(entity.id()) == "munari" then
 	        status.addEphemeralEffect("racemunari",math.huge)
+	        status.addEphemeralEffect("weak_electric",math.huge)
 		status.addEphemeralEffect("swimboost2",math.huge)
 	end
 

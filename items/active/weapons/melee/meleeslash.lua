@@ -63,7 +63,10 @@ function MeleeSlash:preslash()
    if self.blockCount == nil then 
      self.blockCount = 4
    end
-  
+            if world.entitySpecies(activeItem.ownerEntityId()) == "hylotl" then
+              self.blockCount = self.blockCount + 0.18
+              status.setPersistentEffects("hylotlbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}})  
+            end     
             if world.entitySpecies(activeItem.ownerEntityId()) == "hylotl" then
               self.blockCount = self.blockCount + 5
               status.setPersistentEffects("hylotlbonusdmg", {{stat = "protection", amount = self.blockCount}})  

@@ -1,6 +1,9 @@
 {
   "name" : "raceneko",
-  "effectConfig" : {},
+  "effectConfig" : {
+  "healthBonus" : -0.05,
+  "energyBonus" : 0.10  
+  },
   
   "defaultDuration" : 3,
 

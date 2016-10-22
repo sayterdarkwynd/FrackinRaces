@@ -3,7 +3,7 @@
   "effectConfig" : {
   "healthBonus" : 0.15,
   "energyBonus" : 0.20,
-  "foodBonus" : 30
+  "foodBonus" : 60
   },
   
   "defaultDuration" : 3,

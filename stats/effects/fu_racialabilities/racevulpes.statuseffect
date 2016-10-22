@@ -1,7 +1,8 @@
 {
   "name" : "racevulpes",
   "effectConfig" : {
-    "healthBonus" : 0.12
+    "healthBonus" : 0.12,
+    "energyBonus" : 0.12
   },
   
   "defaultDuration" : 3,

@@ -1,6 +1,9 @@
 {
   "name" : "raceavikan",
-  "effectConfig" : {},
+  "effectConfig" : {
+    "healthBonus" : 0.15,
+    "energyBonus" : 0.15  
+  },
   "defaultDuration" : 3,
 
   "scripts" : [

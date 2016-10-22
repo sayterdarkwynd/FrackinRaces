@@ -2,7 +2,7 @@
   "name" : "raceargonian",
   "effectConfig" : {
     "healthBonus" : -0.12,
-    "energyBonus" : 0.16
+    "energyBonus" : -0.05
   },
   
   "defaultDuration" : 3,

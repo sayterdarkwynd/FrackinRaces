@@ -4,11 +4,12 @@
     "path" : "/charCreationTooltip/description" , 
     "value" : "Sturdy reptilian people. They are resilient and agile, with the ability to thrive both on land and underwater. Amphibious life has increased their natural energy stores, but they are less hardy than land-based reptiles.
     
-    ^red;HP -12%^reset; 
-    ^red;Needs to eat more often^reset; ^green;than other races, but gains +6% speed and +11% jump^reset;    
-    ^green;Energy +16%^reset; 
+    ^red;HP -12%, Energy -5%^reset; 
+    ^green;Seldom needs to eat^reset;
+    ^green;+6% speed and +11% jump^reset;    
+    ^green;15% spear damage increase^reset; 
     ^green;Immune: Poison, Wet^reset;
-    ^green;+1100 oxygen^reset;"
+    ^green;+1100 oxygen, Swim Boost^reset;"
     }
 
 ]

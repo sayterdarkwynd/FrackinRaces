@@ -2,7 +2,8 @@
   "name" : "racekineptic",
   "effectConfig" : {
       "powerModifier" : 1.08,
-      "healthDown" : 3
+      "healthBonus" : 0.06,
+      "energyBonus" : 0.22
       },
   "defaultDuration" : 3,
 

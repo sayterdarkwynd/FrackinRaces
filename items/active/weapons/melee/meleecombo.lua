@@ -86,7 +86,10 @@ function MeleeCombo:windup()
             self.blockCount = self.blockCount + 0.03
             status.setPersistentEffects("humanbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}})  
           end   
-
+          if world.entitySpecies(activeItem.ownerEntityId()) == "avikan" then      
+            self.blockCount = self.blockCount + 0.05
+            status.setPersistentEffects("humanbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}})  
+          end  
           if world.entitySpecies(activeItem.ownerEntityId()) == "glitch" then      --each 1-handed combo swing slightly increases glitch defense
             self.blockCount = self.blockCount + 3
             status.setPersistentEffects("glitchbonusdmg", {{stat = "protection", amount = self.blockCount}})  

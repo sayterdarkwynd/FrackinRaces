@@ -23,7 +23,7 @@ end
 
 function isDry()
 local mouthPosition = vec2.add(mcontroller.position(), status.statusProperty("mouthPosition"))
-status.setPersistentEffects("glitchpower", {{stat = "protection", amount = 3}})
+status.setPersistentEffects("glitchpower", {{stat = "protection", amount = 4}})
 	if not world.liquidAt(mouthPosition) then
             status.clearPersistentEffects("glitchweaken")
             status.clearPersistentEffects("glitchweaken2")

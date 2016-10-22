@@ -4,7 +4,7 @@
   "healthBonus" : -0.10,
   "energyBonus" : 0.20,
   "gritBonus" : 0.15,
-  "foodBonus" : 30
+  "foodBonus" : 40
   },
   "defaultDuration" : 3,
 
