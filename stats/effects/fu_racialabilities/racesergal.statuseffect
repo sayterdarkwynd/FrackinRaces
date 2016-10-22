@@ -1,7 +1,8 @@
 {
   "name" : "racesergal",
   "effectConfig" : {
-
+      "healthBonus" : 0,
+      "energyBonus" : -0.20
   },
   
   "defaultDuration" : 3,

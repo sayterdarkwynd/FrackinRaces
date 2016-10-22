@@ -27,6 +27,7 @@ function init()
             if world.entitySpecies(activeItem.ownerEntityId()) == "floran" then      --20% more damage with floran
               self.blockCount = self.blockCount + 0.20
               status.setPersistentEffects("floranbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}})  
+              local bounds = mcontroller.boundBox()            
             end                 
             if world.entitySpecies(activeItem.ownerEntityId()) == "viera" then      --15% more damage with viera
               self.blockCount = self.blockCount + 0.15
@@ -41,7 +42,11 @@ end
 
 function update(dt, fireMode, shiftHeld)
   self.weapon:update(dt, fireMode, shiftHeld)
-
+            if world.entitySpecies(activeItem.ownerEntityId()) == "floran" then      -- florans move faster when wielding bows
+		mcontroller.controlModifiers({
+				 speedModifier = 1.25
+			})              
+            end 
 end
 
 function uninit()

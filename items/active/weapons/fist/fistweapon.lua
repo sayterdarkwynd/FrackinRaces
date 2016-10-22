@@ -67,7 +67,13 @@ function update(dt, fireMode, shiftHeld)
                status.setPersistentEffects("fistbonusdmg", {{stat = "grit", amount = self.blockCount}}) 
                status.setPersistentEffects("fistbonusdmg2", {{stat = "protection", amount = self.blockCount}})
              end      
-             
+
+             if world.entitySpecies(activeItem.ownerEntityId()) == "apex" then
+               self.blockCount = self.blockCount + 0.25
+               self.blockCount2 = self.blockCount2 + 0.5
+               status.setPersistentEffects("fistbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}}) 
+               status.setPersistentEffects("fistbonusdmg2", {{stat = "protection", amount = self.blockCount}})
+             end               
  	   -- ***** bonus attack when swinging two fist weapons
  	   if self.blockCount2 == nil then 
  	     self.blockCount2 = 0.003
