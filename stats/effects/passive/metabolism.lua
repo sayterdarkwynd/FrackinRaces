@@ -1,5 +1,5 @@
 function init()
-  effect.addStatModifierGroup({{stat = "foodDelta", amount = -0.062}})
+  effect.addStatModifierGroup({{stat = "foodDelta", baseMultiplier = 1.06146}})
   local bounds = mcontroller.boundBox()
   script.setUpdateDelta(10)
 end
