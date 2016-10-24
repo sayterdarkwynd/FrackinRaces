@@ -1,5 +1,4 @@
 function init()
-  effect.addStatModifierGroup({{stat = "invulnerable", amount = 1}})
   effect.addStatModifierGroup({
       {stat = "maxHealth", baseMultiplier = 1.05},
       {stat = "maxEnergy", baseMultiplier = 1.05}

@@ -188,7 +188,14 @@ function update(dt)
 		status.addEphemeralEffect("racelamia",math.huge)
 		status.addEphemeralEffect("weak_ice",math.huge)
 	end	
-	
+	--Gardevan
+	if world.entitySpecies(entity.id()) == "gardevan" then
+		status.addEphemeralEffect("racegardevan",math.huge)
+		status.addEphemeralEffect("weak_fire",math.huge)
+		status.addEphemeralEffect("lighthunter",math.huge)
+		status.addEphemeralEffect("lightregenfloran",math.huge)
+		
+	end	
   local mouthPosition = vec2.add(mcontroller.position(), status.statusProperty("mouthPosition"))
   if status.statPositive("breathProtection") or world.breathable(mouthPosition) 
 	or status.statPositive("waterbreathProtection") and world.liquidAt(mouthPosition) 

@@ -9,5 +9,8 @@
     "lightregen.lua"
   ],
 
-  "animationConfig" : "lightregen.animation"
+  "animationConfig" : "lightregen.animation",
+  
+  "label" : "Daylight Healing",
+  "icon" : "/interface/statuses/warm.png"
 }
