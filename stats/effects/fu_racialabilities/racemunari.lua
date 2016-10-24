@@ -29,7 +29,7 @@ function update(dt)
 local mouthPosition = vec2.add(mcontroller.position(), status.statusProperty("mouthPosition"))
 	if world.liquidAt(mouthPosition) and inWater == 0 then
 	    status.addEphemeralEffect("regenerationminor",math.huge)
-            status.setPersistentEffects("munariprotection2", {{stat = "foodDelta", amount = -0.015}})
+            status.setPersistentEffects("munariprotection2", {{stat = "foodDelta", baseMultiplier = 0.65}})
             status.setPersistentEffects("munariprotection4", {{stat = "fallDamageMultiplier", amount = 0.0}})
 	    inWater = 1
 	else
