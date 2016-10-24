@@ -8,15 +8,15 @@ function init()
  if self.blockCount == nil then 
    self.blockCount = 0 
  end
-          if world.entitySpecies(activeItem.ownerEntityId()) == "peglaci" then      --8% more damage with novakid
+          if world.entitySpecies(activeItem.ownerEntityId()) == "peglaci" then      
             self.blockCount = self.blockCount + 0.05
             status.setPersistentEffects("novakidbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}})  
           end  
-          if world.entitySpecies(activeItem.ownerEntityId()) == "vulpes" then      --8% more damage with novakid
+          if world.entitySpecies(activeItem.ownerEntityId()) == "vulpes" then     
             self.blockCount = self.blockCount + 0.08
             status.setPersistentEffects("novakidbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}})  
           end             
-          if world.entitySpecies(activeItem.ownerEntityId()) == "novakid" then      --8% more damage with novakid
+          if world.entitySpecies(activeItem.ownerEntityId()) == "novakid" then      
             self.blockCount = self.blockCount + 0.08
             status.setPersistentEffects("novakidbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}})  
           end   

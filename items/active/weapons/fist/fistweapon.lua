@@ -82,6 +82,7 @@ function update(dt, fireMode, shiftHeld)
              if world.entitySpecies(activeItem.ownerEntityId()) == "munari" then
                self.blockCount2 = self.blockCount2 + 0.0045
                status.setPersistentEffects("munaribonusdmg", {{stat = "powerMultiplier", amount = self.blockCount2}})
+               status.addPersistentEffect("boostermunari", "powerboostmunari", math.huge)
              end      	     
              
  	     -- ***** life leech when swinging two fist weapons
@@ -130,6 +131,7 @@ function uninit()
     status.clearPersistentEffects("munaribonusdmg")
     self.blockCount = 0
     self.blockCount2 = 0
+    status.clearPersistentEffects("boostermunari")
   end
   self.weapon:uninit()
   

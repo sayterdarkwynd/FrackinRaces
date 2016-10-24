@@ -32,7 +32,11 @@ function SpearStab:fire()
           end   
           if world.entitySpecies(activeItem.ownerEntityId()) == "sergal" then      
             self.blockCount = self.blockCount + 5
-            status.setPersistentEffects("spearbonus", {{stat = "protection", amount = self.blockCount}})  
+            status.setPersistentEffects("spearbonus", {
+              { stat = "protection", amount = self.blockCount },
+              { stat = "maxHealth", baseMultiplier = 1.15 }
+            }) 
+            local bounds = mcontroller.boundBox()    
           end  
           if world.entitySpecies(activeItem.ownerEntityId()) == "orcana" then      
             self.blockCount2 = self.blockCount2 + 0.25

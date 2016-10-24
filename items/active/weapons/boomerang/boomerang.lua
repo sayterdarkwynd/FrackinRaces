@@ -7,14 +7,20 @@ function init()
   -- FU/FR ADDONS
    if self.blockCount == nil then 
      self.blockCount = 0 
+     self.blockCount2 = 0
    end
             if world.entitySpecies(activeItem.ownerEntityId()) == "bunnykin" then      --20% more damage with bunnykin
               self.blockCount = self.blockCount + 0.15
               status.setPersistentEffects("humanbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}})  
             end    
-            if world.entitySpecies(activeItem.ownerEntityId()) == "fenerox" then      --20% more damage with floran
+            if world.entitySpecies(activeItem.ownerEntityId()) == "fenerox" then      --20% more damage , + defense
               self.blockCount = self.blockCount + 0.20
-              status.setPersistentEffects("humanbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}})  
+              self.blockCount2 = 1
+              status.setPersistentEffects("humanbonusdmg", {
+              {stat = "powerMultiplier", amount = self.blockCount},
+              {stat = "protection", amount = self.blockCount2 }
+              })  
+              local bounds = mcontroller.boundBox()
             end   
 --************************************** 
   self.projectileType = config.getParameter("projectileType")
@@ -51,6 +57,12 @@ function update(dt, fireMode, shiftHeld)
     end
   end
 
+            if world.entitySpecies(activeItem.ownerEntityId()) == "fenerox" then      -- fenerox move faster when wielding boomerangs
+		mcontroller.controlModifiers({
+				 speedModifier = 1.15
+			})              
+            end 
+            
   updateAim()
 end
 

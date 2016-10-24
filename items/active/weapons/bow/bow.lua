@@ -31,7 +31,10 @@ function init()
             end                 
             if world.entitySpecies(activeItem.ownerEntityId()) == "viera" then      --15% more damage with viera
               self.blockCount = self.blockCount + 0.15
-              status.setPersistentEffects("vierabonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}})  
+              status.setPersistentEffects("vierabonusdmg", {
+              {stat = "powerMultiplier", amount = self.blockCount},
+              {stat = "maxEnergy", baseMultiplier = 1 + self.blockCount }
+              })  
             end   
             if world.entitySpecies(activeItem.ownerEntityId()) == "sergal" then      --15% more damage with sergal
               self.blockCount = self.blockCount + 0.15

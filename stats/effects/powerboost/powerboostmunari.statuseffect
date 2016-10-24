@@ -1,0 +1,14 @@
+{
+  "name" : "powerboostmunari",
+  "effectConfig" : {
+    "alpha" : 1
+  },
+  "defaultDuration" : 5,
+
+  "scripts" : [
+    "powerboostmunari.lua"
+  ],
+
+  "label" : "Fishman Rage",
+  "icon" : "/interface/statuses/rage.png"
+}

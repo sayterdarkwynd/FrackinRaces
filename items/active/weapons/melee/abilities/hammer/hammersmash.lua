@@ -11,6 +11,7 @@ function HammerSmash:init()
 
   MeleeSlash.init(self)
   self:setupInterpolation()
+  local bounds = mcontroller.boundBox()
 end
 
 function HammerSmash:windup(windupProgress)
@@ -20,7 +21,6 @@ function HammerSmash:windup(windupProgress)
  if self.blockCount == nil then 
    self.blockCount = 0 
  end
-
           if world.entitySpecies(activeItem.ownerEntityId()) == "apex" then      --20% more damage with apex
             self.blockCount = self.blockCount + 0.20
             status.setPersistentEffects("apexbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}})  
@@ -30,11 +30,17 @@ function HammerSmash:windup(windupProgress)
   local bounceProgress = 0
   while self.fireMode == "primary" and (self.allowHold ~= false or windupProgress < 1) do
     if windupProgress < 1 then
+    
       windupProgress = math.min(1, windupProgress + (self.dt / self.stances.windup.duration))
       self.weapon.relativeWeaponRotation, self.weapon.relativeArmRotation = self:windupAngle(windupProgress)
     else
       bounceProgress = math.min(1, bounceProgress + (self.dt / self.stances.windup.bounceTime))
       self.weapon.relativeWeaponRotation, self.weapon.relativeArmRotation = self:bounceWeaponAngle(bounceProgress)
+--**************************************        
+            if world.entitySpecies(activeItem.ownerEntityId()) == "apex" then      -- apex move faster when wielding hammers
+		mcontroller.controlModifiers({ speedModifier = 1.35 })              
+            end   
+--**************************************              
     end
     coroutine.yield()
   end
@@ -43,7 +49,7 @@ function HammerSmash:windup(windupProgress)
     if self.stances.preslash then
       self:setState(self.preslash)
     else
-      self:setState(self.fire)
+      self:setState(self.fire)     
     end
   else
     self:setState(self.winddown, windupProgress)
@@ -52,7 +58,6 @@ end
 
 function HammerSmash:winddown(windupProgress)
   self.weapon:setStance(self.stances.windup)
-
   while windupProgress > 0 do
     if self.fireMode == "primary" then
       self:setState(self.windup, windupProgress)

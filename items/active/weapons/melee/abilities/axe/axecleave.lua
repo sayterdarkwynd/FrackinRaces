@@ -18,11 +18,15 @@ function AxeCleave:windup(windupProgress)
 -- FU/FR ADDONS
  if self.blockCount == nil then 
    self.blockCount = 0
+   self.blockCount2 = 2
  end
 
           if world.entitySpecies(activeItem.ownerEntityId()) == "apex" then      --20% more damage with apex
             self.blockCount = self.blockCount + 0.20
-            status.setPersistentEffects("apexbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}})  
+            status.setPersistentEffects("apexbonusdmg", {
+            {stat = "powerMultiplier", baseMultiplier = 1 + self.blockCount},
+            {stat = "protection", amount = self.blockCount2 }
+            })  
           end   
 --************************************** 
   self.weapon:setStance(self.stances.windup)
