@@ -64,11 +64,11 @@ function update(dt)
 	  {stat = "powerMultiplier", baseMultiplier = config.getParameter("powerBonus",0) + 1.00}
 	  })		
 	  mcontroller.controlModifiers({ speedModifier = 1.06 })
-	else 
-	    status.clearPersistentEffects("feneroxEffects")
+	else
+	  status.clearPersistentEffects("feneroxEffects")
 	end  
 end
 
 function uninit()
-  
+  status.clearPersistentEffects("feneroxEffects")
 end
