@@ -181,7 +181,7 @@ function update(dt)
 	--Slimeperson
 	if world.entitySpecies(entity.id()) == "slimeperson" then
 		status.addEphemeralEffect("raceslimeperson",math.huge)
-		status.addEphemeralEffect("weak_fire",math.huge)
+		
 	end
 	--Lamia
 	if world.entitySpecies(entity.id()) == "lamia" then
