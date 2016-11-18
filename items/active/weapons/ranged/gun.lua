@@ -44,6 +44,61 @@ function update(dt, fireMode, shiftHeld)
   self.weapon:update(dt, fireMode, shiftHeld)
 end
 
+
+
+
+
+-- ****************************************************************
+-- FrackinRaces weapon specialization
+-- ****************************************************************
+
+function isPistol(name)
+	if root.itemHasTag(name, "pistol") then
+		return true
+	end
+	return false
+end
+
+function isAssaultRifle(name)
+	if root.itemHasTag(name, "assaultrifle") then
+		return true
+	end
+	return false
+end
+
+function isMachinePistol(name)
+	if root.itemHasTag(name, "machinepistol") then
+		return true
+	end
+	return false
+end
+
+function isRocketLauncher(name)
+	if root.itemHasTag(name, "rocketlauncher") then
+		return true
+	end
+	return false
+end
+
+function isShotgun(name)
+	if root.itemHasTag(name, "shotgun") then
+		return true
+	end
+	return false
+end
+
+function isSniperRifle(name)
+	if root.itemHasTag(name, "sniperrifle") then
+		return true
+	end
+	return false
+end
+
+-- ***********************************************************************************************
+-- END specialization
+-- ***********************************************************************************************
+
+
 function uninit()
   status.clearPersistentEffects("novakidbonusdmg")
   self.blockCount = 0

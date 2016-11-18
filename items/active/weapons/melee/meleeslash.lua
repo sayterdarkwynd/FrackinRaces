@@ -85,11 +85,24 @@ function MeleeSlash:fire()
      self.blockCount = 4 
    end
    
-   
-          if world.entitySpecies(activeItem.ownerEntityId()) == "wasphive" then      --each swing is 15% more damage
-              self.blockCount = self.blockCount + 0.15
-              status.setPersistentEffects("hylotlbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}})  
+          if world.entitySpecies(activeItem.ownerEntityId()) == "wasphive" then      --daggers do 25% more damage
+		local heldItem = world.entityHandItem(activeItem.ownerEntityId(), "primary")
+		if heldItem ~= nil then
+			if isDagger(heldItem) then
+                          self.blockCount = self.blockCount + 0.25
+                          status.setPersistentEffects("hylotlbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}})  	
+			end
+		end
+		heldItem = world.entityHandItem(activeItem.ownerEntityId(), "alt")
+		if heldItem ~= nil then
+			if isDagger(heldItem) then
+                          self.blockCount = self.blockCount + 0.25
+                          status.setPersistentEffects("hylotlbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}})  	
+			end
+		end
           end  
+          
+          
             if world.entitySpecies(activeItem.ownerEntityId()) == "hylotl" then  --hylotl get protection when swinging their weapon
               self.blockCount = self.blockCount + 3
               status.setPersistentEffects("hylotlbonusdmg", {{stat = "protection", amount = self.blockCount}})  
@@ -113,8 +126,112 @@ function MeleeSlash:cooldownTime()
 
 end
 
+
+
+-- ****************************************************************
+-- FrackinRaces weapon specialization
+-- ****************************************************************
+--function isHoldingDagger() --check both hands for weapons
+--	local heldItem = world.entityHandItem(entity.id(), "primary")
+--	if heldItem ~= nil then
+--		if isDagger(heldItem) then
+--			self.currentWeaponWeight = getWeaponDrain(heldItem)or 0.5
+--			return true
+--		end
+--	end
+--	heldItem = world.entityHandItem(entity.id(), "alt")
+--	if heldItem ~= nil then
+--		if isDagger(heldItem) then
+--			self.currentWeaponWeight = getWeaponDrain(heldItem) or 0.5
+--			return true
+--		end
+--	end
+--	return false
+--end
+function isDagger(name)
+	if root.itemHasTag(name, "dagger") then
+		return true
+	end
+	return false
+end
+
+
+function isSpear(name)
+	if root.itemHasTag(name, "spear") then
+		return true
+	end
+	return false
+end
+
+function isShortsword(name)
+	if root.itemHasTag(name, "shortsword") then
+		return true
+	end
+	return false
+end
+
+
+function isAxe(name)
+	if root.itemHasTag(name, "axe") then
+		return true
+	end
+	return false
+end
+
+
+function isHammer(name)
+	if root.itemHasTag(name, "hammer") then
+		return true
+	end
+	return false
+end
+
+function isBroadsword(name)
+	if root.itemHasTag(name, "broadsword") then
+		return true
+	end
+	return false
+end
+
+function isFist(name)
+	if root.itemHasTag(name, "fist") then
+		return true
+	end
+	return false
+end
+
+function isWhip(name)
+	if root.itemHasTag(name, "whip") then
+		return true
+	end
+	return false
+end
+
+function isChakram(name)
+	if root.itemHasTag(name, "chakram") then
+		return true
+	end
+	return false
+end
+
+function isBoomerang(name)
+	if root.itemHasTag(name, "chakram") then
+		return true
+	end
+	return false
+end
+
+-- ***********************************************************************************************
+-- END specialization
+-- ***********************************************************************************************
+
+
+
 function MeleeSlash:uninit()
   self.weapon:setDamage()
   status.clearPersistentEffects("hylotlbonusdmg")
   self.blockCount = 0
 end
+
+
+
