@@ -70,7 +70,7 @@ function MeleeSlash:preslash()
             if world.entitySpecies(activeItem.ownerEntityId()) == "hylotl" then
               self.blockCount = self.blockCount + 3
               status.setPersistentEffects("hylotlbonusdmg", {{stat = "protection", amount = self.blockCount}})  
-            end   
+            end                
 --************************************** 
   self:setState(self.fire)
 end
@@ -84,7 +84,12 @@ function MeleeSlash:fire()
    if self.blockCount == nil then 
      self.blockCount = 4 
    end
-  
+   
+   
+          if world.entitySpecies(activeItem.ownerEntityId()) == "wasphive" then      --each swing is 15% more damage
+              self.blockCount = self.blockCount + 0.15
+              status.setPersistentEffects("hylotlbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}})  
+          end  
             if world.entitySpecies(activeItem.ownerEntityId()) == "hylotl" then  --hylotl get protection when swinging their weapon
               self.blockCount = self.blockCount + 3
               status.setPersistentEffects("hylotlbonusdmg", {{stat = "protection", amount = self.blockCount}})  

@@ -195,7 +195,13 @@ function update(dt)
 		status.addEphemeralEffect("lighthunter",math.huge)
 		status.addEphemeralEffect("lightregenfloran",math.huge)
 		
-	end	
+	end
+	--Lamia
+	if world.entitySpecies(entity.id()) == "wasphive" then
+		status.addEphemeralEffect("racewasphive",math.huge)
+		status.addEphemeralEffect("weak_fire",math.huge)
+	end
+	
   local mouthPosition = vec2.add(mcontroller.position(), status.statusProperty("mouthPosition"))
   if status.statPositive("breathProtection") or world.breathable(mouthPosition) 
 	or status.statPositive("waterbreathProtection") and world.liquidAt(mouthPosition) 

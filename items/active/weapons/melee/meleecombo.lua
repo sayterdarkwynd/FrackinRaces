@@ -18,7 +18,7 @@ function MeleeCombo:init()
 
   self.weapon.onLeaveAbility = function()
     self.weapon:setStance(self.stances.idle)
-  end
+  end   
 end
 
 -- Ticks on every update regardless if this is the active ability
@@ -94,6 +94,7 @@ function MeleeCombo:windup()
             self.blockCount = self.blockCount + 3
             status.setPersistentEffects("glitchbonusdmg", {{stat = "protection", amount = self.blockCount}})  
           end   
+
 --**************************************   
 
   end
@@ -156,7 +157,7 @@ function MeleeCombo:fire()
   else
     self.cooldownTimer = self.cooldowns[self.comboStep]
     self.comboStep = 1
-  end
+  end         
 end
 
 function MeleeCombo:shouldActivate()
