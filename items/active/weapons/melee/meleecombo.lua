@@ -78,14 +78,37 @@ function MeleeCombo:windup()
 
 --*************************************    
 -- FU/FR ADDONS
+ --*************************************    
+-- FU/FR ADDONS 
  if self.blockCount == nil then 
-   self.blockCount = 0.04 
+   self.blockCount = 0 
  end
 
-          if world.entitySpecies(activeItem.ownerEntityId()) == "human" then      --each 1-handed combo swing slightly increases human damage output
-            self.blockCount = self.blockCount + 0.03
-            status.setPersistentEffects("humanbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}})  
-          end   
+            if world.entitySpecies(activeItem.ownerEntityId()) == "hylotl" then   -- Hylotl get bonus defense and +12% damage with each combo strike
+              --main hand
+		local heldItem = world.entityHandItem(activeItem.ownerEntityId(), "primary")
+		if heldItem ~= nil then
+			if isBroadsword(heldItem) then
+                          self.blockCount = self.blockCount + 0.12
+                          status.setPersistentEffects("hylotlbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount},{stat = "protection", amount = 1}})  	
+			end
+		end  
+		if heldItem ~= nil then
+			if isShortsword(heldItem) then
+                          self.blockCount = self.blockCount + 0.12
+                          status.setPersistentEffects("hylotlbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount},{stat = "protection", amount = 1}})  	
+			end
+		end
+	    -- alt hand
+		heldItem = world.entityHandItem(activeItem.ownerEntityId(), "alt")
+		if heldItem ~= nil then
+			if isShortsword(heldItem) then
+                          self.blockCount = self.blockCount + 0.12
+                          status.setPersistentEffects("hylotlbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount},{stat = "protection", amount = 1}})  	
+			end
+		end		
+            end  
+
           if world.entitySpecies(activeItem.ownerEntityId()) == "avikan" then      
             self.blockCount = self.blockCount + 0.05
             status.setPersistentEffects("humanbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}})  
@@ -157,7 +180,9 @@ function MeleeCombo:fire()
   else
     self.cooldownTimer = self.cooldowns[self.comboStep]
     self.comboStep = 1
-  end         
+  end  
+
+            
 end
 
 function MeleeCombo:shouldActivate()
@@ -202,11 +227,94 @@ function MeleeCombo:computeDamageAndCooldowns()
     local speedFactor = 1.0 * (self.comboSpeedFactor ^ i)
     table.insert(self.cooldowns, (targetTime - totalAttackTime) * speedFactor)
   end
+  
+
 end
+
+
+-- ****************************************************************
+-- FrackinRaces weapon specialization
+-- ****************************************************************
+function isDagger(name)
+	if root.itemHasTag(name, "dagger") then
+		return true
+	end
+	return false
+end
+
+function isSpear(name)
+	if root.itemHasTag(name, "spear") then
+		return true
+	end
+	return false
+end
+
+function isShortsword(name)
+	if root.itemHasTag(name, "shortsword") then
+		return true
+	end
+	return false
+end
+
+function isAxe(name)
+	if root.itemHasTag(name, "axe") then
+		return true
+	end
+	return false
+end
+
+function isHammer(name)
+	if root.itemHasTag(name, "hammer") then
+		return true
+	end
+	return false
+end
+
+function isBroadsword(name)
+	if root.itemHasTag(name, "broadsword") then
+		return true
+	end
+	return false
+end
+
+function isFist(name)
+	if root.itemHasTag(name, "fist") then
+		return true
+	end
+	return false
+end
+
+function isWhip(name)
+	if root.itemHasTag(name, "whip") then
+		return true
+	end
+	return false
+end
+
+function isChakram(name)
+	if root.itemHasTag(name, "chakram") then
+		return true
+	end
+	return false
+end
+
+function isBoomerang(name)
+	if root.itemHasTag(name, "chakram") then
+		return true
+	end
+	return false
+end
+
+-- ***********************************************************************************************
+-- END specialization
+-- ***********************************************************************************************
+
+
 
 function MeleeCombo:uninit()
   self.weapon:setDamage()
   status.clearPersistentEffects("glitchbonusdmg")
   status.clearPersistentEffects("humanbonusdmg")
+  status.clearPersistentEffects("hylotlbonusdmg")
   self.blockCount = 0
 end

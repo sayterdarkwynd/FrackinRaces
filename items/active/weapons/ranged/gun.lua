@@ -15,12 +15,77 @@ function init()
           if world.entitySpecies(activeItem.ownerEntityId()) == "vulpes" then     
             self.blockCount = self.blockCount + 0.08
             status.setPersistentEffects("novakidbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}})  
-          end             
+          end        
+          
+          -- Novakid get bonus with Pistols and Sniper Rifles
           if world.entitySpecies(activeItem.ownerEntityId()) == "novakid" then      
-            self.blockCount = self.blockCount + 0.08
-            status.setPersistentEffects("novakidbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}})  
+		local heldItem = world.entityHandItem(activeItem.ownerEntityId(), "primary")
+		if heldItem ~= nil then
+			if isPistol(heldItem) then
+                          self.blockCount = self.blockCount + 0.125
+                          status.setPersistentEffects("novakidbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}})  	
+			end
+			if isSniperRifle(heldItem) then
+                          self.blockCount = self.blockCount + 0.25
+                          status.setPersistentEffects("novakidbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}})  	
+			end			
+		end
+		heldItem = world.entityHandItem(activeItem.ownerEntityId(), "alt")
+		if heldItem ~= nil then
+			if isPistol(heldItem) then
+                          self.blockCount = self.blockCount + 0.125
+                          status.setPersistentEffects("novakidbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}})  	
+			end
+			if isSniperRifle(heldItem) then
+                          self.blockCount = self.blockCount + 0.25
+                          status.setPersistentEffects("novakidbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}})  	
+			end			
+		end          
           end   
+          
+          -- Apex get a bonus with Grenade Launchers
+          if world.entitySpecies(activeItem.ownerEntityId()) == "apex" then      
+		local heldItem = world.entityHandItem(activeItem.ownerEntityId(), "primary")
+		if heldItem ~= nil then
+			if isGrenadeLauncher(heldItem) then
+                          self.blockCount = self.blockCount + 0.19
+                          status.setPersistentEffects("novakidbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}})  	
+			end			
+		end
+		heldItem = world.entityHandItem(activeItem.ownerEntityId(), "alt")
+		if heldItem ~= nil then
+			if isGrenadeLauncher(heldItem) then
+                          self.blockCount = self.blockCount + 0.19
+                          status.setPersistentEffects("novakidbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}})  	
+			end		
+		end          
+          end   
+          
+          -- Humans rock the Assault Rifle
+          if world.entitySpecies(activeItem.ownerEntityId()) == "human" then      
+		local heldItem = world.entityHandItem(activeItem.ownerEntityId(), "primary")
+		if heldItem ~= nil then
+			if isAssaultRifle(heldItem) or isMachinePistol(heldItem) then
+                          self.blockCount = self.blockCount + 0.15
+                          status.setPersistentEffects("novakidbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}})  	
+			end			
+		end
+		heldItem = world.entityHandItem(activeItem.ownerEntityId(), "alt")
+		if heldItem ~= nil then
+			if isAssaultRifle(heldItem) or isMachinePistol(heldItem) then
+                          self.blockCount = self.blockCount + 0.15
+                          status.setPersistentEffects("novakidbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}})  	
+			end		
+		end 
+		
+          end   
+
+          
 --************************************** 
+-- END FR BONUSES
+-- *************************************
+
+
   activeItem.setCursor("/cursors/reticle0.cursor")
   animator.setGlobalTag("paletteSwaps", config.getParameter("paletteSwaps", ""))
 
@@ -75,6 +140,13 @@ end
 
 function isRocketLauncher(name)
 	if root.itemHasTag(name, "rocketlauncher") then
+		return true
+	end
+	return false
+end
+
+function isGrenadeLauncher(name)
+	if root.itemHasTag(name, "grenadelauncher") then
 		return true
 	end
 	return false

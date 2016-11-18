@@ -26,10 +26,7 @@ function SpearStab:fire()
  if self.blockCount3 == nil then 
    self.blockCount3 = 0
  end 
-          if world.entitySpecies(activeItem.ownerEntityId()) == "floran" then      
-            self.blockCount = self.blockCount + 2
-            status.setPersistentEffects("spearbonus", {{stat = "protection", amount = self.blockCount}})  
-          end   
+
           if world.entitySpecies(activeItem.ownerEntityId()) == "sergal" then      
             self.blockCount = self.blockCount + 5
             status.setPersistentEffects("spearbonus", {
