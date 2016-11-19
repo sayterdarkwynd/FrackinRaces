@@ -179,7 +179,7 @@ function init()
 		end
             end  
 
-            if world.entitySpecies(activeItem.ownerEntityId()) == "fenerox" then  --hylotl get protection when swinging their weapon
+            if world.entitySpecies(activeItem.ownerEntityId()) == "fenerox" then  --fenerox get dmg and protection increase with spears
                 local heldItem = world.entityHandItem(activeItem.ownerEntityId(), "primary")
 		if heldItem ~= nil then
 			if isSpear(heldItem) then
@@ -283,6 +283,20 @@ end
 
 function isBoomerang(name)
 	if root.itemHasTag(name, "boomerang") then
+		return true
+	end
+	return false
+end
+
+function isElder(name)
+	if root.itemHasTag(name, "elder") then
+		return true
+	end
+	return false
+end
+
+function isMystical(name)
+	if root.itemHasTag(name, "mystical") then
 		return true
 	end
 	return false
