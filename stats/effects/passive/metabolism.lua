@@ -5,10 +5,17 @@ function init()
 end
 
 function update(dt)
+  if world.entitySpecies(entity.id()) == "apex" then
 		mcontroller.controlModifiers({
-				speedModifier = 1.11,
+				speedModifier = 1.08,
 				airJumpModifier = 1.15
 			})
+  else
+  		mcontroller.controlModifiers({
+  				speedModifier = 1.11,
+  				airJumpModifier = 1.15
+			})
+  end
 end
 
 function uninit()

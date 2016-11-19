@@ -1,0 +1,17 @@
+[
+    { "op": "replace", 
+    "path" : "/charCreationTooltip/description" , 
+    "value" : ""
+    },
+    { "op": "replace", 
+    "path" : "/charCreationTooltip/description" , 
+    "value" : "These humanoid, sapient wasps are each their own hive, and are handy in the air.
+    
+    ^red;-16.5% Energy, Weakness: Fire, reduced liquid mobility^reset;
+    ^green;From race mod: Flight, Multijump, Wallslide^reset;
+    ^green;+15% Health^reset;
+    ^green;Reduced falling speed, increased air speed^reset;
+    ^green;+8% Speed, Increased air speed^reset;
+    ^green;+15% damage with daggers^reset;"
+    }
+]

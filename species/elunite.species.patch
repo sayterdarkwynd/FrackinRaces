@@ -1,0 +1,16 @@
+[
+    { "op": "replace", 
+    "path" : "/charCreationTooltip/description" , 
+    "value" : ""
+    },
+    { "op": "replace", 
+    "path" : "/charCreationTooltip/description" , 
+    "value" : "Super-awesome digital beings with some amazingly cool niche gear.
+    
+    ^red;-15% HP, Weakness: Shadow, reduced mobility in liquids^reset;
+    ^green;+15% Energy, +5% Jump, +4% Speed^reset;
+    ^green;Immunities: Electrified^reset;
+    ^green;+12.5% Damage with Chakrams/Boomerangs (per hand)^reset;
+    ^green;+2 Protection, +Energy Regen when wielding swords and knives"
+    }
+]

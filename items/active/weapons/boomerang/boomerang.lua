@@ -9,19 +9,110 @@ function init()
      self.blockCount = 0 
      self.blockCount2 = 0
    end
-            if world.entitySpecies(activeItem.ownerEntityId()) == "bunnykin" then      --20% more damage with bunnykin
-              self.blockCount = self.blockCount + 0.15
-              status.setPersistentEffects("humanbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}})  
-            end    
-            if world.entitySpecies(activeItem.ownerEntityId()) == "fenerox" then      --20% more damage , + defense
-              self.blockCount = self.blockCount + 0.20
-              self.blockCount2 = 1
-              status.setPersistentEffects("humanbonusdmg", {
-              {stat = "powerMultiplier", amount = self.blockCount},
-              {stat = "protection", amount = self.blockCount2 }
-              })  
-              local bounds = mcontroller.boundBox()
-            end   
+
+            if world.entitySpecies(activeItem.ownerEntityId()) == "fenerox" then   -- fenerox get bonus defense and +10% damage with each boomerang
+              --main hand
+		local heldItem = world.entityHandItem(activeItem.ownerEntityId(), "primary")
+		if heldItem ~= nil then
+			if isBoomerang(heldItem) then
+                          self.blockCount = self.blockCount + 0.10
+                          self.blockCount2 = 1
+                          status.setPersistentEffects("bonusdmg", {
+                            {stat = "powerMultiplier", amount = self.blockCount},
+                            {stat = "protection", amount = self.blockCount2 }
+                            })  	
+                            local bounds = mcontroller.boundBox()
+			end
+		end  
+
+	    -- alt hand
+		heldItem = world.entityHandItem(activeItem.ownerEntityId(), "alt")
+		if heldItem ~= nil then
+			if isBoomerang(heldItem) then
+                          self.blockCount = self.blockCount + 0.10
+                          self.blockCount2 = 1
+                          status.setPersistentEffects("bonusdmg", {
+                            {stat = "powerMultiplier", amount = self.blockCount},
+                            {stat = "protection", amount = self.blockCount2 }
+                            })  	
+                            local bounds = mcontroller.boundBox()
+			end
+		end		
+            end  
+            
+            if world.entitySpecies(activeItem.ownerEntityId()) == "bunnykin" then   -- elunite get bonus defense and +12.5% damage with each chakram or boomerang
+              --main hand
+		local heldItem = world.entityHandItem(activeItem.ownerEntityId(), "primary")
+		if heldItem ~= nil then
+			if isChakram(heldItem) or isBoomerang(heldItem) then
+                          self.blockCount = self.blockCount + 0.15
+                          status.setPersistentEffects("bonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}})  	
+			end
+		end  
+
+	    -- alt hand
+		heldItem = world.entityHandItem(activeItem.ownerEntityId(), "alt")
+		if heldItem ~= nil then
+			if isChakram(heldItem) or isBoomerang(heldItem) then
+                          self.blockCount = self.blockCount + 0.15
+                          status.setPersistentEffects("bonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}})  	
+			end
+		end		
+            end  
+            
+            if world.entitySpecies(activeItem.ownerEntityId()) == "elunite" then   -- elunite get bonus defense and +12.5% damage with each chakram or boomerang
+              --main hand
+		local heldItem = world.entityHandItem(activeItem.ownerEntityId(), "primary")
+		if heldItem ~= nil then
+			if isChakram(heldItem) or isBoomerang(heldItem) then
+                          self.blockCount = self.blockCount + 0.125
+                          status.setPersistentEffects("bonusdmg", {
+                            {stat = "powerMultiplier", amount = self.blockCount},
+                            {stat = "protection", amount = 2}
+                          })  	
+			end
+		end  
+
+	    -- alt hand
+		heldItem = world.entityHandItem(activeItem.ownerEntityId(), "alt")
+		if heldItem ~= nil then
+			if isChakram(heldItem) or isBoomerang(heldItem) then
+                          self.blockCount = self.blockCount + 0.125
+                          status.setPersistentEffects("bonusdmg", {
+                            {stat = "powerMultiplier", amount = self.blockCount},
+                            {stat = "protection", amount = 2}
+                          })  	
+			end
+		end		
+            end  
+            
+            if world.entitySpecies(activeItem.ownerEntityId()) == "elunite" then   -- elunite get bonus defense and +12.5% damage with each chakram or boomerang
+              --main hand
+		local heldItem = world.entityHandItem(activeItem.ownerEntityId(), "primary")
+		if heldItem ~= nil then
+			if isChakram(heldItem) or isBoomerang(heldItem) then
+                          self.blockCount = self.blockCount + 0.125
+                          status.setPersistentEffects("bonusdmg", {
+                            {stat = "powerMultiplier", amount = self.blockCount},
+                            {stat = "protection", amount = 2}
+                          })  	
+			end
+		end  
+
+	    -- alt hand
+		heldItem = world.entityHandItem(activeItem.ownerEntityId(), "alt")
+		if heldItem ~= nil then
+			if isChakram(heldItem) or isBoomerang(heldItem) then
+                          self.blockCount = self.blockCount + 0.125
+                          status.setPersistentEffects("bonusdmg", {
+                            {stat = "powerMultiplier", amount = self.blockCount},
+                            {stat = "protection", amount = 2}
+                          })  	
+			end
+		end		
+            end  
+            
+            
 --************************************** 
   self.projectileType = config.getParameter("projectileType")
   self.projectileParameters = config.getParameter("projectileParameters")
@@ -67,7 +158,7 @@ function update(dt, fireMode, shiftHeld)
 end
 
 function uninit()
-  status.clearPersistentEffects("humanbonusdmg")
+  status.clearPersistentEffects("bonusdmg")
   self.blockCount = 0
 end
 
@@ -111,4 +202,22 @@ function checkProjectiles()
     end
     storage.projectileIds = #newProjectileIds > 0 and newProjectileIds or nil
   end
+end
+
+
+-- **********************************
+-- FR BONUSES
+-- **********************************
+function isChakram(name)
+	if root.itemHasTag(name, "chakram") then
+		return true
+	end
+	return false
+end
+
+function isBoomerang(name)
+	if root.itemHasTag(name, "boomerang") then
+		return true
+	end
+	return false
 end

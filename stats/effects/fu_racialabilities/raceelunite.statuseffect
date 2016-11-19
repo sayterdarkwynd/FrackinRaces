@@ -1,0 +1,14 @@
+{
+  "name" : "raceelunite",
+  "effectConfig" : {
+    "healthBonus" : -0.15,
+    "energyBonus" : 0.20
+  },
+  
+  "defaultDuration" : 3,
+
+  "scripts" : [
+    "raceelunite.lua"
+  ]
+
+}

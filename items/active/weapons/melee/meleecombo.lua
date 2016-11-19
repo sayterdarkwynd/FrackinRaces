@@ -299,7 +299,7 @@ function isChakram(name)
 end
 
 function isBoomerang(name)
-	if root.itemHasTag(name, "chakram") then
+	if root.itemHasTag(name, "boomerang") then
 		return true
 	end
 	return false

@@ -30,6 +30,7 @@ function update(dt)
 	if world.entitySpecies(entity.id()) == "apex" then
 	       status.addEphemeralEffect("raceapex",math.huge)
 	       status.addEphemeralEffect("metabolism",math.huge)
+	       status.addEphemeralEffect("weak_electric",math.huge)
 	end
 	
 	--Floran
@@ -82,6 +83,7 @@ function update(dt)
 	--felins
 	if world.entitySpecies(entity.id()) == "felin" then
 		status.addEphemeralEffect("racefelins",math.huge)
+		status.addEphemeralEffect("weak_fire",math.huge)
 	end		
 	
 	--Orcana
@@ -196,10 +198,15 @@ function update(dt)
 		status.addEphemeralEffect("lightregenfloran",math.huge)
 		
 	end
-	--Lamia
+	--Wasp Hive
 	if world.entitySpecies(entity.id()) == "wasphive" then
 		status.addEphemeralEffect("racewasphive",math.huge)
 		status.addEphemeralEffect("weak_fire",math.huge)
+	end
+	--Elunite
+	if world.entitySpecies(entity.id()) == "elunite" then
+		status.addEphemeralEffect("raceelunite",math.huge)
+		status.addEphemeralEffect("weak_shadow",math.huge)
 	end
 	
   local mouthPosition = vec2.add(mcontroller.position(), status.statusProperty("mouthPosition"))

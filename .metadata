@@ -6,6 +6,7 @@
   "link" : "steam://url/CommunityFilePage/763259329",
   "name" : "FrackinRaces",
   "requires" : [],
+  "priority" : 101,
   "steamContentId" : "763259329",
   "version" : "1.9.3"
 }

@@ -3,7 +3,7 @@ function init()
 self.listener = damageListener("damageTaken", function(note)
 suffer = note[1]["damageDealt"]
 source = note[1]["damageSourceKind"]
-if source == "shadow" then
+if source == "shadow" or source == "fushadowdamage" then
 status.modifyResource("health", -suffer * 2)
 end
 end)

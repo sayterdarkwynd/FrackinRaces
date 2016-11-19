@@ -155,6 +155,29 @@ function init()
  			end
  		end
             end  
+
+            if world.entitySpecies(activeItem.ownerEntityId()) == "elunite" then  --elunite get defense bonuses with swords
+                local heldItem = world.entityHandItem(activeItem.ownerEntityId(), "primary")
+		if heldItem ~= nil then
+			if isDagger(heldItem) or isShortsword(heldItem) or isBroadsword(heldItem) or isShortsword(heldItem) then
+              			self.blockCount = self.blockCount + 2
+              			status.setPersistentEffects("hylotlbonusdmg", {
+              			  {stat = "protection", amount = self.blockCount},
+              			  {stat = "energyRegenPercentageRate", amount = 0.48}
+              			})    	
+			end
+		end
+		heldItem = world.entityHandItem(activeItem.ownerEntityId(), "alt")
+		if heldItem ~= nil then
+			if isDagger(heldItem) or isBroadsword(heldItem) or isShortsword(heldItem) then
+              			self.blockCount = self.blockCount + 2
+              			status.setPersistentEffects("hylotlbonusdmg", {
+              			  {stat = "protection", amount = self.blockCount},
+              			  {stat = "energyRegenPercentageRate", amount = 0.48}
+              			})   	
+			end
+		end
+            end  
             
 -- ***************************************************            
   self.weapon:init()
@@ -234,7 +257,7 @@ function isChakram(name)
 end
 
 function isBoomerang(name)
-	if root.itemHasTag(name, "chakram") then
+	if root.itemHasTag(name, "boomerang") then
 		return true
 	end
 	return false
