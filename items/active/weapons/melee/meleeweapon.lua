@@ -52,8 +52,8 @@ function init()
                 local heldItem = world.entityHandItem(activeItem.ownerEntityId(), "primary")
 		if heldItem ~= nil then
 			if isSpear(heldItem) then
-              			self.blockCount = self.blockCount + 1
-              			self.blockCount2 = self.blockCount2 + 0.19
+              			self.blockCount = self.blockCount + 2
+              			self.blockCount2 = self.blockCount2 + 0.14
               			status.setPersistentEffects("hylotlbonusdmg", {
               			  {stat = "protection", amount = self.blockCount},
               			  {stat = "powerMultiplier", amount = self.blockCount2}
@@ -63,8 +63,8 @@ function init()
 		heldItem = world.entityHandItem(activeItem.ownerEntityId(), "alt")
 		if heldItem ~= nil then
 			if  isSpear(heldItem) then
-              			self.blockCount = self.blockCount + 1
-              			self.blockCount2 = self.blockCount2 + 0.19
+              			self.blockCount = self.blockCount + 2
+              			self.blockCount2 = self.blockCount2 + 0.14
               			status.setPersistentEffects("hylotlbonusdmg", {
               			  {stat = "protection", amount = self.blockCount},
               			  {stat = "powerMultiplier", amount = self.blockCount2}
@@ -100,7 +100,10 @@ function init()
 		if heldItem ~= nil then
 			if isShortsword(heldItem) then
                           self.blockCount = self.blockCount + 0.19
-                          status.setPersistentEffects("hylotlbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount} })  	
+                          status.setPersistentEffects("hylotlbonusdmg", {
+                            {stat = "powerMultiplier", amount = self.blockCount},
+                            {stat = "grit", amount = self.blockCount}
+                          })  	
 			end
 		end
 	    -- alt hand
@@ -108,12 +111,51 @@ function init()
 		if heldItem ~= nil then
 			if isShortsword(heldItem) then
                           self.blockCount = self.blockCount + 0.19
-                          status.setPersistentEffects("hylotlbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount} })  	
+                          status.setPersistentEffects("hylotlbonusdmg", {
+                            {stat = "powerMultiplier", amount = self.blockCount},
+                            {stat = "grit", amount = self.blockCount} 
+                          })  	
 			end
 		end	
 		 
           end   
-          
+
+          if world.entitySpecies(activeItem.ownerEntityId()) == "wasphive" then      --wasps daggers do 25% more damage
+		local heldItem = world.entityHandItem(activeItem.ownerEntityId(), "primary")
+		if heldItem ~= nil then
+			if isDagger(heldItem) then
+                          self.blockCount = self.blockCount + 0.25
+                          status.setPersistentEffects("hylotlbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}})  	
+			end
+		end
+		heldItem = world.entityHandItem(activeItem.ownerEntityId(), "alt")
+		if heldItem ~= nil then
+			if isDagger(heldItem) then
+                          self.blockCount = self.blockCount + 0.25
+                          status.setPersistentEffects("hylotlbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}})  	
+			end
+		end
+          end  
+
+             if world.entitySpecies(activeItem.ownerEntityId()) == "apex" then  --apex love axes and hammers
+                 local heldItem = world.entityHandItem(activeItem.ownerEntityId(), "primary")
+ 		if heldItem ~= nil then
+ 			if isHammer(heldItem) or isAxe(heldItem) then
+               			self.blockCount = 0.19
+               			status.setPersistentEffects("hylotlbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}})    	
+               			mcontroller.controlModifiers({ speedModifier = 1.15 }) 
+ 			end
+ 		end
+ 		heldItem = world.entityHandItem(activeItem.ownerEntityId(), "alt")
+ 		if heldItem ~= nil then
+ 			if  isHammer(heldItem) or isAxe(heldItem) then
+               			self.blockCount = 0.19
+               			status.setPersistentEffects("hylotlbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}})
+               			mcontroller.controlModifiers({ speedModifier = 1.15 }) 
+ 			end
+ 		end
+            end  
+            
 -- ***************************************************            
   self.weapon:init()
 end

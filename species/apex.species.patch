@@ -7,8 +7,10 @@
     ^red;Needs to eat more often^reset; ^green;than other races, but gains +11% speed and +15% jump^reset; 
     ^green;Immune: Mud tiles, Jungle tiles^reset; 
     ^green;+16% HP bonus^reset; 
-    ^green;Hammers and Axes +20% dmg^reset;
-    ^green;Fist weapons do +25% damage and increase defense^reset;"
+    ^green;+20% dmg with Hammers and Axes ^reset;
+    ^green;Hammers increased speed when wielded ^reset;
+    ^green;+25% Damage with Grenade Launchers^reset;
+    ^green;Fist weapons do +25% damage and increase protection^reset;"
     }
 
 ]

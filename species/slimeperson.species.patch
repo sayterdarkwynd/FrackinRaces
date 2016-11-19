@@ -1,5 +1,8 @@
 [
-
+    { "op": "replace", 
+    "path" : "/charCreationTooltip/description" ,
+    "value" : ""
+    },
     { "op": "replace", 
     "path" : "/charCreationTooltip/description" , 
     "value" : "Ew. You're made of slime. ^green;+30% HP^reset;, ^red;-75% Shield Regen^reset;, ^red;-15% Energy, -25% Energy Regen^reset;, ^green;-75% Knockback^reset;, ^green;Immune: Slime Bounce, Poison, Webs^reset;, ^green;+3 Protection^reset;, ^green;+26% whip damage^reset; ^orange;Weakened in liquid^reset;."

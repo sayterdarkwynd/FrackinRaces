@@ -24,7 +24,15 @@ function init()
      self.whipCount = 0 
      self.whipCount2 = 0
    end
-  
+
+            if world.entitySpecies(activeItem.ownerEntityId()) == "novakid" then      
+              self.whipCount = self.whipCount + 0.19
+              status.setPersistentEffects("nightarbonusdmg", { 
+                {stat = "powerMultiplier", amount = self.whipCount} 
+              })            
+              local bounds = mcontroller.boundBox() 
+            end 
+            
             if world.entitySpecies(activeItem.ownerEntityId()) == "nightar" then      
               self.whipCount = self.whipCount + 0.19
               self.whipCount2 = self.whipCount2 + 0.11
@@ -54,6 +62,11 @@ function update(dt, fireMode, shiftHeld)
 				 speedModifier = 1.15
 			})              
             end   
+            if world.entitySpecies(activeItem.ownerEntityId()) == "novakid" then      
+		mcontroller.controlModifiers({
+				 speedModifier = 1.10
+			})              
+            end               
 end
 
 function uninit()

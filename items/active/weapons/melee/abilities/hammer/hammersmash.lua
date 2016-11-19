@@ -33,9 +33,7 @@ function HammerSmash:windup(windupProgress)
       self.weapon.relativeWeaponRotation, self.weapon.relativeArmRotation = self:bounceWeaponAngle(bounceProgress)
       
 --**************************************        
-            if world.entitySpecies(activeItem.ownerEntityId()) == "apex" then      -- apex move faster when wielding hammers
-		mcontroller.controlModifiers({ speedModifier = 1.15 })              
-            end   
+
 --************************************** 
 
     end

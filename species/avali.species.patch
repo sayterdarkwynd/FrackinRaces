@@ -1,5 +1,8 @@
 [
-
+    { "op": "replace", 
+    "path" : "/charCreationTooltip/description" , 
+    "value" : ""
+    },
     { "op": "replace", 
     "path" : "/charCreationTooltip/description" , 
     "value" : "Adorable fuzzy space raptors with wings.

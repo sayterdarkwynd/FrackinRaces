@@ -53,22 +53,7 @@ function MeleeSlash:windup()
    if self.blockCount == nil then 
      self.blockCount = 0
    end       
-          if world.entitySpecies(activeItem.ownerEntityId()) == "wasphive" then      --daggers do 25% more damage
-		local heldItem = world.entityHandItem(activeItem.ownerEntityId(), "primary")
-		if heldItem ~= nil then
-			if isDagger(heldItem) then
-                          self.blockCount = self.blockCount + 0.25
-                          status.setPersistentEffects("hylotlbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}})  	
-			end
-		end
-		heldItem = world.entityHandItem(activeItem.ownerEntityId(), "alt")
-		if heldItem ~= nil then
-			if isDagger(heldItem) then
-                          self.blockCount = self.blockCount + 0.25
-                          status.setPersistentEffects("hylotlbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}})  	
-			end
-		end
-          end  
+
              if world.entitySpecies(activeItem.ownerEntityId()) == "hylotl" then  --hylotl get protection when swinging their weapon
                  local heldItem = world.entityHandItem(activeItem.ownerEntityId(), "primary")
  		if heldItem ~= nil then
@@ -85,22 +70,7 @@ function MeleeSlash:windup()
  			end
  		end
             end  
-             if world.entitySpecies(activeItem.ownerEntityId()) == "apex" then  --apex love axes and hammers
-                 local heldItem = world.entityHandItem(activeItem.ownerEntityId(), "primary")
- 		if heldItem ~= nil then
- 			if isHammer(heldItem) or isAxe(heldItem) then
-               			self.blockCount = 0.19
-               			status.setPersistentEffects("hylotlbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}})    	
- 			end
- 		end
- 		heldItem = world.entityHandItem(activeItem.ownerEntityId(), "alt")
- 		if heldItem ~= nil then
- 			if  isHammer(heldItem) or isAxe(heldItem) then
-               			self.blockCount = 0.19
-               			status.setPersistentEffects("hylotlbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}})   	
- 			end
- 		end
-            end  
+
 
             
     --**************************************             

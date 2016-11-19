@@ -1,5 +1,9 @@
 [
-
+    { "op": "replace", 
+    "path" : "/charCreationTooltip/description" , 
+    "value" : ""
+    },
+    
     { "op": "replace", 
     "path" : "/charCreationTooltip/description" , 
     "value" : "Meow. Space-cats. Agility is their forte, and their claws and predatory instincts give them an edge in combat. Likewise, being clearly already insane, these cats are immune to Insanity. 

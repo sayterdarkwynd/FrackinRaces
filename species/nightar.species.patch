@@ -1,5 +1,9 @@
 [
-
+    { "op": "replace", 
+    "path" : "/charCreationTooltip/description" , 
+    "value" : ""
+    },
+    
     { "op": "replace", 
     "path" : "/charCreationTooltip/description" , 
     "value" : "An offshoot of humanity that loves the dark. 

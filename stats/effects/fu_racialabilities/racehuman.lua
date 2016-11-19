@@ -5,8 +5,6 @@ function init()
   effect.addStatModifierGroup({{stat = "maxHealth", amount = baseValue }})
   baseValue2 = config.getParameter("energyBonus",0)*(status.resourceMax("energy"))
   effect.addStatModifierGroup({{stat = "maxEnergy", amount = baseValue2 }})  
-  self.gritBoost = config.getParameter("gritBonus",0)
-  effect.addStatModifierGroup({{stat = "grit", baseMultiplier = self.gritBoost }})
   self.movementParams = mcontroller.baseParameters()  
   
   local bounds = mcontroller.boundBox()

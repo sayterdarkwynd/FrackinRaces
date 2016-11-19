@@ -1,5 +1,8 @@
 [
-
+    { "op": "replace", 
+    "path" : "/charCreationTooltip/description" , 
+    "value" : ""
+    },
     { "op": "replace", 
     "path" : "/charCreationTooltip/description" , 
     "value" : "Sturdy reptilian people. They are resilient and agile, with the ability to thrive both on land and underwater. Amphibious life has increased their natural energy stores, but they are less hardy than land-based reptiles.
