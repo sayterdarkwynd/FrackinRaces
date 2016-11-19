@@ -38,7 +38,7 @@ function SpearStab:fire()
           if world.entitySpecies(activeItem.ownerEntityId()) == "orcana" then      
             self.blockCount2 = self.blockCount2 + 0.25
             status.setPersistentEffects("spearbonus", {{stat = "powerMultiplier", amount = self.blockCount2}})  
-          end   
+          end         
           if world.entitySpecies(activeItem.ownerEntityId()) == "argonian" then      
             self.blockCount3 = self.blockCount3 + 0.15
             status.setPersistentEffects("spearbonus", {{stat = "powerMultiplier", amount = self.blockCount3}})  

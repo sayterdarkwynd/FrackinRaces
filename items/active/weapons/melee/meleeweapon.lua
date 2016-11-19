@@ -178,6 +178,31 @@ function init()
 			end
 		end
             end  
+
+            if world.entitySpecies(activeItem.ownerEntityId()) == "fenerox" then  --hylotl get protection when swinging their weapon
+                local heldItem = world.entityHandItem(activeItem.ownerEntityId(), "primary")
+		if heldItem ~= nil then
+			if isSpear(heldItem) then
+              			self.blockCount = self.blockCount + 1
+              			self.blockCount2 = 0.25
+              			status.setPersistentEffects("hylotlbonusdmg", {
+              			{stat = "protection", amount = self.blockCount},
+              			{stat = "powerMultiplier", amount = self.blockCount2}
+              			})          			
+			end
+		end
+		heldItem = world.entityHandItem(activeItem.ownerEntityId(), "alt")
+		if heldItem ~= nil then
+			if  isSpear(heldItem) then
+              			self.blockCount = self.blockCount + 1
+              			self.blockCount2 = 0.25
+              			status.setPersistentEffects("hylotlbonusdmg", {
+              			{stat = "protection", amount = self.blockCount},
+              			{stat = "powerMultiplier", amount = self.blockCount2}
+              			})                     			
+			end
+		end
+            end  
             
 -- ***************************************************            
   self.weapon:init()

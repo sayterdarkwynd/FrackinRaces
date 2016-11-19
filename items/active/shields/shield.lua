@@ -35,8 +35,38 @@ function init()
   
   self.startHealth = status.resource("health")
   
+
+            if self.ownerRace == "glitch" then
+                local heldItem = world.entityHandItem(activeItem.ownerEntityId(), "primary")
+		if heldItem ~= nil then
+			if isShield(heldItem) then
+              			self.blockCount = 1
+              			status.setPersistentEffects("shieldBonus", {{stat = "protection", amount = self.blockCount}})    	
+			end
+		end
+		heldItem = world.entityHandItem(activeItem.ownerEntityId(), "alt")
+		if heldItem ~= nil then
+			if  isShield(heldItem) then
+              			self.blockCount = 1
+              			status.setPersistentEffects("shieldBonus", {{stat = "protection", amount = self.blockCount}})   	
+			end
+		end  
+            end   
+            
   updateAim()
 end
+
+
+-- ****************************************************************
+-- FrackinRaces weapon specialization
+-- ****************************************************************
+function isShield(name)
+	if root.itemHasTag(name, "shield") then
+		return true
+	end
+	return false
+end
+
 
 function update(dt, fireMode, shiftHeld)            
   self.cooldownTimer = math.max(0, self.cooldownTimer - dt)
@@ -88,6 +118,7 @@ function uninit()
   status.clearPersistentEffects("vieraprotection")
   status.clearPersistentEffects("hylotlprotection")
   status.clearPersistentEffects("glitchprotection")
+  status.clearPersistentEffects("shieldBonus") 
 end
 
 function updateAim()
