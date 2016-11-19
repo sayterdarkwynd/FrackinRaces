@@ -23,7 +23,7 @@ function init()
 
 
 -- **************************************************
--- FU EFFECTS
+-- FR EFFECTS
 -- **************************************************
    if self.blockCount == nil then 
      self.blockCount = 0
