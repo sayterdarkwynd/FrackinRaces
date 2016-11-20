@@ -65,12 +65,7 @@ function update(dt, fireMode, shiftHeld)
 		mcontroller.controlModifiers({
 				 speedModifier = 1.20
 			})              
-            end 
-            if world.entitySpecies(activeItem.ownerEntityId()) == "viera" then      -- florans move faster when wielding bows
-		mcontroller.controlModifiers({
-				 speedModifier = 1.10
-			})              
-            end             
+            end         
 end
 
 function uninit()
