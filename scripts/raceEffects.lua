@@ -212,6 +212,11 @@ function update(dt)
 		status.addEphemeralEffect("raceelunite",math.huge)
 		status.addEphemeralEffect("weak_shadow",math.huge)
 	end
+	--Elunite
+	if world.entitySpecies(entity.id()) == "skelekin" then
+		status.addEphemeralEffect("raceelunite",math.huge)
+		status.addEphemeralEffect("weak_fire",math.huge)
+	end
 	
   local mouthPosition = vec2.add(mcontroller.position(), status.statusProperty("mouthPosition"))
   if status.statPositive("breathProtection") or world.breathable(mouthPosition) 
