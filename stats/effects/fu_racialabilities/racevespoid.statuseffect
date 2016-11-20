@@ -2,9 +2,9 @@
   "name" : "racevespoid",
   "effectConfig" : {
   "healthBonus" : 0.15,
-  "energyBonus" : 0.20,
+  "energyBonus" : 0,
   "foodBonus" : 60,
-    "weaknessPenalty" : 1.75
+  "weaknessPenalty" : 1.75
   },
   
   "defaultDuration" : 3,

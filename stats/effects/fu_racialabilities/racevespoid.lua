@@ -17,9 +17,9 @@ end
 
 function update(dt)
 	mcontroller.controlModifiers({
-	 speedModifier = 1.08,
-	 stickyForce = 1.46,
-	 airForce = 35.0,
+	 speedModifier = 1.10,
+	 stickyForce = 2,
+	 airForce = 65.0,
 	 liquidForce = 20.0
 	})
 end

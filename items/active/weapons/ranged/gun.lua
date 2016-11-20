@@ -80,7 +80,24 @@ function init()
 		
           end   
 
-          
+          -- Vespoids snipe and smg
+          if world.entitySpecies(activeItem.ownerEntityId()) == "vespoid" then      
+		local heldItem = world.entityHandItem(activeItem.ownerEntityId(), "primary")
+		if heldItem ~= nil then
+			if isSniperRifle(heldItem) or isMachinePistol(heldItem) then
+                          self.blockCount = self.blockCount + 0.25
+                          status.setPersistentEffects("novakidbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}})  	
+			end			
+		end
+		heldItem = world.entityHandItem(activeItem.ownerEntityId(), "alt")
+		if heldItem ~= nil then
+			if isSniperRifle(heldItem) or isMachinePistol(heldItem) then
+                          self.blockCount = self.blockCount + 0.25
+                          status.setPersistentEffects("novakidbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}})  	
+			end		
+		end 
+		
+          end             
 --************************************** 
 -- END FR BONUSES
 -- *************************************
