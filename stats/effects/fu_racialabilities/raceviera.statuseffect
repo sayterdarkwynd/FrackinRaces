@@ -1,6 +1,10 @@
 {
   "name" : "raceviera",
-  "effectConfig" : {},
+  "effectConfig" : {
+    "healthBonus" : -0.20,
+    "energyBonus" : 0.15,
+    "weaknessPenalty" : 1.75
+  },
   "defaultDuration" : 3,
 
   "scripts" : [

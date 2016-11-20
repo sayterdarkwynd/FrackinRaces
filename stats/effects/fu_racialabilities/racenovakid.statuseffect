@@ -2,7 +2,7 @@
   "name" : "racenovakid",
   "effectConfig" : {
   "healthBonus" : -0.10,
-  "energyBonus" : 0.30,
+  "energyBonus" : 0.20,
   "gritBonus" : 0.25,
   "weaknessPenalty" : 2
   },
