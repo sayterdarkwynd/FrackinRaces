@@ -174,6 +174,7 @@ function update(dt)
           status.addEphemeralEffect("raceargonian",math.huge)
           status.addEphemeralEffect("metabolismargonian",math.huge)
           status.addEphemeralEffect("swimboost1",math.huge)
+          status.addEphemeralEffect("weak_ice",math.huge)
 	end
 
 	--Nightar
