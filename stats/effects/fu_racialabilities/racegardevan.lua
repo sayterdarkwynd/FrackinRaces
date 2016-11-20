@@ -24,6 +24,10 @@ function update(dt)
     world.spawnProjectile("grassseeds2", mcontroller.position(), entity.id(), {0, 0}, false, configBombDrop)       
   end
 
+    mcontroller.controlModifiers({
+	speedModifier = 1.08
+    })
+    
 end
 
 function uninit()

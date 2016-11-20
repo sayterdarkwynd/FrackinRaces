@@ -1,4 +1,5 @@
 function init()
+  effect.addStatModifierGroup({{stat = "foodDelta", baseMultiplier = 0.5}})
   effect.addStatModifierGroup({{stat = "blacktarImmunity", amount = 1}})
   effect.addStatModifierGroup({{stat = "jungleslowImmunity", amount = 1 }})
   baseValue = config.getParameter("healthBonus",0)*(status.resourceMax("health"))
@@ -12,6 +13,9 @@ function init()
 end
 
 function update(dt)
+    mcontroller.controlModifiers({
+	airJumpModifier = 1.20
+    })
 end
 
 function uninit()
