@@ -113,6 +113,7 @@ function update(dt)
 	--viera (bunny people)
 	if world.entitySpecies(entity.id()) == "viera" then
 		status.addEphemeralEffect("raceviera",math.huge)
+		status.addEphemeralEffect("weak_shadow",math.huge)
 	end	
 
 	--fenerox (fox people)

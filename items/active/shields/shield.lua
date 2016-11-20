@@ -57,14 +57,14 @@ function init()
                 local heldItem = world.entityHandItem(activeItem.ownerEntityId(), "primary")
 		if heldItem ~= nil then
 			if isShield(heldItem) then
-              			self.blockCount = -0.4
+              			self.blockCount = -0.25
               			status.setPersistentEffects("shieldBonus", {{stat = "energyRegenBlockTime", amount = self.blockCount}})    	
 			end
 		end
 		heldItem = world.entityHandItem(activeItem.ownerEntityId(), "alt")
 		if heldItem ~= nil then
 			if  isShield(heldItem) then
-              			self.blockCount = -0.4
+              			self.blockCount = -0.25
               			status.setPersistentEffects("shieldBonus", {{stat = "energyRegenBlockTime", amount = self.blockCount}})   	
 			end
 		end  
