@@ -221,6 +221,22 @@ function init()
 		end
             end  
             
+            if world.entitySpecies(activeItem.ownerEntityId()) == "vulpes" then  --vulpes get protection when swinging their weapon
+                local heldItem = world.entityHandItem(activeItem.ownerEntityId(), "primary")
+		if heldItem ~= nil then
+			if isShortsword(heldItem) or isDagger(heldItem) or isBroadsword(heldItem)then
+              			self.blockCount = self.blockCount + 2
+              			status.setPersistentEffects("hylotlbonusdmg", {{stat = "protection", amount = self.blockCount}})    	
+			end
+		end
+		heldItem = world.entityHandItem(activeItem.ownerEntityId(), "alt")
+		if heldItem ~= nil then
+			if  isShortsword(heldItem) or isDagger(heldItem) or isBroadsword(heldItem)then
+              			self.blockCount = self.blockCount + 2
+              			status.setPersistentEffects("hylotlbonusdmg", {{stat = "protection", amount = self.blockCount}})   	
+			end
+		end
+            end              
 -- ***************************************************            
   self.weapon:init()
 end

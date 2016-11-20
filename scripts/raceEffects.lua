@@ -156,6 +156,7 @@ function update(dt)
 	--vulpes (fox people)
 	if world.entitySpecies(entity.id()) == "vulpes" then
           status.addEphemeralEffect("racevulpes",math.huge)
+          status.addEphemeralEffect("weak_fire",math.huge)
 	end	
 	
 	--kemono (fox people)
