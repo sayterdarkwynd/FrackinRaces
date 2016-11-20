@@ -42,7 +42,14 @@ function init()
             if world.entitySpecies(activeItem.ownerEntityId()) == "ningen" then     
               self.staffCount = self.staffCount + 0.15
               status.setPersistentEffects("ningenbonusdmg", {{stat = "maxEnergy", amount = self.staffCount}})  
-            end               
+            end  
+            if world.entitySpecies(activeItem.ownerEntityId()) == "viera" then     
+              self.staffCount = self.staffCount + 0.15
+              status.setPersistentEffects("ningenbonusdmg", {
+                {stat = "maxEnergy", amount = self.staffCount},
+                {stat = "powerMultiplier", baseMultiplier = 1 + self.staffCount},
+              })  
+            end                
 --************************************** 
   self.weapon:init()
 end
@@ -53,7 +60,12 @@ function update(dt, fireMode, shiftHeld)
 		mcontroller.controlModifiers({
 				 speedModifier = 1.15
 			})              
-            end   
+            end  
+            if world.entitySpecies(activeItem.ownerEntityId()) == "viera" then      -- avian move faster when wielding bows
+		mcontroller.controlModifiers({
+				 speedModifier = 1.10
+			})              
+            end              
 end
 
 function uninit()

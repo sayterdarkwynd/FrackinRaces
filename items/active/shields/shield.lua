@@ -200,7 +200,7 @@ function raiseShield()
             animator.playSound("bonusEffect")
           end
 	  if self.ownerRace == "viera" then
-            status.modifyResourcePercentage("energy", 0.07 + self.blockCount )  --viera get energy when they perfectly block
+            status.modifyResourcePercentage("energy", 0.085 + self.blockCount )  --viera get energy when they perfectly block
             animator.burstParticleEmitter("bonusBlock2")
             animator.playSound("bonusEffect")
           end

@@ -39,11 +39,12 @@ function init()
               }) 
               local bounds = mcontroller.boundBox()
             end             
-            if world.entitySpecies(activeItem.ownerEntityId()) == "viera" then      --15% more damage with viera
-              self.blockCount = self.blockCount + 0.15
+            if world.entitySpecies(activeItem.ownerEntityId()) == "viera" then      --25% more damage with viera
+              self.blockCount = self.blockCount + 0.25
+              self.blockCount = self.blockCount2 + 0.15
               status.setPersistentEffects("vierabonusdmg", {
               {stat = "powerMultiplier", amount = self.blockCount},
-              {stat = "maxEnergy", baseMultiplier = 1 + self.blockCount }
+              {stat = "maxEnergy", baseMultiplier = 1 + self.blockCount2 }
               })  
             end   
             if world.entitySpecies(activeItem.ownerEntityId()) == "sergal" then      --15% more damage with sergal
@@ -63,6 +64,11 @@ function update(dt, fireMode, shiftHeld)
             if world.entitySpecies(activeItem.ownerEntityId()) == "lamia" then      -- florans move faster when wielding bows
 		mcontroller.controlModifiers({
 				 speedModifier = 1.20
+			})              
+            end 
+            if world.entitySpecies(activeItem.ownerEntityId()) == "viera" then      -- florans move faster when wielding bows
+		mcontroller.controlModifiers({
+				 speedModifier = 1.10
 			})              
             end             
 end
