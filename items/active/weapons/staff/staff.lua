@@ -60,12 +60,7 @@ function update(dt, fireMode, shiftHeld)
 		mcontroller.controlModifiers({
 				 speedModifier = 1.15
 			})              
-            end  
-            if world.entitySpecies(activeItem.ownerEntityId()) == "viera" then      -- avian move faster when wielding bows
-		mcontroller.controlModifiers({
-				 speedModifier = 1.10
-			})              
-            end              
+            end   
 end
 
 function uninit()

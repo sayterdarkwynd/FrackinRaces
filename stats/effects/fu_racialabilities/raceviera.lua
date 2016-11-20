@@ -1,5 +1,4 @@
 function init()
-effect.addStatModifierGroup({{stat = "shieldStaminaRegen", amount = 0.4}})
 effect.addStatModifierGroup({{stat = "foodDelta", baseMultiplier = 1.06146}})
 effect.addStatModifierGroup({{stat = "slimestickImmunity", amount = 1}})
 effect.addStatModifierGroup({{stat = "slimefrictionImmunity", amount = 1}})

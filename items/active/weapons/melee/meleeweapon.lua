@@ -203,6 +203,23 @@ function init()
 			end
 		end
             end  
+
+            if world.entitySpecies(activeItem.ownerEntityId()) == "viera" then  --viera are dangerous with daggers
+                local heldItem = world.entityHandItem(activeItem.ownerEntityId(), "primary")
+		if heldItem ~= nil then
+			if isDagger(heldItem) or isHammer(heldItem) then
+              			self.blockCount = self.blockCount + 0.3
+              			status.setPersistentEffects("hylotlbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}})    	
+			end
+		end
+		heldItem = world.entityHandItem(activeItem.ownerEntityId(), "alt")
+		if heldItem ~= nil then
+			if  isDagger(heldItem) then
+              			self.blockCount = self.blockCount + 0.3
+              			status.setPersistentEffects("hylotlbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}})   	
+			end
+		end
+            end  
             
 -- ***************************************************            
   self.weapon:init()
