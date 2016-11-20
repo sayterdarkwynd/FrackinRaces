@@ -308,8 +308,57 @@ function init()
 		end
             end 
             
+            if world.entitySpecies(activeItem.ownerEntityId()) == "neko" then  --argonian do extra damage with spears
+                local heldItem = world.entityHandItem(activeItem.ownerEntityId(), "primary")
+		if heldItem ~= nil then
+			if isDagger(heldItem) or isFist(heldItem) or isShortsword(heldItem) then
+              			self.blockCount = 0.15
+              			status.setPersistentEffects("hylotlbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}})    	
+			end
+		end
+		heldItem = world.entityHandItem(activeItem.ownerEntityId(), "alt")
+		if heldItem ~= nil then
+			if isDagger(heldItem) or isFist(heldItem) or isShortsword(heldItem) then
+              			self.blockCount = 0.15
+              			status.setPersistentEffects("hylotlbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}})   	
+			end
+		end
+            end 
 
-          
+            if world.entitySpecies(activeItem.ownerEntityId()) == "kemono" then  --kemono are brutal with swords
+                local heldItem = world.entityHandItem(activeItem.ownerEntityId(), "primary")
+		if heldItem ~= nil then
+			if isDagger(heldItem) or isShortsword(heldItem) or isBroadsword(heldItem) then
+              			self.blockCount = 0.3
+              			status.setPersistentEffects("hylotlbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}})    	
+			end
+		end
+		heldItem = world.entityHandItem(activeItem.ownerEntityId(), "alt")
+		if heldItem ~= nil then
+			if isDagger(heldItem) or isShortsword(heldItem) or isBroadsword(heldItem) then
+              			self.blockCount = 0.3
+              			status.setPersistentEffects("hylotlbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}})   	
+			end
+		end
+            end 
+
+            if world.entitySpecies(activeItem.ownerEntityId()) == "avikan" then  --avikan are brutal axes and hammers
+                local heldItem = world.entityHandItem(activeItem.ownerEntityId(), "primary")
+		if heldItem ~= nil then
+			if isDagger(heldItem) or isSpear(heldItem) then
+              			self.blockCount = 0.2
+              			status.setPersistentEffects("hylotlbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}})    	
+			end
+		end
+		heldItem = world.entityHandItem(activeItem.ownerEntityId(), "alt")
+		if heldItem ~= nil then
+			if isDagger(heldItem) or isSpear(heldItem) then
+              			self.blockCount = 0.2
+              			status.setPersistentEffects("hylotlbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}})   	
+			end
+		end
+            end 
+            
 -- ***************************************************            
   self.weapon:init()
 end

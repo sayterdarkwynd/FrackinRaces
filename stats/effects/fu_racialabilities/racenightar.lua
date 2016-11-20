@@ -1,4 +1,6 @@
 function init()
+  baseValue3 = config.getParameter("foodBonus",0)*(status.resourceMax("food"))
+  effect.addStatModifierGroup({{stat = "maxFood", amount = baseValue3 }})
   baseValue = config.getParameter("healthBonus",0)*(status.resourceMax("health"))
   effect.addStatModifierGroup({{stat = "maxHealth", amount = baseValue }})
   baseValue2 = config.getParameter("energyBonus",0)*(status.resourceMax("energy"))
@@ -9,9 +11,22 @@ function init()
   local bounds = mcontroller.boundBox()
   effect.addStatModifierGroup({{stat = "biooozeImmunity", amount = 1}})
   script.setUpdateDelta(5)
+    self.movementParams = mcontroller.baseParameters()  
+    
+    local bounds = mcontroller.boundBox()
+    script.setUpdateDelta(5)
+    
+    
+    self.liquidMovementParameter = {
+      liquidJumpProfile = {
+        jumpHoldTime = 0.275
+      }
+  }  
 end
 
 function update(dt)
+
+
 end
 
 function uninit()

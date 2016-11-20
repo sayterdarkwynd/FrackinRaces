@@ -2,7 +2,7 @@
   "name" : "racefamiliar",
   "effectConfig" : {
     "healthBonus" : -0.10,
-    "energyBonus" : -0.05  
+    "energyBonus" : 0.25  
   },
   "defaultDuration" : 3,
 

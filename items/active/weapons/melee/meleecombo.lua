@@ -118,6 +118,11 @@ function MeleeCombo:windup()
             status.setPersistentEffects("glitchbonusdmg", {{stat = "protection", amount = self.blockCount}})  
           end   
 
+          if world.entitySpecies(activeItem.ownerEntityId()) == "kemono" then      --each 1-handed combo swing slightly increases kemono defense
+            self.blockCount = self.blockCount + 3
+            status.setPersistentEffects("glitchbonusdmg", {{stat = "protection", amount = self.blockCount}})  
+          end 
+          
 --**************************************   
 
   end

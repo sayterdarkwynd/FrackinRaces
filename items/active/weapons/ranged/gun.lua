@@ -61,7 +61,7 @@ function init()
 		end          
           end   
           
-          -- Humans rock the Assault Rifle
+          -- Humans rock the Assault Rifle and SMG
           if world.entitySpecies(activeItem.ownerEntityId()) == "human" then      
 		local heldItem = world.entityHandItem(activeItem.ownerEntityId(), "primary")
 		if heldItem ~= nil then
@@ -80,6 +80,25 @@ function init()
 		
           end   
 
+          -- Nightar rock the Assault Rifle
+          if world.entitySpecies(activeItem.ownerEntityId()) == "nightar" then      
+		local heldItem = world.entityHandItem(activeItem.ownerEntityId(), "primary")
+		if heldItem ~= nil then
+			if isAssaultRifle(heldItem) then
+                          self.blockCount = self.blockCount + 0.15
+                          status.setPersistentEffects("novakidbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}})  	
+			end			
+		end
+		heldItem = world.entityHandItem(activeItem.ownerEntityId(), "alt")
+		if heldItem ~= nil then
+			if isAssaultRifle(heldItem) then
+                          self.blockCount = self.blockCount + 0.15
+                          status.setPersistentEffects("novakidbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}})  	
+			end		
+		end 
+		
+          end 
+          
           -- Vespoids snipe and smg
           if world.entitySpecies(activeItem.ownerEntityId()) == "vespoid" then      
 		local heldItem = world.entityHandItem(activeItem.ownerEntityId(), "primary")

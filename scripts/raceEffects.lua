@@ -162,6 +162,7 @@ function update(dt)
 	--kemono (fox people)
 	if world.entitySpecies(entity.id()) == "kemono" then
           status.addEphemeralEffect("racekemono",math.huge)
+          status.addEphemeralEffect("weak_shadow",math.huge)
 	end	
 	
 	--ningen  

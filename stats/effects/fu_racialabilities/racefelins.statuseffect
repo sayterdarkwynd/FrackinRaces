@@ -1,8 +1,8 @@
 {
   "name" : "racefelins",
   "effectConfig" : {
-      "powerModifier" : 1.08,
-      "healthBonus" : -0.05,
+      "powerModifier" : 1.12,
+      "healthBonus" : -0.15,
       "energyBonus" : -0.05  
       },
   "defaultDuration" : 3,

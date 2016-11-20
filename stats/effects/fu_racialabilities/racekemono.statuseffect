@@ -2,8 +2,8 @@
   "name" : "racekemono",
   "effectConfig" : {
       "powerModifier" : 1.08,
-      "healthBonus" : 0.06,
-      "energyBonus" : -0.05
+      "healthBonus" : 0.30,
+      "energyBonus" : -0.12
       },
   "defaultDuration" : 3,
 
