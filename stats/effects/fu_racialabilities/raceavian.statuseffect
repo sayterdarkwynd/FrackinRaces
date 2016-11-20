@@ -5,6 +5,7 @@
     "healthBonus" : -0.15,
     "energyBonus" : 0.1,
     "fallingDamageBonus" : 4.25,
+    "weaknessPenalty" : 1.65,
     
   "fallingParameters" : {
     "airForce" : 30,

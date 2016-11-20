@@ -2,7 +2,8 @@
   "name" : "racelamia",
   "effectConfig" : {
     "healthBonus" : -0.20,
-    "energyBonus" : 0.20
+    "energyBonus" : 0.20,
+    "weaknessPenalty" : 2
   },
   
   "defaultDuration" : 3,

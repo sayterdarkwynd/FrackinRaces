@@ -2,7 +2,8 @@
   "name" : "raceorcana",
   "effectConfig" : {
   "healthBonus" : 0.25,
-  "energyBonus" : -0.08
+  "energyBonus" : -0.08,
+    "weaknessPenalty" : 2
   },
   "defaultDuration" : 3,
 

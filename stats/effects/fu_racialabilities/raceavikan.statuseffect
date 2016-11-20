@@ -2,7 +2,8 @@
   "name" : "raceavikan",
   "effectConfig" : {
     "healthBonus" : 0.15,
-    "energyBonus" : 0.15  
+    "energyBonus" : 0.15,
+    "weaknessPenalty" : 2 
   },
   "defaultDuration" : 3,
 

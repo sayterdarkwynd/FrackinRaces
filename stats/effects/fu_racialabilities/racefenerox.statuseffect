@@ -3,7 +3,8 @@
   "effectConfig" : {
       "powerModifier" : 0,
       "healthBonus" : -0.05,
-      "energyBonus" : 0.10
+      "energyBonus" : 0.10,
+      "weaknessPenalty" : 1.65
       },
   "defaultDuration" : 3,
 

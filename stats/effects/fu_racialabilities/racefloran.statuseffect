@@ -2,7 +2,8 @@
   "name" : "racefloran",
   "effectConfig" : {
   "healthBonus" : -0.1,
-  "energyBonus" : 0.15
+  "energyBonus" : 0.15,
+  "weaknessPenalty" : 4
   },
   "defaultDuration" : 3,
 
