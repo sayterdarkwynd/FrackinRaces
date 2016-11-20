@@ -1,5 +1,6 @@
 {
   "name" : "weak_fire",
+    "blockingStat" : "weaknessFireImmunity",
   "effectConfig" : {
 
   },

@@ -206,6 +206,7 @@ function update(dt)
 	if world.entitySpecies(entity.id()) == "wasphive" then
 		status.addEphemeralEffect("racewasphive",math.huge)
 		status.addEphemeralEffect("weak_fire",math.huge)
+		status.addEphemeralEffect("weak_ice",math.huge)
 	end
 	--Elunite
 	if world.entitySpecies(entity.id()) == "elunite" then

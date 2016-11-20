@@ -1,5 +1,6 @@
 {
   "name" : "weak_physical",
+    "blockingStat" : "weaknessPhysicalImmunity",
   "effectConfig" : {
 
   },

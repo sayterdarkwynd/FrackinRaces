@@ -1,5 +1,6 @@
 {
   "name" : "weak_ice",
+    "blockingStat" : "weaknessIceImmunity",
   "effectConfig" : {
 
   },
