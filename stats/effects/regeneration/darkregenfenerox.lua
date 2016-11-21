@@ -15,7 +15,7 @@ end
 
 
 function nighttimeCheck()
-	nighttime = world.timeOfDay() > 0.5 -- true if daytime
+	nighttime = world.timeOfDay() > 0.4 -- true if night
 end
 
 function undergroundCheck()
@@ -25,7 +25,7 @@ end
 function update(dt)
   valueVal = 5
   local lightLevel = getLight()
-    if nighttime or underground then
+    
 	if lightLevel <= 1 then
 	    self.healingRate = 1.01 / config.getParameter("healTime", 180)
 	    status.modifyResourcePercentage("health", self.healingRate * dt)
@@ -54,7 +54,7 @@ function update(dt)
 	    self.healingRate = 1.001 / config.getParameter("healTime", 420)
 	    status.modifyResourcePercentage("health", self.healingRate * dt)
 	end  
-  end
+  
 	
 end
 
