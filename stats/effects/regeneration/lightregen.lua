@@ -25,9 +25,8 @@ end
 function update(dt)
   daytimeCheck()
   local lightLevel = getLight()
-  if underground then
-    return
-  elseif daytime then
+
+  if daytime or underground and lightLevel > 70 then
 	 if lightLevel > 95 then
 	   self.healingRate = 1.01 / config.getParameter("healTime", 140)
 	   status.modifyResourcePercentage("health", self.healingRate * dt)
