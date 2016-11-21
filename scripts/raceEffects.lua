@@ -215,7 +215,7 @@ function update(dt)
 	end
 	--Elunite
 	if world.entitySpecies(entity.id()) == "skelekin" then
-		status.addEphemeralEffect("raceelunite",math.huge)
+		status.addEphemeralEffect("raceskelekin",math.huge)
 		status.addEphemeralEffect("weak_fire",math.huge)
 	end
 	
