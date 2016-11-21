@@ -342,7 +342,7 @@ function init()
 		end
             end 
 
-            if world.entitySpecies(activeItem.ownerEntityId()) == "avikan" then  --avikan are brutal axes and hammers
+            if world.entitySpecies(activeItem.ownerEntityId()) == "avikan" then  --avikan are brutal spears and daggers
                 local heldItem = world.entityHandItem(activeItem.ownerEntityId(), "primary")
 		if heldItem ~= nil then
 			if isDagger(heldItem) or isSpear(heldItem) then
@@ -358,7 +358,40 @@ function init()
 			end
 		end
             end 
-            
+
+            if world.entitySpecies(activeItem.ownerEntityId()) == "gyrusen" then  --gyrusens are brutal with axes and hammers
+                local heldItem = world.entityHandItem(activeItem.ownerEntityId(), "primary")
+		if heldItem ~= nil then
+			if isHammer(heldItem) or isAxe(heldItem) then
+              			self.blockCount = 0.30
+              			status.setPersistentEffects("hylotlbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}})    	
+			end
+		end
+		heldItem = world.entityHandItem(activeItem.ownerEntityId(), "alt")
+		if heldItem ~= nil then
+			if isHammer(heldItem) or isAxe(heldItem) then
+              			self.blockCount = 0.30
+              			status.setPersistentEffects("hylotlbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}})   	
+			end
+		end
+            end     
+
+            if world.entitySpecies(activeItem.ownerEntityId()) == "kazdra" then  --kazdra love broadswords
+                local heldItem = world.entityHandItem(activeItem.ownerEntityId(), "primary")
+		if heldItem ~= nil then
+			if isBroadsword(heldItem) then
+              			self.blockCount = 0.30
+              			status.setPersistentEffects("hylotlbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}})    	
+			end
+		end
+		heldItem = world.entityHandItem(activeItem.ownerEntityId(), "alt")
+		if heldItem ~= nil then
+			if isBroadsword(heldItem) then
+              			self.blockCount = 0.30
+              			status.setPersistentEffects("hylotlbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}})   	
+			end
+		end
+            end                  
 -- ***************************************************            
   self.weapon:init()
 end

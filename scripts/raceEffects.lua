@@ -218,6 +218,17 @@ function update(dt)
 		status.addEphemeralEffect("raceskelekin",math.huge)
 		status.addEphemeralEffect("weak_fire",math.huge)
 	end
+	--Gyrusen
+	if world.entitySpecies(entity.id()) == "gyrusen" then
+		status.addEphemeralEffect("racegyrusen",math.huge)
+		status.addEphemeralEffect("weak_ice",math.huge)
+	end
+	
+	--Gyrusen
+	if world.entitySpecies(entity.id()) == "kazdra" then
+		status.addEphemeralEffect("racekazdra",math.huge)
+		status.addEphemeralEffect("weak_ice",math.huge)
+	end	
 	
   local mouthPosition = vec2.add(mcontroller.position(), status.statusProperty("mouthPosition"))
   if status.statPositive("breathProtection") or world.breathable(mouthPosition) 

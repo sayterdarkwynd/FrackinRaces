@@ -116,7 +116,26 @@ function init()
 			end		
 		end 
 		
-          end             
+          end   
+
+          -- Vespoids snipe and smg
+          if world.entitySpecies(activeItem.ownerEntityId()) == "gyrusen" then      
+		local heldItem = world.entityHandItem(activeItem.ownerEntityId(), "primary")
+		if heldItem ~= nil then
+			if isRocketLauncher(heldItem) or isGrenadeLauncher(heldItem) then
+                          self.blockCount = self.blockCount + 0.20
+                          status.setPersistentEffects("novakidbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}})  	
+			end			
+		end
+		heldItem = world.entityHandItem(activeItem.ownerEntityId(), "alt")
+		if heldItem ~= nil then
+			if isRocketLauncher(heldItem) or isGrenadeLauncher(heldItem) then
+                          self.blockCount = self.blockCount + 0.20
+                          status.setPersistentEffects("novakidbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}})  	
+			end		
+		end 
+		
+          end              
 --************************************** 
 -- END FR BONUSES
 -- *************************************

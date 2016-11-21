@@ -1,0 +1,16 @@
+{
+  "name" : "racegyrusen",
+  "effectConfig" : {
+    "healthBonus" : 0.10,
+    "energyBonus" : -0.20,
+    "defenseBonus" : 3,
+    "weaknessPenalty" : 1.75
+  },
+  
+  "defaultDuration" : 3,
+
+  "scripts" : [
+    "racegyrusen.lua"
+  ]
+
+}
