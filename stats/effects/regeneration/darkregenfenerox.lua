@@ -22,7 +22,7 @@ function update(dt)
   valueVal = 5
   local lightLevel = getLight()
   
-    if nighttime then
+    if nighttime or world.underground()==true then
 	if lightLevel <= 1 then
 	    self.healingRate = 1.01 / config.getParameter("healTime", 180)
 	    status.modifyResourcePercentage("health", self.healingRate * dt)

@@ -224,7 +224,7 @@ function update(dt)
 		status.addEphemeralEffect("weak_ice",math.huge)
 	end
 	
-	--Gyrusen
+	--Kazdra
 	if world.entitySpecies(entity.id()) == "kazdra" then
 		status.addEphemeralEffect("racekazdra",math.huge)
 		status.addEphemeralEffect("weak_ice",math.huge)
