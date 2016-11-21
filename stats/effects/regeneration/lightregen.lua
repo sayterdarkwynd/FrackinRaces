@@ -17,6 +17,7 @@ end
 function daytimeCheck()
 	daytime = world.timeOfDay() < 0.5 -- true if daytime
 end
+
 function undergroundCheck()
 	underground = world.underground(position) 
 end

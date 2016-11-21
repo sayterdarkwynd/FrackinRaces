@@ -11,7 +11,7 @@ function init()
   effect.addStatModifierGroup({{stat = "maxEnergy", amount = baseValue2 }})  
   self.gritBoost = config.getParameter("gritBonus",0)
   effect.addStatModifierGroup({{stat = "grit", baseMultiplier = self.gritBoost }}) 
-  
+  self.shieldBoost = config.getParameter("shieldBoost",0)
   effect.addStatModifierGroup({{stat = "shieldRegen", baseMultiplier = self.shieldBoost }})
   self.movementParams = mcontroller.baseParameters()  
   
