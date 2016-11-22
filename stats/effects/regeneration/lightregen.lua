@@ -19,16 +19,16 @@ end
 
 
 function daytimeCheck()
-	daytime = world.timeOfDay() < 0.5 -- true if daytime
+	return world.timeOfDay() < 0.5 -- true if daytime
 end
 
 function undergroundCheck()
-	underground = world.underground(mcontroller.position()) 
+	return world.underground(mcontroller.position()) 
 end
 
 function update(dt)
-  daytimeCheck()
-  undergroundCheck()
+  daytime = daytimeCheck()
+  underground = undergroundCheck()
   local lightLevel = getLight()
 
   if daytime then
