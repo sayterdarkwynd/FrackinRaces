@@ -32,9 +32,9 @@ function update(dt)
 	})	
 	
 	if (world.windLevel(mcontroller.position()) >= 60 ) then
-	    maxFallSpeed = -39
+	    maxFallSpeed = -30
 	    status.clearPersistentEffects("avianwindbonus")
-	elseif (world.windLevel(mcontroller.position()) >= 20 ) then
+	elseif (world.windLevel(mcontroller.position()) >= 5 ) then
 	    maxFallSpeed = -32
 	    status.setPersistentEffects("avianwindbonus", {
 	      {stat = "protection", baseMultiplier = 1.10},
@@ -45,13 +45,6 @@ function update(dt)
 		  airJumpModifier = 1.20,
 		  airForce = 86
 		})	
-		
-		
-		
-		
-		
-		
-		
 	end
 end
 

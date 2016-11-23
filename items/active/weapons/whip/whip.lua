@@ -74,7 +74,7 @@ function update(dt, fireMode, shiftHeld)
             end  
             if world.entitySpecies(activeItem.ownerEntityId()) == "gardevan" then      
 		mcontroller.controlModifiers({
-				 airJumpModifier = 1.15
+				 airJumpModifier = 1.15,
 				 speedModifier = 1.15
 			})              
             end               

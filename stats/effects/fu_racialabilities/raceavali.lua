@@ -25,7 +25,7 @@ function update(dt)
 		  speedModifier = 1.12,
 		  airJumpModifier = 1.12
 		})
-	elseif (world.windLevel(mcontroller.position()) >= 20 ) then
+	elseif (world.windLevel(mcontroller.position()) >= 7 ) then
 		mcontroller.controlModifiers({
 		  speedModifier = 1.15,
 		  airJumpModifier = 1.20
