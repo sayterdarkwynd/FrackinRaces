@@ -15,17 +15,15 @@ end
 
 function isDry()
 local mouthPosition = vec2.add(mcontroller.position(), status.statusProperty("mouthPosition"))
-	if not world.liquidAt(mouthPosition) then
+	
             status.clearPersistentEffects("hylotlprotection")
 	    inWater = 0
-	end
+	
 end
 
 function update(dt)
 local mouthPosition = vec2.add(mcontroller.position(), status.statusProperty("mouthPosition"))
-
 local mouthful = world.liquidAt(mouthposition)
-
 	if (world.liquidAt(mouthPosition)) and (inWater == 0) and (mcontroller.liquidId()== 1) or (mcontroller.liquidId()== 6) or (mcontroller.liquidId()== 58) or (mcontroller.liquidId()== 12) then
             status.setPersistentEffects("hylotlprotection", {
               {stat = "protection", baseMultiplier = 1.10},
