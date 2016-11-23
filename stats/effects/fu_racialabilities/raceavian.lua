@@ -18,15 +18,45 @@ effect.addStatModifierGroup({{stat = "maxEnergy", amount = baseValue2 }})
 end
 
 function update(dt)
-mcontroller.controlParameters(self.liquidMovementParameter)
-    if mcontroller.falling() then
-      mcontroller.controlParameters(config.getParameter("fallingParameters"))
-      mcontroller.setYVelocity(math.max(mcontroller.yVelocity(), config.getParameter("maxFallSpeed")))
-    end
+    mcontroller.controlParameters(self.liquidMovementParameter)
+    
+	if mcontroller.falling() then
+	  mcontroller.controlParameters(config.getParameter("fallingParameters"))
+	  mcontroller.setYVelocity(math.max(mcontroller.yVelocity(), config.getParameter("maxFallSpeed")))
+	end
+	
+	mcontroller.controlModifiers({
+	  speedModifier = 1.09,
+	  airJumpModifier = 1.05,
+	  airForce = 56
+	})	
+	
+	if (world.windLevel(mcontroller.position()) >= 60 ) then
+	    maxFallSpeed = -39
+	    status.clearPersistentEffects("avianwindbonus")
+	elseif (world.windLevel(mcontroller.position()) >= 20 ) then
+	    maxFallSpeed = -32
+	    status.setPersistentEffects("avianwindbonus", {
+	      {stat = "protection", baseMultiplier = 1.10},
+	      {stat = "maxHealth", baseMultiplier = 1.15}
+	    })
+		mcontroller.controlModifiers({
+		  speedModifier = 1.19,
+		  airJumpModifier = 1.20,
+		  airForce = 86
+		})	
+		
+		
+		
+		
+		
+		
+		
+	end
 end
 
 function uninit()
-  
+  status.clearPersistentEffects("avianwindbonus")
 end
 
 

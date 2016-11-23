@@ -10,7 +10,14 @@ effect.addStatModifierGroup({{stat = "maxHealth", amount = baseValue }})
 baseValue2 = config.getParameter("energyBonus",0)*(status.resourceMax("energy"))
 effect.addStatModifierGroup({{stat = "maxEnergy", amount = baseValue2 }})
 
-  script.setUpdateDelta(5)	
+  script.setUpdateDelta(5)
+  
+    if (world.type() == "ocean") or (world.type() == "oceanfloor") or (world.type() == "tidewater") or (world.type() == "tidewaterfloor") then
+	    status.setPersistentEffects("jungleEpic", {
+	      {stat = "maxHealth", baseMultiplier = 1.10},
+	      {stat = "maxEnergy", baseMultiplier = 1.10}
+	    })
+    end    
 end
 
 function isDry()
@@ -39,4 +46,5 @@ end
 function uninit()
   status.removeEphemeralEffect("regenerationminor",math.huge)
   status.clearPersistentEffects("munariprotection")
+  status.clearPersistentEffects("jungleEpic")
 end

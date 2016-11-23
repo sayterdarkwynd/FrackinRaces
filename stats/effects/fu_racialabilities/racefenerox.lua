@@ -8,6 +8,11 @@ function init()
   effect.addStatModifierGroup({{stat = "poisonStatusImmunity", amount = 1}})
   local bounds = mcontroller.boundBox()
   script.setUpdateDelta(10)
+    if (world.type() == "savannah") then
+	    status.setPersistentEffects("jungleEpic", {
+	      {stat = "powerMultiplier", baseMultiplier = 1.10}
+	    })
+    end     
 end
 
 function update(dt)
@@ -15,5 +20,5 @@ function update(dt)
 end
 
 function uninit()
-  
+  status.clearPersistentEffects("jungleEpic")
 end

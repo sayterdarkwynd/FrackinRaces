@@ -10,6 +10,13 @@ function init()
   effect.addStatModifierGroup({{stat = "breathRegenerationRate", amount = 70}})
   effect.addStatModifierGroup({{stat = "wetImmunity", amount = 1}})
   script.setUpdateDelta(5)	
+  
+    if (world.type() == "ocean") or (world.type() == "oceanfloor") or (world.type() == "tidewater") or (world.type() == "tidewaterfloor") then
+	    status.setPersistentEffects("jungleEpic", {
+	      {stat = "maxHealth", baseMultiplier = 1.10},
+	      {stat = "maxEnergy", baseMultiplier = 1.10}
+	    })
+    end     
 end
 
 function isDry()

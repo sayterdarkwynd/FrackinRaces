@@ -8,6 +8,7 @@
     ^red;Weakness: Electricity^reset;
     ^green;+10% HP^reset;
     ^green;Immune: Wet^reset;
+    ^green;On ocean biomes, gain 20% protection^reset; 
     ^green;Perfect Blocks restore HP (stacks)^reset; 
     ^green;+12% dmg with shortsword and broadsword combo strikes (Stacks)^reset;
     ^green;+1 protection when using daggers, hammers, axes and spears^reset;

@@ -6,7 +6,7 @@
     { "op": "replace", 
     "path" : "/charCreationTooltip/description" , 
     "value" : "Adorable fuzzy space raptors with wings.
-    
+    ^green;In mild to severe winds, gain additional agility^reset; 
     ^red;-10% HP^reset;
     ^green;+5% Energy^reset;
     ^green;Immunities: Snow and Cold^reset;

@@ -7,6 +7,7 @@
     ^red;-10% HP^reset;
     ^red;Weakness: Fire^reset;
     ^green;+15% Energy^reset;
+    ^green;In forest-like biomes gain additional health and energy^reset; 
     ^green;Regenerate during daylight hours^reset;
     ^green;Shock Immunity^reset;
     ^green;Damage increases the hungrier you get^reset;

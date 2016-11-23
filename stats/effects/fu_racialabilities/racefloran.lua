@@ -4,8 +4,13 @@ function init()
   baseValue2 = config.getParameter("energyBonus",0)*(status.resourceMax("energy"))
   effect.addStatModifierGroup({{stat = "maxEnergy", amount = baseValue2 }}) 
   effect.addStatModifierGroup({{stat = "electricStatusImmunity", amount = 1}})
-script.setUpdateDelta(0)
-
+  
+    if (world.type() == "thickjungle") or (world.type() == "forest") or (world.type() == "tundra") or (world.type() == "lush") or (world.type() == "arboreal") then
+	    status.setPersistentEffects("jungleEpic", {
+	      {stat = "maxHealth", baseMultiplier = 1.10},
+	      {stat = "maxEnergy", baseMultiplier = 1.10}
+	    })
+    end   
 end
 
 function update(dt)
@@ -13,5 +18,5 @@ function update(dt)
 end
 
 function uninit()
-  
+  status.clearPersistentEffects("jungleEpic")
 end

@@ -9,6 +9,7 @@
     
     ^red;-5% HP^reset;
     ^red;Weakness: Poison^reset;
+    ^green;When in a dry grassland, gain +10% Damage^reset;
     ^red;Needs to eat more often ^green; but gains 6% speed and 11% jump height^reset;
     ^green;+10% Energy^reset;
     ^green;Increased damage, speed and health at night^reset;

@@ -9,6 +9,7 @@
     ^green;+10% Energy^reset;
     ^green;Jump Boost^reset;
     ^green;-65% Fall Damage + Slowed Fall^reset;
+    ^green;Gain air mobility and additional Slowed Fall in light to moderate wind conditions^reset;
     ^orange;+5.5% Damage^reset;^green;(increases as your HP depletes)^reset;
     ^yellow;+20% Wand/Staff damage^reset;"
     }
