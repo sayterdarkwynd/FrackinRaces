@@ -15,10 +15,10 @@ end
 
 function isDry()
 local mouthPosition = vec2.add(mcontroller.position(), status.statusProperty("mouthPosition"))
-	
+	if not world.liquidAt(mouthPosition) then
             status.clearPersistentEffects("hylotlprotection")
 	    inWater = 0
-	
+	end
 end
 
 function update(dt)
