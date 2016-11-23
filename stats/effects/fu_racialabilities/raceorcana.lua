@@ -14,7 +14,7 @@ function init()
     if (world.type() == "ocean") or (world.type() == "oceanfloor") or (world.type() == "tidewater") or (world.type() == "tidewaterfloor") then
 	    status.setPersistentEffects("jungleEpic", {
 	      {stat = "maxHealth", baseMultiplier = 1.10},
-	      {stat = "maxEnergy", baseMultiplier = 1.10}
+	      {stat = "maxEnergy", baseMultiplier = 1.20}
 	    })
     end     
 end

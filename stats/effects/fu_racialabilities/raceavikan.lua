@@ -7,6 +7,14 @@ effect.addStatModifierGroup({{stat = "biomeheatImmunity", amount = 1}})
   effect.addStatModifierGroup({{stat = "maxEnergy", amount = baseValue2 }})  
   
   script.setUpdateDelta(0)
+
+	if (world.type() == "desert") or (world.type() == "desertwastes") or (world.type() == "desertwastesdark") then
+		    status.setPersistentEffects("jungleEpic", {
+		      {stat = "powerMultiplier", baseMultiplier = 1.10},
+		      {stat = "maxHealth", baseMultiplier = 1.15}
+		    })
+	end  
+	
 end
 
 function update(dt)
@@ -14,5 +22,5 @@ function update(dt)
 end
 
 function uninit()
-  
+  status.clearPersistentEffects("jungleEpic")
 end

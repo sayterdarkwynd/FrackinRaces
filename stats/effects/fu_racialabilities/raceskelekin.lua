@@ -15,6 +15,11 @@ function init()
   effect.addStatModifierGroup({{stat = "biomeradiationImmunity", amount = 1}})
   self.healingRate = 1
   script.setUpdateDelta(5)
+    if (world.type() == "atropus") or (world.type() == "atropusdark") then
+	    status.setPersistentEffects("jungleEpic", {
+	      {stat = "powerMultiplier", baseMultiplier = 1.10}
+	    })
+    end   
 end
 
 function isDry()
