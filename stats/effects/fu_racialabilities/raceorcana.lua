@@ -17,19 +17,18 @@ local mouthPosition = vec2.add(mcontroller.position(), status.statusProperty("mo
 	if not world.liquidAt(mouthPosition) then
 	    status.removeEphemeralEffect("regenerationminor",math.huge)
             status.clearPersistentEffects("orcanaprotection")
-            status.clearPersistentEffects("orcanaprotection2")
-            status.clearPersistentEffects("orcanaprotection3")
-            status.clearPersistentEffects("orcanaprotection4")
 	    inWater = 0
 	end
 end
 
 function update(dt)
 local mouthPosition = vec2.add(mcontroller.position(), status.statusProperty("mouthPosition"))
-	if world.liquidAt(mouthPosition) and inWater == 0 then
+	if (world.liquidAt(mouthPosition)) and (inWater == 0) and (mcontroller.liquidId()== 1) or (mcontroller.liquidId()== 6) then
 	    status.addEphemeralEffect("regenerationminor",math.huge)
-            status.setPersistentEffects("orcanaprotection2", {{stat = "foodDelta", baseMultiplier = 0.80}})
-            status.setPersistentEffects("orcanaprotection4", {{stat = "fallDamageMultiplier", amount = 0.0}})
+            status.setPersistentEffects("orcanaprotection", {
+              {stat = "foodDelta", baseMultiplier = 0.80},
+              {stat = "fallDamageMultiplier", amount = 0.0}
+            })
 	    inWater = 1
 	else
 	  isDry()
@@ -37,8 +36,6 @@ local mouthPosition = vec2.add(mcontroller.position(), status.statusProperty("mo
 end
 
 function uninit()
-              status.clearPersistentEffects("orcanaprotection")
-              status.clearPersistentEffects("orcanaprotection2")
-              status.clearPersistentEffects("orcanaprotection3")
-              status.clearPersistentEffects("orcanaprotection4")
+  status.removeEphemeralEffect("regenerationminor",math.huge)
+  status.clearPersistentEffects("orcanaprotection")
 end

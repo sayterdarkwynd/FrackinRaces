@@ -17,9 +17,6 @@ function isDry()
 local mouthPosition = vec2.add(mcontroller.position(), status.statusProperty("mouthPosition"))
 	if not world.liquidAt(mouthPosition) then
             status.clearPersistentEffects("hylotlprotection")
-            status.clearPersistentEffects("hylotlprotection2")
-            status.clearPersistentEffects("hylotlprotection3")
-            status.clearPersistentEffects("hylotlprotection4")
 	    inWater = 0
 	end
 end
@@ -28,31 +25,19 @@ function update(dt)
 local mouthPosition = vec2.add(mcontroller.position(), status.statusProperty("mouthPosition"))
 
 local mouthful = world.liquidAt(mouthposition)
-local summationForDebug = ""
 
-if mouthful then 
-summationForDebug = "Liq:" .. mouthful .. "/" .. inWater
-else 
-summationForDebug = "Liq:nil/" .. inWater 
-end
-world.debugText(summationForDebug,{mouthPosition[1]-(string.len(summationForDebug)*0.25),mouthPosition[2]},"red")
-
-	if world.liquidAt(mouthPosition) and inWater == 0 then
-            status.setPersistentEffects("hylotlprotection", {{stat = "protection", amount = 4}})
-            status.setPersistentEffects("hylotlprotection2", {{stat = "perfectBlockLimit", amount = 2}})
-            status.setPersistentEffects("hylotlprotection3", {{stat = "maxHealth", amount = 20}})
-            status.setPersistentEffects("hylotlprotection4", {{stat = "fallDamageMultiplier", amount = 0.0}})
+	if (world.liquidAt(mouthPosition)) and (inWater == 0) and (mcontroller.liquidId()== 1) or (mcontroller.liquidId()== 6) or (mcontroller.liquidId()== 58) or (mcontroller.liquidId()== 12) then
+            status.setPersistentEffects("hylotlprotection", {
+              {stat = "protection", baseMultiplier = 1.10},
+              {stat = "perfectBlockLimit", amount = 2},
+              {stat = "maxHealth", baseMultiplier = 1.25}
+            })
 	    inWater = 1
-	     
-
 	else
 	  isDry()
         end 
 end
 
 function uninit()
-              status.clearPersistentEffects("hylotlprotection")
-              status.clearPersistentEffects("hylotlprotection2")
-              status.clearPersistentEffects("hylotlprotection3")
-            status.clearPersistentEffects("hylotlprotection4")
+  status.clearPersistentEffects("hylotlprotection")
 end

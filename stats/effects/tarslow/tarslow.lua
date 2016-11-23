@@ -16,9 +16,10 @@ function update(dt)
 	status.modifyResourcePercentage("health", self.healingRate * dt)
         
 		  mcontroller.controlModifiers({
-		      groundMovementModifier = 0.9,
-		      speedModifier = 0.9,
-		      airJumpModifier = 0.9
+		      groundMovementModifier = 1,
+		      speedModifier = 1,
+		      airJumpModifier = 1,
+		      liquidImpedance = 0.01
 		    })
         else
 		  mcontroller.controlModifiers({
