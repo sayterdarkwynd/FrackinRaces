@@ -1,4 +1,5 @@
 function init()
+  inWater=0
   effect.addStatModifierGroup({{stat = "poisonStatusImmunity", amount = 1 }})
   effect.addStatModifierGroup({{stat = "slimeImmunity", amount = 1 }})
   effect.addStatModifierGroup({{stat = "slimestickImmunity", amount = 1 }})
@@ -22,6 +23,7 @@ end
 
 
 function isDry()
+
 local mouthPosition = vec2.add(mcontroller.position(), status.statusProperty("mouthPosition"))
 status.setPersistentEffects("glitchpower", {{stat = "protection", amount = 4}})
 	if not world.liquidAt(mouthPosition) then
@@ -33,21 +35,13 @@ status.setPersistentEffects("glitchpower", {{stat = "protection", amount = 4}})
 end
 
 function update(dt)
-		mcontroller.controlModifiers({
-				speedModifier = 0.85
-			})
+	mcontroller.controlModifiers({
+			speedModifier = 0.85
+		})
 
 local mouthPosition = vec2.add(mcontroller.position(), status.statusProperty("mouthPosition"))
-
 local mouthful = world.liquidAt(mouthposition)
-local summationForDebug = ""
 
-if mouthful then 
-summationForDebug = "Liq:" .. mouthful .. "/" .. inWater
-else 
-summationForDebug = "Liq:nil/" .. inWater 
-end
-world.debugText(summationForDebug,{mouthPosition[1]-(string.len(summationForDebug)*0.25),mouthPosition[2]},"red")
 
 	if world.liquidAt(mouthPosition) and inWater == 0 then
 	    status.clearPersistentEffects("glitchpower")
