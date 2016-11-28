@@ -31,7 +31,7 @@ end
 
 function update(dt)
 local mouthPosition = vec2.add(mcontroller.position(), status.statusProperty("mouthPosition"))
-	if (world.liquidAt(mouthPosition)) and (inWater == 0) and (mcontroller.liquidId()== 1) or or (mcontroller.liquidId()== 58) or (mcontroller.liquidId()== 12) then
+	if (world.liquidAt(mouthPosition)) and (inWater == 0) and (mcontroller.liquidId()== 1) or (mcontroller.liquidId()== 58) or (mcontroller.liquidId()== 12) then
 	    status.addEphemeralEffect("regenerationminor",math.huge)
             status.setPersistentEffects("munariprotection", {
               {stat = "foodDelta", baseMultiplier = 0.65},
