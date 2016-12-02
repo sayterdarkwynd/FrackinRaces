@@ -84,30 +84,23 @@ function MeleeCombo:windup()
    self.blockCount = 0 
  end
 
-            if world.entitySpecies(activeItem.ownerEntityId()) == "hylotl" then   -- Hylotl get bonus defense and +12% damage with each combo strike
-              --main hand
-		local heldItem = world.entityHandItem(activeItem.ownerEntityId(), "primary")
-		if heldItem ~= nil then
-			if isBroadsword(heldItem) then
-                          self.blockCount = self.blockCount + 0.12
-                          status.setPersistentEffects("hylotlbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount},{stat = "protection", amount = 1}})  	
-			end
-		end  
-		if heldItem ~= nil then
-			if isShortsword(heldItem) then
-                          self.blockCount = self.blockCount + 0.12
-                          status.setPersistentEffects("hylotlbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount},{stat = "protection", amount = 1}})  	
-			end
-		end
-	    -- alt hand
-		heldItem = world.entityHandItem(activeItem.ownerEntityId(), "alt")
-		if heldItem ~= nil then
-			if isShortsword(heldItem) then
-                          self.blockCount = self.blockCount + 0.12
-                          status.setPersistentEffects("hylotlbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount},{stat = "protection", amount = 1}})  	
-			end
-		end		
-            end  
+
+ if world.entitySpecies(activeItem.ownerEntityId()) == "hylotl" then   -- in combos, hylotl get a bonus to damage with swords
+  local heldItem = world.entityHandItem(activeItem.ownerEntityId(), "primary")
+  if heldItem ~= nil then
+     if root.itemHasTag(heldItem, "broadsword") or root.itemHasTag(heldItem, "shortsword") then 
+	  self.blockCount = self.blockCount + 0.12
+	  status.setPersistentEffects("hylotlbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount},{stat = "protection", amount = 1}})  
+     end
+  end
+  heldItem = world.entityHandItem(activeItem.ownerEntityId(), "alt")
+  if heldItem ~= nil then
+     if root.itemHasTag(heldItem, "broadsword") or root.itemHasTag(heldItem, "shortsword") then 
+	  self.blockCount = self.blockCount + 0.12
+	  status.setPersistentEffects("hylotlbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount},{stat = "protection", amount = 1}})   
+     end
+  end
+end  
 
           if world.entitySpecies(activeItem.ownerEntityId()) == "avikan" then      
             self.blockCount = self.blockCount + 0.05
@@ -235,84 +228,6 @@ function MeleeCombo:computeDamageAndCooldowns()
   
 
 end
-
-
--- ****************************************************************
--- FrackinRaces weapon specialization
--- ****************************************************************
-function isDagger(name)
-	if root.itemHasTag(name, "dagger") then
-		return true
-	end
-	return false
-end
-
-function isSpear(name)
-	if root.itemHasTag(name, "spear") then
-		return true
-	end
-	return false
-end
-
-function isShortsword(name)
-	if root.itemHasTag(name, "shortsword") then
-		return true
-	end
-	return false
-end
-
-function isAxe(name)
-	if root.itemHasTag(name, "axe") then
-		return true
-	end
-	return false
-end
-
-function isHammer(name)
-	if root.itemHasTag(name, "hammer") then
-		return true
-	end
-	return false
-end
-
-function isBroadsword(name)
-	if root.itemHasTag(name, "broadsword") then
-		return true
-	end
-	return false
-end
-
-function isFist(name)
-	if root.itemHasTag(name, "fist") then
-		return true
-	end
-	return false
-end
-
-function isWhip(name)
-	if root.itemHasTag(name, "whip") then
-		return true
-	end
-	return false
-end
-
-function isChakram(name)
-	if root.itemHasTag(name, "chakram") then
-		return true
-	end
-	return false
-end
-
-function isBoomerang(name)
-	if root.itemHasTag(name, "boomerang") then
-		return true
-	end
-	return false
-end
-
--- ***********************************************************************************************
--- END specialization
--- ***********************************************************************************************
 
 
 

@@ -50,26 +50,11 @@ function MeleeSlash:windup()
       -- *********************************
       -- FR RACIAL BONUSES FOR WEAPONS   --- Bonus effect when winding up weapon
       -- *********************************
-   if self.blockCount == nil then 
-     self.blockCount = 0
-   end       
+   --if self.blockCount == nil then 
+   --  self.blockCount = 0
+   --end       
 
-             if world.entitySpecies(activeItem.ownerEntityId()) == "hylotl" then  --hylotl get protection when swinging their weapon
-                 local heldItem = world.entityHandItem(activeItem.ownerEntityId(), "primary")
- 		if heldItem ~= nil then
- 			if isDagger(heldItem) or isHammer(heldItem) or isBroadsword(heldItem) or isSpear(heldItem) or isAxe(heldItem) then
-               			self.blockCount = 1
-               			status.setPersistentEffects("hylotlbonusdmg", {{stat = "protection", amount = self.blockCount}})    	
- 			end
- 		end
- 		heldItem = world.entityHandItem(activeItem.ownerEntityId(), "alt")
- 		if heldItem ~= nil then
- 			if  isDagger(heldItem) or isHammer(heldItem) or isBroadsword(heldItem) or isSpear(heldItem) or isAxe(heldItem) then
-               			self.blockCount = 1
-               			status.setPersistentEffects("hylotlbonusdmg", {{stat = "protection", amount = self.blockCount}})   	
- 			end
- 		end
-            end  
+
 
 
             
@@ -115,85 +100,6 @@ function MeleeSlash:cooldownTime()
   return self.fireTime - self.stances.windup.duration - self.stances.fire.duration
 
 end
-
-
-
--- ****************************************************************
--- FrackinRaces weapon specialization
--- ****************************************************************
-function isDagger(name)
-	if root.itemHasTag(name, "dagger") then
-		return true
-	end
-	return false
-end
-
-function isSpear(name)
-	if root.itemHasTag(name, "spear") then
-		return true
-	end
-	return false
-end
-
-function isShortsword(name)
-	if root.itemHasTag(name, "shortsword") then
-		return true
-	end
-	return false
-end
-
-function isAxe(name)
-	if root.itemHasTag(name, "axe") then
-		return true
-	end
-	return false
-end
-
-function isHammer(name)
-	if root.itemHasTag(name, "hammer") then
-		return true
-	end
-	return false
-end
-
-function isBroadsword(name)
-	if root.itemHasTag(name, "broadsword") then
-		return true
-	end
-	return false
-end
-
-function isFist(name)
-	if root.itemHasTag(name, "fist") then
-		return true
-	end
-	return false
-end
-
-function isWhip(name)
-	if root.itemHasTag(name, "whip") then
-		return true
-	end
-	return false
-end
-
-function isChakram(name)
-	if root.itemHasTag(name, "chakram") then
-		return true
-	end
-	return false
-end
-
-function isBoomerang(name)
-	if root.itemHasTag(name, "boomerang") then
-		return true
-	end
-	return false
-end
-
--- ***********************************************************************************************
--- END specialization
--- ***********************************************************************************************
 
 function MeleeSlash:uninit()
   self.weapon:setDamage()
