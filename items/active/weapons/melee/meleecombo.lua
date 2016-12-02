@@ -87,14 +87,14 @@ function MeleeCombo:windup()
 
  if world.entitySpecies(activeItem.ownerEntityId()) == "hylotl" then   -- in combos, hylotl get a bonus to damage with swords
   local heldItem = world.entityHandItem(activeItem.ownerEntityId(), "primary")
-  if heldItem ~= nil then
+  if heldItem then
      if root.itemHasTag(heldItem, "broadsword") or root.itemHasTag(heldItem, "shortsword") then 
 	  self.blockCount = self.blockCount + 0.12
 	  status.setPersistentEffects("hylotlbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount},{stat = "protection", amount = 1}})  
      end
   end
   heldItem = world.entityHandItem(activeItem.ownerEntityId(), "alt")
-  if heldItem ~= nil then
+  if heldItem then
      if root.itemHasTag(heldItem, "broadsword") or root.itemHasTag(heldItem, "shortsword") then 
 	  self.blockCount = self.blockCount + 0.12
 	  status.setPersistentEffects("hylotlbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount},{stat = "protection", amount = 1}})   

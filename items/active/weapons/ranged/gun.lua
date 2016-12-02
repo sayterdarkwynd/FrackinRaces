@@ -19,15 +19,8 @@ function init()
 
 -- Novakid get bonus with Pistols and Sniper Rifles
  if world.entitySpecies(activeItem.ownerEntityId()) == "novakid" then   
-  local heldItem = world.entityHandItem(activeItem.ownerEntityId(), "primary")
-  if heldItem ~= nil then
-     if root.itemHasTag(heldItem, "pistol") or root.itemHasTag(heldItem, "sniperrifle") then 
-	  self.blockCount = self.blockCount + 0.125
-	  status.setPersistentEffects("novakidbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}})    
-     end
-  end
-  heldItem = world.entityHandItem(activeItem.ownerEntityId(), "alt")
-  if heldItem ~= nil then
+  local heldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand())
+  if heldItem then
      if root.itemHasTag(heldItem, "pistol") or root.itemHasTag(heldItem, "sniperrifle") then 
 	  self.blockCount = self.blockCount + 0.125
 	  status.setPersistentEffects("novakidbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}})    
@@ -36,32 +29,18 @@ function init()
 end 
 -- Apex get a bonus with Grenade Launchers
  if world.entitySpecies(activeItem.ownerEntityId()) == "apex" then   
-  local heldItem = world.entityHandItem(activeItem.ownerEntityId(), "primary")
-  if heldItem ~= nil then
+  local heldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand())
+  if heldItem then
      if root.itemHasTag(heldItem, "grenadelauncher") then 
 	  self.blockCount = self.blockCount + 0.19
 	  status.setPersistentEffects("novakidbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}})   
      end
   end
-  heldItem = world.entityHandItem(activeItem.ownerEntityId(), "alt")
-  if heldItem ~= nil then
-     if root.itemHasTag(heldItem, "grenadelauncher") then 
-	  self.blockCount = self.blockCount + 0.19
-	  status.setPersistentEffects("novakidbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}})  
-     end
-  end
 end 
 -- Humans rock the Assault Rifle and SMG
  if world.entitySpecies(activeItem.ownerEntityId()) == "human" then   
-  local heldItem = world.entityHandItem(activeItem.ownerEntityId(), "primary")
-  if heldItem ~= nil then
-     if root.itemHasTag(heldItem, "assaultrifle") or root.itemHasTag(heldItem, "machinepistol") then 
-	  self.blockCount = self.blockCount + 0.15
-	  status.setPersistentEffects("novakidbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}}) 
-     end
-  end
-  heldItem = world.entityHandItem(activeItem.ownerEntityId(), "alt")
-  if heldItem ~= nil then
+  local heldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand())
+  if heldItem then
      if root.itemHasTag(heldItem, "assaultrifle") or root.itemHasTag(heldItem, "machinepistol") then 
 	  self.blockCount = self.blockCount + 0.15
 	  status.setPersistentEffects("novakidbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}}) 
@@ -70,15 +49,8 @@ end
 end           
 -- Nightar rock the Assault Rifle
  if world.entitySpecies(activeItem.ownerEntityId()) == "nightar" then   
-  local heldItem = world.entityHandItem(activeItem.ownerEntityId(), "primary")
-  if heldItem ~= nil then
-     if root.itemHasTag(heldItem, "assaultrifle") then 
-	  self.blockCount = self.blockCount + 0.15
-	  status.setPersistentEffects("novakidbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}}) 
-     end
-  end
-  heldItem = world.entityHandItem(activeItem.ownerEntityId(), "alt")
-  if heldItem ~= nil then
+  local heldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand())
+  if heldItem then
      if root.itemHasTag(heldItem, "assaultrifle") then 
 	  self.blockCount = self.blockCount + 0.15
 	  status.setPersistentEffects("novakidbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}}) 
@@ -87,15 +59,8 @@ end
 end     
 -- Vespoids snipe and smg
  if world.entitySpecies(activeItem.ownerEntityId()) == "vespoid" then   
-  local heldItem = world.entityHandItem(activeItem.ownerEntityId(), "primary")
-  if heldItem ~= nil then
-     if root.itemHasTag(heldItem, "machinepistol") or root.itemHasTag(heldItem, "sniperrifle") then 
-	  self.blockCount = self.blockCount + 0.25
-	  status.setPersistentEffects("novakidbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}})  
-     end
-  end
-  heldItem = world.entityHandItem(activeItem.ownerEntityId(), "alt")
-  if heldItem ~= nil then
+  local heldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand())
+  if heldItem then
      if root.itemHasTag(heldItem, "machinepistol") or root.itemHasTag(heldItem, "sniperrifle") then 
 	  self.blockCount = self.blockCount + 0.25
 	  status.setPersistentEffects("novakidbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}})  
@@ -104,18 +69,11 @@ end
 end     
 -- gyrusens rock the heavy weapons
  if world.entitySpecies(activeItem.ownerEntityId()) == "vespoid" then   
-  local heldItem = world.entityHandItem(activeItem.ownerEntityId(), "primary")
-  if heldItem ~= nil then
+  local heldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand())
+  if heldItem then
      if root.itemHasTag(heldItem, "rocketlauncher") or root.itemHasTag(heldItem, "grenadelauncher") then 
 	  self.blockCount = self.blockCount + 0.20
 	  status.setPersistentEffects("novakidbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}})  
-     end
-  end
-  heldItem = world.entityHandItem(activeItem.ownerEntityId(), "alt")
-  if heldItem ~= nil then
-     if root.itemHasTag(heldItem, "rocketlauncher") or root.itemHasTag(heldItem, "grenadelauncher") then 
-	  self.blockCount = self.blockCount + 0.20
-	  status.setPersistentEffects("novakidbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}}) 
      end
   end
 end            

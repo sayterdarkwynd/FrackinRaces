@@ -31,29 +31,23 @@ function init()
    if self.blockCount2 == nil then 
      self.blockCount2 = 0
    end       
-   
-   
+
+-- if i want to add sword/shield or that sort of thing as a combo pairing/requirement use the below   
+--opposedhandHeldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand() == "primary" and "alt" or "primary")   
    
 if world.entitySpecies(activeItem.ownerEntityId()) == "hylotl" then  
-  local heldItem = world.entityHandItem(activeItem.ownerEntityId(), "primary")
-  if heldItem ~= nil then
+  local heldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand())
+  if heldItem then
      if root.itemHasTag(heldItem, "dagger") or root.itemHasTag(heldItem, "hammer") or root.itemHasTag(heldItem, "broadsword") or root.itemHasTag(heldItem, "spear") or root.itemHasTag(heldItem, "axe") then 
        self.blockCount = self.blockCount + 1
        status.setPersistentEffects("hylotlbonusdmg", {{stat = "protection", amount = self.blockCount}})  
      end
   end
-  heldItem = world.entityHandItem(activeItem.ownerEntityId(), "alt")
-  if heldItem ~= nil then
-     if root.itemHasTag(heldItem, "dagger") or root.itemHasTag(heldItem, "hammer") or root.itemHasTag(heldItem, "broadsword") or root.itemHasTag(heldItem, "spear") or root.itemHasTag(heldItem, "axe") then 
-       self.blockCount = self.blockCount + 1
-       status.setPersistentEffects("hylotlbonusdmg", {{stat = "protection", amount = self.blockCount}})  
-     end  
-   end
 end
 
 if world.entitySpecies(activeItem.ownerEntityId()) == "floran" then  --florans get defense bonuses when using spears, and increased damage
-  local heldItem = world.entityHandItem(activeItem.ownerEntityId(), "primary")
-  if heldItem ~= nil then
+  local heldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand())
+  if heldItem then
      if root.itemHasTag(heldItem, "spear") then 
 	self.blockCount = self.blockCount + 2
 	self.blockCount2 = self.blockCount2 + 0.14
@@ -62,23 +56,12 @@ if world.entitySpecies(activeItem.ownerEntityId()) == "floran" then  --florans g
 	  {stat = "powerMultiplier", amount = self.blockCount2}
 	})   
      end
-  end
-  heldItem = world.entityHandItem(activeItem.ownerEntityId(), "alt")
-  if heldItem ~= nil then
-     if root.itemHasTag(heldItem, "spear") then 
-	self.blockCount = self.blockCount + 2
-	self.blockCount2 = self.blockCount2 + 0.14
-	status.setPersistentEffects("hylotlbonusdmg", {
-	  {stat = "protection", amount = self.blockCount},
-	  {stat = "powerMultiplier", amount = self.blockCount2}
-	})   
-     end  
   end
 end
 
 if world.entitySpecies(activeItem.ownerEntityId()) == "glitch" then  --glitch get bonuses with axe, sword and broadsword, and dagger
-  local heldItem = world.entityHandItem(activeItem.ownerEntityId(), "primary")
-  if heldItem ~= nil then
+  local heldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand())
+  if heldItem then
      if root.itemHasTag(heldItem, "axe") or root.itemHasTag(heldItem, "shortsword") or root.itemHasTag(heldItem, "broadsword") or root.itemHasTag(heldItem, "dagger") then 
 	self.blockCount = self.blockCount + 0.19
 	status.setPersistentEffects("hylotlbonusdmg", {
@@ -86,20 +69,11 @@ if world.entitySpecies(activeItem.ownerEntityId()) == "glitch" then  --glitch ge
 	})   
      end
   end
-  heldItem = world.entityHandItem(activeItem.ownerEntityId(), "alt")
-  if heldItem ~= nil then
-     if root.itemHasTag(heldItem, "axe") or root.itemHasTag(heldItem, "shortsword") or root.itemHasTag(heldItem, "broadsword") or root.itemHasTag(heldItem, "dagger")  then 
-	self.blockCount = self.blockCount + 0.19
-	status.setPersistentEffects("hylotlbonusdmg", {
-	  {stat = "powerMultiplier", amount = self.blockCount}
-	})  
-     end 
-   end
 end
 
 if world.entitySpecies(activeItem.ownerEntityId()) == "human" then  -- Humans do more damage with shortswords and resist knockback
-  local heldItem = world.entityHandItem(activeItem.ownerEntityId(), "primary")
-  if heldItem ~= nil then
+  local heldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand())
+  if heldItem then
      if root.itemHasTag(heldItem, "shortsword") then 
 	  self.blockCount = self.blockCount + 0.19
 	  status.setPersistentEffects("hylotlbonusdmg", {
@@ -108,57 +82,32 @@ if world.entitySpecies(activeItem.ownerEntityId()) == "human" then  -- Humans do
 	  })   
      end
   end
-  heldItem = world.entityHandItem(activeItem.ownerEntityId(), "alt")
-  if heldItem ~= nil then
-     if root.itemHasTag(heldItem, "shortsword") then 
-	  self.blockCount = self.blockCount + 0.19
-	  status.setPersistentEffects("hylotlbonusdmg", {
-	    {stat = "powerMultiplier", amount = self.blockCount},
-	    {stat = "grit", amount = self.blockCount}
-	  })   
-     end  
-   end
 end
 
 if world.entitySpecies(activeItem.ownerEntityId()) == "wasphive" then   --wasps daggers do 25% more damage
-  local heldItem = world.entityHandItem(activeItem.ownerEntityId(), "primary")
-  if heldItem ~= nil then
+  local heldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand())
+  if heldItem then
      if root.itemHasTag(heldItem, "dagger") then 
 	  self.blockCount = self.blockCount + 0.25
 	  status.setPersistentEffects("hylotlbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}})  
      end
-  end
-  heldItem = world.entityHandItem(activeItem.ownerEntityId(), "alt")
-  if heldItem ~= nil then
-     if root.itemHasTag(heldItem, "dagger") then 
-	  self.blockCount = self.blockCount + 0.25
-	  status.setPersistentEffects("hylotlbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}})  
-     end  
   end
 end
 
 if world.entitySpecies(activeItem.ownerEntityId()) == "apex" then   --apex love axes and hammers
-  local heldItem = world.entityHandItem(activeItem.ownerEntityId(), "primary")
-  if heldItem ~= nil then
+  local heldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand())
+  if heldItem then
      if root.itemHasTag(heldItem, "hammer") or root.itemHasTag(heldItem, "axe") then 
 	self.blockCount = 0.19
 	status.setPersistentEffects("hylotlbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}})    	
 	mcontroller.controlModifiers({ speedModifier = 1.15 }) 
      end
   end
-  heldItem = world.entityHandItem(activeItem.ownerEntityId(), "alt")
-  if heldItem ~= nil then
-     if root.itemHasTag(heldItem, "dagger") then 
-	self.blockCount = 0.19
-	status.setPersistentEffects("hylotlbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}})    	
-	mcontroller.controlModifiers({ speedModifier = 1.15 })  
-     end  
-  end
 end  
 
 if world.entitySpecies(activeItem.ownerEntityId()) == "elunite" then   --elunite get defense bonuses with swords
-  local heldItem = world.entityHandItem(activeItem.ownerEntityId(), "primary")
-  if heldItem ~= nil then
+  local heldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand())
+  if heldItem then
      if root.itemHasTag(heldItem, "dagger") or root.itemHasTag(heldItem, "shortsword") or root.itemHasTag(heldItem, "broadsword") then 
 	self.blockCount = self.blockCount + 2
 	status.setPersistentEffects("hylotlbonusdmg", {
@@ -167,22 +116,12 @@ if world.entitySpecies(activeItem.ownerEntityId()) == "elunite" then   --elunite
 	}) 
      end
   end
-  heldItem = world.entityHandItem(activeItem.ownerEntityId(), "alt")
-  if heldItem ~= nil then
-     if root.itemHasTag(heldItem, "dagger") or root.itemHasTag(heldItem, "shortsword") or root.itemHasTag(heldItem, "broadsword") then 
-	self.blockCount = self.blockCount + 2
-	status.setPersistentEffects("hylotlbonusdmg", {
-	  {stat = "protection", amount = self.blockCount},
-	  {stat = "energyRegenPercentageRate", amount = 0.48}
-	})  
-     end  
-  end
 end  
 
 
 if world.entitySpecies(activeItem.ownerEntityId()) == "fenerox" then  --fenerox get dmg and protection increase with spears
-  local heldItem = world.entityHandItem(activeItem.ownerEntityId(), "primary")
-  if heldItem ~= nil then
+  local heldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand())
+  if heldItem then
      if root.itemHasTag(heldItem, "spear") then 
 	self.blockCount = self.blockCount + 1
 	self.blockCount2 = 0.25
@@ -191,34 +130,12 @@ if world.entitySpecies(activeItem.ownerEntityId()) == "fenerox" then  --fenerox 
 	{stat = "powerMultiplier", amount = self.blockCount2}
 	})  
      end
-   end
-  heldItem = world.entityHandItem(activeItem.ownerEntityId(), "alt")
-  if heldItem ~= nil then
-     if root.itemHasTag(heldItem, "spear") then 
-	self.blockCount = self.blockCount + 1
-	self.blockCount2 = 0.25
-	status.setPersistentEffects("hylotlbonusdmg", {
-	{stat = "protection", amount = self.blockCount},
-	{stat = "powerMultiplier", amount = self.blockCount2}
-	})  
-     end 
    end
 end  
 
 if world.entitySpecies(activeItem.ownerEntityId()) == "fenerox" then  --viera are dangerous with daggers
-  local heldItem = world.entityHandItem(activeItem.ownerEntityId(), "primary")
-  if heldItem ~= nil then
-     if root.itemHasTag(heldItem, "dagger") then 
-	self.blockCount = self.blockCount + 1
-	self.blockCount2 = 0.30
-	status.setPersistentEffects("hylotlbonusdmg", {
-	{stat = "protection", amount = self.blockCount},
-	{stat = "powerMultiplier", amount = self.blockCount2}
-	})  
-     end
-  end
-  heldItem = world.entityHandItem(activeItem.ownerEntityId(), "alt")
-  if heldItem ~= nil then
+  local heldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand())
+  if heldItem then
      if root.itemHasTag(heldItem, "dagger") then 
 	self.blockCount = self.blockCount + 1
 	self.blockCount2 = 0.30
@@ -231,15 +148,8 @@ if world.entitySpecies(activeItem.ownerEntityId()) == "fenerox" then  --viera ar
 end  
 
 if world.entitySpecies(activeItem.ownerEntityId()) == "vulpes" then  --vulpes get protection when swinging blades
-  local heldItem = world.entityHandItem(activeItem.ownerEntityId(), "primary")
-  if heldItem ~= nil then
-     if root.itemHasTag(heldItem, "dagger") or root.itemHasTag(heldItem, "shortsword") or root.itemHasTag(heldItem, "broadsword") then 
-	self.blockCount = self.blockCount + 2
-	status.setPersistentEffects("hylotlbonusdmg", {{stat = "protection", amount = self.blockCount}})   
-     end
-  end
-  heldItem = world.entityHandItem(activeItem.ownerEntityId(), "alt")
-  if heldItem ~= nil then
+  local heldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand())
+  if heldItem then
      if root.itemHasTag(heldItem, "dagger") or root.itemHasTag(heldItem, "shortsword") or root.itemHasTag(heldItem, "broadsword") then 
 	self.blockCount = self.blockCount + 2
 	status.setPersistentEffects("hylotlbonusdmg", {{stat = "protection", amount = self.blockCount}})   
@@ -248,18 +158,8 @@ if world.entitySpecies(activeItem.ownerEntityId()) == "vulpes" then  --vulpes ge
 end 
 
  if world.entitySpecies(activeItem.ownerEntityId()) == "sergal" then  --sergal get health and protection with spears
-  local heldItem = world.entityHandItem(activeItem.ownerEntityId(), "primary")
-  if heldItem ~= nil then
-     if root.itemHasTag(heldItem, "spear") then 
-	self.blockCount = self.blockCount + 2
-	status.setPersistentEffects("hylotlbonusdmg", {
-	{stat = "protection", amount = self.blockCount},
-	{ stat = "maxHealth", baseMultiplier = 1.25 }
-	})     
-     end
-  end
-  heldItem = world.entityHandItem(activeItem.ownerEntityId(), "alt")
-  if heldItem ~= nil then
+  local heldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand())
+  if heldItem then
      if root.itemHasTag(heldItem, "spear") then 
 	self.blockCount = self.blockCount + 2
 	status.setPersistentEffects("hylotlbonusdmg", {
@@ -271,31 +171,21 @@ end
 end            
 
  if world.entitySpecies(activeItem.ownerEntityId()) == "orcana" then  --orcana get health and protection with spears
-  local heldItem = world.entityHandItem(activeItem.ownerEntityId(), "primary")
-  if heldItem ~= nil then
+  local heldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand())
+  if heldItem then
      if root.itemHasTag(heldItem, "spear") then 
 	self.blockCount = 0.25
 	status.setPersistentEffects("hylotlbonusdmg", {
 	{stat = "powerMultiplier", amount = self.blockCount},
 	{ stat = "maxHealth", baseMultiplier = 1.15 }
 	})        
-     end
-  end
-  heldItem = world.entityHandItem(activeItem.ownerEntityId(), "alt")
-  if heldItem ~= nil then
-     if root.itemHasTag(heldItem, "spear") then 
-	self.blockCount = 0.25
-	status.setPersistentEffects("hylotlbonusdmg", {
-	{stat = "powerMultiplier", amount = self.blockCount},
-	{ stat = "maxHealth", baseMultiplier = 1.15 }
-	})     
      end
   end
 end  
 
  if world.entitySpecies(activeItem.ownerEntityId()) == "argonian" then  --argonian do extra damage with spears
-  local heldItem = world.entityHandItem(activeItem.ownerEntityId(), "primary")
-  if heldItem ~= nil then
+  local heldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand())
+  if heldItem then
      if root.itemHasTag(heldItem, "spear") then 
 	self.blockCount = 0.15
 	status.setPersistentEffects("hylotlbonusdmg", {
@@ -304,28 +194,11 @@ end
 	})        
      end
   end
-  heldItem = world.entityHandItem(activeItem.ownerEntityId(), "alt")
-  if heldItem ~= nil then
-     if root.itemHasTag(heldItem, "spear") then 
-	self.blockCount = 0.15
-	status.setPersistentEffects("hylotlbonusdmg", {
-	{stat = "powerMultiplier", amount = self.blockCount},
-	{ stat = "maxEnergy", baseMultiplier = 1.25 }
-	})     
-     end
-  end
 end  
 
  if world.entitySpecies(activeItem.ownerEntityId()) == "neko" then  --neko do extra damage with fists, daggers and shortswords
-  local heldItem = world.entityHandItem(activeItem.ownerEntityId(), "primary")
-  if heldItem ~= nil then
-     if root.itemHasTag(heldItem, "fist") or root.itemHasTag(heldItem, "shortsword") or root.itemHasTag(heldItem, "dagger") then 
-	self.blockCount = 0.15
-	status.setPersistentEffects("hylotlbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}})     
-     end
-  end
-  heldItem = world.entityHandItem(activeItem.ownerEntityId(), "alt")
-  if heldItem ~= nil then
+  local heldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand())
+  if heldItem then
      if root.itemHasTag(heldItem, "fist") or root.itemHasTag(heldItem, "shortsword") or root.itemHasTag(heldItem, "dagger") then 
 	self.blockCount = 0.15
 	status.setPersistentEffects("hylotlbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}})     
@@ -334,15 +207,8 @@ end
 end  
 
  if world.entitySpecies(activeItem.ownerEntityId()) == "kemono" then   --kemono are brutal with swords
-  local heldItem = world.entityHandItem(activeItem.ownerEntityId(), "primary")
-  if heldItem ~= nil then
-     if root.itemHasTag(heldItem, "dagger") or root.itemHasTag(heldItem, "shortsword") or root.itemHasTag(heldItem, "broadsword") then 
-	self.blockCount = 0.3
-	status.setPersistentEffects("hylotlbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}}) 
-     end
-  end
-  heldItem = world.entityHandItem(activeItem.ownerEntityId(), "alt")
-  if heldItem ~= nil then
+  local heldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand())
+  if heldItem then
      if root.itemHasTag(heldItem, "dagger") or root.itemHasTag(heldItem, "shortsword") or root.itemHasTag(heldItem, "broadsword") then 
 	self.blockCount = 0.3
 	status.setPersistentEffects("hylotlbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}}) 
@@ -351,15 +217,8 @@ end
 end  
 
  if world.entitySpecies(activeItem.ownerEntityId()) == "avikan" then   --avikan are brutal spears and daggers
-  local heldItem = world.entityHandItem(activeItem.ownerEntityId(), "primary")
-  if heldItem ~= nil then
-     if root.itemHasTag(heldItem, "dagger") or root.itemHasTag(heldItem, "spear") then 
-	self.blockCount = 0.2
-	status.setPersistentEffects("hylotlbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}})   
-     end
-  end
-  heldItem = world.entityHandItem(activeItem.ownerEntityId(), "alt")
-  if heldItem ~= nil then
+  local heldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand())
+  if heldItem then
      if root.itemHasTag(heldItem, "dagger") or root.itemHasTag(heldItem, "spear") then 
 	self.blockCount = 0.2
 	status.setPersistentEffects("hylotlbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}})   
@@ -368,15 +227,8 @@ end
 end  
  
  if world.entitySpecies(activeItem.ownerEntityId()) == "gyrusen" then   --gyrusens are brutal with axes and hammers
-  local heldItem = world.entityHandItem(activeItem.ownerEntityId(), "primary")
-  if heldItem ~= nil then
-     if root.itemHasTag(heldItem, "axe") or root.itemHasTag(heldItem, "hammer") then 
-	self.blockCount = 0.30
-	status.setPersistentEffects("hylotlbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}})   
-     end
-  end
-  heldItem = world.entityHandItem(activeItem.ownerEntityId(), "alt")
-  if heldItem ~= nil then
+  local heldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand())
+  if heldItem then
      if root.itemHasTag(heldItem, "axe") or root.itemHasTag(heldItem, "hammer") then 
 	self.blockCount = 0.30
 	status.setPersistentEffects("hylotlbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}})   
@@ -385,15 +237,8 @@ end
 end  
 
  if world.entitySpecies(activeItem.ownerEntityId()) == "gyrusen" then   --gyrusens are brutal with axes and hammers
-  local heldItem = world.entityHandItem(activeItem.ownerEntityId(), "primary")
-  if heldItem ~= nil then
-     if root.itemHasTag(heldItem, "broadsword") then 
-	self.blockCount = 0.30
-	status.setPersistentEffects("hylotlbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}})     
-     end
-  end
-  heldItem = world.entityHandItem(activeItem.ownerEntityId(), "alt")
-  if heldItem ~= nil then
+  local heldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand())
+  if heldItem then
      if root.itemHasTag(heldItem, "broadsword") then 
 	self.blockCount = 0.30
 	status.setPersistentEffects("hylotlbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}})     
