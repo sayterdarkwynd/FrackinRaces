@@ -115,6 +115,7 @@ function setCritDamageBoomerang(damage)
       if root.itemHasTag(heldItem, "chakram") then self.critChance = 10 end
   end
   	
+  self.critChance = self.critChance * ( 1 + status.stat("critChanceMultiplier") )
   local crit = math.random(100) <= self.critChance
   local critDamage = crit and (damage*2) + self.critBonus or damage
   return critDamage  
