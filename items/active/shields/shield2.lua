@@ -29,7 +29,7 @@ function init()
   self.stances = config.getParameter("stances")
   setStance(self.stances.idle)
   
-  self.blockCount = 0.01
+  self.blockCountShield = 0.01
   self.ownerRace = world.entitySpecies(activeItem.ownerEntityId())
 
   
@@ -118,15 +118,15 @@ function init()
                 local heldItem = world.entityHandItem(activeItem.ownerEntityId(), "primary")
 		if heldItem ~= nil then
 			if isShield(heldItem) then
-              			self.blockCount = 1
-              			status.setPersistentEffects("shieldBonus", {{stat = "protection", amount = self.blockCount}})    	
+              			self.blockCountShield = 1
+              			status.setPersistentEffects("shieldBonus", {{stat = "protection", amount = self.blockCountShield}})    	
 			end
 		end
 		heldItem = world.entityHandItem(activeItem.ownerEntityId(), "alt")
 		if heldItem ~= nil then
 			if  isShield(heldItem) then
-              			self.blockCount = 1
-              			status.setPersistentEffects("shieldBonus", {{stat = "protection", amount = self.blockCount}})   	
+              			self.blockCountShield = 1
+              			status.setPersistentEffects("shieldBonus", {{stat = "protection", amount = self.blockCountShield}})   	
 			end
 		end  
             end
@@ -135,15 +135,15 @@ function init()
                 local heldItem = world.entityHandItem(activeItem.ownerEntityId(), "primary")
 		if heldItem ~= nil then
 			if isShield(heldItem) then
-              			self.blockCount = -0.25
-              			status.setPersistentEffects("shieldBonus", {{stat = "energyRegenBlockTime", amount = self.blockCount}})    	
+              			self.blockCountShield = -0.25
+              			status.setPersistentEffects("shieldBonus", {{stat = "energyRegenBlockTime", amount = self.blockCountShield}})    	
 			end
 		end
 		heldItem = world.entityHandItem(activeItem.ownerEntityId(), "alt")
 		if heldItem ~= nil then
 			if  isShield(heldItem) then
-              			self.blockCount = -0.25
-              			status.setPersistentEffects("shieldBonus", {{stat = "energyRegenBlockTime", amount = self.blockCount}})   	
+              			self.blockCountShield = -0.25
+              			status.setPersistentEffects("shieldBonus", {{stat = "energyRegenBlockTime", amount = self.blockCountShield}})   	
 			end
 		end  
             end 
@@ -169,8 +169,8 @@ function update(dt, fireMode, shiftHeld)
   self.cooldownTimer = math.max(0, self.cooldownTimer - dt)
 
 --**************************************
- if self.blockCount == nil then 
-   self.blockCount = 0.01 
+ if self.blockCountShield == nil then 
+   self.blockCountShield = 0.01 
  end
 --**************************************
 
@@ -291,7 +291,7 @@ function raiseShield()
           animator.burstParticleEmitter("perfectBlock")
 
           -- *******************************************************
-          self.blockCount = self.blockCount + 0.01
+          self.blockCountShield = self.blockCountShield + 0.01
           -- *******************************************************
           -- FRACKIN UNIVERSE and FRACKIN RACES abilities start here
           -- *******************************************************
@@ -299,35 +299,35 @@ function raiseShield()
           -- *******************************************************
 
           if self.ownerRace == "glitch" then
-            self.blockCount = self.blockCount + 0.03
-            status.setPersistentEffects("glitchprotection", {{stat = "powerMultiplier", amount = self.blockCount}})  --glitch get a power bonus when perfectly blocking
+            self.blockCountShield = self.blockCountShield + 0.03
+            status.setPersistentEffects("glitchprotection", {{stat = "powerMultiplier", amount = self.blockCountShield}})  --glitch get a power bonus when perfectly blocking
             animator.burstParticleEmitter("bonusBlock3")
             animator.playSound("bonusEffect")
           end
 	  if self.ownerRace == "hylotl" then
-            status.modifyResourcePercentage("health", 0.05 + self.blockCount )  --hylotl get a heal when they perfectly block
+            status.modifyResourcePercentage("health", 0.05 + self.blockCountShield )  --hylotl get a heal when they perfectly block
             animator.burstParticleEmitter("bonusBlock")
             animator.playSound("bonusEffect")  
           end
 
 	  if self.ownerRace == "viera" then
-            status.modifyResourcePercentage("health", 0.085 + self.blockCount )  --viera get energy when they perfectly block
+            status.modifyResourcePercentage("health", 0.085 + self.blockCountShield )  --viera get energy when they perfectly block
             animator.burstParticleEmitter("bonusBlock2")
             animator.playSound("bonusEffect")
           end
 	  if self.ownerRace == "human" then
-            self.blockCount = self.blockCount + 2
-            status.setPersistentEffects("humanprotection", {{stat = "protection", amount = self.blockCount}})  --human get a defense bonus when perfectly blocking
+            self.blockCountShield = self.blockCountShield + 2
+            status.setPersistentEffects("humanprotection", {{stat = "protection", amount = self.blockCountShield}})  --human get a defense bonus when perfectly blocking
             animator.burstParticleEmitter("bonusBlock4")
             animator.playSound("bonusEffect")
           end
           if self.ownerRace == "ningen" then
-            self.blockCount = self.blockCount + 2
-            status.setPersistentEffects("ningenprotection", {{stat = "protection", amount = self.blockCount}})  --human get a defense bonus when perfectly blocking
+            self.blockCountShield = self.blockCountShield + 2
+            status.setPersistentEffects("ningenprotection", {{stat = "protection", amount = self.blockCountShield}})  --human get a defense bonus when perfectly blocking
             animator.burstParticleEmitter("bonusBlock4")
             animator.playSound("bonusEffect")
           end          
-		  if self.debug then sb.logInfo("(FR) shield.lua: Perfect block! blockCount now %s",self.blockCount) end
+		  if self.debug then sb.logInfo("(FR) shield.lua: Perfect block! blockCountShield now %s",self.blockCountShield) end
           -- *******************************************************
           -- *******************************************************
           -- *******************************************************
@@ -338,7 +338,7 @@ function raiseShield()
           animator.playSound("block")
           
           -- *******************************************************
-		  if self.debug then sb.logInfo("(FR) shield.lua: hitType %s received, blockCount = %s, blockCount reset",notification.hitType, self.blockCount) end
+		  if self.debug then sb.logInfo("(FR) shield.lua: hitType %s received, blockCountShield = %s, blockCountShield reset",notification.hitType, self.blockCountShield) end
 		  clearEffects(self.ownerRace)
           -- *******************************************************    
           
@@ -346,7 +346,7 @@ function raiseShield()
           animator.playSound("break")
 
           -- *******************************************************
-		  if self.debug then sb.logInfo("(FR) shield.lua: hitType %s received, blockCount = %s, blockCount reset",notification.hitType, self.blockCount) end
+		  if self.debug then sb.logInfo("(FR) shield.lua: hitType %s received, blockCountShield = %s, blockCountShield reset",notification.hitType, self.blockCountShield) end
 		  clearEffects(self.ownerRace)
           -- *******************************************************
           
@@ -356,8 +356,8 @@ function raiseShield()
 	  else
 		if self.debug then sb.logInfo("(FR) shield.lua: non-ShieldHit: %s", notification.hitType) end
 		-- hit is required to do damage, else collisions with, e.g., rain could trigger the reset
-		if self.blockCount > 0.01 and notification.healthLost --[[.damageDealt?]] > 0 then
-		  if self.debug then sb.logInfo("(FR) shield.lua: hitType %s received, blockCount = %s, blockCount reset",notification.hitType, self.blockCount) end
+		if self.blockCountShield > 0.01 and notification.healthLost --[[.damageDealt?]] > 0 then
+		  if self.debug then sb.logInfo("(FR) shield.lua: hitType %s received, blockCountShield = %s, blockCountShield reset",notification.hitType, self.blockCountShield) end
 		  clearEffects(self.ownerRace)
 		end
       end
@@ -369,7 +369,7 @@ end
 
 function clearEffects(playerRace)
   status.clearPersistentEffects(playerRace .. "protection")
-  self.blockCount = 0.01
+  self.blockCountShield = 0.01
 end
 
 function refreshPerfectBlock()

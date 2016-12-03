@@ -50,8 +50,8 @@ function MeleeSlash:windup()
       -- *********************************
       -- FR RACIAL BONUSES FOR WEAPONS   --- Bonus effect when winding up weapon
       -- *********************************
-   --if self.blockCount == nil then 
-   --  self.blockCount = 0
+   --if self.meleeCount == nil then 
+   --  self.meleeCountslash = 0
    --end       
 
 
@@ -103,8 +103,9 @@ end
 
 function MeleeSlash:uninit()
   self.weapon:setDamage()
+  status.clearPersistentEffects("slashbonusdmg")
   status.clearPersistentEffects("hylotlbonusdmg")
-  self.blockCount = 0
+  self.meleeCountslash = 0
 end
 
 

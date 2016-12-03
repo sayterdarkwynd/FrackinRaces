@@ -80,8 +80,8 @@ function MeleeCombo:windup()
 -- FU/FR ADDONS
  --*************************************    
 -- FU/FR ADDONS 
- if self.blockCount == nil then 
-   self.blockCount = 0 
+ if self.meleeCountcombo == nil then 
+   self.meleeCountcombo = 0 
  end
 
 
@@ -89,31 +89,31 @@ function MeleeCombo:windup()
   local heldItem = world.entityHandItem(activeItem.ownerEntityId(), "primary")
   if heldItem then
      if root.itemHasTag(heldItem, "broadsword") or root.itemHasTag(heldItem, "shortsword") then 
-	  self.blockCount = self.blockCount + 0.12
-	  status.setPersistentEffects("hylotlbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount},{stat = "protection", amount = 1}})  
+	  self.meleeCountcombo = self.meleeCountcombo + 0.12
+	  status.setPersistentEffects("combobonusdmg", {{stat = "powerMultiplier", amount = self.meleeCountcombo},{stat = "protection", amount = 1}})  
      end
   end
   heldItem = world.entityHandItem(activeItem.ownerEntityId(), "alt")
   if heldItem then
      if root.itemHasTag(heldItem, "broadsword") or root.itemHasTag(heldItem, "shortsword") then 
-	  self.blockCount = self.blockCount + 0.12
-	  status.setPersistentEffects("hylotlbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount},{stat = "protection", amount = 1}})   
+	  self.meleeCountcombo = self.meleeCountcombo + 0.12
+	  status.setPersistentEffects("combobonusdmg", {{stat = "powerMultiplier", amount = self.meleeCountcombo},{stat = "protection", amount = 1}})   
      end
   end
 end  
 
           if world.entitySpecies(activeItem.ownerEntityId()) == "avikan" then      
-            self.blockCount = self.blockCount + 0.05
-            status.setPersistentEffects("humanbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}})  
+            self.meleeCountcombo = self.meleeCountcombo + 0.05
+            status.setPersistentEffects("combobonusdmg", {{stat = "powerMultiplier", amount = self.meleeCountcombo}})  
           end  
           if world.entitySpecies(activeItem.ownerEntityId()) == "glitch" then      --each 1-handed combo swing slightly increases glitch defense
-            self.blockCount = self.blockCount + 3
-            status.setPersistentEffects("glitchbonusdmg", {{stat = "protection", amount = self.blockCount}})  
+            self.meleeCountcombo = self.meleeCountcombo + 3
+            status.setPersistentEffects("combobonusdmg", {{stat = "protection", amount = self.meleeCountcombo}})  
           end   
 
           if world.entitySpecies(activeItem.ownerEntityId()) == "kemono" then      --each 1-handed combo swing slightly increases kemono defense
-            self.blockCount = self.blockCount + 3
-            status.setPersistentEffects("glitchbonusdmg", {{stat = "protection", amount = self.blockCount}})  
+            self.meleeCountcombo = self.meleeCountcombo + 3
+            status.setPersistentEffects("combobonusdmg", {{stat = "protection", amount = self.meleeCountcombo}})  
           end 
           
 --**************************************   
@@ -233,8 +233,7 @@ end
 
 function MeleeCombo:uninit()
   self.weapon:setDamage()
-  status.clearPersistentEffects("glitchbonusdmg")
-  status.clearPersistentEffects("humanbonusdmg")
+  status.clearPersistentEffects("combobonusdmg")
   status.clearPersistentEffects("hylotlbonusdmg")
-  self.blockCount = 0
+  self.meleeCountcombo = 0
 end
