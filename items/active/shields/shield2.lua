@@ -29,7 +29,7 @@ function init()
   self.stances = config.getParameter("stances")
   setStance(self.stances.idle)
   
-  self.blockCountShield = 0.01
+  self.blockCountShield = 0
   self.ownerRace = world.entitySpecies(activeItem.ownerEntityId())
 
   
@@ -290,40 +290,47 @@ function raiseShield()
           animator.playSound("perfectBlock")
           animator.burstParticleEmitter("perfectBlock")
 
+          
           -- *******************************************************
+          
           self.blockCountShield = self.blockCountShield + 0.01
+          
           -- *******************************************************
           -- FRACKIN UNIVERSE and FRACKIN RACES abilities start here
           -- *******************************************************
           -- *******************************************************
           -- *******************************************************
 
-          if self.ownerRace == "glitch" then
+          if self.ownerRace == "glitch" then --glitch get a power bonus when perfectly blocking
             self.blockCountShield = self.blockCountShield + 0.03
-            status.setPersistentEffects("glitchprotection", {{stat = "powerMultiplier", amount = self.blockCountShield}})  --glitch get a power bonus when perfectly blocking
+            status.setPersistentEffects("glitchprotection", 
+              { {stat = "powerMultiplier", amount = self.blockCountShield} }
+            )  
             animator.burstParticleEmitter("bonusBlock3")
             animator.playSound("bonusEffect")
           end
-	  if self.ownerRace == "hylotl" then
-            status.modifyResourcePercentage("health", 0.05 + self.blockCountShield )  --hylotl get a heal when they perfectly block
+	  if self.ownerRace == "hylotl" then --hylotl get a heal when they perfectly block
+            status.modifyResourcePercentage("health", 0.05 + self.blockCountShield )  
             animator.burstParticleEmitter("bonusBlock")
             animator.playSound("bonusEffect")  
           end
 
-	  if self.ownerRace == "viera" then
-            status.modifyResourcePercentage("health", 0.085 + self.blockCountShield )  --viera get energy when they perfectly block
+	  if self.ownerRace == "viera" then --viera get energy when they perfectly block
+            status.modifyResourcePercentage("health", 0.085 + self.blockCountShield )  
             animator.burstParticleEmitter("bonusBlock2")
             animator.playSound("bonusEffect")
           end
-	  if self.ownerRace == "human" then
+	  if self.ownerRace == "human" then --human get a defense bonus when perfectly blocking
             self.blockCountShield = self.blockCountShield + 2
-            status.setPersistentEffects("humanprotection", {{stat = "protection", amount = self.blockCountShield}})  --human get a defense bonus when perfectly blocking
+            status.setPersistentEffects("humanprotection", 
+              {{stat = "protection", amount = self.blockCountShield}}
+            )  
             animator.burstParticleEmitter("bonusBlock4")
             animator.playSound("bonusEffect")
           end
-          if self.ownerRace == "ningen" then
+          if self.ownerRace == "ningen" then --human get a defense bonus when perfectly blocking
             self.blockCountShield = self.blockCountShield + 2
-            status.setPersistentEffects("ningenprotection", {{stat = "protection", amount = self.blockCountShield}})  --human get a defense bonus when perfectly blocking
+            status.setPersistentEffects("ningenprotection", {{stat = "protection", amount = self.blockCountShield}})  
             animator.burstParticleEmitter("bonusBlock4")
             animator.playSound("bonusEffect")
           end          
