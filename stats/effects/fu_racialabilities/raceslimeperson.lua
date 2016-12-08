@@ -1,21 +1,28 @@
 function init()
   inWater=0
-  effect.addStatModifierGroup({{stat = "poisonStatusImmunity", amount = 1 }})
-  effect.addStatModifierGroup({{stat = "slimeImmunity", amount = 1 }})
-  effect.addStatModifierGroup({{stat = "slimestickImmunity", amount = 1 }})
-  effect.addStatModifierGroup({{stat = "webstickImmunity", amount = 1 }})
-  effect.addStatModifierGroup({{stat = "fallDamageMultiplier", baseMultiplier = 0.15}})
-  
-  baseValue = config.getParameter("healthBonus",0)*(status.resourceMax("health"))
-  effect.addStatModifierGroup({{stat = "maxHealth", amount = baseValue }})
-  baseValue2 = config.getParameter("energyBonus",0)*(status.resourceMax("energy"))
-  effect.addStatModifierGroup({{stat = "maxEnergy", amount = baseValue2 }})  
   self.gritBoost = config.getParameter("gritBonus",0)
-  effect.addStatModifierGroup({{stat = "grit", baseMultiplier = self.gritBoost }}) 
   self.shieldBoost = config.getParameter("shieldBoost",0)
-  effect.addStatModifierGroup({{stat = "shieldRegen", baseMultiplier = self.shieldBoost }})
-  self.movementParams = mcontroller.baseParameters()  
+  baseValue = config.getParameter("healthBonus",0)*(status.resourceMax("health"))
+  baseValue2 = config.getParameter("energyBonus",0)*(status.resourceMax("energy"))
   
+  effect.addStatModifierGroup({
+    {stat = "poisonStatusImmunity", amount = 1 },
+    {stat = "slimeImmunity", amount = 1 },
+    {stat = "slimestickImmunity", amount = 1 },
+    {stat = "webstickImmunity", amount = 1 },
+    {stat = "fallDamageMultiplier", baseMultiplier = 0.15},
+    {stat = "maxHealth", amount = baseValue },
+    {stat = "maxEnergy", amount = baseValue2 },
+    {stat = "grit", baseMultiplier = self.gritBoost },
+    {stat = "shieldRegen", baseMultiplier = self.shieldBoost },
+    {stat = "physicalResistance", amount = 1},
+    {stat = "fireResistance", amount = 1},
+    {stat = "iceResistance", amount = 1},
+    {stat = "electricResistance", amount = 1},
+    {stat = "poisonResistance", amount = 1}
+  })
+
+  self.movementParams = mcontroller.baseParameters()  
   local bounds = mcontroller.boundBox()
   script.setUpdateDelta(10)
   

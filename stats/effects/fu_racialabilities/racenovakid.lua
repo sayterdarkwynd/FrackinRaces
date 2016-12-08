@@ -1,15 +1,23 @@
 function init()
-  baseValue = config.getParameter("healthBonus",0)*(status.resourceMax("health"))
-  effect.addStatModifierGroup({{stat = "maxHealth", amount = baseValue }})
-  baseValue2 = config.getParameter("energyBonus",0)*(status.resourceMax("energy"))
-  effect.addStatModifierGroup({{stat = "maxEnergy", amount = baseValue2 }})  
   self.gritBoost = config.getParameter("gritBonus",0)
-  effect.addStatModifierGroup({{stat = "grit", baseMultiplier = self.gritBoost }})  
+  baseValue = config.getParameter("healthBonus",0)*(status.resourceMax("health"))
+  baseValue2 = config.getParameter("energyBonus",0)*(status.resourceMax("energy"))
   
+  effect.addStatModifierGroup({
+    {stat = "maxHealth", amount = baseValue },
+    {stat = "maxEnergy", amount = baseValue2 },
+    {stat = "grit", baseMultiplier = self.gritBoost },
+    {stat = "biomeradiationImmunity", amount = 1},
+    {stat = "ffextremeradiationImmunity", amount = 1},
+    {stat = "fireStatusImmunity", amount = 1},
+    {stat = "physicalResistance", amount = -1.1},
+    {stat = "fireResistance", amount = 1.25},
+    {stat = "iceResistance", amount = 1},
+    {stat = "electricResistance", amount = 1},
+    {stat = "poisonResistance", amount = -2}
+  })
+
   local bounds = mcontroller.boundBox()
-  effect.addStatModifierGroup({{stat = "biomeradiationImmunity", amount = 1}})
-  effect.addStatModifierGroup({{stat = "ffextremeradiationImmunity", amount = 1}})
-  effect.addStatModifierGroup({{stat = "fireStatusImmunity", amount = 1}})
   script.setUpdateDelta(5)
 end
 

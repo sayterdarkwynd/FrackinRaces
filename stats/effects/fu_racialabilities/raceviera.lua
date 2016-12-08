@@ -1,7 +1,14 @@
 function init()
-effect.addStatModifierGroup({{stat = "foodDelta", baseMultiplier = 1.06146}})
-effect.addStatModifierGroup({{stat = "slimestickImmunity", amount = 1}})
-effect.addStatModifierGroup({{stat = "slimefrictionImmunity", amount = 1}})
+  effect.addStatModifierGroup({
+    {stat = "foodDelta", baseMultiplier = 1.06146},
+    {stat = "slimestickImmunity", amount = 1},
+    {stat = "slimefrictionImmunity", amount = 1},
+    {stat = "physicalResistance", amount = 1},
+    {stat = "fireResistance", amount = 1},
+    {stat = "iceResistance", amount = 1},
+    {stat = "electricResistance", amount = 1},
+    {stat = "poisonResistance", amount = 1}        
+  })
 
   baseValue = config.getParameter("healthBonus",0)*(status.resourceMax("health"))
   effect.addStatModifierGroup({{stat = "maxHealth", amount = baseValue }})

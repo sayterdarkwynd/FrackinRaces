@@ -1,14 +1,22 @@
 require("/scripts/vec2.lua")
 function init()
-    inWater=0
+  inWater=0
   baseValue = config.getParameter("healthBonus",0)*(status.resourceMax("health"))
-  effect.addStatModifierGroup({{stat = "maxHealth", amount = baseValue }})
   baseValue2 = config.getParameter("energyBonus",0)*(status.resourceMax("energy"))
-  effect.addStatModifierGroup({{stat = "maxEnergy", amount = baseValue2 }})  
   
-  effect.addStatModifierGroup({{stat = "maxBreath", amount = 2000}})
-  effect.addStatModifierGroup({{stat = "breathRegenerationRate", amount = 70}})
-  effect.addStatModifierGroup({{stat = "wetImmunity", amount = 1}})
+  effect.addStatModifierGroup({
+    {stat = "maxHealth", amount = baseValue },
+    {stat = "maxEnergy", amount = baseValue2 },
+    {stat = "maxBreath", amount = 2000},
+    {stat = "breathRegenerationRate", amount = 70},
+    {stat = "wetImmunity", amount = 1},
+    {stat = "physicalResistance", amount = 1.2},
+    {stat = "fireResistance", amount = 1},
+    {stat = "iceResistance", amount = 1},
+    {stat = "electricResistance", amount = -2},
+    {stat = "poisonResistance", amount = 1} 
+  })
+  
   script.setUpdateDelta(5)	
   
     if (world.type() == "ocean") or (world.type() == "oceanfloor") or (world.type() == "tidewater") or (world.type() == "tidewaterfloor") then

@@ -1,19 +1,26 @@
 function init()
-  self.powerModifier = config.getParameter("powerModifier", 0)
-  effect.addStatModifierGroup({{stat = "powerMultiplier", amount = self.powerModifier}})
-  baseValue = config.getParameter("healthBonus",0)*(status.resourceMax("health"))
-  effect.addStatModifierGroup({{stat = "maxHealth", amount = baseValue }})
-  baseValue2 = config.getParameter("energyBonus",0)*(status.resourceMax("energy"))
-  effect.addStatModifierGroup({{stat = "maxEnergy", amount = baseValue2 }})  
-  
-  effect.addStatModifierGroup({{stat = "protection", amount = 2 }})
-  effect.addStatModifierGroup({{stat = "foodDelta", baseMultiplier = 0.001}})
-  
-  effect.addStatModifierGroup({{stat = "poisonStatusImmunity", amount = 1}})
-  effect.addStatModifierGroup({{stat = "electricStatusImmunity", amount = 1}})
-  effect.addStatModifierGroup({{stat = "biomecoldImmunity", amount = 1}})
-  effect.addStatModifierGroup({{stat = "biomeradiationImmunity", amount = 1}})
   self.healingRate = 1
+  self.powerModifier = config.getParameter("powerModifier", 0)
+  baseValue = config.getParameter("healthBonus",0)*(status.resourceMax("health"))
+  baseValue2 = config.getParameter("energyBonus",0)*(status.resourceMax("energy"))
+  
+  effect.addStatModifierGroup({
+    {stat = "powerMultiplier", amount = self.powerModifier},
+    {stat = "maxHealth", amount = baseValue },
+    {stat = "maxEnergy", amount = baseValue2 },
+    {stat = "protection", amount = 2 },
+    {stat = "foodDelta", baseMultiplier = 0.001},
+    {stat = "poisonStatusImmunity", amount = 1},
+    {stat = "electricStatusImmunity", amount = 1},
+    {stat = "biomecoldImmunity", amount = 1},
+    {stat = "biomeradiationImmunity", amount = 1}
+    {stat = "physicalResistance", amount = 1},
+    {stat = "fireResistance", amount = 1},
+    {stat = "iceResistance", amount = 1},
+    {stat = "electricResistance", amount = -1.75},
+    {stat = "poisonResistance", amount = 1.5}      
+  })
+  local bounds = mcontroller.boundBox()
   script.setUpdateDelta(5)
     if (world.type() == "atropus") or (world.type() == "atropusdark") then
 	    status.setPersistentEffects("jungleEpic", {

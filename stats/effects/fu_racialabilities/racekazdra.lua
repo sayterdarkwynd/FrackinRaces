@@ -1,12 +1,21 @@
 function init()
-  effect.addStatModifierGroup({{stat = "fireStatusImmunity", amount = 1 }})
-  effect.addStatModifierGroup({{stat = "biomeheatImmunity", amount = 1 }})
   baseValue = config.getParameter("healthBonus",0)*(status.resourceMax("health"))
-  effect.addStatModifierGroup({{stat = "maxHealth", amount = baseValue }})
-  baseValue = config.getParameter("energyBonus",0)*(status.resourceMax("energy"))
-  effect.addStatModifierGroup({{stat = "maxEnergy", amount = baseValue }})  
-  effect.addStatModifierGroup({{stat = "foodDelta", baseMultiplier = 0.6}})
-  effect.addStatModifierGroup({{stat = "protection", amount = 2 }})
+  baseValue2 = config.getParameter("energyBonus",0)*(status.resourceMax("energy"))
+  
+  effect.addStatModifierGroup({
+    {stat = "fireStatusImmunity", amount = 1 },
+    {stat = "biomeheatImmunity", amount = 1 },
+    {stat = "maxHealth", amount = baseValue },
+    {stat = "maxEnergy", amount = baseValue2 },
+    {stat = "foodDelta", baseMultiplier = 0.6},
+    {stat = "protection", amount = 2 },
+    {stat = "physicalResistance", amount = 1.25},
+    {stat = "fireResistance", amount = 1},
+    {stat = "iceResistance", amount = -2},
+    {stat = "electricResistance", amount = 1},
+    {stat = "poisonResistance", amount = 1}  
+  })
+
   local bounds = mcontroller.boundBox()
   script.setUpdateDelta(10)
   
