@@ -59,17 +59,17 @@ if world.entitySpecies(activeItem.ownerEntityId()) == "floran" then  --florans g
   end
 end
 
-if world.entitySpecies(activeItem.ownerEntityId()) == "glitch" then  --glitch get bonuses with axe, sword and broadsword, and dagger
-  local heldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand())
-  if heldItem then
-     if root.itemHasTag(heldItem, "axe") or root.itemHasTag(heldItem, "shortsword") or root.itemHasTag(heldItem, "broadsword") or root.itemHasTag(heldItem, "dagger") then 
-	self.meleeCount = self.meleeCount + 0.14
-	status.setPersistentEffects("weaponbonusdmg", {
-	  {stat = "powerMultiplier", amount = self.meleeCount}
-	})   
-     end
-  end
-end
+--if world.entitySpecies(activeItem.ownerEntityId()) == "glitch" then  --glitch get bonuses with axe, sword and broadsword, and dagger
+--  local heldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand())
+--  if heldItem then
+--     if root.itemHasTag(heldItem, "axe") or root.itemHasTag(heldItem, "shortsword") or root.itemHasTag(heldItem, "broadsword") or root.itemHasTag(heldItem, "dagger") then 
+--	self.meleeCount = self.meleeCount + 0.14
+--	status.setPersistentEffects("weaponbonusdmg", {
+--	  {stat = "powerMultiplier", amount = self.meleeCount}
+--	})   
+--     end
+--  end
+--end
 
 if world.entitySpecies(activeItem.ownerEntityId()) == "human" then  -- Humans do more damage with shortswords and resist knockback
   local heldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand())
