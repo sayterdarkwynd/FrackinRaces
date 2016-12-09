@@ -3,7 +3,7 @@ function init()
     {stat = "honeyslowImmunity", amount = 1},
     {stat = "grit", amount = 0.3},
     {stat = "beestingImmunity", amount = 1},
-    {stat = "physicalResistance", amount = 1},
+    {stat = "physicalResistance", amount = 0},
     {stat = "fireResistance", amount = -0.75},
     {stat = "iceResistance", amount = 0},
     {stat = "electricResistance", amount = 0},

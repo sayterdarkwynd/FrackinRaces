@@ -15,7 +15,7 @@ function init()
     {stat = "maxEnergy", amount = baseValue2 },
     {stat = "grit", baseMultiplier = self.gritBoost },
     {stat = "shieldRegen", baseMultiplier = self.shieldBoost },
-    {stat = "physicalResistance", amount = 0},
+    {stat = "physicalResistance", amount = 0.25},
     {stat = "fireResistance", amount = 0},
     {stat = "iceResistance", amount = 0},
     {stat = "electricResistance", amount = 0},
@@ -32,7 +32,7 @@ end
 function isDry()
 
 local mouthPosition = vec2.add(mcontroller.position(), status.statusProperty("mouthPosition"))
-status.setPersistentEffects("glitchpower", {{stat = "protection", amount = 4}})
+status.setPersistentEffects("glitchpower", {{stat = "physicalResistance", amount = 0.25}})
 	if not world.liquidAt(mouthPosition) then
             status.clearPersistentEffects("glitchweaken")
             status.clearPersistentEffects("glitchweaken2")
@@ -52,7 +52,7 @@ local mouthful = world.liquidAt(mouthposition)
 
 	if world.liquidAt(mouthPosition) and inWater == 0 then
 	    status.clearPersistentEffects("glitchpower")
-            status.setPersistentEffects("glitchweaken", {{stat = "protection", amount = -5}})
+            status.setPersistentEffects("glitchweaken", {{stat = "physicalResistance", amount = -0.5}})
             status.setPersistentEffects("glitchweaken2", {{stat = "maxHealth", amount = -20}})
             status.setPersistentEffects("glitchweaken3", {{stat = "maxEnergy", amount = -30}})
 	    inWater = 1
