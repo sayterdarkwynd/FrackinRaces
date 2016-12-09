@@ -62,7 +62,7 @@ end
 if world.entitySpecies(activeItem.ownerEntityId()) == "glitch" then  --glitch get bonuses with axe and hammer
   local heldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand())
   if heldItem then
-     if root.itemHasTag(heldItem, "axe") root.itemHasTag(heldItem, "hammer") then 
+     if root.itemHasTag(heldItem, "axe") or root.itemHasTag(heldItem, "hammer") then 
 	self.meleeCount = self.meleeCount + 0.14
 	status.setPersistentEffects("weaponbonusdmg", {
 	  {stat = "powerMultiplier", amount = self.meleeCount}

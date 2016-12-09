@@ -23,21 +23,21 @@ function update(dt)
 	if world.entitySpecies(entity.id()) == "avian" then
 		status.addEphemeralEffect("raceavian",math.huge)
 		status.addEphemeralEffect("hpedge",math.huge)
-		--status.addEphemeralEffect("weak_ice",math.huge)
+		status.addEphemeralEffect("weak_ice",math.huge)
 	end
 
 	--Apex
 	if world.entitySpecies(entity.id()) == "apex" then
 	       status.addEphemeralEffect("raceapex",math.huge)
 	       status.addEphemeralEffect("metabolism",math.huge)
-	       --status.addEphemeralEffect("weak_electric",math.huge)
+	       status.addEphemeralEffect("weak_electric",math.huge)
 	end
 	
 	--Floran
 	if world.entitySpecies(entity.id()) == "floran" then
 		status.addEphemeralEffect("racefloran",math.huge)
 		status.addEphemeralEffect("starvingedge",math.huge)
-		--status.addEphemeralEffect("weak_fire",math.huge)
+		status.addEphemeralEffect("weak_fire",math.huge)
 		status.addEphemeralEffect("lightregenfloran",math.huge)
 		
 	end
@@ -46,21 +46,21 @@ function update(dt)
 	if world.entitySpecies(entity.id()) == "hylotl" then
 		status.addEphemeralEffect("racehylotl",math.huge)
 		status.addEphemeralEffect("swimboost2",math.huge)
-		--status.addEphemeralEffect("weak_electric",math.huge)
+		status.addEphemeralEffect("weak_electric",math.huge)
 	end
 	
 	--Glitch
 	if world.entitySpecies(entity.id()) == "glitch" then
 		status.addEphemeralEffect("raceglitch",math.huge)
 		status.addEphemeralEffect("attrition",math.huge)
-		--status.addEphemeralEffect("weak_electric",math.huge)
+		status.addEphemeralEffect("weak_electric",math.huge)
 	end
 	
 	--Novakid
 	if world.entitySpecies(entity.id()) == "novakid" then
 		status.addEphemeralEffect("racenovakid",math.huge)
 		status.addEphemeralEffect("foodregennovakid",math.huge)
-		--status.addEphemeralEffect("weak_poison",math.huge)
+		status.addEphemeralEffect("weak_poison",math.huge)
 	end
 
 
@@ -72,7 +72,7 @@ function update(dt)
 	--avikan
 	if world.entitySpecies(entity.id()) == "avikan" then
 		status.addEphemeralEffect("raceavikan",math.huge)
-		--status.addEphemeralEffect("weak_ice",math.huge)
+		status.addEphemeralEffect("weak_ice",math.huge)
 	end
 	
 	--peglaci
@@ -83,14 +83,14 @@ function update(dt)
 	--felins
 	if world.entitySpecies(entity.id()) == "felin" then
 		status.addEphemeralEffect("racefelins",math.huge)
-		--status.addEphemeralEffect("weak_fire",math.huge)
+		status.addEphemeralEffect("weak_fire",math.huge)
 	end		
 	
 	--Orcana
 	if world.entitySpecies(entity.id()) == "orcana" then
 		status.addEphemeralEffect("raceorcana",math.huge)
 		status.addEphemeralEffect("swimboost3",math.huge)
-		--status.addEphemeralEffect("weak_fire",math.huge)
+		status.addEphemeralEffect("weak_fire",math.huge)
 	end
 
 	--Munari
@@ -122,7 +122,7 @@ function update(dt)
 		status.addEphemeralEffect("darkregenfenerox",math.huge)
 		status.addEphemeralEffect("darkhunter",math.huge)
 		status.addEphemeralEffect("metabolismfenerox",math.huge)
-		--status.addEphemeralEffect("weak_fire",math.huge)
+		status.addEphemeralEffect("weak_fire",math.huge)
 	end	
 	
 	--kineptic (mage cats)
@@ -175,7 +175,7 @@ function update(dt)
           status.addEphemeralEffect("raceargonian",math.huge)
           status.addEphemeralEffect("metabolismargonian",math.huge)
           status.addEphemeralEffect("swimboost1",math.huge)
-          --status.addEphemeralEffect("weak_ice",math.huge)
+          status.addEphemeralEffect("weak_ice",math.huge)
 	end
 
 	--Nightar
@@ -192,7 +192,7 @@ function update(dt)
 	--Lamia
 	if world.entitySpecies(entity.id()) == "lamia" then
 		status.addEphemeralEffect("racelamia",math.huge)
-		--status.addEphemeralEffect("weak_ice",math.huge)
+		status.addEphemeralEffect("weak_ice",math.huge)
 	end	
 	--Gardevan
 	if world.entitySpecies(entity.id()) == "gardevan" then
@@ -205,8 +205,8 @@ function update(dt)
 	--Wasp Hive
 	if world.entitySpecies(entity.id()) == "wasphive" then
 		status.addEphemeralEffect("racewasphive",math.huge)
-		--status.addEphemeralEffect("weak_fire",math.huge)
-		--status.addEphemeralEffect("weak_ice",math.huge)
+		status.addEphemeralEffect("weak_fire",math.huge)
+		status.addEphemeralEffect("weak_ice",math.huge)
 	end
 	--Elunite
 	if world.entitySpecies(entity.id()) == "elunite" then
@@ -216,18 +216,18 @@ function update(dt)
 	--Skelekin
 	if world.entitySpecies(entity.id()) == "skelekin" then
 		status.addEphemeralEffect("raceskelekin",math.huge)
-		--status.addEphemeralEffect("weak_fire",math.huge)
+		status.addEphemeralEffect("weak_fire",math.huge)
 	end
 	--Gyrusen
 	if world.entitySpecies(entity.id()) == "gyrusen" then
 		status.addEphemeralEffect("racegyrusen",math.huge)
-		--status.addEphemeralEffect("weak_ice",math.huge)
+		status.addEphemeralEffect("weak_ice",math.huge)
 	end
 	
 	--Kazdra
 	if world.entitySpecies(entity.id()) == "kazdra" then
 		status.addEphemeralEffect("racekazdra",math.huge)
-		--status.addEphemeralEffect("weak_ice",math.huge)
+		status.addEphemeralEffect("weak_ice",math.huge)
 	end	
 	
   local mouthPosition = vec2.add(mcontroller.position(), status.statusProperty("mouthPosition"))
