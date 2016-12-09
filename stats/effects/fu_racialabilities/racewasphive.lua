@@ -5,11 +5,11 @@ function init()
   effect.addStatModifierGroup({
     {stat = "maxHealth", amount = baseValue },
     {stat = "maxEnergy", amount = baseValue2 },
-    {stat = "physicalResistance", amount = 1.15},
-    {stat = "fireResistance", amount = -1.5},
-    {stat = "iceResistance", amount = -1.5},
-    {stat = "electricResistance", amount = 1},
-    {stat = "poisonResistance", amount = 1} 
+    {stat = "physicalResistance", amount = 0.15},
+    {stat = "fireResistance", amount = -0.5},
+    {stat = "iceResistance", amount = -0.5},
+    {stat = "electricResistance", amount = 0},
+    {stat = "poisonResistance", amount = 0} 
   })
 
   local bounds = mcontroller.boundBox()

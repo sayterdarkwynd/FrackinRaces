@@ -9,11 +9,11 @@ function init()
     {stat = "maxEnergy", amount = baseValue2 },
     {stat = "foodDelta", baseMultiplier = 0.6},
     {stat = "protection", amount = 2 },
-    {stat = "physicalResistance", amount = 1.25},
-    {stat = "fireResistance", amount = 1},
-    {stat = "iceResistance", amount = -2},
-    {stat = "electricResistance", amount = 1},
-    {stat = "poisonResistance", amount = 1}  
+    {stat = "physicalResistance", amount = 0.25},
+    {stat = "fireResistance", amount = 0},
+    {stat = "iceResistance", amount = -1},
+    {stat = "electricResistance", amount = 0},
+    {stat = "poisonResistance", amount = 0}  
   })
 
   local bounds = mcontroller.boundBox()

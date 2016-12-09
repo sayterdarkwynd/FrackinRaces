@@ -9,11 +9,11 @@ function init()
     {stat = "maxHealth", amount = baseValue },
     {stat = "maxEnergy", amount = baseValue2 },
     {stat = "poisonStatusImmunity", amount = 1},
-    {stat = "physicalResistance", amount = 1},
-    {stat = "fireResistance", amount = -2},
-    {stat = "iceResistance", amount = 1},
-    {stat = "electricResistance", amount = 1},
-    {stat = "poisonResistance", amount = 1.25}  
+    {stat = "physicalResistance", amount = 0},
+    {stat = "fireResistance", amount = -1},
+    {stat = "iceResistance", amount = 0},
+    {stat = "electricResistance", amount = 0},
+    {stat = "poisonResistance", amount = 0.25}  
   })
 
   script.setUpdateDelta(10)

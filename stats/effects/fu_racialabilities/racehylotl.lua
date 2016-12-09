@@ -10,11 +10,11 @@ function init()
     {stat = "maxBreath", amount = 1500},
     {stat = "breathRegenerationRate", amount = 60},
     {stat = "wetImmunity", amount = 1},
-    {stat = "physicalResistance", amount = 1},
-    {stat = "fireResistance", amount = 1},
-    {stat = "iceResistance", amount = 1.2},
-    {stat = "electricResistance", amount = -1.75},
-    {stat = "poisonResistance", amount = 1}
+    {stat = "physicalResistance", amount = 0},
+    {stat = "fireResistance", amount = 0},
+    {stat = "iceResistance", amount = 0.2},
+    {stat = "electricResistance", amount = -1},
+    {stat = "poisonResistance", amount = 0}
   })
 
   script.setUpdateDelta(5)
@@ -40,7 +40,7 @@ local mouthPosition = vec2.add(mcontroller.position(), status.statusProperty("mo
 local mouthful = world.liquidAt(mouthposition)
 	if (world.liquidAt(mouthPosition)) and (inWater == 0) and (mcontroller.liquidId()== 1) or (mcontroller.liquidId()== 6) or (mcontroller.liquidId()== 58) or (mcontroller.liquidId()== 12) then
             status.setPersistentEffects("hylotlprotection", {
-              {stat = "protection", baseMultiplier = 1.10},
+              {stat = "physicalResistance", baseMultiplier = 1.20},
               {stat = "perfectBlockLimit", amount = 2},
               {stat = "maxHealth", baseMultiplier = 1.25}
             })

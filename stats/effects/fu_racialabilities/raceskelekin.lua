@@ -14,11 +14,11 @@ function init()
     {stat = "electricStatusImmunity", amount = 1},
     {stat = "biomecoldImmunity", amount = 1},
     {stat = "biomeradiationImmunity", amount = 1}
-    {stat = "physicalResistance", amount = 1},
-    {stat = "fireResistance", amount = 1},
-    {stat = "iceResistance", amount = 1},
-    {stat = "electricResistance", amount = -1.75},
-    {stat = "poisonResistance", amount = 1.5}      
+    {stat = "physicalResistance", amount = 0.2},
+    {stat = "fireResistance", amount = 0},
+    {stat = "iceResistance", amount = 0},
+    {stat = "electricResistance", amount = -0.75},
+    {stat = "poisonResistance", amount = 0.5}      
   })
   local bounds = mcontroller.boundBox()
   script.setUpdateDelta(5)

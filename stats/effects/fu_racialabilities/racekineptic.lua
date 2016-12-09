@@ -5,11 +5,11 @@ function init()
   effect.addStatModifierGroup({
     {stat = "maxHealth", amount = baseValue },
     {stat = "maxEnergy", amount = baseValue2 },
-    {stat = "physicalResistance", amount = 1},
-    {stat = "fireResistance", amount = -1.65},
-    {stat = "iceResistance", amount = 1},
-    {stat = "electricResistance", amount = -1.15},
-    {stat = "poisonResistance", amount = 1.2}   
+    {stat = "physicalResistance", amount = 0},
+    {stat = "fireResistance", amount = -0.65},
+    {stat = "iceResistance", amount = 0.4},
+    {stat = "electricResistance", amount = -0.15},
+    {stat = "poisonResistance", amount = 0.2}   
   })
   
  

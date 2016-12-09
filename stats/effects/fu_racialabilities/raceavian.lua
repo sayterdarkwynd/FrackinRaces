@@ -7,11 +7,11 @@ effect.addStatModifierGroup({
     {stat = "maxEnergy", amount = baseValue2 },
     {stat = "powerMultiplier", baseMultiplier = self.powerModifier},
     {stat = "fallDamageMultiplier", baseMultiplier = 0.35},
-    {stat = "physicalResistance", amount = 1},
-    {stat = "fireResistance", amount = 1},
-    {stat = "iceResistance", amount = -1.75},
-    {stat = "electricResistance", amount = 1},
-    {stat = "poisonResistance", amount = 1} 
+    {stat = "physicalResistance", amount = 0},
+    {stat = "fireResistance", amount = 0},
+    {stat = "iceResistance", amount = -0.75},
+    {stat = "electricResistance", amount = 0},
+    {stat = "poisonResistance", amount = 0} 
 })
 
   self.movementParams = mcontroller.baseParameters()  

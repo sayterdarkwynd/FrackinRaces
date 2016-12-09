@@ -4,11 +4,11 @@ function init()
     {stat = "insanityImmunity", amount = 1},
     {stat = "powerMultiplier", amount = self.powerModifier},
     {stat = "fallDamageMultiplier", effectiveMultiplier = 0.50},
-    {stat = "physicalResistance", amount = 1},
-    {stat = "fireResistance", amount = -1.80},
-    {stat = "iceResistance", amount = 1},
-    {stat = "electricResistance", amount = 1},
-    {stat = "poisonResistance", amount = 1}     
+    {stat = "physicalResistance", amount = 0},
+    {stat = "fireResistance", amount = -0.80},
+    {stat = "iceResistance", amount = 0},
+    {stat = "electricResistance", amount = 0},
+    {stat = "poisonResistance", amount = 0}     
   })
 
   local bounds = mcontroller.boundBox()

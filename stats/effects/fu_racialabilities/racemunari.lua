@@ -10,18 +10,18 @@ function init()
     {stat = "wetImmunity", amount = 1},
     {stat = "maxHealth", amount = baseValue },
     {stat = "maxEnergy", amount = baseValue2 },
-    {stat = "physicalResistance", amount = 1},
-    {stat = "fireResistance", amount = 1},
-    {stat = "iceResistance", amount = 1},
-    {stat = "electricResistance", amount = -1.75},
-    {stat = "poisonResistance", amount = 1.5}
+    {stat = "physicalResistance", amount = 0},
+    {stat = "fireResistance", amount = 0},
+    {stat = "iceResistance", amount = 0},
+    {stat = "electricResistance", amount = -0.75},
+    {stat = "poisonResistance", amount = 0.5}
   })
   local bounds = mcontroller.boundBox()
   script.setUpdateDelta(5)
   
     if (world.type() == "ocean") or (world.type() == "oceanfloor") or (world.type() == "tidewater") or (world.type() == "tidewaterfloor") then
 	    status.setPersistentEffects("jungleEpic", {
-	      {stat = "maxHealth", baseMultiplier = 1.20},
+	      {stat = "physicalResistance", baseMultiplier = 1.20},
 	      {stat = "maxEnergy", baseMultiplier = 1.10}
 	    })
     end    

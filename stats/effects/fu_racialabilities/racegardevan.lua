@@ -10,11 +10,11 @@ function init()
     {stat = "electricStatusImmunity", amount = 1},
     {stat = "poisonStatusImmunity", amount = 1},
     {stat = "biooozeImmunity", amount = 1},
-    {stat = "physicalResistance", amount = 1},
-    {stat = "fireResistance", amount = -2},
-    {stat = "iceResistance", amount = 1},
-    {stat = "electricResistance", amount = 1},
-    {stat = "poisonResistance", amount = 1}
+    {stat = "physicalResistance", amount = 0},
+    {stat = "fireResistance", amount = -1},
+    {stat = "iceResistance", amount = 0},
+    {stat = "electricResistance", amount = 0},
+    {stat = "poisonResistance", amount = 0}
   })
 
   script.setUpdateDelta(220)

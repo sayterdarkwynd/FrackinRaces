@@ -10,11 +10,11 @@ function init()
     {stat = "maxBreath", amount = 2000},
     {stat = "breathRegenerationRate", amount = 70},
     {stat = "wetImmunity", amount = 1},
-    {stat = "physicalResistance", amount = 1.2},
-    {stat = "fireResistance", amount = 1},
-    {stat = "iceResistance", amount = 1},
-    {stat = "electricResistance", amount = -2},
-    {stat = "poisonResistance", amount = 1} 
+    {stat = "physicalResistance", amount = 0.1},
+    {stat = "fireResistance", amount = 0},
+    {stat = "iceResistance", amount = 0},
+    {stat = "electricResistance", amount = -1},
+    {stat = "poisonResistance", amount = 0} 
   })
   
   script.setUpdateDelta(5)	
@@ -42,7 +42,8 @@ local mouthPosition = vec2.add(mcontroller.position(), status.statusProperty("mo
 	    status.addEphemeralEffect("regenerationminor",math.huge)
             status.setPersistentEffects("orcanaprotection", {
               {stat = "foodDelta", baseMultiplier = 0.80},
-              {stat = "fallDamageMultiplier", amount = 0.0}
+              {stat = "fallDamageMultiplier", amount = 0.0},
+              {stat = "poisonResistance", baseMultiplier = 1.20} 
             })
 	    inWater = 1
 	else

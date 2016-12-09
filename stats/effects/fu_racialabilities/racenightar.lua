@@ -10,11 +10,11 @@ function init()
     {stat = "maxEnergy", amount = baseValue2 },
     {stat = "grit", baseMultiplier = self.gritBoost },
     {stat = "biooozeImmunity", amount = 1},
-    {stat = "physicalResistance", amount = 1},
-    {stat = "fireResistance", amount = 1},
-    {stat = "iceResistance", amount = 1},
-    {stat = "electricResistance", amount = 1},
-    {stat = "poisonResistance", amount = 1}
+    {stat = "physicalResistance", amount = 0},
+    {stat = "fireResistance", amount = 0},
+    {stat = "iceResistance", amount = 0},
+    {stat = "electricResistance", amount = 0},
+    {stat = "poisonResistance", amount = 0}
   })
   
   self.movementParams = mcontroller.baseParameters() 

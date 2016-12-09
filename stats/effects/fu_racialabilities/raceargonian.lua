@@ -9,11 +9,11 @@ function init()
     {stat = "breathRegenerationRate", amount = 60},
     {stat = "wetImmunity", amount = 1},
     {stat = "poisonStatusImmunity", amount = 1},
-    {stat = "physicalResistance", amount = 1},
-    {stat = "fireResistance", amount = 1},
-    {stat = "iceResistance", amount = -2},
-    {stat = "electricResistance", amount = 1},
-    {stat = "poisonResistance", amount = 2} 
+    {stat = "physicalResistance", amount = 0},
+    {stat = "fireResistance", amount = 0},
+    {stat = "iceResistance", amount = -1},
+    {stat = "electricResistance", amount = 0},
+    {stat = "poisonResistance", amount = 0.70} 
   })
   
   local bounds = mcontroller.boundBox()

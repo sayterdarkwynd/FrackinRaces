@@ -10,11 +10,11 @@ effect.addStatModifierGroup({
   {stat = "beestingImmunity", amount = 1},
   {stat = "maxHealth", amount = baseValue },
   {stat = "maxEnergy", amount = baseValue2 },
-  {stat = "physicalResistance", amount = 1},
-  {stat = "fireResistance", amount = 2},
-  {stat = "iceResistance", amount = 1},
-  {stat = "electricResistance", amount = -1.75},
-  {stat = "poisonResistance", amount = 1.5} 
+  {stat = "physicalResistance", amount = 0.15},
+  {stat = "fireResistance", amount = 0},
+  {stat = "iceResistance", amount = 0},
+  {stat = "electricResistance", amount = -0.75},
+  {stat = "poisonResistance", amount = 0.5} 
 })
 
 local bounds = mcontroller.boundBox()
@@ -24,7 +24,7 @@ end
 
 function isDry()
 local mouthPosition = vec2.add(mcontroller.position(), status.statusProperty("mouthPosition"))
-status.setPersistentEffects("glitchpower", {{stat = "protection", amount = 2}})
+status.setPersistentEffects("glitchpower", {{stat = "physicalResistance", baseMultiplier = 1.15}})
 	if not world.liquidAt(mouthPosition) then
             status.clearPersistentEffects("glitchweaken")
 	    inWater = 0
@@ -40,10 +40,13 @@ local mouthful = world.liquidAt(mouthposition)
 	    status.clearPersistentEffects("glitchpower")
             status.setPersistentEffects("glitchweaken", 
             {
-              {stat = "protection", amount = -2},
+              {stat = "physicalResistance", amount = -1},
+              {stat = "iceResistance", amount = -0.5},
+              {stat = "fireResistance", amount = 0},
+              {stat = "poisonResistance", amount = 0},
+              {stat = "electricResistance", amount = -1.5},
               {stat = "maxHealth", amount = -10},
               {stat = "maxEnergy", amount = -20},
-              {stat = "enumbrance", amount = 1},
               {stat = "foodDelta", amount = -0.07}
             })
 	    inWater = 1

@@ -10,11 +10,11 @@ function init()
     {stat = "beestingImmunity", amount = 1},
     {stat = "honeyslowImmunity", amount = 1},
     {stat = "fallDamageMultiplier", effectiveMultiplier = 0.20},
-    {stat = "physicalResistance", amount = 1},
-    {stat = "fireResistance", amount = 1},
-    {stat = "iceResistance", amount = 1},
-    {stat = "electricResistance", amount = 1},
-    {stat = "poisonResistance", amount = 1} 
+    {stat = "physicalResistance", amount = 0},
+    {stat = "fireResistance", amount = -0.75},
+    {stat = "iceResistance", amount = -0.5},
+    {stat = "electricResistance", amount = 0},
+    {stat = "poisonResistance", amount = 0.5} 
   })
 
   self.movementParams = mcontroller.baseParameters()  
