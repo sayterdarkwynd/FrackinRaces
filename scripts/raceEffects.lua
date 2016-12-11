@@ -103,7 +103,6 @@ function update(dt)
 	--viera (bunny people)
 	if world.entitySpecies(entity.id()) == "viera" then
 		status.addEphemeralEffect("raceviera",math.huge)
-		status.addEphemeralEffect("weak_shadow",math.huge)
 	end	
 
 	--fenerox (fox people)
@@ -150,7 +149,6 @@ function update(dt)
 	--kemono (fox people)
 	if world.entitySpecies(entity.id()) == "kemono" then
           status.addEphemeralEffect("racekemono",math.huge)
-          status.addEphemeralEffect("weak_shadow",math.huge)
 	end	
 	
 	--ningen  
@@ -194,7 +192,6 @@ function update(dt)
 	--Elunite
 	if world.entitySpecies(entity.id()) == "elunite" then
 		status.addEphemeralEffect("raceelunite",math.huge)
-		status.addEphemeralEffect("weak_shadow",math.huge)
 	end
 	--Skelekin
 	if world.entitySpecies(entity.id()) == "skelekin" then
