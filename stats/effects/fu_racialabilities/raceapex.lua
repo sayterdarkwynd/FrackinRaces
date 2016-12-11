@@ -10,7 +10,8 @@ function init()
     {stat = "fireResistance", amount = 0},
     {stat = "iceResistance", amount = 0.25},
     {stat = "electricResistance", amount = -0.75},
-    {stat = "poisonResistance", amount = 0}  
+    {stat = "poisonResistance", amount = 0},
+    {stat = "shadowResistance", amount = 0}  
   })
 
   local bounds = mcontroller.boundBox()

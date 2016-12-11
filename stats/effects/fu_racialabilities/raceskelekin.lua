@@ -18,7 +18,8 @@ function init()
     {stat = "fireResistance", amount = 0},
     {stat = "iceResistance", amount = 0},
     {stat = "electricResistance", amount = -0.75},
-    {stat = "poisonResistance", amount = 0.5}      
+    {stat = "poisonResistance", amount = 0.5},
+    {stat = "shadowResistance", amount = 0.15}      
   })
   local bounds = mcontroller.boundBox()
   script.setUpdateDelta(5)

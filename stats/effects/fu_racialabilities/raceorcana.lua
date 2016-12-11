@@ -14,7 +14,8 @@ function init()
     {stat = "fireResistance", amount = 0},
     {stat = "iceResistance", amount = 0},
     {stat = "electricResistance", amount = -1},
-    {stat = "poisonResistance", amount = 0} 
+    {stat = "poisonResistance", amount = 0},
+    {stat = "shadowResistance", amount = 0} 
   })
   
   script.setUpdateDelta(5)	

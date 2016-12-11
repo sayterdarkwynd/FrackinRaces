@@ -11,7 +11,8 @@ effect.addStatModifierGroup({
     {stat = "fireResistance", amount = 0},
     {stat = "iceResistance", amount = -0.75},
     {stat = "electricResistance", amount = 0},
-    {stat = "poisonResistance", amount = 0} 
+    {stat = "poisonResistance", amount = 0},
+    {stat = "shadowResistance", amount = 0.15}
 })
 
   self.movementParams = mcontroller.baseParameters()  

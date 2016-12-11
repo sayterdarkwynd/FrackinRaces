@@ -9,7 +9,8 @@ function init()
     {stat = "fireResistance", amount = -0.65},
     {stat = "iceResistance", amount = 0.4},
     {stat = "electricResistance", amount = -0.15},
-    {stat = "poisonResistance", amount = 0.2}   
+    {stat = "poisonResistance", amount = 0.2},
+    {stat = "shadowResistance", amount = 0}   
   })
   
  

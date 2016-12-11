@@ -10,7 +10,8 @@ function init()
     {stat = "fireResistance", amount = -1},
     {stat = "iceResistance", amount = 0},
     {stat = "electricResistance", amount = 0},
-    {stat = "poisonResistance", amount = 0.25} 
+    {stat = "poisonResistance", amount = 0.25},
+    {stat = "shadowResistance", amount = 0} 
   })
 
     if (world.type() == "thickjungle") or (world.type() == "forest") or (world.type() == "tundra") or (world.type() == "garden") or (world.type() == "arboreal") then
