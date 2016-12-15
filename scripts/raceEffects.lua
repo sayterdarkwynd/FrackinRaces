@@ -217,6 +217,11 @@ function update(dt)
   end
   
   
-  
+    status.removeEphemeralEffect("weak_fire")
+    status.removeEphemeralEffect("weak_ice")
+    status.removeEphemeralEffect("weak_poison")
+    status.removeEphemeralEffect("weak_physical")
+    status.removeEphemeralEffect("weak_shadow")
+    status.removeEphemeralEffect("weak_electric")
 	
 end
