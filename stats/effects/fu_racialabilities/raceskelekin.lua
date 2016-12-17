@@ -1,9 +1,12 @@
+require("/scripts/vec2.lua")
+
 function init()
   self.healingRate = 1
   self.powerModifier = config.getParameter("powerModifier", 0)
   baseValue = config.getParameter("healthBonus",0)*(status.resourceMax("health"))
   baseValue2 = config.getParameter("energyBonus",0)*(status.resourceMax("energy"))
   
+
   effect.addStatModifierGroup({
     {stat = "powerMultiplier", amount = self.powerModifier},
     {stat = "maxHealth", amount = baseValue },
@@ -13,14 +16,18 @@ function init()
     {stat = "poisonStatusImmunity", amount = 1},
     {stat = "electricStatusImmunity", amount = 1},
     {stat = "biomecoldImmunity", amount = 1},
-    {stat = "biomeradiationImmunity", amount = 1}
+    {stat = "biomeradiationImmunity", amount = 1},
     {stat = "physicalResistance", amount = 0.2},
     {stat = "fireResistance", amount = 0},
     {stat = "iceResistance", amount = 0},
     {stat = "electricResistance", amount = -0.75},
     {stat = "poisonResistance", amount = 0.5},
-    {stat = "shadowResistance", amount = 0.15}      
+    {stat = "shadowResistance", amount = 0.15} 
   })
+ 
+  
+  
+
   local bounds = mcontroller.boundBox()
   script.setUpdateDelta(5)
     if (world.type() == "atropus") or (world.type() == "atropusdark") then
