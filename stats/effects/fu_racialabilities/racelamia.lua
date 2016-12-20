@@ -3,11 +3,11 @@ function init()
   baseValue2 = config.getParameter("energyBonus",0)*(status.resourceMax("energy"))
   
   effect.addStatModifierGroup({
+    {stat = "maxHealth", amount = baseValue },
+    {stat = "maxEnergy", amount = baseValue2 },  
     {stat = "foodDelta", baseMultiplier = 0.5},
     {stat = "blacktarImmunity", amount = 1},
     {stat = "jungleslowImmunity", amount = 1 },
-    {stat = "maxHealth", amount = baseValue },
-    {stat = "maxEnergy", amount = baseValue2 },
     {stat = "physicalResistance", amount = 0.1},
     {stat = "fireResistance", amount = 0},
     {stat = "iceResistance", amount = -1},
@@ -17,7 +17,7 @@ function init()
   })
 
   local bounds = mcontroller.boundBox()
-  script.setUpdateDelta(10)
+  script.setUpdateDelta(5)
   
 end
 
