@@ -133,7 +133,7 @@ if world.entitySpecies(activeItem.ownerEntityId()) == "fenerox" then  --fenerox 
    end
 end  
 
-if world.entitySpecies(activeItem.ownerEntityId()) == "fenerox" then  --viera are dangerous with daggers
+if world.entitySpecies(activeItem.ownerEntityId()) == "viera" then  --viera are dangerous with daggers
   local heldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand())
   if heldItem then
      if root.itemHasTag(heldItem, "dagger") then 
