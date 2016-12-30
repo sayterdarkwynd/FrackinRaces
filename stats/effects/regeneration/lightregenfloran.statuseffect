@@ -11,6 +11,6 @@
 
   "animationConfig" : "lightregen.animation",
   
-  "label" : "Daylight Healing",
+  "label" : "Daylight Regen",
   "icon" : "/interface/statuses/warm.png"
 }
