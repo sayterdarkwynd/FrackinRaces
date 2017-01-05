@@ -1,3 +1,5 @@
+require("/scripts/vec2.lua")
+
 function init()
   inWater=0
   self.gritBoost = config.getParameter("gritBonus",0)
