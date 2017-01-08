@@ -1,5 +1,6 @@
 {
   "name" : "foodregennovakid",
+    "blockingStat" : "healingStatusImmunity",
   "effectConfig" : {
     "healTime" : 130
   },

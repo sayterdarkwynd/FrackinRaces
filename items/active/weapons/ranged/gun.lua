@@ -21,8 +21,12 @@ function init()
  if world.entitySpecies(activeItem.ownerEntityId()) == "novakid" then   
   local heldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand())
   if heldItem then
-     if root.itemHasTag(heldItem, "pistol") or root.itemHasTag(heldItem, "sniperrifle") then 
+     if root.itemHasTag(heldItem, "pistol") then 
 	  self.blockCount = self.blockCount + 0.125
+	  status.setPersistentEffects("novakidbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}})    
+     end
+     if root.itemHasTag(heldItem, "sniperrifle") or root.itemHasTag(heldItem, "rifle") then 
+	  self.blockCount = self.blockCount + 0.25
 	  status.setPersistentEffects("novakidbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}})    
      end
   end
@@ -61,7 +65,7 @@ end
  if world.entitySpecies(activeItem.ownerEntityId()) == "vespoid" then   
   local heldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand())
   if heldItem then
-     if root.itemHasTag(heldItem, "machinepistol") or root.itemHasTag(heldItem, "sniperrifle") then 
+     if root.itemHasTag(heldItem, "machinepistol") or root.itemHasTag(heldItem, "sniperrifle") or root.itemHasTag(heldItem, "rifle") then 
 	  self.blockCount = self.blockCount + 0.25
 	  status.setPersistentEffects("novakidbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}})  
      end

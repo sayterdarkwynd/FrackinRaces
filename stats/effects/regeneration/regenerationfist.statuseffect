@@ -1,5 +1,6 @@
 {
   "name" : "regenerationfist",
+    "blockingStat" : "healingStatusImmunity",
   "effectConfig" : {
     "healTime" : 200
   },
