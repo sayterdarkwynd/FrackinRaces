@@ -26,7 +26,7 @@ function init()
 	  status.setPersistentEffects("novakidbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}})    
      end
      if root.itemHasTag(heldItem, "sniperrifle") or root.itemHasTag(heldItem, "rifle") then 
-	  self.blockCount = self.blockCount + 0.25
+	  self.blockCount = self.blockCount + 0.165
 	  status.setPersistentEffects("novakidbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}})    
      end
   end
