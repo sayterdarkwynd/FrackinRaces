@@ -4,10 +4,10 @@ function init()
     {stat = "slimestickImmunity", amount = 1},
     {stat = "slimefrictionImmunity", amount = 1},
     {stat = "physicalResistance", amount = 0},
-    {stat = "fireResistance", amount = 0},
-    {stat = "iceResistance", amount = 0},
-    {stat = "electricResistance", amount = 0},
-    {stat = "poisonResistance", amount = 0.25},
+    {stat = "fireResistance", amount = 0.20},
+    {stat = "iceResistance", amount = 0.20},
+    {stat = "electricResistance", amount = 0.20},
+    {stat = "poisonResistance", amount = 0.20},
     {stat = "shadowResistance", amount = -1}        
   })
 

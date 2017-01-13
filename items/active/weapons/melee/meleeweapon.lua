@@ -216,6 +216,16 @@ end
   end
 end  
 
+ if world.entitySpecies(activeItem.ownerEntityId()) == "felin" then  --neko do extra damage with fists, daggers and shortswords
+  local heldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand())
+  if heldItem then
+     if root.itemHasTag(heldItem, "fist") or root.itemHasTag(heldItem, "dagger") then 
+	self.meleeCount = 0.15
+	status.setPersistentEffects("weaponbonusdmg", {{stat = "powerMultiplier", amount = self.meleeCount}})     
+     end
+  end
+end 
+
  if world.entitySpecies(activeItem.ownerEntityId()) == "neko" then  --neko do extra damage with fists, daggers and shortswords
   local heldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand())
   if heldItem then
