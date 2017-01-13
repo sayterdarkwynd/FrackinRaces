@@ -39,6 +39,39 @@ if world.entitySpecies(activeItem.ownerEntityId()) == "fenerox" then
    end
 end
 
+
+if world.entitySpecies(activeItem.ownerEntityId()) == "lamia" then  
+  local heldItem = world.entityHandItem(activeItem.ownerEntityId(), "primary")
+  if heldItem then
+     if root.itemHasTag(heldItem, "chakram") then 
+	  self.blockCount = self.blockCount + 1.10
+	  self.blockCount2 = self.blockCount2 + 1.10
+	  self.blockCount3 = self.blockCount3 + 1.10
+	  status.setPersistentEffects("bonusdmg", {
+	    {stat = "powerMultiplier", baseMultiplier = self.blockCount},
+	    {stat = "maxHealth", baseMultiplier = self.blockCount2 },
+	    {stat = "grit", baseMultiplier = self.blockCount3 }
+	    })  	
+	    local bounds = mcontroller.boundBox()
+     end
+  end
+  heldItem = world.entityHandItem(activeItem.ownerEntityId(), "alt")
+  if heldItem then
+     if root.itemHasTag(heldItem, "chakram") then 
+	  self.blockCount = self.blockCount + 1.10
+	  self.blockCount2 = self.blockCount2 + 1.10
+	  self.blockCount3 = self.blockCount3 + 1.10
+	  status.setPersistentEffects("bonusdmg", {
+	    {stat = "powerMultiplier", baseMultiplier = self.blockCount},
+	    {stat = "maxHealth", baseMultiplier = self.blockCount2 },
+	    {stat = "grit", baseMultiplier = self.blockCount3 }
+	    })  	
+	    local bounds = mcontroller.boundBox()
+     end  
+   end
+end
+
+
 if world.entitySpecies(activeItem.ownerEntityId()) == "bunnykin" then  
   local heldItem = world.entityHandItem(activeItem.ownerEntityId(), "primary")
   if heldItem then

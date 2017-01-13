@@ -26,33 +26,39 @@ function init()
    end
 
             if world.entitySpecies(activeItem.ownerEntityId()) == "novakid" then      
-              self.whipCount = self.whipCount + 0.19
+              self.whipCount = self.whipCount + 1.19
               status.setPersistentEffects("nightarbonusdmg", { 
-                {stat = "powerMultiplier", amount = self.whipCount} 
+                {stat = "powerMultiplier", baseMultiplier = self.whipCount} 
               })            
               local bounds = mcontroller.boundBox() 
             end 
-            
+            if world.entitySpecies(activeItem.ownerEntityId()) == "lamia" then      
+              self.whipCount = self.whipCount + 1.06
+              status.setPersistentEffects("lamiabonusdmg", { 
+                {stat = "protection", baseMultiplier = self.whipCount} 
+              })            
+              local bounds = mcontroller.boundBox() 
+            end             
             if world.entitySpecies(activeItem.ownerEntityId()) == "nightar" then      
-              self.whipCount = self.whipCount + 0.19
-              self.whipCount2 = self.whipCount2 + 0.11
+              self.whipCount = self.whipCount + 1.19
+              self.whipCount2 = self.whipCount2 + 1.11
               status.setPersistentEffects("nightarbonusdmg", {
-                {stat = "powerMultiplier", amount = self.whipCount},
-                {stat = "maxHealth", baseMultiplier = 1 + self.whipCount2 }
+                {stat = "powerMultiplier", baseMultiplier = self.whipCount},
+                {stat = "maxHealth", baseMultiplier = self.whipCount2 }
               })            
             end  
             if world.entitySpecies(activeItem.ownerEntityId()) == "vulpes" then      
-              self.whipCount = self.whipCount + 0.12
-              status.setPersistentEffects("nightarbonusdmg", {{stat = "powerMultiplier", amount = self.whipCount}})            
+              self.whipCount = self.whipCount + 1.12
+              status.setPersistentEffects("nightarbonusdmg", {{stat = "powerMultiplier", baseMultiplier = self.whipCount}})            
             end               
             if world.entitySpecies(activeItem.ownerEntityId()) == "slimeperson" then      
-              self.whipCount = self.whipCount + 0.25
-              status.setPersistentEffects("nightarbonusdmg", {{stat = "powerMultiplier", amount = self.whipCount}}) 
+              self.whipCount = self.whipCount + 1.25
+              status.setPersistentEffects("nightarbonusdmg", {{stat = "powerMultiplier", baseMultiplier = self.whipCount}}) 
               local bounds = mcontroller.boundBox() 
             end    
             if world.entitySpecies(activeItem.ownerEntityId()) == "gardevan" then      
-              self.whipCount = self.whipCount + 0.20
-              status.setPersistentEffects("nightarbonusdmg", {{stat = "powerMultiplier", amount = self.whipCount}}) 
+              self.whipCount = self.whipCount + 1.20
+              status.setPersistentEffects("nightarbonusdmg", {{stat = "powerMultiplier", baseMultiplier = self.whipCount}}) 
               local bounds = mcontroller.boundBox() 
             end              
 --************************************** 
@@ -82,6 +88,7 @@ end
 
 function uninit()
   status.clearPersistentEffects("nightarbonusdmg")
+  status.clearPersistentEffects("lamiabonusdmg")
   self.whipCount = 0
   self.weapon:uninit()
 end
