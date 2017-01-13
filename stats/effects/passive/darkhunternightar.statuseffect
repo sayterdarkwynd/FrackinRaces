@@ -1,0 +1,17 @@
+{
+  "name" : "darkhunternightar",
+  "effectConfig" : {
+    "powerBonus" : 0.1,
+    "powerPenalty" : -0.2
+  },
+  "defaultDuration" : 60,
+
+  "scripts" : [
+    "darkhunter.lua"
+  ],
+
+  "animationConfig" : "darkhunter.animation",
+  
+  "label" : "Shadow Warrior",
+  "icon" : "/interface/statuses/nighthunt.png"
+}
