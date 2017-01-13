@@ -1,12 +1,12 @@
 {
-  "itemName" : "beamaxegyrusen",
+  "itemName" : "beamaxeelunite",
   "price" : 0,
   "inventoryIcon" : "gravgunicon.png",
   "rarity" : "Essential",
   "maxStack" : 1,
   "description" : "Manipulates anything that matters. ^green;Quick select with [R] key.",
   "shortdescription" : "Enhanced Manipulator",
-  "largeImage" : "gravgunlargegyrusen.png",
+  "largeImage" : "gravgunlargeelunite.png",
   "tooltipKind" : "mm",
   "category" : "Tool",
   "fireTime" : 0.25,
@@ -18,7 +18,7 @@
   "twoHanded" : true,
   "strikeSounds" : [ "/sfx/tools/atom.ogg", "/sfx/tools/atom2.ogg", "/sfx/tools/atom3.ogg", "/sfx/tools/atom4.ogg", "/sfx/tools/atom5.ogg" ],
 
-  "image" : "/items/tools/miningtools/beamaxegyrusen.png",
+  "image" : "/items/tools/miningtools/beamaxeelunite.png",
   "endImages" : [ "/humanoid/any/ball.png", "/humanoid/any/tileglow.png", "/humanoid/any/4tileglow.png", "/humanoid/any/ball.png" ],
   "handPosition" : [-2, 0],
   "firePosition" : [5, 0],

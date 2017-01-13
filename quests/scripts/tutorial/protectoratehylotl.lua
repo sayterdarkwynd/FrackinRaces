@@ -9,7 +9,7 @@ function questStart()
 end
 
 function questComplete()
-  player.giveEssentialItem("beamaxe", "beamaxegyrusen")
+  player.giveEssentialItem("beamaxe", "beamaxehylotl")
 end
 
 function update(dt)

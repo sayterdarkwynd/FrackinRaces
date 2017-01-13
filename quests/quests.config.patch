@@ -4,5 +4,6 @@
 //you will have to create a new quest file in a folder called tutorial.
 //A template is available if you need one.
  {"op":"add", "path":"/initialquests/apex", "value": [ "protectorate", "protectorateapex" ] },
- {"op":"add", "path":"/initialquests/gyrusen", "value": [ "protectorate", "protectorategyrusen" ] } 
+ {"op":"add", "path":"/initialquests/elunite", "value": [ "protectorate", "protectorateelunite" ] }, 
+ {"op":"add", "path":"/initialquests/hylotl", "value": [ "protectorate", "protectoratehylotl" ] } 
 ]

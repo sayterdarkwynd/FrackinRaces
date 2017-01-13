@@ -226,6 +226,8 @@ function uninit()
   status.clearPersistentEffects("ningenprotection")
   status.clearPersistentEffects("vieraprotection")
   status.clearPersistentEffects("hylotlprotection")
+  status.clearPersistentEffects("nightarprotection")
+  status.clearPersistentEffects("apexprotection")
   status.clearPersistentEffects("glitchprotection")
   status.clearPersistentEffects("shieldEffects") 
   status.clearPersistentEffects("shieldBonus") 
@@ -314,7 +316,15 @@ function raiseShield()
             animator.burstParticleEmitter("bonusBlock")
             animator.playSound("bonusEffect")  
           end
-
+	  if self.ownerRace == "nightar" or self.ownerRace == "apex" then --nightar gain protection when they block
+            self.blockCountShield = self.blockCountShield + 1
+            status.setPersistentEffects("nightarprotection", 
+              { {stat = "protection", amount = self.blockCountShield } }
+            )  
+            animator.burstParticleEmitter("bonusBlock3")
+            animator.playSound("bonusEffect")
+          end    
+          
 	  if self.ownerRace == "viera" then --viera get energy when they perfectly block
             status.modifyResourcePercentage("health", 0.085 + self.blockCountShield )  
             animator.burstParticleEmitter("bonusBlock2")

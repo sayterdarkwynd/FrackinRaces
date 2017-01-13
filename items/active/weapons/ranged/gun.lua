@@ -51,16 +51,7 @@ end
      end
   end
 end           
--- Nightar rock the Assault Rifle
- if world.entitySpecies(activeItem.ownerEntityId()) == "nightar" then   
-  local heldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand())
-  if heldItem then
-     if root.itemHasTag(heldItem, "assaultrifle") then 
-	  self.blockCount = self.blockCount + 0.15
-	  status.setPersistentEffects("novakidbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}}) 
-     end
-  end
-end     
+    
 -- Vespoids snipe and smg
  if world.entitySpecies(activeItem.ownerEntityId()) == "vespoid" then   
   local heldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand())

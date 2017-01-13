@@ -1,8 +1,8 @@
 {
   "name" : "racenightar",
   "effectConfig" : {
-  "healthBonus" : -0.10,
-  "energyBonus" : 0.25,
+  "healthBonus" : 0.20,
+  "energyBonus" : -0.25,
   "gritBonus" : 0.15,
   "foodBonus" : 50
   },

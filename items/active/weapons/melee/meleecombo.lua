@@ -83,7 +83,9 @@ function MeleeCombo:windup()
  if self.meleeCountcombo == nil then 
    self.meleeCountcombo = 0 
  end
-
+ if self.meleeCountcombo2 == nil then 
+   self.meleeCountcombo2 = 0 
+ end
 
  if world.entitySpecies(activeItem.ownerEntityId()) == "hylotl" then   -- in combos, hylotl get a bonus to damage with swords
   local heldItem = world.entityHandItem(activeItem.ownerEntityId(), "primary")
@@ -110,7 +112,14 @@ end
             self.meleeCountcombo = self.meleeCountcombo + 3
             status.setPersistentEffects("combobonusdmg", {{stat = "protection", amount = self.meleeCountcombo}})  
           end   
-
+          if world.entitySpecies(activeItem.ownerEntityId()) == "apex" then      --each 1-handed combo swing slightly increases glitch defense
+            self.meleeCountcombo = self.meleeCountcombo + 0.2
+            self.meleeCountcombo2 = self.meleeCountcombo2 + 0.2
+            status.setPersistentEffects("combobonusdmg", {
+              {stat = "grit", baseMultiplier = self.meleeCountcombo},
+              {stat = "powerMultiplier", amount = self.meleeCountcombo2}
+            })  
+          end 
           if world.entitySpecies(activeItem.ownerEntityId()) == "kemono" then      --each 1-handed combo swing slightly increases kemono defense
             self.meleeCountcombo = self.meleeCountcombo + 3
             status.setPersistentEffects("combobonusdmg", {{stat = "protection", amount = self.meleeCountcombo}})  
@@ -236,4 +245,5 @@ function MeleeCombo:uninit()
   status.clearPersistentEffects("combobonusdmg")
   status.clearPersistentEffects("hylotlbonusdmg")
   self.meleeCountcombo = 0
+  self.meleeCountcombo2 = 0
 end

@@ -32,11 +32,7 @@ function init()
               {stat = "maxEnergy", baseMultiplier = 1 + self.staffCount}
               }) 
               local bounds = mcontroller.boundBox()  
-            end 
-            if world.entitySpecies(activeItem.ownerEntityId()) == "nightar" then     
-              self.staffCount = self.staffCount + 0.12
-              status.setPersistentEffects("ningenbonusdmg", {{stat = "protection", amount = self.staffCount}})  
-            end              
+            end            
             if world.entitySpecies(activeItem.ownerEntityId()) == "kineptic" then     
               self.staffCount = self.staffCount + 0.25
               status.setPersistentEffects("ningenbonusdmg", {{stat = "powerMultiplier", amount = self.staffCount}})  
