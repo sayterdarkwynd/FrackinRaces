@@ -112,9 +112,9 @@ end
             self.meleeCountcombo = self.meleeCountcombo + 3
             status.setPersistentEffects("combobonusdmg", {{stat = "protection", amount = self.meleeCountcombo}})  
           end   
-          if world.entitySpecies(activeItem.ownerEntityId()) == "apex" then      --each 1-handed combo swing slightly increases glitch defense
-            self.meleeCountcombo = self.meleeCountcombo + 0.2
-            self.meleeCountcombo2 = self.meleeCountcombo2 + 0.2
+          if world.entitySpecies(activeItem.ownerEntityId()) == "nightar" then      --each 1-handed combo swing slightly increases glitch defense
+            self.meleeCountcombo = self.meleeCountcombo + 0.1
+            self.meleeCountcombo2 = self.meleeCountcombo2 + 0.07
             status.setPersistentEffects("combobonusdmg", {
               {stat = "grit", baseMultiplier = self.meleeCountcombo},
               {stat = "powerMultiplier", amount = self.meleeCountcombo2}

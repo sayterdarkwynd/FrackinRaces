@@ -23,7 +23,7 @@ function init()
 	    apex     = { initRadius = 1 },
 	    hylotl   = { initLiquid = 1 }
 	}
-	-- *****************    
+	   
 	
 	-- are they a race that gets a MM bonus?
 
@@ -45,7 +45,7 @@ function init()
           player.giveEssentialItem(upgrade.essentialSlot, item)	 
 	end
 	self.powerBonus = self.powerBonus or 0
-
+        -- ***************** 
 
   updateGui()
 end

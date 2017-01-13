@@ -94,6 +94,26 @@ if world.entitySpecies(activeItem.ownerEntityId()) == "wasphive" then   --wasps 
   end
 end
 
+if world.entitySpecies(activeItem.ownerEntityId()) == "nightar" then  -- Humans do more damage with shortswords and resist knockback
+  local heldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand())
+  if heldItem then
+     if root.itemHasTag(heldItem, "shortsword") then 
+	  self.meleeCount = self.meleeCount + 0.08
+	  status.setPersistentEffects("weaponbonusdmg", {
+	    {stat = "powerMultiplier", amount = self.meleeCount},
+	    {stat = "grit", amount = self.meleeCount}
+	  })   
+     end
+     if root.itemHasTag(heldItem, "broadsword") then 
+	  self.meleeCount = self.meleeCount + 0.18
+	  status.setPersistentEffects("weaponbonusdmg", {
+	    {stat = "powerMultiplier", amount = self.meleeCount}
+	  })  
+	  mcontroller.controlModifiers({ speedModifier = 1.15 }) 
+     end
+  end
+end
+
 if world.entitySpecies(activeItem.ownerEntityId()) == "apex" then   --apex love axes and hammers
   local heldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand())
   if heldItem then
@@ -138,7 +158,7 @@ if world.entitySpecies(activeItem.ownerEntityId()) == "viera" then  --viera are 
   if heldItem then
      if root.itemHasTag(heldItem, "dagger") then 
 	self.meleeCount = self.meleeCount + 1
-	self.meleeCount2 = 0.30
+	self.meleeCount2 = 0.20
 	status.setPersistentEffects("weaponbonusdmg", {
 	{stat = "protection", amount = self.meleeCount},
 	{stat = "powerMultiplier", amount = self.meleeCount2}

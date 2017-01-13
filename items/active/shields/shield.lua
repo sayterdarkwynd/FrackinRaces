@@ -52,23 +52,21 @@ function init()
 			end
 		end  
             end   
-
-            if self.ownerRace == "viera" then
+            if self.ownerRace == "nightar" then
                 local heldItem = world.entityHandItem(activeItem.ownerEntityId(), "primary")
+                self.blockCountShield2 = 0.2
 		if heldItem ~= nil then
 			if isShield(heldItem) then
-              			self.blockCountShield = -0.25
-              			status.setPersistentEffects("shieldBonus", {{stat = "energyRegenBlockTime", amount = self.blockCountShield}})    	
+              			status.setPersistentEffects("shieldBonus", {{stat = "grit", amount = self.blockCountShield2}})    	
 			end
 		end
 		heldItem = world.entityHandItem(activeItem.ownerEntityId(), "alt")
 		if heldItem ~= nil then
 			if  isShield(heldItem) then
-              			self.blockCountShield = -0.25
-              			status.setPersistentEffects("shieldBonus", {{stat = "energyRegenBlockTime", amount = self.blockCountShield}})   	
+              			status.setPersistentEffects("shieldBonus", {{stat = "grit", amount = self.blockCountShield2}})   	
 			end
 		end  
-            end 
+            end   
             
   updateAim()
 end
@@ -221,16 +219,13 @@ function raiseShield()
 	  if self.ownerRace == "nightar" or self.ownerRace == "apex" then --nightar gain protection when they block
             self.blockCountShield = self.blockCountShield + 1
             status.setPersistentEffects("nightarprotection", 
-              { {stat = "protection", amount = self.blockCountShield } }
+              { 
+                {stat = "protection", amount = self.blockCountShield }
+              }
             )  
             animator.burstParticleEmitter("bonusBlock3")
             animator.playSound("bonusEffect")
-          end         
-	  if self.ownerRace == "viera" then
-            status.modifyResourcePercentage("energy", 0.085 + self.blockCountShield )  --viera get energy when they perfectly block
-            animator.burstParticleEmitter("bonusBlock2")
-            animator.playSound("bonusEffect")
-          end
+          end           
 	  if self.ownerRace == "human" then
             self.blockCountShield = self.blockCountShield + 2
             status.setPersistentEffects("humanprotection", {{stat = "protection", amount = self.blockCountShield}})  --human get a defense bonus when perfectly blocking

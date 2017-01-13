@@ -18,14 +18,20 @@ function init()
   
   local bounds = mcontroller.boundBox()
   script.setUpdateDelta(10)
+	if (world.type() == "forest") or (world.type() == "thickjungle") or (world.type() == "arboreal") or (world.type() == "arborealdark") then
+		    status.setPersistentEffects("vieraEpic", {
+		      {stat = "protection", baseMultiplier = 1.10},
+		      {stat = "maxEnergy", baseMultiplier = 1.15}
+		    })
+		    mcontroller.controlModifiers( { speedModifier = 1.18 } )		    
+	end  
+  script.setUpdateDelta(10)
 end
 
 function update(dt)
-		mcontroller.controlModifiers({
-				 speedModifier = 1.12
-			})
+  mcontroller.controlModifiers({ speedModifier = 1.12 })
 end
 
 function uninit()
-  
+  status.clearPersistentEffects("vieraEpic")
 end
