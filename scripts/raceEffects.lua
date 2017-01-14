@@ -4,6 +4,7 @@ local fuoldUpdate = update
 local fuoldUninit = uninit
 
 local config
+local effectTimeout, effectClock
 
 function init()
   fuoldInit()
@@ -17,26 +18,21 @@ function init()
   if not config or not config.ephemeral then
     error("Frackin' Races: /scripts/raceEffects.config appears to be malformed.")
   else
-    -- Fix duration, since we can't store math.huge in JSON.
-    for species,v in pairs(config.ephemeral) do
-      for name,duration in pairs(v) do
-        if duration <= 0 then v[name] = math.huge end
-      end
-    end
+    -- Timeout to prevent continuous effect application. 3600 ~= 1 minute.
+    effectClock = 0
+    effectTimeout = 3600
   end
 end
 
 function update(dt)
   fuoldUpdate(dt)
 
-  local species = world.entitySpecies(entity.id())
-  local raceEphemeralEffects = config.ephemeral[species]
-
   -- Apply ephemeral effects.
-  if raceEphemeralEffects then
-    for name, duration in pairs(raceEphemeralEffects) do
-      status.addEphemeralEffect(name, duration)
-    end
+  -- Timeout to prevent continuous effect application.
+  effectClock = effectClock - 1
+  if effectClock <= 0 then
+    effectClock = effectTimeout
+    applyRaceEffects()
   end
 
   local mouthPosition = vec2.add(mcontroller.position(), status.statusProperty("mouthPosition"))
@@ -55,4 +51,17 @@ function update(dt)
   status.removeEphemeralEffect("weak_shadow")
   status.removeEphemeralEffect("weak_electric")
 
+end
+
+function applyRaceEffects()
+  local species = world.entitySpecies(entity.id())
+  local raceEphemeralEffects = config.ephemeral[species]
+
+  sb.logInfo("Applying race effects at %s", os.clock())
+
+  if raceEphemeralEffects then
+    for _,name in ipairs(raceEphemeralEffects) do
+      status.addEphemeralEffect(name, math.huge)
+    end
+  end
 end
