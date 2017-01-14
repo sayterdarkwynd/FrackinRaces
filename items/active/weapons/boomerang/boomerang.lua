@@ -10,9 +10,9 @@ function init()
      self.blockCount2 = 0
    end
 
+local species = world.entitySpecies(activeItem.ownerEntityId())
 
-
-if world.entitySpecies(activeItem.ownerEntityId()) == "fenerox" then  
+if species == "fenerox" then  
   local heldItem = world.entityHandItem(activeItem.ownerEntityId(), "primary")
   if heldItem then
      if root.itemHasTag(heldItem, "boomerang") then 
@@ -40,7 +40,7 @@ if world.entitySpecies(activeItem.ownerEntityId()) == "fenerox" then
 end
 
 
-if world.entitySpecies(activeItem.ownerEntityId()) == "lamia" then  
+if species == "lamia" then  
   local heldItem = world.entityHandItem(activeItem.ownerEntityId(), "primary")
   if heldItem then
      if root.itemHasTag(heldItem, "chakram") then 
@@ -61,7 +61,7 @@ if world.entitySpecies(activeItem.ownerEntityId()) == "lamia" then
 	  self.blockCount = self.blockCount + 1.10
 	  self.blockCount2 = self.blockCount2 + 1.10
 	  self.blockCount3 = self.blockCount3 + 1.10
-	  status.setPersistentEffects("bonusdmg", {
+	  status.setPersistentEffects("bonusdmg2", {
 	    {stat = "powerMultiplier", baseMultiplier = self.blockCount},
 	    {stat = "maxHealth", baseMultiplier = self.blockCount2 },
 	    {stat = "grit", baseMultiplier = self.blockCount3 }
@@ -72,7 +72,7 @@ if world.entitySpecies(activeItem.ownerEntityId()) == "lamia" then
 end
 
 
-if world.entitySpecies(activeItem.ownerEntityId()) == "bunnykin" then  
+if species == "bunnykin" then  
   local heldItem = world.entityHandItem(activeItem.ownerEntityId(), "primary")
   if heldItem then
      if root.itemHasTag(heldItem, "boomerang") or root.itemHasTag(heldItem, "chakram") then  
@@ -89,7 +89,7 @@ if world.entitySpecies(activeItem.ownerEntityId()) == "bunnykin" then
    end
 end
 
-if world.entitySpecies(activeItem.ownerEntityId()) == "elunite" then  
+if species == "elunite" then  
   local heldItem = world.entityHandItem(activeItem.ownerEntityId(), "primary")
   if heldItem then
      if root.itemHasTag(heldItem, "boomerang") or root.itemHasTag(heldItem, "chakram") then  
@@ -176,9 +176,7 @@ function update(dt, fireMode, shiftHeld)
   end
 
     if world.entitySpecies(activeItem.ownerEntityId()) == "fenerox" then      -- fenerox move faster when wielding boomerangs
-	mcontroller.controlModifiers({
-			 speedModifier = 1.15
-		})              
+	mcontroller.controlModifiers({ speedModifier = 1.15 })              
     end 
             
   updateAim()
@@ -186,6 +184,7 @@ end
 
 function uninit()
   status.clearPersistentEffects("bonusdmg")
+  status.clearPersistentEffects("bonusdmg2")
   self.blockCount = 0
 end
 
