@@ -37,11 +37,16 @@ local species = world.entitySpecies(activeItem.ownerEntityId())
      self.meleeCount2 = 0
    end       
 
--- Primary hand, or single-hand equip  
-local heldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand())
---used for checking dual-wield setups
-local opposedhandHeldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand() == "primary" and "alt" or "primary")
-
+  -- Primary hand, or single-hand equip  
+  local heldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand())
+  
+  -- if we want more control over each hand...
+  local heldItem1 = world.entityHandItem(activeItem.ownerEntityId(), "primary")
+  local heldItem2 = world.entityHandItem(activeItem.ownerEntityId(), "alt")
+  
+  --used for checking dual-wield setups
+  local opposedhandHeldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand() == "primary" and "alt" or "primary")
+  
 if species == "hylotl" then  
   if heldItem then
      if root.itemHasTag(heldItem, "dagger") or root.itemHasTag(heldItem, "hammer") or root.itemHasTag(heldItem, "broadsword") or root.itemHasTag(heldItem, "spear") or root.itemHasTag(heldItem, "axe") then 
@@ -190,23 +195,6 @@ end
   end
  end  
 
- if species == "felin" then  --felin do extra damage with fists, daggers and shortswords
-   local heldItem = world.entityHandItem(activeItem.ownerEntityId(), "primary")
-  local heldItem2 = world.entityHandItem(activeItem.ownerEntityId(), "alt")
-  if heldItem then
-     if root.itemHasTag(heldItem, "fist") or root.itemHasTag(heldItem, "dagger") then 
-	self.meleeCount = 0.15
-	status.setPersistentEffects("weaponbonusdmg", {{stat = "powerMultiplier", amount = self.meleeCount}})     
-     end
-  end
-  if heldItem2 then
-     if root.itemHasTag(heldItem, "fist") or root.itemHasTag(heldItem, "dagger") then 
-	self.meleeCount = 0.10
-	status.setPersistentEffects("weaponbonusdmg2", {{stat = "powerMultiplier", amount = self.meleeCount}})     
-     end
-  end
- end 
-
  if species == "neko" then  --neko do extra damage with fists, daggers and shortswords
   if heldItem then
      if root.itemHasTag(heldItem, "fist") or root.itemHasTag(heldItem, "shortsword") or root.itemHasTag(heldItem, "dagger") then 
@@ -256,11 +244,31 @@ end
 -- *********** DUAL WIELD POWERS
 -- *************************************************** 
 
+if species == "apex" then  
+  if heldItem then
+     if root.itemHasTag(heldItem, "fist") and opposedhandHeldItem and root.itemHasTag(opposedhandHeldItem, "fist") then --felin are lethal with two fists
+       self.meleeCount = 0.13
+       status.setPersistentEffects("weaponbonusdualwield", {
+	    {stat = "powerMultiplier", amount = self.meleeCount}    
+         })   
+     end
+     if root.itemHasTag(heldItem, "dagger") and opposedhandHeldItem and root.itemHasTag(opposedhandHeldItem, "dagger") then -- felin are dangerous and defensive with daggers
+       self.meleeCount = 0.08
+       status.setPersistentEffects("weaponbonusdualwield", {
+	    {stat = "powerMultiplier", amount = self.meleeCount},
+	    {stat = "protection", amount = self.meleeCount},
+	    {stat = "grit", amount = self.meleeCount2 }	    
+         })   
+     end
+      if root.itemHasTag(heldItem, "fist") or root.itemHasTag(heldItem, "dagger") then  -- gain increased fist and dagger damage
+ 	self.meleeCount2 = 0.05
+ 	status.setPersistentEffects("weaponbonusdmg3", {{stat = "powerMultiplier", amount = self.meleeCount2}})     
+      end
+  end
+end
+
+ 
 if species == "nightar" then  
-  local heldItem = world.entityHandItem(activeItem.ownerEntityId(), "primary")
-  local heldItem2 = world.entityHandItem(activeItem.ownerEntityId(), "alt")
-  local opposedhandHeldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand() == "primary" and "alt" or "primary")
-  
   if heldItem then
      if root.itemHasTag(heldItem, "shortsword") and opposedhandHeldItem and root.itemHasTag(opposedhandHeldItem, "shield") then --nightar do more damage and have KB resist when using sword/shield
        self.meleeCount = self.meleeCount + 0.08
@@ -288,20 +296,6 @@ if species == "nightar" then
  	self.meleeCount3 = 0.05
  	status.setPersistentEffects("weaponbonusdmg3", {{stat = "powerMultiplier", amount = self.meleeCount3}})     
       end
-  end
- 
-end
-
-if species == "felin" then  --felin are protected when using daggers
-  if heldItem then
-     if root.itemHasTag(heldItem, "shortsword") and opposedhandHeldItem and root.itemHasTag(opposedhandHeldItem, "dagger") then
-       self.meleeCount = self.meleeCount + 2
-       self.meleeCount2 = self.meleeCount2 + 0.20
-       status.setPersistentEffects("weaponbonusdmgdualwield", {
-	    {stat = "protection", amount = self.meleeCount},
-	    {stat = "grit", amount = self.meleeCount2 }
-         })  
-     end
   end
 end
 
@@ -339,6 +333,16 @@ if species == "nightar" and bonusApply == 0 then  --nightar gain speed and jump 
      if root.itemHasTag(heldItem, "broadsword") then
        mcontroller.controlModifiers({ speedModifier = 1.10, airJumpModifier = 1.05 })
      end     
+  end
+  bonusApply = 1
+end
+
+-- ***********  Felin movement bonuses ***************
+if species == "apex" and bonusApply == 0 then  --when using fist weapons, felin are extra swift
+  if heldItem then
+     if root.itemHasTag(heldItem, "fist") and opposedhandHeldItem and root.itemHasTag(opposedhandHeldItem, "fist") then
+       mcontroller.controlModifiers({ speedModifier = 1.15, airJumpModifier = 1.05 })
+     end    
   end
   bonusApply = 1
 end
