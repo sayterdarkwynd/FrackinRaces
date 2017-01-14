@@ -16,6 +16,13 @@ function init()
   config = root.assetJson("/scripts/raceEffects.config")
   if not config or not config.ephemeral then
     error("Frackin' Races: /scripts/raceEffects.config appears to be malformed.")
+  else
+    -- Fix duration, since we can't store math.huge in JSON.
+    for species,v in pairs(config.ephemeral) do
+      for name,duration in pairs(v) do
+        if duration <= 0 then v[name] = math.huge end
+      end
+    end
   end
 end
 
@@ -28,7 +35,6 @@ function update(dt)
   -- Apply ephemeral effects.
   if raceEphemeralEffects then
     for name, duration in pairs(raceEphemeralEffects) do
-      if duration <= 0 then duration = math.huge end
       status.addEphemeralEffect(name, duration)
     end
   end
