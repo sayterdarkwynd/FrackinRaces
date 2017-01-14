@@ -20,7 +20,7 @@ function init()
   else
     -- Timeout to prevent continuous effect application. 3600 ~= 1 minute.
     self.species = world.entitySpecies(entity.id())
-    self.raceEphemeralEffects = config.ephemeral[species]
+    self.raceEphemeralEffects = config.ephemeral[self.species]
     effectClock = 0
     effectTimeout = 3600
   end
