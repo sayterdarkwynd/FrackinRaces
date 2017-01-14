@@ -19,6 +19,8 @@ function init()
     error("Frackin' Races: /scripts/raceEffects.config appears to be malformed.")
   else
     -- Timeout to prevent continuous effect application. 3600 ~= 1 minute.
+    self.species = world.entitySpecies(entity.id())
+    self.raceEphemeralEffects = config.ephemeral[species]
     effectClock = 0
     effectTimeout = 3600
   end
@@ -54,13 +56,8 @@ function update(dt)
 end
 
 function applyRaceEffects()
-  local species = world.entitySpecies(entity.id())
-  local raceEphemeralEffects = config.ephemeral[species]
-
-  sb.logInfo("Applying race effects at %s", os.clock())
-
-  if raceEphemeralEffects then
-    for _,name in ipairs(raceEphemeralEffects) do
+  if self.raceEphemeralEffects then
+    for _,name in ipairs(self.raceEphemeralEffects) do
       status.addEphemeralEffect(name, math.huge)
     end
   end
