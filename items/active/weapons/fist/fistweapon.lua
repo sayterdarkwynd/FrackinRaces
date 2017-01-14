@@ -39,8 +39,9 @@ function init()
  	     self.blockCount2 = 0
  	   end  
   	 
- 	   
-             if world.entitySpecies(activeItem.ownerEntityId()) == "bunnykin" then
+ 	     local species = world.entitySpecies(activeItem.ownerEntityId())
+ 	     
+             if species == "bunnykin" then
                self.blockCount = self.blockCount + 0.5
                self.blockCount = 1
                status.setPersistentEffects("fistbonusdmg", {
@@ -49,7 +50,7 @@ function init()
                }) 
              end      
 
-             if world.entitySpecies(activeItem.ownerEntityId()) == "apex" then
+             if species == "apex" then
                self.blockCount = self.blockCount + 0.19
                self.blockCount2 = self.blockCount + 1
                status.setPersistentEffects("fistbonusdmg", {
@@ -89,7 +90,7 @@ function update(dt, fireMode, shiftHeld)
 -- FR "combo based" fist weapon bonus
 -- *************************************************************************
 
-             if world.entitySpecies(activeItem.ownerEntityId()) == "munari" then
+             if species == "munari" then
                self.blockCount = self.blockCount + 0.01
                status.setPersistentEffects("munaribonusdmg", { {stat = "powerMultiplier", amount = self.blockCount} })
                status.addPersistentEffect("boostermunari", "powerboostmunari", math.huge)

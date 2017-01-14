@@ -24,8 +24,9 @@ function init()
      self.blockCount = 0 
      self.blockCount2 = 0 
    end
+   local species = world.entitySpecies(activeItem.ownerEntityId())
   
-            if world.entitySpecies(activeItem.ownerEntityId()) == "floran" then      --20% more damage with floran
+            if species == "floran" then      --20% more damage with floran
               self.blockCount = self.blockCount + 1.20
               status.setPersistentEffects("floranbonusdmg", {{stat = "powerMultiplier", baseMultiplier = self.blockCount}})  
               local bounds = mcontroller.boundBox()            
@@ -39,7 +40,7 @@ function init()
               }) 
               local bounds = mcontroller.boundBox()
             end             
-            if world.entitySpecies(activeItem.ownerEntityId()) == "viera" then      --25% more damage with viera
+            if species == "viera" then      --25% more damage with viera
               self.blockCount = self.blockCount + 1.15
               self.blockCount = self.blockCount2 + 1.15
               status.setPersistentEffects("vierabonusdmg", {
@@ -47,7 +48,7 @@ function init()
               {stat = "maxEnergy", baseMultiplier = self.blockCount2 }
               })  
             end   
-            if world.entitySpecies(activeItem.ownerEntityId()) == "sergal" then      --15% more damage with sergal
+            if species == "sergal" then      --15% more damage with sergal
               self.blockCount = self.blockCount + 1.15
               status.setPersistentEffects("vierabonusdmg", {{stat = "powerMultiplier", baseMultiplier = self.blockCount}})  
             end             
@@ -56,12 +57,12 @@ end
 
 function update(dt, fireMode, shiftHeld)
   self.weapon:update(dt, fireMode, shiftHeld)
-            if world.entitySpecies(activeItem.ownerEntityId()) == "floran" then      -- florans move faster when wielding bows
+            if species == "floran" then      -- florans move faster when wielding bows
 		mcontroller.controlModifiers({
 				 speedModifier = 1.15
 			})              
             end
-            if world.entitySpecies(activeItem.ownerEntityId()) == "lamia" then      -- florans move faster when wielding bows
+            if species == "lamia" then      -- florans move faster when wielding bows
 		mcontroller.controlModifiers({
 				 speedModifier = 1.20
 			})              

@@ -2,8 +2,6 @@
 MeleeSlash = WeaponAbility:new()
 
 function MeleeSlash:init()
-
- 
           
   self.damageConfig.baseDamage = self.baseDps * self.fireTime
 
@@ -16,7 +14,11 @@ function MeleeSlash:init()
   self.weapon.onLeaveAbility = function()
     self.weapon:setStance(self.stances.idle)
   end
-                 
+
+
+local species = world.entitySpecies(activeItem.ownerEntityId())
+
+
 end
 
 -- Ticks on every update regardless if this is the active ability
@@ -55,9 +57,6 @@ function MeleeSlash:windup()
    --end       
 
 
-
-
-            
     --**************************************             
     --**************************************           
           

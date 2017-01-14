@@ -25,6 +25,11 @@ function init()
 -- **************************************************
 -- FR EFFECTS
 -- **************************************************
+local species = world.entitySpecies(activeItem.ownerEntityId())
+
+-- for mcontroller application within init
+--mcontroller.setAutoClearControls(false)
+
    if self.meleeCount == nil then 
      self.meleeCount = 0
    end
@@ -32,11 +37,12 @@ function init()
      self.meleeCount2 = 0
    end       
 
--- if i want to add sword/shield or that sort of thing as a combo pairing/requirement use the below   
---opposedhandHeldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand() == "primary" and "alt" or "primary")   
-   
-if world.entitySpecies(activeItem.ownerEntityId()) == "hylotl" then  
-  local heldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand())
+-- Primary hand, or single-hand equip  
+local heldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand())
+--used for checking dual-wield setups
+local opposedhandHeldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand() == "primary" and "alt" or "primary")
+
+if species == "hylotl" then  
   if heldItem then
      if root.itemHasTag(heldItem, "dagger") or root.itemHasTag(heldItem, "hammer") or root.itemHasTag(heldItem, "broadsword") or root.itemHasTag(heldItem, "spear") or root.itemHasTag(heldItem, "axe") then 
        self.meleeCount = self.meleeCount + 1
@@ -45,8 +51,7 @@ if world.entitySpecies(activeItem.ownerEntityId()) == "hylotl" then
   end
 end
 
-if world.entitySpecies(activeItem.ownerEntityId()) == "floran" then  --florans get defense bonuses when using spears, and increased damage
-  local heldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand())
+if species == "floran" then  --florans get defense bonuses when using spears, and increased damage
   if heldItem then
      if root.itemHasTag(heldItem, "spear") then 
 	self.meleeCount = self.meleeCount + 2
@@ -59,8 +64,7 @@ if world.entitySpecies(activeItem.ownerEntityId()) == "floran" then  --florans g
   end
 end
 
-if world.entitySpecies(activeItem.ownerEntityId()) == "glitch" then  --glitch get bonuses with axe and hammer
-  local heldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand())
+if species == "glitch" then  --glitch get bonuses with axe and hammer
   if heldItem then
      if root.itemHasTag(heldItem, "axe") or root.itemHasTag(heldItem, "hammer") then 
 	self.meleeCount = self.meleeCount + 0.14
@@ -71,8 +75,7 @@ if world.entitySpecies(activeItem.ownerEntityId()) == "glitch" then  --glitch ge
   end
 end
 
-if world.entitySpecies(activeItem.ownerEntityId()) == "human" then  -- Humans do more damage with shortswords and resist knockback
-  local heldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand())
+if species == "human" then  -- Humans do more damage with shortswords and resist knockback
   if heldItem then
      if root.itemHasTag(heldItem, "shortsword") then 
 	  self.meleeCount = self.meleeCount + 0.19
@@ -84,8 +87,7 @@ if world.entitySpecies(activeItem.ownerEntityId()) == "human" then  -- Humans do
   end
 end
 
-if world.entitySpecies(activeItem.ownerEntityId()) == "wasphive" then   --wasps daggers do 25% more damage
-  local heldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand())
+if species == "wasphive" then   --wasps daggers do 25% more damage
   if heldItem then
      if root.itemHasTag(heldItem, "dagger") then 
 	  self.meleeCount = self.meleeCount + 0.25
@@ -94,28 +96,7 @@ if world.entitySpecies(activeItem.ownerEntityId()) == "wasphive" then   --wasps 
   end
 end
 
-if world.entitySpecies(activeItem.ownerEntityId()) == "nightar" then  -- Humans do more damage with shortswords and resist knockback
-  local heldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand())
-  if heldItem then
-     if root.itemHasTag(heldItem, "shortsword") then 
-	  self.meleeCount = self.meleeCount + 0.08
-	  status.setPersistentEffects("weaponbonusdmg", {
-	    {stat = "powerMultiplier", amount = self.meleeCount},
-	    {stat = "grit", amount = self.meleeCount}
-	  })   
-     end
-     if root.itemHasTag(heldItem, "broadsword") then 
-	  self.meleeCount = self.meleeCount + 0.18
-	  status.setPersistentEffects("weaponbonusdmg", {
-	    {stat = "powerMultiplier", amount = self.meleeCount}
-	  })  
-	  mcontroller.controlModifiers({ speedModifier = 1.15 }) 
-     end
-  end
-end
-
-if world.entitySpecies(activeItem.ownerEntityId()) == "apex" then   --apex love axes and hammers
-  local heldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand())
+if species == "apex" then   --apex love axes and hammers
   if heldItem then
      if root.itemHasTag(heldItem, "hammer") or root.itemHasTag(heldItem, "axe") then 
 	self.meleeCount = 0.19
@@ -125,8 +106,7 @@ if world.entitySpecies(activeItem.ownerEntityId()) == "apex" then   --apex love 
   end
 end  
 
-if world.entitySpecies(activeItem.ownerEntityId()) == "elunite" then   --elunite get defense bonuses with swords
-  local heldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand())
+if species == "elunite" then   --elunite get defense bonuses with swords
   if heldItem then
      if root.itemHasTag(heldItem, "dagger") or root.itemHasTag(heldItem, "shortsword") or root.itemHasTag(heldItem, "broadsword") then 
 	self.meleeCount = self.meleeCount + 2
@@ -139,8 +119,7 @@ if world.entitySpecies(activeItem.ownerEntityId()) == "elunite" then   --elunite
 end  
 
 
-if world.entitySpecies(activeItem.ownerEntityId()) == "fenerox" then  --fenerox get dmg and protection increase with spears
-  local heldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand())
+if species == "fenerox" then  --fenerox get dmg and protection increase with spears
   if heldItem then
      if root.itemHasTag(heldItem, "spear") then 
 	self.meleeCount = self.meleeCount + 1
@@ -153,8 +132,7 @@ if world.entitySpecies(activeItem.ownerEntityId()) == "fenerox" then  --fenerox 
    end
 end  
 
-if world.entitySpecies(activeItem.ownerEntityId()) == "viera" then  --viera are dangerous with daggers
-  local heldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand())
+if species == "viera" then  --viera are dangerous with daggers
   if heldItem then
      if root.itemHasTag(heldItem, "dagger") then 
 	self.meleeCount = self.meleeCount + 1
@@ -167,8 +145,7 @@ if world.entitySpecies(activeItem.ownerEntityId()) == "viera" then  --viera are 
   end
 end  
 
-if world.entitySpecies(activeItem.ownerEntityId()) == "vulpes" then  --vulpes get protection when swinging blades
-  local heldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand())
+if species == "vulpes" then  --vulpes get protection when swinging blades
   if heldItem then
      if root.itemHasTag(heldItem, "dagger") or root.itemHasTag(heldItem, "shortsword") or root.itemHasTag(heldItem, "broadsword") then 
 	self.meleeCount = self.meleeCount + 2
@@ -177,8 +154,7 @@ if world.entitySpecies(activeItem.ownerEntityId()) == "vulpes" then  --vulpes ge
   end
 end 
 
- if world.entitySpecies(activeItem.ownerEntityId()) == "sergal" then  --sergal get health and protection with spears
-  local heldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand())
+ if species == "sergal" then  --sergal get health and protection with spears
   if heldItem then
      if root.itemHasTag(heldItem, "spear") then 
 	self.meleeCount = self.meleeCount + 2
@@ -190,8 +166,7 @@ end
   end
 end            
 
- if world.entitySpecies(activeItem.ownerEntityId()) == "orcana" then  --orcana get health and protection with spears
-  local heldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand())
+ if species == "orcana" then  --orcana get health and protection with spears
   if heldItem then
      if root.itemHasTag(heldItem, "spear") then 
 	self.meleeCount = 0.25
@@ -203,8 +178,7 @@ end
   end
 end  
 
- if world.entitySpecies(activeItem.ownerEntityId()) == "argonian" then  --argonian do extra damage with spears
-  local heldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand())
+ if species == "argonian" then  --argonian do extra damage with spears
   if heldItem then
      if root.itemHasTag(heldItem, "spear") then 
 	self.meleeCount = 0.15
@@ -214,60 +188,62 @@ end
 	})        
      end
   end
-end  
+ end  
 
- if world.entitySpecies(activeItem.ownerEntityId()) == "felin" then  --neko do extra damage with fists, daggers and shortswords
-  local heldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand())
+ if species == "felin" then  --felin do extra damage with fists, daggers and shortswords
+   local heldItem = world.entityHandItem(activeItem.ownerEntityId(), "primary")
+  local heldItem2 = world.entityHandItem(activeItem.ownerEntityId(), "alt")
   if heldItem then
      if root.itemHasTag(heldItem, "fist") or root.itemHasTag(heldItem, "dagger") then 
 	self.meleeCount = 0.15
 	status.setPersistentEffects("weaponbonusdmg", {{stat = "powerMultiplier", amount = self.meleeCount}})     
      end
   end
-end 
+  if heldItem2 then
+     if root.itemHasTag(heldItem, "fist") or root.itemHasTag(heldItem, "dagger") then 
+	self.meleeCount = 0.10
+	status.setPersistentEffects("weaponbonusdmg2", {{stat = "powerMultiplier", amount = self.meleeCount}})     
+     end
+  end
+ end 
 
- if world.entitySpecies(activeItem.ownerEntityId()) == "neko" then  --neko do extra damage with fists, daggers and shortswords
-  local heldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand())
+ if species == "neko" then  --neko do extra damage with fists, daggers and shortswords
   if heldItem then
      if root.itemHasTag(heldItem, "fist") or root.itemHasTag(heldItem, "shortsword") or root.itemHasTag(heldItem, "dagger") then 
 	self.meleeCount = 0.15
 	status.setPersistentEffects("weaponbonusdmg", {{stat = "powerMultiplier", amount = self.meleeCount}})     
      end
   end
-end  
+ end  
 
- if world.entitySpecies(activeItem.ownerEntityId()) == "kemono" then   --kemono are brutal with swords
-  local heldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand())
+ if species == "kemono" then   --kemono are brutal with swords
   if heldItem then
      if root.itemHasTag(heldItem, "dagger") or root.itemHasTag(heldItem, "shortsword") or root.itemHasTag(heldItem, "broadsword") then 
 	self.meleeCount = 0.3
 	status.setPersistentEffects("weaponbonusdmg", {{stat = "powerMultiplier", amount = self.meleeCount}}) 
      end
   end
-end  
+ end  
 
- if world.entitySpecies(activeItem.ownerEntityId()) == "avikan" then   --avikan are brutal spears and daggers
-  local heldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand())
+ if species == "avikan" then   --avikan are brutal spears and daggers
   if heldItem then
      if root.itemHasTag(heldItem, "dagger") or root.itemHasTag(heldItem, "spear") then 
 	self.meleeCount = 0.2
 	status.setPersistentEffects("weaponbonusdmg", {{stat = "powerMultiplier", amount = self.meleeCount}})   
      end
   end
-end  
+ end  
  
- if world.entitySpecies(activeItem.ownerEntityId()) == "gyrusen" then   --gyrusens are brutal with axes and hammers
-  local heldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand())
+ if species == "gyrusen" then   --gyrusens are brutal with axes and hammers
   if heldItem then
      if root.itemHasTag(heldItem, "axe") or root.itemHasTag(heldItem, "hammer") then 
 	self.meleeCount = 0.30
 	status.setPersistentEffects("weaponbonusdmg", {{stat = "powerMultiplier", amount = self.meleeCount}})   
      end
   end
-end  
+ end  
 
- if world.entitySpecies(activeItem.ownerEntityId()) == "kazdra" then   --kazdra are brutal with broadswords
-  local heldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand())
+ if species == "kazdra" then   --kazdra are brutal with broadswords
   if heldItem then
      if root.itemHasTag(heldItem, "broadsword") then 
 	self.meleeCount = 0.30
@@ -275,19 +251,115 @@ end
      end
   end
 end  
-             
--- ***************************************************            
+
+-- *************************************************** 
+-- *********** DUAL WIELD POWERS
+-- *************************************************** 
+
+if species == "nightar" then  
+  local heldItem = world.entityHandItem(activeItem.ownerEntityId(), "primary")
+  local heldItem2 = world.entityHandItem(activeItem.ownerEntityId(), "alt")
+  local opposedhandHeldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand() == "primary" and "alt" or "primary")
+  
+  if heldItem then
+     if root.itemHasTag(heldItem, "shortsword") and opposedhandHeldItem and root.itemHasTag(opposedhandHeldItem, "shield") then --nightar do more damage and have KB resist when using sword/shield
+       self.meleeCount = self.meleeCount + 0.08
+       self.meleeCount2 = self.meleeCount + 0.12
+       status.setPersistentEffects("weaponbonusdualwield", {
+	    {stat = "powerMultiplier", amount = self.meleeCount},
+	    {stat = "grit", amount = self.meleeCount}
+         })        
+     end
+     if root.itemHasTag(heldItem, "shortsword") and opposedhandHeldItem and root.itemHasTag(opposedhandHeldItem, "shortsword") then --nightar do more damage with dual shortswords
+       self.meleeCount = self.meleeCount + 0.12
+       status.setPersistentEffects("weaponbonusdualwield", {
+	    {stat = "powerMultiplier", amount = self.meleeCount}
+         })   
+     end
+     if root.itemHasTag(heldItem, "broadsword") then --nightar do more damage with broadswords and increased KB resist
+	  self.meleeCount = self.meleeCount + 0.18
+	  self.meleeCount2 = self.meleeCount2 + 0.25
+	  status.setPersistentEffects("weaponbonusdmg", {
+	    {stat = "powerMultiplier", amount = self.meleeCount},
+	    {stat = "grit", amount = self.meleeCount2}
+	  })  
+     end
+      if root.itemHasTag(heldItem, "shortsword") then  -- if they have a single shortsword equiped, increase damage
+ 	self.meleeCount3 = 0.05
+ 	status.setPersistentEffects("weaponbonusdmg3", {{stat = "powerMultiplier", amount = self.meleeCount3}})     
+      end
+  end
+ 
+end
+
+if species == "felin" then  --felin are protected when using daggers
+  if heldItem then
+     if root.itemHasTag(heldItem, "shortsword") and opposedhandHeldItem and root.itemHasTag(opposedhandHeldItem, "dagger") then
+       self.meleeCount = self.meleeCount + 2
+       self.meleeCount2 = self.meleeCount2 + 0.20
+       status.setPersistentEffects("weaponbonusdmgdualwield", {
+	    {stat = "protection", amount = self.meleeCount},
+	    {stat = "grit", amount = self.meleeCount2 }
+         })  
+     end
+  end
+end
+
+-- ***************************************************   
+-- END FR STUFF
+-- ***************************************************   
+
+         
   self.weapon:init()
 end
 
 function update(dt, fireMode, shiftHeld)
+
+
+
+-- ***************************************************   
+--FR stuff
+-- ***************************************************   
+  local heldItem = world.entityHandItem(activeItem.ownerEntityId(), "primary")
+  local heldItem2 = world.entityHandItem(activeItem.ownerEntityId(), "alt")
+  local opposedhandHeldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand() == "primary" and "alt" or "primary")
+  local species = world.entitySpecies(activeItem.ownerEntityId())
+  local bonusApply = 0
+  
+  
+-- ***********  Nightar  movement bonuses ***************
+if species == "nightar" and bonusApply == 0 then  --nightar gain speed and jump when wielding swords
+  if heldItem then
+     if root.itemHasTag(heldItem, "shortsword") and opposedhandHeldItem and root.itemHasTag(opposedhandHeldItem, "shortsword") then
+       mcontroller.controlModifiers({ speedModifier = 1.15, airJumpModifier = 1.05 })
+     end
+     if root.itemHasTag(heldItem, "shortsword") then
+       mcontroller.controlModifiers({ speedModifier = 1.10, airJumpModifier = 1.05 })
+     end
+     if root.itemHasTag(heldItem, "broadsword") then
+       mcontroller.controlModifiers({ speedModifier = 1.10, airJumpModifier = 1.05 })
+     end     
+  end
+  bonusApply = 1
+end
+
+
+-- ***************************************************   
+-- END FR STUFF
+-- ***************************************************   
+
   self.weapon:update(dt, fireMode, shiftHeld)
 end
 
 
 function uninit()
+  bonusApply = 0
   status.clearPersistentEffects("hylotlbonusdmg")
   status.clearPersistentEffects("weaponbonusdmg")
+  status.clearPersistentEffects("weaponbonusdmg2")
+  status.clearPersistentEffects("weaponbonusdmg3")
+  status.clearPersistentEffects("weaponbonusdmg4")
+  status.clearPersistentEffects("weaponbonusdualwield")
   self.meleeCount = 0
   self.meleeCount2 = 0
   self.weapon:uninit()

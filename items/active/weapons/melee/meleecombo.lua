@@ -19,6 +19,19 @@ function MeleeCombo:init()
   self.weapon.onLeaveAbility = function()
     self.weapon:setStance(self.stances.idle)
   end   
+
+-- **************************************************
+-- FR EFFECTS
+-- **************************************************
+
+local species = world.entitySpecies(activeItem.ownerEntityId())
+   if self.meleeCount == nil then 
+     self.meleeCount = 0
+   end
+   if self.meleeCount2 == nil then 
+     self.meleeCount2 = 0
+   end       
+
 end
 
 -- Ticks on every update regardless if this is the active ability
@@ -27,7 +40,7 @@ function MeleeCombo:update(dt, fireMode, shiftHeld)
   WeaponAbility.update(self, dt, fireMode, shiftHeld)
 
   if self.cooldownTimer > 0 then
-    self.cooldownTimer = math.max(0, self.cooldownTimer - self.dt)
+    self.cooldownTimer = math.max(0, self.cooldownTimer - self.dt)   
     if self.cooldownTimer == 0 then
       self:readyFlash()
     end
@@ -79,6 +92,7 @@ function MeleeCombo:windup()
 --*************************************    
 -- FU/FR ADDONS
  --*************************************    
+ 
 -- FU/FR ADDONS 
  if self.meleeCountcombo == nil then 
    self.meleeCountcombo = 0 
@@ -87,40 +101,48 @@ function MeleeCombo:windup()
    self.meleeCountcombo2 = 0 
  end
 
- if world.entitySpecies(activeItem.ownerEntityId()) == "hylotl" then   -- in combos, hylotl get a bonus to damage with swords
-  local heldItem = world.entityHandItem(activeItem.ownerEntityId(), "primary")
-  if heldItem then
-     if root.itemHasTag(heldItem, "broadsword") or root.itemHasTag(heldItem, "shortsword") then 
-	  self.meleeCountcombo = self.meleeCountcombo + 0.12
-	  status.setPersistentEffects("combobonusdmg", {{stat = "powerMultiplier", amount = self.meleeCountcombo},{stat = "protection", amount = 1}})  
-     end
-  end
-  heldItem = world.entityHandItem(activeItem.ownerEntityId(), "alt")
-  if heldItem then
-     if root.itemHasTag(heldItem, "broadsword") or root.itemHasTag(heldItem, "shortsword") then 
-	  self.meleeCountcombo = self.meleeCountcombo + 0.12
-	  status.setPersistentEffects("combobonusdmg", {{stat = "powerMultiplier", amount = self.meleeCountcombo},{stat = "protection", amount = 1}})   
-     end
-  end
-end  
+-- Primary hand, or single-hand equip  
+local heldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand())
+--used for checking dual-wield setups
+local opposedhandHeldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand() == "primary" and "alt" or "primary")
 
-          if world.entitySpecies(activeItem.ownerEntityId()) == "avikan" then      
+
+	 if species == "hylotl" then   -- in combos, hylotl get a bonus to damage with swords
+	  if heldItem then
+	     if root.itemHasTag(heldItem, "broadsword") or root.itemHasTag(heldItem, "shortsword") then 
+		  self.meleeCountcombo = self.meleeCountcombo + 0.12
+		  status.setPersistentEffects("combobonusdmg", {{stat = "powerMultiplier", amount = self.meleeCountcombo},{stat = "protection", amount = 1}})  
+	     end
+	  end
+	  if heldItem then
+	     if root.itemHasTag(heldItem, "broadsword") or root.itemHasTag(heldItem, "shortsword") then 
+		  self.meleeCountcombo = self.meleeCountcombo + 0.12
+		  status.setPersistentEffects("combobonusdmg", {{stat = "powerMultiplier", amount = self.meleeCountcombo},{stat = "protection", amount = 1}})   
+	     end
+	  end
+	end  
+
+          if species == "avikan" then      
             self.meleeCountcombo = self.meleeCountcombo + 0.05
             status.setPersistentEffects("combobonusdmg", {{stat = "powerMultiplier", amount = self.meleeCountcombo}})  
           end  
-          if world.entitySpecies(activeItem.ownerEntityId()) == "glitch" then      --each 1-handed combo swing slightly increases glitch defense
+          if species == "glitch" then      --each 1-handed combo swing slightly increases glitch defense
             self.meleeCountcombo = self.meleeCountcombo + 3
             status.setPersistentEffects("combobonusdmg", {{stat = "protection", amount = self.meleeCountcombo}})  
           end   
-          if world.entitySpecies(activeItem.ownerEntityId()) == "nightar" then      --each 1-handed combo swing slightly increases glitch defense
-            self.meleeCountcombo = self.meleeCountcombo + 0.1
-            self.meleeCountcombo2 = self.meleeCountcombo2 + 0.07
-            status.setPersistentEffects("combobonusdmg", {
-              {stat = "grit", baseMultiplier = self.meleeCountcombo},
-              {stat = "powerMultiplier", amount = self.meleeCountcombo2}
-            })  
-          end 
-          if world.entitySpecies(activeItem.ownerEntityId()) == "kemono" then      --each 1-handed combo swing slightly increases kemono defense
+	  if species == "nightar" then   -- in combos, nightar get a bonus to damage and knockback resist with swords
+		  if heldItem then
+		     if root.itemHasTag(heldItem, "shortsword") then 
+			    self.meleeCountcombo = self.meleeCountcombo + 0.1
+			    self.meleeCountcombo2 = self.meleeCountcombo2 + 0.07
+			    status.setPersistentEffects("combobonusdmg", {
+			      {stat = "grit", baseMultiplier = self.meleeCountcombo},
+			      {stat = "powerMultiplier", amount = self.meleeCountcombo2}
+			    })   
+		     end
+		  end
+	  end
+          if species == "kemono" then      --each 1-handed combo swing slightly increases kemono defense
             self.meleeCountcombo = self.meleeCountcombo + 3
             status.setPersistentEffects("combobonusdmg", {{stat = "protection", amount = self.meleeCountcombo}})  
           end 
@@ -243,6 +265,8 @@ end
 function MeleeCombo:uninit()
   self.weapon:setDamage()
   status.clearPersistentEffects("combobonusdmg")
+  status.clearPersistentEffects("combobonusdmg2")
+  status.clearPersistentEffects("dualwieldbonus")
   status.clearPersistentEffects("hylotlbonusdmg")
   self.meleeCountcombo = 0
   self.meleeCountcombo2 = 0

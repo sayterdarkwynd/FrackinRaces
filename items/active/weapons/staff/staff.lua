@@ -25,7 +25,9 @@ function init()
    if self.staffCount2 == nil then 
      self.staffCount2 = 0 
    end  
-            if world.entitySpecies(activeItem.ownerEntityId()) == "avian" then      
+   local species = world.entitySpecies(activeItem.ownerEntityId())
+   
+            if species == "avian" then      
               self.staffCount = self.staffCount + 0.20
               status.setPersistentEffects("avianbonusdmg", {
               {stat = "powerMultiplier", baseMultiplier = 1 + self.staffCount},
@@ -33,22 +35,22 @@ function init()
               }) 
               local bounds = mcontroller.boundBox()  
             end            
-            if world.entitySpecies(activeItem.ownerEntityId()) == "kineptic" then     
+            if species == "kineptic" then     
               self.staffCount = self.staffCount + 0.25
               status.setPersistentEffects("ningenbonusdmg", {{stat = "powerMultiplier", amount = self.staffCount}})  
             end             
-            if world.entitySpecies(activeItem.ownerEntityId()) == "ningen" then     
+            if species == "ningen" then     
               self.staffCount = self.staffCount + 0.15
               status.setPersistentEffects("ningenbonusdmg", {{stat = "maxEnergy", amount = self.staffCount}})  
             end  
-            if world.entitySpecies(activeItem.ownerEntityId()) == "viera" then     
+            if species == "viera" then     
               self.staffCount = self.staffCount + 0.15
               status.setPersistentEffects("ningenbonusdmg", {
                 {stat = "maxEnergy", amount = self.staffCount},
                 {stat = "powerMultiplier", baseMultiplier = 1 + self.staffCount},
               })  
             end 
-            if world.entitySpecies(activeItem.ownerEntityId()) == "familiar" then     
+            if species == "familiar" then     
               self.staffCount = self.staffCount + 0.15
               self.staffCount2 = self.staffCount2 + 0.30
               status.setPersistentEffects("ningenbonusdmg", {
@@ -63,12 +65,12 @@ end
 
 function update(dt, fireMode, shiftHeld)
   self.weapon:update(dt, fireMode, shiftHeld)
-            if world.entitySpecies(activeItem.ownerEntityId()) == "avian" then      -- avian move faster when wielding staves and wands
+            if species == "avian" then      -- avian move faster when wielding staves and wands
 		mcontroller.controlModifiers({
 				 speedModifier = 1.15
 			})              
             end  
-            if world.entitySpecies(activeItem.ownerEntityId()) == "familiar" then      -- avian move faster when wielding staves and wands
+            if species == "familiar" then      -- avian move faster when wielding staves and wands
 		mcontroller.controlModifiers({
 				 speedModifier = 1.10
 			})              
