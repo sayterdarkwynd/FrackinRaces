@@ -21,14 +21,22 @@ function init()
 	self.MMstats = {
 	    elunite  = { initPower = 1 },
 	    apex     = { initRadius = 1 },
-	    hylotl   = { initLiquid = 1 }
+	    hylotl   = { initLiquid = 1 },
+	    default  = {}
 	}
 	   
+	setmetatable(self.MMstats, {
+	  __index = function()
+	    return self.MMstats.default
+	  end
+	})
 	
 	-- are they a race that gets a MM bonus?
 
-	local species = world.entitySpecies(player.id()) -- apex get increased Radius
-	if self.MMstats[species].initRadius then
+	local species = world.entitySpecies(player.id()) 
+	
+	
+	if self.MMstats[species].initRadius then -- apex get increased Radius
 	  self.powerBonus = self.MMstats[species].initRadius
 	end
 	if self.MMstats[species].initPower then -- elunite get increased mining power
