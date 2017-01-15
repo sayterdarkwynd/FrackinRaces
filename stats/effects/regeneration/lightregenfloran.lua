@@ -66,9 +66,6 @@ function update(dt)
 		   status.setResource("food", adjustedHunger)
 	         end
 	  end
-
-
-
 	  
 	-- Daytime Abilities
 	if daytime then
@@ -79,11 +76,12 @@ function update(dt)
 		 status.setResource("food", adjustedHunger)
 	       end		
 	   -- When it is sunny and they are well fed, florans regenerate
-	  if hungerLevel >= 50  then 
+	  if hungerLevel >= 40  then 
 	    if underground and lightLevel < 60 then -- we cant do it well underground
 		   self.healingRate = 0
 		   status.modifyResourcePercentage("health", self.healingRate * dt)  
-	    elseif underground and lightLevel > 60 then -- we cant do it well underground
+	    elseif underground and lightLevel > 60 then -- we cant do it well underground and it costs food
+	           status.modifyResource("food", (status.resource("food") * -0.005) )
 		   self.healingRate = 1.00005 / config.getParameter("healTime", 320)
 		   status.modifyResourcePercentage("health", self.healingRate * dt)
 	    elseif lightLevel > 95 then

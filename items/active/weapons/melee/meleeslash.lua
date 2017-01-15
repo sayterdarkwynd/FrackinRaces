@@ -97,9 +97,13 @@ function MeleeSlash:fire()
 	 if species == "floran" then  --consume food in exchange for spear power
 	  if heldItem then
 	     if root.itemHasTag(heldItem, "spear") then 
-		    status.modifyResource("food", (status.resource("food") * -0.02) )
+		    status.modifyResource("food", (status.resource("food") * -0.008) )
 		    status.setPersistentEffects("floranFoodPowerBonus", {{stat = "powerMultiplier", baseMultiplier = 1.15}})     
 	     end
+	     if root.itemHasTag(heldItem, "dagger") then 
+		    status.modifyResource("food", (status.resource("food") * -0.005) )
+		    status.setPersistentEffects("floranFoodPowerBonus", {{stat = "powerMultiplier", baseMultiplier = 1.05}})     
+	     end	     
 	  end
          end
 

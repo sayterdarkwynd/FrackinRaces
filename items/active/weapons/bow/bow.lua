@@ -56,7 +56,7 @@ function init()
 end
 
 function update(dt, fireMode, shiftHeld)
-  self.weapon:update(dt, fireMode, shiftHeld)
+local species = world.entitySpecies(activeItem.ownerEntityId())
             if species == "floran" then      -- florans move faster when wielding bows
 		mcontroller.controlModifiers({
 				 speedModifier = 1.15
@@ -66,7 +66,10 @@ function update(dt, fireMode, shiftHeld)
 		mcontroller.controlModifiers({
 				 speedModifier = 1.20
 			})              
-            end         
+            end  
+            
+  self.weapon:update(dt, fireMode, shiftHeld)
+       
 end
 
 function uninit()

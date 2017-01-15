@@ -41,7 +41,7 @@ function SpearStab:fire()
 	 if species == "floran" then  --consume food in exchange for spear power
 	  if heldItem then
 	     if root.itemHasTag(heldItem, "spear") then 
-		    status.modifyResource("food", (status.resource("food") * -0.1) )
+		    status.modifyResource("food", (status.resource("food") * -0.05) )
 		    status.setPersistentEffects("floranFoodPowerBonus", {{stat = "protection", amount = 2}})     
 	     end
 	  end

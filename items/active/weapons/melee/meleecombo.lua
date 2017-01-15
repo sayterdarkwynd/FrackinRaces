@@ -149,7 +149,7 @@ local opposedhandHeldItem = world.entityHandItem(activeItem.ownerEntityId(), act
           end 
 
 	if species == "floran" then  --florans use food when attacking
-	    status.modifyResource("food", (status.resource("food") * -0.01) )
+	    status.modifyResource("food", (status.resource("food") * -0.008) )
 	    status.setPersistentEffects("floranFoodPowerBonus", {{stat = "powerMultiplier", baseMultiplier = 1.05}})
 	end
 

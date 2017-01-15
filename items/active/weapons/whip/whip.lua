@@ -66,6 +66,9 @@ end
 
 function update(dt, fireMode, shiftHeld)
   self.weapon:update(dt, fireMode, shiftHeld)
+  
+  -- *********** FR STUFF  *************************** 
+            local species = world.entitySpecies(activeItem.ownerEntityId())
             if species == "slimeperson" then      
 		mcontroller.controlModifiers({
 				 speedModifier = 1.15
@@ -81,7 +84,14 @@ function update(dt, fireMode, shiftHeld)
 				 airJumpModifier = 1.15,
 				 speedModifier = 1.15
 			})              
-            end               
+            end   
+
+
+	if species == "floran" then  --florans use food when attacking
+	    status.modifyResource("food", (status.resource("food") * -0.005) )
+	    status.setPersistentEffects("floranFoodPowerBonus", {{stat = "powerMultiplier", baseMultiplier = 1.05}})  
+	end
+-- ***********************************************
 end
 
 function uninit()

@@ -11,6 +11,8 @@ function init()
    end
 
 local species = world.entitySpecies(activeItem.ownerEntityId())
+   
+
 
 if species == "fenerox" then  
   local heldItem = world.entityHandItem(activeItem.ownerEntityId(), "primary")
@@ -174,8 +176,9 @@ function update(dt, fireMode, shiftHeld)
       setStance("catch")
     end
   end
-
-    if world.entitySpecies(activeItem.ownerEntityId()) == "fenerox" then      -- fenerox move faster when wielding boomerangs
+  
+    local species = world.entitySpecies(activeItem.ownerEntityId())
+    if species == "fenerox" then      -- fenerox move faster when wielding boomerangs
 	mcontroller.controlModifiers({ speedModifier = 1.15 })              
     end 
             
@@ -200,6 +203,12 @@ function fire()
   
   params.power = setCritDamageBoomerang(params.power)
   
+        local species = world.entitySpecies(activeItem.ownerEntityId())
+	if species == "floran" then  --florans use food when attacking
+	    status.modifyResource("food", (status.resource("food") * -0.005) )
+	end
+	
+	
   if self.aimDirection < 0 then params.processing = "?flipx" end
   local projectileId = world.spawnProjectile(
       self.projectileType,

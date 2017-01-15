@@ -76,6 +76,7 @@ function update(dt, fireMode, shiftHeld)
   local opposedhandHeldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand() == "primary" and "alt" or "primary")
   local species = world.entitySpecies(activeItem.ownerEntityId())
   local bonusApply = 0
+  
 -- ***********  Felin movement bonuses ***************
 if species == "felin" then  --when using dagger weapons, felin are extra swift
   if heldItem then
@@ -109,11 +110,15 @@ end
 -- *************************************************************************
 -- FR "combo based" fist weapon bonus
 -- *************************************************************************
-
+             if species == "floran" then
+	      status.modifyResource("food", (status.resource("food") * -0.005) )
+	      status.setPersistentEffects("floranFoodPowerBonus", {{stat = "powerMultiplier", baseMultiplier = 1.10}})  
+             end    
              if species == "munari" then
                self.blockCount = self.blockCount + 0.01
                status.setPersistentEffects("munaribonusdmg", { {stat = "powerMultiplier", amount = self.blockCount} })
                status.addPersistentEffect("boostermunari", "powerboostmunari", math.huge)
+               
              end     
              
 -- **************************************************************************
@@ -156,6 +161,7 @@ function uninit()
   end
     self.blockCount = 0
     self.blockCount2 = 0
+    status.clearPersistentEffects("floranFoodPowerBonus")
     status.clearPersistentEffects("fistbonusdmg")
     status.clearPersistentEffects("munaribonusdmg")
     status.clearPersistentEffects("boostermunari")    
