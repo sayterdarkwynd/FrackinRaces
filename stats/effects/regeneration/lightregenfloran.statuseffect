@@ -12,6 +12,6 @@
 
   "animationConfig" : "lightregen.animation",
   
-  "label" : "Daylight Regen",
+  "label" : "Photosynthesis",
   "icon" : "/interface/statuses/warm.png"
 }

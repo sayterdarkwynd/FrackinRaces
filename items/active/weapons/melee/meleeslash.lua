@@ -56,6 +56,10 @@ function MeleeSlash:windup()
    --  self.meleeCountslash = 0
    --end       
 
+if species == "floran" then  --florans use food when attacking
+  status.modifyResource("food", - 1)
+end
+
 
     --**************************************             
     --**************************************           

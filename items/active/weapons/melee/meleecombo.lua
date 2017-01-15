@@ -24,7 +24,7 @@ function MeleeCombo:init()
 -- FR EFFECTS
 -- **************************************************
 
-local species = world.entitySpecies(activeItem.ownerEntityId())
+   local species = world.entitySpecies(activeItem.ownerEntityId())
    if self.meleeCount == nil then 
      self.meleeCount = 0
    end
@@ -92,7 +92,7 @@ function MeleeCombo:windup()
 --*************************************    
 -- FU/FR ADDONS
  --*************************************    
- 
+ local species = world.entitySpecies(activeItem.ownerEntityId())
 -- FU/FR ADDONS 
  if self.meleeCountcombo == nil then 
    self.meleeCountcombo = 0 
@@ -107,16 +107,17 @@ local heldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.han
 local opposedhandHeldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand() == "primary" and "alt" or "primary")
 
 
+
 	 if species == "hylotl" then   -- in combos, hylotl get a bonus to damage with swords
 	  if heldItem then
 	     if root.itemHasTag(heldItem, "broadsword") or root.itemHasTag(heldItem, "shortsword") then 
-		  self.meleeCountcombo = self.meleeCountcombo + 0.12
+		  self.meleeCountcombo = self.meleeCountcombo + 0.06
 		  status.setPersistentEffects("combobonusdmg", {{stat = "powerMultiplier", amount = self.meleeCountcombo},{stat = "protection", amount = 1}})  
 	     end
 	  end
 	  if heldItem then
 	     if root.itemHasTag(heldItem, "broadsword") or root.itemHasTag(heldItem, "shortsword") then 
-		  self.meleeCountcombo = self.meleeCountcombo + 0.12
+		  self.meleeCountcombo = self.meleeCountcombo + 0.08
 		  status.setPersistentEffects("combobonusdmg", {{stat = "powerMultiplier", amount = self.meleeCountcombo},{stat = "protection", amount = 1}})   
 	     end
 	  end
@@ -146,7 +147,12 @@ local opposedhandHeldItem = world.entityHandItem(activeItem.ownerEntityId(), act
             self.meleeCountcombo = self.meleeCountcombo + 3
             status.setPersistentEffects("combobonusdmg", {{stat = "protection", amount = self.meleeCountcombo}})  
           end 
-          
+
+if species == "floran" then  --florans use food when attacking
+sb.logInfo("reduced food by 10")
+    status.modifyResource("food", -(status.resource("food") * -0.001) )
+end
+
 --**************************************   
 
   end

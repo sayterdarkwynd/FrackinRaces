@@ -57,7 +57,7 @@ function update(dt)
 	
 		status.setPersistentEffects("nightpenalty", { 
 		{stat = "maxHealth", baseMultiplier = 0.90 },
-		{stat = "maxEnergy", baseMultiplier = 0.75 }
+		{stat = "maxEnergy", baseMultiplier = 0.70 }
 		}) 
 	       -- when the sun is out, florans lose food
 	         if (hungerLevel < hungerMax) and ( self.tickTimerPenalty <= 0 ) then
@@ -67,21 +67,9 @@ function update(dt)
 	         end
 	  end
 
-        -- gain energy when well fed
-		  if hungerLevel > 95 then
-		    status.setPersistentEffects("starvationpower", {{stat = "maxEnergy", baseMultiplier = 1.25}})
-		  elseif hungerLevel < 90 then
-		    status.setPersistentEffects("starvationpower", {{stat = "maxEnergy", baseMultiplier = 1.20}})
-		  elseif hungerLevel < 80 then
-		    status.setPersistentEffects("starvationpower", {{stat = "maxEnergy", baseMultiplier = 1.15}}) 
-		  elseif hungerLevel < 70 then
-		    status.setPersistentEffects("starvationpower", {{stat = "maxEnergy", baseMultiplier = 1.10}})  
-		  elseif hungerLevel < 60 then
-		    status.setPersistentEffects("starvationpower", {{stat = "maxEnergy", baseMultiplier = 1.05}})      
-		  else
-		    status.clearPersistentEffects("starvationpower")
-		  end	
-		  
+
+
+	  
 	-- Daytime Abilities
 	if daytime then
 	  -- when the sun is out, florans regenerate food    
@@ -127,12 +115,7 @@ function update(dt)
 		   status.modifyResourcePercentage("health", self.healingRate * dt)
 	    end  
 	  end
-	  
-	  
-	  
-	  
 
-  
 	end
 
 
@@ -140,7 +123,6 @@ function update(dt)
 end
 
 function uninit()
-  status.clearPersistentEffects("starvationpower")
   status.clearPersistentEffects("nightpenalty")
 end
 
