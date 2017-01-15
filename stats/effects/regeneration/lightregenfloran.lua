@@ -70,9 +70,7 @@ function update(dt)
 	-- when a floran is in the sun, has full health and full food, their energy regen rate increases
 	  local hPerc = world.entityHealth(entity.id())
 	  if hPerc[1] == 0 or hPerc[2] == 0 then return end
-	if (self.foodValue >= 68) and ((hPerc[1] / hPerc[2]) * 100) >= 99 then
-	sb.logInfo ("dick")
-	  sb.logInfo(self.foodValue)
+	if (self.foodValue >= 68) and ((hPerc[1] / hPerc[2]) * 100) >= 98 then
 		status.setPersistentEffects("hungerBoost", { 
 		{stat = "powerMultiplier", baseMultiplier = 1.05 },
 		{stat = "energyRegenBlockTime", amount = -0.5 },
