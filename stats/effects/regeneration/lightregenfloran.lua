@@ -69,12 +69,24 @@ function update(dt)
 	  
 	-- Daytime Abilities
 	if daytime then
+	
+	-- when a floran is in the sun, has full health and full food, their energy regen rate increases
+	if (hungerLevel == 100) and ( stat.resource("health")== status.stat("maxHealth") ) then
+	  
+		status.setPersistentEffects("hungerBoost", { 
+		{stat = "energyRegenPercentageRate", amount = -0.30 }
+		}) 	  
+	else
+	  status.clearPersistentEffects("hungerBoost")
+	end
+	
 	  -- when the sun is out, florans regenerate food    
 	       if (hungerLevel < hungerMax) and ( self.tickTimer <= 0 ) then
 	         self.tickTimer = self.tickTime
 		 adjustedHunger = hungerLevel + (hungerLevel * 0.01)
 		 status.setResource("food", adjustedHunger)
 	       end		
+	       
 	   -- When it is sunny and they are well fed, florans regenerate
 	  if hungerLevel >= 40  then 
 	    if underground and lightLevel < 60 then -- we cant do it well underground
@@ -121,6 +133,7 @@ function update(dt)
 end
 
 function uninit()
+  status.clearPersistentEffects("hungerBoost")
   status.clearPersistentEffects("nightpenalty")
 end
 
