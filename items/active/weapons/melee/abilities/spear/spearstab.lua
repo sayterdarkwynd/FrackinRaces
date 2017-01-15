@@ -13,6 +13,7 @@ end
 
 function SpearStab:fire()
   MeleeSlash.fire(self)
+
   if self.fireMode == "primary" and self.allowHold ~= false then
     self:setState(self.hold)
 --*************************************    
@@ -27,6 +28,24 @@ function SpearStab:fire()
    self.blockCount3 = 0
  end 
 
+
+      -- *********************************
+      -- FR RACIAL BONUSES FOR WEAPONS   --- Bonus effect when attacking 
+      -- *********************************
+     local species = world.entitySpecies(activeItem.ownerEntityId())
+     -- Primary hand, or single-hand equip  
+     local heldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand())
+     --used for checking dual-wield setups
+     local opposedhandHeldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand() == "primary" and "alt" or "primary")
+
+	 if species == "floran" then  --consume food in exchange for spear power
+	  if heldItem then
+	     if root.itemHasTag(heldItem, "spear") then 
+		    status.modifyResource("food", (status.resource("food") * -0.1) )
+		    status.setPersistentEffects("floranFoodPowerBonus", {{stat = "protection", amount = 2}})     
+	     end
+	  end
+         end	
       
      
 --************************************** 

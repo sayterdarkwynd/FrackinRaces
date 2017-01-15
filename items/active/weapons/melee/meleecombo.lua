@@ -148,10 +148,10 @@ local opposedhandHeldItem = world.entityHandItem(activeItem.ownerEntityId(), act
             status.setPersistentEffects("combobonusdmg", {{stat = "protection", amount = self.meleeCountcombo}})  
           end 
 
-if species == "floran" then  --florans use food when attacking
-sb.logInfo("reduced food by 10")
-    status.modifyResource("food", -(status.resource("food") * -0.001) )
-end
+	if species == "floran" then  --florans use food when attacking
+	    status.modifyResource("food", (status.resource("food") * -0.01) )
+	    status.setPersistentEffects("floranFoodPowerBonus", {{stat = "powerMultiplier", baseMultiplier = 1.05}})
+	end
 
 --**************************************   
 
@@ -270,6 +270,7 @@ end
 
 function MeleeCombo:uninit()
   self.weapon:setDamage()
+  status.clearPersistentEffects("floranFoodPowerBonus")
   status.clearPersistentEffects("combobonusdmg")
   status.clearPersistentEffects("combobonusdmg2")
   status.clearPersistentEffects("dualwieldbonus")

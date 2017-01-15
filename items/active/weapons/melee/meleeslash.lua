@@ -56,11 +56,6 @@ function MeleeSlash:windup()
    --  self.meleeCountslash = 0
    --end       
 
-if species == "floran" then  --florans use food when attacking
-  status.modifyResource("food", - 1)
-end
-
-
     --**************************************             
     --**************************************           
           
@@ -88,8 +83,31 @@ function MeleeSlash:fire()
 
   animator.setAnimationState("swoosh", "fire")
   animator.playSound(self.fireSound or "fire")
-  animator.burstParticleEmitter((self.elementalType or self.weapon.elementalType) .. "swoosh")
+  animator.burstParticleEmitter((self.elementalType or self.weapon.elementalType) .. "swoosh")	
 
+      -- *********************************
+      -- FR RACIAL BONUSES FOR WEAPONS   --- Bonus effect when attacking 
+      -- *********************************
+     local species = world.entitySpecies(activeItem.ownerEntityId())
+     -- Primary hand, or single-hand equip  
+     local heldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand())
+     --used for checking dual-wield setups
+     local opposedhandHeldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand() == "primary" and "alt" or "primary")
+
+	 if species == "floran" then  --consume food in exchange for spear power
+	  if heldItem then
+	     if root.itemHasTag(heldItem, "spear") then 
+		    status.modifyResource("food", (status.resource("food") * -0.02) )
+		    status.setPersistentEffects("floranFoodPowerBonus", {{stat = "powerMultiplier", baseMultiplier = 1.15}})     
+	     end
+	  end
+         end
+
+ 
+
+
+
+	
   util.wait(self.stances.fire.duration, function()
     local damageArea = partDamageArea("swoosh")
     self.weapon:setDamage(self.damageConfig, damageArea, self.fireTime)
@@ -100,12 +118,14 @@ function MeleeSlash:fire()
 end
 
 function MeleeSlash:cooldownTime()
+  status.clearPersistentEffects("floranFoodPowerBonus")
   return self.fireTime - self.stances.windup.duration - self.stances.fire.duration
-
+  
 end
 
 function MeleeSlash:uninit()
   self.weapon:setDamage()
+  status.clearPersistentEffects("floranFoodPowerBonus")
   status.clearPersistentEffects("slashbonusdmg")
   status.clearPersistentEffects("hylotlbonusdmg")
   self.meleeCountslash = 0

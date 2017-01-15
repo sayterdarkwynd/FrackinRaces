@@ -56,19 +56,6 @@ if species == "hylotl" then
   end
 end
 
-if species == "floran" then  --florans get defense bonuses when using spears, and increased damage
-  if heldItem then
-     if root.itemHasTag(heldItem, "spear") then 
-	self.meleeCount = self.meleeCount + 2
-	self.meleeCount2 = self.meleeCount2 + 0.14
-	status.setPersistentEffects("weaponbonusdmg", {
-	  {stat = "protection", amount = self.meleeCount},
-	  {stat = "powerMultiplier", amount = self.meleeCount2}
-	})   
-     end
-  end
-end
-
 if species == "glitch" then  --glitch get bonuses with axe and hammer
   if heldItem then
      if root.itemHasTag(heldItem, "axe") or root.itemHasTag(heldItem, "hammer") then 
