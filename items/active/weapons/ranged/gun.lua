@@ -39,10 +39,11 @@ local heldItem2 = world.entityHandItem(activeItem.ownerEntityId(), "alt")
 	     end
 	     if root.itemHasTag(heldItem, "pistol") and opposedhandHeldItem and root.itemHasTag(opposedhandHeldItem, "pistol") then -- novakids are unmatched with dual pistols
 	       self.meleeCount = self.meleeCount + 0.20
-	       self.meleeCount2 = self.meleeCount + 0.20
+	       self.meleeCount2 = self.meleeCount2 + 0.20
 	       status.setPersistentEffects("weaponbonusdualwield", {
 		    {stat = "powerMultiplier", amount = self.meleeCount},
-		    {stat = "grit", amount = self.meleeCount}
+		    {stat = "grit", amount = self.meleeCount},
+		    {stat = "maxEnergy", amount = self.meleeCount2}
 		 })        
 	     end	     
 	  end
@@ -80,7 +81,7 @@ local heldItem2 = world.entityHandItem(activeItem.ownerEntityId(), "alt")
   end
 end     
 -- gyrusens rock the heavy weapons
- if species == "vespoid" then   
+ if species == "gyrusen" then   
   local heldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand())
   if heldItem then
      if root.itemHasTag(heldItem, "rocketlauncher") or root.itemHasTag(heldItem, "grenadelauncher") then 
@@ -126,11 +127,11 @@ function update(dt, fireMode, shiftHeld)
   local bonusApply = 0
   
   
--- ***********  Nightar  movement bonuses ***************
+-- ***********  Novakid  movement bonuses ***************
 if species == "novakid" and bonusApply == 0 then  --nightar gain speed and jump when wielding swords
   if heldItem then
      if root.itemHasTag(heldItem, "pistol") and opposedhandHeldItem and root.itemHasTag(opposedhandHeldItem, "pistol") then
-       mcontroller.controlModifiers({ speedModifier = 1.15, airJumpModifier = 1.05 })
+       mcontroller.controlModifiers({ speedModifier = 1.08, airJumpModifier = 1.05 })
      end    
   end
   bonusApply = 1

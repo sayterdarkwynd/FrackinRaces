@@ -66,6 +66,26 @@ function init()
 end
 
 function update(dt, fireMode, shiftHeld)
+
+
+-- ***************************************************   
+--FR stuff
+-- ***************************************************   
+  local heldItem = world.entityHandItem(activeItem.ownerEntityId(), "primary")
+  local heldItem2 = world.entityHandItem(activeItem.ownerEntityId(), "alt")
+  local opposedhandHeldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand() == "primary" and "alt" or "primary")
+  local species = world.entitySpecies(activeItem.ownerEntityId())
+  local bonusApply = 0
+-- ***********  Felin movement bonuses ***************
+if species == "felin" then  --when using dagger weapons, felin are extra swift
+  if heldItem then
+     if root.itemHasTag(heldItem, "fist") and opposedhandHeldItem and root.itemHasTag(opposedhandHeldItem, "fist") then
+       mcontroller.controlModifiers({ speedModifier = 1.15, airJumpModifier = 1.05 })
+     end    
+  end
+  bonusApply = 1
+end  
+  
   if mcontroller.onGround() then
     self.weapon.freezesLeft = self.weapon.freezeLimit
   end

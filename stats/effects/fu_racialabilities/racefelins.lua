@@ -2,7 +2,6 @@ function init()
   self.powerModifier = config.getParameter("powerModifier", 0)
   effect.addStatModifierGroup({
     {stat = "insanityImmunity", amount = 1},
-    {stat = "powerMultiplier", baseMultiplier = self.powerModifier},
     {stat = "fallDamageMultiplier", effectiveMultiplier = 0.50},
     {stat = "physicalResistance", amount = 0},
     {stat = "fireResistance", amount = -0.80},
@@ -12,18 +11,24 @@ function init()
     {stat = "shadowResistance", amount = 0}     
   })
 
-  local bounds = mcontroller.boundBox()
+	if (world.type() == "jungle") or (world.type() == "thickjungle") or (world.type() == "alien") or (world.type() == "protoworld") or (world.type() == "arboreal") or (world.type() == "arborealdark") then
+		    status.setPersistentEffects("felinEpic", {
+		      {stat = "protection", amount = 2},
+		      {stat = "maxHealth", baseMultiplier = 1.10}
+		    })
+	end 
+	
   script.setUpdateDelta(10)
   
 end
 
 function update(dt)
 	mcontroller.controlModifiers({
-			speedModifier = 1.07,
-			airJumpModifier = 1.15
+			speedModifier = 1.06,
+			airJumpModifier = 1.12
 		})
 end
 
 function uninit()
-  
+  status.clearPersistentEffects("felinEpic")
 end

@@ -32,14 +32,12 @@ function init()
               status.setPersistentEffects("nightarbonusdmg", { 
                 {stat = "powerMultiplier", baseMultiplier = self.whipCount} 
               })            
-              local bounds = mcontroller.boundBox() 
             end 
             if species == "lamia" then      
               self.whipCount = self.whipCount + 1.06
               status.setPersistentEffects("lamiabonusdmg", { 
                 {stat = "protection", baseMultiplier = self.whipCount} 
               })            
-              local bounds = mcontroller.boundBox() 
             end             
             if species == "nightar" then      
               self.whipCount = self.whipCount + 1.19
@@ -56,12 +54,10 @@ function init()
             if species == "slimeperson" then      
               self.whipCount = self.whipCount + 1.25
               status.setPersistentEffects("nightarbonusdmg", {{stat = "powerMultiplier", baseMultiplier = self.whipCount}}) 
-              local bounds = mcontroller.boundBox() 
             end    
             if species == "gardevan" then      
               self.whipCount = self.whipCount + 1.20
               status.setPersistentEffects("nightarbonusdmg", {{stat = "powerMultiplier", baseMultiplier = self.whipCount}}) 
-              local bounds = mcontroller.boundBox() 
             end              
 --************************************** 
 

@@ -2,12 +2,12 @@
   "name" : "lightregenfloran",
     "blockingStat" : "healingStatusImmunity",
   "effectConfig" : {
-    "healTime" : 130
+    "healTime" : 320
   },
   "defaultDuration" : 1,
 
   "scripts" : [
-    "lightregen.lua"
+    "lightregenfloran.lua"
   ],
 
   "animationConfig" : "lightregen.animation",

@@ -137,19 +137,6 @@ if species == "fenerox" then  --fenerox get dmg and protection increase with spe
    end
 end  
 
-if species == "viera" then  --viera are dangerous with daggers
-  if heldItem then
-     if root.itemHasTag(heldItem, "dagger") then 
-	self.meleeCount = self.meleeCount + 1
-	self.meleeCount2 = 0.20
-	status.setPersistentEffects("weaponbonusdmg", {
-	{stat = "protection", amount = self.meleeCount},
-	{stat = "powerMultiplier", amount = self.meleeCount2}
-	})  
-     end
-  end
-end  
-
 if species == "vulpes" then  --vulpes get protection when swinging blades
   if heldItem then
      if root.itemHasTag(heldItem, "dagger") or root.itemHasTag(heldItem, "shortsword") or root.itemHasTag(heldItem, "broadsword") then 
@@ -243,8 +230,28 @@ end
 -- *************************************************** 
 -- *********** DUAL WIELD POWERS
 -- *************************************************** 
+if species == "viera" then  --viera are dangerous with daggers
+  if heldItem then
+     if root.itemHasTag(heldItem, "dagger") then 
+	self.meleeCount = self.meleeCount + 1
+	self.meleeCount2 = 0.10
+	status.setPersistentEffects("weaponbonusdmg", {
+	{stat = "protection", amount = self.meleeCount},
+	{stat = "powerMultiplier", amount = self.meleeCount2}
+	})  
+     end
+     if root.itemHasTag(heldItem, "dagger") and opposedhandHeldItem and root.itemHasTag(opposedhandHeldItem, "dagger") then -- viera are dangerous with two daggers
+       self.meleeCount = 0.10
+       self.meleeCount3 = 0.25
+       status.setPersistentEffects("weaponbonusdualwield", {
+            {stat = "physicalResistance", amount = self.meleeCount},
+	    {stat = "powerMultiplier", amount = self.meleeCount3}   
+         })   
+     end     
+  end
+end  
 
-if species == "apex" then  
+if species == "felin" then  
   if heldItem then
      if root.itemHasTag(heldItem, "fist") and opposedhandHeldItem and root.itemHasTag(opposedhandHeldItem, "fist") then --felin are lethal with two fists
        self.meleeCount = 0.13
@@ -253,14 +260,16 @@ if species == "apex" then
          })   
      end
      if root.itemHasTag(heldItem, "dagger") and opposedhandHeldItem and root.itemHasTag(opposedhandHeldItem, "dagger") then -- felin are dangerous and defensive with daggers
-       self.meleeCount = 0.08
+       self.meleeCount5 = 0.08
+       self.meleeCount6 = 2
+       self.meleeCount7 = 0.25
        status.setPersistentEffects("weaponbonusdualwield", {
-	    {stat = "powerMultiplier", amount = self.meleeCount},
-	    {stat = "protection", amount = self.meleeCount},
-	    {stat = "grit", amount = self.meleeCount2 }	    
+	    {stat = "powerMultiplier", amount = self.meleeCount5},
+	    {stat = "protection", amount = self.meleeCount6},
+	    {stat = "grit", amount = self.meleeCount7 }	    
          })   
      end
-      if root.itemHasTag(heldItem, "fist") or root.itemHasTag(heldItem, "dagger") then  -- gain increased fist and dagger damage
+      if root.itemHasTag(heldItem, "fist") or root.itemHasTag(heldItem, "dagger") or root.itemHasTag(heldItem, "axe") or root.itemHasTag(heldItem, "spear") or root.itemHasTag(heldItem, "shortsword") then  -- gain increased fist and dagger damage
  	self.meleeCount2 = 0.05
  	status.setPersistentEffects("weaponbonusdmg3", {{stat = "powerMultiplier", amount = self.meleeCount2}})     
       end
@@ -322,7 +331,7 @@ function update(dt, fireMode, shiftHeld)
   
   
 -- ***********  Nightar  movement bonuses ***************
-if species == "nightar" and bonusApply == 0 then  --nightar gain speed and jump when wielding swords
+if species == "nightar" then  --nightar gain speed and jump when wielding swords
   if heldItem then
      if root.itemHasTag(heldItem, "shortsword") and opposedhandHeldItem and root.itemHasTag(opposedhandHeldItem, "shortsword") then
        mcontroller.controlModifiers({ speedModifier = 1.15, airJumpModifier = 1.05 })
@@ -338,10 +347,10 @@ if species == "nightar" and bonusApply == 0 then  --nightar gain speed and jump 
 end
 
 -- ***********  Felin movement bonuses ***************
-if species == "apex" and bonusApply == 0 then  --when using fist weapons, felin are extra swift
+if species == "felin" then  --when using dagger weapons, felin are extra swift
   if heldItem then
-     if root.itemHasTag(heldItem, "fist") and opposedhandHeldItem and root.itemHasTag(opposedhandHeldItem, "fist") then
-       mcontroller.controlModifiers({ speedModifier = 1.15, airJumpModifier = 1.05 })
+     if root.itemHasTag(heldItem, "dagger") and opposedhandHeldItem and root.itemHasTag(opposedhandHeldItem, "dagger") then
+       mcontroller.controlModifiers({ speedModifier = 1.25, airJumpModifier = 1.05 })
      end    
   end
   bonusApply = 1
