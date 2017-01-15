@@ -51,7 +51,7 @@ function update(dt)
     baseValue = config.getParameter("healthDown",0)*(status.resourceMax("food"))
     self.tickTimer = self.tickTimer - dt
     self.tickTimerPenalty = self.tickTimerPenalty - dt
-    
+    self.foodValue = status.resource("food")
 	-- Night penalties
 	  if not daytime then  -- Florans lose HP and Energy when the sun is not out
 	
@@ -66,20 +66,25 @@ function update(dt)
 		   status.setResource("food", adjustedHunger)
 	         end
 	  end
-	  
-	-- Daytime Abilities
-	if daytime then
-	
+
 	-- when a floran is in the sun, has full health and full food, their energy regen rate increases
-	if (hungerLevel == 100) and ( stat.resource("health")== status.stat("maxHealth") ) then
-	  
+	  local hPerc = world.entityHealth(entity.id())
+	  if hPerc[1] == 0 or hPerc[2] == 0 then return end
+	if (self.foodValue >= 68) and ((hPerc[1] / hPerc[2]) * 100) >= 99 then
+	sb.logInfo ("dick")
+	  sb.logInfo(self.foodValue)
 		status.setPersistentEffects("hungerBoost", { 
-		{stat = "energyRegenPercentageRate", amount = -0.30 }
+		{stat = "powerMultiplier", baseMultiplier = 1.05 },
+		{stat = "energyRegenBlockTime", amount = -0.5 },
+		{stat = "energyRegenPercentageRate", amount = 0.5 }
 		}) 	  
 	else
 	  status.clearPersistentEffects("hungerBoost")
 	end
 	
+	-- Daytime Abilities
+	if daytime then
+
 	  -- when the sun is out, florans regenerate food    
 	       if (hungerLevel < hungerMax) and ( self.tickTimer <= 0 ) then
 	         self.tickTimer = self.tickTime
