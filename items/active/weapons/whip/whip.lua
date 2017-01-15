@@ -85,12 +85,6 @@ function update(dt, fireMode, shiftHeld)
 				 speedModifier = 1.15
 			})              
             end   
-
-
-	if species == "floran" then  --florans use food when attacking
-	    status.modifyResource("food", (status.resource("food") * -0.005) )
-	    status.setPersistentEffects("floranFoodPowerBonus", {{stat = "powerMultiplier", baseMultiplier = 1.05}})  
-	end
 -- ***********************************************
 end
 
