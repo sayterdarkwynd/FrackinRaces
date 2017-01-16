@@ -4,16 +4,17 @@
     "path" : "/charCreationTooltip/description" , 
     "value" : "A race of highly intelligent primates. They've spent a long time modifying their genes to become better...stronger...more apey. They are intelligent, dangerous and technologically advanced.
     
-    ^red;Needs to eat more often^reset; 
-    ^red;-15% Energy, Weakness: Electric^reset;
-    ^green;+8% speed and +15% jump^reset; 
-    ^green;+15% HP bonus^reset; 
+    ^red;Metabolism requires more food^reset; 
+    ^red;Weakness: Electric^reset;
+    ^green;+8% speed and +15% jump, 25% Ice Resist^reset; 
     ^green;Gain additional vitality and protection in jungles^reset; 
-    ^green;Immune: Mud tiles, Jungle tiles^reset; 
-    ^green;+20% dmg with Hammers and Axes ^reset;
-    ^green;Hammers increase Speed when wielded ^reset;
-    ^green;+25% Damage with Grenade Launchers^reset;
-    ^green;Fist weapons do +25% damage and increase protection^reset;"
+    ^green;+1 Radius Matter Manipulator^reset;
+    ^green;When fed, gain huge Energy increases. When starved, resist physical damage, knockback and gain Health^reset;
+    ^green;+20% dmg with Hammers and Axes. Hammers grant 15% speed increase ^reset;
+    ^green;+25% Damage with Grenade Launchers, + 15% Damage with Rocket Launchers^reset;
+    ^green;+10% energy and +10% damage when using energy firearms^reset;
+    ^green;Fist weapons do +12% damage and increase protection^reset;
+    ^green;Immune: Mud tiles, Jungle tiles^reset; "
     }
 
 ]

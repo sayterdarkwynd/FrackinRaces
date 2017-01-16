@@ -5,14 +5,15 @@
     "value" : "The Novakids are a mysterious race of 'interstellar gas-bag people'. They have no charted settlements and no documented history. They have a love of gunslinging and humanities wild west. No one knows why. I'd guess John Wayne. 
     
     ^red;-10% HP^reset;
-    ^red;Weakness: Poison^reset;
-    ^green;+30% Energy^reset;
-    ^green;-25% Knockback^reset;
-    ^green;+5% Speed^reset;
-    ^green;Immune: All Radiation, Burning^reset;
+    ^red;25% Weakness: Poison, 100% Weakness: Shadow^reset;
+    ^green;+20% Energy, +25% Fire Resist^reset;
+    ^green;25% Knockback Resistance, +5% Speed^reset;
+    ^green;Regenerate health when well fed^reset;
+    ^green;Pistols: (single) +9% damage, (dual): +19% Damage, +20% Knockback Resist, +8% Speed, +5% Jump^reset;
     ^green;Glow in the dark^reset;
-    ^green;+20% Damage with Pistols and Sniper Rifles^reset;
-    ^green;+20% Damage with Whips. +10% Speed when wielding whips^reset;"
+    ^green;+16.5% Damage with Sniper Rifles^reset;
+    ^green;+20% Damage with Whips. +10% Speed^reset;
+    ^green;Immune: All Radiation, Burning^reset;"
     }
 
 ]
