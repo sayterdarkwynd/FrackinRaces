@@ -93,7 +93,6 @@ if species == "apex" then   --apex love axes and hammers
      if root.itemHasTag(heldItem, "hammer") or root.itemHasTag(heldItem, "axe") then 
 	self.meleeCount = 0.19
 	status.setPersistentEffects("weaponbonusdmg", {{stat = "powerMultiplier", amount = self.meleeCount}})    	
-	mcontroller.controlModifiers({ speedModifier = 1.15 }) 
      end
   end
 end  
@@ -314,7 +313,6 @@ function update(dt, fireMode, shiftHeld)
   local heldItem2 = world.entityHandItem(activeItem.ownerEntityId(), "alt")
   local opposedhandHeldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand() == "primary" and "alt" or "primary")
   local species = world.entitySpecies(activeItem.ownerEntityId())
-  local bonusApply = 0
   
   
 -- ***********  Nightar  movement bonuses ***************
@@ -330,8 +328,17 @@ if species == "nightar" then  --nightar gain speed and jump when wielding swords
        mcontroller.controlModifiers({ speedModifier = 1.10, airJumpModifier = 1.05 })
      end     
   end
-  bonusApply = 1
 end
+
+-- ***********  Nightar  movement bonuses ***************
+if species == "apex" then   --apex move faster with hammers
+  if heldItem then
+     if root.itemHasTag(heldItem, "hammer") then    	
+	mcontroller.controlModifiers({ speedModifier = 1.15 }) 
+     end
+  end
+end  
+
 
 -- ***********  Felin movement bonuses ***************
 if species == "felin" then  --when using dagger weapons, felin are extra swift
@@ -340,7 +347,6 @@ if species == "felin" then  --when using dagger weapons, felin are extra swift
        mcontroller.controlModifiers({ speedModifier = 1.25, airJumpModifier = 1.05 })
      end    
   end
-  bonusApply = 1
 end
 
 

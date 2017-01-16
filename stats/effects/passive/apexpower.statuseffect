@@ -1,9 +1,0 @@
-{
-  "name" : "apexpower",
-  "effectConfig" : {},
-  "defaultDuration" : 3,
-
-  "scripts" : [
-    "apexpower.lua"
-  ]
-}

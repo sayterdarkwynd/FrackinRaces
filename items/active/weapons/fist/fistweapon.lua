@@ -51,11 +51,10 @@ function init()
              end      
 
              if species == "apex" then
-               self.blockCount = self.blockCount + 0.19
-               self.blockCount2 = self.blockCount + 1
+               self.blockCount = self.blockCount + 0.12
+               self.blockCount2 = self.blockCount + 2
                status.setPersistentEffects("fistbonusdmg", {
-                 {stat = "powerMultiplier", amount = self.blockCount},
-                 {stat = "protection", amount = self.blockCount2}
+                 {stat = "powerMultiplier", amount = self.blockCount}
                }) 
              end               
 

@@ -51,16 +51,27 @@ local heldItem2 = world.entityHandItem(activeItem.ownerEntityId(), "alt")
 	  end
 	end 
 
-	-- Apex get a bonus with Grenade Launchers
+	-- Apex get a bonus with Grenade Launchers and Energy Weapons
 	 if species == "apex" then   
-	  local heldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand())
 	  if heldItem then
 	     if root.itemHasTag(heldItem, "grenadelauncher") then 
 		  self.blockCount = self.blockCount + 0.19
 		  status.setPersistentEffects("novakidbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}})   
 	     end
+	     if root.itemHasTag(heldItem, "rocketlauncher") then 
+		  self.blockCount = self.blockCount + 0.14
+		  status.setPersistentEffects("novakidbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}})   
+	     end	     
+	     if root.itemHasTag(heldItem, "energy") then 
+		  self.blockCount = self.blockCount + 0.1
+		  status.setPersistentEffects("novakidbonusdmg", {
+		    {stat = "powerMultiplier", amount = self.blockCount},
+		    {stat = "maxEnergy", amount = self.blockCount}
+		  })   
+	     end	     
 	  end
 	end 
+	
 	-- Humans rock the Assault Rifle and SMG
 	 if species == "human" then   
 	  local heldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand())

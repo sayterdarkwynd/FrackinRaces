@@ -12,6 +12,12 @@ end
 
 
 self.foodValue = status.resource("food")
+  if status.isResource("food") then
+      self.foodValue = status.resource("food")
+  else
+      self.foodValue = 50
+  end
+  
 local foodMax = 100
 local foodMin = 35
 local foodRange = foodMax - foodMin
