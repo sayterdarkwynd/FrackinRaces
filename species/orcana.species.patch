@@ -1,8 +1,11 @@
 [
-
+    { "op": "replace", 
+    "path" : "/charCreationTooltip/description" ,
+    "value" : ""
+    },
     { "op": "replace", 
     "path" : "/charCreationTooltip/description" , 
-    "value" : "Love having a "whale" of a time!
+    "value" : "Love having a whale of a time!
     
     ^red;-8% Energy, 100% Weakness: Electric^reset;
     ^red;Weakness: Electricity^reset;

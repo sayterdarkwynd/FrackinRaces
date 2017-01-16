@@ -9,7 +9,8 @@
     ^green;+20% Energy, +25% Fire Resist^reset;
     ^green;25% Knockback Resistance, +5% Speed^reset;
     ^green;Regenerate health when well fed^reset;
-    ^green;Pistols: (single) +9% damage, (dual): +19% Damage, +20% Knockback Resist, +8% Speed, +5% Jump^reset;
+    ^green;Pistols: (single) +9% damage, (dual):+20% Knockback Resist, +8% Speed, +5% Jump, +10% Energy^reset;
+    ^green;When in sunlight above ground your pistols gain increased firing speed^reset;
     ^green;Glow in the dark^reset;
     ^green;+16.5% Damage with Sniper Rifles^reset;
     ^green;+20% Damage with Whips. +10% Speed^reset;

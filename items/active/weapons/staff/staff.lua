@@ -59,7 +59,7 @@ function init()
               self.staffCount2 = self.staffCount2 + 0.30
               status.setPersistentEffects("ningenbonusdmg", {
                 {stat = "maxEnergy", amount = self.staffCount},
-                {stat = "powerMultiplier", amount = self.staffCount2},
+                {stat = "powerMultiplier", amount = self.staffCount2}
               })  
               local bounds = mcontroller.boundBox() 
             end              

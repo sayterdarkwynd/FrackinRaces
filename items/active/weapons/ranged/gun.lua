@@ -20,6 +20,7 @@ local heldItem2 = world.entityHandItem(activeItem.ownerEntityId(), "alt")
  --used for checking dual-wield setups
  local opposedhandHeldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand() == "primary" and "alt" or "primary")
 
+  
           if species == "peglaci" then      
             self.blockCount = self.blockCount + 0.05
             status.setPersistentEffects("novakidbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}})  
@@ -41,12 +42,11 @@ local heldItem2 = world.entityHandItem(activeItem.ownerEntityId(), "alt")
 		  status.setPersistentEffects("novakidbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}})    
 	     end
 	     if root.itemHasTag(heldItem, "pistol") and opposedhandHeldItem and root.itemHasTag(opposedhandHeldItem, "pistol") then -- novakids are unmatched with dual pistols
-	       self.blockCount = self.blockCount + 0.20
+	       self.blockCount = self.blockCount + 0.10
 	       status.setPersistentEffects("weaponbonusdualwield", {
-		    {stat = "powerMultiplier", amount = self.blockCount},
 		    {stat = "grit", amount = self.blockCount},
 		    {stat = "maxEnergy", amount = self.blockCount}
-		 })        
+		 })    
 	     end	     
 	  end
 	end 
@@ -126,6 +126,7 @@ end
   end
 
   self.weapon:init()
+
 end
 
 function update(dt, fireMode, shiftHeld)
@@ -149,6 +150,7 @@ if species == "novakid" and bonusApply == 0 then  --nightar gain speed and jump 
   end
   bonusApply = 1
 end
+
 
 -- ***************************************************   
 -- END FR STUFF
