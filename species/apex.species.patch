@@ -2,7 +2,7 @@
 
     { "op": "replace", 
     "path" : "/charCreationTooltip/description" , 
-    "value" : "A race of highly intelligent primates. They've spent a long time modifying their genes to become better...stronger...more apey. They are intelligent, dangerous and technologically advanced.
+    "value" : "A race of highly intelligent primates. 
     
     ^red;Metabolism requires more food^reset; 
     ^red;Weakness: Electric^reset;
