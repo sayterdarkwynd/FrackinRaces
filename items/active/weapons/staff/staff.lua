@@ -39,7 +39,7 @@ function init()
               self.staffCount = self.staffCount + 0.25
               status.setPersistentEffects("ningenbonusdmg", {
               {stat = "powerMultiplier", amount = self.staffCount},
-              {stat = "energyRegenPercentageRate", amount = + 0.2},
+              {stat = "energyRegenPercentageRate", amount = 0.2},
               {stat = "energyRegenBlockTime", amount = -0.5}
               })  
             end             

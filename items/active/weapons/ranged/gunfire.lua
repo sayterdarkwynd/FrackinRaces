@@ -76,9 +76,9 @@ sb.logInfo("fireTime="..self.fireTime)
   if self.species == "novakid" and ( lightLevel > 50 ) then  -- novakid fire pistols faster when in sunlight
     if heldItem or opposedhandHeldItem then
       if root.itemHasTag(heldItem, "pistol") and root.itemHasTag(opposedhandHeldItem, "pistol") then
-        if daytime and not underground then energyMax = energyMax+((lightLevel-50)/100)) end
+        if daytime and not underground then energyMax = energyMax+((lightLevel-40)/120) end
       elseif root.itemHasTag(heldItem, "pistol") or root.itemHasTag(opposedhandHeldItem, "pistol") then
-        if daytime and not underground then energyMax = energyMax+((lightLevel-50)/100) end
+        if daytime and not underground then energyMax = energyMax+((lightLevel-40)/120) end
      end
     end
   end
