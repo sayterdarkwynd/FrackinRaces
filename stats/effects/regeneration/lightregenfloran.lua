@@ -91,7 +91,7 @@ function update(dt)
 	       end		
 	       
 	   -- When it is sunny and they are well fed, florans regenerate
-	  if hungerLevel >= 40  then 
+	  if hungerLevel >= 28  then -- 28 is 40% of 70, which is the maxFood value
 	    if underground and lightLevel < 60 then -- we cant do it well underground
 		   self.healingRate = 0
 		   status.modifyResourcePercentage("health", self.healingRate * dt)  
