@@ -61,7 +61,7 @@ end
 function GunFire:update(dt, fireMode, shiftHeld)
   WeaponAbility.update(self, dt, fireMode, shiftHeld)
 
-sb.logInfo("fireTime="..self.fireTime)
+--sb.logInfo("fireTime="..self.fireTime)
   
   -- ****************************
   -- FR SPECIALS
