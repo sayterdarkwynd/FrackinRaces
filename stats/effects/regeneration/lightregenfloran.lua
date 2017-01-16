@@ -66,23 +66,23 @@ function update(dt)
 		   status.setResource("food", adjustedHunger)
 	         end
 	  end
+	
+	-- Daytime Abilities
+	if daytime then
+
 
 	-- when a floran is in the sun, has full health and full food, their energy regen rate increases
 	  local hPerc = world.entityHealth(entity.id())
 	  if hPerc[1] == 0 or hPerc[2] == 0 then return end
 	if (self.foodValue >= 68) and ((hPerc[1] / hPerc[2]) * 100) >= 98 then
 		status.setPersistentEffects("hungerBoost", { 
-		{stat = "powerMultiplier", baseMultiplier = 1.05 },
-		{stat = "energyRegenBlockTime", amount = -0.5 },
-		{stat = "energyRegenPercentageRate", amount = 0.5 }
+		{stat = "energyRegenBlockTime", amount = -0.35 },
+		{stat = "energyRegenPercentageRate", amount = 0.35 }
 		}) 	  
 	else
 	  status.clearPersistentEffects("hungerBoost")
 	end
 	
-	-- Daytime Abilities
-	if daytime then
-
 	  -- when the sun is out, florans regenerate food    
 	       if (hungerLevel < hungerMax) and ( self.tickTimer <= 0 ) then
 	         self.tickTimer = self.tickTime
