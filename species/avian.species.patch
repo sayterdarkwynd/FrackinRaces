@@ -5,13 +5,12 @@
     "value" : "Avians are a race of colourful birdfolk whose tribal culture revolves around the worship of Kluex - the winged god of the Aether. They are natruals with staves and wands, and have a mean-streak when threatened that makes them quite dangerous. Their lithe bodies give them great jumping and thanks to (nearly useless) wings they are less at risk from a long fall.
     
     ^red;-15% HP^reset;
-    ^red;Weakness: Ice^reset;
-    ^green;+10% Energy^reset;
-    ^green;Jump Boost^reset;
+    ^red;75% Weakness: Ice^reset;
+    ^green;+10% Energy, Jump Boost, 15% Shadow Resist^reset;
     ^green;-65% Fall Damage + Slowed Fall^reset;
     ^green;Gain air mobility and additional Slowed Fall in light to moderate wind conditions^reset;
     ^orange;+5.5% Damage^reset;^green;(increases as your HP depletes)^reset;
-    ^yellow;+20% Wand/Staff damage^reset;"
+    ^yellow;+20% Wand/Staff damage, and gain additional speed and energy^reset;"
     }
 
 ]

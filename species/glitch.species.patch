@@ -5,17 +5,14 @@
     "value" : "Hardy, strong automatons. Their creation is lost to history. This suits them just fine, as they prefer a primitive state of being. They run on their own energy source, which means they need to ingest little food, and are quite sturdy so long as they aren't soaking wet.
     
     ^red;-1s energy regen^reset;
-    ^red;Weakened when submerged^reset;
-    ^red;Weakness: Electric^reset;
-    ^green;+5% Energy^reset;
-    ^green;Reduced hunger rate^reset;
-    ^green;+14% HP^reset;
-    ^green;Protection +2^reset;
+    ^red;Weakness: Electric, Weakened when submerged^reset;
+    ^green;+5% Energy, Low Hunger Rate^reset;
+    ^green;+14% HP, +2 Protection^reset;
     ^green;Heal and gain power within Oil^reset; 
-    ^green;Immune: Poison, Bee Stings^reset;
     ^green;Shields give +1 Protection. Perfect Blocks increase damage (stacks)^reset;
-    ^green;+12% damage with Swords (1h and 2h)^reset;
-    ^green;1h combos increase protection^reset;"
+    ^green;Axes and Hammers gain +15% Damage^reset;
+    ^green;1h combos increase protection^reset;
+    ^green;Immune: Poison, Bee Stings^reset;"
     }
 
 ]
