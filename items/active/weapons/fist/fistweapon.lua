@@ -54,7 +54,8 @@ function init()
                self.blockCount = self.blockCount + 0.12
                self.blockCount2 = self.blockCount + 2
                status.setPersistentEffects("fistbonusdmg", {
-                 {stat = "powerMultiplier", amount = self.blockCount}
+                 {stat = "powerMultiplier", amount = self.blockCount},
+                 {stat = "protection", amount = self.blockCount2}
                }) 
              end               
 
@@ -110,8 +111,7 @@ end
 -- FR "combo based" fist weapon bonus
 -- *************************************************************************
              if species == "floran" then
-	      status.modifyResource("food", (status.resource("food") * -0.005) )
-	      status.setPersistentEffects("floranFoodPowerBonus", {{stat = "powerMultiplier", baseMultiplier = 1.10}})  
+	      status.modifyResource("food", (status.resource("food") * -0.005) )  
              end    
              if species == "munari" then
                self.blockCount = self.blockCount + 0.01

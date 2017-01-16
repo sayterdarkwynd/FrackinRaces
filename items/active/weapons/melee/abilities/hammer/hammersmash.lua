@@ -82,7 +82,6 @@ function HammerSmash:fire()
      local species = world.entitySpecies(activeItem.ownerEntityId())
 	if species == "floran" then  --florans use food when attacking
 	    status.modifyResource("food", (status.resource("food") * -0.01) )
-	    status.setPersistentEffects("floranFoodPowerBonus", {{stat = "powerMultiplier", baseMultiplier = 1.10}})  
 	end
 -- ***********************************************	
 
