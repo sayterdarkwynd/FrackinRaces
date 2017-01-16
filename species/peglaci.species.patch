@@ -1,0 +1,15 @@
+[
+
+    { "op": "replace", 
+    "path" : "/charCreationTooltip/description" , 
+    "value" : "Resilient, cold-dwelling creatures.
+    
+    ^red;-12% Energy, 100% Weakness : Fire^reset;
+    ^green;+25% Health, +90% Ice Resist^reset;
+    ^green;25% Knockback Resistance, +5% Speed^reset;
+    ^green;On Arctic and Snow biomes, gain increased Health and Energy ^reset;
+    ^green;+5% Damage with all Firearms^reset;
+    ^green;Immune: Liquid Nitrogen, Cold, Ice^reset;"
+    }
+
+]

@@ -109,6 +109,18 @@ if species == "elunite" then   --elunite get defense bonuses with swords
   end
 end  
 
+if species == "kineptic" then  --kineptic get dmg and protection increase with quarterstaves
+  if heldItem then
+     if root.itemHasTag(heldItem, "quarterstaff") then 
+	self.meleeCount = self.meleeCount + 3
+	self.meleeCount2 = 0.15
+	status.setPersistentEffects("weaponbonusdmg", {
+	{stat = "protection", amount = self.meleeCount},
+	{stat = "powerMultiplier", amount = self.meleeCount2}
+	})  
+     end
+   end
+end  
 
 if species == "fenerox" then  --fenerox get dmg and protection increase with spears
   if heldItem then

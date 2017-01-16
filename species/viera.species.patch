@@ -1,0 +1,18 @@
+[
+    { "op": "replace", 
+    "path" : "/charCreationTooltip/description" , 
+    "value" : ""
+    },
+    { "op": "replace", 
+    "path" : "/charCreationTooltip/description" , 
+    "value" : "Cosmic-attuned bunny-men
+    
+    ^red;100% Weakness: Shadow, Slighty increased hunger, -20% Health^reset;
+    ^green;+35% Energy, 25% Poison Resist, +12% Speed^reset;
+    ^green;In Rainforest, Forest and Primeval biomes you gain increased Energy and Speed^reset;
+    ^green;+15% Damage and Energy with Wands and Staves^reset;
+    ^green;+15% Damage and Energy with Bows^reset;
+    ^green;Dagger(one): +10% Damage, (two) +25% Damage and +10% Physical Resistance. All daggers also grant Protection^reset;
+    ^green;Immune: Slime^reset;"
+    }
+]

@@ -1,0 +1,18 @@
+[
+    { "op": "replace", 
+    "path" : "/charCreationTooltip/description" , 
+    "value" : ""
+    },
+    { "op": "replace", 
+    "path" : "/charCreationTooltip/description" , 
+    "value" : "Foxy explorers
+    
+    ^red;100% Weakness: Fire^reset;
+    ^green;+12% Health and Energy, 25% Poison Resist, +12% Speed^reset;
+    ^green;40% Knockback Resistance, +14% Speed^reset;
+    ^green;Any sword or dagger increases Protection by 2^reset;
+    ^green;+12% Whip Damage^reset;
+    ^green;+18% Damage with Hammers, Axes and Spears^reset;
+    ^green;Immune: Jungle^reset;"
+    }
+]

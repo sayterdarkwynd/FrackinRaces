@@ -6,10 +6,10 @@
     { "op": "replace", 
     "path" : "/charCreationTooltip/description" , 
     "value" : "Adorable fuzzy space raptors with wings.
+    ^red;-10% Health, 75% Weakness: Fire^reset;
     ^green;In mild to severe winds, gain additional agility^reset; 
-    ^red;-10% HP^reset;
-    ^green;+5% Energy^reset;
+    ^green;+5% Energy, +90% Ice Resist^reset;
     ^green;Immunities: Snow and Cold^reset;
-    ^green;0% fall damage, and fall much slower thanks to their feathered wings."
+    ^green;Fall much slower thanks to their feathered wings (-30% fall speed), Immune to fall damage."
     }
 ]

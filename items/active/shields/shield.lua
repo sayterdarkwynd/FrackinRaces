@@ -218,7 +218,7 @@ function raiseShield()
             animator.burstParticleEmitter("bonusBlock")
             animator.playSound("bonusEffect")
           end
-	  if species == "nightar" or species == "apex" then --nightar gain protection when they block
+	  if species == "nightar" then --nightar gain protection when they block
             self.blockCountShield = self.blockCountShield + 1
             status.setPersistentEffects("nightarprotection", 
               { 
@@ -227,7 +227,19 @@ function raiseShield()
             )  
             animator.burstParticleEmitter("bonusBlock3")
             animator.playSound("bonusEffect")
-          end           
+          end    
+	  if species == "bunnykin" then --nightar gain protection when they block
+            self.blockCountShield = self.blockCountShield + 1
+	    self.blockCountShield2 = self.blockCountShield2 + 0.0008
+            status.modifyResourcePercentage("health", 0.05 + self.blockCountShield2 )  --bunnykin get a heal when they perfectly block            
+            status.setPersistentEffects("nightarprotection", 
+              { 
+                {stat = "protection", amount = self.blockCountShield }
+              }
+            )  
+            animator.burstParticleEmitter("bonusBlock3")
+            animator.playSound("bonusEffect")
+          end          
 	  if species == "human" then
             self.blockCountShield = self.blockCountShield + 2
             status.setPersistentEffects("humanprotection", {{stat = "protection", amount = self.blockCountShield}})  --human get a defense bonus when perfectly blocking

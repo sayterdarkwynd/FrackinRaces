@@ -1,0 +1,16 @@
+[
+    { "op": "replace", 
+    "path" : "/charCreationTooltip/description" ,
+    "value" : ""
+    },
+    { "op": "replace", 
+    "path" : "/charCreationTooltip/description" , 
+    "value" : "Able fox-like warriors.
+    
+    ^red;-12% Energy, 100% Weakness: Shadow^reset;
+    ^green;+10% Speed, +10% Jump, +30 Health^reset;
+    ^green;Increased Shield Regen and Perfect Block time^reset;
+    ^green;Perfect Blocks increase Protection and heals^reset;
+    ^green;+30% Damage with Daggers and Swords. Combos increase defense.^reset;
+    }
+]

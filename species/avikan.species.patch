@@ -1,0 +1,16 @@
+[
+    { "op": "replace", 
+    "path" : "/charCreationTooltip/description" , 
+    "value" : ""
+    },
+    { "op": "replace", 
+    "path" : "/charCreationTooltip/description" , 
+    "value" : "Noble desert nomads.
+    ^red;-10% Health, -100% Weakness: Ice^reset;
+    ^green;In desert biomes you gain additional Power and Health^reset; 
+    ^green;+15% Health, +15% Energy, +100% Fire Resist^reset;
+    ^green;+20% Damage with Spears and Daggers^reset;
+    ^green;1 handed combo strikes increase damage^reset;
+    ^green;Immunities: Fire/Burning, Heat^reset;"
+    }
+]

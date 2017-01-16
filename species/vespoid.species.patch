@@ -1,0 +1,17 @@
+[
+    { "op": "replace", 
+    "path" : "/charCreationTooltip/description" , 
+    "value" : ""
+    },
+    { "op": "replace", 
+    "path" : "/charCreationTooltip/description" , 
+    "value" : "Insectoid bee-people.
+    
+    ^red;75% Weakness: Fire, %50 Weakness: Ice^reset;
+    ^green;+15% Health, 50% Poison Resist^reset;
+    ^green;-20% Fall Damage, +10% Speed^reset;
+    ^green;Increased air agility, poor movement in liquid^reset;
+    ^green;+25% Damage with Sniper Rifles and Machine Pistols^reset;
+    ^green;Immune: Bee Stings, Honey^reset;"
+    }
+]

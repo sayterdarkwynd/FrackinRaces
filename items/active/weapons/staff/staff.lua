@@ -37,7 +37,11 @@ function init()
             end            
             if species == "kineptic" then     
               self.staffCount = self.staffCount + 0.25
-              status.setPersistentEffects("ningenbonusdmg", {{stat = "powerMultiplier", amount = self.staffCount}})  
+              status.setPersistentEffects("ningenbonusdmg", {
+              {stat = "powerMultiplier", amount = self.staffCount},
+              {stat = "energyRegenPercentageRate", amount = + 0.2},
+              {stat = "energyRegenBlockTime", amount = -0.5}
+              })  
             end             
             if species == "ningen" then     
               self.staffCount = self.staffCount + 0.15

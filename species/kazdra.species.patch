@@ -1,0 +1,14 @@
+[
+
+    { "op": "replace", 
+    "path" : "/charCreationTooltip/description" , 
+    "value" : "Space Dragons!
+    
+    ^red;-20% Energy, 100% Weakness: Ice^reset;
+    ^green;+30% Health, +100% Fire Resist^reset;
+    ^green;40% Hunger reduction^reset;
+    ^green;+30% Damage with Broadswords^reset;
+    ^green;Immune: Heat, Fire^reset;"
+    }
+
+]

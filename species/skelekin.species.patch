@@ -1,0 +1,16 @@
+[
+
+    { "op": "replace", 
+    "path" : "/charCreationTooltip/description" , 
+    "value" : "Bizarre pseudo-dead constructs
+    
+    ^red;-20% Energy, 100% Weakness: Fire^reset;
+    ^red;Healing water causes nasty effects^reset;
+    ^green;+20% Health, +20% Physical Resist, +15% Shadow Resist^reset;
+    ^green;Gain additional power on Atropus biomes^reset;
+    ^green;Almost never need to eat^reset;
+    ^green;Blood, Milk, Alien Juice and Dark Water grant Protection, Health and Energy^reset;
+    ^green;Immune: Electrified, Heat, Cold, Radiation, Poison^reset;"
+    }
+
+]

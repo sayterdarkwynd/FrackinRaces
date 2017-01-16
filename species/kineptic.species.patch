@@ -1,0 +1,16 @@
+[
+    { "op": "replace", 
+    "path" : "/charCreationTooltip/description" ,
+    "value" : ""
+    },
+    { "op": "replace", 
+    "path" : "/charCreationTooltip/description" , 
+    "value" : "Energy-wielding space cats.
+    
+    ^red;-5% Energy, 65% Weakness: Fire, 15% Weakness: Electric^reset;
+    ^green;+10% Speed, +10% Jump, +40% Ice Resist, +20% Poison Resist^reset;
+    ^green;During the night, shadowy power restores your health^reset;
+    ^green;+25% Damage with Wands and Staves. Also gain Energy regeneration increase^reset;
+    ^green;+15% Damage and +3 Protection when using Quarterstaves^reset;
+    }
+]

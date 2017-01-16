@@ -1,0 +1,15 @@
+[
+
+    { "op": "replace", 
+    "path" : "/charCreationTooltip/description" , 
+    "value" : "Slow and lazy pacifists
+    
+    ^red;-20% Energy, 100% Weakness : Ice^reset;
+    ^green;+10% Health, +15% Physical Resist^reset;
+    ^green;30% hunger reduction^reset;
+    ^green;+30% Damage with Axes and Hammers^reset; 
+    ^green;+20% Damage with Rocket and Grenade Launchers^reset;
+    ^green;Immune: Bio-ooze, Insanity^reset;"
+    }
+
+]

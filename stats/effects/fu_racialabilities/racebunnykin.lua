@@ -8,6 +8,7 @@ function init()
     {stat = "maxEnergy", amount = baseValue2 },
     {stat = "slimestickImmunity", amount = 1},
     {stat = "jungleslowImmunity", amount = 1 },
+    {stat = "fumudslowImmunity", amount = 1 },
     {stat = "physicalResistance", amount = 0},
     {stat = "fireResistance", amount = -0.8},
     {stat = "iceResistance", amount = 0.5},
@@ -16,6 +17,13 @@ function init()
     {stat = "shadowResistance", amount = 0} 
   })  
 
+    if (world.type() == "forest") or (world.type() == "tundra") or (world.type() == "garden") or (world.type() == "snow") then
+	    status.setPersistentEffects("jungleEpic", {
+	      {stat = "maxHealth", baseMultiplier = 1.10},
+	      {stat = "maxEnergy", baseMultiplier = 1.10}
+	    })
+    end  
+    
   local bounds = mcontroller.boundBox()
   script.setUpdateDelta(10)
   
@@ -29,5 +37,5 @@ function update(dt)
 end
 
 function uninit()
-  
+  status.clearPersistentEffects("jungleEpic")
 end
