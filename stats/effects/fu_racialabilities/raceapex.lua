@@ -96,7 +96,7 @@ end
       {stat = "maxHealth", baseMultiplier = 1.05},
       {stat = "maxEnergy", baseMultiplier = 0.8}
     })
-  elseif self.foodValue < 35 then
+  elseif self.foodValue <= 35 then
     status.setPersistentEffects("starvationpower", {
       {stat = "physicalResistance", amount = 0.05},
       {stat = "grit", baseMultiplier = 1.10},
