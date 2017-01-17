@@ -56,36 +56,43 @@ function getLight()
 end
 
 
--- ****************************************
+-- ***********************************************************************************************************
 
 function GunFire:update(dt, fireMode, shiftHeld)
   WeaponAbility.update(self, dt, fireMode, shiftHeld)
 
 --sb.logInfo("fireTime="..self.fireTime)
   
-  -- ****************************
-  -- FR SPECIALS
+-- ***********************************************************************************************************
+-- FR SPECIALS
+-- ***********************************************************************************************************
   daytime = daytimeCheck()
   underground = undergroundCheck()
   lightLevel = getLight()
   local energyMax = 1
   
-  local heldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand())
+  local heldItem = world.entityHandItem(activeItem.ownerEntityId(), "primary")
+  local heldItem2 = world.entityHandItem(activeItem.ownerEntityId(), "alt")
   local opposedhandHeldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand() == "primary" and "alt" or "primary")
   
   if self.species == "novakid" and ( lightLevel > 50 ) then  -- novakid fire pistols faster when in sunlight
-    if heldItem or opposedhandHeldItem then
-      if root.itemHasTag(heldItem, "pistol") and root.itemHasTag(opposedhandHeldItem, "pistol") then
-        if daytime and not underground then energyMax = energyMax+((lightLevel-40)/120) end
-      elseif root.itemHasTag(heldItem, "pistol") or root.itemHasTag(opposedhandHeldItem, "pistol") then
-        if daytime and not underground then energyMax = energyMax+((lightLevel-40)/120) end
-     end
+    if heldItem then
+      if root.itemHasTag(heldItem, "pistol") and opposedhandHeldItem and root.itemHasTag(opposedhandHeldItem, "pistol") then
+        if daytime and not underground then energyMax = energyMax+((lightLevel-40)/120) end   -- must be in sunlight and above ground
+      elseif root.itemHasTag(heldItem, "pistol") then
+        if daytime and not underground then energyMax = energyMax+((lightLevel-50)/180) end   -- must be in sunlight and above ground
+      end
     end
   end
-  -- ***************************
-  -- END FR SPECIALS
-
+  
+  
+  -- we replace the vanilla timer setup
   self.cooldownTimer = math.max(0, self.cooldownTimer - (self.dt*energyMax))
+  
+  -- ***********************************************************************************************************
+  -- END FR SPECIALS
+  -- ***********************************************************************************************************
+
   
   if animator.animationState("firing") ~= "fire" then
     animator.setLightActive("muzzleFlash", false)

@@ -85,9 +85,9 @@ function MeleeSlash:fire()
   animator.playSound(self.fireSound or "fire")
   animator.burstParticleEmitter((self.elementalType or self.weapon.elementalType) .. "swoosh")	
 
-      -- *********************************
+      -- ******************************************************************************************************************
       -- FR RACIAL BONUSES FOR WEAPONS   --- Bonus effect when attacking 
-      -- *********************************
+      -- ******************************************************************************************************************
      local species = world.entitySpecies(activeItem.ownerEntityId())
      -- Primary hand, or single-hand equip  
      local heldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand())
@@ -103,15 +103,14 @@ function MeleeSlash:fire()
 	  end
          end
 
- 
-
-
-
-	
+       -- ******************************************************************************************************************
+       
   util.wait(self.stances.fire.duration, function()
     local damageArea = partDamageArea("swoosh")
     self.weapon:setDamage(self.damageConfig, damageArea, self.fireTime)
   end)
+
+
    
   self.cooldownTimer = self:cooldownTime()
           
@@ -120,7 +119,6 @@ end
 function MeleeSlash:cooldownTime()
   status.clearPersistentEffects("floranFoodPowerBonus")
   return self.fireTime - self.stances.windup.duration - self.stances.fire.duration
-  
 end
 
 function MeleeSlash:uninit()
