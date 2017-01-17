@@ -64,7 +64,7 @@ function GunFire:update(dt, fireMode, shiftHeld)
 --sb.logInfo("fireTime="..self.fireTime)
   
 -- ***********************************************************************************************************
--- FR SPECIALS
+-- FR SPECIALS  (Weapon speed and other such things)
 -- ***********************************************************************************************************
   daytime = daytimeCheck()
   underground = undergroundCheck()
