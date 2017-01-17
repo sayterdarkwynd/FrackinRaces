@@ -69,7 +69,7 @@ function update(dt)
 	
 	-- Daytime Abilities
 	if daytime then
-
+           status.clearPersistentEffects("nightpenalty")
 
 	-- when a floran is in the sun, has full health and full food, their energy regen rate increases
 	  local hPerc = world.entityHealth(entity.id())
