@@ -18,8 +18,10 @@ function MeleeSlash:init()
 -- **************************
 -- FR values
   species = world.entitySpecies(activeItem.ownerEntityId())
-  critValueBase = config.getParameter("critChance") -- reset crit chance   
+  critValueBase = config.getParameter("critChance") -- reset crit chance  
+  critModifier = config.getParameter("critModifier",5) -- add to crit chance 
   self.foodValue = status.resource("food")  --check our Food level
+  attackSpeedUp = 1 -- base attackSpeed
 -- ************************************************
 
 end
@@ -52,16 +54,6 @@ function MeleeSlash:windup()
     status.overConsumeResource("energy", self.energyUsage)
   end
 
-      -- *********************************
-      -- FR RACIAL BONUSES FOR WEAPONS   --- Bonus effect when winding up weapon
-      -- *********************************
-   --if self.meleeCount == nil then 
-   --  self.meleeCountslash = 0
-   --end       
-
-    --**************************************             
-    --**************************************           
-          
   if self.stances.preslash then
     self:setState(self.preslash)
   else
@@ -132,8 +124,7 @@ function MeleeSlash:fire()
      --used for checking dual-wield setups
      local opposedhandHeldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand() == "primary" and "alt" or "primary")
      local randValue = math.random(100)  -- chance for projectile  
-     local critValueFloran = config.getParameter("critChance",1) + 25      -- +25 % crit chance: 
-
+     local critValueFloran = ( (randValue/6) + (self.foodValue/9) )  
      -- **** FLORAN
 	 if species == "floran" then  --consume food in exchange for spear power. Florans also get increased attack speed with spears and a chance to spawn a projectile
            attackSpeedUp = 1 -- base attackSpeed
@@ -144,16 +135,16 @@ function MeleeSlash:fire()
 	         status.setPersistentEffects("floranFoodPowerBonus", {{stat = "powerMultiplier", baseMultiplier = 1.05}})
 	       end
 	     end
-	     if root.itemHasTag(heldItem, "spear") then -- spears get increased attack speed and a chance for a special attack
-		    status.modifyResource("food", (status.resource("food") * -0.008) ) 
+	     if root.itemHasTag(heldItem, "spear") then -- spears get increased attack speed and a chance for a special attack. need 50% food or more
 		    -- attack speed change    
-		    if self.foodValue >= 10 then
+		    if self.foodValue >= 35 then
+		      status.modifyResource("food", (status.resource("food") * -0.01) )  -- consume food
 		      attackSpeedUp = attackSpeedUp+(self.foodValue/120) 
-		      activeItem.setInstanceValue("critChance",critValueFloran)
+		      activeItem.setInstanceValue("critChanceMultiplier",critValueFloran) 
 		    -- projectile chance
 		      if randValue < 9 then
 		        projectileId = world.spawnProjectile("furazorleafinvis",self:firePosition(),activeItem.ownerEntityId(),self:aimVector(),false,params)
-		      end			    
+		      end			      
 		    end
 	     end  
 	   end
@@ -177,7 +168,7 @@ function MeleeSlash:fire()
   -- ***********************************************************************************************************
   
   self.cooldownTimer = math.max(0, self.cooldownTimer - (self.dt*attackSpeedUp))
-  activeItem.setInstanceValue("critChance",critValueBase )  -- set crit back to default value
+  activeItem.setInstanceValue("critChanceMultiplier",0 )  -- set crit back to default value
   -- ***********************************************************************************************************
   -- END FR SPECIALS
   -- ***********************************************************************************************************

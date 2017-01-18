@@ -26,6 +26,7 @@ function MeleeCombo:init()
 
    local species = world.entitySpecies(activeItem.ownerEntityId())
    self.foodValue = status.resource("food")  --check our Food level
+   attackSpeedUp = 1 -- base attackSpeed
    
    if self.meleeCount == nil then 
      self.meleeCount = 0

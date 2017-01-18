@@ -24,7 +24,7 @@
     {
       "action" : "projectile",
       "type" : "snotbubblepop",
-      "inheritDamageFactor" : 1
+      "inheritDamageFactor" : 0.5
     },
     {
       "action" : "sound",
