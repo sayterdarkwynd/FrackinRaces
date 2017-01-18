@@ -119,7 +119,7 @@ function init()
 		if heldItem ~= nil then
 			if isShield(heldItem) then
               			self.blockCountShield = 1
-              			status.setPersistentEffects("shieldBonus", {{stat = "protection", amount = self.blockCountShield}})    	
+              			status.setPersistentEffects("shieldBonus", {{stat = "protection", amount = self.blockCountShield}})  
 			end
 		end
 		heldItem = world.entityHandItem(activeItem.ownerEntityId(), "alt")

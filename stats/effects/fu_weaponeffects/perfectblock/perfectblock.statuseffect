@@ -1,0 +1,13 @@
+{
+  "name" : "perfectblock",
+  "blockingStat" : "critImmunity",
+  
+  "effectConfig" : {},
+  "defaultDuration" : 1,
+
+  "scripts" : [
+    "perfectblock.lua"
+  ],
+
+  "animationConfig" : "perfectblock.animation"
+}
