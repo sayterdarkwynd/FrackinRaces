@@ -4,7 +4,7 @@
   "animationCycle" : 0.25,
   "frameNumber" : 4,
   "speed" : 25.0,
-  "power" : 5,
+  "power" : 3.5,
   "timeToLive" : 0.25,
   "orientationLocked" : true,
   "animationLoops" : false,

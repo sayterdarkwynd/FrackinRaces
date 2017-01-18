@@ -12,6 +12,6 @@
 
   "animationConfig" : "darkhunter.animation",
   
-  "label" : "Shadow Warrior",
-  "icon" : "/interface/statuses/nighthunt.png"
+  "label" : "Blade Mastery",
+  "icon" : "/interface/statuses/nightarsword.png"
 }

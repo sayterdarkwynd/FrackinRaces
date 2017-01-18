@@ -15,9 +15,12 @@ function MeleeSlash:init()
     self.weapon:setStance(self.stances.idle)
   end
 
-
-species = world.entitySpecies(activeItem.ownerEntityId())
-critValueBase = config.getParameter("critChance") -- reset crit chance   
+-- **************************
+-- FR values
+  species = world.entitySpecies(activeItem.ownerEntityId())
+  critValueBase = config.getParameter("critChance") -- reset crit chance   
+  self.foodValue = status.resource("food")  --check our Food level
+-- ************************************************
 
 end
 
@@ -133,20 +136,25 @@ function MeleeSlash:fire()
 
      -- **** FLORAN
 	 if species == "floran" then  --consume food in exchange for spear power. Florans also get increased attack speed with spears and a chance to spawn a projectile
-	   self.foodValue = status.resource("food")  --check our Food level
            attackSpeedUp = 1 -- base attackSpeed
-
 	  if heldItem then
-	     if root.itemHasTag(heldItem, "spear") then 
-		    status.modifyResource("food", (status.resource("food") * -0.008) )
-		    status.setPersistentEffects("floranFoodPowerBonus", {{stat = "powerMultiplier", baseMultiplier = 1.15}})  
-		-- attack speed change    
-		attackSpeedUp = attackSpeedUp+(self.foodValue/120) 
-		activeItem.setInstanceValue("critChance",critValueFloran)
-		-- projectile chance
-		if randValue < 5 then
-		  projectileId = world.spawnProjectile("furazorleafinvis",self:firePosition(),activeItem.ownerEntityId(),self:aimVector(),false,params)
-		end		    
+	     if not root.itemHasTag(heldItem, "spear") then  -- anything that isn't a spear gets a flat damage bonus
+	       if self.foodValue >= 5 then
+	         status.modifyResource("food", (status.resource("food") * -0.005) )
+	         status.setPersistentEffects("floranFoodPowerBonus", {{stat = "powerMultiplier", baseMultiplier = 1.05}})
+	       end
+	     end
+	     if root.itemHasTag(heldItem, "spear") then -- spears get increased attack speed and a chance for a special attack
+		    status.modifyResource("food", (status.resource("food") * -0.008) ) 
+		    -- attack speed change    
+		    if self.foodValue >= 10 then
+		      attackSpeedUp = attackSpeedUp+(self.foodValue/120) 
+		      activeItem.setInstanceValue("critChance",critValueFloran)
+		    -- projectile chance
+		      if randValue < 9 then
+		        projectileId = world.spawnProjectile("furazorleafinvis",self:firePosition(),activeItem.ownerEntityId(),self:aimVector(),false,params)
+		      end			    
+		    end
 	     end  
 	   end
          end

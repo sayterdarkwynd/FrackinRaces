@@ -226,7 +226,7 @@ function MeleeCombo:fire()
 			   local ability = getPrimaryAbility()
 			   ability.comboSpeedFactor = ability.comboSpeedFactor - (ability.comboSpeedFactor * 2)
 
-			if (randValue < 15) and (lightLevel < 20) then  -- spawn a bitchin' projectile
+			if (randValue < 5) and (lightLevel < 20) then  -- spawn a projectile
 			  projectileId = world.spawnProjectile("nightarmeleeslash",self:firePosition(),activeItem.ownerEntityId(),self:aimVector(),false,params)
 			  animator.playSound("nightar")
 			end		                        
