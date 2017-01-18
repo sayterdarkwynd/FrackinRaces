@@ -124,8 +124,10 @@ function MeleeSlash:fire()
      --used for checking dual-wield setups
      local opposedhandHeldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand() == "primary" and "alt" or "primary")
      local randValue = math.random(100)  -- chance for projectile  
-     local critValueFloran = ( (randValue/6) + (self.foodValue/9) )  
+      
      -- **** FLORAN
+     local randValueCritBonus = math.random(10)
+     local critValueFloran = ( randValueCritBonus + math.ceil(self.foodValue/10) ) 
 	 if species == "floran" then  --consume food in exchange for spear power. Florans also get increased attack speed with spears and a chance to spawn a projectile
            attackSpeedUp = 1 -- base attackSpeed
 	  if heldItem then

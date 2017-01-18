@@ -83,6 +83,9 @@ function BowShot:fire()
       -- *********************************
       -- FR RACIAL BONUSES FOR WEAPONS   --- Bonus effect when attacking 
       -- *********************************
+     self.foodValue = status.resource("food")  --check our Food level
+     self.energyValue = status.resource("energy")  --check our energy level
+     
      local species = world.entitySpecies(activeItem.ownerEntityId())
      -- Primary hand, or single-hand equip  
      local heldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand())
@@ -91,10 +94,18 @@ function BowShot:fire()
 
 	 if species == "floran" then  --consume food in exchange for bow power
 	  if heldItem then 
-		    status.modifyResource("food", (status.resource("food") * -0.02) )  
+	    status.modifyResource("food", (status.resource("food") * -0.02) )  
 	  end
          end
-         
+            if species == "floran" then      -- lamia get increased crit chance with high energy
+	     local randValueCritBonus = math.random(16)
+	     local critValueLamia = ( randValueCritBonus + math.ceil(self.energyValue/10) ) 
+	     sb.logInfo(critValueLamia)
+		    if self.energyValue >= (status.stat("maxEnergy")*0.5) then   -- with high Energy reserve, lamia get increased Bow crit chance
+		      status.modifyResource("energy", (status.resource("energy") * -0.01) )  -- consume energy
+		      activeItem.setInstanceValue("critChanceMultiplier",critValueLamia) 			      
+		    end	                         
+            end           
          
   if not world.pointTileCollision(self:firePosition()) and status.overConsumeResource("energy", self.energyPerShot) then
     world.spawnProjectile(
@@ -118,6 +129,7 @@ function BowShot:fire()
   end
 
   self.cooldownTimer = self.cooldownTime
+  activeItem.setInstanceValue("critChanceMultiplier",0 )  -- set crit back to default value
 end
 
 function BowShot:perfectTiming()

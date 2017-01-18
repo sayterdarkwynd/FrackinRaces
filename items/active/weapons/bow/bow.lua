@@ -2,6 +2,8 @@ require "/scripts/util.lua"
 require "/scripts/vec2.lua"
 require "/items/active/weapons/weapon.lua"
 
+
+
 function init()
   activeItem.setCursor("/cursors/reticle0.cursor")
 
@@ -24,14 +26,15 @@ function init()
      self.blockCount = 0 
      self.blockCount2 = 0 
    end
+   self.foodValue = status.resource("food")  --check our Food level
+   self.energyValue = status.resource("energy")  --check our energy level
    local species = world.entitySpecies(activeItem.ownerEntityId())
-  
             if species == "floran" then      --20% more damage with floran
               self.blockCount = self.blockCount + 1.20
               status.setPersistentEffects("floranbonusdmg", {{stat = "powerMultiplier", baseMultiplier = self.blockCount}})  
               local bounds = mcontroller.boundBox()            
             end   
-            if world.entitySpecies(activeItem.ownerEntityId()) == "lamia" then      --25% more damage with lamia
+            if species == "lamia" then      --25% more damage and increased crit rate with lamia     
               self.blockCount = self.blockCount + 1.25
               self.blockCount2 = self.blockCount2 + 1.15
               status.setPersistentEffects("vierabonusdmg", {
@@ -55,21 +58,19 @@ function init()
 --************************************** 
 end
 
+   
+   
 function update(dt, fireMode, shiftHeld)
 local species = world.entitySpecies(activeItem.ownerEntityId())
             if species == "floran" then      -- florans move faster when wielding bows
-		mcontroller.controlModifiers({
-				 speedModifier = 1.15
-			})              
+		mcontroller.controlModifiers({speedModifier = 1.15})              
             end
-            if species == "lamia" then      -- florans move faster when wielding bows
-		mcontroller.controlModifiers({
-				 speedModifier = 1.20
-			})              
+            if species == "lamia" then      -- lamia gain increased speed with bows
+		mcontroller.controlModifiers({speedModifier = 1.20})              
             end  
             
   self.weapon:update(dt, fireMode, shiftHeld)
-       
+      
 end
 
 function uninit()
@@ -78,4 +79,5 @@ function uninit()
   status.clearPersistentEffects("sergalbonusdmg")
   self.blockCount = 0
   self.weapon:uninit()
+  activeItem.setInstanceValue("critChanceMultiplier",0 )  -- set crit back to default value
 end
