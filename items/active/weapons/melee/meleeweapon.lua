@@ -299,10 +299,6 @@ if species == "nightar" then
 	    {stat = "grit", amount = self.meleeCount2}
 	  })  
      end
-      if root.itemHasTag(heldItem, "shortsword") then  -- if they have a single shortsword equiped, increase damage
- 	self.meleeCount3 = 0.05
- 	status.setPersistentEffects("weaponbonusdmg3", {{stat = "powerMultiplier", amount = self.meleeCount3}})     
-      end
   end
 end
 

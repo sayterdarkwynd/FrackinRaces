@@ -25,6 +25,8 @@ function MeleeCombo:init()
 -- **************************************************
 
    local species = world.entitySpecies(activeItem.ownerEntityId())
+   self.foodValue = status.resource("food")  --check our Food level
+   
    if self.meleeCount == nil then 
      self.meleeCount = 0
    end
@@ -38,7 +40,9 @@ end
 function MeleeCombo:update(dt, fireMode, shiftHeld)
 
   WeaponAbility.update(self, dt, fireMode, shiftHeld)
-
+  if not attackSpeedUp then
+    attackSpeedUp = 1
+  end
   if self.cooldownTimer > 0 then
     self.cooldownTimer = math.max(0, self.cooldownTimer - self.dt)   
     if self.cooldownTimer == 0 then
@@ -64,12 +68,44 @@ function MeleeCombo:update(dt, fireMode, shiftHeld)
   end
 end
 
+
+-- ******************************************
+-- FR FUNCTIONS
+function getLight()
+  local position = mcontroller.position()
+  position[1] = math.floor(position[1])
+  position[2] = math.floor(position[2])
+  local lightLevel = world.lightLevel(position)
+  lightLevel = math.floor(lightLevel * 100)
+  return lightLevel
+end
+
+function MeleeCombo:firePosition()
+   return vec2.add(mcontroller.position(), activeItem.handPosition(self.weapon.muzzleOffset))
+end
+
+function MeleeCombo:aimVector()  -- fires straight
+  local aimVector = vec2.rotate({1, 0}, self.weapon.aimAngle )
+  aimVector[1] = aimVector[1] * mcontroller.facingDirection()
+  return aimVector
+end
+
+function MeleeCombo:aimVectorRand() -- fires wherever it wants
+  local aimVector = vec2.rotate({1, 0}, self.weapon.aimAngle + sb.nrand(inaccuracy, 0))
+  aimVector[1] = aimVector[1] * mcontroller.facingDirection()
+  return aimVector
+end
+  -- ***********************************************************************************************************
+  -- END FR SPECIALS
+  -- ***********************************************************************************************************
+   
+-- *****************************************
+
 -- State: windup
 function MeleeCombo:windup()
   local stance = self.stances["windup"..self.comboStep]
 
   self.weapon:setStance(stance)
-
   self.edgeTriggerTimer = 0
 
   if stance.hold then
@@ -88,73 +124,6 @@ function MeleeCombo:windup()
     self:setState(self.preslash)
   else
     self:setState(self.fire)
-
---*************************************    
--- FU/FR ADDONS
- --*************************************    
- local species = world.entitySpecies(activeItem.ownerEntityId())
--- FU/FR ADDONS 
- if self.meleeCountcombo == nil then 
-   self.meleeCountcombo = 0 
- end
- if self.meleeCountcombo2 == nil then 
-   self.meleeCountcombo2 = 0 
- end
-
--- Primary hand, or single-hand equip  
-local heldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand())
---used for checking dual-wield setups
-local opposedhandHeldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand() == "primary" and "alt" or "primary")
-
-
-
-	 if species == "hylotl" then   -- in combos, hylotl get a bonus to damage with swords
-	  if heldItem then
-	     if root.itemHasTag(heldItem, "broadsword") or root.itemHasTag(heldItem, "shortsword") then 
-		  self.meleeCountcombo = self.meleeCountcombo + 0.06
-		  status.setPersistentEffects("combobonusdmg", {{stat = "powerMultiplier", amount = self.meleeCountcombo},{stat = "protection", amount = 1}})  
-	     end
-	  end
-	  if heldItem then
-	     if root.itemHasTag(heldItem, "broadsword") or root.itemHasTag(heldItem, "shortsword") then 
-		  self.meleeCountcombo = self.meleeCountcombo + 0.08
-		  status.setPersistentEffects("combobonusdmg", {{stat = "powerMultiplier", amount = self.meleeCountcombo},{stat = "protection", amount = 1}})   
-	     end
-	  end
-	end  
-
-          if species == "avikan" then      
-            self.meleeCountcombo = self.meleeCountcombo + 0.05
-            status.setPersistentEffects("combobonusdmg", {{stat = "powerMultiplier", amount = self.meleeCountcombo}})  
-          end  
-          if species == "glitch" then      --each 1-handed combo swing slightly increases glitch defense
-            self.meleeCountcombo = self.meleeCountcombo + 3
-            status.setPersistentEffects("combobonusdmg", {{stat = "protection", amount = self.meleeCountcombo}})  
-          end   
-	  if species == "nightar" then   -- in combos, nightar get a bonus to damage and knockback resist with swords
-		  if heldItem then
-		     if root.itemHasTag(heldItem, "shortsword") then 
-			    self.meleeCountcombo = self.meleeCountcombo + 0.1
-			    self.meleeCountcombo2 = self.meleeCountcombo2 + 0.07
-			    status.setPersistentEffects("combobonusdmg", {
-			      {stat = "grit", baseMultiplier = self.meleeCountcombo},
-			      {stat = "powerMultiplier", amount = self.meleeCountcombo2}
-			    })   
-		     end
-		  end
-	  end
-          if species == "kemono" then      --each 1-handed combo swing slightly increases kemono defense
-            self.meleeCountcombo = self.meleeCountcombo + 3
-            status.setPersistentEffects("combobonusdmg", {{stat = "protection", amount = self.meleeCountcombo}})  
-          end 
-
-	if species == "floran" then  --florans use food when attacking
-	    status.modifyResource("food", (status.resource("food") * -0.005) )
-	    status.setPersistentEffects("floranFoodPowerBonus", {{stat = "powerMultiplier", baseMultiplier = 1.05}})
-	end
-
---**************************************   
-
   end
 end
 
@@ -173,7 +142,10 @@ function MeleeCombo:wait()
   end)
 
   self.cooldownTimer = math.max(0, self.cooldowns[self.comboStep - 1] - stance.duration)
+  -- *** FR
+  self.cooldownTimer = math.max(0, self.cooldownTimer - attackSpeedUp)
   self.comboStep = 1
+  
 end
 
 -- State: preslash
@@ -204,6 +176,81 @@ function MeleeCombo:fire()
   animator.setParticleEmitterOffsetRegion(swooshKey, self.swooshOffsetRegions[self.comboStep])
   animator.burstParticleEmitter(swooshKey)
 
+
+
+--*************************************    
+-- FU/FR ABILITIES
+ --*************************************   
+
+ local species = world.entitySpecies(activeItem.ownerEntityId())
+ if self.meleeCountcombo == nil then self.meleeCountcombo = 0  end
+ if self.meleeCountcombo2 == nil then self.meleeCountcombo2 = 0 end
+
+ -- Primary hand, or single-hand equip  
+ local heldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand())
+ --used for checking dual-wield setups
+ local opposedhandHeldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand() == "primary" and "alt" or "primary")
+ local randValue = math.random(100)  -- chance for projectile
+
+
+	 if species == "hylotl" then   -- in combos, hylotl get a bonus to damage with swords
+	  if heldItem then
+	     if root.itemHasTag(heldItem, "broadsword") or root.itemHasTag(heldItem, "shortsword") then 
+		  self.meleeCountcombo = self.meleeCountcombo + 0.06
+		  status.setPersistentEffects("combobonusdmg", {{stat = "powerMultiplier", amount = self.meleeCountcombo},{stat = "protection", amount = 1}})  
+	     end
+	  end
+	  if heldItem then
+	     if root.itemHasTag(heldItem, "broadsword") or root.itemHasTag(heldItem, "shortsword") then 
+		  self.meleeCountcombo = self.meleeCountcombo + 0.08
+		  status.setPersistentEffects("combobonusdmg", {{stat = "powerMultiplier", amount = self.meleeCountcombo},{stat = "protection", amount = 1}})   
+	     end
+	  end
+	end  
+
+          if species == "avikan" then      
+            self.meleeCountcombo = self.meleeCountcombo + 0.05
+            status.setPersistentEffects("combobonusdmg", {{stat = "powerMultiplier", amount = self.meleeCountcombo}})  
+          end  
+          if species == "glitch" then      --each 1-handed combo swing slightly increases glitch defense
+            self.meleeCountcombo = self.meleeCountcombo + 3
+            status.setPersistentEffects("combobonusdmg", {{stat = "protection", amount = self.meleeCountcombo}})  
+          end   
+	  if species == "nightar" then   -- in combos, nightar get a bonus to damage and knockback resist with swords
+	    self.meleeCountcombo = self.meleeCountcombo + 0.1
+	    self.meleeCountcombo2 = self.meleeCountcombo2 + 0.07
+	    local lightLevel = getLight()
+		  if heldItem then
+		     if root.itemHasTag(heldItem, "shortsword") then 
+		           attackSpeedUp = (100-lightLevel)/100 -- base attackSpeed. Greater speed in darkness
+			   local ability = getPrimaryAbility()
+			   ability.comboSpeedFactor = ability.comboSpeedFactor - (ability.comboSpeedFactor * 2)
+
+			if (randValue < 15) and (lightLevel < 20) then  -- spawn a bitchin' projectile
+			  projectileId = world.spawnProjectile("nightarmeleeslash",self:firePosition(),activeItem.ownerEntityId(),self:aimVector(),false,params)
+			  animator.playSound("nightar")
+			end		                        
+			    status.setPersistentEffects("combobonusdmg", {
+			      {stat = "grit", baseMultiplier = self.meleeCountcombo},
+			      {stat = "powerMultiplier", amount = self.meleeCountcombo2}
+			    }) 				    
+		     end
+		  end
+	  end
+          if species == "kemono" then      --each 1-handed combo swing slightly increases kemono defense
+            self.meleeCountcombo = self.meleeCountcombo + 3
+            status.setPersistentEffects("combobonusdmg", {{stat = "protection", amount = self.meleeCountcombo}})  
+          end 
+
+	if species == "floran" then  --florans use food when attacking, and gain a 5% damage increase as a result. However, they need at least 5 food.
+	    if self.foodValue >= 5 then
+	      status.modifyResource("food", (status.resource("food") * -0.005) )
+	      status.setPersistentEffects("floranFoodPowerBonus", {{stat = "powerMultiplier", baseMultiplier = 1.05}})
+	    end
+	end
+
+--**************************************  
+
   util.wait(stance.duration, function()
     local damageArea = partDamageArea("swoosh")
     self.weapon:setDamage(self.stepDamageConfig[self.comboStep], damageArea)
@@ -214,10 +261,11 @@ function MeleeCombo:fire()
     self:setState(self.wait)
   else
     self.cooldownTimer = self.cooldowns[self.comboStep]
+    -- **** FR
+     self.cooldownTimer = math.max(0, self.cooldowns[self.comboStep] - attackSpeedUp) 
+    -- *****
     self.comboStep = 1
-  end  
-
-            
+  end           
 end
 
 function MeleeCombo:shouldActivate()

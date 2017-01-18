@@ -16,8 +16,8 @@ function MeleeSlash:init()
   end
 
 
-local species = world.entitySpecies(activeItem.ownerEntityId())
-
+species = world.entitySpecies(activeItem.ownerEntityId())
+critValueBase = config.getParameter("critChance") -- reset crit chance   
 
 end
 
@@ -76,74 +76,100 @@ function MeleeSlash:preslash()
   self:setState(self.fire)
 end
 
+
+
+-- ***********************************************************************************************************
+-- FR SPECIALS  Functions for projectile spawning
+-- ***********************************************************************************************************
+function MeleeSlash:firePosition()
+   return vec2.add(mcontroller.position(), activeItem.handPosition(self.weapon.muzzleOffset))
+end
+
+function MeleeSlash:aimVector()  -- fires straight
+  local aimVector = vec2.rotate({1, 0}, self.weapon.aimAngle )
+  aimVector[1] = aimVector[1] * mcontroller.facingDirection()
+  return aimVector
+end
+
+function MeleeSlash:aimVectorRand() -- fires wherever it wants
+  local aimVector = vec2.rotate({1, 0}, self.weapon.aimAngle + sb.nrand(inaccuracy, 0))
+  aimVector[1] = aimVector[1] * mcontroller.facingDirection()
+  return aimVector
+end
+  -- ***********************************************************************************************************
+  -- END FR SPECIALS
+  -- ***********************************************************************************************************
+   
+   
+   
+   
 -- State: fire
 function MeleeSlash:fire()
      
   self.weapon:setStance(self.stances.fire)
   self.weapon:updateAim()
 
+
+
       -- ******************************************************************************************************************
       -- FR RACIAL BONUSES FOR WEAPONS   --- Bonus effect when attacking 
       -- ******************************************************************************************************************
+	-- *** ABILITY TYPES
+	-- attackSpeedUp = attackSpeedUp+(self.foodValue/120)  -- Attack Speed increase based on food. easily modified
+	-- activeItem.setInstanceValue("critChance",math )  -- 100 % crit chance: 
+	-- activeItem.setInstanceValue("critBonus",math )  -- Crit Bonus increase 
+	-- activeItem.setInstanceValue("elementalType","element" )  -- attack element type 
+	-- activeItem.setInstanceValue("primaryAbility","ability" )  -- ability
+	-- projectileId = world.spawnProjectile("hellfireprojectile",self:firePosition(),activeItem.ownerEntityId(),self:aimVector(),false,params)     -- spawn a projectile
+
+      
      local species = world.entitySpecies(activeItem.ownerEntityId())
      -- Primary hand, or single-hand equip  
      local heldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand())
      --used for checking dual-wield setups
      local opposedhandHeldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand() == "primary" and "alt" or "primary")
+     local randValue = math.random(100)  -- chance for projectile  
+     local critValueFloran = config.getParameter("critChance",1) + 25      -- +25 % crit chance: 
 
+     -- **** FLORAN
 	 if species == "floran" then  --consume food in exchange for spear power. Florans also get increased attack speed with spears and a chance to spawn a projectile
 	   self.foodValue = status.resource("food")  --check our Food level
            attackSpeedUp = 1 -- base attackSpeed
-           local randValue = math.random(2)  -- chance for projectile
+
 	  if heldItem then
 	     if root.itemHasTag(heldItem, "spear") then 
 		    status.modifyResource("food", (status.resource("food") * -0.008) )
 		    status.setPersistentEffects("floranFoodPowerBonus", {{stat = "powerMultiplier", baseMultiplier = 1.15}})  
 		-- attack speed change    
 		attackSpeedUp = attackSpeedUp+(self.foodValue/120) 
+		activeItem.setInstanceValue("critChance",critValueFloran)
 		-- projectile chance
-		if randValue > 1 then
-		  projectileId = world.spawnProjectile("razorleaf",self:firePosition(),activeItem.ownerEntityId(),self:aimVector(),false,params)
+		if randValue < 5 then
+		  projectileId = world.spawnProjectile("furazorleafinvis",self:firePosition(),activeItem.ownerEntityId(),self:aimVector(),false,params)
 		end		    
-	     end     
-	  end
+	     end  
+	   end
          end
 
--- Racial weapon projectiles
---  if species == "floran" then  -- the more food a floran has, the faster they can stab with a spear
---  local heldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand())
---  self.foodValue = status.resource("food")
---  attackSpeedUp = 1
---    if heldItem then
---      if root.itemHasTag(heldItem, "spear") then
---        projectileId = world.spawnProjectile("hellfireprojectile",self:firePosition(),activeItem.ownerEntityId(),self:aimVector(),false,params)        
---      end
---    end
---  end
   -- ***********************************************************************************************************
   -- END FR SPECIALS
   -- ***********************************************************************************************************
   
-       
   animator.setAnimationState("swoosh", "fire")
   animator.playSound(self.fireSound or "fire")
   animator.burstParticleEmitter((self.elementalType or self.weapon.elementalType) .. "swoosh")	
-
 
   util.wait(self.stances.fire.duration, function()
     local damageArea = partDamageArea("swoosh")
     self.weapon:setDamage(self.damageConfig, damageArea, self.fireTime)
   end)
 
-
-
-
   -- ***********************************************************************************************************
   -- FR cooldown replace
   -- ***********************************************************************************************************
   
   self.cooldownTimer = math.max(0, self.cooldownTimer - (self.dt*attackSpeedUp))
-  
+  activeItem.setInstanceValue("critChance",critValueBase )  -- set crit back to default value
   -- ***********************************************************************************************************
   -- END FR SPECIALS
   -- ***********************************************************************************************************
@@ -155,23 +181,6 @@ function MeleeSlash:fire()
 end
 
 
--- ***********************************************************************************************************
--- FR SPECIALS  Functions for projectile spawning
--- ***********************************************************************************************************
-function MeleeSlash:firePosition()
-   return vec2.add(mcontroller.position(), activeItem.handPosition(self.weapon.muzzleOffset))
-end
-
-function MeleeSlash:aimVector()
-  local aimVector = vec2.rotate({1, 0}, self.weapon.aimAngle + sb.nrand(inaccuracy, 0))
-  aimVector[1] = aimVector[1] * mcontroller.facingDirection()
-  return aimVector
-end
-  -- ***********************************************************************************************************
-  -- END FR SPECIALS
-  -- ***********************************************************************************************************
-   
-   
 function MeleeSlash:cooldownTime()
   status.clearPersistentEffects("floranFoodPowerBonus")
   return self.fireTime - self.stances.windup.duration - self.stances.fire.duration
