@@ -61,10 +61,19 @@ function update(dt)
 		}) 
 	       -- when the sun is out, florans lose food
 	         if (hungerLevel < hungerMax) and ( self.tickTimerPenalty <= 0 ) then
+	         
 	           self.tickTimerPenalty = self.tickTimePenalty
-		   adjustedHunger = hungerLevel - (hungerLevel * 0.005)
-		   status.setResource("food", adjustedHunger)
+		   --reduce the hunger drain if bathed in light
+	           if lightLevel > 25 then --you can reduce the drain with light
+	             adjustedHunger = hungerLevel - (hungerLevel * 0.0095)
+	             status.setResource("food", adjustedHunger)
+	           else
+	           -- otherwise we lose normal amount
+	             adjustedHunger = hungerLevel - (hungerLevel * 0.016)
+	             status.setResource("food", adjustedHunger)	           
+	           end	
 	         end
+
 	  end
 	
 	-- Daytime Abilities
@@ -86,7 +95,7 @@ function update(dt)
 	  -- when the sun is out, florans regenerate food    
 	       if (hungerLevel < hungerMax) and ( self.tickTimer <= 0 ) then
 	         self.tickTimer = self.tickTime
-		 adjustedHunger = hungerLevel + (hungerLevel * 0.01)
+		 adjustedHunger = hungerLevel + (hungerLevel * 0.008)
 		 status.setResource("food", adjustedHunger)
 	       end		
 	       
