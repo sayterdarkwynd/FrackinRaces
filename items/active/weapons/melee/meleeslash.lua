@@ -20,7 +20,11 @@ function MeleeSlash:init()
   species = world.entitySpecies(activeItem.ownerEntityId())
   critValueBase = config.getParameter("critChance") -- reset crit chance  
   critModifier = config.getParameter("critModifier",5) -- add to crit chance 
-  self.foodValue = status.resource("food")  --check our Food level
+	if status.isResource("food") then
+	  self.foodValue = status.resource("food")  --check our Food level
+	else
+	  self.foodValue = 60
+	end
   attackSpeedUp = 1 -- base attackSpeed
 -- ************************************************
 

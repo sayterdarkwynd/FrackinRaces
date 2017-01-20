@@ -26,7 +26,11 @@ function init()
      self.blockCount = 0 
      self.blockCount2 = 0 
    end
-   self.foodValue = status.resource("food")  --check our Food level
+	if status.isResource("food") then
+	  self.foodValue = status.resource("food")  --check our Food level
+	else
+	  self.foodValue = 60
+	end
    self.energyValue = status.resource("energy")  --check our energy level
    local species = world.entitySpecies(activeItem.ownerEntityId())
             if species == "floran" then      --20% more damage with floran

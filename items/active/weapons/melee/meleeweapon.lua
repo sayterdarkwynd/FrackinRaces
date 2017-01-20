@@ -26,7 +26,11 @@ function init()
 -- FR EFFECTS
 -- **************************************************
 local species = world.entitySpecies(activeItem.ownerEntityId())
-
+	if status.isResource("food") then
+	  self.foodValue = status.resource("food")  --check our Food level
+	else
+	  self.foodValue = 60
+	end
 -- for mcontroller application within init
 --mcontroller.setAutoClearControls(false)
 
