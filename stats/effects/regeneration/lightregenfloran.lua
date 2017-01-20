@@ -43,11 +43,18 @@ function update(dt)
   daytime = daytimeCheck()
   underground = undergroundCheck()
   local lightLevel = getLight()
-
+  if status.isResource("food") then
+      self.foodValue = status.resource("food")
+      hungerLevel = status.resource("food")
+  else
+      self.foodValue = 50
+      hungerLevel = 50
+  end
     --food defaults
     hungerMax = { pcall(status.resourceMax, "food") }
     hungerMax = hungerMax[1] and hungerMax[2]
-    hungerLevel = status.resource("food")
+
+
     baseValue = config.getParameter("healthDown",0)*(status.resourceMax("food"))
     self.tickTimer = self.tickTimer - dt
     self.tickTimerPenalty = self.tickTimerPenalty - dt

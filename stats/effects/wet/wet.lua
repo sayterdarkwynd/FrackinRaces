@@ -13,7 +13,9 @@ function update(dt)
 	  self.healingRate = 0.001
 	  self.foodRate = 0.001
 	  status.modifyResourcePercentage("health", self.healingRate * dt)
-          status.modifyResourcePercentage("food", self.foodRate * dt)
+	  if status.isResource("food") then
+            status.modifyResourcePercentage("food", self.foodRate * dt)
+          end
 	end
 	
 end

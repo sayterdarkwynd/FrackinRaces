@@ -127,9 +127,16 @@ function MeleeSlash:fire()
       
      -- **** FLORAN
      local randValueCritBonus = math.random(10)
-     local critValueFloran = ( randValueCritBonus + math.ceil(self.foodValue/10) ) 
+     
+
 	 if species == "floran" then  --consume food in exchange for spear power. Florans also get increased attack speed with spears and a chance to spawn a projectile
-           attackSpeedUp = 1 -- base attackSpeed
+	  local critValueFloran = ( randValueCritBonus + math.ceil(self.foodValue/10) ) 
+	  if status.isResource("food") then
+	      self.foodValue = status.resource("food")
+	  else
+	      self.foodValue = 50
+	  end          
+          attackSpeedUp = 1 -- base attackSpeed
 	  if heldItem then
 	     if not root.itemHasTag(heldItem, "spear") then  -- anything that isn't a spear gets a flat damage bonus
 	       if self.foodValue >= 5 then
@@ -145,7 +152,7 @@ function MeleeSlash:fire()
 		      activeItem.setInstanceValue("critChanceMultiplier",critValueFloran) 
 		    -- projectile chance
 		      if randValue < 9 then
-		        projectileId = world.spawnProjectile("furazorleafinvis",self:firePosition(),activeItem.ownerEntityId(),self:aimVector(),false,params)
+			projectileId = world.spawnProjectile("furazorleafinvis",self:firePosition(),activeItem.ownerEntityId(),self:aimVector(),false,params)
 		      end			      
 		    end
 	     end  
