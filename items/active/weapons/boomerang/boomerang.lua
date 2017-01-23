@@ -43,7 +43,7 @@ if species == "fenerox" then
 end
 
 
-if species == "novakid" then  
+if species == "lamia" then  
   local heldItem = world.entityHandItem(activeItem.ownerEntityId(), "primary")
   if heldItem then
      if root.itemHasTag(heldItem, "chakram") then 
