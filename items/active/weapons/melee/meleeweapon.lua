@@ -309,15 +309,10 @@ end
 -- ***************************************************   
 -- END FR STUFF
 -- ***************************************************   
-
-         
   self.weapon:init()
 end
 
 function update(dt, fireMode, shiftHeld)
-
-
-
 -- ***************************************************   
 --FR stuff
 -- ***************************************************   
@@ -325,8 +320,6 @@ function update(dt, fireMode, shiftHeld)
   local heldItem2 = world.entityHandItem(activeItem.ownerEntityId(), "alt")
   local opposedhandHeldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand() == "primary" and "alt" or "primary")
   local species = world.entitySpecies(activeItem.ownerEntityId())
-  
-  
 -- ***********  Nightar  movement bonuses ***************
 if species == "nightar" then  --nightar gain speed and jump when wielding swords
   if heldItem then
@@ -341,8 +334,7 @@ if species == "nightar" then  --nightar gain speed and jump when wielding swords
      end     
   end
 end
-
--- ***********  Nightar  movement bonuses ***************
+-- ***********  apex  movement bonuses ***************
 if species == "apex" then   --apex move faster with hammers
   if heldItem then
      if root.itemHasTag(heldItem, "hammer") then    	
@@ -350,8 +342,6 @@ if species == "apex" then   --apex move faster with hammers
      end
   end
 end  
-
-
 -- ***********  Felin movement bonuses ***************
 if species == "felin" then  --when using dagger weapons, felin are extra swift
   if heldItem then
@@ -360,8 +350,6 @@ if species == "felin" then  --when using dagger weapons, felin are extra swift
      end    
   end
 end
-
-
 -- ***************************************************   
 -- END FR STUFF
 -- ***************************************************   

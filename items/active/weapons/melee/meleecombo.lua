@@ -249,8 +249,10 @@ function MeleeCombo:fire()
 
 	if species == "floran" then  --florans use food when attacking, and gain a 5% damage increase as a result. However, they need at least 5 food.
 	    if self.foodValue >= 5 then
-	      status.modifyResource("food", (status.resource("food") * -0.005) )
-	      status.setPersistentEffects("floranFoodPowerBonus", {{stat = "powerMultiplier", baseMultiplier = 1.05}})
+		  if status.isResource("food") then
+		   status.modifyResource("food", (status.resource("food") * -0.005) )
+		  end	    
+	         status.setPersistentEffects("floranFoodPowerBonus", {{stat = "powerMultiplier", baseMultiplier = 1.05}})
 	    end
 	end
 

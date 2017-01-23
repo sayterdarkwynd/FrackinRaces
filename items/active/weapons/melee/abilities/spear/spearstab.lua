@@ -28,10 +28,15 @@ function SpearStab:fire()
    self.blockCount3 = 0
  end 
 
-
+	if status.isResource("food") then
+	  self.foodValue = status.resource("food")  --check our Food level
+	else
+	  self.foodValue = 60
+	end
       -- *********************************
       -- FR RACIAL BONUSES FOR WEAPONS   --- Bonus effect when attacking 
       -- *********************************
+      
      local species = world.entitySpecies(activeItem.ownerEntityId())
      -- Primary hand, or single-hand equip  
      local heldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand())

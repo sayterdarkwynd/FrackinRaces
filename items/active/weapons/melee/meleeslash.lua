@@ -144,7 +144,9 @@ function MeleeSlash:fire()
 	  if heldItem then
 	     if not root.itemHasTag(heldItem, "spear") then  -- anything that isn't a spear gets a flat damage bonus
 	       if self.foodValue >= 5 then
-	         status.modifyResource("food", (status.resource("food") * -0.005) )
+		  if status.isResource("food") then
+		   status.modifyResource("food", (status.resource("food") * -0.005) )
+		  end	 	       
 	         status.setPersistentEffects("floranFoodPowerBonus", {{stat = "powerMultiplier", baseMultiplier = 1.05}})
 	       end
 	     end

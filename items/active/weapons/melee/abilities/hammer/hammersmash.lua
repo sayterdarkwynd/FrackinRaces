@@ -79,9 +79,20 @@ function HammerSmash:fire()
 
 
 -- ******************* FR ADDONS FOR HAMMER SWINGS
+
+
+	if status.isResource("food") then
+	  self.foodValue = status.resource("food")  --check our Food level
+	else
+	  self.foodValue = 60
+	end
+	
+	
      local species = world.entitySpecies(activeItem.ownerEntityId())
 	if species == "floran" then  --florans use food when attacking
-	    status.modifyResource("food", (status.resource("food") * -0.01) )
+	  if status.isResource("food") then
+	   status.modifyResource("food", (status.resource("food") * -0.01) )
+	  end
 	end
 -- ***********************************************	
 

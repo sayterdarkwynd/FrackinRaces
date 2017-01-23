@@ -8,6 +8,7 @@ function init()
    if self.blockCount == nil then 
      self.blockCount = 0 
      self.blockCount2 = 0
+     self.blockCount3 = 0
    end
 
 local species = world.entitySpecies(activeItem.ownerEntityId())
@@ -42,7 +43,7 @@ if species == "fenerox" then
 end
 
 
-if species == "lamia" then  
+if species == "novakid" then  
   local heldItem = world.entityHandItem(activeItem.ownerEntityId(), "primary")
   if heldItem then
      if root.itemHasTag(heldItem, "chakram") then 
