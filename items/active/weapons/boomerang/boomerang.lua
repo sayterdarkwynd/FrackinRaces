@@ -51,9 +51,9 @@ if species == "lamia" then
 	  self.blockCount2 = self.blockCount2 + 1.10
 	  self.blockCount3 = self.blockCount3 + 1.10
 	  status.setPersistentEffects("bonusdmg", {
-	    {stat = "powerMultiplier", baseMultiplier = self.blockCount},
-	    {stat = "maxHealth", baseMultiplier = self.blockCount2 },
-	    {stat = "grit", baseMultiplier = self.blockCount3 }
+	    {stat = "powerMultiplier", amount = self.blockCount},
+	    {stat = "maxHealth", amount = self.blockCount2 },
+	    {stat = "grit", amount = self.blockCount3 }
 	    })  	
 	    local bounds = mcontroller.boundBox()
      end
@@ -65,9 +65,9 @@ if species == "lamia" then
 	  self.blockCount2 = self.blockCount2 + 1.10
 	  self.blockCount3 = self.blockCount3 + 1.10
 	  status.setPersistentEffects("bonusdmg2", {
-	    {stat = "powerMultiplier", baseMultiplier = self.blockCount},
-	    {stat = "maxHealth", baseMultiplier = self.blockCount2 },
-	    {stat = "grit", baseMultiplier = self.blockCount3 }
+	    {stat = "powerMultiplier", amount = self.blockCount},
+	    {stat = "maxHealth", amount = self.blockCount2 },
+	    {stat = "grit", amount = self.blockCount3 }
 	    })  	
 	    local bounds = mcontroller.boundBox()
      end  

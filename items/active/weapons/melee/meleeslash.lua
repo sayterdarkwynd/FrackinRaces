@@ -155,7 +155,9 @@ function MeleeSlash:fire()
 		    if self.foodValue >= 35 then
 		      status.modifyResource("food", (status.resource("food") * -0.01) )  -- consume food
 		      attackSpeedUp = attackSpeedUp+(self.foodValue/120) 
-		      activeItem.setInstanceValue("critChanceMultiplier",critValueFloran) 
+			    status.setPersistentEffects("combobonusdmg", {
+			      {stat = "critChance", amount = critValueFloran}
+			    }) 		      
 		    -- projectile chance
 		      if randValue < 9 then
 			projectileId = world.spawnProjectile("furazorleafinvis",self:firePosition(),activeItem.ownerEntityId(),self:aimVector(),false,params)
@@ -183,7 +185,7 @@ function MeleeSlash:fire()
   -- ***********************************************************************************************************
   
   self.cooldownTimer = math.max(0, self.cooldownTimer - (self.dt*attackSpeedUp))
-  activeItem.setInstanceValue("critChanceMultiplier",0 )  -- set crit back to default value
+
   -- ***********************************************************************************************************
   -- END FR SPECIALS
   -- ***********************************************************************************************************
