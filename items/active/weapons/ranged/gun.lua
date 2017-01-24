@@ -142,7 +142,7 @@ function update(dt, fireMode, shiftHeld)
   
   
 -- ***********  Novakid  movement bonuses ***************
-if species == "novakid" and bonusApply == 0 then  --nightar gain speed and jump when wielding swords
+if species == "novakid" and bonusApply == 0 then  --nightar gain speed and jump when wielding pistols
   if heldItem then
      if root.itemHasTag(heldItem, "pistol") and opposedhandHeldItem and root.itemHasTag(opposedhandHeldItem, "pistol") then
        mcontroller.controlModifiers({ speedModifier = 1.08, airJumpModifier = 1.05 })

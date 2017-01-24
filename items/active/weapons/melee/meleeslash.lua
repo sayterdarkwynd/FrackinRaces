@@ -115,7 +115,7 @@ function MeleeSlash:fire()
       -- ******************************************************************************************************************
 	-- *** ABILITY TYPES
 	-- attackSpeedUp = attackSpeedUp+(self.foodValue/120)  -- Attack Speed increase based on food. easily modified
-	-- activeItem.setInstanceValue("critChance",math )  -- 100 % crit chance: 
+	-- activeItem.setInstanceValue("critChance",math )  -- crit chance: 
 	-- activeItem.setInstanceValue("critBonus",math )  -- Crit Bonus increase 
 	-- activeItem.setInstanceValue("elementalType","element" )  -- attack element type 
 	-- activeItem.setInstanceValue("primaryAbility","ability" )  -- ability
