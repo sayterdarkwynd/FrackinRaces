@@ -5,7 +5,7 @@
     "value" : "Hardy, strong automatons. Their creation is lost to history. This suits them just fine, as they prefer a primitive state of being. They run on their own energy source, which means they need to ingest little food, and are quite sturdy so long as they aren't soaking wet.
     
     ^red;-1s energy regen^reset;
-    ^red;Weakness: Electric, Weakened when submerged^reset;
+    ^red;Weakness: Electric, Weakened when submerged, -Energy Regen^reset;
     ^green;+5% Energy, Low Hunger Rate^reset;
     ^green;+14% HP, +15% Physical Resistance^reset;
     ^green;Heal and regain power within Oil^reset; 
