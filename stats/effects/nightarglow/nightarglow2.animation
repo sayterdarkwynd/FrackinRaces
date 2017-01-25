@@ -1,0 +1,10 @@
+{
+  "lights" : {
+    "glow" : {
+      "active" : true,
+      "position" : [0, 0],
+      "color" : [45, 45, 75],
+      "pointLight" : true
+    }
+  }
+}
