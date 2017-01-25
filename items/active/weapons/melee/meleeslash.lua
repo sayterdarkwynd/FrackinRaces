@@ -151,9 +151,11 @@ function MeleeSlash:fire()
 	       end
 	     end
 	     if root.itemHasTag(heldItem, "spear") then -- spears get increased attack speed and a chance for a special attack. need 50% food or more
-		    -- attack speed change    
+		    -- attack speed change  
 		    if self.foodValue >= 35 then
-		      status.modifyResource("food", (status.resource("food") * -0.01) )  -- consume food
+		      if status.isResource("food") then
+		        status.modifyResource("food", (status.resource("food") * -0.01) )  -- consume food
+		      end
 		      attackSpeedUp = attackSpeedUp+(self.foodValue/120) 
 			    status.setPersistentEffects("combobonusdmg", {
 			      {stat = "critChance", amount = critValueFloran}
