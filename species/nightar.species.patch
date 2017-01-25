@@ -13,7 +13,7 @@
     ^green;Broadsword: +18% Damage, +25% Knockback Resist^reset;
     ^green;Shortsword(single):+5% Damage, (double): +12% damage, (sword + shield): +8% Damage, +12% Knockback Resist^reset;
     ^green;Combo attacks with shortswords gain +7% damage and +10% Knockback Resist^reset;
-    ^green;When using shortswords or broadswords you gain +10% movement speed. Shortswords grant +5% jump^reset;
+    ^green;When using shortswords, gain +3% Speed and Jump from each. Broadswords grant +10% Speed.^reset;
     ^green;Perfect Blocks increase protection. With a shield equipped, you gain +20% Knockback Resist^reset;
     ^green;In darkness, gain additional Health, Energy and Physical Resistance.^reset; 
     ^green;In darkness when using a shortsword, 4% chance for Shadow Attack^reset; 
