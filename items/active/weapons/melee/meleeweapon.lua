@@ -320,7 +320,7 @@ if species == "nightar" then  --nightar gain speed and jump when wielding swords
        mcontroller.controlModifiers({ speedModifier = 1.15, airJumpModifier = 1.05 })
      end
      if root.itemHasTag(heldItem, "shortsword") then
-       mcontroller.controlModifiers({ speedModifier = 1.10, airJumpModifier = 1.05 })
+       mcontroller.controlModifiers({ speedModifier = 1.05, airJumpModifier = 1.05 })
      end
      if root.itemHasTag(heldItem, "broadsword") then
        mcontroller.controlModifiers({ speedModifier = 1.10, airJumpModifier = 1.05 })
