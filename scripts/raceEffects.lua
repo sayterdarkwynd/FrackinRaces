@@ -166,7 +166,7 @@ function update(dt)
 	--Nightar
 	if world.entitySpecies(entity.id()) == "nightar" then
 		status.addEphemeralEffect("racenightar",math.huge)
-		status.addEphemeralEffect("nightarglow2",math.huge)
+		status.addEphemeralEffect("nightarglow3",math.huge)
 		status.addEphemeralEffect("darkhunternightar",math.huge)
 	end	
 

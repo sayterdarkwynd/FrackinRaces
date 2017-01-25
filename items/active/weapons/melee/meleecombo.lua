@@ -236,8 +236,7 @@ function MeleeCombo:fire()
 			  animator.playSound("nightar")
 			end		                        
 			    status.setPersistentEffects("combobonusdmg", {
-			      {stat = "grit", baseMultiplier = self.meleeCountcombo},
-			      {stat = "powerMultiplier", amount = self.meleeCountcombo2}
+			      {stat = "grit", baseMultiplier = self.meleeCountcombo}
 			    }) 				    
 		     end
 		  end

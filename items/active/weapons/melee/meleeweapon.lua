@@ -316,9 +316,6 @@ function update(dt, fireMode, shiftHeld)
 -- ***********  Nightar  movement bonuses ***************
 if species == "nightar" then  --nightar gain speed and jump when wielding swords
   if heldItem then
-     if root.itemHasTag(heldItem, "shortsword") and opposedhandHeldItem and root.itemHasTag(opposedhandHeldItem, "shortsword") then
-       mcontroller.controlModifiers({ speedModifier = 1.06, airJumpModifier = 1.06 })
-     end
      if root.itemHasTag(heldItem, "shortsword") then
        mcontroller.controlModifiers({ speedModifier = 1.03, airJumpModifier = 1.03 })
      end

@@ -28,8 +28,6 @@ function update(dt)
       -- day penalty
       
       if daytime then
-      sb.logInfo(daytime)
-      sb.logInfo(underground)
         if not underground then
 		if lightLevel > 85 then
 		  status.setPersistentEffects("feneroxEffects", {
@@ -61,42 +59,41 @@ function update(dt)
 		else
 		  status.clearPersistentEffects("feneroxEffects")
 		end    
-		
         end
       end
 
       if not daytime or daytime and underground then
-        if lightLevel <= 19 then
+        if lightLevel <= 22 then
 	  status.setPersistentEffects("feneroxEffects", {
 	  {stat = "maxHealth", baseMultiplier = 1.20},
 	  {stat = "maxEnergy", baseMultiplier = 1.25},
 	  {stat = "physicalResistance", amount = 0.25}
 	  })		
-	elseif lightLevel <= 21 then
+	elseif lightLevel <= 24 then
 	  status.setPersistentEffects("feneroxEffects", {
 	  {stat = "maxHealth", baseMultiplier = 1.15},
 	  {stat = "maxEnergy", baseMultiplier = 1.20},
 	  {stat = "physicalResistance", amount = 0.225}
 	  })			
-	elseif lightLevel <= 23 then
+	elseif lightLevel <= 26 then
 	  status.setPersistentEffects("feneroxEffects", {
 	  {stat = "maxHealth", baseMultiplier = 1.1},
 	  {stat = "maxEnergy", baseMultiplier = 1.18},
 	  {stat = "physicalResistance", amount = 0.20}
 	  })		
-	elseif lightLevel <= 25 then
+	elseif lightLevel <= 28 then
 	  status.setPersistentEffects("feneroxEffects", {
 	  {stat = "maxHealth", baseMultiplier = 1.12},
 	  {stat = "maxEnergy", baseMultiplier = 1.16},
 	  {stat = "physicalResistance", amount = 0.15}
 	  })			  
-	elseif lightLevel <= 32 then
+	elseif lightLevel <= 30 then
 	  status.setPersistentEffects("feneroxEffects", {
 	  {stat = "maxHealth", baseMultiplier = 1.10},
 	  {stat = "maxEnergy", baseMultiplier = 1.14},
 	  {stat = "physicalResistance", amount = 0.12}
 	  })			
-	elseif lightLevel <= 40 then
+	elseif lightLevel <= 35 then
 	  status.setPersistentEffects("feneroxEffects", {
 	  {stat = "maxHealth", baseMultiplier = 1.07},
 	  {stat = "maxEnergy", baseMultiplier = 1.12},
@@ -111,7 +108,7 @@ function update(dt)
 	else
 	  status.clearPersistentEffects("feneroxEffects")
 	end    
-	sb.logInfo(lightLevel)
+	--sb.logInfo(lightLevel)
       end
 
 
