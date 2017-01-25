@@ -7,10 +7,10 @@
     ^red;-1s energy regen^reset;
     ^red;Weakness: Electric, Weakened when submerged^reset;
     ^green;+5% Energy, Low Hunger Rate^reset;
-    ^green;+14% HP, +2 Protection^reset;
-    ^green;Heal and gain power within Oil^reset; 
+    ^green;+14% HP, +15% Physical Resistance^reset;
+    ^green;Heal and regain power within Oil^reset; 
     ^green;Shields give +1 Protection. Perfect Blocks increase damage (stacks)^reset;
-    ^green;Axes and Hammers gain +15% Damage^reset;
+    ^green;Consume energy to increase Crit chance with both Hammers and Axes.^reset;
     ^green;1h combos increase protection^reset;
     ^green;Immune: Poison, Bee Stings^reset;"
     }

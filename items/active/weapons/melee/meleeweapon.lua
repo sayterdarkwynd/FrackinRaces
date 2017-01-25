@@ -25,7 +25,21 @@ function init()
 -- **************************************************
 -- FR EFFECTS
 -- **************************************************
-local species = world.entitySpecies(activeItem.ownerEntityId())
+     local species = world.entitySpecies(activeItem.ownerEntityId())
+     -- Primary hand, or single-hand equip  
+     local heldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand())
+     --used for checking dual-wield setups
+     local opposedhandHeldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand() == "primary" and "alt" or "primary")
+     -- if we want more control over each hand...
+     local heldItem1 = world.entityHandItem(activeItem.ownerEntityId(), "primary")
+     local heldItem2 = world.entityHandItem(activeItem.ownerEntityId(), "alt")
+    
+     local randValue = math.random(100)  -- chance for projectile  
+ 	if status.isResource("energy") then
+	  self.energyValue = status.resource("energy")  --check our Food level
+	else
+	  self.energyValue = 80
+	end    
 	if status.isResource("food") then
 	  self.foodValue = status.resource("food")  --check our Food level
 	else
@@ -40,17 +54,7 @@ local species = world.entitySpecies(activeItem.ownerEntityId())
    if self.meleeCount2 == nil then 
      self.meleeCount2 = 0
    end       
-
-  -- Primary hand, or single-hand equip  
-  local heldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand())
-  
-  -- if we want more control over each hand...
-  local heldItem1 = world.entityHandItem(activeItem.ownerEntityId(), "primary")
-  local heldItem2 = world.entityHandItem(activeItem.ownerEntityId(), "alt")
-  
-  --used for checking dual-wield setups
-  local opposedhandHeldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand() == "primary" and "alt" or "primary")
-  
+   	
 if species == "hylotl" then  
   if heldItem then
      if root.itemHasTag(heldItem, "dagger") or root.itemHasTag(heldItem, "hammer") or root.itemHasTag(heldItem, "broadsword") or root.itemHasTag(heldItem, "spear") or root.itemHasTag(heldItem, "axe") then 
@@ -59,18 +63,7 @@ if species == "hylotl" then
      end
   end
 end
-
-if species == "glitch" then  --glitch get bonuses with axe and hammer
-  if heldItem then
-     if root.itemHasTag(heldItem, "axe") or root.itemHasTag(heldItem, "hammer") then 
-	self.meleeCount = self.meleeCount + 0.14
-	status.setPersistentEffects("weaponbonusdmg", {
-	  {stat = "powerMultiplier", amount = self.meleeCount}
-	})   
-     end
-  end
-end
-
+       
 if species == "human" then  -- Humans do more damage with shortswords and resist knockback
   if heldItem then
      if root.itemHasTag(heldItem, "shortsword") then 
@@ -366,6 +359,7 @@ function uninit()
   status.clearPersistentEffects("weaponbonusdmg3")
   status.clearPersistentEffects("weaponbonusdmg4")
   status.clearPersistentEffects("weaponbonusdualwield")
+  status.clearPersistentEffects("glitchEnergyPowerBonus")
   self.meleeCount = 0
   self.meleeCount2 = 0
   self.weapon:uninit()

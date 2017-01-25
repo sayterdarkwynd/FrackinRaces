@@ -98,17 +98,12 @@ end
   -- ***********************************************************************************************************
   -- END FR SPECIALS
   -- ***********************************************************************************************************
-   
-   
-   
-   
+ 
 -- State: fire
 function MeleeSlash:fire()
      
   self.weapon:setStance(self.stances.fire)
   self.weapon:updateAim()
-
-
 
       -- ******************************************************************************************************************
       -- FR RACIAL BONUSES FOR WEAPONS   --- Bonus effect when attacking 
@@ -121,14 +116,13 @@ function MeleeSlash:fire()
 	-- activeItem.setInstanceValue("primaryAbility","ability" )  -- ability
 	-- projectileId = world.spawnProjectile("hellfireprojectile",self:firePosition(),activeItem.ownerEntityId(),self:aimVector(),false,params)     -- spawn a projectile
 
-      
      local species = world.entitySpecies(activeItem.ownerEntityId())
      -- Primary hand, or single-hand equip  
      local heldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand())
      --used for checking dual-wield setups
      local opposedhandHeldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand() == "primary" and "alt" or "primary")
      local randValue = math.random(100)  -- chance for projectile  
-      
+  
      -- **** FLORAN
      local randValueCritBonus = math.random(10)
      

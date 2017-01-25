@@ -11,6 +11,7 @@
     ^green;In forest-like biomes gain additional health and energy^reset; 
     ^green;Regenerate health and food during daylight hours. If Health and Food are full, gain energy regen^reset;
     ^green;Damage increases the hungrier you get. When fed, your Energy increases^reset;
+    ^green;Consume food in exchange for increased Spear Attack Speed and Crit rate^reset;
     ^green;Bows +20% dmg, and give you a 15% speed boost^reset;
     ^green;+2 protection with Spear-Hold. When fed, spears are faster and crit more often^reset;
     ^green;+8% chance of Poison Attack with spears when well fed^reset;
