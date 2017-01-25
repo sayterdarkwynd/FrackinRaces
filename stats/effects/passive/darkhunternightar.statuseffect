@@ -7,7 +7,7 @@
   "defaultDuration" : 60,
 
   "scripts" : [
-    "darkhunter.lua"
+    "darkhunternightar.lua"
   ],
 
   "animationConfig" : "darkhunter.animation",

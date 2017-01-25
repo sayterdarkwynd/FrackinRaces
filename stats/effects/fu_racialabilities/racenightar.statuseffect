@@ -1,10 +1,9 @@
 {
   "name" : "racenightar",
   "effectConfig" : {
-  "healthBonus" : 0.20,
+  "healthBonus" : 0.10,
   "energyBonus" : -0.25,
-  "gritBonus" : 0.15,
-  "foodBonus" : 50
+  "gritBonus" : 0.10
   },
   "defaultDuration" : 3,
 
