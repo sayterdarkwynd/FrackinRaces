@@ -26,79 +26,93 @@ function update(dt)
   underground = undergroundCheck()
   local lightLevel = getLight()
       -- day penalty
-	if daytime and lightLevel > 85 and not underground then
+      
+      if daytime then
+        if not underground then
+		if lightLevel > 85 then
+		  status.setPersistentEffects("feneroxEffects", {
+		  {stat = "maxHealth", baseMultiplier = 0.75},
+		  {stat = "physicalResistance", amount = -0.20},
+		  {stat = "powerMultiplier", baseMultiplier = 0.75}
+		  })		
+		  mcontroller.controlModifiers({ speedModifier = 0.90 })  
+		elseif lightLevel > 70 then
+		  status.setPersistentEffects("feneroxEffects", {
+		  {stat = "maxHealth", baseMultiplier = 0.80},
+		  {stat = "physicalResistance", amount = -0.15},
+		  {stat = "powerMultiplier", baseMultiplier = 0.85}
+		  })		
+		  mcontroller.controlModifiers({ speedModifier = 0.95 }) 
+		elseif lightLevel > 50 then
+		  status.setPersistentEffects("feneroxEffects", {
+		  {stat = "maxHealth", baseMultiplier = 0.85},
+		  {stat = "physicalResistance", amount = -0.1},
+		  {stat = "powerMultiplier", baseMultiplier = 0.90}
+		  })		
+		  mcontroller.controlModifiers({ speedModifier = 0.97 }) 
+		elseif lightLevel > 35 then
+		  status.setPersistentEffects("feneroxEffects", {
+		  {stat = "maxHealth", baseMultiplier = 0.90},
+		  {stat = "physicalResistance", amount = -0.05},
+		  {stat = "powerMultiplier", baseMultiplier = 0.95}
+		  })
+		else
+		  status.clearPersistentEffects("feneroxEffects")
+		end       
+        end
+      end
+
+      if not daytime then
+        if lightLevel <= 1 then
 	  status.setPersistentEffects("feneroxEffects", {
-	  {stat = "maxHealth", baseMultiplier = 0.75},
-	  {stat = "physicalResistance", amount = -0.20},
-	  {stat = "powerMultiplier", baseMultiplier = 0.75}
-	  })		
-	  mcontroller.controlModifiers({ speedModifier = 0.90 })  
-	elseif daytime and lightLevel > 70 and not underground then
-	  status.setPersistentEffects("feneroxEffects", {
-	  {stat = "maxHealth", baseMultiplier = 0.80},
-	  {stat = "physicalResistance", amount = -0.15},
-	  {stat = "powerMultiplier", baseMultiplier = 0.85}
-	  })		
-	  mcontroller.controlModifiers({ speedModifier = 0.95 }) 
-	elseif daytime and lightLevel > 50 and not underground then
-	  status.setPersistentEffects("feneroxEffects", {
-	  {stat = "maxHealth", baseMultiplier = 0.85},
-	  {stat = "physicalResistance", amount = -0.1},
-	  {stat = "powerMultiplier", baseMultiplier = 0.90}
-	  })		
-	  mcontroller.controlModifiers({ speedModifier = 0.97 }) 
-	elseif daytime and lightLevel > 35 and not underground then
-	  status.setPersistentEffects("feneroxEffects", {
-	  {stat = "maxHealth", baseMultiplier = 0.90},
-	  {stat = "physicalResistance", amount = -0.05},
-	  {stat = "powerMultiplier", baseMultiplier = 0.95}
-	  })	
-	-- end day penalty  
-        elseif lightLevel <= 1 then
-	  status.setPersistentEffects("feneroxEffects", {
-	  {stat = "maxHealth", baseMultiplier = 1.20,
+	  {stat = "maxHealth", baseMultiplier = 1.20},
 	  {stat = "maxEnergy", baseMultiplier = 1.25},
 	  {stat = "physicalResistance", amount = 0.25}
 	  })		
 	elseif lightLevel <= 3 then
 	  status.setPersistentEffects("feneroxEffects", {
-	  {stat = "maxHealth", baseMultiplier = 1.15,
-	  {stat = "maxEnergy", baseMultiplier = 1.20,
+	  {stat = "maxHealth", baseMultiplier = 1.15},
+	  {stat = "maxEnergy", baseMultiplier = 1.20},
 	  {stat = "physicalResistance", amount = 0.225}
 	  })			
 	elseif lightLevel <= 5 then
 	  status.setPersistentEffects("feneroxEffects", {
-	  {stat = "maxHealth", baseMultiplier = 1.1,
-	  {stat = "maxEnergy", baseMultiplier = 1.18,
+	  {stat = "maxHealth", baseMultiplier = 1.1},
+	  {stat = "maxEnergy", baseMultiplier = 1.18},
 	  {stat = "physicalResistance", amount = 0.20}
 	  })		
 	elseif lightLevel <= 8 then
 	  status.setPersistentEffects("feneroxEffects", {
-	  {stat = "maxHealth", baseMultiplier = 1.12,
-	  {stat = "maxEnergy", baseMultiplier = 1.16,
+	  {stat = "maxHealth", baseMultiplier = 1.12},
+	  {stat = "maxEnergy", baseMultiplier = 1.16},
 	  {stat = "physicalResistance", amount = 0.15}
 	  })			  
 	elseif lightLevel <= 10 then
 	  status.setPersistentEffects("feneroxEffects", {
-	  {stat = "maxHealth", baseMultiplier = 1.10,
-	  {stat = "maxEnergy", baseMultiplier = 1.14,
+	  {stat = "maxHealth", baseMultiplier = 1.10},
+	  {stat = "maxEnergy", baseMultiplier = 1.14},
 	  {stat = "physicalResistance", amount = 0.12}
 	  })			
 	elseif lightLevel <= 15 then
 	  status.setPersistentEffects("feneroxEffects", {
-	  {stat = "maxHealth", baseMultiplier = 1.07,
-	  {stat = "maxEnergy", baseMultiplier = 1.12,
+	  {stat = "maxHealth", baseMultiplier = 1.07},
+	  {stat = "maxEnergy", baseMultiplier = 1.12},
 	  {stat = "physicalResistance", amount = 0.10}
 	  })			  
 	elseif lightLevel <= 25 then
 	  status.setPersistentEffects("feneroxEffects", {
-	  {stat = "maxHealth", baseMultiplier = 1.05,
-	  {stat = "maxEnergy", baseMultiplier = 1.10,
+	  {stat = "maxHealth", baseMultiplier = 1.05},
+	  {stat = "maxEnergy", baseMultiplier = 1.10},
 	  {stat = "physicalResistance", amount = 0.05}
 	  })		
 	else
 	  status.clearPersistentEffects("feneroxEffects")
-	end  
+	end        
+      end
+
+
+
+
 end
 
 function uninit()
