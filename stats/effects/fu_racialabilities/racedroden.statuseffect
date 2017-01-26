@@ -1,13 +1,14 @@
 {
-  "name" : "raceavikan",
+  "name" : "racedroden",
   "effectConfig" : {
-    "healthBonus" : 0.15,
+    "healthBonus" : -0.25,
     "energyBonus" : 0.15
   },
+  
   "defaultDuration" : 3,
 
   "scripts" : [
-    "raceavikan.lua"
+    "racedroden.lua"
   ]
 
 }

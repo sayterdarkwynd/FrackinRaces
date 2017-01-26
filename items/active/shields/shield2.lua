@@ -316,6 +316,13 @@ function raiseShield()
             animator.burstParticleEmitter("bonusBlock")
             animator.playSound("bonusEffect")
           end
+	  if species == "trink" then --trink regain energy when blocking
+            if status.resource("energy") then
+              status.modifyResource("energy", status.stat("maxEnergy"))
+            end
+            animator.burstParticleEmitter("bonusBlock3")
+            animator.playSound("bonusEffect")
+          end            
 	  if species == "nightar" then --nightar gain protection when they block
             self.blockCountShield = self.blockCountShield + 1
             status.setPersistentEffects("nightarprotection", 

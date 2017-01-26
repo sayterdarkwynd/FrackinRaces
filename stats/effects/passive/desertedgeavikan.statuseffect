@@ -1,0 +1,9 @@
+{
+  "name" : "desertedgeavikan",
+  "effectConfig" : {},
+  "defaultDuration" : 3,
+
+  "scripts" : [ "desertedgeavikan.lua" ],
+  "label" : "Desert Edge",
+  "icon" : "/interface/statuses/floranhunger.png"
+}

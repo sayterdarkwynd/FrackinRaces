@@ -66,7 +66,14 @@ function update(dt)
 	--avikan
 	if world.entitySpecies(entity.id()) == "avikan" then
 		status.addEphemeralEffect("raceavikan",math.huge)
+		status.addEphemeralEffect("desertedgeavikan",math.huge)
 	end
+	if world.entitySpecies(entity.id()) == "trink" then
+		status.addEphemeralEffect("racetrink",math.huge)
+	end	
+	if world.entitySpecies(entity.id()) == "droden" then
+		status.addEphemeralEffect("racedroden",math.huge)
+	end	
 	
 	--peglaci
 	if world.entitySpecies(entity.id()) == "peglaci" then

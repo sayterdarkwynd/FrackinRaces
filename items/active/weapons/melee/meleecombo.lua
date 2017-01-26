@@ -203,23 +203,37 @@ function MeleeCombo:fire()
 	     if root.itemHasTag(heldItem, "broadsword") then 
 		  self.meleeCountcombo = self.meleeCountcombo + 0.06
 		  status.setPersistentEffects("combobonusdmg", {{stat = "powerMultiplier", amount = self.meleeCountcombo},{stat = "protection", amount = 1},{stat = "critBonus", amount = hylotlBonus}}) 
-		  sb.logInfo(hylotlBonus)
 	     end	  
 	     if root.itemHasTag(heldItem, "shortsword") then 
 		  self.meleeCountcombo = self.meleeCountcombo + 0.06
 		  status.setPersistentEffects("combobonusdmg", {{stat = "powerMultiplier", amount = self.meleeCountcombo},{stat = "protection", amount = 1}})  
 	     end
 	  end
-	end  
+	 end  
 
           if species == "avikan" then      
             self.meleeCountcombo = self.meleeCountcombo + 0.05
             status.setPersistentEffects("combobonusdmg", {{stat = "powerMultiplier", amount = self.meleeCountcombo}})  
-          end  
+          end 
+          
+	 if species == "droden" then   -- in combos, droden get increased critChance with swords
+	  if heldItem then
+	     if root.itemHasTag(heldItem, "broadsword") then 
+		  self.meleeCountcombo = self.meleeCountcombo + 8
+		  status.setPersistentEffects("combobonusdmg", {{stat = "critChance", amount = self.meleeCountcombo}}) 
+	     end	  
+	     if root.itemHasTag(heldItem, "shortsword") then 
+		  self.meleeCountcombo = self.meleeCountcombo + 4
+		  status.setPersistentEffects("combobonusdmg", {{stat = "critChance", amount = self.meleeCountcombo}})  
+	     end
+	  end
+	 end 
+	 
           if species == "glitch" then      --each 1-handed combo swing slightly increases glitch defense
             self.meleeCountcombo = self.meleeCountcombo + 3
             status.setPersistentEffects("combobonusdmg", {{stat = "protection", amount = self.meleeCountcombo}})  
           end   
+          
 	  if species == "nightar" then   -- in combos, nightar get a bonus to damage and knockback resist with swords
 	    self.meleeCountcombo = self.meleeCountcombo + 0.1
 	    self.meleeCountcombo2 = self.meleeCountcombo2 + 0.07

@@ -1,0 +1,16 @@
+[
+    { "op": "replace", 
+    "path" : "/charCreationTooltip/description" , 
+    "value" : ""
+    },
+    { "op": "replace", 
+    "path" : "/charCreationTooltip/description" , 
+    "value" : "Hyper-advanced machines.
+    ^red;-100% Weakness: Electric, Lose energy regen in cold biomes^reset;
+    ^red;-50% Power output when Electrified^reset;
+    ^green;In cold biomes you gain extensive energy regeneration.^reset; 
+    ^green;+25% Energy, +25% Physical Resist, +80% Poison Resist, 50% Radiation Resist^reset;
+    ^green;Perfect Blocks restore energy^reset;
+    ^green;Immunities: Cold, Snow, Ice, Slush, Poison, Breath, Radiation^reset;"
+    }
+]
