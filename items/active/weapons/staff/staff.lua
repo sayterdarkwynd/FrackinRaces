@@ -38,19 +38,19 @@ function init()
             if species == "kineptic" then     
               self.staffCount = self.staffCount + 0.25
               status.setPersistentEffects("ningenbonusdmg", {
-              {stat = "powerMultiplier", baseMultiplier = self.staffCount},
-              {stat = "energyRegenPercentageRate", baseMultiplier = 0.2},
-              {stat = "energyRegenBlockTime", baseMultiplier = -0.5}
+              {stat = "powerMultiplier", baseMultiplier = 1 + self.staffCount},
+              {stat = "energyRegenPercentageRate", amount = 0.2},
+              {stat = "energyRegenBlockTime", amount = -0.5}
               })  
             end             
             if species == "ningen" then     
               self.staffCount = self.staffCount + 0.15
-              status.setPersistentEffects("ningenbonusdmg", {{stat = "maxEnergy", amount = self.staffCount}})  
+              status.setPersistentEffects("ningenbonusdmg", {{stat = "maxEnergy", baseMultiplier = 1 + self.staffCount}})  
             end  
             if species == "viera" then     
               self.staffCount = self.staffCount + 0.15
               status.setPersistentEffects("ningenbonusdmg", {
-                {stat = "maxEnergy", baseMultiplier = self.staffCount},
+                {stat = "maxEnergy", baseMultiplier = 1 + self.staffCount},
                 {stat = "powerMultiplier", baseMultiplier = 1 + self.staffCount},
               })  
             end 
@@ -58,8 +58,8 @@ function init()
               self.staffCount = self.staffCount + 0.15
               self.staffCount2 = self.staffCount2 + 0.30
               status.setPersistentEffects("ningenbonusdmg", {
-                {stat = "maxEnergy", baseMultiplier = self.staffCount},
-                {stat = "powerMultiplier", baseMultiplier = self.staffCount2}
+                {stat = "maxEnergy", baseMultiplier = 1+ self.staffCount},
+                {stat = "powerMultiplier", baseMultiplier = 1 + self.staffCount2}
               })  
               local bounds = mcontroller.boundBox() 
             end            
