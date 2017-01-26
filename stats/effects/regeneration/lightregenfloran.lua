@@ -66,7 +66,7 @@ function update(dt)
 		{stat = "maxHealth", baseMultiplier = 0.90 },
 		{stat = "maxEnergy", baseMultiplier = 0.70 }
 		}) 
-	       -- when the sun is out, florans lose food
+	       -- when the sun is down, florans lose food
 	         if (hungerLevel < hungerMax) and ( self.tickTimerPenalty <= 0 ) then
 	         
 	           self.tickTimerPenalty = self.tickTimePenalty

@@ -202,7 +202,6 @@ function MeleeSlash:uninit()
   self.weapon:setDamage()
   status.clearPersistentEffects("floranFoodPowerBonus")
   status.clearPersistentEffects("slashbonusdmg")
-  status.clearPersistentEffects("hylotlbonusdmg")
   self.meleeCountslash = 0
 end
 

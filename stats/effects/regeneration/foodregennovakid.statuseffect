@@ -7,7 +7,7 @@
   "defaultDuration" : 1,
 
   "scripts" : [
-    "foodregen.lua"
+    "foodregennovakid.lua"
   ],
 
   "animationConfig" : "foodregen.animation"

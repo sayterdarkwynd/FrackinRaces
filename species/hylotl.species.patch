@@ -10,7 +10,7 @@
     ^green;Immune: Wet^reset;
     ^green;On ocean biomes, gain 20% protection^reset; 
     ^green;Perfect Blocks restore HP (stacks)^reset; 
-    ^green;+12% dmg with shortsword and broadsword combo strikes (Stacks)^reset;
+    ^green;+6% dmg with shortsword and broadsword combo strikes (Stacks). Broadsword Crits do (Health/20) bonus damage^reset;
     ^green;+1 protection when using daggers, hammers, axes and spears^reset;
     ^green;In Water, Healing Water, Waste Water and Swamp Water: +4 Protection, +20 HP, +1400 Air, Swim Boost^reset;"
     }

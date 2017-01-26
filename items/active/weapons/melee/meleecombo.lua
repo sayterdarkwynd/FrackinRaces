@@ -196,19 +196,18 @@ function MeleeCombo:fire()
  --used for checking dual-wield setups
  local opposedhandHeldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand() == "primary" and "alt" or "primary")
  local randValue = math.random(100)  -- chance for projectile
-
+ local hylotlBonus = status.resource("health")/20 
 
 	 if species == "hylotl" then   -- in combos, hylotl get a bonus to damage with swords
 	  if heldItem then
-	     if root.itemHasTag(heldItem, "broadsword") or root.itemHasTag(heldItem, "shortsword") then 
+	     if root.itemHasTag(heldItem, "broadsword") then 
+		  self.meleeCountcombo = self.meleeCountcombo + 0.06
+		  status.setPersistentEffects("combobonusdmg", {{stat = "powerMultiplier", amount = self.meleeCountcombo},{stat = "protection", amount = 1},{stat = "critBonus", amount = hylotlBonus}}) 
+		  sb.logInfo(hylotlBonus)
+	     end	  
+	     if root.itemHasTag(heldItem, "shortsword") then 
 		  self.meleeCountcombo = self.meleeCountcombo + 0.06
 		  status.setPersistentEffects("combobonusdmg", {{stat = "powerMultiplier", amount = self.meleeCountcombo},{stat = "protection", amount = 1}})  
-	     end
-	  end
-	  if heldItem then
-	     if root.itemHasTag(heldItem, "broadsword") or root.itemHasTag(heldItem, "shortsword") then 
-		  self.meleeCountcombo = self.meleeCountcombo + 0.08
-		  status.setPersistentEffects("combobonusdmg", {{stat = "powerMultiplier", amount = self.meleeCountcombo},{stat = "protection", amount = 1}})   
 	     end
 	  end
 	end  
@@ -231,7 +230,7 @@ function MeleeCombo:fire()
 			   local ability = getPrimaryAbility()
 			   ability.comboSpeedFactor = ability.comboSpeedFactor - (ability.comboSpeedFactor * 2)
 
-			if (randValue < 5) and (lightLevel < 20) then  -- spawn a projectile
+			if (randValue < 5) and (lightLevel < 26) then  -- spawn a projectile
 			  projectileId = world.spawnProjectile("nightarmeleeslash",self:firePosition(),activeItem.ownerEntityId(),self:aimVector(),false,params)
 			  animator.playSound("nightar")
 			end		                        

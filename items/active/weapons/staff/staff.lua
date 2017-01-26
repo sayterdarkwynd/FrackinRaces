@@ -9,7 +9,7 @@ function init()
   self.weapon = Weapon:new()
 
   self.weapon:addTransformationGroup("weapon", {0,0}, 0)
-
+  
   local primaryAbility = getPrimaryAbility()
   self.weapon:addAbility(primaryAbility)
 
@@ -26,14 +26,14 @@ function init()
      self.staffCount2 = 0 
    end  
    local species = world.entitySpecies(activeItem.ownerEntityId())
-   
+
             if species == "avian" then      
               self.staffCount = self.staffCount + 0.20
               status.setPersistentEffects("avianbonusdmg", {
               {stat = "powerMultiplier", baseMultiplier = 1 + self.staffCount},
               {stat = "maxEnergy", baseMultiplier = 1 + self.staffCount}
               }) 
-              local bounds = mcontroller.boundBox()  
+              local bounds = mcontroller.boundBox()
             end            
             if species == "kineptic" then     
               self.staffCount = self.staffCount + 0.25
@@ -62,7 +62,9 @@ function init()
                 {stat = "powerMultiplier", amount = self.staffCount2}
               })  
               local bounds = mcontroller.boundBox() 
-            end              
+            end            
+            
+  
 --************************************** 
   self.weapon:init()
 end
@@ -70,14 +72,10 @@ end
 function update(dt, fireMode, shiftHeld)
   self.weapon:update(dt, fireMode, shiftHeld)
             if species == "avian" then      -- avian move faster when wielding staves and wands
-		mcontroller.controlModifiers({
-				 speedModifier = 1.15
-			})              
+		mcontroller.controlModifiers({ speedModifier = 1.15 }) 
             end  
             if species == "familiar" then      -- avian move faster when wielding staves and wands
-		mcontroller.controlModifiers({
-				 speedModifier = 1.10
-			})              
+		mcontroller.controlModifiers({ speedModifier = 1.10 })              
             end              
 end
 
