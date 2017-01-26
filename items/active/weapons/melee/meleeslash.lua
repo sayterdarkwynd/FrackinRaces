@@ -125,7 +125,6 @@ function MeleeSlash:fire()
   
      -- **** FLORAN
      local randValueCritBonus = math.random(10)
-     
 
 	 if species == "floran" then  --consume food in exchange for spear power. Florans also get increased attack speed with spears and a chance to spawn a projectile
 	  local critValueFloran = ( randValueCritBonus + math.ceil(self.foodValue/10) ) 
@@ -156,13 +155,48 @@ function MeleeSlash:fire()
 			    }) 		      
 		    -- projectile chance
 		      if randValue < 9 then
+			params = {
+			power = 10,
+			damageKind = "poison"
+			}		      
 			projectileId = world.spawnProjectile("furazorleafinvis",self:firePosition(),activeItem.ownerEntityId(),self:aimVector(),false,params)
 		      end			      
 		    end
 	     end  
 	   end
          end
-
+        if species == "avian" then  -- with a wand and a dagger, an avian is dangerous! pew pew! 
+	  if status.resource("energy") then
+	      self.energyValue = status.resource("energy")
+	  else
+	      self.energyValue = 50
+	  end            
+	  if heldItem then
+	     if root.itemHasTag(heldItem, "dagger") and opposedhandHeldItem and root.itemHasTag(opposedhandHeldItem, "wand") then 
+		if (randValue < 10) and self.energyValue >= 50 then  -- spawn a projectile if rand is good and they have enough energy
+		  if status.resource("energy") then -- if they have energy, and have enough of it, we subtract some
+			  params = { power = 3, damageKind = "cosmic", timeToLive = 0.3, speed = 30, projectileCount = 3, piercing = false }
+			  params2 = { power = 5, damageKind = "ice", timeToLive = 0.3, speed = 30 }
+			  params3 = { power = 8, damageKind = "cosmic", timeToLive = 0.3, speed = 40, piercing = true }
+			  local randPower = math.random(5)
+			  if randPower <=3 then
+			    status.modifyResource("energy", self.energyValue * -0.2 )  -- consume energy
+			    projectileId = world.spawnProjectile("energycrystal",self:firePosition(),activeItem.ownerEntityId(),self:aimVector(),false,params)
+			    animator.playSound("avian")
+			  elseif randPower ==4 then
+			    status.modifyResource("energy", self.energyValue * -0.5 )  -- consume energy
+			    projectileId = world.spawnProjectile("iceeruption",self:firePosition(),activeItem.ownerEntityId(),self:aimVector(),false,params2)
+			    animator.playSound("avian")		  
+			  elseif randPower ==5 then
+			    status.modifyResource("energy", self.energyValue * -0.7 )  -- consume energy
+			    projectileId = world.spawnProjectile("energywave",self:firePosition(),activeItem.ownerEntityId(),self:aimVector(),false,params3)
+			    animator.playSound("avian")		  
+			  end		    
+		  end		
+		end		                        			    
+	     end
+	  end
+        end	
   -- ***********************************************************************************************************
   -- END FR SPECIALS
   -- ***********************************************************************************************************

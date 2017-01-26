@@ -26,9 +26,8 @@ function init()
      self.staffCount2 = 0 
    end  
    local species = world.entitySpecies(activeItem.ownerEntityId())
-   local randValAvian = math.random(20)
             if species == "avian" then      
-              self.staffCount = self.staffCount + randValAvian
+              self.staffCount = self.staffCount + 0.20
               status.setPersistentEffects("avianbonusdmg", {
               {stat = "powerMultiplier", baseMultiplier = 1 + self.staffCount},
               {stat = "maxEnergy", baseMultiplier = 1 + self.staffCount},
@@ -39,9 +38,9 @@ function init()
             if species == "kineptic" then     
               self.staffCount = self.staffCount + 0.25
               status.setPersistentEffects("ningenbonusdmg", {
-              {stat = "powerMultiplier", amount = self.staffCount},
-              {stat = "energyRegenPercentageRate", amount = 0.2},
-              {stat = "energyRegenBlockTime", amount = -0.5}
+              {stat = "powerMultiplier", baseMultiplier = self.staffCount},
+              {stat = "energyRegenPercentageRate", baseMultiplier = 0.2},
+              {stat = "energyRegenBlockTime", baseMultiplier = -0.5}
               })  
             end             
             if species == "ningen" then     
@@ -51,7 +50,7 @@ function init()
             if species == "viera" then     
               self.staffCount = self.staffCount + 0.15
               status.setPersistentEffects("ningenbonusdmg", {
-                {stat = "maxEnergy", amount = self.staffCount},
+                {stat = "maxEnergy", baseMultiplier = self.staffCount},
                 {stat = "powerMultiplier", baseMultiplier = 1 + self.staffCount},
               })  
             end 
@@ -59,8 +58,8 @@ function init()
               self.staffCount = self.staffCount + 0.15
               self.staffCount2 = self.staffCount2 + 0.30
               status.setPersistentEffects("ningenbonusdmg", {
-                {stat = "maxEnergy", amount = self.staffCount},
-                {stat = "powerMultiplier", amount = self.staffCount2}
+                {stat = "maxEnergy", baseMultiplier = self.staffCount},
+                {stat = "powerMultiplier", baseMultiplier = self.staffCount2}
               })  
               local bounds = mcontroller.boundBox() 
             end            

@@ -226,20 +226,20 @@ function MeleeCombo:fire()
 	    local lightLevel = getLight()
 		  if heldItem then
 		     if root.itemHasTag(heldItem, "shortsword") then 
-		           attackSpeedUp = (100-lightLevel)/100 -- base attackSpeed. Greater speed in darkness
-			   local ability = getPrimaryAbility()
-			   ability.comboSpeedFactor = ability.comboSpeedFactor - (ability.comboSpeedFactor * 2)
-
+		        attackSpeedUp = (100-lightLevel)/100 -- base attackSpeed. Greater speed in darkness
+			local ability = getPrimaryAbility()
+			ability.comboSpeedFactor = ability.comboSpeedFactor - (ability.comboSpeedFactor * 2)
+			
 			if (randValue < 5) and (lightLevel < 26) then  -- spawn a projectile
+	                  params = { power = 5, damageKind = "shadow" }			
 			  projectileId = world.spawnProjectile("nightarmeleeslash",self:firePosition(),activeItem.ownerEntityId(),self:aimVector(),false,params)
 			  animator.playSound("nightar")
 			end		                        
-			    status.setPersistentEffects("combobonusdmg", {
-			      {stat = "grit", baseMultiplier = self.meleeCountcombo}
-			    }) 				    
+			status.setPersistentEffects("combobonusdmg", { {stat = "grit", baseMultiplier = self.meleeCountcombo} }) 				    
 		     end
 		  end
 	  end
+	 	  
           if species == "kemono" then      --each 1-handed combo swing slightly increases kemono defense
             self.meleeCountcombo = self.meleeCountcombo + 3
             status.setPersistentEffects("combobonusdmg", {{stat = "protection", amount = self.meleeCountcombo}})  

@@ -33,8 +33,9 @@ function init()
      -- if we want more control over each hand...
      local heldItem1 = world.entityHandItem(activeItem.ownerEntityId(), "primary")
      local heldItem2 = world.entityHandItem(activeItem.ownerEntityId(), "alt")
-    
+  
      local randValue = math.random(100)  -- chance for projectile  
+     
  	if status.isResource("energy") then
 	  self.energyValue = status.resource("energy")  --check our Food level
 	else
@@ -271,7 +272,6 @@ if species == "felin" then
   end
 end
 
- 
 if species == "nightar" then  
   if heldItem then
      if root.itemHasTag(heldItem, "shortsword") and opposedhandHeldItem and root.itemHasTag(opposedhandHeldItem, "shield") then --nightar do more damage and have KB resist when using sword/shield

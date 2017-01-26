@@ -10,7 +10,7 @@
     ^green;+14% HP, +15% Physical Resistance^reset;
     ^green;Heal and regain power within Oil^reset; 
     ^green;Shields give +1 Protection. Perfect Blocks increase damage (stacks)^reset;
-    ^green;Consume energy to increase Crit chance with both Hammers and Axes.^reset;
+    ^green;Consume food to increase Crit chance (Energy/8) with both Hammers and Axes.^reset;
     ^green;1h combos increase protection^reset;
     ^green;Immune: Poison, Bee Stings^reset;"
     }

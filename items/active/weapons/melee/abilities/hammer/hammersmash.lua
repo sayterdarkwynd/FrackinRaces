@@ -79,11 +79,16 @@ function HammerSmash:fire()
 
 
 -- ******************* FR ADDONS FOR HAMMER SWINGS
-	if status.isResource("food") then
-	  self.foodValue = status.resource("food")  --check our Food level
-	else
-	  self.foodValue = 60
-	end
+  if status.isResource("food") then
+      self.foodValue = status.resource("food")
+      hungerLevel = status.resource("food")
+  else
+      self.foodValue = 50
+      hungerLevel = 50
+  end
+    --food defaults
+    hungerMax = { pcall(status.resourceMax, "food") }
+    hungerMax = hungerMax[1] and hungerMax[2]
 	if status.isResource("energy") then
 	  self.energyValue = status.resource("energy")  --check our Food level
 	else
@@ -106,11 +111,12 @@ function HammerSmash:fire()
 	
 	if species == "glitch" then  --glitch consume energy when wielding axes and hammers. They get increased critChance as a result
 	  if not self.critValueGlitch then
-	    self.critValueGlitch = ( math.ceil(self.energyValue/10) ) 
+	    self.critValueGlitch = ( math.ceil(self.energyValue/8) ) 
 	  end  
 	  if self.energyValue >= 25 then
-	    if status.isResource("energy") then
-	      status.modifyResource("energy", (status.resource("energy") * -0.4) )
+	    if status.isResource("food") then
+	             adjustedHunger = hungerLevel - (hungerLevel * 0.01)
+	             status.setResource("food", adjustedHunger)	      
 	    end	 	       
 	    status.setPersistentEffects("glitchEnergyPower", {
 		{ stat = "critChance", amount = self.critValueGlitch }

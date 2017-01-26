@@ -58,12 +58,12 @@ local heldItem2 = world.entityHandItem(activeItem.ownerEntityId(), "alt")
 	 if species == "apex" then   
 	  if heldItem then
 	     if root.itemHasTag(heldItem, "grenadelauncher") then 
-		  self.blockCount = self.blockCount + 0.19
-		  status.setPersistentEffects("novakidbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}})   
+		  self.blockCount = 20
+		  status.setPersistentEffects("novakidbonusdmg", {{stat = "critBonus", amount = self.blockCount}})   
 	     end
 	     if root.itemHasTag(heldItem, "rocketlauncher") then 
-		  self.blockCount = self.blockCount + 0.14
-		  status.setPersistentEffects("novakidbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}})   
+		  self.blockCount = 15
+		  status.setPersistentEffects("novakidbonusdmg", {{stat = "critChance", amount = self.blockCount}})   
 	     end	     
 	     if root.itemHasTag(heldItem, "energy") then 
 		  self.blockCount = self.blockCount + 0.1
