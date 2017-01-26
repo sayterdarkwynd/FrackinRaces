@@ -10,7 +10,7 @@
     ^red;-10% Health, 90% Weakness: Electric^reset;
     ^green;+5% Speed, +200 Breath^reset;
     ^green;Glow in the Dark^reset;
-    ^green;+30% Damage, +15% Energy and +10% Speed when using Staves/Wands^reset;
+    ^green;+30% Damage, +15% Energy when using Staves/Wands^reset;
     ^green;Bio-Ooze, Webbing, Black Tar^reset;"
     }
 ]

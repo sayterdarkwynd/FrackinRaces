@@ -38,8 +38,11 @@ local heldItem2 = world.entityHandItem(activeItem.ownerEntityId(), "alt")
 		  status.setPersistentEffects("novakidbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}})    
 	     end
 	     if root.itemHasTag(heldItem, "sniperrifle") or root.itemHasTag(heldItem, "rifle") then 
-		  self.blockCount = self.blockCount + 0.165
-		  status.setPersistentEffects("novakidbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}})    
+	     local randomAdd = math.random(10)
+		  status.setPersistentEffects("novakidbonusdmg2", {
+		    {stat = "critChance", amount = 15 + randomAdd},
+		    {stat = "critBonus", amount = randomAdd}
+		    })    
 	     end
 	     if root.itemHasTag(heldItem, "pistol") and opposedhandHeldItem and root.itemHasTag(opposedhandHeldItem, "pistol") then -- novakids are unmatched with dual pistols
 	       self.blockCount = self.blockCount + 0.10
@@ -163,6 +166,7 @@ end
 function uninit()
   bonusApply = 0
   status.clearPersistentEffects("novakidbonusdmg")
+  status.clearPersistentEffects("novakidbonusdmg2")
   self.blockCount = 0
   self.weapon:uninit()
 end

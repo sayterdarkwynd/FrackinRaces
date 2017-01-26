@@ -10,7 +10,7 @@ effect.addStatModifierGroup({
     {stat = "physicalResistance", amount = 0},
     {stat = "fireResistance", amount = 0},
     {stat = "iceResistance", amount = -0.75},
-    {stat = "electricResistance", amount = 0},
+    {stat = "electricResistance", amount = 0.5},
     {stat = "poisonResistance", amount = 0},
     {stat = "shadowResistance", amount = 0.15},
     {stat = "cosmicResistance", amount = 0.35}

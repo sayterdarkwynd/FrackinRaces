@@ -9,6 +9,7 @@ function init()
     {stat = "grit", baseMultiplier = self.gritBoost },
     {stat = "biomeradiationImmunity", amount = 1},
     {stat = "ffextremeradiationImmunity", amount = 1},
+    {stat = "radiationburnImmunity", amount = 1},
     {stat = "fireStatusImmunity", amount = 1},
     {stat = "physicalResistance", amount = -0.1},
     {stat = "fireResistance", amount = 0.25},
@@ -16,7 +17,7 @@ function init()
     {stat = "electricResistance", amount = -0.15},
     {stat = "poisonResistance", amount = -0.25},
     {stat = "shadowResistance", amount = -1},
-    {stat = "radioactiveResistance", amount = 1}
+    {stat = "radioactiveResistance", amount = 0.5}
   })
 
   local bounds = mcontroller.boundBox()

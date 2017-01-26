@@ -26,12 +26,13 @@ function init()
      self.staffCount2 = 0 
    end  
    local species = world.entitySpecies(activeItem.ownerEntityId())
-
+   local randValAvian = math.random(20)
             if species == "avian" then      
-              self.staffCount = self.staffCount + 0.20
+              self.staffCount = self.staffCount + randValAvian
               status.setPersistentEffects("avianbonusdmg", {
               {stat = "powerMultiplier", baseMultiplier = 1 + self.staffCount},
-              {stat = "maxEnergy", baseMultiplier = 1 + self.staffCount}
+              {stat = "maxEnergy", baseMultiplier = 1 + self.staffCount},
+              {stat = "critBonus", baseMultiplier = 1 + self.staffCount}
               }) 
               local bounds = mcontroller.boundBox()
             end            
@@ -70,13 +71,7 @@ function init()
 end
 
 function update(dt, fireMode, shiftHeld)
-  self.weapon:update(dt, fireMode, shiftHeld)
-            if species == "avian" then      -- avian move faster when wielding staves and wands
-		mcontroller.controlModifiers({ speedModifier = 1.15 }) 
-            end  
-            if species == "familiar" then      -- avian move faster when wielding staves and wands
-		mcontroller.controlModifiers({ speedModifier = 1.10 })              
-            end              
+  self.weapon:update(dt, fireMode, shiftHeld)        
 end
 
 function uninit()

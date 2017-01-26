@@ -41,58 +41,60 @@ end
 
 
 function update(dt)
-  getLight()
-  daytimeCheck()
+  daytime = daytimeCheck()
+  underground = undergroundCheck()
+  local lightLevel = getLight()
   
   --food defaults
-  if status.resource("food") then hungerLevel = status.resource("food") else hungerLevel = 60 end
+  if status.resource("food") then 
+    hungerLevel = status.resource("food") 
+  else 
+    hungerLevel = 60 
+  end
   hungerMax = { pcall(status.resourceMax, "food") }
   hungerMax = hungerMax[1] and hungerMax[2]
+  if not hungerMax then
+    hungerMax = 70
+  end
   
+  -- timer
   self.tickTimer = self.tickTimer - dt
   self.tickTimerPenalty = self.tickTimerPenalty - dt
-  
-  -- first, make sure they are actually wounded so nothing is wasted pointlessly, 
-  -- and then start regen when adequately wounded
-  if (status.resource("health") <= status.stat("maxHealth")/2) then
-    -- while they still regen at night, it consumes a lot more food from the Novakid
-    if not daytime then  
-      if ( self.tickTimer <= 0 ) then
-        self.tickTimer = self.tickTime
-        adjustedHunger = hungerLevel + ( hungerLevel * -0.007 )
-        status.setResource( "food", adjustedHunger )
-      end
-    end
-	if daytime then
-	  sb.logInfo(self.foodvalue)
-	  if hungerLevel > 20 then
-	   self.healingRate = 1.0005 / 220
-	   status.modifyResourcePercentage("health", self.healingRate * dt)
-	  elseif hungerLevel > 40 then
+
+
+
+  if not daytime then -- at night, lose 25% energy. Actual light is not important...only the solar cycle is
+    status.setPersistentEffects("nightpenalty", { {stat = "maxEnergy", baseMultiplier = 0.75 } })
+  else 
+    status.clearPersistentEffects("nightpenalty") 
+  end 
+    
+  if (status.resource("health") <= status.stat("maxHealth")) then -- make sure they are actually wounded so nothing is wasted pointlessly, and then start regen when adequately wounded
+        if not daytime then  -- while they still regen at night, it consumes a lot more food from the Novakid
+          if ( self.tickTimer <= 0 ) then
+            self.tickTimer = self.tickTime
+            if hungerLevel > 20 then -- do we have enough foor to regen?
+              adjustedHunger = hungerLevel + ( hungerLevel * -0.007 )
+              status.setResource( "food", adjustedHunger )            
+              self.healingRate = 1.0005 / 320
+	      status.modifyResourcePercentage("health", self.healingRate * dt)
+	    end
+          end
+        end
+	if daytime then  -- during the day when 50% fed or more we get regen with no need to consume food
+	  if hungerLevel > 35 then
 	   self.healingRate = 1.0009 / 220
 	   status.modifyResourcePercentage("health", self.healingRate * dt)
 	  elseif hungerLevel > 60 then
 	   self.healingRate = 1.001 / 220
 	   status.modifyResourcePercentage("health", self.healingRate * dt)    
-	  end
-	else
-	  if hungerLevel > 20 then
-	   self.healingRate = 1.0005 / 420
-	   status.modifyResourcePercentage("health", self.healingRate * dt)
-	  elseif hungerLevel > 40 then
-	   self.healingRate = 1.0009 / 420
-	   status.modifyResourcePercentage("health", self.healingRate * dt)		   
-	  elseif hungerLevel > 60 then
-	   self.healingRate = 1.001 / 420
-	   status.modifyResourcePercentage("health", self.healingRate * dt) 
 	  end	
 	end  
    end
+ 
+	    
 end
 
-function uninit()
-
-end
 
 
 
