@@ -25,7 +25,7 @@ function MeleeSlash:init()
 	else
 	  self.foodValue = 60
 	end
-  attackSpeedUp = 1 -- base attackSpeed
+  attackSpeedUp = 0 -- base attackSpeed bonus
 -- ************************************************
 
 end
@@ -133,7 +133,6 @@ function MeleeSlash:fire()
 	  else
 	      self.foodValue = 50
 	  end          
-          attackSpeedUp = 1 -- base attackSpeed
 	  if heldItem then
 	     if not root.itemHasTag(heldItem, "spear") then  -- anything that isn't a spear gets a flat damage bonus
 	       if self.foodValue >= 5 then
@@ -149,16 +148,11 @@ function MeleeSlash:fire()
 		      if status.isResource("food") then
 		        status.modifyResource("food", (status.resource("food") * -0.01) )  -- consume food
 		      end
-		      attackSpeedUp = attackSpeedUp+(self.foodValue/120) 
-			    status.setPersistentEffects("combobonusdmg", {
-			      {stat = "critChance", amount = critValueFloran}
-			    }) 		      
-		    -- projectile chance
+		      attackSpeedUp = self.foodValue/140 -- speed increase is half of food value (50% max reduction)
+		      status.setPersistentEffects("combobonusdmg", {{stat = "critChance", amount = critValueFloran}}) 		      
+		      -- projectile chance
 		      if randValue < 9 then
-			params = {
-			power = 10,
-			damageKind = "poison"
-			}		      
+			params = { power = 10,damageKind = "poison" }		      
 			projectileId = world.spawnProjectile("furazorleafinvis",self:firePosition(),activeItem.ownerEntityId(),self:aimVector(),false,params)
 		      end			      
 		    end
@@ -211,24 +205,17 @@ function MeleeSlash:fire()
   end)
 
   -- ***********************************************************************************************************
-  -- FR cooldown replace
-  -- ***********************************************************************************************************
-  
-  self.cooldownTimer = math.max(0, self.cooldownTimer - (self.dt*attackSpeedUp))
-
-  -- ***********************************************************************************************************
   -- END FR SPECIALS
   -- ***********************************************************************************************************
-  
-  
   --vanilla cooldown rate
-  --self.cooldownTimer = self:cooldownTime()
-          
+  self.cooldownTimer = self:cooldownTime()
+  
+  -- FR cooldown modifiers
+  self.cooldownTimer = math.max(0, self.cooldownTimer * attackSpeedUp )     -- subtract FR bonus from total 
+  
 end
 
-
-function MeleeSlash:cooldownTime()
-  status.clearPersistentEffects("floranFoodPowerBonus")
+function MeleeSlash:cooldownTime()  
   return self.fireTime - self.stances.windup.duration - self.stances.fire.duration
 end
 

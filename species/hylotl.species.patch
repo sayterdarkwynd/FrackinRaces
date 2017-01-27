@@ -4,10 +4,8 @@
     "path" : "/charCreationTooltip/description" , 
     "value" : "The peaceful Hylotl place great value on ancestral tradition and take great comfort in the arts. While not lovers of violence, they are quite skilled in martial arts and are not to be trifled with. They are at best in water, where they are exceptionally well suited to survive.
     
-    ^red;-20% Energy^reset;
-    ^red;Weakness: Electricity^reset;
-    ^green;+10% HP^reset;
-    ^green;Immune: Wet^reset;
+    ^red;-20% Energy, Weakness: Electricity^reset;
+    ^green;+10% HP, Immune: Wet^reset;
     ^green;On ocean biomes, gain 20% protection^reset; 
     ^green;Perfect Blocks restore HP (stacks)^reset; 
     ^green;+6% dmg with shortsword and broadsword combo strikes (Stacks). Broadsword Crits do (Health/20) bonus damage^reset;

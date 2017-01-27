@@ -133,7 +133,6 @@ function BowShot:fire()
             if species == "floran" then      -- lamia get increased crit chance with high energy
 	     local randValueCritBonus = math.random(16)
 	     local critValueLamia = ( randValueCritBonus + math.ceil(self.energyValue/10) ) 
-	     sb.logInfo(critValueLamia)
 		    if self.energyValue >= (status.stat("maxEnergy")*0.5) then   -- with high Energy reserve, lamia get increased Bow crit chance
 		      status.modifyResource("energy", (status.resource("energy") * -0.01) )  -- consume energy
 		      activeItem.setInstanceValue("critChanceMultiplier",critValueLamia) 			      
