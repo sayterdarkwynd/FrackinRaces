@@ -5,27 +5,33 @@ require "/scripts/interp.lua"
 GunFire = WeaponAbility:new()
 
 function GunFire:init()
-  self.weapon:setStance(self.stances.idle)
+-- **** FR ADDITIONS
+  daytime = daytimeCheck()
+  underground = undergroundCheck()
+  lightLevel = getLight()
+  
+  self.species = world.entitySpecies(activeItem.ownerEntityId())
+  local heldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand())
+  --used for checking dual-wield setups
+  local opposedhandHeldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand() == "primary" and "alt" or "primary")  
+  local weaponModifier = config.getParameter("critChance",0)  
+  
+  -- bonus add for novakids with pistols when sped up, specifically to energy and damage equations at end of file so that they still damage and consume energy at high speed
+  self.energyMax = 1
+-- ** END FR ADDITIONS
 
+  self.weapon:setStance(self.stances.idle)
   self.cooldownTimer = self.fireTime
 
   self.weapon.onLeaveAbility = function()
     self.weapon:setStance(self.stances.idle)
   end
-  self.species = world.entitySpecies(activeItem.ownerEntityId())
-     local heldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand())
-     --used for checking dual-wield setups
-     local opposedhandHeldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand() == "primary" and "alt" or "primary")  
-     local weaponModifier = config.getParameter("critChance",0)  
+  
 end
 
 
 -- ****************************************
 -- FR FUNCTIONS
-
-
-  -- *******************************************************
-  -- FU Crit Damage Script
 
 function GunFire:setCritDamage(damage)
      -- check their equipped weapon
@@ -72,7 +78,7 @@ function GunFire:setCritDamage(damage)
   
   --apply the crit
   local crit = self.critRoll <= self.critChance
-    --sb.logInfo("crit roll="..self.critRoll)
+  --sb.logInfo("crit roll="..self.critRoll)
   damage = crit and (damage*2) + self.critBonus or damage
 
   if crit then
@@ -86,9 +92,6 @@ function GunFire:setCritDamage(damage)
 
   return damage
 end
-  -- *******************************************************
-
-
 
 function daytimeCheck()
 	return world.timeOfDay() < 0.5 -- true if daytime
@@ -106,66 +109,22 @@ function getLight()
   lightLevel = math.floor(lightLevel * 100)
   return lightLevel
 end
-
--- set Novakid fire speed increase
-function energyMaxCheck()
-  local position = mcontroller.position()
-  position[1] = math.floor(position[1])
-  position[2] = math.floor(position[2])
-  local lightLevel = world.lightLevel(position)
-  lightLevel = math.floor(lightLevel * 100)
-  return (lightLevel/100)
-end
-
 -- ***********************************************************************************************************
+-- ***********************************************************************************************************
+
 
 function GunFire:update(dt, fireMode, shiftHeld)
   WeaponAbility.update(self, dt, fireMode, shiftHeld)
-  
-  self.cooldownTimer = math.max(0, self.cooldownTimer - self.dt)
-
--- ***********************************************************************************************************
--- FR SPECIALS  (Weapon speed and other such things)
--- ***********************************************************************************************************
-
-  daytime = daytimeCheck()
-  underground = undergroundCheck()
-  lightLevel = getLight()
-  
-  local heldItem = world.entityHandItem(activeItem.ownerEntityId(), "primary")
-  local heldItem2 = world.entityHandItem(activeItem.ownerEntityId(), "alt")
-  local opposedhandHeldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand() == "primary" and "alt" or "primary")  
-  
-  if self.species == "novakid" and daytime then
-    energyMax = energyMaxCheck()  
-  end  
-
-  if self.species == "novakid" and ( lightLevel > 50 ) then  -- novakid fire pistols faster when in bright sunlight
-    if heldItem then
-      if root.itemHasTag(heldItem, "pistol") then
-        if daytime and not underground then -- must be in sunlight and above ground
-        self.fireTime = self.fireTime * energyMax 
-        --sb.logInfo("max = "..energyMax)
-        --sb.logInfo("modded = "..self.fireTime)
-        end
-      end
-    end
-  end
-
--- ***********************************************************************************************************
--- END FR SPECIALS
--- ***********************************************************************************************************
-
+  self.cooldownTimer = math.max(0, self.cooldownTimer - self.dt )
+  self.cooldownTimer = self.cooldownTimer * self.energyMax -- FR
   if animator.animationState("firing") ~= "fire" then
     animator.setLightActive("muzzleFlash", false)
   end
-
   if self.fireMode == (self.activatingFireMode or self.abilitySlot)
     and not self.weapon.currentAbility
     and self.cooldownTimer == 0
     and not status.resourceLocked("energy")
     and not world.lineTileCollision(mcontroller.position(), self:firePosition()) then
-
     if self.fireType == "auto" and status.overConsumeResource("energy", self:energyPerShot()) then
       self:setState(self.auto)
     elseif self.fireType == "burst" then
@@ -174,8 +133,29 @@ function GunFire:update(dt, fireMode, shiftHeld)
   end
 end
 
+
 function GunFire:auto()
+-- ***********************************************************************************************************
+-- FR SPECIALS  (Weapon speed and other such things)
+-- ***********************************************************************************************************
+  daytime = daytimeCheck()
+  underground = undergroundCheck()
+  lightLevel = getLight()
+  local heldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand())
+  local heldItem2 = world.entityHandItem(activeItem.ownerEntityId(), "alt")
+  local opposedhandHeldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand() == "primary" and "alt" or "primary")  
+  
+  -- Novakid get increased pistol fire time during the daylight hours
+  if self.species == "novakid" then
+    if heldItem and root.itemHasTag(heldItem, "pistol") and daytime then  -- novakid fire pistols faster when the sun is out..even underground!
+      self.energyMax = lightLevel / 200    
+    else
+      self.energyMax = 1 
+    end 
+  end  
+  
   self.weapon:setStance(self.stances.fire)
+
 
   self:fireProjectile()
   self:muzzleFlash()
@@ -183,9 +163,9 @@ function GunFire:auto()
   if self.stances.fire.duration then
     util.wait(self.stances.fire.duration)
   end
-  
-  self.cooldownTimer = self.fireTime 
 
+  self.cooldownTimer = self.fireTime * self.energyMax  -- ** FR adds to this with energyMax
+  
   self:setState(self.cooldown)
 end
 
@@ -203,8 +183,8 @@ function GunFire:burst()
 
     util.wait(self.burstTime)
   end
-
-  self.cooldownTimer = (self.fireTime - self.burstTime) * self.burstCount
+  
+  self.cooldownTimer = ((self.fireTime - self.burstTime) * self.burstCount ) * self.energyMax -- ** FR adds to this with energyMax
 end
 
 function GunFire:cooldown()
@@ -261,6 +241,7 @@ function GunFire:fireProjectile(projectileType, projectileParams, inaccuracy, fi
         params
       )
   end
+
   return projectileId
 end
 
@@ -275,22 +256,11 @@ function GunFire:aimVector(inaccuracy)
 end
 
 function GunFire:energyPerShot()
-  return self.energyUsage * self.fireTime * (self.energyUsageMultiplier or 1.0)
+  return self.energyUsage * self.fireTime * (self.energyUsageMultiplier or 1.0) 
 end
 
 function GunFire:damagePerShot()     
--- *** FR SPECIAL STATS
-    local heldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand())
-    if self.species == "novakid" and daytime then
-      if heldItem then
-        if root.itemHasTag(heldItem, "pistol") then energyMax = energyMaxCheck() 
-        return  GunFire:setCritDamage(self.baseDamage or (self.baseDps * self.fireTime) * (self.baseDamageMultiplier or 1.0) * config.getParameter("damageLevelMultiplier") / self.projectileCount) + 1  
-        end
-      end
--- *** END FR SPECIAL STATS      
-    else
-      return  GunFire:setCritDamage(self.baseDamage or (self.baseDps * self.fireTime) * (self.baseDamageMultiplier or 1.0) * config.getParameter("damageLevelMultiplier") / self.projectileCount)
-    end
+     return  GunFire:setCritDamage(self.baseDamage or (self.baseDps * self.fireTime) * (self.baseDamageMultiplier or 1.0) * config.getParameter("damageLevelMultiplier") / self.projectileCount) 
 end  
 
 

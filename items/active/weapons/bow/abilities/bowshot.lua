@@ -22,10 +22,7 @@ end
   -- FU Crit Damage Script
 
 function BowShot:setCritDamage(damage)
-     -- check their equipped weapon
-     -- Primary hand, or single-hand equip  
      local heldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand())
-     --used for checking dual-wield setups
      local opposedhandHeldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand() == "primary" and "alt" or "primary")  
      local weaponModifier = config.getParameter("critChance",0)
      
@@ -36,21 +33,14 @@ function BowShot:setCritDamage(damage)
         self.critChance = 9 + weaponModifier
       end
   end
-    --sb.logInfo("crit chance base="..self.critChance)
-  if not self.critChance then
-    self.critChance = 0
-  end
-  
-  --critBonus is bonus damage done with crits
+
+  if not self.critChance then self.critChance = 0 end
   self.critBonus = ( ( ( (status.stat("critBonus") + config.getParameter("critBonus",0)) * self.critChance ) /100 ) /2 ) or 0  
-  -- this next modifier only applies if they have a multiply item equipped
   self.critChance = (self.critChance  + config.getParameter("critChanceMultiplier",0)+ status.stat("critChanceMultiplier",0)+ status.stat("critChance",0)) 
-  -- random dice roll. I've heavily lowered the chances, as it was far too high by nature of the random roll.
   self.critRoll = math.random(200)
   
   --apply the crit
   local crit = self.critRoll <= self.critChance
-    --sb.logInfo("crit roll="..self.critRoll)
   damage = crit and (damage*2) + self.critBonus or damage
 
   if crit then
@@ -79,6 +69,7 @@ function BowShot:update(dt, fireMode, shiftHeld)
 end
 
 function BowShot:uninit()
+  status.clearPersistentEffects("weaponbonusdmgbow")
   self:reset()
 end
 
@@ -130,12 +121,12 @@ function BowShot:fire()
 	    status.modifyResource("food", (status.resource("food") * -0.02) )  
 	  end
          end
-            if species == "floran" then      -- lamia get increased crit chance with high energy
+            if species == "lamia" then      -- lamia get increased crit chance with high energy
 	     local randValueCritBonus = math.random(16)
 	     local critValueLamia = ( randValueCritBonus + math.ceil(self.energyValue/10) ) 
 		    if self.energyValue >= (status.stat("maxEnergy")*0.5) then   -- with high Energy reserve, lamia get increased Bow crit chance
 		      status.modifyResource("energy", (status.resource("energy") * -0.01) )  -- consume energy
-		      activeItem.setInstanceValue("critChanceMultiplier",critValueLamia) 			      
+		      status.setPersistentEffects("weaponbonusdmgbow", {{stat = "critChance", amount = critValueLamia}})  
 		    end	                         
             end           
          
