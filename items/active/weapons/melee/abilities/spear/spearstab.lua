@@ -71,6 +71,7 @@ end
 
 
 function SpearStab:uninit()
+  status.clearPersistentEffects("floranFoodPowerBonus")
   status.clearPersistentEffects("spearbonus")
   self.blockCount = 0
 end

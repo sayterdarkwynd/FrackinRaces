@@ -149,9 +149,9 @@ function GunFire:auto()
   if self.species == "novakid" then
     if heldItem and root.itemHasTag(heldItem, "pistol") and daytime then  -- novakid fire pistols faster when the sun is out..even underground!
       self.energyMax = lightLevel / 200    
-    else
-      self.energyMax = 1 
-    end 
+    end
+  else
+    self.energyMax = 1 
   end  
   
   self.weapon:setStance(self.stances.fire)
@@ -183,7 +183,7 @@ function GunFire:burst()
 
     util.wait(self.burstTime)
   end
-  
+
   self.cooldownTimer = ((self.fireTime - self.burstTime) * self.burstCount ) * self.energyMax -- ** FR adds to this with energyMax
 end
 
