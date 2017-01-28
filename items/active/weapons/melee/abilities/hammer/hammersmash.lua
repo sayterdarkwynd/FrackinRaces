@@ -184,6 +184,7 @@ end
 
 
 function HammerSmash:uninit()
+  status.clearPersistentEffects("glitchEnergyPower")
   status.clearPersistentEffects("floranFoodPowerBonus")
   status.clearPersistentEffects("apexbonusdmg")
   self.blockCount = 0
