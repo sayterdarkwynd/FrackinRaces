@@ -116,6 +116,7 @@ end
 function GunFire:update(dt, fireMode, shiftHeld)
   WeaponAbility.update(self, dt, fireMode, shiftHeld)
   self.cooldownTimer = math.max(0, self.cooldownTimer - self.dt )
+  if not self.energyMax then self.energyMax = 1 end
   self.cooldownTimer = self.cooldownTimer * self.energyMax -- FR
   if animator.animationState("firing") ~= "fire" then
     animator.setLightActive("muzzleFlash", false)
@@ -163,7 +164,7 @@ function GunFire:auto()
   if self.stances.fire.duration then
     util.wait(self.stances.fire.duration)
   end
-
+  if not self.energyMax then self.energyMax = 1 end
   self.cooldownTimer = self.fireTime * self.energyMax  -- ** FR adds to this with energyMax
   
   self:setState(self.cooldown)
@@ -183,7 +184,7 @@ function GunFire:burst()
 
     util.wait(self.burstTime)
   end
-
+  if not self.energyMax then self.energyMax = 1
   self.cooldownTimer = ((self.fireTime - self.burstTime) * self.burstCount ) * self.energyMax -- ** FR adds to this with energyMax
 end
 
