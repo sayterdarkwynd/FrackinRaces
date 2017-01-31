@@ -164,7 +164,9 @@ function GunFire:auto()
   if self.stances.fire.duration then
     util.wait(self.stances.fire.duration)
   end
-  if not self.energyMax then self.energyMax = 1 end
+  if not self.energyMax then 
+    self.energyMax = 1 
+  end
   self.cooldownTimer = self.fireTime * self.energyMax  -- ** FR adds to this with energyMax
   
   self:setState(self.cooldown)
@@ -184,7 +186,7 @@ function GunFire:burst()
 
     util.wait(self.burstTime)
   end
-  if not self.energyMax then self.energyMax = 1
+  if not self.energyMax then self.energyMax = 1 end
   self.cooldownTimer = ((self.fireTime - self.burstTime) * self.burstCount ) * self.energyMax -- ** FR adds to this with energyMax
 end
 
