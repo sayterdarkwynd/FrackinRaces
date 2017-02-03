@@ -5,7 +5,7 @@ require "/scripts/interp.lua"
 function init()
     local bounds = mcontroller.boundBox()
     -- regen default
-    self.healingRate = 1.01 / config.getParameter("healTime", 320)
+    self.healingRate = 1.01 / config.getParameter("healTime", 220)
     --food defaults
     hungerMax = { pcall(status.resourceMax, "food") }
     hungerMax = hungerMax[1] and hungerMax[2]
