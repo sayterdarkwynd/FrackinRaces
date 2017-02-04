@@ -18,10 +18,10 @@ function init()
     {stat = "iceResistance", amount = 0},
     {stat = "electricResistance", amount = -1},
     {stat = "radioactiveResistance", amount = 0.5},
-    {stat = "poisonResistance", amount = 0},
-    {stat = "poisonStatusImmunity", amount = 0},
-    {stat = "breathProtection", amount = 0},
-    {stat = "waterbreathProtection", amount = 0},
+    {stat = "poisonResistance", amount = 0.5},
+    {stat = "poisonStatusImmunity", amount = 1},
+    {stat = "breathProtection", amount = 1},
+    {stat = "waterbreathProtection", amount = 1},
     {stat = "shadowResistance", amount = 0}
   })
 

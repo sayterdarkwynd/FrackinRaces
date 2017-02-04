@@ -30,7 +30,7 @@ function MeleeCombo:init()
 	else
 	  self.foodValue = 60
 	end
-   attackSpeedUp = 1 -- base attackSpeed
+   attackSpeedUp = 0 -- base attackSpeed
    
    if self.meleeCount == nil then 
      self.meleeCount = 0
@@ -46,7 +46,7 @@ function MeleeCombo:update(dt, fireMode, shiftHeld)
 
   WeaponAbility.update(self, dt, fireMode, shiftHeld)
   if not attackSpeedUp then
-    attackSpeedUp = 1
+    attackSpeedUp = 0
   end
   if self.cooldownTimer > 0 then
     self.cooldownTimer = math.max(0, self.cooldownTimer - self.dt)   
@@ -240,7 +240,7 @@ function MeleeCombo:fire()
 	    local lightLevel = getLight()
 		  if heldItem then
 		     if root.itemHasTag(heldItem, "shortsword") then 
-		        attackSpeedUp = (100-lightLevel)/100 -- base attackSpeed. Greater speed in darkness
+		        attackSpeedUp = 0 + ((1*lightLevel)/100) -- base attackSpeed. Greater speed in darkness
 			local ability = getPrimaryAbility()
 			ability.comboSpeedFactor = ability.comboSpeedFactor - (ability.comboSpeedFactor * 2)
 			
