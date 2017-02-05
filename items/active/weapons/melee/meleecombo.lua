@@ -281,7 +281,9 @@ function MeleeCombo:fire()
   else
     self.cooldownTimer = self.cooldowns[self.comboStep]
     -- **** FR
-     self.cooldownTimer = math.max(0, self.cooldowns[self.comboStep] - attackSpeedUp) 
+     -- old         self.cooldownTimer = math.max(0, self.cooldowns[self.comboStep] - attackSpeedUp) 
+
+     self.cooldownTimer = math.max(0, self.cooldowns[self.comboStep] *( 1 - attackSpeedUp))
     -- *****
     self.comboStep = 1
   end           
