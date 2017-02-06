@@ -47,9 +47,9 @@ if species == "lamia" then
   local heldItem = world.entityHandItem(activeItem.ownerEntityId(), "primary")
   if heldItem then
      if root.itemHasTag(heldItem, "chakram") then 
-	  self.blockCount = self.blockCount + 1.10
-	  self.blockCount2 = self.blockCount2 + 1.10
-	  self.blockCount3 = self.blockCount3 + 1.10
+	  self.blockCount = self.blockCount + 0.10
+	  self.blockCount2 = self.blockCount2 + 0.10
+	  self.blockCount3 = self.blockCount3 + 0.10
 	  status.setPersistentEffects("bonusdmg", {
 	    {stat = "powerMultiplier", amount = self.blockCount},
 	    {stat = "maxHealth", amount = self.blockCount2 },
@@ -61,9 +61,9 @@ if species == "lamia" then
   heldItem = world.entityHandItem(activeItem.ownerEntityId(), "alt")
   if heldItem then
      if root.itemHasTag(heldItem, "chakram") then 
-	  self.blockCount = self.blockCount + 1.10
-	  self.blockCount2 = self.blockCount2 + 1.10
-	  self.blockCount3 = self.blockCount3 + 1.10
+	  self.blockCount = self.blockCount + 0.10
+	  self.blockCount2 = self.blockCount2 + 0.10
+	  self.blockCount3 = self.blockCount3 + 0.10
 	  status.setPersistentEffects("bonusdmg2", {
 	    {stat = "powerMultiplier", amount = self.blockCount},
 	    {stat = "maxHealth", amount = self.blockCount2 },
