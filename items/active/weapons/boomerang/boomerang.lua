@@ -48,12 +48,12 @@ if species == "lamia" then
   if heldItem then
      if root.itemHasTag(heldItem, "chakram") then 
 	  self.blockCount = self.blockCount + 0.10
-	  self.blockCount2 = self.blockCount2 + 0.10
-	  self.blockCount3 = self.blockCount3 + 0.10
+	  self.blockCount2 = 1.10
+	  self.blockCount3 = 1.12
 	  status.setPersistentEffects("bonusdmg", {
 	    {stat = "powerMultiplier", amount = self.blockCount},
-	    {stat = "maxHealth", amount = self.blockCount2 },
-	    {stat = "grit", amount = self.blockCount3 }
+	    {stat = "maxHealth", baseMultiplier = self.blockCount2 },
+	    {stat = "grit", baseMultiplier = self.blockCount3 }
 	    })  	
 	    local bounds = mcontroller.boundBox()
      end
@@ -62,12 +62,12 @@ if species == "lamia" then
   if heldItem then
      if root.itemHasTag(heldItem, "chakram") then 
 	  self.blockCount = self.blockCount + 0.10
-	  self.blockCount2 = self.blockCount2 + 0.10
-	  self.blockCount3 = self.blockCount3 + 0.10
+	  self.blockCount2 = 1.10
+	  self.blockCount3 = 1.12
 	  status.setPersistentEffects("bonusdmg2", {
 	    {stat = "powerMultiplier", amount = self.blockCount},
-	    {stat = "maxHealth", amount = self.blockCount2 },
-	    {stat = "grit", amount = self.blockCount3 }
+	    {stat = "maxHealth", baseMultiplier = self.blockCount2 },
+	    {stat = "grit", baseMultiplier = self.blockCount3 
 	    })  	
 	    local bounds = mcontroller.boundBox()
      end  

@@ -1,0 +1,24 @@
+[
+  { "op":"replace", 
+"path":"/effects", 
+"value": [ ]
+  },
+  { "op":"add", 
+"path":"/effects/-", 
+"value": [
+    {
+        "effect" : "maxhealthscalingboostfood",
+        "duration" : 158
+    },
+    {
+        "effect" : "nova",
+        "duration" : 158
+    },
+    {
+        "effect" : "burning",
+        "duration" : 5
+    },
+   { "effect" : "carnivorefoodnopoison" }
+    ]
+  }
+]

@@ -1,0 +1,21 @@
+{
+  "itemName" : "boltbulb",
+  "rarity" : "Common",
+  "price" : 120,
+  "category" : "food",
+  "eventCategory" : "eventCrop",
+  "inventoryIcon" : "boltbulb.png",
+  "description" : "Boltbulb! Surprisingly soft.",
+  "shortdescription" : "Boltbulb",
+  "foodValue" : 5,
+  "tooltipKind" : "food",
+  "builder" : "/items/buildscripts/buildfood.lua",
+  "maxStack" : 1,
+  "itemAgingScripts" : ["/scripts/items/rotting.lua"],
+  "rottingMultiplier" : 1.0,
+  "blockingEffects" : [
+    "wellfed"
+  ],
+  "learnBlueprintsOnPickup" : [ "8gbpizzap", "boltos" ],
+  "effects" : [  [ "robofood" ]  ]
+}

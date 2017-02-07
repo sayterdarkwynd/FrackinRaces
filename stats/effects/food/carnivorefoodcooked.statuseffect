@@ -1,9 +1,13 @@
 {
   "name" : "carnivorefoodcooked",
-  "blockingStat" : "poisonStatusImmunity",
 
-  "effectConfig" : {},
-  "defaultDuration" : 30,
+  "effectConfig" : {
+    "healthBonus" : -0.05,
+    "energyBonus" : -0.08,
+    "protectionBonus" : -2  
+  },
+  
+  "defaultDuration" : 60,
 
   "scripts" : [
     "carnivorefoodcooked.lua"
@@ -11,6 +15,6 @@
 
   "animationConfig" : "carnivorefoodcooked.animation",
 
-  "label" : "Food Poisoning",
+  "label" : "Cooked Meat",
   "icon" : "/interface/statuses/foodpoison.png"
 }

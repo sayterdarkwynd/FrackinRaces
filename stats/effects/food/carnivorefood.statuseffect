@@ -2,8 +2,12 @@
   "name" : "carnivorefood",
   "blockingStat" : "poisonStatusImmunity",
 
-  "effectConfig" : {},
-  "defaultDuration" : 30,
+  "effectConfig" : {
+  "healthBonus" : 0.10,
+  "energyBonus" : 0.10,
+  "protectionBonus" : 2
+  },
+  "defaultDuration" : 60,
 
   "scripts" : [
     "carnivorefood.lua"
@@ -11,6 +15,6 @@
 
   "animationConfig" : "carnivorefood.animation",
 
-  "label" : "Food Poisoning",
-  "icon" : "/interface/statuses/foodpoison.png"
+  "label" : "Carnivores Delight",
+  "icon" : "/interface/statuses/foodpoisonfloran.png"
 }

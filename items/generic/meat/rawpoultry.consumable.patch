@@ -1,0 +1,12 @@
+[
+
+  { "op":"replace", 
+"path":"/effects", 
+"value": [ ]
+  },
+  
+  { "op":"add", 
+"path":"/effects/-", 
+"value": [{ "effect" : "carnivorefood" }]
+  }
+]

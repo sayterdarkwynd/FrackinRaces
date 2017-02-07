@@ -17,10 +17,6 @@ function init()
   self.tickTime = 1.0
   self.tickTimer = self.tickTime
   
-  script.setUpdateDelta(5)
-end
-
-function update(dt)
 
 if world.entitySpecies(entity.id()) == "glitch" then
   isGlitchx=1
@@ -29,7 +25,12 @@ else
   isGlitchx=0
   applyEffects()
 end
-	
+
+  script.setUpdateDelta(5)
+end
+
+function update(dt)
+
   self.tickTimer = self.tickTimer - dt
   
   if self.tickTimer <= 0 then
@@ -48,15 +49,19 @@ end
 
 function applyEffects()
   if isGlitchx==1 then
-            status.setPersistentEffects("glitchpower1", {{stat = "protection", amount = self.protectionBonus}})
-            status.setPersistentEffects("glitchpower2", {{stat = "maxHealth", amount = baseValue }})
-            status.setPersistentEffects("glitchpower3", {{stat = "maxEnergy", amount = baseValue2 }})
-            status.setPersistentEffects("glitchpower4", {{stat = "fallDamageMultiplier", amount = baseValue3}})
+            status.setPersistentEffects("glitchpower1", {
+              {stat = "protection", amount = self.protectionBonus},
+              {stat = "maxHealth", amount = baseValue },
+              {stat = "maxEnergy", amount = baseValue2 },
+              {stat = "fallDamageMultiplier", amount = baseValue3}
+            })
             isGlitchx=2
   elseif isGlitchx==0 then
-	    status.setPersistentEffects("noglitch1", {{stat = "protection", amount = self.protectionBonus2}})
-	    status.setPersistentEffects("noglitch2", {{stat = "maxHealth", amount = baseValue4 }})
-            status.setPersistentEffects("noglitch3", {{stat = "maxEnergy", amount = baseValue5 }}) 
+	    status.setPersistentEffects("noglitch1", {
+	        {stat = "protection", amount = self.protectionBonus2},
+	        {stat = "maxHealth", amount = baseValue4 },
+	        {stat = "maxEnergy", amount = baseValue5 }
+	      })
             isGlitchx=0
             isNot=1
   end
@@ -65,10 +70,5 @@ end
 
 function uninit()
             status.clearPersistentEffects("glitchpower1")
-            status.clearPersistentEffects("glitchpower2")
-            status.clearPersistentEffects("glitchpower3")
-            status.clearPersistentEffects("glitchpower4")
             status.clearPersistentEffects("noglitch1")
-            status.clearPersistentEffects("noglitch2")
-            status.clearPersistentEffects("noglitch3")
 end

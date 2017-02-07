@@ -1,0 +1,20 @@
+[
+  { "op":"replace", 
+"path":"/effects", 
+"value": [ ]
+  },
+  { "op":"add", 
+"path":"/effects/-", 
+"value": [
+    {
+        "effect" : "maxhealthscalingboostfood",
+        "duration" : 428
+    },
+    {
+        "effect" : "maxenergyscalingboostfood",
+        "duration" : 428
+    },
+    { "effect" : "carnivorefoodcooked" }
+  ]
+  }
+]

@@ -1,0 +1,19 @@
+{
+  "name" : "carnivorefoodnopoison",
+
+  "effectConfig" : {
+  "healthBonus" : 0.03,
+  "energyBonus" : 0.03,
+  "protectionBonus" : 1
+  },
+  "defaultDuration" : 60,
+
+  "scripts" : [
+    "carnivorefoodnopoison.lua"
+  ],
+
+  "animationConfig" : "carnivorefoodnopoison.animation",
+
+  "label" : "Raw Meat",
+  "icon" : "/interface/statuses/foodpoisonfloran2.png"
+}
