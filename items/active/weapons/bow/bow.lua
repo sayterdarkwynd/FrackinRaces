@@ -47,9 +47,9 @@ function init()
               }) 
               local bounds = mcontroller.boundBox()
             end             
-            if species == "viera" then      --25% more damage with viera
+            if species == "glitch" then      --25% more damage with viera
               self.blockCount = self.blockCount + 1.15
-              self.blockCount = self.blockCount2 + 1.15
+              self.blockCount2 = self.blockCount2 + 1.15
               status.setPersistentEffects("vierabonusdmg", {
               {stat = "powerMultiplier", baseMultiplier = self.blockCount},
               {stat = "maxEnergy", baseMultiplier = self.blockCount2 }

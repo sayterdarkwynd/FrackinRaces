@@ -16,7 +16,7 @@ function init()
     {stat = "shadowResistance", amount = 0},
     {stat = "grit", amount = 0.25},
     {stat = "healthRegen", baseMultiplier = 1.15},
-    {stat = "sandstormImmunity", baseMultiplier = 1aaa}
+    {stat = "sandstormImmunity", baseMultiplier = 1}
   })
 
   script.setUpdateDelta(0)
