@@ -35,29 +35,31 @@ function init()
    local species = world.entitySpecies(activeItem.ownerEntityId())
             if species == "floran" then      --20% more damage with floran
               self.blockCount = self.blockCount + 1.20
-              status.setPersistentEffects("floranbonusdmg", {{stat = "powerMultiplier", baseMultiplier = self.blockCount}})  
+              status.setPersistentEffects("floranbonusdmg", {
+                {stat = "powerMultiplier", baseMultiplier = self.blockCount}
+              })  
               local bounds = mcontroller.boundBox()            
             end   
             if species == "lamia" then      --25% more damage and increased crit rate with lamia     
               self.blockCount = self.blockCount + 1.25
-              self.blockCount2 = self.blockCount2 + 1.15
               status.setPersistentEffects("vierabonusdmg", {
-              {stat = "powerMultiplier", baseMultiplier = self.blockCount},
-              {stat = "maxEnergy", baseMultiplier = self.blockCount }
+                {stat = "powerMultiplier", baseMultiplier = self.blockCount}
               }) 
               local bounds = mcontroller.boundBox()
             end             
-            if species == "glitch" then      --25% more damage with viera
+            if species == "viera" then      --25% more damage with viera
               self.blockCount = self.blockCount + 1.15
               self.blockCount2 = self.blockCount2 + 1.15
               status.setPersistentEffects("vierabonusdmg", {
-              {stat = "powerMultiplier", baseMultiplier = self.blockCount},
-              {stat = "maxEnergy", baseMultiplier = self.blockCount2 }
+                {stat = "powerMultiplier", baseMultiplier = self.blockCount},
+                {stat = "maxEnergy", baseMultiplier = self.blockCount2 }
               })  
             end   
             if species == "sergal" then      --15% more damage with sergal
               self.blockCount = self.blockCount + 1.15
-              status.setPersistentEffects("vierabonusdmg", {{stat = "powerMultiplier", baseMultiplier = self.blockCount}})  
+              status.setPersistentEffects("vierabonusdmg", {
+              {stat = "powerMultiplier", baseMultiplier = self.blockCount}
+              })  
             end             
 --************************************** 
 end
