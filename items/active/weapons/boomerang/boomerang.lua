@@ -67,7 +67,7 @@ if species == "lamia" then
 	  status.setPersistentEffects("bonusdmg2", {
 	    {stat = "powerMultiplier", amount = self.blockCount},
 	    {stat = "maxHealth", baseMultiplier = self.blockCount2 },
-	    {stat = "grit", baseMultiplier = self.blockCount3 
+	    {stat = "grit", baseMultiplier = self.blockCount3}
 	    })  	
 	    local bounds = mcontroller.boundBox()
      end  
