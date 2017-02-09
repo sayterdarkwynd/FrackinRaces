@@ -18,7 +18,7 @@ function init()
     {stat = "shadowResistance", amount = 0}
   })
 
-  script.setUpdateDelta(220)
+  script.setUpdateDelta(10)
 end
 
 function update(dt)

@@ -1,0 +1,15 @@
+[
+
+    { "op": "replace", 
+    "path" : "/charCreationTooltip/description" , 
+    "value" : "Evolved from raw Erchius energy. High energy, resistant to damage but have weak immune systems. Exceptional when underground.
+    
+    ^red;-30% Health, 100% Electric Weakness^reset;
+    ^green;+40% Energy, 25% Physical Resistance, 12% Shadow Resistance^reset;
+    ^green;On Moon-type biomes gain +15% Speed and Jump^reset;
+    ^green;When underground, gain +15% Health and 10% Jump^reset;
+    ^green;When using Wands and Staves gain +30% Damage and +10% Physical Resistance^reset;
+    ^green;Immune: Poison^reset;"
+    }
+
+]

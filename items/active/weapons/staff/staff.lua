@@ -26,6 +26,15 @@ function init()
      self.staffCount2 = 0 
    end  
    local species = world.entitySpecies(activeItem.ownerEntityId())
+            if species == "greckan" then      
+              self.staffCount = self.staffCount + 0.30
+              self.staffCount2 = self.staffCount2 + 0.10
+              status.setPersistentEffects("avianbonusdmg", {
+              {stat = "powerMultiplier", baseMultiplier = 1 + self.staffCount},
+              {stat = "physicalResistance", baseMultiplier = 1 + self.staffCount2}
+              }) 
+              local bounds = mcontroller.boundBox()
+            end     
             if species == "avian" then      
               self.staffCount = self.staffCount + 0.20
               status.setPersistentEffects("avianbonusdmg", {
