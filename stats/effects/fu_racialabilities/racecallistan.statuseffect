@@ -2,7 +2,7 @@
   "name" : "racecallistan",
   "effectConfig" : {
     "healthBonus" : -0.2,
-    "energyBonus" : 0.2
+    "energyBonus" : 0.05
   },
   
   "defaultDuration" : 3,
