@@ -234,17 +234,23 @@ function MeleeCombo:fire()
             status.setPersistentEffects("combobonusdmg", {{stat = "protection", amount = self.meleeCountcombo}})  
           end   
 
-	  if species == "kazdra" then   -- in combos, kazdra shoot fire and stuff
-	    self.meleeCountcombo = self.meleeCountcombo + 0.1
-	    self.meleeCountcombo2 = self.meleeCountcombo2 + 0.07
+	  if species == "kazdra" then   -- in combos, kazdra shoot fire and stuff 	  
+	    self.modifier = status.stat("dragonBonus") + 1
+	    self.meleeCountcombo = 1.1
+	    self.meleeCountcombo2 = 2
+	    self.roll = 6 + self.modifier
+	    sb.logInfo("self.modifier="..self.modifier)
 		  if heldItem then
 		     if root.itemHasTag(heldItem, "broadsword") then 
-			if (randValue < 5) then  -- spawn a projectile
-	                  params = { power = 5, damageKind = "fire" }			
-			  projectileId = world.spawnProjectile("fireswirl",self:firePosition(),activeItem.ownerEntityId(),self:aimVector(),false,params)
-			  --animator.playSound("nightar")
+			if randValue < self.roll then  -- spawn a projectile
+	                  params = { power = (self.meleeCountcombo * 2), damageKind = "fire" }			
+			  projectileId = world.spawnProjectile("fireball",self:firePosition(),activeItem.ownerEntityId(),self:aimVector(),false,params)
 			end		                        
-			status.setPersistentEffects("combobonusdmg", { {stat = "physicalResistance", baseMultiplier = self.meleeCountcombo} }) 				    
+			status.setPersistentEffects("combobonusdmg", { 
+			  {stat = "physicalResistance", baseMultiplier = self.meleeCountcombo},
+			  {stat = "dragonBonus", amount = self.meleeCountcombo2 + 2} 
+			  }) 				
+			  sb.logInfo("self.modifier="..status.stat("dragonBonus"))
 		     end
 		  end
 	  end
