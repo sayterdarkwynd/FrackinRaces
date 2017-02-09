@@ -31,7 +31,7 @@ end
 end
 
 function update(dt)
-  self.foodValue = (status.resource("food") / 6)
+  self.foodValue = (status.resource("food") / 6)/100
   if not self.foodValue then self.foodValue = 0.10 end
   mcontroller.controlModifiers({ speedModifier = 1 + self.foodValue})
 end
