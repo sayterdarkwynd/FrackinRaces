@@ -54,6 +54,19 @@ local heldItem2 = world.entityHandItem(activeItem.ownerEntityId(), "alt")
 	  end
 	end 
 
+	-- Callistan get a bonus with Energy Weapons
+	 if species == "apex" then   
+	  if heldItem then	     
+	     if root.itemHasTag(heldItem, "energy") then 
+		  self.blockCount = 1.2
+		  status.setPersistentEffects("novakidbonusdmg", {
+		    {stat = "powerMultiplier", baseMultiplier = self.blockCount},
+		    {stat = "maxEnergy", baseMultiplier = self.blockCount}
+		  })   
+	     end	     
+	  end
+	end 
+	
 	-- Apex get a bonus with Grenade Launchers and Energy Weapons
 	 if species == "apex" then   
 	  if heldItem then

@@ -1,0 +1,14 @@
+{
+  "name" : "raceapex",
+  "effectConfig" : {
+    "healthBonus" : -0.2,
+    "energyBonus" : 0.2
+  },
+  
+  "defaultDuration" : 3,
+
+  "scripts" : [
+    "raceapex.lua"
+  ]
+
+}
