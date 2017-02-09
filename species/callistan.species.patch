@@ -6,8 +6,9 @@
     
     ^red;-20% Health, 30% Fire Weakness^reset;
     ^green;+20% Energy, 20% Ice, Poison and Shadow Resistance^reset;
-    ^green;Increase movement speed the more fed you are^reset;
+    ^green;Increase movement speed the more fed you are (max +16.6%)^reset;
     ^green;Increased damage with Energy-type firearms^reset;
+    ^green;+25% Energy Regen and Crit Damage when using energy firearms^reset;
     ^green;Immune: Slush, Snow, Jungle, Mud, Web, Sandstorms^reset;"
     }
 
