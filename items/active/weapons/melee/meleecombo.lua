@@ -233,7 +233,22 @@ function MeleeCombo:fire()
             self.meleeCountcombo = self.meleeCountcombo + 3
             status.setPersistentEffects("combobonusdmg", {{stat = "protection", amount = self.meleeCountcombo}})  
           end   
-          
+
+	  if species == "kazdra" then   -- in combos, kazdra shoot fire and stuff
+	    self.meleeCountcombo = self.meleeCountcombo + 0.1
+	    self.meleeCountcombo2 = self.meleeCountcombo2 + 0.07
+		  if heldItem then
+		     if root.itemHasTag(heldItem, "broadsword") then 
+			if (randValue < 5) then  -- spawn a projectile
+	                  params = { power = 5, damageKind = "fire" }			
+			  projectileId = world.spawnProjectile("fireswirl",self:firePosition(),activeItem.ownerEntityId(),self:aimVector(),false,params)
+			  --animator.playSound("nightar")
+			end		                        
+			status.setPersistentEffects("combobonusdmg", { {stat = "physicalResistance", baseMultiplier = self.meleeCountcombo} }) 				    
+		     end
+		  end
+	  end
+	  
 	  if species == "nightar" then   -- in combos, nightar get a bonus to damage and knockback resist with swords
 	    self.meleeCountcombo = self.meleeCountcombo + 0.1
 	    self.meleeCountcombo2 = self.meleeCountcombo2 + 0.07
