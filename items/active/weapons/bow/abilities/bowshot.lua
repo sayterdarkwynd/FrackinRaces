@@ -4,6 +4,8 @@ require "/scripts/vec2.lua"
 BowShot = WeaponAbility:new()
 
 function BowShot:init()
+self.critChance = config.getParameter("critChance", 0)
+self.critBonus = config.getParameter("critBonus", 0)
   self.energyPerShot = self.energyPerShot or 0
 
   self.drawTime = 0
@@ -22,6 +24,13 @@ end
   -- FU Crit Damage Script
 
 function BowShot:setCritDamage(damage)
+	if not self.critChance then 
+		self.critChance = config.getParameter("critChance", 0)
+	end
+	if not self.critBonus then
+		self.critBonus = config.getParameter("critBonus", 0)
+	end
+
      local heldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand())
      local opposedhandHeldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand() == "primary" and "alt" or "primary")  
      local weaponModifier = config.getParameter("critChance",0)
@@ -40,9 +49,6 @@ function BowShot:setCritDamage(damage)
   self.critRoll = math.random(200)
   
   --apply the crit
-  if not self.critChance then
-    self.critChance = 0
-  end
   local crit = self.critRoll <= self.critChance
   damage = crit and (damage*2) + self.critBonus or damage
 

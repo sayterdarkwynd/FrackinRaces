@@ -2,8 +2,8 @@ require "/items/active/weapons/weapon.lua"
 
 function init()
   local bounds = mcontroller.boundBox()
-  self.critChance = config.getParameter("critChance") or 0.25
-  self.critBonus = config.getParameter("critBonus") or 0
+  self.critChance = config.getParameter("critChance",0.25)
+  self.critBonus = config.getParameter("critBonus",0)
   script.setUpdateDelta(10)
 end
 
