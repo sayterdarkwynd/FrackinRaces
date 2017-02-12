@@ -3,6 +3,8 @@ require "/scripts/vec2.lua"
 require "/items/active/weapons/weapon.lua"
 
 function init()
+self.critChance = config.getParameter("critChance", 0)
+self.critBonus = config.getParameter("critBonus", 0)
   animator.setGlobalTag("paletteSwaps", config.getParameter("paletteSwaps", ""))
   animator.setGlobalTag("directives", "")
   animator.setGlobalTag("bladeDirectives", "")

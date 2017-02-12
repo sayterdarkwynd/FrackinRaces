@@ -4,6 +4,8 @@ require "/scripts/status.lua"
 require "/items/active/weapons/weapon.lua"
 
 function init()
+self.critChance = config.getParameter("critChance", 0)
+self.critBonus = config.getParameter("critBonus", 0)
   self.weapon = Weapon:new()
 
   self.weapon:addTransformationGroup("weapon", {0,0}, 0)
