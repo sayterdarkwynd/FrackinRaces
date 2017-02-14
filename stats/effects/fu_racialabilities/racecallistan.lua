@@ -18,22 +18,26 @@ function init()
     {stat = "shadowResistance", amount = 0.2}  
   })
 
-
 if (world.type() == "garden") or (world.type() == "forest") or (world.type() == "arboreal") or (world.type() == "rainforest") then
 	    status.setPersistentEffects("jungleEpic", {
 	      {stat = "powerMultiplier", baseMultiplier = 1.10},
 	      {stat = "maxHealth", baseMultiplier = 1.15}
 	    })
 end  
-  self.foodValue = status.resource("food")
+
   local bounds = mcontroller.boundBox()
   script.setUpdateDelta(10)
 end
 
 function update(dt)
-  self.foodValue = (status.resource("food") / 6)/100
-  if not self.foodValue then self.foodValue = 0.10 end
-  mcontroller.controlModifiers({ speedModifier = 1 + self.foodValue})
+  if status.isResource("food") then
+    self.foodValue = status.resource("food")
+  else
+    self.foodValue = 35
+  end
+  
+  self.foodValue = (self.foodValue / 4.25)/100
+  mcontroller.controlModifiers({ speedModifier = 1 + math.max(0.1, self.foodValue)})
 end
 
 function uninit()
