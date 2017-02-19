@@ -8,5 +8,10 @@
   { "op":"add", 
 "path":"/effects/-", 
 "value": [{ "effect" : "carnivorefood" }]
+  },
+  {
+    "op": "replace",
+    "path": "/foodValue",
+    "value": 20
   }
 ]
