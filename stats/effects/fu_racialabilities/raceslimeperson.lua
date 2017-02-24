@@ -45,9 +45,6 @@ status.setPersistentEffects("glitchpower", {{stat = "physicalResistance", amount
 end
 
 function update(dt)
-	mcontroller.controlModifiers({
-			speedModifier = 0.85
-		})
 
 local mouthPosition = vec2.add(mcontroller.position(), status.statusProperty("mouthPosition"))
 local mouthful = world.liquidAt(mouthposition)
