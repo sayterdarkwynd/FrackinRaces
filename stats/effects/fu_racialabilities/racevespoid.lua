@@ -1,10 +1,8 @@
 function init()
   baseValue = config.getParameter("healthBonus",0)*(status.resourceMax("health"))
   baseValue2 = config.getParameter("energyBonus",0)*(status.resourceMax("energy"))
-  baseValue3 = config.getParameter("foodBonus",0)*(status.resourceMax("food"))
   
   effect.addStatModifierGroup({
-    {stat = "maxFood", amount = baseValue3 },
     {stat = "maxHealth", amount = baseValue },
     {stat = "maxEnergy", amount = baseValue2 },
     {stat = "beestingImmunity", amount = 1},

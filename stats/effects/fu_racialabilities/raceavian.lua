@@ -6,7 +6,7 @@ effect.addStatModifierGroup({
     {stat = "maxHealth", amount = baseValue },
     {stat = "maxEnergy", amount = baseValue2 },
     {stat = "powerMultiplier", baseMultiplier = self.powerModifier},
-    {stat = "fallDamageMultiplier", baseMultiplier = 0.35},
+    {stat = "fallDamageMultiplier", amount = 0.65},
     {stat = "physicalResistance", amount = 0},
     {stat = "fireResistance", amount = 0},
     {stat = "iceResistance", amount = -0.75},

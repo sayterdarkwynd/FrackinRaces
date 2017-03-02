@@ -12,6 +12,7 @@ function getLight()
   lightLevel = math.floor(lightLevel * 100)
   return lightLevel
 end
+
 function daytimeCheck()
 	return world.timeOfDay() < 0.5 -- true if daytime
 end
@@ -31,28 +32,28 @@ function update(dt)
         if not underground then
 		if lightLevel > 85 then
 		  status.setPersistentEffects("feneroxEffects", {
-		  {stat = "maxHealth", baseMultiplier = 0.75},
-		  {stat = "physicalResistance", amount = -0.20},
+		  {stat = "maxHealth", baseMultiplier = 0.80},
+		  {stat = "physicalResistance", amount = -0.15},
 		  {stat = "powerMultiplier", baseMultiplier = 0.75}
 		  })		
 		  mcontroller.controlModifiers({ speedModifier = 0.90 })  
 		elseif lightLevel > 75 then
 		  status.setPersistentEffects("feneroxEffects", {
-		  {stat = "maxHealth", baseMultiplier = 0.80},
-		  {stat = "physicalResistance", amount = -0.15},
+		  {stat = "maxHealth", baseMultiplier = 0.85},
+		  {stat = "physicalResistance", amount = -0.12},
 		  {stat = "powerMultiplier", baseMultiplier = 0.85}
 		  })		
 		  mcontroller.controlModifiers({ speedModifier = 0.95 }) 
 		elseif lightLevel > 65 then
 		  status.setPersistentEffects("feneroxEffects", {
-		  {stat = "maxHealth", baseMultiplier = 0.85},
-		  {stat = "physicalResistance", amount = -0.1},
+		  {stat = "maxHealth", baseMultiplier = 0.90},
+		  {stat = "physicalResistance", amount = -0.09},
 		  {stat = "powerMultiplier", baseMultiplier = 0.90}
 		  })		
 		  mcontroller.controlModifiers({ speedModifier = 0.97 }) 
 		elseif lightLevel > 55 then
 		  status.setPersistentEffects("feneroxEffects", {
-		  {stat = "maxHealth", baseMultiplier = 0.90},
+		  {stat = "maxHealth", baseMultiplier = 0.95},
 		  {stat = "physicalResistance", amount = -0.05},
 		  {stat = "powerMultiplier", baseMultiplier = 0.95}
 		  })
