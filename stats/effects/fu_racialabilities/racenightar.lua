@@ -5,7 +5,7 @@ function init()
   self.gritBoost = config.getParameter("gritBonus",0)
   
   effect.addStatModifierGroup({
-    {stat = "grit", baseMultiplier = self.gritBoost },
+    {stat = "grit", amount = self.gritBoost },
     {stat = "biooozeImmunity", amount = 1},
     {stat = "physicalResistance", amount = 0},
     {stat = "fireResistance", amount = 0},

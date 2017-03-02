@@ -6,7 +6,7 @@ function init()
   effect.addStatModifierGroup({
     {stat = "maxHealth", amount = baseValue },
     {stat = "maxEnergy", amount = baseValue2 },
-    {stat = "grit", baseMultiplier = self.gritBoost },
+    {stat = "grit", amount = self.gritBoost },
     {stat = "biomeradiationImmunity", amount = 1},
     {stat = "ffextremeradiationImmunity", amount = 1},
     {stat = "radiationburnImmunity", amount = 1},
