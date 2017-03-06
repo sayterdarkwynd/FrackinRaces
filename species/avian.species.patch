@@ -10,7 +10,7 @@
     ^green;Gain air mobility and additional Slowed Fall in light to moderate wind conditions^reset;
     ^green;Channel energy from wands into an offhand dagger, producing cosmic blasts.^reset;
     ^orange;+5.5% Damage^reset;^white;(increases as your HP depletes)^reset;
-    ^yellow;+20% Wand/Staff damage, and gain additional Energy. Also gain Crit Damage with one-handed weapons^reset;"
+    ^yellow;+20% Wand/Staff damage, and gain additional Energy. Also gain Crit Damage with one-handed weapons when using Wand+Weapon^reset;"
     }
 
 ]

@@ -151,10 +151,10 @@ function MeleeSlash:fire()
 		      attackSpeedUp = self.foodValue/140 -- speed increase is half of food value (50% max reduction)
 		      status.setPersistentEffects("combobonusdmg", {{stat = "critChance", amount = critValueFloran}}) 		      
 		      -- projectile chance
-		      if randValue < 9 then
-			params = { power = 10,damageKind = "poison" }		      
-			projectileId = world.spawnProjectile("furazorleafinvis",self:firePosition(),activeItem.ownerEntityId(),self:aimVector(),false,params)
-		      end			      
+		      --if randValue < 9 then
+	              --params = { power = 10,damageKind = "poison" }		      
+		      --projectileId = world.spawnProjectile("furazorleafinvis",self:firePosition(),activeItem.ownerEntityId(),self:aimVector(),false,params)
+		      --end			      
 		    end
 	     end  
 	   end
