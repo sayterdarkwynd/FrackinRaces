@@ -210,7 +210,7 @@ end
  if species == "gyrusen" then   --gyrusens are brutal with axes and hammers
   if heldItem then
      if root.itemHasTag(heldItem, "axe") or root.itemHasTag(heldItem, "hammer") then 
-	self.meleeCount = 0.30
+	self.meleeCount = 0.20
 	status.setPersistentEffects("weaponbonusdmg", {{stat = "powerMultiplier", amount = self.meleeCount}})   
      end
   end
@@ -219,7 +219,7 @@ end
  if species == "kazdra" then   --kazdra are brutal with broadswords
   if heldItem then
      if root.itemHasTag(heldItem, "broadsword") then 
-	self.meleeCount = 0.30
+	self.meleeCount = 0.20
 	status.setPersistentEffects("weaponbonusdmg", {{stat = "powerMultiplier", amount = self.meleeCount}})     
      end
   end

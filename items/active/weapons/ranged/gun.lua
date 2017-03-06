@@ -60,7 +60,7 @@ local heldItem2 = world.entityHandItem(activeItem.ownerEntityId(), "alt")
 	 if species == "callistan" then   
 	  if heldItem then	     
 	     if root.itemHasTag(heldItem, "energy") then 
-		  self.blockCount = 1.2
+		  self.blockCount = 1.15
 		  self.blockCount2 = 1.25
 		  status.setPersistentEffects("novakidbonusdmg", {
 		    {stat = "powerMultiplier", baseMultiplier = self.blockCount},
@@ -80,7 +80,6 @@ local heldItem2 = world.entityHandItem(activeItem.ownerEntityId(), "alt")
 		  status.setPersistentEffects("novakidbonusdmg", {{stat = "critBonus", amount = self.blockCount}})   
 	     end
 	     if root.itemHasTag(heldItem, "rocketlauncher") then 
-		  self.blockCount = 15
 		  status.setPersistentEffects("novakidbonusdmg", {{stat = "critChance", amount = 5}})   
 	     end	     
 	     if root.itemHasTag(heldItem, "energy") then 
@@ -109,7 +108,7 @@ local heldItem2 = world.entityHandItem(activeItem.ownerEntityId(), "alt")
   local heldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand())
   if heldItem then
      if root.itemHasTag(heldItem, "machinepistol") or root.itemHasTag(heldItem, "sniperrifle") or root.itemHasTag(heldItem, "rifle") then 
-	  self.blockCount = self.blockCount + 0.25
+	  self.blockCount = self.blockCount + 0.15
 	  status.setPersistentEffects("novakidbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}})  
      end
   end
@@ -119,7 +118,7 @@ end
   local heldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand())
   if heldItem then
      if root.itemHasTag(heldItem, "rocketlauncher") or root.itemHasTag(heldItem, "grenadelauncher") then 
-	  self.blockCount = self.blockCount + 0.20
+	  self.blockCount = self.blockCount + 0.15
 	  status.setPersistentEffects("novakidbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}})  
      end
   end
