@@ -9,13 +9,13 @@ function init()
     {stat = "maxHealth", amount = baseValue },
     {stat = "maxEnergy", amount = baseValue2 },
     {stat = "erchiusImmunity", amount = 1},
-    {stat = "physicalResistance", amount = 0.25},
+    {stat = "physicalResistance", amount = 0.15},
     {stat = "fireResistance", amount = 0},
     {stat = "iceResistance", amount = 0},
-    {stat = "electricResistance", amount = -1},
-    {stat = "poisonResistance", amount = 1},
+    {stat = "electricResistance", amount = -0.5},
+    {stat = "poisonResistance", amount = 0.2},
     {stat = "poisonStatusImmunity", amount = 1},
-    {stat = "shadowResistance", amount = 0.15}
+    {stat = "shadowResistance", amount = 0.12}
   })
 
         if underground then 

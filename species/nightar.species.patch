@@ -9,7 +9,7 @@
     "value" : "An offshoot of humanity that loves the dark. They are exceptional combatants and have honed the use of swords and shields into an artform. 
     
     ^red;Lowered stats when in sunlight.^reset;
-    ^green;50% Shadow Resist. +10% Knockback Resist^reset;
+    ^green;30% Shadow Resist. +10% Knockback Resist^reset;
     ^green;Broadsword: +18% Damage, +25% Knockback Resist^reset;
     ^green;Shortsword(single):+5% Damage, (double): +12% damage, (sword + shield): +8% Damage, +12% Knockback Resist^reset;
     ^green;Combo attacks with shortswords gain +10% Knockback Resist^reset;

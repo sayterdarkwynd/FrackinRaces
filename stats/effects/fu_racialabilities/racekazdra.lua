@@ -9,10 +9,10 @@ function init()
     {stat = "maxEnergy", amount = baseValue2 },
     {stat = "foodDelta", baseMultiplier = 0.6},
     {stat = "protection", amount = 2 },
-    {stat = "physicalResistance", amount = 0.25},
-    {stat = "fireResistance", amount = 1},
+    {stat = "physicalResistance", amount = 0.15},
+    {stat = "fireResistance", amount = 0.5},
     {stat = "fireStatusImmunity", amount = 1},
-    {stat = "iceResistance", amount = -1},
+    {stat = "iceResistance", amount = -0.5},
     {stat = "electricResistance", amount = 0},
     {stat = "poisonResistance", amount = 0},
     {stat = "shadowResistance", amount = 0}  

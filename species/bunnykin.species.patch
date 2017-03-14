@@ -7,7 +7,7 @@
     "path" : "/charCreationTooltip/description" , 
     "value" : "Hoppy space explorers. 
     
-    ^red;-20% Health, -5% Energy, 80% Weakness: Fire ^reset; 
+    ^red;-20% Health, -5% Energy, 50% Weakness: Fire ^reset; 
     ^green;+18% speed and +20% jump^reset; 
     ^green;Gain additional vitality and protection in jungles^reset; 
     ^green;On Garden, Forest, Tundra and Snow biomes, gain + 10% Health and Energy^reset;

@@ -7,7 +7,7 @@
     "path" : "/charCreationTooltip/description" , 
     "value" : "Insectoid bee-people.
     
-    ^red;75% Weakness: Fire, %50 Weakness: Ice^reset;
+    ^red;50% Weakness: Fire, %30 Weakness: Ice^reset;
     ^green;+15% Health, 50% Poison Resist^reset;
     ^green;-20% Fall Damage, +10% Speed^reset;
     ^green;Increased air agility, poor movement in liquid^reset;

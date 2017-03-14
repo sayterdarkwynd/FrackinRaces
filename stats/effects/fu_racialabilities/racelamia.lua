@@ -10,7 +10,7 @@ function init()
     {stat = "jungleslowImmunity", amount = 1 },
     {stat = "physicalResistance", amount = 0.1},
     {stat = "fireResistance", amount = 0},
-    {stat = "iceResistance", amount = -1},
+    {stat = "iceResistance", amount = -0.5},
     {stat = "electricResistance", amount = 0},
     {stat = "poisonResistance", amount = 0},
     {stat = "shadowResistance", amount = 0.25}

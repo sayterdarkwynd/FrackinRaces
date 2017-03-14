@@ -4,10 +4,10 @@
     "path" : "/charCreationTooltip/description" , 
     "value" : "Hardy, strong automatons. Their creation is lost to history. This suits them just fine, as they prefer a primitive state of being. They run on their own energy source, which means they need to ingest little food, and are quite sturdy so long as they aren't soaking wet.
     
-    ^red;-1s energy regen^reset;
-    ^red;Weakness: Electric, Weakened when submerged, -Energy Regen^reset;
+    ^red;-Energy Regen, Weakened when submerged^reset;
+    ^red;50% Weakness: Electric, 25% Weakness: Ice^reset;
     ^green;+5% Energy, Low Hunger Rate^reset;
-    ^green;+14% HP, +15% Physical Resistance^reset;
+    ^green;+14% HP, +15% Physical Resist, +20% Poison Resist^reset;
     ^green;Heal and regain power within Oil^reset; 
     ^green;Shields give +1 Protection. Perfect Blocks increase damage (stacks)^reset;
     ^green;Consume food to increase Crit chance (Energy/16) with both Hammers and Axes.^reset;

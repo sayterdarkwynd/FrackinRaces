@@ -13,7 +13,7 @@ function init()
     {stat = "physicalResistance", amount = 0.1},
     {stat = "fireResistance", amount = 0},
     {stat = "iceResistance", amount = 0},
-    {stat = "electricResistance", amount = -1},
+    {stat = "electricResistance", amount = -0.5},
     {stat = "poisonResistance", amount = 0},
     {stat = "shadowResistance", amount = 0} 
   })

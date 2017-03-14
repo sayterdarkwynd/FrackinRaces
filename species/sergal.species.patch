@@ -7,7 +7,7 @@
     "path" : "/charCreationTooltip/description" , 
     "value" : "Large, swift hunter-gatherers.
     
-    ^red;-20% Energy, 100% Weakness : Fire, 65% Weakness: Shadow^reset;
+    ^red;-20% Energy, 50% Weakness : Fire, 35% Weakness: Shadow^reset;
     ^green;+20% Poison Resist, 10% Physical Resist^reset;
     ^green;6% Jump, +50% Knockback Resist^reset;
     ^green;15% Bow damage^reset;

@@ -7,7 +7,7 @@
     "path" : "/charCreationTooltip/description" , 
     "value" : "Strange near-magical constructs given sentience.
     
-    ^red;-10% Health, 90% Weakness: Electric^reset;
+    ^red;-10% Health, 50% Weakness: Electric^reset;
     ^green;+5% Speed, +200 Breath^reset;
     ^green;Glow in the Dark^reset;
     ^green;+30% Damage, +15% Energy when using Staves/Wands^reset;

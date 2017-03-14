@@ -9,8 +9,8 @@ function init()
     {stat = "honeyslowImmunity", amount = 1},
     {stat = "fallDamageMultiplier", effectiveMultiplier = 0.20},
     {stat = "physicalResistance", amount = 0},
-    {stat = "fireResistance", amount = -0.75},
-    {stat = "iceResistance", amount = -0.5},
+    {stat = "fireResistance", amount = -0.5},
+    {stat = "iceResistance", amount = -0.3},
     {stat = "electricResistance", amount = 0},
     {stat = "poisonResistance", amount = 0.5},
     {stat = "shadowResistance", amount = 0}
