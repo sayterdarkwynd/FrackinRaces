@@ -19,7 +19,7 @@ self.critBonus = config.getParameter("critBonus", 0)
   local weaponModifier = config.getParameter("critChance",0)  
   
   -- bonus add for novakids with pistols when sped up, specifically to energy and damage equations at end of file so that they still damage and consume energy at high speed
-  self.energyMax = 1
+  self.energyMax = 0.5
 -- ** END FR ADDITIONS
 
   self.weapon:setStance(self.stances.idle)
@@ -121,7 +121,7 @@ end
 function GunFire:update(dt, fireMode, shiftHeld)
   WeaponAbility.update(self, dt, fireMode, shiftHeld)
   self.cooldownTimer = math.max(0, self.cooldownTimer - self.dt )
-  if not self.energyMax then self.energyMax = 1 end
+  if not self.energyMax then self.energyMax = 0.5 end
   self.cooldownTimer = self.cooldownTimer * self.energyMax -- FR
   if animator.animationState("firing") ~= "fire" then
     animator.setLightActive("muzzleFlash", false)
