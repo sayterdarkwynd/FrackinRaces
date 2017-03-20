@@ -10,7 +10,6 @@ function init()
     {stat = "biomeradiationImmunity", amount = 1},
     {stat = "ffextremeradiationImmunity", amount = 1},
     {stat = "radiationburnImmunity", amount = 1},
-    {stat = "fireStatusImmunity", amount = 1},
     {stat = "physicalResistance", amount = -0.1},
     {stat = "fireResistance", amount = 0.25},
     {stat = "iceResistance", amount = -0.25},
