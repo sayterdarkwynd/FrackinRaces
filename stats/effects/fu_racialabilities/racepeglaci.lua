@@ -6,7 +6,6 @@ function init()
     {stat = "maxHealth", amount = baseValue },
     {stat = "maxEnergy", amount = baseValue2 },
     {stat = "liquidnitrogenImmunity", amount = 1},
-    {stat = "biomecoldImmunity", amount = 1},
     {stat = "iceslipImmunity", amount = 1},
     {stat = "iceStatusImmunity", amount = 1},
     {stat = "physicalResistance", amount = 0},
