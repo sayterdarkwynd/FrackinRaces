@@ -15,6 +15,6 @@
 
   "animationConfig" : "carnivorefood.animation",
 
-  "label" : "Carnivores Delight",
+  "label" : "Carnivore's Delight",
   "icon" : "/interface/statuses/foodpoisonfloran.png"
 }

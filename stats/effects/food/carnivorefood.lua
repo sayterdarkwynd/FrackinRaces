@@ -32,17 +32,17 @@ end
     self.tickTimer = self.tickTime
     
     if isNot >= 1 then
-    status.applySelfDamageRequest({
-        damageType = "IgnoresDef",
-        damage = math.floor(status.resourceMax("health") * self.tickDamagePercentage) + 1,
-        damageSourceKind = "poison",
-        sourceEntityId = entity.id()
-      })
-	  mcontroller.controlModifiers({
-	      airJumpModifier = 0.08,
-	      speedModifier = 0.08
-	    })      
-      effect.setParentDirectives("fade=806e4f="..self.tickTimer * 0.4)
+	    status.applySelfDamageRequest({
+		damageType = "IgnoresDef",
+		damage = math.floor(status.resourceMax("health") * self.tickDamagePercentage) + 1,
+		damageSourceKind = "poison",
+		sourceEntityId = entity.id()
+	      })
+	      mcontroller.controlModifiers({
+	        airJumpModifier = 0.08,
+	        speedModifier = 0.08
+	      })      
+              effect.setParentDirectives("fade=806e4f="..self.tickTimer * 0.4)
     end
     
   end
