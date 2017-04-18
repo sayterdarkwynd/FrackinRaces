@@ -107,7 +107,7 @@ function AxeCleave:fire()
 
 	if species == "glitch" then  --glitch consume energy when wielding axes and hammers. They get increased critChance as a result
 	  if not self.critValueGlitch then
-	    self.critValueGlitch = ( math.ceil(self.energyValue/8) ) 
+	    self.critValueGlitch = ( math.ceil(self.energyValue/16) ) 
 	  end  
 	  if self.energyValue >= 25 then
 	    if status.isResource("food") then

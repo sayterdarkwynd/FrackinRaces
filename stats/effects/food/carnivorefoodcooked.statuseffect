@@ -2,8 +2,8 @@
   "name" : "carnivorefoodcooked",
 
   "effectConfig" : {
-    "healthBonus" : -0.05,
-    "energyBonus" : -0.08,
+    "healthBonus" : -0.15,
+    "energyBonus" : -0.15,
     "protectionBonus" : -2  
   },
   
@@ -15,6 +15,6 @@
 
   "animationConfig" : "carnivorefoodcooked.animation",
 
-  "label" : "Cooked Meat",
+  "label" : "Cooked Meat - Will make carnivores ill.",
   "icon" : "/interface/statuses/foodpoison.png"
 }

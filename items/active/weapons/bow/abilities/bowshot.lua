@@ -37,9 +37,9 @@ function BowShot:setCritDamage(damage)
      
   if heldItem then
       if root.itemHasTag(heldItem, "bow") then
-        self.critChance = 9 + weaponModifier
+        self.critChance = 0.25 + weaponModifier
       elseif root.itemHasTag(heldItem, "crossbow") then
-        self.critChance = 9 + weaponModifier
+        self.critChance = 0.25 + weaponModifier
       end
   end
 
@@ -131,8 +131,8 @@ function BowShot:fire()
 	  end
          end
             if species == "lamia" then      -- lamia get increased crit chance with high energy
-	     local randValueCritBonus = math.random(16)
-	     local critValueLamia = ( randValueCritBonus + math.ceil(self.energyValue/10) ) 
+	     local randValueCritBonus = math.random(8)
+	     local critValueLamia = ( randValueCritBonus + math.ceil(self.energyValue/20) ) 
 		    if self.energyValue >= (status.stat("maxEnergy")*0.5) then   -- with high Energy reserve, lamia get increased Bow crit chance
 		      status.modifyResource("energy", (status.resource("energy") * -0.01) )  -- consume energy
 		      status.setPersistentEffects("weaponbonusdmgbow", {{stat = "critChance", amount = critValueLamia}})  

@@ -7,13 +7,12 @@
     ^red;-10% HP, Basic attacks consume food^reset;
     ^red;Lose 10% Health and 30% Energy at night^reset;
     ^red;Weakness: Fire^reset;
-    ^green;+15% Energy, +25% Poison Resist, 25% Ice Resist^reset;
+    ^green;+15% Energy, +20% Poison Resist^reset;
     ^green;In forest-like biomes gain additional health and energy^reset; 
     ^green;Regenerate health and food during daylight hours. If Health and Food are full, gain energy regen^reset;
     ^green;Damage increases the hungrier you get. When well fed, your Energy increases^reset;
-    ^green;Bows +20% dmg, and give you a 15% speed boost^reset;
+    ^green;Bows +15% dmg, and give you a 15% speed boost^reset;
     ^green;+2 protection with Spear-Hold. When fed, spears gain Attack Speed and Crit Chance^reset;
-    ^green;+8% chance of Poison Attack with spears when well fed^reset;
     ^green;Shock Immunity^reset;"
     }
 

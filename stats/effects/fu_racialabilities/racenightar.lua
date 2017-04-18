@@ -12,7 +12,7 @@ function init()
     {stat = "iceResistance", amount = 0},
     {stat = "electricResistance", amount = 0},
     {stat = "poisonResistance", amount = 0},
-    {stat = "shadowResistance", amount = 0.50}
+    {stat = "shadowResistance", amount = 0.30}
   })
   
   self.movementParams = mcontroller.baseParameters() 

@@ -5,10 +5,7 @@
   "healthBonus" : 0.07,
   "energyBonus" : 0.10,
   "protectionBonus" : 3,
-  "healthPenalty" : -0.10,
-  "energyPenalty" : -0.20,
-  "protectionPenalty" : -3,
-  "fallBonus" : -0.15
+  "fallBonus" : 0.5
   },
   "defaultDuration" : 60,
 

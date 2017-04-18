@@ -7,8 +7,8 @@
     "path" : "/charCreationTooltip/description" , 
     "value" : "Near-sentient light warframe droids.
     ^red;-25% Health, -70% Weakness: Electric^reset;
-    ^green;+15% Energy, +25% Damage, +80% Radiation Resist, +80% Poison Resist, +10% Speed^reset;
+    ^green;+15% Energy, +25% Damage, +60% Radiation Resist, +80% Poison Resist, +10% Speed^reset;
     ^green;Increased Crit Chance with Broadswords and Shortswords^reset;
-    ^green;Immunities: All Radiation, Poison, Breath^reset;"
+    ^green;Immunities: Poison, Breath, Rad Burn^reset;"
     }
 ]

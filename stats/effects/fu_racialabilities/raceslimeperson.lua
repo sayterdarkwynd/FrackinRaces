@@ -12,7 +12,7 @@ function init()
     {stat = "slimeImmunity", amount = 1 },
     {stat = "slimestickImmunity", amount = 1 },
     {stat = "webstickImmunity", amount = 1 },
-    {stat = "fallDamageMultiplier", amount = 0.85},
+    {stat = "fallDamageMultiplier", baseMultiplier = 0.85},
     {stat = "maxHealth", amount = baseValue },
     {stat = "maxEnergy", amount = baseValue2 },
     {stat = "grit", amount = self.gritBoost },

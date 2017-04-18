@@ -15,6 +15,6 @@
 
   "animationConfig" : "carnivorefood.animation",
 
-  "label" : "Carnivores Delight",
+  "label" : "Carnivore Food - Meat eaters get a buff. Omnivores and Herbivores get sick.",
   "icon" : "/interface/statuses/foodpoisonfloran.png"
 }

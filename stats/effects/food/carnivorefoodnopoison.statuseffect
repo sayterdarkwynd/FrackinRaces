@@ -2,8 +2,8 @@
   "name" : "carnivorefoodnopoison",
 
   "effectConfig" : {
-  "healthBonus" : 0.03,
-  "energyBonus" : 0.03,
+  "healthBonus" : 0.05,
+  "energyBonus" : 0.05,
   "protectionBonus" : 1
   },
   "defaultDuration" : 60,
@@ -14,6 +14,6 @@
 
   "animationConfig" : "carnivorefoodnopoison.animation",
 
-  "label" : "Raw Meat",
+  "label" : "Tasty Meat - Carnivores won't get sick.",
   "icon" : "/interface/statuses/foodpoisonfloran2.png"
 }

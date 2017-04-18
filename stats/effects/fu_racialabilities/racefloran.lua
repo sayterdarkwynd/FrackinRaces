@@ -4,10 +4,10 @@ function init()
     {stat = "maxFood", amount = 30 },
     {stat = "electricStatusImmunity", amount = 1},
     {stat = "physicalResistance", amount = 0},
-    {stat = "fireResistance", amount = -1},
+    {stat = "fireResistance", amount = -0.5},
     {stat = "iceResistance", amount = 0},
     {stat = "electricResistance", amount = 0},
-    {stat = "poisonResistance", amount = 0.25},
+    {stat = "poisonResistance", amount = 0.2},
     {stat = "shadowResistance", amount = 0} 
   })
 

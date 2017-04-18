@@ -219,11 +219,11 @@ function MeleeCombo:fire()
 	 if species == "droden" then   -- in combos, droden get increased critChance with swords
 	  if heldItem then
 	     if root.itemHasTag(heldItem, "broadsword") then 
-		  self.meleeCountcombo = self.meleeCountcombo + 8
+		  self.meleeCountcombo = self.meleeCountcombo + 3
 		  status.setPersistentEffects("combobonusdmg", {{stat = "critChance", amount = self.meleeCountcombo}}) 
 	     end	  
 	     if root.itemHasTag(heldItem, "shortsword") then 
-		  self.meleeCountcombo = self.meleeCountcombo + 4
+		  self.meleeCountcombo = self.meleeCountcombo + 1
 		  status.setPersistentEffects("combobonusdmg", {{stat = "critChance", amount = self.meleeCountcombo}})  
 	     end
 	  end

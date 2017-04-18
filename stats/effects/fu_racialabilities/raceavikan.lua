@@ -15,8 +15,7 @@ function init()
     {stat = "poisonResistance", amount = 0},
     {stat = "shadowResistance", amount = 0},
     {stat = "grit", amount = 0.25},
-    {stat = "healthRegen", baseMultiplier = 1.15},
-    {stat = "sandstormImmunity", baseMultiplier = 1}
+    {stat = "sandstormImmunity", amount = 1}
   })
 
   script.setUpdateDelta(0)
@@ -24,7 +23,8 @@ function init()
 	if (world.type() == "desert") or (world.type() == "desertwastes") or (world.type() == "desertwastesdark") then
 		    status.setPersistentEffects("jungleEpic", {
 		      {stat = "powerMultiplier", baseMultiplier = 1.10},
-		      {stat = "maxHealth", baseMultiplier = 1.15}
+		      {stat = "maxHealth", baseMultiplier = 1.15},
+		      {stat = "healthRegen", amount = 0.02}
 		    })
 	end  
 	if (world.type() == "snow") or (world.type() == "tundra") or (world.type() == "arctic") or (world.type() == "nitrogensea") or (world.type() == "icemoon") or (world.type() == "frozenvolcanic") or (world.type() == "icewastes") then

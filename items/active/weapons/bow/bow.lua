@@ -35,21 +35,21 @@ self.critBonus = config.getParameter("critBonus", 0)
 	end
    self.energyValue = status.resource("energy")  --check our energy level
    local species = world.entitySpecies(activeItem.ownerEntityId())
-            if species == "floran" then      --20% more damage with floran
-              self.blockCount = self.blockCount + 1.20
+            if species == "floran" then      --15% more damage with floran
+              self.blockCount = self.blockCount + 1.15
               status.setPersistentEffects("floranbonusdmg", {
                 {stat = "powerMultiplier", baseMultiplier = self.blockCount}
               })  
               local bounds = mcontroller.boundBox()            
             end   
-            if species == "lamia" then      --25% more damage and increased crit rate with lamia     
+            if species == "lamia" then      --15% more damage and increased crit rate with lamia     
               self.blockCount = self.blockCount + 1.25
               status.setPersistentEffects("vierabonusdmg", {
                 {stat = "powerMultiplier", baseMultiplier = self.blockCount}
               }) 
               local bounds = mcontroller.boundBox()
             end             
-            if species == "viera" then      --25% more damage with viera
+            if species == "viera" then      --15% more damage with viera
               self.blockCount = self.blockCount + 1.15
               self.blockCount2 = self.blockCount2 + 1.15
               status.setPersistentEffects("vierabonusdmg", {

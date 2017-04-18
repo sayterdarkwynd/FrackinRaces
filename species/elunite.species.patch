@@ -7,8 +7,8 @@
     "path" : "/charCreationTooltip/description" , 
     "value" : "Super-awesome digital beings with some amazingly cool niche gear.
     
-    ^red;-15% HP, Weakness: Shadow, reduced mobility in liquids^reset;
-    ^green;+15% Energy, +5% Jump, +4% Speed^reset;
+    ^red;-15% HP, 50% Weakness: Shadow, reduced mobility in liquids^reset;
+    ^green;+15% Energy, +5% Jump, +4% Speed, +40 Electric Resist^reset;
     ^green;+1 Power Matter Manipulator^reset;
     ^green;Immunities: Electrified^reset;
     ^green;+12.5% Damage with Chakrams/Boomerangs (per hand)^reset;
