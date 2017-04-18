@@ -3,8 +3,8 @@
   "blockingStat" : "poisonStatusImmunity",
 
   "effectConfig" : {
-  "healthBonus" : 0.10,
-  "energyBonus" : 0.10,
+  "healthBonus" : 1.10,
+  "energyBonus" : 1.10,
   "protectionBonus" : 2
   },
   "defaultDuration" : 60,

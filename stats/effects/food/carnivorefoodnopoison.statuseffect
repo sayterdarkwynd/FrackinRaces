@@ -2,8 +2,8 @@
   "name" : "carnivorefoodnopoison",
 
   "effectConfig" : {
-  "healthBonus" : 0.03,
-  "energyBonus" : 0.03,
+  "healthBonus" : 1.03,
+  "energyBonus" : 1.03,
   "protectionBonus" : 1
   },
   "defaultDuration" : 60,

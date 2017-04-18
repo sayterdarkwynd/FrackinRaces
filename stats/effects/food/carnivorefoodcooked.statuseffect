@@ -2,8 +2,8 @@
   "name" : "carnivorefoodcooked",
 
   "effectConfig" : {
-    "healthBonus" : -0.05,
-    "energyBonus" : -0.08,
+    "healthBonus" : 0.9,
+    "energyBonus" : 0.85,
     "protectionBonus" : -2  
   },
   
