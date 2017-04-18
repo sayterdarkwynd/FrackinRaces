@@ -3,20 +3,19 @@ function init()
   baseValue = config.getParameter("healthBonus",0)*(status.resourceMax("health"))
   baseValue2 = config.getParameter("energyBonus",0)*(status.resourceMax("energy"))
   baseValue3 = config.getParameter("fallBonus",0)*(status.stat("fallDamageMultiplier"))
-  self.tickDamagePercentage = 0.010
-  self.tickTime = 1.0
+  self.tickDamagePercentage = 0.01
+  self.tickTime = 2
   self.tickTimer = self.tickTime
   
- if not (world.entitySpecies(entity.id()) == "glitch") or (world.entitySpecies(entity.id()) == "trink") or (world.entitySpecies(entity.id()) == "droden") then
-   applyEffects()
- end
- 
+  if not (world.entitySpecies(entity.id()) == "glitch") or (world.entitySpecies(entity.id()) == "trink") or (world.entitySpecies(entity.id()) == "droden") then
+    applyEffects()
+  end
   script.setUpdateDelta(5)
 end
 
 function update(dt)
-  self.tickTimer = self.tickTimer - dt
-  if not (world.entitySpecies(entity.id()) == "glitch") or (world.entitySpecies(entity.id()) == "trink") or (world.entitySpecies(entity.id()) == "droden") and (self.tickTimer <= 0) then
+  if not (world.entitySpecies(entity.id()) == "glitch") or (world.entitySpecies(entity.id()) == "trink") or (world.entitySpecies(entity.id()) == "droden") then
+    if (self.tickTimer <= 0) then
       self.tickTimer = self.tickTime
       status.applySelfDamageRequest({
         damageType = "IgnoresDef",
@@ -25,8 +24,9 @@ function update(dt)
         sourceEntityId = entity.id()
       })
       effect.setParentDirectives("fade=806e4f="..self.tickTimer * 0.4) 
+    end
   end
-
+  self.tickTimer = self.tickTimer - dt
 end
 
 function applyEffects()

@@ -19,8 +19,8 @@ end
 function applyEffects()
     status.setPersistentEffects("floranpower1", {
       {stat = "protection", amount = self.protectionBonus},
-      {stat = "maxHealth", baseMultiplier = baseValue },
-      {stat = "maxEnergy", baseMultiplier = baseValue2 }
+      {stat = "maxHealth", amount = baseValue },
+      {stat = "maxEnergy", amount = baseValue2 }
     })
 end
 

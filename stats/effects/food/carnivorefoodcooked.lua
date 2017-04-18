@@ -4,8 +4,8 @@ function init()
   self.protectionBonus = config.getParameter("protectionBonus", 0)
   baseValue = config.getParameter("healthBonus",0)*(status.resourceMax("health"))
   baseValue2 = config.getParameter("energyBonus",0)*(status.resourceMax("energy"))
-  self.tickDamagePercentage = 0.005
-  self.tickTime = 2.0
+  self.tickDamagePercentage = 0.01
+  self.tickTime = 2
   self.tickTimer = self.tickTime 
   animator.setParticleEmitterOffsetRegion("drips", mcontroller.boundBox())
   animator.setParticleEmitterActive("drips", true)
@@ -18,27 +18,30 @@ function init()
 end
 
 function update(dt)
-  self.tickTimer = self.tickTimer - dt
-  if not (world.entitySpecies(entity.id()) == "floran") or (world.entitySpecies(entity.id()) == "felin") and (self.tickTimer <= 0) then 
+  if (world.entitySpecies(entity.id()) == "floran") or (world.entitySpecies(entity.id()) == "felin") then 
+    if (self.tickTimer <= 0) then
       self.tickTimer = self.tickTime
-	  status.applySelfDamageRequest({
-	      damageType = "IgnoresDef",
-	      damage = math.floor(status.resourceMax("health") * self.tickDamagePercentage) + 1,
-	      damageSourceKind = "poison",
-	      sourceEntityId = entity.id()
-	  })
-	  mcontroller.controlModifiers({
-	      airJumpModifier = 0.80,
-	      speedModifier = 0.80
-	  })      
-	  effect.setParentDirectives("fade=806e4f="..self.tickTimer * 0.4) 
+      status.applySelfDamageRequest({
+	damageType = "IgnoresDef",
+	damage = math.floor(status.resourceMax("health") * self.tickDamagePercentage) + 1,
+	damageSourceKind = "poison",
+	sourceEntityId = entity.id()
+      })
+      mcontroller.controlModifiers({
+	airJumpModifier = 0.08,
+	speedModifier = 0.08
+      })      
+      effect.setParentDirectives("fade=806e4f="..self.tickTimer * 0.4)
+    end     
+  end
+  self.tickTimer = self.tickTimer - dt
 end
 
 function applyEffects()
     status.setPersistentEffects("floranpower1", {
       {stat = "protection", amount = self.protectionBonus},
-      {stat = "maxHealth", baseMultiplier = baseValue },
-      {stat = "maxEnergy", baseMultiplier = baseValue2 }
+      {stat = "maxHealth", amount = baseValue },
+      {stat = "maxEnergy", amount = baseValue2 }
     })
 end
 
