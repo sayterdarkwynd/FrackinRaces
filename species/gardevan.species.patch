@@ -7,7 +7,7 @@
     "path" : "/charCreationTooltip/description" , 
     "value" : "Psionic creatures.
     
-    ^red;-20% Energy, 100% Weakness : Fire^reset;
+    ^red;-20% Energy, 40% Weakness : Fire^reset;
     ^green;+15% Energy, 10% Physical Resist, +8% Speed^reset;
     ^green;Increased stats during daylight hours^reset;
     ^green;Regenerate in sunlight^reset;

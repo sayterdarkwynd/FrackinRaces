@@ -9,11 +9,11 @@ function init()
     {stat = "grit", amount = self.gritBoost },
     {stat = "fireStatusImmunity", amount = 1},
     {stat = "physicalResistance", amount = -0.1},
-    {stat = "fireResistance", amount = 0.25},
-    {stat = "iceResistance", amount = -0.25},
-    {stat = "electricResistance", amount = -0.15},
-    {stat = "poisonResistance", amount = 0.20},
-    {stat = "shadowResistance", amount = -0.5},
+    {stat = "fireResistance", amount = 0.20},
+    {stat = "iceResistance", amount = 0},
+    {stat = "electricResistance", amount = 0},
+    {stat = "poisonResistance", amount = 0},
+    {stat = "shadowResistance", amount = -0.35},
     {stat = "radioactiveResistance", amount = 0.35}
   })
 

@@ -4,7 +4,7 @@
     "path" : "/charCreationTooltip/description" , 
     "value" : "The peaceful Hylotl place great value on ancestral tradition and take great comfort in the arts. While not lovers of violence, they are quite skilled in martial arts and are not to be trifled with. They are at best in water, where they are exceptionally well suited to survive.
     
-    ^red;-20% Energy, 50% Weakness: Electricity^reset;
+    ^red;-20% Energy, 35% Weakness: Electricity^reset;
     ^green;+10% HP, +15% Ice and Poison resistance, Immune: Wet^reset;
     ^green;On ocean biomes, gain 20% protection^reset; 
     ^green;Perfect Blocks restore HP (stacks)^reset; 

@@ -4,7 +4,7 @@
     "path" : "/charCreationTooltip/description" , 
     "value" : "Avians are natruals with staves and wands, and have a mean-streak when threatened that makes them quite dangerous. Their lithe bodies give them great jumping and thanks to (nearly useless) wings they are less at risk from a long fall.
     
-    ^red;-15% Health, 50% Weakness: Ice^reset;
+    ^red;-15% Health, 40% Weakness: Ice^reset;
     ^green;+10% Energy, Jump Boost, 15% Shadow Resist, 30% Electric Resist, 20% Cosmic Resistance^reset;
     ^green;-65% Fall Damage, + Slowed Fall^reset;
     ^green;Gain air mobility and additional Slowed Fall in light to moderate wind conditions^reset;

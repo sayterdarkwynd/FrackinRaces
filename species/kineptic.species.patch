@@ -7,7 +7,7 @@
     "path" : "/charCreationTooltip/description" , 
     "value" : "Energy-wielding space cats.
     
-    ^red;-5% Energy, 45% Weakness: Fire, 15% Weakness: Electric^reset;
+    ^red;-5% Energy, 25% Weakness: Shadow, 15% Weakness: Electric^reset;
     ^green;+10% Speed, +10% Jump, +20% Ice Resist, +20% Poison Resist^reset;
     ^green;During the night, shadowy power restores your health^reset;
     ^green;+25% Damage with Wands and Staves. Also gain Energy regeneration increase^reset;

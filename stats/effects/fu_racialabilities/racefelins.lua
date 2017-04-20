@@ -2,9 +2,9 @@ function init()
   self.powerModifier = config.getParameter("powerModifier", 0)
   effect.addStatModifierGroup({
     {stat = "insanityImmunity", amount = 1},
-    {stat = "fallDamageMultiplier", effectiveMultiplier = 0.50},
+    {stat = "fallDamageMultiplier", effectiveMultiplier = 0.40},
     {stat = "physicalResistance", amount = 0},
-    {stat = "fireResistance", amount = -0.80},
+    {stat = "fireResistance", amount = -0.40},
     {stat = "iceResistance", amount = 0},
     {stat = "electricResistance", amount = 0},
     {stat = "poisonResistance", amount = 0},

@@ -7,7 +7,7 @@
     "path" : "/charCreationTooltip/description" , 
     "value" : "Foxy explorers
     
-    ^red;50% Weakness: Fire^reset;
+    ^red;50% Weakness: Radioactive^reset;
     ^green;+12% Health and Energy, 30% Ice Resist, +12% Speed^reset;
     ^green;40% Knockback Resistance, +14% Speed^reset;
     ^green;Any sword or dagger increases Protection by 2^reset;

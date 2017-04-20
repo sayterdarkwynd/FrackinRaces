@@ -9,8 +9,8 @@ function init()
     {stat = "insanityImmunity", amount = 1 },
     {stat = "foodDelta", baseMultiplier = 0.7},
     {stat = "physicalResistance", amount = 0},
-    {stat = "fireResistance", amount = 0.5},
-    {stat = "iceResistance", amount = -0.5},
+    {stat = "fireResistance", amount = 0.25},
+    {stat = "iceResistance", amount = -0.35},
     {stat = "electricResistance", amount = 0},
     {stat = "poisonResistance", amount = 0},
     {stat = "shadowResistance", amount = 0}
