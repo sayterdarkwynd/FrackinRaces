@@ -4,8 +4,8 @@
     "path" : "/charCreationTooltip/description" , 
     "value" : "The Novakids are a mysterious race of 'interstellar gas-bag people'. They have no charted settlements and no documented history. They have a love of gunslinging and the wild west. No one knows why. 
     
-    ^red;-15% Health, 10% Weakness: Physical,25% Weakness: Ice, 50% Weakness: Shadow^reset;
-    ^green;+20% Energy, +25% Fire Resist, +25% Poison Resist, +30% Radiation Resist^reset;
+    ^red;-15% Health, 10% Weakness: Physical, 35% Weakness: Shadow^reset;
+    ^green;+20% Energy, +20% Fire Resist, +35% Radiation Resist^reset;
     ^green;25% Knockback Resistance, +5% Speed^reset;
     ^green;Regenerate health when well fed during the day. Regen slowly at night but consume extra food.^reset;
     ^green;Pistols: (single) +9% damage, (dual):+20% Knockback Resist, +8% Speed, +5% Jump, +10% Energy^reset;

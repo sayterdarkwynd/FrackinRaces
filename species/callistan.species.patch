@@ -4,8 +4,8 @@
     "path" : "/charCreationTooltip/description" , 
     "value" : "Space foxes with a love for energy weapons and tech. They're swift and able, but a tad on the fragile side.
     
-    ^red;-20% Health, 30% Fire Weakness^reset;
-    ^green;+5% Energy, 20% Ice, Poison and Shadow Resistance^reset;
+    ^red;-20% Health, 30% Poison Weakness^reset;
+    ^green;+5% Energy, 20% Ice, Fire and Shadow Resistance^reset;
     ^green;Extra power and health on Lush, Forest, Primeval and Rainforest biomes^reset;
     ^green;Increase movement speed the more fed you are (max +16.6%)^reset;
     ^green;+15% damage with Energy-type firearms^reset;

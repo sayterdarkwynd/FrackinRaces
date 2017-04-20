@@ -7,7 +7,7 @@
     "path" : "/charCreationTooltip/description" , 
     "value" : "Love having a whale of a time!
     
-    ^red;-8% Energy, 50% Weakness: Electric^reset;
+    ^red;-8% Energy, 35% Weakness: Electric^reset;
     ^red;Weakness: Electricity^reset;
     ^green;+25% Health, +10% Physical Resist^reset;
     ^green;On ocean biomes, gain additional Health and Energy^reset; 

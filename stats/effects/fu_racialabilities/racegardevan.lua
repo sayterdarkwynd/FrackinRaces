@@ -11,7 +11,7 @@ function init()
     {stat = "poisonStatusImmunity", amount = 1},
     {stat = "biooozeImmunity", amount = 1},
     {stat = "physicalResistance", amount = 0},
-    {stat = "fireResistance", amount = -1},
+    {stat = "fireResistance", amount = -0.4},
     {stat = "iceResistance", amount = 0},
     {stat = "electricResistance", amount = 0},
     {stat = "poisonResistance", amount = 0},

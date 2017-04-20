@@ -8,7 +8,7 @@ function init()
     {stat = "iceResistance", amount = 0.20},
     {stat = "electricResistance", amount = 0.20},
     {stat = "poisonResistance", amount = 0.20},
-    {stat = "shadowResistance", amount = -1}        
+    {stat = "shadowResistance", amount = -0.5}        
   })
 
   baseValue = config.getParameter("healthBonus",0)*(status.resourceMax("health"))

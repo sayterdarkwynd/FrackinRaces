@@ -6,11 +6,11 @@ function init()
     {stat = "maxHealth", amount = baseValue },
     {stat = "maxEnergy", amount = baseValue2 },
     {stat = "physicalResistance", amount = 0},
-    {stat = "fireResistance", amount = -0.45},
+    {stat = "fireResistance", amount = 0},
     {stat = "iceResistance", amount = 0.2},
     {stat = "electricResistance", amount = -0.15},
     {stat = "poisonResistance", amount = 0.2},
-    {stat = "shadowResistance", amount = 0}   
+    {stat = "shadowResistance", amount = -0.25}   
   })
   
  
