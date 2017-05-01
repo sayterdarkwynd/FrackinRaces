@@ -10,7 +10,7 @@ self.critBonus = config.getParameter("critBonus", 0)
 -- **** FR ADDITIONS
   daytime = daytimeCheck()
   underground = undergroundCheck()
-  lightLevel = getLight()
+  lightLevel = 1
   
   self.species = world.entitySpecies(activeItem.ownerEntityId())
   local heldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand())
