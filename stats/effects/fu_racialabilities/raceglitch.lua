@@ -37,7 +37,7 @@ function update(dt)
 local mouthPosition = vec2.add(mcontroller.position(), status.statusProperty("mouthPosition"))
 local mouthful = world.liquidAt(mouthposition)
 
-	if (world.liquidAt(mouthPosition)) and (inWater == 0) and (mcontroller.liquidId()~= 5) then
+	if (world.liquidAt(mouthPosition)) and (inWater == 0) and (mcontroller.liquidId()== 1) or (mcontroller.liquidId()== 12) or (mcontroller.liquidId()== 6) or (mcontroller.liquidId()== 55) or (mcontroller.liquidId()== 69) or (mcontroller.liquidId()== 43) or (mcontroller.liquidId()== 60) or (mcontroller.liquidId()== 58) then
 	    status.clearPersistentEffects("glitchpower")
             status.setPersistentEffects("glitchweaken", 
             {
@@ -52,7 +52,7 @@ local mouthful = world.liquidAt(mouthposition)
             })
 	    inWater = 1
 	    activateVisualEffects()
-	elseif (world.liquidAt(mouthPosition)) and (inWater == 0) and (mcontroller.liquidId()== 5) then
+	elseif (world.liquidAt(mouthPosition)) and (inWater == 0) and (mcontroller.liquidId()== 5) or (mcontroller.liquidId()== 44) then
             status.setPersistentEffects("glitchweaken", 
             {
               {stat = "maxEnergy", amount = baseValue2 },

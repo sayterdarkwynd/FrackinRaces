@@ -7,14 +7,14 @@ function init()
   self.tickTime = 2
   self.tickTimer = self.tickTime
   
-  if not (world.entitySpecies(entity.id()) == "glitch") or (world.entitySpecies(entity.id()) == "trink") or (world.entitySpecies(entity.id()) == "droden") then
+  if not (world.entitySpecies(entity.id()) == "glitch") or (world.entitySpecies(entity.id()) == "elunite") or (world.entitySpecies(entity.id()) == "trink") or (world.entitySpecies(entity.id()) == "droden") then
     applyEffects()
   end
   script.setUpdateDelta(5)
 end
 
 function update(dt)
-  if not (world.entitySpecies(entity.id()) == "glitch") or (world.entitySpecies(entity.id()) == "trink") or (world.entitySpecies(entity.id()) == "droden") then
+  if not (world.entitySpecies(entity.id()) == "glitch") or (world.entitySpecies(entity.id()) == "elunite") or (world.entitySpecies(entity.id()) == "trink") or (world.entitySpecies(entity.id()) == "droden") then
     if (self.tickTimer <= 0) then
       self.tickTimer = self.tickTime
       status.applySelfDamageRequest({
