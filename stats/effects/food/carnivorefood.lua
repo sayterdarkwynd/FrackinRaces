@@ -39,7 +39,7 @@ function applyEffects()
     })
 end
 
-function checkRace()  -- are we carnivorous or omnivorous? customize per effect
+function checkRace()  -- are we carnivorous ? customize per effect
   if (world.entitySpecies(entity.id()) == "floran") 
   or (world.entitySpecies(entity.id()) == "felin") 
   or (world.entitySpecies(entity.id()) == "fenerox") 
@@ -54,6 +54,7 @@ function checkRace()  -- are we carnivorous or omnivorous? customize per effect
   or (world.entitySpecies(entity.id()) == "lamia") 
   or (world.entitySpecies(entity.id()) == "callistan") then
     applyEffects()
+    self.isNot = 0
   else
     self.isNot = 1
   end

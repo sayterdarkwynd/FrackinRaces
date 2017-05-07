@@ -7,7 +7,7 @@ function init()
   self.tickTime = 2
   self.tickTimer = self.tickTime
   
-  if not (world.entitySpecies(entity.id()) == "glitch") or (world.entitySpecies(entity.id()) == "elunite") or (world.entitySpecies(entity.id()) == "trink") or (world.entitySpecies(entity.id()) == "droden") then
+  if (world.entitySpecies(entity.id()) == "glitch") or (world.entitySpecies(entity.id()) == "elunite") or (world.entitySpecies(entity.id()) == "trink") or (world.entitySpecies(entity.id()) == "droden") then
     applyEffects()
   end
   script.setUpdateDelta(5)

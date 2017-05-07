@@ -15,23 +15,7 @@ function init()
 end
 
 function update(dt)
-  if (world.entitySpecies(entity.id()) == "floran") or (world.entitySpecies(entity.id()) == "felin") then 
-    if (self.tickTimer <= 0) then
-      self.tickTimer = self.tickTime
-      status.applySelfDamageRequest({
-	damageType = "IgnoresDef",
-	damage = math.floor(status.resourceMax("health") * self.tickDamagePercentage) + 1,
-	damageSourceKind = "poison",
-	sourceEntityId = entity.id()
-      })
-      mcontroller.controlModifiers({
-	airJumpModifier = 0.08,
-	speedModifier = 0.08
-      })      
-      effect.setParentDirectives("fade=806e4f="..self.tickTimer * 0.4)
-    end     
-  end
-  self.tickTimer = self.tickTimer - dt
+
 end
 
 function applyEffects()
