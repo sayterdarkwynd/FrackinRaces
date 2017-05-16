@@ -80,7 +80,7 @@ function update(dt, fireMode, shiftHeld)
   local bonusApply = 0
   
 -- ***********  Felin movement bonuses ***************
-if species == "felin" then  --when using dagger weapons, felin are extra swift
+if species == "felin" then  --when using fist weapons, felin are extra swift
   if heldItem then
      if root.itemHasTag(heldItem, "fist") and opposedhandHeldItem and root.itemHasTag(opposedhandHeldItem, "fist") then
        mcontroller.controlModifiers({ speedModifier = 1.15, airJumpModifier = 1.05 })

@@ -337,7 +337,7 @@ end
 -- ***********  Felin movement bonuses ***************
 if species == "felin" then  --when using dagger weapons, felin are extra swift
   if heldItem then
-     if root.itemHasTag(heldItem, "dagger") and opposedhandHeldItem and root.itemHasTag(opposedhandHeldItem, "dagger") then
+     if root.itemHasTag(heldItem, "fist") and opposedhandHeldItem and root.itemHasTag(opposedhandHeldItem, "fist") then
        mcontroller.controlModifiers({ speedModifier = 1.25, airJumpModifier = 1.05 })
      end    
   end
