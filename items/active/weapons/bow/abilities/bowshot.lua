@@ -4,18 +4,23 @@ require "/scripts/vec2.lua"
 BowShot = WeaponAbility:new()
 
 function BowShot:init()
-self.critChance = config.getParameter("critChance", 0)
-self.critBonus = config.getParameter("critBonus", 0)
-  self.energyPerShot = self.energyPerShot or 0
+	if not status.resource("food") then
+	 self.foodValue = 35
+	end
+	if not status.resource("energy") then
+	 self.energyValue = 100
+	end  
+	self.critChance = config.getParameter("critChance", 0)
+	self.critBonus = config.getParameter("critBonus", 0)
+	self.energyPerShot = self.energyPerShot or 0
 
-  self.drawTime = 0
-  self.cooldownTimer = self.cooldownTime
+	self.drawTime = 0
+	self.cooldownTimer = self.cooldownTime
 
-  self:reset()
+	self:reset()
 
-  self.weapon.onLeaveAbility = function()
-    self:reset()
-  end
+	self.weapon.onLeaveAbility = function()
+	self:reset()
 end
 
 
@@ -126,15 +131,21 @@ function BowShot:fire()
      local opposedhandHeldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand() == "primary" and "alt" or "primary")
 
 	 if species == "floran" then  --consume food in exchange for bow power
-	  if heldItem then 
-	    status.modifyResource("food", (status.resource("food") * -0.02) )  
+	  if heldItem then
+	       if not status.resource("food") then
+	         self.foodValue = 35
+	       end
+	    status.modifyResource("food", (self.foodValue * -0.02) )  
 	  end
          end
             if species == "lamia" then      -- lamia get increased crit chance with high energy
+	       if not status.resource("energy") then
+	         self.energyValue = 100
+	       end            
 	     local randValueCritBonus = math.random(8)
 	     local critValueLamia = ( randValueCritBonus + math.ceil(self.energyValue/20) ) 
 		    if self.energyValue >= (status.stat("maxEnergy")*0.5) then   -- with high Energy reserve, lamia get increased Bow crit chance
-		      status.modifyResource("energy", (status.resource("energy") * -0.01) )  -- consume energy
+		      status.modifyResource("energy", (self.energyValue * -0.01) )  -- consume energy
 		      status.setPersistentEffects("weaponbonusdmgbow", {{stat = "critChance", amount = critValueLamia}})  
 		    end	                         
             end           
