@@ -154,7 +154,7 @@ function GunFire:auto()
   -- Novakid get increased pistol fire time during the daylight hours
   if self.species == "novakid" then
     if heldItem and root.itemHasTag(heldItem, "pistol") and daytime then  -- novakid fire pistols faster when the sun is out..even underground!
-      self.energyMax = lightLevel / 200    
+      self.energyMax = (lightLevel / 100 ) + 0.05
     end
   else
     self.energyMax = 1 
@@ -173,7 +173,6 @@ function GunFire:auto()
     self.energyMax = 1 
   end
   self.cooldownTimer = self.fireTime * self.energyMax  -- ** FR adds to this with energyMax
-  
   self:setState(self.cooldown)
 end
 
