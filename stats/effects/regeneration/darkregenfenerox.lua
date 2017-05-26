@@ -30,8 +30,15 @@ function update(dt)
   nighttime = nighttimeCheck()
   underground = undergroundCheck()
   valueVal = 5
+  
+  if status.isResource("food") then
+    self.foodValue = status.resource("food")
+  else
+    self.foodValue = 70
+  end
+  
   local lightLevel = getLight()
-    if nighttime or underground then
+    if nighttime or underground and (self.foodValue >= 50) then
 	if lightLevel <= 1 then
 	    self.healingRate = 1.01 / config.getParameter("healTime", 180)
 	    status.modifyResourcePercentage("health", self.healingRate * dt)
