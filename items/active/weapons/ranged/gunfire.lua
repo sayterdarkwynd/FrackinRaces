@@ -154,7 +154,7 @@ function GunFire:auto()
   -- Novakid get increased pistol fire time during the daylight hours
   if self.species == "novakid" then
     if heldItem and root.itemHasTag(heldItem, "pistol") and daytime then  -- novakid fire pistols faster when the sun is out..even underground!
-      self.energyMax = (lightLevel / 100 ) + 0.05
+      self.energyMax = lightLevel / 50 
     end
   else
     self.energyMax = 1 
@@ -267,7 +267,7 @@ function GunFire:energyPerShot()
 end
 
 function GunFire:damagePerShot()     
-     return  GunFire:setCritDamage(self.baseDamage or (self.baseDps * self.fireTime) * (self.baseDamageMultiplier or 1.0) * config.getParameter("damageLevelMultiplier") / self.projectileCount) 
+     return  GunFire:setCritDamage(self.baseDamage or (self.baseDps * self.fireTime ) * (self.baseDamageMultiplier or 1.0) * config.getParameter("damageLevelMultiplier") / self.projectileCount) 
 end  
 
 
