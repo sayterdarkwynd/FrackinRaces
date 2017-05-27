@@ -20,7 +20,8 @@ function BowShot:init()
 	self:reset()
 
 	self.weapon.onLeaveAbility = function()
-	self:reset()
+	  self:reset()
+	end
 end
 
 
@@ -131,13 +132,13 @@ function BowShot:fire()
      local opposedhandHeldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand() == "primary" and "alt" or "primary")
 
 	 if species == "floran" then  --consume food in exchange for bow power
-	  if heldItem then
-	       if not status.resource("food") then
-	         self.foodValue = 35
-	       end
-	    status.modifyResource("food", (self.foodValue * -0.02) )  
+	  if heldItem and status.resource("food") then
+	    status.modifyResource("food", (self.foodValue * -0.02) )
+	  elseif not status.resource("food") then
+	    self.foodValue = 35
 	  end
          end
+         
             if species == "lamia" then      -- lamia get increased crit chance with high energy
 	       if not status.resource("energy") then
 	         self.energyValue = 100
@@ -201,4 +202,3 @@ end
 function BowShot:firePosition()
   return vec2.add(mcontroller.position(), activeItem.handPosition(self.fireOffset))
 end
-
