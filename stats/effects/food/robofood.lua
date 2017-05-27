@@ -7,15 +7,22 @@ function init()
   self.tickTime = 2
   self.tickTimer = self.tickTime
   
-  if (world.entitySpecies(entity.id()) == "glitch") or (world.entitySpecies(entity.id()) == "elunite") or (world.entitySpecies(entity.id()) == "trink") or (world.entitySpecies(entity.id()) == "droden") then
-    applyEffects()
-  end
+  checkRace()
   script.setUpdateDelta(5)
 end
 
+function checkRace()
+  if (world.entitySpecies(entity.id()) == "glitch") or (world.entitySpecies(entity.id()) == "elunite") or (world.entitySpecies(entity.id()) == "trink") or (world.entitySpecies(entity.id()) == "droden") then
+    applyEffects()
+    self.isRace = 1
+  else
+    self.isRace = 0 
+  end
+end
+
 function update(dt)
-  if not (world.entitySpecies(entity.id()) == "glitch") or (world.entitySpecies(entity.id()) == "elunite") or (world.entitySpecies(entity.id()) == "trink") or (world.entitySpecies(entity.id()) == "droden") then
-    if (self.tickTimer <= 0) then
+  checkRace()
+  if (self.isRace == 0) and (self.tickTimer <= 0) then
       self.tickTimer = self.tickTime
       status.applySelfDamageRequest({
         damageType = "IgnoresDef",
@@ -24,7 +31,6 @@ function update(dt)
         sourceEntityId = entity.id()
       })
       effect.setParentDirectives("fade=806e4f="..self.tickTimer * 0.4) 
-    end
   end
   self.tickTimer = self.tickTimer - dt
 end

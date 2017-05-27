@@ -4,7 +4,7 @@
   "effectConfig" : {
   "healthBonus" : 0.03,
   "energyBonus" : 0.04,
-  "protectionBonus" : -1, 
+  "protectionBonus" : 1, 
   "fallBonus" : -0.2
   },
   "defaultDuration" : 60,
