@@ -152,9 +152,10 @@ function GunFire:auto()
   local opposedhandHeldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand() == "primary" and "alt" or "primary")  
   
   -- Novakid get increased pistol fire time during the daylight hours
-  if self.species == "novakid" then
-    if heldItem and root.itemHasTag(heldItem, "pistol") and daytime then  -- novakid fire pistols faster when the sun is out..even underground!
-      self.energyMax = lightLevel / 50 
+  if self.species == "novakid" and daytime then
+    if heldItem and root.itemHasTag(heldItem, "pistol") then  -- novakid fire pistols faster when the sun is out..even underground!
+      self.energyMax = 1.0 - (lightLevel / 200)
+
     end
   else
     self.energyMax = 1 
@@ -173,10 +174,25 @@ function GunFire:auto()
     self.energyMax = 1 
   end
   self.cooldownTimer = self.fireTime * self.energyMax  -- ** FR adds to this with energyMax
+      sb.logInfo("lightLevel = "..lightLevel)
+      sb.logInfo("energyMax = "..self.energyMax)
+        
+  sb.logInfo("cooldownTimer = "..self.cooldownTimer)
   self:setState(self.cooldown)
 end
 
 function GunFire:burst()
+
+  -- Novakid get increased pistol fire time during the daylight hours
+  if self.species == "novakid" and daytime then
+    if heldItem and root.itemHasTag(heldItem, "pistol") then  -- novakid fire pistols faster when the sun is out..even underground!
+      self.energyMax = 1.0 - (lightLevel / 200)
+
+    end
+  else
+    self.energyMax = 1 
+  end   
+  
   self.weapon:setStance(self.stances.fire)
 
   local shots = self.burstCount
