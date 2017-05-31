@@ -190,7 +190,7 @@ function update(dt)
 	if world.entitySpecies(entity.id()) == "gardevan" then
 		status.addEphemeralEffect("racegardevan",math.huge)
 		status.addEphemeralEffect("lighthunter",math.huge)
-		status.addEphemeralEffect("lightregen",math.huge)
+		status.addEphemeralEffect("lightregenfloran",math.huge)
 		
 	end
 	--Wasp Hive
