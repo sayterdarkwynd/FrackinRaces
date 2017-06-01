@@ -174,10 +174,9 @@ function GunFire:auto()
     self.energyMax = 1 
   end
   self.cooldownTimer = self.fireTime * self.energyMax  -- ** FR adds to this with energyMax
-      sb.logInfo("lightLevel = "..lightLevel)
-      sb.logInfo("energyMax = "..self.energyMax)
-        
-  sb.logInfo("cooldownTimer = "..self.cooldownTimer)
+      --sb.logInfo("lightLevel = "..lightLevel)
+      --sb.logInfo("energyMax = "..self.energyMax)
+      --sb.logInfo("cooldownTimer = "..self.cooldownTimer)
   self:setState(self.cooldown)
 end
 
