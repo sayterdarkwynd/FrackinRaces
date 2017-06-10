@@ -239,7 +239,7 @@ function MeleeCombo:fire()
 	    self.meleeCountcombo = 1.1
 	    self.meleeCountcombo2 = 2
 	    self.roll = 6 + self.modifier
-	    sb.logInfo("self.modifier="..self.modifier)
+	    --sb.logInfo("self.modifier="..self.modifier)
 		  if heldItem then
 		     if root.itemHasTag(heldItem, "broadsword") then 
 			if randValue < self.roll then  -- spawn a projectile
@@ -250,7 +250,7 @@ function MeleeCombo:fire()
 			  {stat = "physicalResistance", baseMultiplier = self.meleeCountcombo},
 			  {stat = "dragonBonus", amount = self.meleeCountcombo2 + 2} 
 			  }) 				
-			  sb.logInfo("self.modifier="..status.stat("dragonBonus"))
+			  --sb.logInfo("self.modifier="..status.stat("dragonBonus"))
 		     end
 		  end
 	  end
