@@ -22,6 +22,87 @@ function init()
   self.cooldownTime = config.getParameter("cooldownTime")
   self.forceWalk = config.getParameter("forceWalk", false)
 
+
+
+   -- FU special effects
+     -- health effects
+          self.critChance = config.getParameter("critChance", 0)
+          self.critBonus = config.getParameter("critBonus", 0)
+          self.shieldBonusShield = config.getParameter("shieldBonusShield", 1)  -- bonus shield HP
+          self.shieldBonusRegen = config.getParameter("shieldBonusRegen", 1)  -- bonus shield regen time
+ 	  self.shieldHealthRegen = config.getParameter("shieldHealthRegen", 1)
+ 	  shieldEnergyRegen = config.getParameter("shieldEnergyRegen",0)
+ 	  shieldHealthBonus = config.getParameter("shieldHealthBonus",0)*(status.resourceMax("health"))
+ 	  shieldEnergyBonus = config.getParameter("shieldEnergyBonus",0)*(status.resourceMax("energy"))
+ 	  shieldProtection = config.getParameter("shieldProtection",0)
+ 	  shieldStamina = config.getParameter("shieldStamina",0)
+ 	  shieldFalling = config.getParameter("shieldFalling",0)
+ 	  protectionBee = config.getParameter("protectionBee",0)
+ 	  protectionAcid = config.getParameter("protectionAcid",0)
+ 	  protectionBlackTar = config.getParameter("protectionBlackTar",0)
+ 	  protectionBioooze = config.getParameter("protectionBioooze",0)
+ 	  protectionPoison = config.getParameter("protectionPoison",0)
+ 	  protectionInsanity = config.getParameter("protectionInsanity",0)
+ 	  protectionShock = config.getParameter("protectionShock",0)
+ 	  protectionSlime = config.getParameter("protectionSlime",0)
+ 	  protectionLava = config.getParameter("protectionLava",0)
+ 	  protectionFire = config.getParameter("protectionFire",0)
+ 	  protectionProto = config.getParameter("protectionProto",0)
+ 	  protectionAcid = config.getParameter("protectionAcid",0)
+ 	  protectionBlackTar = config.getParameter("protectionBlackTar",0)
+ 	  protectionBioooze = config.getParameter("protectionBioooze",0)
+ 	  protectionPoison = config.getParameter("protectionPoison",0)
+ 	  protectionInsanity = config.getParameter("protectionInsanity",0)
+ 	  protectionShock = config.getParameter("protectionShock",0)
+ 	  protectionSlime = config.getParameter("protectionSlime",0)
+ 	  protectionLava = config.getParameter("protectionLava",0)
+ 	  protectionFire = config.getParameter("protectionFire",0)
+ 	  protectionProto = config.getParameter("protectionProto",0)
+ 	  protectionCold = config.getParameter("protectionCold",0)
+ 	  protectionXCold = config.getParameter("protectionXCold",0)
+ 	  protectionHeat = config.getParameter("protectionHeat",0)
+ 	  protectionXHeat = config.getParameter("protectionXHeat",0)
+ 	  protectionRads = config.getParameter("protectionRads",0)
+ 	  protectionXRads = config.getParameter("protectionXRads",0)	  
+ 	  
+ 	  
+ 	  
+ 	  status.setPersistentEffects("shieldEffects", {
+ 	  {stat = "baseShieldHealth", amount = config.getParameter("shieldBonusShield", 0) },
+ 	  {stat = "energyRegenPercentageRate", amount = shieldEnergyRegen},
+ 	  {stat = "maxHealth", amount = shieldHealthBonus},
+ 	  {stat = "maxEnergy", amount = shieldEnergyBonus},
+ 	  {stat = "protection", amount = shieldProtection},
+ 	  {stat = "shieldStaminaRegen", amount = shieldStamina},
+ 	  {stat = "fallDamageMultiplier", amount = shieldFalling},
+ 	  {stat = "beestingImmunity", amount = protectionBee},
+ 	  {stat = "sulphuricImmunity", amount = protectionAcid},
+ 	  {stat = "blacktarImmunity", amount = protectionBlackTar},
+ 	  {stat = "biooozeImmunity", amount = protectionBioooze},
+ 	  {stat = "poisonStatusImmunity", amount = protectionPoison},
+ 	  {stat = "insanityImmunity", amount = protectionInsanity},
+ 	  {stat = "shockStatusImmunity", amount = protectionShock},
+ 	  {stat = "slimeImmunity", amount = protectionSlime},
+ 	  {stat = "lavaImmunity", amount = protectionLava},
+ 	  {stat = "fireStatusImmunity", amount = protectionFire},
+ 	  {stat = "protoImmunity", amount = protectionProto},
+ 	  {stat = "sulphuricImmunity", amount = protectionAcid},
+ 	  {stat = "blacktarImmunity", amount = protectionBlackTar},
+ 	  {stat = "biooozeImmunity", amount = protectionBioooze},
+ 	  {stat = "poisonStatusImmunity", amount = protectionPoison},
+ 	  {stat = "insanityImmunity", amount = protectionInsanity},
+ 	  {stat = "electricStatusImmunity", amount = protectionShock},
+ 	  {stat = "slimeImmunity", amount = protectionSlime},
+ 	  {stat = "lavaImmunity", amount = protectionLava},
+ 	  {stat = "biomecoldImmunity", amount = protectionCold},
+ 	  {stat = "ffextremecoldImmunity", amount = protectionXCold},
+ 	  {stat = "biomeheatImmunity", amount = protectionHeat},
+ 	  {stat = "ffextremeheatImmunity", amount = protectionXHeat},
+ 	  {stat = "biomeradiationImmunity", amount = protectionRads},
+ 	  {stat = "ffextremeradiationImmunity", amount = protectionXRads}
+ 	  })
+  -- end FU special effects
+  
   animator.setGlobalTag("directives", "")
   animator.setAnimationState("shield", "idle")
   activeItem.setOutsideOfHand(true)
@@ -104,7 +185,17 @@ function update(dt, fireMode, shiftHeld)
     self.activeTimer = self.activeTimer + dt
 
     self.damageListener:update()
-
+    --
+    --
+    --
+    --
+    -- FU SPECIALS
+    status.modifyResourcePercentage("health", self.shieldHealthRegen * dt)
+    --
+    --
+    --
+    --
+    --
     if status.resourcePositive("perfectBlock") then
       animator.setGlobalTag("directives", self.perfectBlockDirectives)
     else
