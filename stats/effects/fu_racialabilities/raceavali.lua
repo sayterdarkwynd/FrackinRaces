@@ -4,6 +4,7 @@ function init()
   
   effect.addStatModifierGroup({
     {stat = "snowslowImmunity", amount = 1},
+    {stat = "iceslipImmunity", amount = 1},
     {stat = "iceStatusImmunity", amount = 1},
     {stat = "maxHealth", amount = baseValue },
     {stat = "maxEnergy", amount = baseValue2 },
