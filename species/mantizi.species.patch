@@ -3,13 +3,12 @@
     "path" : "/charCreationTooltip/description" , 
     "value" : "Dangerous republic of hardcore beetle-men. 
     
-    ^red;Metabolism requires more food^reset; 
     ^red;30% Weakness: Fire, 20% Weakness: Ice^reset;
-    ^green;20% Poison and Electric Resist^reset; 
-    ^green;20% Physical Resistance^reset;    
+    ^green;20% Physical, Poison and Electric Resistance^reset; 
     ^green;Gain additional energy and protection on jungles, deserts and sulphuric worlds^reset; 
-    ^green;+20% dmg when wielding Sword/Shortsword and Shield^reset;
-    ^green;+20% protection when wielding Sword/Shortsword and Shield^reset;
-    ^green;Perfect Blocks restore health^reset;"
+    ^cyan;30% Knockback Resistance^reset;
+    ^yellow;With Shortsword or Shortspear + Shield gain:^reset;
+    ^yellow;+20% protection and +20% damage ^reset;
+    ^orange;Perfect Blocks restore health and restore 20% shield stamina^reset;"
     }
 ]

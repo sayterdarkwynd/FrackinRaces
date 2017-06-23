@@ -1,6 +1,7 @@
 function init()
   
   effect.addStatModifierGroup({
+    {stat = "grit", amount = 0.3},
     {stat = "electricStatusImmunity", amount = 1},
     {stat = "physicalResistance", amount = 0.20},
     {stat = "fireResistance", amount = -0.3},

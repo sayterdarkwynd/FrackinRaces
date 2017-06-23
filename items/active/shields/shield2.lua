@@ -312,6 +312,18 @@ function raiseShield()
             animator.burstParticleEmitter("bonusBlock3")
             animator.playSound("bonusEffect")
           end
+	  if species == "mantizi" then --mantizi get a heal and shield health when they perfectly block
+	    if status.isResource("shieldStamina") then
+	      self.baseVal = status.resource("shieldStamina")
+	      self.newVal = 1.2
+	      self.finalVal = self.baseVal * self.newVal
+	      status.setResource("shieldStamina", self.finalVal)
+	    end
+	    self.blockCountShield = self.blockCountShield + 0.0008
+            status.modifyResourcePercentage("health", 0.005 + self.blockCountShield )  --hylotl get a heal when they perfectly block
+            animator.burstParticleEmitter("bonusBlock")
+            animator.playSound("bonusEffect")
+          end          
 	  if species == "hylotl" then --hylotl get a heal when they perfectly block
 	    self.blockCountShield = self.blockCountShield + 0.0008
             status.modifyResourcePercentage("health", 0.005 + self.blockCountShield )  --hylotl get a heal when they perfectly block
