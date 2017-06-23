@@ -228,7 +228,19 @@ function MeleeCombo:fire()
 	     end
 	  end
 	 end 
-	 
+
+       if species == "mantizi" then  -- with a sword, shortspear and shield, an avian is dangerous! pew pew!      
+	  if heldItem then
+	     if root.itemHasTag(heldItem, "shortsword") or root.itemHasTag(heldItem, "shortspear") and opposedhandHeldItem and root.itemHasTag(opposedhandHeldItem, "shield") then 
+		self.meleeCountcombo = 1.2
+		status.setPersistentEffects("combobonusdmg", { 
+		  {stat = "powerMultiplier", baseMultiplier = self.meleeCountcombo},
+		  {stat = "protection", baseMultiplier = self.meleeCountcombo } 
+		  }) 					                        			    
+	     end
+	  end
+       end
+
           if species == "glitch" then      --each 1-handed combo swing slightly increases glitch defense
             self.meleeCountcombo = self.meleeCountcombo + 3
             status.setPersistentEffects("combobonusdmg", {{stat = "protection", amount = self.meleeCountcombo}})  

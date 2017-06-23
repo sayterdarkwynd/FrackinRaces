@@ -1,0 +1,10 @@
+{
+  "name" : "racemantizi",
+  "effectConfig" : { },
+  "defaultDuration" : 3,
+
+  "scripts" : [
+    "racemantizi.lua"
+  ]
+
+}

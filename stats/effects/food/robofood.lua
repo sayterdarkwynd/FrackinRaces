@@ -12,6 +12,7 @@ end
 
 function checkRace()
   if (world.entitySpecies(entity.id()) == "glitch") 
+  or (world.entitySpecies(entity.id()) == "mantizi")
   or (world.entitySpecies(entity.id()) == "elunite") 
   or (world.entitySpecies(entity.id()) == "trink") 
   or (world.entitySpecies(entity.id()) == "droden") then

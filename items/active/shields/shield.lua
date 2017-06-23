@@ -303,7 +303,7 @@ function raiseShield()
             animator.burstParticleEmitter("bonusBlock3")
             animator.playSound("bonusEffect")
           end
-	  if species == "hylotl" then
+	  if species == "hylotl" or  species == "mantizi" then
 	    self.blockCountShield = self.blockCountShield + 0.0008
             status.modifyResourcePercentage("health", 0.05 + self.blockCountShield )  --hylotl get a heal when they perfectly block
             animator.burstParticleEmitter("bonusBlock")

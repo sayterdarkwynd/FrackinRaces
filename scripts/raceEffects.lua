@@ -223,6 +223,10 @@ function update(dt)
 	if world.entitySpecies(entity.id()) == "greckan" then
 		status.addEphemeralEffect("racegreckan",math.huge)
 	end	
+	--mantizi
+	if world.entitySpecies(entity.id()) == "mantizi" then
+		status.addEphemeralEffect("racemantizi",math.huge)
+	end	
 	
   local mouthPosition = vec2.add(mcontroller.position(), status.statusProperty("mouthPosition"))
   if status.statPositive("breathProtection") or world.breathable(mouthPosition) 
@@ -231,14 +235,5 @@ function update(dt)
     status.modifyResource("breath", status.stat("breathRegenerationRate") * dt)
   else
     status.modifyResource("breath", -status.stat("breathDepletionRate") * dt)
-  end
-  
-  
-    status.removeEphemeralEffect("weak_fire")
-    status.removeEphemeralEffect("weak_ice")
-    status.removeEphemeralEffect("weak_poison")
-    status.removeEphemeralEffect("weak_physical")
-    status.removeEphemeralEffect("weak_shadow")
-    status.removeEphemeralEffect("weak_electric")
-	
+  end	
 end

@@ -30,10 +30,11 @@ self.critBonus = config.getParameter("critBonus", 0)
 
   self.weapon.freezeLimit = config.getParameter("freezeLimit", 2)
   self.weapon.freezesLeft = self.weapon.freezeLimit
-
+ 
 -- *************** FR SPECIAL ********************************
 --  "always on" fist weapon bonus
 -- ***********************************************************
+
  	   if self.blockCount == nil then 
  	     self.blockCount = 0
  	   end    	
@@ -42,7 +43,9 @@ self.critBonus = config.getParameter("critBonus", 0)
  	   end  
   	 
  	     local species = world.entitySpecies(activeItem.ownerEntityId())
- 	     
+ 	     if species == "munari" then
+ 	       self.timerCheck = 120
+ 	     end
              if species == "bunnykin" then
                self.blockCount = self.blockCount + 0.5
                self.blockCount = 1
@@ -112,14 +115,21 @@ end
 -- *************************************************************************
 -- FR "combo based" fist weapon bonus
 -- *************************************************************************
+
              if species == "floran" then
 	      status.modifyResource("food", (status.resource("food") * -0.005) )  
              end    
              if species == "munari" then
-               self.blockCount = self.blockCount + 0.01
-               status.setPersistentEffects("munaribonusdmg", { {stat = "powerMultiplier", amount = self.blockCount} })
-               status.addPersistentEffect("boostermunari", "powerboostmunari", math.huge)
-               
+		     if (self.timerCheck == 0) then
+		       status.clearPersistentEffects("munaribonusdmg")
+		       status.clearPersistentEffects("boostermunari")		     
+		       self.timerCheck = 120
+		     else
+		       self.blockCount = self.blockCount + 0.01
+		       status.setPersistentEffects("munaribonusdmg", { {stat = "powerMultiplier", amount = self.blockCount} })
+		       status.addPersistentEffect("boostermunari", "powerboostmunari", math.huge)
+		       self.timerCheck = self.timerCheck - dt
+		     end
              end     
              
 -- **************************************************************************
