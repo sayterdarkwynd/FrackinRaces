@@ -1,115 +1,90 @@
 function init()
-  baseValue = config.getParameter("healthBonus",0)*(status.resourceMax("health"))
-  baseValue2 = config.getParameter("energyBonus",0)*(status.resourceMax("energy"))
   effect.addStatModifierGroup({
-    {stat = "fumudslowImmunity", amount = 1 },
-    {stat = "jungleslowImmunity", amount = 1 },
-    {stat = "maxHealth", amount = baseValue },
-    {stat = "maxEnergy", amount = baseValue2 },
-    {stat = "physicalResistance", amount = 0},
-    {stat = "fireResistance", amount = 0},
-    {stat = "iceResistance", amount = 0.25},
-    {stat = "electricResistance", amount = -0.4},
-    {stat = "poisonResistance", amount = 0},
-    {stat = "shadowResistance", amount = 0}  
+    -- base Attributes
+      {stat = "isOmnivore", baseMultiplier = 1},
+    --{stat = "maxHealth", baseMultiplier = config.getParameter("healthBonus")},
+      {stat = "maxEnergy", baseMultiplier = config.getParameter("energyBonus")},
+    --{stat = "powerMultiplier", baseMultiplier = config.getParameter("attackBonus")},
+    --{stat = "protection", baseMultiplier = config.getParameter("defenseBonus")},
+    
+    -- resistances
+    {stat = "physicalResistance", amount = config.getParameter("physicalResistance")},
+    {stat = "electricResistance", amount = config.getParameter("electricResistance")},
+    {stat = "fireResistance", amount = config.getParameter("fireResistance")},
+    {stat = "iceResistance", amount = config.getParameter("iceResistance")},
+    {stat = "poisonResistance", amount = config.getParameter("poisonResistance")},
+    {stat = "shadowResistance", amount = config.getParameter("shadowResistance")},
+    {stat = "cosmicResistance", amount = config.getParameter("cosmicResistance")},
+    {stat = "radioactiveResistance", amount = config.getParameter("radioactiveResistance")},
+    
+    -- other
+    {stat = "foodDelta", baseMultiplier = 1.06146}
   })
 
-
-if (world.type() == "jungle") or (world.type() == "thickjungle") or (world.type() == "alien") or (world.type() == "protoworld") or (world.type() == "arboreal") or (world.type() == "arborealdark") then
+    --Environment Bonus
+    if (world.type() == "jungle") or (world.type() == "thickjungle") or (world.type() == "forest") or (world.type() == "snow") or (world.type() == "arboreal") or (world.type() == "arborealdark") then
 	    status.setPersistentEffects("jungleEpic", {
-	      {stat = "protection", baseMultiplier = 1.10},
-	      {stat = "maxHealth", baseMultiplier = 1.15}
+	      {stat = "maxHealth", baseMultiplier = config.getParameter("environmentBonusHealth",0)},
+	      {stat = "maxEnergy", baseMultiplier = config.getParameter("environmentBonusEnergy",0)}
 	    })
-end  
-  local foodValue = status.resource("food")
-
-  local bounds = mcontroller.boundBox()
+    end  
+  self.basePower = status.stat("powerMultiplier")
+  self.baseMaxEnergy = status.stat("maxEnergy")
   script.setUpdateDelta(10)
 end
 
 function update(dt)
+ 	-- check their existing health levels
+	self.healthMin = status.resource("health")
+	self.healthMax = status.stat("maxHealth")         
+	
+	-- range at which the effects start kicking in. 80% health?
+	self.healthRange = (status.stat("maxHealth") * 0.8) 
+	
+	-- what percent of health remains?
+	self.percentRate = self.healthMin / self.healthMax 
+	
+	--calculate core bonus
+        self.powerMod = 2-self.percentRate / (self.healthRange / self.healthMax)
 
+	-- other modifiers
+        self.protectionMod = self.powerMod * 2
+        self.critMod = self.powerMod * 5
 
-if self.foodValue == nil then 
-  foodValue=1 
-end
+        -- make sure it doesn't get wonky by setting limits
+        if (self.powerMod) < 1 then
+	  self.powerMod = 1
+	elseif (self.powerMod) >= 1.3 then  -- max 30%
+	  self.powerMod = 1.3
+	elseif (self.protectionMod) >= 1.20 then  -- max 20%
+	  self.protectionMod = 1.2
+	elseif (self.critMod) >= 5 then  -- max 5
+	  self.critMod = 5
+	end
+	
 
-self.foodValue = status.resource("food")
-  if status.isResource("food") then
-      self.foodValue = status.resource("food")
-  else
-      self.foodValue = 50
-  end
-local foodMax = 100
-local foodMin = 35
-local foodRange = foodMax - foodMin
-local ratio = math.max(0, (status.resource("food") - foodMin) / foodRange)
+        -- apex lose energy but gain power as they take damage (and vice versa)
+	if (self.healthMin >= self.healthMax) then
+	  status.clearPersistentEffects("apexPower")   
+	elseif (self.percentRate) <= (self.healthRange) then
+	    status.setPersistentEffects("apexPower", {
+	      {stat = "maxEnergy", baseMultiplier = self.percentRate },
+	      {stat = "powerMultiplier", baseMultiplier = self.powerMod },
+	      {stat = "protection", amount = self.protectionMod },
+	      {stat = "critChance", amount = self.critMod }
+	    })	 
+        end
 
-local energyMax = 1.7
-local energyMin = 1
-local energyRange = energyMax - energyMin
-local finalEnergy = math.floor((energyMin + energyRange * ratio) * 100) / 100
-
-if self.foodValue > foodMin then
-  status.setPersistentEffects("starvationpower2", {{stat = "maxEnergy", baseMultiplier = finalEnergy}})
-end
-
-  if self.foodValue < 3.5 then
-    status.setPersistentEffects("starvationpower", {
-      {stat = "physicalResistance", amount = 0.35},
-      {stat = "grit", baseMultiplier = 1.50},
-      {stat = "maxHealth", baseMultiplier = 1.25},
-      {stat = "maxEnergy", baseMultiplier = 0.5}
-    })
-  elseif self.foodValue < 5 then
-    status.setPersistentEffects("starvationpower", {
-      {stat = "physicalResistance", amount = 0.30},
-      {stat = "grit", baseMultiplier = 1.45},
-      {stat = "maxHealth", baseMultiplier = 1.20},
-      {stat = "maxEnergy", baseMultiplier = 0.55}
-    })
-  elseif self.foodValue < 15 then
-    status.setPersistentEffects("starvationpower", {
-      {stat = "physicalResistance", amount = 0.25},
-      {stat = "grit", baseMultiplier = 1.40},
-      {stat = "maxHealth", baseMultiplier = 1.175},
-      {stat = "maxEnergy", baseMultiplier = 0.60}
-    }) 
-  elseif self.foodValue < 20 then
-    status.setPersistentEffects("starvationpower", {
-      {stat = "physicalResistance", amount = 0.20},
-      {stat = "grit", baseMultiplier = 1.35},
-      {stat = "maxHealth", baseMultiplier = 1.12},
-      {stat = "maxEnergy", baseMultiplier = 0.65}
-    })
-  elseif self.foodValue < 25 then
-    status.setPersistentEffects("starvationpower", {
-      {stat = "physicalResistance", amount = 0.10},
-      {stat = "grit", baseMultiplier = 1.30},
-      {stat = "maxHealth", baseMultiplier = 1.10},
-      {stat = "maxEnergy", baseMultiplier = 0.7}
-    })   
-  elseif self.foodValue < 30 then
-    status.setPersistentEffects("starvationpower", {
-      {stat = "physicalResistance", amount = 0.075},
-      {stat = "grit", baseMultiplier = 1.20},
-      {stat = "maxHealth", baseMultiplier = 1.05},
-      {stat = "maxEnergy", baseMultiplier = 0.8}
-    })
-  elseif self.foodValue <= 35 then
-    status.setPersistentEffects("starvationpower", {
-      {stat = "physicalResistance", amount = 0.05},
-      {stat = "grit", baseMultiplier = 1.10},
-      {stat = "maxHealth", baseMultiplier = 1.03},
-      {stat = "maxEnergy", baseMultiplier = 0.9}
-    })
-  else
-    status.clearPersistentEffects("starvationpower")
-  end
+        -- the apex gets speed and jump bonuses
+	mcontroller.controlModifiers({
+		speedModifier =  config.getParameter("speedBonus",0),
+		airJumpModifier =  config.getParameter("jumpBonus",0)
+	})
   
 end
 
 function uninit()
+  status.clearPersistentEffects("apexPower")
   status.clearPersistentEffects("starvationpower")
   status.clearPersistentEffects("starvationpower2")
   status.clearPersistentEffects("jungleEpic")
