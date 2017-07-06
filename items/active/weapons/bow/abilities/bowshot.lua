@@ -131,7 +131,7 @@ function BowShot:fire()
      --used for checking dual-wield setups
      local opposedhandHeldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand() == "primary" and "alt" or "primary")
 
-	 if species == "floran" then  --consume food in exchange for bow power
+	 if species == "floran" then
 	  if heldItem and status.resource("food") then
 	    status.modifyResource("food", (self.foodValue * -0.02) )
 	  elseif not status.resource("food") then

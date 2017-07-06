@@ -1,6 +1,40 @@
 {
   "name" : "racefloran",
-  "effectConfig" : { },
+  "effectConfig" : { 
+    //Core attributes
+    "healthBonus" : 0.05,
+    "energyBonus" : 0.2,
+    "attackBonus" : 1.05,
+    "defenseBonus" : 0,
+    
+    //Resistances
+    "physicalResistance" : 0,
+    "electricResistance" : 0.25,
+    "fireResistance" : -0.5,
+    "iceResistance" : 0.25,
+    "poisonResistance" : -0.25,
+    "shadowResistance" : 0,
+    "cosmicResistance" : 0,
+    "radioactiveResistance" : 0.2,
+    
+    //Mobility
+    "speedBonus" : 0,
+    "jumpBonus" : 0,
+    "fallBonus" : 0,
+    "otherBonus" : 0,
+    "knockbackBonus" : 0,
+    
+    //Environmental bonuses
+    "environmentBonusHealth" : 1.12,
+    "environmentBonusEnergy" : 1.12,
+    "environmentBonusAttack" : 0,
+    "environmentBonusDefense" : 0,
+    "environmentBonusResistance" : 0,
+    "environmentBonusResistance2" : 0,
+    "environmentBonusOther" : 0,  
+    "raceCritBonus" : 3
+  
+  },
   "defaultDuration" : 3,
 
   "scripts" : [

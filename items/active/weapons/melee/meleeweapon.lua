@@ -58,24 +58,55 @@ self.critBonus = config.getParameter("critBonus", 0)
      self.meleeCount2 = 0
    end       
    	
-if species == "hylotl" then  
-  if heldItem then
-     if root.itemHasTag(heldItem, "dagger") or root.itemHasTag(heldItem, "hammer") or root.itemHasTag(heldItem, "broadsword") or root.itemHasTag(heldItem, "spear") or root.itemHasTag(heldItem, "axe") then 
-       self.meleeCount = self.meleeCount + 1
-       status.setPersistentEffects("weaponbonusdmg", {{stat = "protection", amount = self.meleeCount}})  
+if species == "hylotl" and heldItem then  
+     -- with all swords, Hylotl get +1% Crit Chance
+     if root.itemHasTag(heldItem, "dagger") or root.itemHasTag(heldItem, "katana") or root.itemHasTag(heldItem, "broadsword") or root.itemHasTag(heldItem, "shortsword") then 
+       status.setPersistentEffects("weaponbonusdmg", {{stat = "critChance", amount = 1}})  
      end
-  end
+     -- with Katanas and Broadswords they get +health/20 Crit Damage bonus
+     if root.itemHasTag(heldItem, "katana") or root.itemHasTag(heldItem, "broadsword") then 
+       self.damageBoost = status.resource("health")/20
+       status.setPersistentEffects("weaponbonusdmg", {{stat = "critBonus", amount = self.damageBoost}})  
+     end
+     if root.itemHasTag(heldItem, "shortsword") then 
+       status.setPersistentEffects("weaponbonusdualwield", {{stat = "powerMultiplier", baseMultiplier = 1.06}})   
+     end  
+     if root.itemHasTag(heldItem, "shortsword") and opposedhandHeldItem and root.itemHasTag(opposedhandHeldItem, "shortsword") then 
+       status.setPersistentEffects("weaponbonusdualwield", {{stat = "protection", amount = 4}  })   
+     end 
+     if root.itemHasTag(heldItem, "shortsword") and opposedhandHeldItem and root.itemHasTag(opposedhandHeldItem, "dagger") then 
+       status.setPersistentEffects("weaponbonusdualwield", {{stat = "protection", amount = 4}  })   
+     end     
+     if root.itemHasTag(heldItem, "quarterstaff") then 
+       status.setPersistentEffects("weaponbonusdmg", {{stat = "protection", amount = 6}  })   
+     end      
 end
        
 if species == "human" then  -- Humans do more damage with shortswords and resist knockback
   if heldItem then
      if root.itemHasTag(heldItem, "shortsword") then 
-	  self.meleeCount = self.meleeCount + 0.19
 	  status.setPersistentEffects("weaponbonusdmg", {
-	    {stat = "powerMultiplier", amount = self.meleeCount},
-	    {stat = "grit", amount = self.meleeCount}
+	    {stat = "powerMultiplier", baseMultiplier = 1.12},
+	    {stat = "grit", amount = 0.20}
 	  })   
      end
+  end
+end
+
+if species == "floran" then   -- floran get spear bonus
+  if heldItem then
+     if root.itemHasTag(heldItem, "spear") then 
+	  self.meleeCount = self.meleeCount + 0.08
+	  status.setPersistentEffects("weaponbonusdmg", {
+	    {stat = "powerMultiplier", amount = self.meleeCount}
+	  })  
+     end
+     if root.itemHasTag(heldItem, "dagger") then 
+	  self.meleeCount = self.meleeCount + 0.08
+	  status.setPersistentEffects("weaponbonusdmg", {
+	    {stat = "powerMultiplier", amount = self.meleeCount}
+	  })  
+     end     
   end
 end
 
@@ -90,9 +121,10 @@ end
 
 if species == "apex" then   --apex love axes and hammers
   if heldItem then
-     if root.itemHasTag(heldItem, "hammer") or root.itemHasTag(heldItem, "axe") then 
-	self.meleeCount = 0.19
-	status.setPersistentEffects("weaponbonusdmg", {{stat = "powerMultiplier", amount = self.meleeCount}})    	
+     if root.itemHasTag(heldItem, "hammer") then 
+	status.setPersistentEffects("weaponbonusdmg", {
+	  {stat = "powerMultiplier", baseMultiplier = 1.1}
+	})    	
      end
   end
 end  
@@ -342,6 +374,20 @@ if species == "felin" then  --when using dagger weapons, felin are extra swift
      end    
   end
 end
+-- ************** Hylotl *****************************
+if species == "hylotl" and heldItem then  
+     if root.itemHasTag(heldItem, "quarterstaff") then 
+       mcontroller.controlModifiers({ speedModifier = 1.12 })   
+     end 
+     if root.itemHasTag(heldItem, "shortsword") and opposedhandHeldItem and root.itemHasTag(opposedhandHeldItem, "shortsword") then 
+       mcontroller.controlModifiers({ speedModifier = 1.08 })   
+     end 
+     if root.itemHasTag(heldItem, "shortsword") and opposedhandHeldItem and root.itemHasTag(opposedhandHeldItem, "dagger") then 
+       mcontroller.controlModifiers({ speedModifier = 1.08 })   
+     end      
+end
+
+ 
 -- ***************************************************   
 -- END FR STUFF
 -- ***************************************************   

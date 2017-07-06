@@ -22,87 +22,6 @@ function init()
   self.cooldownTime = config.getParameter("cooldownTime")
   self.forceWalk = config.getParameter("forceWalk", false)
 
-
-
-   -- FU special effects
-     -- health effects
-          self.critChance = config.getParameter("critChance", 0)
-          self.critBonus = config.getParameter("critBonus", 0)
-          self.shieldBonusShield = config.getParameter("shieldBonusShield", 0)  -- bonus shield HP
-          self.shieldBonusRegen = config.getParameter("shieldBonusRegen", 0)  -- bonus shield regen time
- 	  self.shieldHealthRegen = config.getParameter("shieldHealthRegen", 0)
- 	  shieldEnergyRegen = config.getParameter("shieldEnergyRegen",0)
- 	  shieldHealthBonus = config.getParameter("shieldHealthBonus",0)*(status.resourceMax("health"))
- 	  shieldEnergyBonus = config.getParameter("shieldEnergyBonus",0)*(status.resourceMax("energy"))
- 	  shieldProtection = config.getParameter("shieldProtection",0)
- 	  shieldStamina = config.getParameter("shieldStamina",0)
- 	  shieldFalling = config.getParameter("shieldFalling",0)
- 	  protectionBee = config.getParameter("protectionBee",0)
- 	  protectionAcid = config.getParameter("protectionAcid",0)
- 	  protectionBlackTar = config.getParameter("protectionBlackTar",0)
- 	  protectionBioooze = config.getParameter("protectionBioooze",0)
- 	  protectionPoison = config.getParameter("protectionPoison",0)
- 	  protectionInsanity = config.getParameter("protectionInsanity",0)
- 	  protectionShock = config.getParameter("protectionShock",0)
- 	  protectionSlime = config.getParameter("protectionSlime",0)
- 	  protectionLava = config.getParameter("protectionLava",0)
- 	  protectionFire = config.getParameter("protectionFire",0)
- 	  protectionProto = config.getParameter("protectionProto",0)
- 	  protectionAcid = config.getParameter("protectionAcid",0)
- 	  protectionBlackTar = config.getParameter("protectionBlackTar",0)
- 	  protectionBioooze = config.getParameter("protectionBioooze",0)
- 	  protectionPoison = config.getParameter("protectionPoison",0)
- 	  protectionInsanity = config.getParameter("protectionInsanity",0)
- 	  protectionShock = config.getParameter("protectionShock",0)
- 	  protectionSlime = config.getParameter("protectionSlime",0)
- 	  protectionLava = config.getParameter("protectionLava",0)
- 	  protectionFire = config.getParameter("protectionFire",0)
- 	  protectionProto = config.getParameter("protectionProto",0)
- 	  protectionCold = config.getParameter("protectionCold",0)
- 	  protectionXCold = config.getParameter("protectionXCold",0)
- 	  protectionHeat = config.getParameter("protectionHeat",0)
- 	  protectionXHeat = config.getParameter("protectionXHeat",0)
- 	  protectionRads = config.getParameter("protectionRads",0)
- 	  protectionXRads = config.getParameter("protectionXRads",0)	  
- 	  
- 	  
- 	  
- 	  status.setPersistentEffects("shieldEffects", {
- 	  {stat = "baseShieldHealth", amount = config.getParameter("shieldBonusShield", 0) },
- 	  {stat = "energyRegenPercentageRate", amount = shieldEnergyRegen},
- 	  {stat = "maxHealth", amount = shieldHealthBonus},
- 	  {stat = "maxEnergy", amount = shieldEnergyBonus},
- 	  {stat = "protection", amount = shieldProtection},
- 	  {stat = "shieldStaminaRegen", amount = shieldStamina},
- 	  {stat = "fallDamageMultiplier", amount = shieldFalling},
- 	  {stat = "beestingImmunity", amount = protectionBee},
- 	  {stat = "sulphuricImmunity", amount = protectionAcid},
- 	  {stat = "blacktarImmunity", amount = protectionBlackTar},
- 	  {stat = "biooozeImmunity", amount = protectionBioooze},
- 	  {stat = "poisonStatusImmunity", amount = protectionPoison},
- 	  {stat = "insanityImmunity", amount = protectionInsanity},
- 	  {stat = "shockStatusImmunity", amount = protectionShock},
- 	  {stat = "slimeImmunity", amount = protectionSlime},
- 	  {stat = "lavaImmunity", amount = protectionLava},
- 	  {stat = "fireStatusImmunity", amount = protectionFire},
- 	  {stat = "protoImmunity", amount = protectionProto},
- 	  {stat = "sulphuricImmunity", amount = protectionAcid},
- 	  {stat = "blacktarImmunity", amount = protectionBlackTar},
- 	  {stat = "biooozeImmunity", amount = protectionBioooze},
- 	  {stat = "poisonStatusImmunity", amount = protectionPoison},
- 	  {stat = "insanityImmunity", amount = protectionInsanity},
- 	  {stat = "electricStatusImmunity", amount = protectionShock},
- 	  {stat = "slimeImmunity", amount = protectionSlime},
- 	  {stat = "lavaImmunity", amount = protectionLava},
- 	  {stat = "biomecoldImmunity", amount = protectionCold},
- 	  {stat = "ffextremecoldImmunity", amount = protectionXCold},
- 	  {stat = "biomeheatImmunity", amount = protectionHeat},
- 	  {stat = "ffextremeheatImmunity", amount = protectionXHeat},
- 	  {stat = "biomeradiationImmunity", amount = protectionRads},
- 	  {stat = "ffextremeradiationImmunity", amount = protectionXRads}
- 	  })
-  -- end FU special effects
-  
   animator.setGlobalTag("directives", "")
   animator.setAnimationState("shield", "idle")
   activeItem.setOutsideOfHand(true)
@@ -110,69 +29,147 @@ function init()
   self.stances = config.getParameter("stances")
   setStance(self.stances.idle)
   
-  self.blockCountShield = 0.01
-
+  self.blockCountShield = 0
+  species = world.entitySpecies(activeItem.ownerEntityId())
 
   
   self.startHealth = status.resource("health")
-  
-  local species = world.entitySpecies(activeItem.ownerEntityId())
 
+  -- FU special effects
+    -- health effects
+          self.critChance = config.getParameter("critChance", 0)
+          self.critBonus = config.getParameter("critBonus", 0)
+          self.shieldBonusShield = config.getParameter("shieldBonusShield", 0)  -- bonus shield HP
+          self.shieldBonusRegen = config.getParameter("shieldBonusRegen", 0)  -- bonus shield regen time          
+	  self.shieldHealthRegen = config.getParameter("shieldHealthRegen", 0)
+	  shieldEnergyRegen = config.getParameter("shieldEnergyRegen",0)
+	  shieldHealthBonus = config.getParameter("shieldHealthBonus",0)*(status.resourceMax("health"))
+	  shieldEnergyBonus = config.getParameter("shieldEnergyBonus",0)*(status.resourceMax("energy"))
+	  shieldProtection = config.getParameter("shieldProtection",0)
+	  shieldStamina = config.getParameter("shieldStamina",0)
+	  shieldFalling = config.getParameter("shieldFalling",0)
+	  protectionBee = config.getParameter("protectionBee",0)
+	  protectionAcid = config.getParameter("protectionAcid",0)
+	  protectionBlackTar = config.getParameter("protectionBlackTar",0)
+	  protectionBioooze = config.getParameter("protectionBioooze",0)
+	  protectionPoison = config.getParameter("protectionPoison",0)
+	  protectionInsanity = config.getParameter("protectionInsanity",0)
+	  protectionShock = config.getParameter("protectionShock",0)
+	  protectionSlime = config.getParameter("protectionSlime",0)
+	  protectionLava = config.getParameter("protectionLava",0)
+	  protectionFire = config.getParameter("protectionFire",0)
+	  protectionProto = config.getParameter("protectionProto",0)
+	  protectionAcid = config.getParameter("protectionAcid",0)
+	  protectionBlackTar = config.getParameter("protectionBlackTar",0)
+	  protectionBioooze = config.getParameter("protectionBioooze",0)
+	  protectionPoison = config.getParameter("protectionPoison",0)
+	  protectionInsanity = config.getParameter("protectionInsanity",0)
+	  protectionShock = config.getParameter("protectionShock",0)
+	  protectionSlime = config.getParameter("protectionSlime",0)
+	  protectionLava = config.getParameter("protectionLava",0)
+	  protectionFire = config.getParameter("protectionFire",0)
+	  protectionProto = config.getParameter("protectionProto",0)
+	  protectionCold = config.getParameter("protectionCold",0)
+	  protectionXCold = config.getParameter("protectionXCold",0)
+	  protectionHeat = config.getParameter("protectionHeat",0)
+	  protectionXHeat = config.getParameter("protectionXHeat",0)
+	  protectionRads = config.getParameter("protectionRads",0)
+	  protectionXRads = config.getParameter("protectionXRads",0)	  
+
+	  status.setPersistentEffects("shieldEffects", {
+		  {stat = "energyRegenPercentageRate", amount = shieldEnergyRegen},
+		  {stat = "maxHealth", amount = shieldHealthBonus},
+		  {stat = "maxEnergy", amount = shieldEnergyBonus},
+		  {stat = "protection", amount = shieldProtection},
+		  {stat = "shieldStaminaRegen", amount = shieldStamina},
+		  {stat = "fallDamageMultiplier", amount = shieldFalling},
+		  {stat = "beestingImmunity", amount = protectionBee},
+		  {stat = "sulphuricImmunity", amount = protectionAcid},
+		  {stat = "blacktarImmunity", amount = protectionBlackTar},
+		  {stat = "biooozeImmunity", amount = protectionBioooze},
+		  {stat = "poisonStatusImmunity", amount = protectionPoison},
+		  {stat = "insanityImmunity", amount = protectionInsanity},
+		  {stat = "shockStatusImmunity", amount = protectionShock},
+		  {stat = "slimeImmunity", amount = protectionSlime},
+		  {stat = "lavaImmunity", amount = protectionLava},
+		  {stat = "fireStatusImmunity", amount = protectionFire},
+		  {stat = "protoImmunity", amount = protectionProto},
+		  {stat = "sulphuricImmunity", amount = protectionAcid},
+		  {stat = "blacktarImmunity", amount = protectionBlackTar},
+		  {stat = "biooozeImmunity", amount = protectionBioooze},
+		  {stat = "poisonStatusImmunity", amount = protectionPoison},
+		  {stat = "insanityImmunity", amount = protectionInsanity},
+		  {stat = "electricStatusImmunity", amount = protectionShock},
+		  {stat = "slimeImmunity", amount = protectionSlime},
+		  {stat = "lavaImmunity", amount = protectionLava},
+		  {stat = "biomecoldImmunity", amount = protectionCold},
+		  {stat = "ffextremecoldImmunity", amount = protectionXCold},
+		  {stat = "biomeheatImmunity", amount = protectionHeat},
+		  {stat = "ffextremeheatImmunity", amount = protectionXHeat},
+		  {stat = "biomeradiationImmunity", amount = protectionRads},
+		  {stat = "ffextremeradiationImmunity", amount = protectionXRads}
+	  })
+	  
+  -- end FU special effects
+  
+  -- ***** RACIALS that do not require shield to first be raised
+  
+-- ******************* BEIN FR RACIALS FOR WHEN SHIELD IS NOT RAISED
             if species == "glitch" then
                 local heldItem = world.entityHandItem(activeItem.ownerEntityId(), "primary")
-		if heldItem ~= nil then
-			if isShield(heldItem) then
-              			self.blockCountShield = 1
-              			status.setPersistentEffects("shieldBonus", {{stat = "protection", amount = self.blockCountShield}})    	
-			end
+		if heldItem ~= nil and isShield(heldItem) then
+		  status.setPersistentEffects("shieldBonus2", {{stat = "maxHealth", baseMultiplier = 1.08}})  	
 		end
 		heldItem = world.entityHandItem(activeItem.ownerEntityId(), "alt")
-		if heldItem ~= nil then
-			if  isShield(heldItem) then
-              			self.blockCountShield = 1
-              			status.setPersistentEffects("shieldBonus", {{stat = "protection", amount = self.blockCountShield}})   	
-			end
-		end  
+		if heldItem ~= nil and isShield(heldItem) then
+		  status.setPersistentEffects("shieldBonus2", { {stat = "maxHealth", baseMultiplier = 1.08} })   	
+		end  		
             end   
             if species == "nightar" then
                 local heldItem = world.entityHandItem(activeItem.ownerEntityId(), "primary")
                 self.blockCountShield2 = 0.2
-		if heldItem ~= nil then
-			if isShield(heldItem) then
-              			status.setPersistentEffects("shieldBonus", {{stat = "grit", amount = self.blockCountShield2}})    	
+			if heldItem ~= nil and isShield(heldItem) then
+				if isShield(heldItem) then
+					status.setPersistentEffects("shieldBonus", {{stat = "grit", amount = self.blockCountShield2}})    	
+				end
 			end
-		end
 		heldItem = world.entityHandItem(activeItem.ownerEntityId(), "alt")
-		if heldItem ~= nil then
-			if  isShield(heldItem) then
-              			status.setPersistentEffects("shieldBonus", {{stat = "grit", amount = self.blockCountShield2}})   	
-			end
-		end  
-            end   
-            
+			if heldItem ~= nil then
+				if  isShield(heldItem) then
+					status.setPersistentEffects("shieldBonus", {{stat = "grit", amount = self.blockCountShield2}})   	
+				end
+			end  
+            end              
+-- ******************** END UNRAISED SHIELD SPECIALS   
   updateAim()
 end
 
 
--- ****************************************************************
--- FrackinRaces weapon specialization
--- ****************************************************************
-function isShield(name)
+function isShield(name) -- detect if they have a shield equipped for racial tag checks
 	if root.itemHasTag(name, "shield") then
 		return true
 	end
 	return false
 end
 
+function update(dt, fireMode, shiftHeld)   
 
-function update(dt, fireMode, shiftHeld)            
+ -- ***** Glitch effect cancelling
+	if not status.resource("energy") then self.energyValue = 1 end
+	self.energyValue = status.resource("energy") / status.stat("maxEnergy")
+	
+	if (species == "glitch") and (self.energyValue) <= 0.25 then -- if they have 25% or more energy apply the bonus. else, nope.
+	   status.addEphemeralEffect("raceglitchshieldcancel",3)               
+	end
+--**************************************
+
   self.cooldownTimer = math.max(0, self.cooldownTimer - dt)
-
---**************************************
- if self.blockCountShield == nil then 
-   self.blockCountShield = 0.01 
- end
---**************************************
+	     
+  --**************************************  setting default
+  if self.blockCountShield == nil then 
+    self.blockCountShield = 0.01 
+  end
+  --**************************************
 
   if not self.active
     and fireMode == "primary"
@@ -183,19 +180,12 @@ function update(dt, fireMode, shiftHeld)
 
   if self.active then
     self.activeTimer = self.activeTimer + dt
-
     self.damageListener:update()
-    --
-    --
-    --
-    --
-    -- FU SPECIALS
+    
+-- ************************************** FU SPECIALS **************************************
     status.modifyResourcePercentage("health", self.shieldHealthRegen * dt)
-    --
-    --
-    --
-    --
-    --
+-- *****************************************************************************************
+    
     if status.resourcePositive("perfectBlock") then
       animator.setGlobalTag("directives", self.perfectBlockDirectives)
     else
@@ -227,12 +217,14 @@ function uninit()
   status.clearPersistentEffects("nightarprotection")
   status.clearPersistentEffects("apexprotection")
   status.clearPersistentEffects("glitchprotection")
+  status.clearPersistentEffects("shieldEffects") 
   status.clearPersistentEffects("shieldBonus") 
+  status.clearPersistentEffects("shieldBonus2")
 end
 
 function updateAim()
   local aimAngle, aimDirection = activeItem.aimAngleAndDirection(0, activeItem.ownerAimPosition())
-  
+
   if self.stance.allowRotate then
     self.aimAngle = aimAngle
   end
@@ -281,6 +273,35 @@ function raiseShield()
     activeItem.setItemDamageSources({ knockbackDamageSource })
   end
 
+
+
+-- ******************* BEIN FR RACIALS FOR WHEN SHIELD IS RAISED
+  
+            self.energyValue = status.resource("energy") / status.stat("maxEnergy")
+            if (species == "glitch") and (self.energyValue) >= 0.25 then
+		local heldItem = world.entityHandItem(activeItem.ownerEntityId(), "primary")
+		if heldItem ~= nil then
+			if isShield(heldItem) then
+				status.setPersistentEffects("shieldBonus", {
+				  {stat = "protection", amount = 5},
+				  {stat = "powerMultiplier", baseMultiplier = 1.05},
+				  {stat = "healthRegen", amount = 0.284 }
+				})  
+			end
+		end
+		heldItem = world.entityHandItem(activeItem.ownerEntityId(), "alt")
+		if heldItem ~= nil then
+			if isShield(heldItem) then
+				status.setPersistentEffects("shieldBonus", {
+				  {stat = "protection", amount = 5},
+				  {stat = "powerMultiplier", baseMultiplier = 1.05},
+				  {stat = "healthRegen", amount = 0.284 }
+				})   	
+			end
+		end     	    
+            end
+-- ******************** END RAISED SHIELD SPECIALS            
+            
   self.damageListener = damageListener("damageTaken", function(notifications)
     for _,notification in pairs(notifications) do
 	  species = world.entitySpecies(activeItem.ownerEntityId()) or sb.logInfo("(FR) shield.lua:update() DANGER! Race is nil!")
@@ -289,17 +310,17 @@ function raiseShield()
           animator.playSound("perfectBlock")
           animator.burstParticleEmitter("perfectBlock")
 
-          -- *******************************************************
+          
+ -- *******************************************************
           self.blockCountShield = self.blockCountShield + 0.01
-          -- *******************************************************
-          -- FRACKIN UNIVERSE and FRACKIN RACES abilities start here
-          -- *******************************************************
-          -- *******************************************************
-          -- *******************************************************
-
-          if species == "glitch" then
+-- *******************************************************
+-- Begin racial Perfect Blocking scripts
+-- *******************************************************
+          if species == "glitch" then --glitch get a power bonus when perfectly blocking
             self.blockCountShield = self.blockCountShield + 0.03
-            status.setPersistentEffects("glitchprotection", {{stat = "powerMultiplier", amount = self.blockCountShield}})  --glitch get a power bonus when perfectly blocking
+            status.setPersistentEffects("glitchprotection", 
+              { {stat = "powerMultiplier", amount = self.blockCountShield} }
+            )  
             animator.burstParticleEmitter("bonusBlock3")
             animator.playSound("bonusEffect")
           end
@@ -327,7 +348,7 @@ function raiseShield()
             end
             animator.burstParticleEmitter("bonusBlock3")
             animator.playSound("bonusEffect")
-          end             
+          end            
 	  if species == "nightar" then --nightar gain protection when they block
             self.blockCountShield = self.blockCountShield + 1
             status.setPersistentEffects("nightarprotection", 
@@ -349,16 +370,18 @@ function raiseShield()
             )  
             animator.burstParticleEmitter("bonusBlock3")
             animator.playSound("bonusEffect")
-          end          
-	  if species == "human" then
+          end             
+	  if species == "human" then --human get a defense bonus when perfectly blocking
             self.blockCountShield = self.blockCountShield + 2
-            status.setPersistentEffects("humanprotection", {{stat = "protection", amount = self.blockCountShield}})  --human get a defense bonus when perfectly blocking
+            status.setPersistentEffects("humanprotection", 
+              {{stat = "protection", amount = self.blockCountShield}}
+            )  
             animator.burstParticleEmitter("bonusBlock4")
             animator.playSound("bonusEffect")
           end
-          if species == "ningen" then
+          if species == "ningen" then --human get a defense bonus when perfectly blocking
             self.blockCountShield = self.blockCountShield + 2
-            status.setPersistentEffects("ningenprotection", {{stat = "protection", amount = self.blockCountShield}})  --human get a defense bonus when perfectly blocking
+            status.setPersistentEffects("ningenprotection", {{stat = "protection", amount = self.blockCountShield}})  
             animator.burstParticleEmitter("bonusBlock4")
             animator.playSound("bonusEffect")
           end          
@@ -424,6 +447,7 @@ function lowerShield()
   activeItem.setItemShieldPolys({})
   activeItem.setItemDamageSources({})
   self.cooldownTimer = self.cooldownTime
+  status.clearPersistentEffects("shieldBonus") 
 end
 
 function shieldHealth()

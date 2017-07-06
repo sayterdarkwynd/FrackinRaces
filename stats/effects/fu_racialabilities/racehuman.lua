@@ -1,18 +1,11 @@
 function init()
-  baseValue = config.getParameter("healthBonus",0)*(status.resourceMax("health"))
-  baseValue2 = config.getParameter("energyBonus",0)*(status.resourceMax("energy"))
   baseValue3 = config.getParameter("foodBonus",0)*(status.resourceMax("food"))
   
   effect.addStatModifierGroup({
-  {stat = "maxFood", amount = baseValue3 },
-  {stat = "maxHealth", amount = baseValue },
-  {stat = "maxEnergy", amount = baseValue2 },
-  {stat = "physicalResistance", amount = 0},
-  {stat = "fireResistance", amount = 0},
-  {stat = "iceResistance", amount = 0},
-  {stat = "electricResistance", amount = 0},
-  {stat = "poisonResistance", amount = 0},
-  {stat = "shadowResistance", amount = 0}
+    -- base Attributes
+    {stat = "isOmnivore", amount = 1},
+    --other
+    {stat = "grit", amount = 0.2}
   })
 
 
@@ -27,7 +20,7 @@ function init()
   
   self.liquidMovementParameter = {
     liquidJumpProfile = {
-      jumpHoldTime = 0.275
+      jumpHoldTime = 0.28
     }
   }  
 end

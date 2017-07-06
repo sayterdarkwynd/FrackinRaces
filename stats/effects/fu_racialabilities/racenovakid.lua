@@ -1,32 +1,50 @@
 function init()
-  self.gritBoost = config.getParameter("gritBonus",0)
-  baseValue = config.getParameter("healthBonus",0)*(status.resourceMax("health"))
-  baseValue2 = config.getParameter("energyBonus",0)*(status.resourceMax("energy"))
+  self.baseMaxHealth = status.stat("maxHealth")
+  self.baseMaxEnergy = status.stat("maxEnergy")
+  if not status.stat("maxBreath") then
+    self.baseBreath = 1
+  else
+    self.baseBreath = status.stat("maxBreath")
+  end
   
   effect.addStatModifierGroup({
-    {stat = "maxHealth", amount = baseValue },
-    {stat = "maxEnergy", amount = baseValue2 },
-    {stat = "grit", amount = self.gritBoost },
+    -- base Attributes
+    {stat = "isOmnivore", amount = 1},
+    {stat = "maxHealth", amount = self.baseMaxHealth * config.getParameter("healthBonus")},
+    {stat = "maxEnergy", amount = self.baseMaxEnergy * config.getParameter("energyBonus")},
+    --{stat = "powerMultiplier", baseMultiplier = config.getParameter("attackBonus")},
+    --{stat = "protection", baseMultiplier = config.getParameter("defenseBonus")},
+    -- resistances
+    {stat = "physicalResistance", amount = config.getParameter("physicalResistance")},
+    {stat = "electricResistance", amount = config.getParameter("electricResistance")},
+    {stat = "fireResistance", amount = config.getParameter("fireResistance")},
+    {stat = "iceResistance", amount = config.getParameter("iceResistance")},
+    {stat = "poisonResistance", amount = config.getParameter("poisonResistance")},
+    {stat = "shadowResistance", amount = config.getParameter("shadowResistance")},
+    {stat = "cosmicResistance", amount = config.getParameter("cosmicResistance")},
+    {stat = "radioactiveResistance", amount = config.getParameter("radioactiveResistance")},
+    --other
     {stat = "fireStatusImmunity", amount = 1},
-    {stat = "physicalResistance", amount = -0.1},
-    {stat = "fireResistance", amount = 0.20},
-    {stat = "iceResistance", amount = 0},
-    {stat = "electricResistance", amount = 0},
-    {stat = "poisonResistance", amount = 0},
-    {stat = "shadowResistance", amount = -0.35},
-    {stat = "radioactiveResistance", amount = 0.35}
-  })
+    {stat = "radiationburnImmunity", amount = 1},
+    {stat = "grit", amount = -0.25}
+    })
 
-  local bounds = mcontroller.boundBox()
+    if (world.type() == "alien") or (world.type() == "jungle")  or (world.type() == "irradiated")  or (world.type() == "chromatic") then
+	    status.setPersistentEffects("jungleEpic", {
+	      {stat = "maxHealth", baseMultiplier = 1.15},
+	      {stat = "maxEnergy", baseMultiplier = 1.15}
+	    })
+    end 
+    
   script.setUpdateDelta(5)
 end
 
 function update(dt)
   mcontroller.controlModifiers({
-    speedModifier = 1.085
+    speedModifier = 1.05
   })
 end
 
 function uninit()
-
+    status.clearPersistentEffects("jungleEpic")
 end

@@ -109,18 +109,18 @@ function HammerSmash:fire()
 	  end
 	end
 	
-	if species == "glitch" then  --glitch consume energy when wielding axes and hammers. They get increased critChance as a result
-	  if not self.critValueGlitch then
-	    self.critValueGlitch = ( math.ceil(self.energyValue/8) ) 
-	  end  
-	  if self.energyValue >= 25 then
-	    if status.isResource("food") then
-	             adjustedHunger = hungerLevel - (hungerLevel * 0.01)
-	             status.setResource("food", adjustedHunger)	      
-	    end	 	       
-	    status.setPersistentEffects("glitchEnergyPower", {
-		{ stat = "critChance", amount = self.critValueGlitch }
-	      }) 	    
+	if species == "glitch" and heldItem then  --glitch consume energy when wielding axes and hammers. They get increased critChance as a result
+	  if root.itemHasTag(heldItem, "greataxe") then
+		  if not self.critValueGlitch then self.critValueGlitch = ( math.ceil(self.energyValue/16) ) end  
+		  if self.energyValue >= 25 then
+		    if status.isResource("food") then
+			     adjustedHunger = hungerLevel - (hungerLevel * 0.01)
+			     status.setResource("food", adjustedHunger)	      
+		    end	 	       
+		    status.setPersistentEffects("glitchEnergyPower", {
+			{ stat = "critChance", amount = self.critValueGlitch }
+		      }) 	    
+		  end
 	  end
 	end  	
 -- ***********************************************	

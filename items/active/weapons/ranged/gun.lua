@@ -40,22 +40,48 @@ local heldItem2 = world.entityHandItem(activeItem.ownerEntityId(), "alt")
 		  status.setPersistentEffects("novakidbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}})    
 	     end
 	     if root.itemHasTag(heldItem, "sniperrifle") or root.itemHasTag(heldItem, "rifle") then 
-	     local randomAdd = math.random(3)
 		  status.setPersistentEffects("novakidbonusdmg2", {
-		    {stat = "critChance", amount = 2 + randomAdd},
-		    {stat = "critBonus", amount = randomAdd}
+		    {stat = "critChance", amount = 5},
+		    {stat = "critBonus", baseMultiplier = 1.2 }
 		    })    
 	     end
+	     if root.itemHasTag(heldItem, "shotgun") then 
+		  status.setPersistentEffects("novakidbonusdmg2", {
+		    {stat = "powerMultiplier", baseMultiplier = 1.2},
+		    {stat = "critBonus", baseMultiplier = 1.2}
+		    })    
+	     end	     
 	     if root.itemHasTag(heldItem, "pistol") and opposedhandHeldItem and root.itemHasTag(opposedhandHeldItem, "pistol") then -- novakids are unmatched with dual pistols
-	       self.blockCount = self.blockCount + 0.10
 	       status.setPersistentEffects("weaponbonusdualwield", {
-		    {stat = "grit", amount = self.blockCount},
-		    {stat = "maxEnergy", amount = self.blockCount}
+		    {stat = "grit", amount = 0.25},
+		    {stat = "maxEnergy", baseMultiplier = 1.15}
 		 })    
 	     end	     
 	  end
 	end 
 
+	-- glitch love crossbows
+	 if species == "glitch" then   
+	  if heldItem then	     
+	     if root.itemHasTag(heldItem, "crossbow") then 
+		  status.setPersistentEffects("novakidbonusdmg", {
+		    {stat = "critChance", baseMultiplier = 4}
+		  })   
+	     end	     
+	  end
+	end 
+	
+	-- Avian get a bonus with submachineguns
+	 if species == "avian" then   
+	  if heldItem then	     
+	     if root.itemHasTag(heldItem, "machinepistol") then 
+		  status.setPersistentEffects("novakidbonusdmg", {
+		    {stat = "critChance", baseMultiplier = 1}
+		  })   
+	     end	     
+	  end
+	end 
+	
 	-- Callistan get a bonus with Energy Weapons
 	 if species == "callistan" then   
 	  if heldItem then	     
@@ -72,23 +98,25 @@ local heldItem2 = world.entityHandItem(activeItem.ownerEntityId(), "alt")
 	  end
 	end 
 	
-	-- Apex get a bonus with Grenade Launchers and Energy Weapons
+	-- Floran get a bonus with floran needlers
+	 if species == "floran" then   
+	  if heldItem then
+	     if root.itemHasTag(heldItem, "floran") then 
+		  status.setPersistentEffects("novakidbonusdmg", {
+		    {stat = "critChance", amount = 2}
+		  })   
+	     end 	     
+	  end
+	end 
+	
+	-- Apex get a bonus with mining lasers
 	 if species == "apex" then   
 	  if heldItem then
-	     if root.itemHasTag(heldItem, "grenadelauncher") then 
-		  self.blockCount = 20
-		  status.setPersistentEffects("novakidbonusdmg", {{stat = "critBonus", amount = self.blockCount}})   
-	     end
-	     if root.itemHasTag(heldItem, "rocketlauncher") then 
-		  status.setPersistentEffects("novakidbonusdmg", {{stat = "critChance", amount = 5}})   
-	     end	     
-	     if root.itemHasTag(heldItem, "energy") then 
-		  self.blockCount = self.blockCount + 0.1
+	     if root.itemHasTag(heldItem, "mininglaser") then 
 		  status.setPersistentEffects("novakidbonusdmg", {
-		    {stat = "powerMultiplier", amount = self.blockCount},
-		    {stat = "maxEnergy", amount = self.blockCount}
+		    {stat = "powerMultiplier", baseMultiplier = 1.5}
 		  })   
-	     end	     
+	     end 	     
 	  end
 	end 
 	
@@ -96,9 +124,8 @@ local heldItem2 = world.entityHandItem(activeItem.ownerEntityId(), "alt")
 	 if species == "human" then   
 	  local heldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand())
 	  if heldItem then
-	     if root.itemHasTag(heldItem, "assaultrifle") or root.itemHasTag(heldItem, "machinepistol") then 
-		  self.blockCount = self.blockCount + 0.15
-		  status.setPersistentEffects("novakidbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}}) 
+	     if root.itemHasTag(heldItem, "assaultrifle") then 
+		  status.setPersistentEffects("novakidbonusdmg", {{stat = "powerMultiplier", amount = 1.12}}) 
 	     end
 	  end
 	end           
@@ -166,6 +193,16 @@ if species == "novakid" and bonusApply == 0 then  --nightar gain speed and jump 
   if heldItem then
      if root.itemHasTag(heldItem, "pistol") and opposedhandHeldItem and root.itemHasTag(opposedhandHeldItem, "pistol") then
        mcontroller.controlModifiers({ speedModifier = 1.08, airJumpModifier = 1.05 })
+     end    
+  end
+  bonusApply = 1
+end
+
+-- ***********  floran  movement bonuses ***************
+if species == "flora" and bonusApply == 0 then  
+  if heldItem then
+     if root.itemHasTag(heldItem, "floran") and opposedhandHeldItem and root.itemHasTag(opposedhandHeldItem, "floran") then
+       mcontroller.controlModifiers({ speedModifier = 1.08 })
      end    
   end
   bonusApply = 1

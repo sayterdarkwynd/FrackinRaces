@@ -1,45 +1,51 @@
 function init()
-baseValue = config.getParameter("healthBonus",0)*(status.resourceMax("health"))
-baseValue2 = config.getParameter("energyBonus",0)*(status.resourceMax("energy"))
-self.powerModifier = config.getParameter("powerModifier", 0)
-effect.addStatModifierGroup({
-    {stat = "maxHealth", amount = baseValue },
-    {stat = "maxEnergy", amount = baseValue2 },
-    {stat = "powerMultiplier", baseMultiplier = self.powerModifier},
-    {stat = "fallDamageMultiplier", baseMultiplier = 0.65},
-    {stat = "physicalResistance", amount = 0},
-    {stat = "fireResistance", amount = 0},
-    {stat = "iceResistance", amount = -0.4},
-    {stat = "electricResistance", amount = 0.3},
-    {stat = "poisonResistance", amount = 0},
-    {stat = "shadowResistance", amount = 0.15},
-    {stat = "cosmicResistance", amount = 0.2}
-})
-
+  self.baseMaxHealth = status.stat("maxHealth")
+  self.baseMaxEnergy = status.stat("maxEnergy")
+  effect.addStatModifierGroup({
+    -- base Attributes
+    {stat = "isOmnivore", baseMultiplier = 1},
+    {stat = "maxHealth", amount = self.baseMaxHealth * config.getParameter("healthBonus")},
+    {stat = "maxEnergy", amount = self.baseMaxEnergy * config.getParameter("energyBonus")},
+    {stat = "powerMultiplier", baseMultiplier = config.getParameter("attackBonus")},
+    --{stat = "protection", baseMultiplier = config.getParameter("defenseBonus")},
+    {stat = "fallDamageMultiplier", baseMultiplier = config.getParameter("fallBonus")},
+    -- resistances
+    {stat = "physicalResistance", amount = config.getParameter("physicalResistance")},
+    {stat = "electricResistance", amount = config.getParameter("electricResistance")},
+    {stat = "fireResistance", amount = config.getParameter("fireResistance")},
+    {stat = "iceResistance", amount = config.getParameter("iceResistance")},
+    {stat = "poisonResistance", amount = config.getParameter("poisonResistance")},
+    {stat = "shadowResistance", amount = config.getParameter("shadowResistance")},
+    {stat = "cosmicResistance", amount = config.getParameter("cosmicResistance")},
+    {stat = "radioactiveResistance", amount = config.getParameter("radioactiveResistance")}
+  })
+  
   self.movementParams = mcontroller.baseParameters()  
-  local bounds = mcontroller.boundBox()
-  script.setUpdateDelta(5)
   self.liquidMovementParameter = {
     airJumpProfile = { 
       jumpSpeed = 30
     }
   }  
- 
+  script.setUpdateDelta(5)
 end
 
 function update(dt)
-    mcontroller.controlParameters(self.liquidMovementParameter)
-    
+        mcontroller.controlParameters(self.liquidMovementParameter)
+        
+        if not mcontroller.onGround() then
+	    status.setPersistentEffects("avianflightpower", {
+	      {stat = "powerMultiplier", baseMultiplier = 1.12}
+	    }) 
+	else
+	    status.clearPersistentEffects("avianflightpower")
+        end
+        
 	if mcontroller.falling() then
 	  mcontroller.controlParameters(config.getParameter("fallingParameters"))
 	  mcontroller.setYVelocity(math.max(mcontroller.yVelocity(), config.getParameter("maxFallSpeed")))
 	end
 	
-	mcontroller.controlModifiers({
-	  speedModifier = 1.09,
-	  airJumpModifier = 1.05,
-	  airForce = 56
-	})	
+	
 	
 	if (world.windLevel(mcontroller.position()) >= 60 ) then
 	    maxFallSpeed = -30
@@ -60,6 +66,7 @@ end
 
 function uninit()
   status.clearPersistentEffects("avianwindbonus")
+  status.clearPersistentEffects("avianflightpower")
 end
 
 

@@ -61,7 +61,9 @@ function update(dt)
 
 
   if not daytime then -- at night, lose 25% energy. Actual light is not important...only the solar cycle is
-    status.setPersistentEffects("nightpenalty", { {stat = "maxEnergy", baseMultiplier = 0.75 } })
+    status.setPersistentEffects("nightpenalty", { 
+      {stat = "maxEnergy", baseMultiplier = 0.75 } 
+    })
   else 
     status.clearPersistentEffects("nightpenalty") 
   end 
@@ -71,21 +73,25 @@ function update(dt)
     if (self.tickTimer <= 0 ) and hungerLevel >=28 then  -- has timer reached 0? is there enough Food?
       self.tickTimer = self.tickTime
       if daytime then -- during the day when 50% fed or more we get regen with no need to consume food
-	  if hungerLevel > 35 then
+	  if hungerLevel > 45 then
 	   self.healingRate = 1.009 / 60
 	   status.modifyResourcePercentage("health", self.healingRate * dt)
 	  elseif hungerLevel > 60 then
 	   self.healingRate = 1.03 / 60
 	   status.modifyResourcePercentage("health", self.healingRate * dt)    
-	  end      
+	  end 
+	    status.setPersistentEffects("daybonus", { 
+	      {stat = "energyRegenPercentageRate", baseMultiplier = 1.20 } 
+	    })	  
       end
       if not daytime then -- while they still regen at night, it consumes a lot more food from the Novakid
-         if hungerLevel > 20 then -- do we have enough foor to regen?
+         if hungerLevel > 45 then -- do we have enough foor to regen?
            adjustedHunger = hungerLevel + ( hungerLevel * -0.0005 )
            status.setResource( "food", adjustedHunger )            
            self.healingRate = 1.001 / 60
 	   status.modifyResourcePercentage("health", self.healingRate * dt)
-	 end      
+	 end 
+	 status.clearPersistentEffects("daybonus")  
       end
     end
   end

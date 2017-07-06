@@ -12,7 +12,7 @@
   "power" : 6,
   "damagePoly" : [ [-8, 0], [-5, -5], [0, -8], [5, -5], [8, 0], [5, 5], [0, 8], [-5, 5] ],
   "damageKind" : "poison",
-  
+  "statusEffects" : [ "weakpoison" ],
 "animationCustom" : {
     "sounds" : {
         "fire" : ["/sfx/tools/atom.ogg", "/sfx/tools/atom5.ogg", "/sfx/tools/atom7.ogg"],

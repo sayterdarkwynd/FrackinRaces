@@ -24,6 +24,13 @@ self.critBonus = config.getParameter("critBonus", 0)
   self.weapon:init()
   --*************************************    
   -- FU/FR ADDONS
+  
+ -- Primary hand, or single-hand equip  
+ local heldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand())
+ --used for checking dual-wield setups
+ local opposedhandHeldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand() == "primary" and "alt" or "primary")
+
+ 
    if self.blockCount == nil then 
      self.blockCount = 0 
      self.blockCount2 = 0 
@@ -35,21 +42,25 @@ self.critBonus = config.getParameter("critBonus", 0)
 	end
    self.energyValue = status.resource("energy")  --check our energy level
    local species = world.entitySpecies(activeItem.ownerEntityId())
-            if species == "floran" then      --15% more damage with floran
-              self.blockCount = self.blockCount + 1.15
+   
+	     if species == "glitch" and heldItem then
+		      status.setPersistentEffects("floranbonusdmg", {
+			{stat = "critChance", amount = 4}
+		      })         
+	     end
+            if species == "floran" then
               status.setPersistentEffects("floranbonusdmg", {
-                {stat = "powerMultiplier", baseMultiplier = self.blockCount}
-              })  
-              local bounds = mcontroller.boundBox()            
+                {stat = "critChance", amount = 4},
+                {stat = "critBonus", baseMultiplier = 1.2}
+              })             
             end   
-            if species == "lamia" then      --15% more damage and increased crit rate with lamia     
+            if species == "lamia" then  
               self.blockCount = self.blockCount + 1.25
               status.setPersistentEffects("vierabonusdmg", {
                 {stat = "powerMultiplier", baseMultiplier = self.blockCount}
               }) 
-              local bounds = mcontroller.boundBox()
             end             
-            if species == "viera" then      --15% more damage with viera
+            if species == "viera" then 
               self.blockCount = self.blockCount + 1.15
               self.blockCount2 = self.blockCount2 + 1.15
               status.setPersistentEffects("vierabonusdmg", {
@@ -57,7 +68,7 @@ self.critBonus = config.getParameter("critBonus", 0)
                 {stat = "maxEnergy", baseMultiplier = self.blockCount2 }
               })  
             end   
-            if species == "sergal" then      --15% more damage with sergal
+            if species == "sergal" then 
               self.blockCount = self.blockCount + 1.15
               status.setPersistentEffects("vierabonusdmg", {
               {stat = "powerMultiplier", baseMultiplier = self.blockCount}

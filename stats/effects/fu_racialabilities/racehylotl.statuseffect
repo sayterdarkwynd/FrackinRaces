@@ -1,9 +1,37 @@
 {
   "name" : "racehylotl",
   "effectConfig" : {
-  "healthBonus" : 0.10,
-  "energyBonus" : -0.20,
-  "weaknessPenalty" : 1.75
+    //Core attributes
+    "healthBonus" : 0.20,
+    "energyBonus" : 0.0,
+    "attackBonus" : 1.1,
+    "defenseBonus" : 0,
+    
+    //Resistances
+    "physicalResistance" : 0,
+    "electricResistance" : -0.4,
+    "fireResistance" : 0,
+    "iceResistance" : 0.2,
+    "poisonResistance" : 0,
+    "shadowResistance" : -0.1,
+    "cosmicResistance" : 0,
+    "radioactiveResistance" : 0,
+    
+    //Mobility
+    "speedBonus" : 0,
+    "jumpBonus" : 0,
+    "fallBonus" : 0,
+    "otherBonus" : 0,
+    "knockbackBonus" : 0,
+    
+    //Environmental bonuses
+    "environmentBonusHealth" : 1.12,
+    "environmentBonusEnergy" : 1.12,
+    "environmentBonusAttack" : 0,
+    "environmentBonusDefense" : 0,
+    "environmentBonusResistance" : 0,
+    "environmentBonusResistance2" : 0,
+    "environmentBonusOther" : 0
   },
   "defaultDuration" : 3,
 

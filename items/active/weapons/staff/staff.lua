@@ -2,6 +2,7 @@ require "/scripts/util.lua"
 require "/scripts/vec2.lua"
 require "/items/active/weapons/weapon.lua"
 
+
 function init()
 self.critChance = config.getParameter("critChance", 0)
 self.critBonus = config.getParameter("critBonus", 0)
@@ -32,26 +33,27 @@ self.critBonus = config.getParameter("critBonus", 0)
               self.staffCount = self.staffCount + 0.30
               self.staffCount2 = self.staffCount2 + 0.10
               status.setPersistentEffects("avianbonusdmg", {
-              {stat = "powerMultiplier", baseMultiplier = 1 + self.staffCount},
-              {stat = "physicalResistance", baseMultiplier = 1 + self.staffCount2}
+                {stat = "powerMultiplier", baseMultiplier = 1 + self.staffCount},
+                {stat = "physicalResistance", baseMultiplier = 1 + self.staffCount2}
               }) 
               local bounds = mcontroller.boundBox()
             end     
-            if species == "avian" then      
+            if species == "avian" then   
+              self.elemType = config.getParameter("elementalType") -- check the element tyoe
               self.staffCount = self.staffCount + 0.20
               status.setPersistentEffects("avianbonusdmg", {
-              {stat = "powerMultiplier", baseMultiplier = 1 + self.staffCount},
-              {stat = "maxEnergy", baseMultiplier = 1 + self.staffCount},
-              {stat = "critBonus", baseMultiplier = 1 + self.staffCount}
+                {stat = "powerMultiplier", baseMultiplier = 1 + self.staffCount},
+                {stat = "maxEnergy", baseMultiplier = 1 + self.staffCount},
+                {stat = self.elemType.."Resistance", amount = 0.15}
               }) 
               local bounds = mcontroller.boundBox()
             end            
             if species == "kineptic" then     
               self.staffCount = self.staffCount + 0.25
               status.setPersistentEffects("ningenbonusdmg", {
-              {stat = "powerMultiplier", baseMultiplier = 1 + self.staffCount},
-              {stat = "energyRegenPercentageRate", amount = 0.2},
-              {stat = "energyRegenBlockTime", amount = -0.5}
+                {stat = "powerMultiplier", baseMultiplier = 1 + self.staffCount},
+                {stat = "energyRegenPercentageRate", amount = 0.2},
+                {stat = "energyRegenBlockTime", amount = -0.5}
               })  
             end             
             if species == "ningen" then     
@@ -79,6 +81,7 @@ self.critBonus = config.getParameter("critBonus", 0)
 --************************************** 
   self.weapon:init()
 end
+
 
 function update(dt, fireMode, shiftHeld)
   self.weapon:update(dt, fireMode, shiftHeld)        

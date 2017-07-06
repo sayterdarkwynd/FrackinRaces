@@ -1,0 +1,11 @@
+{
+  "name" : "raceglitchshieldcancel",
+  "effectConfig" : {},
+  "defaultDuration" : 3.5,
+
+  "animationConfig" : "/stats/effects/fu_racialabilities/raceglitch.animation",
+  "scripts" : [
+    "raceglitchshieldcancel.lua"
+  ]
+
+}

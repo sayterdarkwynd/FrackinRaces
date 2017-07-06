@@ -56,11 +56,8 @@ self.critBonus = config.getParameter("critBonus", 0)
              end      
 
              if species == "apex" then
-               self.blockCount = self.blockCount + 0.12
-               self.blockCount2 = self.blockCount + 2
                status.setPersistentEffects("fistbonusdmg", {
-                 {stat = "powerMultiplier", amount = self.blockCount},
-                 {stat = "protection", amount = self.blockCount2}
+                 {stat = "critChance", amount = 1}
                }) 
              end               
 

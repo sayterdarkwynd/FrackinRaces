@@ -104,7 +104,6 @@ function AxeCleave:fire()
 	
 	
      -- **** Glitch 
-
 	if species == "glitch" then  --glitch consume energy when wielding axes and hammers. They get increased critChance as a result
 	  if not self.critValueGlitch then
 	    self.critValueGlitch = ( math.ceil(self.energyValue/16) ) 

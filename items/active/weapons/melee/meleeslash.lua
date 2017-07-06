@@ -1,14 +1,10 @@
 -- Melee primary ability
 MeleeSlash = WeaponAbility:new()
 
-function MeleeSlash:init()
-          
+function MeleeSlash:init() 
   self.damageConfig.baseDamage = self.baseDps * self.fireTime
-
   self.energyUsage = self.energyUsage or 0
-
   self.weapon:setStance(self.stances.idle)
-
   self.cooldownTimer = self:cooldownTime()
 
   self.weapon.onLeaveAbility = function()
@@ -133,28 +129,28 @@ function MeleeSlash:fire()
 	  else
 	      self.foodValue = 50
 	  end          
-	  if heldItem then
-	     if not root.itemHasTag(heldItem, "spear") then  -- anything that isn't a spear gets a flat damage bonus
+	  if heldItem then	  
+	     if not root.itemHasTag(heldItem, "spear") then
 	       if self.foodValue >= 5 then
 		  if status.isResource("food") then
 		   status.modifyResource("food", (status.resource("food") * -0.005) )
 		  end	 	       
-	         status.setPersistentEffects("floranFoodPowerBonus", {{stat = "powerMultiplier", baseMultiplier = 1.05}})
 	       end
-	     end
-	     if root.itemHasTag(heldItem, "spear") then -- spears get increased attack speed and a chance for a special attack. need 50% food or more
-		    -- attack speed change  
-		    if self.foodValue >= 35 then
-		      if status.isResource("food") then
-		        status.modifyResource("food", (status.resource("food") * -0.01) )  -- consume food
+	     end	     
+	     if root.itemHasTag(heldItem, "spear") or root.itemHasTag(heldItem, "dagger") then
+		    if self.foodValue >= 35 then 
+		      if status.isResource("food") then 
+		        status.modifyResource("food", (status.resource("food") * -0.01) ) 
 		      end
+		      
 		      attackSpeedUp = self.foodValue/140 -- speed increase is half of food value (50% max reduction)
-		      status.setPersistentEffects("combobonusdmg", {{stat = "critChance", amount = critValueFloran}}) 		      
-		      -- projectile chance
-		      --if randValue < 9 then
-	              --params = { power = 10,damageKind = "poison" }		      
-		      --projectileId = world.spawnProjectile("furazorleafinvis",self:firePosition(),activeItem.ownerEntityId(),self:aimVector(),false,params)
-		      --end			      
+	       	      status.setPersistentEffects("combobonusdmg", { -- spears enjoy a +3% crit rate
+	       		{stat = "critChance", amount = 3}
+		      }) 
+		      if randValue <= 3 then --3% chance to fire a poisoning strike
+	                params = { power = self.foodValue/12 , damageKind = "poison" }		      
+		        projectileId = world.spawnProjectile("furazorleafinvis",self:firePosition(),activeItem.ownerEntityId(),self:aimVector(),false,params)
+		      end			      
 		    end
 	     end  
 	   end
@@ -167,11 +163,11 @@ function MeleeSlash:fire()
 	  end            
 	  if heldItem then
 	     if root.itemHasTag(heldItem, "dagger") and opposedhandHeldItem and root.itemHasTag(opposedhandHeldItem, "wand") then 
-		if (randValue < 10) and self.energyValue >= 50 then  -- spawn a projectile if rand is good and they have enough energy
+		if (randValue < 40) and self.energyValue >= 50 then  -- spawn a projectile if rand is good and they have enough energy
 		  if status.resource("energy") then -- if they have energy, and have enough of it, we subtract some
-			  params = { power = 3, damageKind = "cosmic", timeToLive = 0.3, speed = 30, projectileCount = 3, piercing = false }
-			  params2 = { power = 5, damageKind = "ice", timeToLive = 0.3, speed = 30 }
-			  params3 = { power = 8, damageKind = "cosmic", timeToLive = 0.3, speed = 40, piercing = true }
+			  params = { power = self.energyValue/24, damageKind = "cosmic", timeToLive =  0.3, speed = 30, projectileCount = 1, piercing = false }
+			  params2 = { power = self.energyValue/20, damageKind = "cosmic", timeToLive =  0.4, speed = 45, projectileCount = 1, piercing = false }
+			  params3 = { power = self.energyValue/16, damageKind = "cosmic", timeToLive =  0.5, speed = 60, projectileCount = 1, piercing = true }
 			  local randPower = math.random(5)
 			  if randPower <=3 then
 			    status.modifyResource("energy", self.energyValue * -0.2 )  -- consume energy
@@ -179,11 +175,11 @@ function MeleeSlash:fire()
 			    animator.playSound("avian")
 			  elseif randPower ==4 then
 			    status.modifyResource("energy", self.energyValue * -0.5 )  -- consume energy
-			    projectileId = world.spawnProjectile("iceeruption",self:firePosition(),activeItem.ownerEntityId(),self:aimVector(),false,params2)
+			    projectileId = world.spawnProjectile("energycrystal",self:firePosition(),activeItem.ownerEntityId(),self:aimVector(),false,params2)
 			    animator.playSound("avian")		  
 			  elseif randPower ==5 then
 			    status.modifyResource("energy", self.energyValue * -0.7 )  -- consume energy
-			    projectileId = world.spawnProjectile("energywave",self:firePosition(),activeItem.ownerEntityId(),self:aimVector(),false,params3)
+			    projectileId = world.spawnProjectile("energycrystal",self:firePosition(),activeItem.ownerEntityId(),self:aimVector(),false,params3)
 			    animator.playSound("avian")		  
 			  end		    
 		  end		

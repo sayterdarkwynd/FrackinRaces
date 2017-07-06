@@ -2,6 +2,7 @@
 MeleeCombo = WeaponAbility:new()
 
 function MeleeCombo:init()
+
   self.comboStep = 1
 
   self.energyUsage = self.energyUsage or 0
@@ -198,17 +199,12 @@ function MeleeCombo:fire()
  local randValue = math.random(100)  -- chance for projectile
  local hylotlBonus = status.resource("health")/20 
 
-	 if species == "hylotl" then   -- in combos, hylotl get a bonus to damage with swords
-	  if heldItem then
-	     if root.itemHasTag(heldItem, "broadsword") then 
-		  self.meleeCountcombo = self.meleeCountcombo + 0.06
-		  status.setPersistentEffects("combobonusdmg", {{stat = "powerMultiplier", amount = self.meleeCountcombo},{stat = "protection", amount = 1},{stat = "critBonus", amount = hylotlBonus}}) 
+	 if species == "hylotl" and heldItem then   -- in combos, hylotl get a bonus to damage with swords
+	     if root.itemHasTag(heldItem, "broadsword") or root.itemHasTag(heldItem, "shortsword") or root.itemHasTag(heldItem, "katana") then 
+		  status.setPersistentEffects("combobonusdmg", {
+		    {stat = "critChance", amount = 1}
+		  }) 
 	     end	  
-	     if root.itemHasTag(heldItem, "shortsword") then 
-		  self.meleeCountcombo = self.meleeCountcombo + 0.06
-		  status.setPersistentEffects("combobonusdmg", {{stat = "powerMultiplier", amount = self.meleeCountcombo},{stat = "protection", amount = 1}})  
-	     end
-	  end
 	 end  
 
           if species == "avikan" then      
@@ -229,7 +225,18 @@ function MeleeCombo:fire()
 	  end
 	 end 
 
-       if species == "mantizi" then  -- with a sword, shortspear and shield, an avian is dangerous! pew pew!      
+       if species == "avian" then  -- with a shortspear and shield, an avian gets little bonuses   
+	  if heldItem then
+	     if root.itemHasTag(heldItem, "shortspear") then 
+		status.setPersistentEffects("combobonusdmg", { 
+		  {stat = "powerMultiplier", baseMultiplier = 1.06},
+		  {stat = "critChance", amount = 1 } 
+		  }) 					                        			    
+	     end
+	  end
+       end
+       
+       if species == "mantizi" then  -- with a sword/shortspear and shield, an mantizi is dangerous!      
 	  if heldItem then
 	     if root.itemHasTag(heldItem, "shortsword") or root.itemHasTag(heldItem, "shortspear") and opposedhandHeldItem and root.itemHasTag(opposedhandHeldItem, "shield") then 
 		self.meleeCountcombo = 1.2
@@ -297,7 +304,6 @@ function MeleeCombo:fire()
 		  if status.isResource("food") then
 		   status.modifyResource("food", (status.resource("food") * -0.005) )
 		  end	    
-	         status.setPersistentEffects("floranFoodPowerBonus", {{stat = "powerMultiplier", baseMultiplier = 1.05}})
 	    end
 	end
 

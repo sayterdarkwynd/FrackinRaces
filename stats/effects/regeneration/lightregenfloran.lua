@@ -36,9 +36,6 @@ function undergroundCheck()
 	return world.underground(mcontroller.position()) 
 end
 
-
-
-  
 function update(dt)
   daytime = daytimeCheck()
   underground = undergroundCheck()
@@ -61,14 +58,12 @@ function update(dt)
     self.foodValue = status.resource("food")
 	-- Night penalties
 	  if not daytime then  -- Florans lose HP and Energy when the sun is not out
-	
 		status.setPersistentEffects("nightpenalty", { 
-		{stat = "maxHealth", baseMultiplier = 0.90 },
-		{stat = "maxEnergy", baseMultiplier = 0.70 }
+		  {stat = "maxHealth", baseMultiplier = 0.90 },
+		  {stat = "maxEnergy", baseMultiplier = 0.70 }
 		}) 
 	       -- when the sun is down, florans lose food
 	         if (hungerLevel < hungerMax) and ( self.tickTimerPenalty <= 0 ) then
-	         
 	           self.tickTimerPenalty = self.tickTimePenalty
 		   --reduce the hunger drain if bathed in light
 	           if lightLevel > 25 then --you can reduce the drain with light

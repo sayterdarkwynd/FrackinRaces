@@ -1,28 +1,45 @@
 require("/scripts/vec2.lua")
 function init()
+
   inWater=0
-  baseValue = config.getParameter("healthBonus",0)*(status.resourceMax("health"))
-  baseValue2 = config.getParameter("energyBonus",0)*(status.resourceMax("energy"))
+
+  self.baseMaxHealth = status.stat("maxHealth")
+  self.baseMaxEnergy = status.stat("maxEnergy")
+  if not status.stat("maxBreath") then
+    self.baseBreath = 1
+  else
+    self.baseBreath = status.stat("maxBreath")
+  end
   
   effect.addStatModifierGroup({
-    {stat = "maxHealth", amount = baseValue },
-    {stat = "maxEnergy", amount = baseValue2 },
-    {stat = "maxBreath", amount = 1500},
-    {stat = "breathRegenerationRate", amount = 60},
-    {stat = "wetImmunity", amount = 1},
-    {stat = "physicalResistance", amount = 0},
-    {stat = "fireResistance", amount = 0},
-    {stat = "iceResistance", amount = 0.15},
-    {stat = "electricResistance", amount = -0.35},
-    {stat = "poisonResistance", amount = 0.15},
-    {stat = "shadowResistance", amount = 0}
+    -- base Attributes
+    {stat = "isOmnivore", amount = 1},
+    {stat = "maxHealth", amount = self.baseMaxHealth * config.getParameter("healthBonus")},
+    --{stat = "maxEnergy", amount = self.baseMaxEnergy * config.getParameter("energyBonus")},
+    {stat = "powerMultiplier", baseMultiplier = config.getParameter("attackBonus")},
+    --{stat = "protection", baseMultiplier = config.getParameter("defenseBonus")},
+    -- resistances
+    {stat = "physicalResistance", amount = config.getParameter("physicalResistance")},
+    {stat = "electricResistance", amount = config.getParameter("electricResistance")},
+    {stat = "fireResistance", amount = config.getParameter("fireResistance")},
+    {stat = "iceResistance", amount = config.getParameter("iceResistance")},
+    {stat = "poisonResistance", amount = config.getParameter("poisonResistance")},
+    {stat = "shadowResistance", amount = config.getParameter("shadowResistance")},
+    {stat = "cosmicResistance", amount = config.getParameter("cosmicResistance")},
+    {stat = "radioactiveResistance", amount = config.getParameter("radioactiveResistance")},
+    --other
+    {stat = "poisonStatusImmunity", amount = 1},
+    {stat = "beestingImmunity", amount = 1},
+    {stat = "grit", amount = 0.2}
   })
 
   script.setUpdateDelta(5)
 
     if (world.type() == "ocean") or (world.type() == "oceanfloor") then
 	    status.setPersistentEffects("jungleEpic", {
-	      {stat = "protection", baseMultiplier = 1.20}
+	      {stat = "protection", baseMultiplier = 1.15},
+	      {stat = "maxHealth", baseMultiplier = 1.12},
+	      {stat = "maxEnergy", baseMultiplier = 1.12}
 	    })
     end    
 end
@@ -36,6 +53,11 @@ local mouthPosition = vec2.add(mcontroller.position(), status.statusProperty("mo
 end
 
 function update(dt)
+	if mcontroller.zeroG() and self.baseBreath > 1 then  -- disable extra breath in space
+	    status.setPersistentEffects("hylotlprotection", {
+		{stat = "maxBreath", baseMultiplier = 1}
+	    })
+	end
 
 local mouthPosition = vec2.add(mcontroller.position(), status.statusProperty("mouthPosition"))
 local mouthful = world.liquidAt(mouthposition)

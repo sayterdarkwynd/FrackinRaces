@@ -22,13 +22,11 @@ function update(dt)
 	--Avian
 	if world.entitySpecies(entity.id()) == "avian" then
 		status.addEphemeralEffect("raceavian",math.huge)
-		status.addEphemeralEffect("hpedge",math.huge)
 	end
 
 	--Apex
 	if world.entitySpecies(entity.id()) == "apex" then
 	       status.addEphemeralEffect("raceapex",math.huge)
-	       status.addEphemeralEffect("metabolism",math.huge)
 	end
 	
 	--Floran
@@ -48,7 +46,6 @@ function update(dt)
 	--Glitch
 	if world.entitySpecies(entity.id()) == "glitch" then
 		status.addEphemeralEffect("raceglitch",math.huge)
-		status.addEphemeralEffect("attrition",math.huge)
 	end
 	
 	--Novakid
