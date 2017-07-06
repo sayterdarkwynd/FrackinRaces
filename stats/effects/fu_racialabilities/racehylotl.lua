@@ -12,6 +12,7 @@ function init()
   effect.addStatModifierGroup({
     -- base Attributes
     {stat = "isOmnivore", amount = 1},
+    {stat = "maxBreath", amount = 1500},
     {stat = "maxHealth", amount = self.baseMaxHealth * config.getParameter("healthBonus")},
     --{stat = "maxEnergy", amount = self.baseMaxEnergy * config.getParameter("energyBonus")},
     {stat = "powerMultiplier", baseMultiplier = config.getParameter("attackBonus")},
