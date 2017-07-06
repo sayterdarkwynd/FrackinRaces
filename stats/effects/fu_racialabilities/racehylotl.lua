@@ -1,8 +1,6 @@
 require("/scripts/vec2.lua")
 function init()
-
   inWater=0
-
   self.baseMaxHealth = status.stat("maxHealth")
   self.baseMaxEnergy = status.stat("maxEnergy")
   if not status.stat("maxBreath") then
