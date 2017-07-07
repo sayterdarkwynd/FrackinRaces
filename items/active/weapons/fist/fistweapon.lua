@@ -50,8 +50,8 @@ self.critBonus = config.getParameter("critBonus", 0)
                self.blockCount = self.blockCount + 0.5
                self.blockCount = 1
                status.setPersistentEffects("fistbonusdmg", {
-                 {stat = "grit", amount = self.blockCount},
-                 {stat = "protection", amount = self.blockCount2}
+                 {stat = "grit", amount = 0.25},
+                 {stat = "physicalResistance", amount = 0.2}
                }) 
              end      
 

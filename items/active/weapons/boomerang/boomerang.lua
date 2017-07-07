@@ -79,15 +79,19 @@ if species == "bunnykin" then
   local heldItem = world.entityHandItem(activeItem.ownerEntityId(), "primary")
   if heldItem then
      if root.itemHasTag(heldItem, "boomerang") or root.itemHasTag(heldItem, "chakram") then  
-	  self.blockCount = self.blockCount + 0.15
-	  status.setPersistentEffects("bonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}})  
+	  status.setPersistentEffects("bonusdmg", {
+	    {stat = "critChance", amount = 10},
+	    {stat = "critBonus", amount = 20}
+	  })  
      end
   end
   heldItem = world.entityHandItem(activeItem.ownerEntityId(), "alt")
   if heldItem then
      if root.itemHasTag(heldItem, "boomerang") or root.itemHasTag(heldItem, "chakram") then 
-	  self.blockCount = self.blockCount + 0.15
-	  status.setPersistentEffects("bonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}})  
+	  status.setPersistentEffects("bonusdmg", {
+	    {stat = "critChance", amount = 10},
+	    {stat = "critBonus", amount = 20}
+	  })  
      end  
    end
 end
