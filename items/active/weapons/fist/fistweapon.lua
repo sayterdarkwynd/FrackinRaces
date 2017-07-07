@@ -60,7 +60,6 @@ self.critBonus = config.getParameter("critBonus", 0)
                  {stat = "critChance", amount = 1}
                }) 
              end               
-
         -- **********************************************************   
         
         
@@ -83,7 +82,7 @@ function update(dt, fireMode, shiftHeld)
 if species == "felin" then  --when using fist weapons, felin are extra swift
   if heldItem then
      if root.itemHasTag(heldItem, "fist") and opposedhandHeldItem and root.itemHasTag(opposedhandHeldItem, "fist") then
-       mcontroller.controlModifiers({ speedModifier = 1.15, airJumpModifier = 1.05 })
+       mcontroller.controlModifiers({ speedModifier = 1.08, airJumpModifier = 1.05 })
      end    
   end
   bonusApply = 1

@@ -59,7 +59,14 @@ local heldItem2 = world.entityHandItem(activeItem.ownerEntityId(), "alt")
 	     end	     
 	  end
 	end 
-
+	if species == "felin" and heldItem then   	     
+	     if root.itemHasTag(heldItem, "pistol") or root.itemHasTag(heldItem, "machinepistol") then 
+		  status.setPersistentEffects("novakidbonusdmg", {
+		    {stat = "critDamage", baseMultiplier = 1.20},
+		    {stat = "critChance", amount = 1}
+		  })   
+	     end	     
+	end
 	if species == "droden" and heldItem then   	     
 	     if root.itemHasTag(heldItem, "crossbow") then 
 		  status.setPersistentEffects("novakidbonusdmg", {

@@ -293,25 +293,27 @@ end
 if species == "felin" then  
   if heldItem then
      if root.itemHasTag(heldItem, "fist") and opposedhandHeldItem and root.itemHasTag(opposedhandHeldItem, "fist") then --felin are lethal with two fists
-       self.meleeCount = 0.13
        status.setPersistentEffects("weaponbonusdualwield", {
-	    {stat = "powerMultiplier", amount = self.meleeCount}    
+	    {stat = "powerMultiplier", baseMultiplier = 1.03},
+	    {stat = "critDamage", baseMultiplier = 1.10}      
          })   
      end
      if root.itemHasTag(heldItem, "dagger") and opposedhandHeldItem and root.itemHasTag(opposedhandHeldItem, "dagger") then -- felin are dangerous and defensive with daggers
-       self.meleeCount5 = 0.08
-       self.meleeCount6 = 2
-       self.meleeCount7 = 0.25
        status.setPersistentEffects("weaponbonusdualwield", {
-	    {stat = "powerMultiplier", amount = self.meleeCount5},
-	    {stat = "protection", amount = self.meleeCount6},
-	    {stat = "grit", amount = self.meleeCount7 }	    
+	    {stat = "powerMultiplier", baseMultiplier = 1.03},
+	    {stat = "critDamage", baseMultiplier = 1.10}    
          })   
      end
-      if root.itemHasTag(heldItem, "fist") or root.itemHasTag(heldItem, "dagger") or root.itemHasTag(heldItem, "axe") or root.itemHasTag(heldItem, "spear") or root.itemHasTag(heldItem, "shortsword") then  -- gain increased fist and dagger damage
- 	self.meleeCount2 = 0.05
- 	status.setPersistentEffects("weaponbonusdmg3", {{stat = "powerMultiplier", amount = self.meleeCount2}})     
+      if root.itemHasTag(heldItem, "fist") then  
+ 	status.setPersistentEffects("weaponbonusdmg3", {
+ 	  {stat = "powerMultiplier", amount = 1.12}
+ 	})     
       end
+      if root.itemHasTag(heldItem, "dagger") then
+ 	status.setPersistentEffects("weaponbonusdmg3", {
+ 	  {stat = "critChance", amount = 1}
+ 	})     
+      end      
   end
 end
 
