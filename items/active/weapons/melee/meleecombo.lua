@@ -208,8 +208,10 @@ function MeleeCombo:fire()
 	 end  
 
           if species == "avikan" then      
-            self.meleeCountcombo = self.meleeCountcombo + 0.05
-            status.setPersistentEffects("combobonusdmg", {{stat = "powerMultiplier", amount = self.meleeCountcombo}})  
+            self.meleeCountcombo = status.resource("health")/40
+            status.setPersistentEffects("combobonusdmg", {
+              {stat = "powerMultiplier", baseMultiplier = self.meleeCountcombo}
+            })  
           end 
           
 	 if species == "droden" then   -- in combos, droden get increased critChance with swords

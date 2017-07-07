@@ -198,6 +198,14 @@ end
   end
 end  
 
+ if species == "avali" and heldItem then  --orcana get health and protection with spears
+     if root.itemHasTag(heldItem, "spear") then 
+	status.setPersistentEffects("weaponbonusdmg", {
+	  {stat = "critChance", amount = 2}
+	})        
+     end
+end 
+
  if species == "argonian" and heldItem then  --argonian do extra damage with spears
      if root.itemHasTag(heldItem, "spear") then 
 	status.setPersistentEffects("weaponbonusdmg", {
@@ -231,13 +239,13 @@ end
   end
  end  
 
- if species == "avikan" then   --avikan are brutal spears and daggers
-  if heldItem then
+ if species == "avikan" and heldItem then   --avikan are brutal spears and daggers
      if root.itemHasTag(heldItem, "dagger") or root.itemHasTag(heldItem, "spear") then 
-	self.meleeCount = 0.2
-	status.setPersistentEffects("weaponbonusdmg", {{stat = "powerMultiplier", amount = self.meleeCount}})   
+	status.setPersistentEffects("weaponbonusdmg", {
+	{stat = "powerMultiplier", amount = 1.05},
+	{stat = "critChance", amount = 2}
+	})   
      end
-  end
  end  
  
  if species == "gyrusen" then   --gyrusens are brutal with axes and hammers

@@ -23,12 +23,12 @@ function init()
   })
   
   local bounds = mcontroller.boundBox()
-  script.setUpdateDelta(10)
 	if (world.type() == "bog") or (world.type() == "swamp") or (world.type() == "strangesea") then
 		    status.setPersistentEffects("jungleEpic", {
 		      {stat = "maxHealth", baseMultiplier = 1.25}
 		    })
 	end    
+  script.setUpdateDelta(10)
 end
 
 function update(dt)

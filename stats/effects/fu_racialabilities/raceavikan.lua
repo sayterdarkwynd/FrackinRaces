@@ -1,38 +1,66 @@
 function init()
 
-  baseValue = config.getParameter("healthBonus",0)*(status.resourceMax("health"))
-  baseValue2 = config.getParameter("energyBonus",0)*(status.resourceMax("energy"))
-  
+  self.baseMaxHealth = status.stat("maxHealth")
+  self.baseMaxEnergy = status.stat("maxEnergy")
   effect.addStatModifierGroup({
-    {stat = "maxHealth", amount = baseValue },
-    {stat = "maxEnergy", amount = baseValue2 },
+    -- base Attributes
+    {stat = "isOmnivore", baseMultiplier = 1},
+    {stat = "maxHealth", amount = self.baseMaxHealth * config.getParameter("healthBonus")},
+    {stat = "maxEnergy", amount = self.baseMaxEnergy * config.getParameter("energyBonus")},
+    {stat = "powerMultiplier", baseMultiplier = config.getParameter("attackBonus")},
+    --{stat = "protection", baseMultiplier = config.getParameter("defenseBonus")},
+    {stat = "fallDamageMultiplier", baseMultiplier = config.getParameter("fallBonus")},
+    -- resistances
+    {stat = "physicalResistance", amount = config.getParameter("physicalResistance")},
+    {stat = "electricResistance", amount = config.getParameter("electricResistance")},
+    {stat = "fireResistance", amount = config.getParameter("fireResistance")},
+    {stat = "iceResistance", amount = config.getParameter("iceResistance")},
+    {stat = "poisonResistance", amount = config.getParameter("poisonResistance")},
+    {stat = "shadowResistance", amount = config.getParameter("shadowResistance")},
+    {stat = "cosmicResistance", amount = config.getParameter("cosmicResistance")},
+    {stat = "radioactiveResistance", amount = config.getParameter("radioactiveResistance")},
     {stat = "fireStatusImmunity", amount = 1},
-    {stat = "biomeheatImmunity", amount = 1},
-    {stat = "physicalResistance", amount = 0.1},
-    {stat = "fireResistance", amount = 0.5},
-    {stat = "iceResistance", amount = -0.5},
-    {stat = "electricResistance", amount = 0},
-    {stat = "poisonResistance", amount = 0},
-    {stat = "shadowResistance", amount = 0},
     {stat = "grit", amount = 0.25},
-    {stat = "sandstormImmunity", amount = 1}
+    {stat = "sandstormImmunity", amount = 1},
+    {stat = "quicksandImmunity", amount = 1}
   })
-
+  
   script.setUpdateDelta(0)
 
-	if (world.type() == "desert") or (world.type() == "desertwastes") or (world.type() == "desertwastesdark") then
-		    status.setPersistentEffects("jungleEpic", {
-		      {stat = "powerMultiplier", baseMultiplier = 1.10},
-		      {stat = "maxHealth", baseMultiplier = 1.15},
-		      {stat = "healthRegen", amount = 0.02}
-		    })
+
+    onColdWorld()
+    onHotWorld()
+	if self.isHot == 1 then
+	    status.setPersistentEffects("jungleEpic", {
+	      {stat = "protection", baseMultiplier = 1.05},
+	      {stat = "maxHealth", baseMultiplier = 1.15},
+	      {stat = "healthRegen", amount = 0.04}
+	    })
 	end  
-	if (world.type() == "snow") or (world.type() == "tundra") or (world.type() == "arctic") or (world.type() == "nitrogensea") or (world.type() == "icemoon") or (world.type() == "frozenvolcanic") or (world.type() == "icewastes") then
-		    status.setPersistentEffects("jungleEpic", {
-		      {stat = "energyRegenPercentageRate", baseMultiplier = -1.4}
-		    })
+	if self.isCold == 1 then
+	    status.setPersistentEffects("jungleEpic", {
+	      {stat = "energyRegenPercentageRate", baseMultiplier = 0.5}
+	    })
 	end  	
 end
+
+
+function onColdWorld()
+  if (world.type() == "snow") or (world.type() == "arctic") or (world.type() == "arcticdark") or (world.type() == "icemoon") or (world.type() == "icewaste") or (world.type() == "icewastedark") then
+    self.isCold = 1
+  else
+    self.isCold = 0
+  end
+end
+
+function onHotWorld()
+  if (world.type() == "scorchedcity") or (world.type() == "desert") or (world.type() == "desertwastes") or (world.type() == "desertwastesdark") or (world.type() == "magma") or (world.type() == "magmadark") or (world.type() == "volcanic") or (world.type() == "volcanicdark") then
+    self.isHot = 1
+  else
+    self.isHot = 0
+  end
+end
+
 
 function update(dt)	
 	

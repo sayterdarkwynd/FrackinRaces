@@ -6,10 +6,14 @@
     { "op": "replace", 
     "path" : "/charCreationTooltip/description" , 
     "value" : "Adorable fuzzy space raptors with wings.
-    ^red;-10% Health, 40% Weakness: Fire^reset;
-    ^green;In mild to severe winds, gain additional agility^reset; 
-    ^green;+5% Energy, +40% Ice Resist^reset;
+    ^red;Weak: 40% Fire, on Hot biomes lose air-damage bonus, speed bonus and -25% health.^reset;
+    ^green;In mild to severe winds, gain additional agility. When airborne gain +10% damage^reset; 
+    ^green;On cold biomes, gain +5% speed and +15% health^reset;
     ^green;Immunities: Snow and Cold^reset;
-    ^green;Fall much slower thanks to their feathered wings (-30% fall speed), Immune to fall damage."
+    ^green;Grenade Launchers do +20% Crit Damage^reset;
+    ^green;Energy Guns do +12% damage^reset;
+    ^green;Spears gain +2% Crit^reset;
+    ^green;Immunities: Snow and Cold^reset;
+    ^green;Fall much slower thanks to their feathered wings (-30% fall speed),  almost immune to fall damage."
     }
 ]

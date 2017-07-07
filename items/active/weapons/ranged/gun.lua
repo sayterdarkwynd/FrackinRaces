@@ -61,25 +61,43 @@ local heldItem2 = world.entityHandItem(activeItem.ownerEntityId(), "alt")
 	end 
 
 	-- glitch love crossbows
-	 if species == "glitch" then   
-	  if heldItem then	     
+	if species == "glitch" and heldItem then   	     
 	     if root.itemHasTag(heldItem, "crossbow") then 
 		  status.setPersistentEffects("novakidbonusdmg", {
 		    {stat = "critChance", baseMultiplier = 4}
 		  })   
 	     end	     
-	  end
-	-- argonian love crossbows
-	 if species == "argonian" then   
-	  if heldItem then	     
+	end
+	-- avikan love energy weapons
+	if species == "avikan" and heldItem then   	     
+	     if root.itemHasTag(heldItem, "energy") then 
+		  status.setPersistentEffects("novakidbonusdmg", {
+		    {stat = "critChance", amount = 2},
+		    {stat = "powerMultiplier", baseMultiplier = 1.15}
+		  })   
+	     end	     
+	end	
+	if species == "argonian" and heldItem then   	     
 	     if root.itemHasTag(heldItem, "crossbow") or root.itemHasTag(heldItem, "harpoon") then 
 		  status.setPersistentEffects("novakidbonusdmg", {
 		    {stat = "critChance", amount = 5},
 		    {stat = "powerMultiplier", amount = 1.15}
 		  })   
 	     end	     
-	  end
-	end 	end 
+	end  
+	-- argonian love crossbows
+	 if species == "avali" and heldItem then   	     
+	     if root.itemHasTag(heldItem, "energy") then 
+		  status.setPersistentEffects("novakidbonusdmg", {
+		    {stat = "powerMultiplier", amount = 1.12}
+		  })   
+	     end
+	     if root.itemHasTag(heldItem, "grenadelauncher") then 
+		  status.setPersistentEffects("novakidbonusdmg", {
+		    {stat = "critBonus", baseMultiplier = 1.2}
+		  })   
+	     end	     
+	end  
 	
 	-- Avian get a bonus with submachineguns
 	 if species == "avian" then   
