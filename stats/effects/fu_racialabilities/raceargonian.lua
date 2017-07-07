@@ -32,7 +32,7 @@ function init()
 end
 
 function update(dt)
-   self.healingRate = 1.00005 / config.getParameter("healTime", 420)
+   self.healingRate = 1.00005 / 420
    status.modifyResourcePercentage("health", self.healingRate * dt)
    
 	if (world.type() == "bog") or (world.type() == "swamp") then
