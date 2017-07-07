@@ -161,7 +161,6 @@ function update(dt)
 	--argonian  
 	if world.entitySpecies(entity.id()) == "argonian" then
           status.addEphemeralEffect("raceargonian",math.huge)
-          status.addEphemeralEffect("metabolismargonian",math.huge)
           status.addEphemeralEffect("swimboost1",math.huge)
 	end
 

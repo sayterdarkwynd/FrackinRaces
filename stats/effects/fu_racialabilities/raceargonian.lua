@@ -1,33 +1,45 @@
 function init()
-  baseValue = config.getParameter("healthBonus",0)*(status.resourceMax("health"))
-  baseValue2 = config.getParameter("energyBonus",0)*(status.resourceMax("energy"))
-  
+  self.baseMaxHealth = status.stat("maxHealth")
+  self.baseMaxEnergy = status.stat("maxEnergy")
   effect.addStatModifierGroup({
-    {stat = "maxHealth", amount = baseValue },
-    {stat = "maxEnergy", amount = baseValue2 },
+    -- base Attributes
+    {stat = "isOmnivore", baseMultiplier = 1},
+    {stat = "maxHealth", amount = self.baseMaxHealth * config.getParameter("healthBonus")},
+    {stat = "maxEnergy", amount = self.baseMaxEnergy * config.getParameter("energyBonus")},
+    --{stat = "powerMultiplier", baseMultiplier = config.getParameter("attackBonus")},
+    {stat = "protection", baseMultiplier = config.getParameter("defenseBonus")},
+    --{stat = "fallDamageMultiplier", baseMultiplier = config.getParameter("fallBonus")},
+    -- resistances
+    {stat = "physicalResistance", amount = config.getParameter("physicalResistance")},
+    {stat = "electricResistance", amount = config.getParameter("electricResistance")},
+    {stat = "fireResistance", amount = config.getParameter("fireResistance")},
+    {stat = "iceResistance", amount = config.getParameter("iceResistance")},
+    {stat = "poisonResistance", amount = config.getParameter("poisonResistance")},
+    {stat = "shadowResistance", amount = config.getParameter("shadowResistance")},
+    {stat = "cosmicResistance", amount = config.getParameter("cosmicResistance")},
+    {stat = "radioactiveResistance", amount = config.getParameter("radioactiveResistance")},
     {stat = "maxBreath", amount = 1100},
-    {stat = "breathRegenerationRate", amount = 60},
-    {stat = "wetImmunity", amount = 1},
-    {stat = "poisonStatusImmunity", amount = 1},
-    {stat = "physicalResistance", amount = 0},
-    {stat = "fireResistance", amount = 0},
-    {stat = "iceResistance", amount = -0.4},
-    {stat = "electricResistance", amount = 0},
-    {stat = "poisonResistance", amount = 0.40},
-    {stat = "shadowResistance", amount = 0} 
+    {stat = "poisonStatusImmunity", amount = 1}
   })
   
   local bounds = mcontroller.boundBox()
   script.setUpdateDelta(10)
-	if (world.type() == "bog") or (world.type() == "swamp") then
+	if (world.type() == "bog") or (world.type() == "swamp") or (world.type() == "strangesea") then
 		    status.setPersistentEffects("jungleEpic", {
-		      {stat = "powerMultiplier", baseMultiplier = 1.20}
+		      {stat = "maxHealth", baseMultiplier = 1.25}
 		    })
 	end    
 end
 
 function update(dt)
-
+   self.healingRate = 1.00005 / config.getParameter("healTime", 420)
+   status.modifyResourcePercentage("health", self.healingRate * dt)
+   
+	if (world.type() == "bog") or (world.type() == "swamp") then
+		mcontroller.controlModifiers({
+				speedModifier = 1.15
+			})
+	end    			
 end
 
 function uninit()

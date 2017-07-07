@@ -69,7 +69,17 @@ local heldItem2 = world.entityHandItem(activeItem.ownerEntityId(), "alt")
 		  })   
 	     end	     
 	  end
-	end 
+	-- argonian love crossbows
+	 if species == "argonian" then   
+	  if heldItem then	     
+	     if root.itemHasTag(heldItem, "crossbow") or root.itemHasTag(heldItem, "harpoon") then 
+		  status.setPersistentEffects("novakidbonusdmg", {
+		    {stat = "critChance", amount = 5},
+		    {stat = "powerMultiplier", amount = 1.15}
+		  })   
+	     end	     
+	  end
+	end 	end 
 	
 	-- Avian get a bonus with submachineguns
 	 if species == "avian" then   

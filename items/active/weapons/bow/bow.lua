@@ -47,7 +47,7 @@ self.critBonus = config.getParameter("critBonus", 0)
 		      status.setPersistentEffects("floranbonusdmg", {
 			{stat = "critChance", amount = 4}
 		      })         
-	     end
+	     end	     
             if species == "floran" then
               status.setPersistentEffects("floranbonusdmg", {
                 {stat = "critChance", amount = 4},

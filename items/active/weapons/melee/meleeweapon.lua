@@ -198,16 +198,19 @@ end
   end
 end  
 
- if species == "argonian" then  --argonian do extra damage with spears
-  if heldItem then
+ if species == "argonian" and heldItem then  --argonian do extra damage with spears
      if root.itemHasTag(heldItem, "spear") then 
-	self.meleeCount = 0.15
 	status.setPersistentEffects("weaponbonusdmg", {
-	{stat = "powerMultiplier", amount = self.meleeCount},
+	{stat = "powerMultiplier", amount = 1.1},
 	{ stat = "maxEnergy", baseMultiplier = 1.25 }
 	})        
      end
-  end
+     if root.itemHasTag(heldItem, "shortspear") then 
+	status.setPersistentEffects("weaponbonusdmg", {
+	{stat = "powerMultiplier", baseMultiplier = 1.1},
+	{ stat = "protection", baseMultiplier = 1.1 }
+	})        
+     end     
  end  
 
  if species == "neko" then  --neko do extra damage with fists, daggers and shortswords
