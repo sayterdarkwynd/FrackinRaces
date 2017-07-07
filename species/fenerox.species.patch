@@ -7,14 +7,14 @@
     "path" : "/charCreationTooltip/description" , 
     "value" : "The primitive Fenerox are new to the established galactic order. Their tech is generally rather low, and only a few have moved beyond their hunter-gatherer lifestyle. These nocturnal hunters are exceptional at their craft, and are agile and deadly.
     
-    ^red;-5% HP^reset;
-    ^red;30% Weakness: Fire and Electric^reset;
-    ^green;When in a dry grassland, gain +10% Damage^reset;
-    ^red;Needs to eat more often ^green; but gains 6% speed and 11% jump height^reset;
-    ^green;+10% Energy^reset;
-    ^green;Increased damage, speed and health at night^reset;
-    ^green;Regenerate at night^reset;
-    ^green;+20% boomerang damage^reset;
-    ^green;+20% damage and +1 Protection with Spears^reset;"
+    ^red;-10% HP, Weak: 20% Fire, 20% Shadow, Eats often^reset;
+    ^green;40% Electric and 40% Poison resistance^reset;
+    ^green;When in a dry grassland, gain +15% Damage^reset;
+    ^red;+10% Energy, +5% Damage,+12% speed and 11% jump height^reset;
+    ^green;Regenerate at night and gain 25% Energy Regeneration^reset;
+    ^green;If fed well at night, gain +2 protection and +15% Physical Resistance.^reset;
+    ^green;+10% boomerang/chakram damage, +2% Crit^reset;
+    ^green;Spears get +2% Crit, +10% Damage. +20% protection when spear is held out.^reset;
+    ^green;Add your current speed/4 as bonus damage in melee.^reset;"
     }
 ]

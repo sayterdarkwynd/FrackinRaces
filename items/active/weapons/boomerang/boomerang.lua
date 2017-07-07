@@ -20,24 +20,22 @@ local species = world.entitySpecies(activeItem.ownerEntityId())
 if species == "fenerox" then  
   local heldItem = world.entityHandItem(activeItem.ownerEntityId(), "primary")
   if heldItem then
-     if root.itemHasTag(heldItem, "boomerang") then 
-	  self.blockCount = self.blockCount + 0.10
-	  self.blockCount2 = 1
+     if root.itemHasTag(heldItem, "boomerang") or root.itemHasTag(heldItem, "chakram") then 
 	  status.setPersistentEffects("bonusdmg", {
-	    {stat = "powerMultiplier", amount = self.blockCount},
-	    {stat = "protection", amount = self.blockCount2 }
+	    {stat = "powerMultiplier", baseMultiplier = 1.1},
+	    {stat = "critChance", amount = 2 }
 	    })  	
 	    local bounds = mcontroller.boundBox()
      end
   end
   heldItem = world.entityHandItem(activeItem.ownerEntityId(), "alt")
   if heldItem then
-     if root.itemHasTag(heldItem, "boomerang") then 
+     if root.itemHasTag(heldItem, "boomerang") or root.itemHasTag(heldItem, "chakram") then 
 	  self.blockCount = self.blockCount + 0.10
 	  self.blockCount2 = 1
 	  status.setPersistentEffects("bonusdmg", {
-	    {stat = "powerMultiplier", amount = self.blockCount},
-	    {stat = "protection", amount = self.blockCount2 }
+	    {stat = "powerMultiplier", baseMultiplier = 1.1},
+	    {stat = "critChance", amount = 2 }
 	    })  	
 	    local bounds = mcontroller.boundBox()
      end  
@@ -206,11 +204,8 @@ function update(dt, fireMode, shiftHeld)
     end
   end
   
-    local species = world.entitySpecies(activeItem.ownerEntityId())
-    if species == "fenerox" then      -- fenerox move faster when wielding boomerangs
-	mcontroller.controlModifiers({ speedModifier = 1.15 })              
-    end 
-            
+  local species = world.entitySpecies(activeItem.ownerEntityId())
+
   updateAim()
 end
 

@@ -157,11 +157,9 @@ end
 if species == "fenerox" then  --fenerox get dmg and protection increase with spears
   if heldItem then
      if root.itemHasTag(heldItem, "spear") then 
-	self.meleeCount = self.meleeCount + 1
-	self.meleeCount2 = 0.25
 	status.setPersistentEffects("weaponbonusdmg", {
-	{stat = "protection", amount = self.meleeCount},
-	{stat = "powerMultiplier", amount = self.meleeCount2}
+	{stat = "critChance", amount = 2},
+	{stat = "powerMultiplier", baseMultiplier = 1.1}
 	})  
      end
    end

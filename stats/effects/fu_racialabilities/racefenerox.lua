@@ -1,32 +1,39 @@
 function init()
-  self.powerModifier = config.getParameter("powerModifier", 0)
-  baseValue = config.getParameter("healthBonus",0)*(status.resourceMax("health"))
-  baseValue2 = config.getParameter("energyBonus",0)*(status.resourceMax("energy"))
-  local bounds = mcontroller.boundBox()
-  
+  self.baseMaxHealth = status.stat("maxHealth")
+  self.baseMaxEnergy = status.stat("maxEnergy")
   effect.addStatModifierGroup({
-    {stat = "powerMultiplier", baseMultiplier = 1.0 + self.powerModifier},
-    {stat = "maxHealth", amount = baseValue },
-    {stat = "maxEnergy", amount = baseValue2 },
-    {stat = "physicalResistance", amount = 0},
-    {stat = "fireResistance", amount = -0.3},
-    {stat = "iceResistance", amount = 0},
-    {stat = "electricResistance", amount = -0.3},
-    {stat = "poisonResistance", amount = 0},
-    {stat = "shadowResistance", amount = 0}  
+    -- base Attributes
+    {stat = "isCarnivore", baseMultiplier = 1},
+    {stat = "maxHealth", amount = self.baseMaxHealth * config.getParameter("healthBonus")},
+    {stat = "maxEnergy", amount = self.baseMaxEnergy * config.getParameter("energyBonus")},
+    {stat = "powerMultiplier", baseMultiplier = config.getParameter("attackBonus")},
+    --{stat = "protection", baseMultiplier = config.getParameter("defenseBonus")},
+    -- resistances
+    {stat = "physicalResistance", amount = config.getParameter("physicalResistance")},
+    {stat = "electricResistance", amount = config.getParameter("electricResistance")},
+    {stat = "fireResistance", amount = config.getParameter("fireResistance")},
+    {stat = "iceResistance", amount = config.getParameter("iceResistance")},
+    {stat = "poisonResistance", amount = config.getParameter("poisonResistance")},
+    {stat = "shadowResistance", amount = config.getParameter("shadowResistance")},
+    {stat = "cosmicResistance", amount = config.getParameter("cosmicResistance")},
+    {stat = "radioactiveResistance", amount = config.getParameter("radioactiveResistance")},
+    {stat = "foodDelta", baseMultiplier = 1.06346}
   })
 
   script.setUpdateDelta(10)
   
     if (world.type() == "savannah") then
 	    status.setPersistentEffects("jungleEpic", {
-	      {stat = "powerMultiplier", baseMultiplier = 1.10}
+	      {stat = "powerMultiplier", baseMultiplier = 1.15}
 	    })
     end     
 end
 
 function update(dt)
-
+		mcontroller.controlModifiers({
+				speedModifier = 1.06,
+				airJumpModifier = 1.11
+			})
 end
 
 function uninit()

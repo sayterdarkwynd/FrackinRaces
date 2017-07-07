@@ -43,7 +43,7 @@ function SpearStab:fire()
      --used for checking dual-wield setups
      local opposedhandHeldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand() == "primary" and "alt" or "primary")
 
-	 if species == "floran" then  --consume food in exchange for spear power
+	 if species == "fenerox" then  --consume food in exchange for spear power
 	  if heldItem then
 	     if root.itemHasTag(heldItem, "spear") then 
 		    status.modifyResource("food", (status.resource("food") * -0.05) )
@@ -61,6 +61,7 @@ function SpearStab:hold()
   self.weapon:setStance(self.stances.hold)
   self.weapon:updateAim()
   while self.fireMode == "primary" do
+    
     local damageArea = partDamageArea("blade")
     self.weapon:setDamage(self.holdDamageConfig, damageArea)     
     coroutine.yield()
