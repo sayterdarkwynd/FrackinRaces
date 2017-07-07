@@ -1,8 +1,21 @@
 {
   "name" : "racefamiliar",
   "effectConfig" : {
-    "healthBonus" : -0.10,
-    "energyBonus" : 0.25  
+    //Core attributes
+    "healthBonus" : -0.2,
+    "energyBonus" : 0.4,
+    "attackBonus" : 0,
+    "defenseBonus" : 0,
+    
+    //Resistances
+    "physicalResistance" : -0.2,
+    "electricResistance" : -0.5,
+    "fireResistance" : 0.2,
+    "iceResistance" : 0.2,
+    "poisonResistance" : 0.2,
+    "shadowResistance" : 0.2,
+    "cosmicResistance" : 0.4,
+    "radioactiveResistance" : 0.2
   },
   "defaultDuration" : 3,
 

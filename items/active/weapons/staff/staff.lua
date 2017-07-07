@@ -28,7 +28,14 @@ self.critBonus = config.getParameter("critBonus", 0)
    if self.staffCount2 == nil then 
      self.staffCount2 = 0 
    end  
-   local species = world.entitySpecies(activeItem.ownerEntityId())
+local species = world.entitySpecies(activeItem.ownerEntityId())
+
+ -- Primary hand, or single-hand equip  
+local heldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand())
+local heldItem2 = world.entityHandItem(activeItem.ownerEntityId(), "alt")
+ --used for checking dual-wield setups
+ local opposedhandHeldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand() == "primary" and "alt" or "primary")
+
             if species == "greckan" then      
               self.staffCount = self.staffCount + 0.30
               self.staffCount2 = self.staffCount2 + 0.10
@@ -66,17 +73,21 @@ self.critBonus = config.getParameter("critBonus", 0)
                 {stat = "maxEnergy", baseMultiplier = 1 + self.staffCount},
                 {stat = "powerMultiplier", baseMultiplier = 1 + self.staffCount},
               })  
-            end 
-            if species == "familiar" then     
-              self.staffCount = self.staffCount + 0.15
-              self.staffCount2 = self.staffCount2 + 0.30
-              status.setPersistentEffects("ningenbonusdmg", {
-                {stat = "maxEnergy", baseMultiplier = 1+ self.staffCount},
-                {stat = "powerMultiplier", baseMultiplier = 1 + self.staffCount2}
-              })  
-              local bounds = mcontroller.boundBox() 
-            end            
-            
+            end        
+	if species == "familiar" and heldItem then   	     
+	     if root.itemHasTag(heldItem, "wand") then 
+		  status.setPersistentEffects("novakidbonusdmg", {
+		    {stat = "powerMultiplier", baseMultiplier = 1.1},
+		    {stat = "protection", baseMultiplier = 1.05}
+		  })   
+	     end	
+	     if root.itemHasTag(heldItem, "staff") then 
+		  status.setPersistentEffects("novakidbonusdmg", {
+		    {stat = "powerMultiplier", baseMultiplier = 1.1},
+		    {stat = "protection", baseMultiplier = 1.15}
+		  })   
+	     end	     
+	end            
   
 --************************************** 
   self.weapon:init()
