@@ -19,6 +19,7 @@ function init()
     {stat = "cosmicResistance", amount = config.getParameter("cosmicResistance")},
     {stat = "radioactiveResistance", amount = config.getParameter("radioactiveResistance")},
     {stat = "maxBreath", amount = 1100},
+    {stat = "foodDelta", baseMultiplier = 0.8},
     {stat = "poisonStatusImmunity", amount = 1}
   })
   

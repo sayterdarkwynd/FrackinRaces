@@ -60,6 +60,13 @@ local heldItem2 = world.entityHandItem(activeItem.ownerEntityId(), "alt")
 	  end
 	end 
 
+	if species == "droden" and heldItem then   	     
+	     if root.itemHasTag(heldItem, "crossbow") then 
+		  status.setPersistentEffects("novakidbonusdmg", {
+		    {stat = "critDamage", baseMultiplier = 1.25}
+		  })   
+	     end	     
+	end
 	-- glitch love crossbows
 	if species == "glitch" and heldItem then   	     
 	     if root.itemHasTag(heldItem, "crossbow") then 
