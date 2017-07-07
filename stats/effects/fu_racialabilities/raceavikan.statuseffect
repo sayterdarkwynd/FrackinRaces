@@ -15,7 +15,7 @@
     "poisonResistance" : 0,
     "shadowResistance" : 0,
     "cosmicResistance" : 0,
-    "radioactiveResistance" : 0.2,
+    "radioactiveResistance" : 0.2
   },
   "defaultDuration" : 3,
 
