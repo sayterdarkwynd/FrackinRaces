@@ -153,7 +153,7 @@ local heldItem2 = world.entityHandItem(activeItem.ownerEntityId(), "alt")
 	  local heldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand())
 	  if heldItem then
 	     if root.itemHasTag(heldItem, "assaultrifle") then 
-		  status.setPersistentEffects("novakidbonusdmg", {{stat = "powerMultiplier", amount = 1.12}}) 
+		  status.setPersistentEffects("novakidbonusdmg", {{stat = "powerMultiplier", baseMultiplier = 1.12}}) 
 	     end
 	  end
 	end           
