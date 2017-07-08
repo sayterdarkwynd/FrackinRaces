@@ -11,8 +11,9 @@
     ^green;Perfect Blocks restore HP (stacks)^reset; 
     ^green;All Swords: +1% Crit, each combo step gives +1% Crit^reset;
     ^green;Broadsword/Katana: Crits do Health/20 bonus damage^reset;
-    ^green;Shortsword: +6% Dmg^reset;
-    ^green;Shortswordx2 or Shrotsword/Dagger: +8% Speed, +4 Protection^reset;
+    ^green;Shortsword: +6% Dmg, +4% Speed^reset;
+    ^green;Katana + Dagger: +8% Speed, +4 Protection^reset;
+    ^green;Katana + Empty hand: +10% damage, +1% Crit^reset;
     ^green;Quarterstaff: +12% Speed, +6 Protection^reset;
     ^green;In Water, Healing Water, Waste Water and Swamp Water: +4 Protection, +20 HP, Swim Boost^reset;"
     }

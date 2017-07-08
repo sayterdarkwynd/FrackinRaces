@@ -71,10 +71,10 @@ if species == "hylotl" and heldItem then
      if root.itemHasTag(heldItem, "shortsword") then 
        status.setPersistentEffects("weaponbonusdualwield", {{stat = "powerMultiplier", baseMultiplier = 1.06}})   
      end  
-     if root.itemHasTag(heldItem, "shortsword") and opposedhandHeldItem and root.itemHasTag(opposedhandHeldItem, "shortsword") then 
-       status.setPersistentEffects("weaponbonusdualwield", {{stat = "protection", amount = 4}  })   
-     end 
-     if root.itemHasTag(heldItem, "shortsword") and opposedhandHeldItem and root.itemHasTag(opposedhandHeldItem, "dagger") then 
+     if root.itemHasTag(heldItem, "katana") and not opposedhandHeldItem then 
+       status.setPersistentEffects("weaponbonusdualwield", {{stat = "powerMultiplier", baseMultiplier = 1.10},{stat = "critChance", amount = 1}  })   
+     end      
+     if root.itemHasTag(heldItem, "katana") and opposedhandHeldItem and root.itemHasTag(opposedhandHeldItem, "dagger") then 
        status.setPersistentEffects("weaponbonusdualwield", {{stat = "protection", amount = 4}  })   
      end     
      if root.itemHasTag(heldItem, "quarterstaff") then 
@@ -390,10 +390,10 @@ if species == "hylotl" and heldItem then
      if root.itemHasTag(heldItem, "quarterstaff") then 
        mcontroller.controlModifiers({ speedModifier = 1.12 })   
      end 
-     if root.itemHasTag(heldItem, "shortsword") and opposedhandHeldItem and root.itemHasTag(opposedhandHeldItem, "shortsword") then 
-       mcontroller.controlModifiers({ speedModifier = 1.08 })   
+     if root.itemHasTag(heldItem, "shortsword") then 
+       mcontroller.controlModifiers({ speedModifier = 1.04 })   
      end 
-     if root.itemHasTag(heldItem, "shortsword") and opposedhandHeldItem and root.itemHasTag(opposedhandHeldItem, "dagger") then 
+     if root.itemHasTag(heldItem, "katana") and opposedhandHeldItem and root.itemHasTag(opposedhandHeldItem, "dagger") then 
        mcontroller.controlModifiers({ speedModifier = 1.08 })   
      end      
 end
