@@ -3,7 +3,7 @@
   "effectConfig" : {
     //Core attributes
     "healthBonus" : -0.12,
-    "energyBonus" : -0.5,
+    "energyBonus" : -0.05,
     "attackBonus" : 1.05,
     "defenseBonus" : 0,
     
