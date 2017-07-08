@@ -58,24 +58,19 @@ self.critBonus = config.getParameter("critBonus", 0)
      self.meleeCount2 = 0
    end       
    	
-if species == "hylotl" and heldItem then  
+if species == "hylotl" and heldItem then  --hylotls have a lot of particular sword skills, each conveying minor bonuses
      -- with all swords, Hylotl get +1% Crit Chance
      if root.itemHasTag(heldItem, "dagger") or root.itemHasTag(heldItem, "katana") or root.itemHasTag(heldItem, "broadsword") or root.itemHasTag(heldItem, "shortsword") then 
        status.setPersistentEffects("weaponbonusdmg", {{stat = "critChance", amount = 1}})  
-     end
-     -- with Katanas and Broadswords they get +health/20 Crit Damage bonus
-     if root.itemHasTag(heldItem, "katana") or root.itemHasTag(heldItem, "broadsword") then 
-       self.damageBoost = status.resource("health")/20
-       status.setPersistentEffects("weaponbonusdmg", {{stat = "critBonus", amount = self.damageBoost}})  
      end
      if root.itemHasTag(heldItem, "shortsword") then 
        status.setPersistentEffects("weaponbonusdualwield", {{stat = "powerMultiplier", baseMultiplier = 1.06}})   
      end  
      if root.itemHasTag(heldItem, "katana") and not opposedhandHeldItem then 
-       status.setPersistentEffects("weaponbonusdualwield", {{stat = "powerMultiplier", baseMultiplier = 1.10},{stat = "critChance", amount = 1}  })   
+       status.setPersistentEffects("weaponbonusdualwield", {{stat = "powerMultiplier", baseMultiplier = 1.10},{stat = "critBonus", baseMultiplier = 1.25}  })   
      end      
      if root.itemHasTag(heldItem, "katana") and opposedhandHeldItem and root.itemHasTag(opposedhandHeldItem, "dagger") then 
-       status.setPersistentEffects("weaponbonusdualwield", {{stat = "protection", amount = 4}  })   
+       status.setPersistentEffects("weaponbonusdualwield", {{stat = "protection", amount = 4},{stat = "critChance", amount = 1}  })   
      end     
      if root.itemHasTag(heldItem, "quarterstaff") then 
        status.setPersistentEffects("weaponbonusdmg", {{stat = "protection", amount = 6}  })   

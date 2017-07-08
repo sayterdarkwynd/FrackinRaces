@@ -198,9 +198,10 @@ function MeleeCombo:fire()
  local opposedhandHeldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand() == "primary" and "alt" or "primary")
  local randValue = math.random(100)  -- chance for projectile
  local hylotlBonus = status.resource("health")/20 
-
-	 if species == "hylotl" and heldItem then   -- in combos, hylotl get a bonus to damage with swords
-	     if root.itemHasTag(heldItem, "broadsword") or root.itemHasTag(heldItem, "shortsword") or root.itemHasTag(heldItem, "katana") then 
+ 
+	 if species == "hylotl" and heldItem then   -- in combos, hylotl get incremental bonuses to crit chance with katanas if their health is above 75%
+	     self.healthRatio = (status.resource("health") / status.stat("maxHealth")) * 100
+	     if root.itemHasTag(heldItem, "katana") or root.itemHasTag(heldItem, "broadsword") and (self.healthRatio) >=75 then
 		  status.setPersistentEffects("combobonusdmg", {
 		    {stat = "critChance", amount = 1}
 		  }) 
