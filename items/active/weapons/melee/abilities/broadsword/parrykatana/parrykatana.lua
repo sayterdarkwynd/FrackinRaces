@@ -41,7 +41,9 @@ function Parry:parry()
         animator.playSound("parry")
         animator.setAnimationState("parryShield", "block")
 	  if species == "hylotl" then 
-	    self.blockCountShield = self.blockCountShield + 0.0008
+            animator.burstParticleEmitter("bonusBlock")
+            animator.playSound("bonusEffect")	  
+	    self.blockCountShield = 0.008
             status.modifyResourcePercentage("health", 0.005 + self.blockCountShield )  --hylotl get a heal when they perfectly block
           end  
         return
