@@ -95,7 +95,7 @@ local heldItem2 = world.entityHandItem(activeItem.ownerEntityId(), "alt")
 	     if root.itemHasTag(heldItem, "crossbow") or root.itemHasTag(heldItem, "harpoon") then 
 		  status.setPersistentEffects("novakidbonusdmg", {
 		    {stat = "critChance", amount = 5},
-		    {stat = "powerMultiplier", amount = 1.15}
+		    {stat = "powerMultiplier", baseMultiplier = 1.15}
 		  })   
 	     end	     
 	end  
@@ -103,7 +103,7 @@ local heldItem2 = world.entityHandItem(activeItem.ownerEntityId(), "alt")
 	 if species == "avali" and heldItem then   	     
 	     if root.itemHasTag(heldItem, "energy") then 
 		  status.setPersistentEffects("novakidbonusdmg", {
-		    {stat = "powerMultiplier", amount = 1.12}
+		    {stat = "powerMultiplier", baseMultiplier = 1.12}
 		  })   
 	     end
 	     if root.itemHasTag(heldItem, "grenadelauncher") then 
@@ -145,7 +145,7 @@ local heldItem2 = world.entityHandItem(activeItem.ownerEntityId(), "alt")
 	  if heldItem then
 	     if root.itemHasTag(heldItem, "floran") then 
 		  status.setPersistentEffects("novakidbonusdmg", {
-		    {stat = "critChance", amount = 2}
+		    {stat = "critChance", baseMultiplier = 2}
 		  })   
 	     end 	     
 	  end

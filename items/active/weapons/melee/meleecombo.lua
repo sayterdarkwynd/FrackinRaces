@@ -2,7 +2,7 @@
 MeleeCombo = WeaponAbility:new()
 
 function MeleeCombo:init()
-
+status.clearPersistentEffects("combobonusdmg")
   self.comboStep = 1
 
   self.energyUsage = self.energyUsage or 0
@@ -197,16 +197,6 @@ function MeleeCombo:fire()
  --used for checking dual-wield setups
  local opposedhandHeldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand() == "primary" and "alt" or "primary")
  local randValue = math.random(100)  -- chance for projectile
- local hylotlBonus = status.resource("health")/20 
- 
-	 if species == "hylotl" and heldItem then   -- in combos, hylotl get incremental bonuses to crit chance with katanas if their health is above 75%
-	     self.healthRatio = (status.resource("health") / status.stat("maxHealth")) * 100
-	     if root.itemHasTag(heldItem, "katana") or root.itemHasTag(heldItem, "broadsword") and (self.healthRatio) >=75 then
-		  status.setPersistentEffects("combobonusdmg", {
-		    {stat = "critChance", amount = 1}
-		  }) 
-	     end	  
-	 end  
 
           if species == "avikan" then      
             self.meleeCountcombo = status.resource("health")/40
