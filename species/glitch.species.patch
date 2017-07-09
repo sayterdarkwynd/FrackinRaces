@@ -7,13 +7,14 @@
     ^red;Weak:-30% Electric, =30% Cosmic^reset;
     ^red;35% Weakness: Electric, 15% Weakness: Ice^reset;
     ^red;When Electrified lose 50% power and 50% energy^reset;
-    ^green;+15% HP, +5% Energy, +5% Protection^reset;
+    ^green;+15% HP, +5% Energy, +5% Protection, +2% Shield Bash^reset;
     ^green;20% Physical, 20% Poison, 20% Radiation Resistance^reset;
     ^green;Heal and regain power within Oil/Liquid Protocite/Erchius liquids^reset; 
     ^green;Consumes food to increase Crit chance (Energy/16) with both Greataxes and Axes.^reset;
     ^green;1h combos increase damage^reset;
     ^green;Bow/Crossbow: Crit 4%^reset;
     ^green;Shield: +15% Protection, +5% Dmg, +8% Max Health, 2% Health Regen. Perfect Blocks increase damage (stacks)^reset;
+    ^green;Shield: Perfect Blocks increase damage (stacks), Shield Bash restores health.^reset;
     ^green;Immune: Poison, Bee Stings^reset;"
     }
 

@@ -22,6 +22,7 @@ function init()
     {stat = "cosmicResistance", amount = config.getParameter("cosmicResistance")},
     {stat = "radioactiveResistance", amount = config.getParameter("radioactiveResistance")},
     --other
+    {stat = "shieldBash", amount = 2},
     {stat = "poisonStatusImmunity", amount = 1},
     {stat = "beestingImmunity", amount = 1},
     {stat = "grit", amount = 0.2}

@@ -98,5 +98,5 @@ function update(dt)
 end
 
 function uninit()
-  
+  status.clearPersistentEffects("jungleEpic")  
 end
