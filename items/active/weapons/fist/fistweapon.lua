@@ -87,7 +87,15 @@ if species == "felin" then  --when using fist weapons, felin are extra swift
   end
   bonusApply = 1
 end  
-  
+if species == "munari" then  --when using fist weapons, felin are extra swift
+  if heldItem then
+     if root.itemHasTag(heldItem, "fist") then
+       mcontroller.controlModifiers({ speedModifier = 1.05 })
+     end    
+  end
+  bonusApply = 1
+end 
+
   if mcontroller.onGround() then
     self.weapon.freezesLeft = self.weapon.freezeLimit
   end
@@ -122,7 +130,9 @@ end
 		       self.timerCheck = 120
 		     else
 		       self.blockCount = self.blockCount + 0.01
-		       status.setPersistentEffects("munaribonusdmg", { {stat = "powerMultiplier", amount = self.blockCount} })
+		       status.setPersistentEffects("munaribonusdmg", { 
+		         {stat = "critChance", amount = 3} 
+		       })
 		       status.addPersistentEffect("boostermunari", "powerboostmunari", math.huge)
 		       self.timerCheck = self.timerCheck - dt
 		     end

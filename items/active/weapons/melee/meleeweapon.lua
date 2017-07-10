@@ -231,13 +231,19 @@ end
      end     
  end  
 
- if species == "neko" then  --neko do extra damage with fists, daggers and shortswords
-  if heldItem then
-     if root.itemHasTag(heldItem, "fist") or root.itemHasTag(heldItem, "shortsword") or root.itemHasTag(heldItem, "dagger") then 
-	self.meleeCount = 0.15
-	status.setPersistentEffects("weaponbonusdmg", {{stat = "powerMultiplier", amount = self.meleeCount}})     
+ if species == "neko" and heldItem then  --neko do extra damage with fists, daggers and shortswords
+     if root.itemHasTag(heldItem, "fist") then 
+	status.setPersistentEffects("weaponbonusdmg", {
+	  {stat = "critBonus", amount = 2},
+	  {stat = "critChance", amount = 5}
+	})     
      end
-  end
+     if root.itemHasTag(heldItem, "shortsword") or root.itemHasTag(heldItem, "dagger") then 
+	status.setPersistentEffects("weaponbonusdmg", {
+	  {stat = "powerMultiplier", baseMultiplier = 1.1},
+	  {stat = "protection", baseMultiplier = 1.05}
+	})     
+     end     
  end  
 
  if species == "kemono" then   --kemono are brutal with swords
@@ -299,6 +305,30 @@ if species == "viera" then  --viera are dangerous with daggers
      end     
   end
 end  
+
+
+if species == "munari" then  
+  if heldItem then
+     if root.itemHasTag(heldItem, "spear") then
+       status.setPersistentEffects("weaponbonusdualwield", {
+	    {stat = "critChance", amount = 2},
+	    {stat = "powerMultiplier", baseMultiplier = 1.1} 
+         })   
+     end  
+     if root.itemHasTag(heldItem, "fist") then s
+       status.setPersistentEffects("weaponbonusdualwield", {
+	    {stat = "critChance", amount = 3}      
+         })   
+     end
+     if root.itemHasTag(heldItem, "shortspear") then 
+       status.setPersistentEffects("weaponbonusdualwield", {
+	    {stat = "critChance", amount = 2},
+	    {stat = "physicalResistance", baseMultiplier = 1.05}    
+         })   
+     end    
+  end
+end
+
 
 if species == "felin" then  
   if heldItem then
@@ -387,14 +417,8 @@ if species == "apex" then   --apex move faster with hammers
      end
   end
 end  
--- ***********  Felin movement bonuses ***************
-if species == "felin" then  --when using dagger weapons, felin are extra swift
-  if heldItem then
-     if root.itemHasTag(heldItem, "fist") and opposedhandHeldItem and root.itemHasTag(opposedhandHeldItem, "fist") then
-       mcontroller.controlModifiers({ speedModifier = 1.25, airJumpModifier = 1.05 })
-     end    
-  end
-end
+
+
 -- ************** Hylotl *****************************
 if species == "hylotl" and heldItem then  
      if root.itemHasTag(heldItem, "quarterstaff") then 

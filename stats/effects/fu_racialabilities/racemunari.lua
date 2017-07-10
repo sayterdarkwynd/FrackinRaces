@@ -1,23 +1,31 @@
 require("/scripts/vec2.lua")
 function init()
   inWater=0
-  baseValue = config.getParameter("healthBonus",0)*(status.resourceMax("health"))
-  baseValue2 = config.getParameter("energyBonus",0)*(status.resourceMax("energy"))
-  
+  self.baseMaxHealth = status.stat("maxHealth")
+  self.baseMaxEnergy = status.stat("maxEnergy")
   effect.addStatModifierGroup({
-    {stat = "isCarnivore", amount = 1 },
+    -- base Attributes
+    {stat = "isCarnivore", baseMultiplier = 1},
+    {stat = "isOmnivore", baseMultiplier = 1},
+    {stat = "maxHealth", amount = self.baseMaxHealth * config.getParameter("healthBonus")},
+    {stat = "maxEnergy", amount = self.baseMaxEnergy * config.getParameter("energyBonus")},
+    {stat = "powerMultiplier", baseMultiplier = config.getParameter("attackBonus")},
+    --{stat = "protection", baseMultiplier = config.getParameter("defenseBonus")},
+    {stat = "fallDamageMultiplier", baseMultiplier = config.getParameter("fallBonus")},
+    -- resistances
+    {stat = "physicalResistance", amount = config.getParameter("physicalResistance")},
+    {stat = "electricResistance", amount = config.getParameter("electricResistance")},
+    {stat = "fireResistance", amount = config.getParameter("fireResistance")},
+    {stat = "iceResistance", amount = config.getParameter("iceResistance")},
+    {stat = "poisonResistance", amount = config.getParameter("poisonResistance")},
+    {stat = "shadowResistance", amount = config.getParameter("shadowResistance")},
+    {stat = "cosmicResistance", amount = config.getParameter("cosmicResistance")},
+    {stat = "radioactiveResistance", amount = config.getParameter("radioactiveResistance")},
     {stat = "fumudslowImmunity", amount = 1},
-    {stat = "waterbreathProtection", amount = 1},
     {stat = "wetImmunity", amount = 1},
-    {stat = "maxHealth", amount = baseValue },
-    {stat = "maxEnergy", amount = baseValue2 },
-    {stat = "physicalResistance", amount = 0},
-    {stat = "fireResistance", amount = 0},
-    {stat = "iceResistance", amount = 0},
-    {stat = "electricResistance", amount = -0.45},
-    {stat = "poisonResistance", amount = 0.25},
-    {stat = "shadowResistance", amount = 0}
-  })
+    {stat = "breathProtection", amount = 1}
+    })
+
   local bounds = mcontroller.boundBox()
   script.setUpdateDelta(5)
   

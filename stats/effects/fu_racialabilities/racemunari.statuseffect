@@ -1,9 +1,21 @@
 {
   "name" : "racemunari",
   "effectConfig" : {
-  "healthBonus" : -0.10,
-  "energyBonus" : 0.10,
-    "weaknessPenalty" : 1.75
+    //Core attributes
+    "healthBonus" : 0.15,
+    "energyBonus" : 0.15,
+    "attackBonus" : 1.05,
+    "defenseBonus" : 0,
+    
+    //Resistances
+    "physicalResistance" : 0,
+    "electricResistance" : -0.4,
+    "fireResistance" : 0.4,
+    "iceResistance" : 0.2,
+    "poisonResistance" : 0.25,
+    "shadowResistance" : -0.15,
+    "cosmicResistance" : -0.15,
+    "radioactiveResistance" : 0
   },
   "defaultDuration" : 3,
 
