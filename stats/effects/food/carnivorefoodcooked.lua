@@ -27,16 +27,7 @@ function applyEffects()
 end
 
 function checkRace()  -- are we carnivorous or omnivorous? customize per effect
-  if (world.entitySpecies(entity.id()) == "floran") 
-  or (world.entitySpecies(entity.id()) == "felin") 
-  or (world.entitySpecies(entity.id()) == "mantizi")
-  or (world.entitySpecies(entity.id()) == "fenerox") 
-  or (world.entitySpecies(entity.id()) == "orcana")  
-  or (world.entitySpecies(entity.id()) == "ponex") 
-  or (world.entitySpecies(entity.id()) == "kazdra") 
-  or (world.entitySpecies(entity.id()) == "vespoid") 
-  or (world.entitySpecies(entity.id()) == "lamia") 
-  or (world.entitySpecies(entity.id()) == "callistan") then
+  if status.stat("isCarnivore") then
     applyEffects()
   else
     self.isNot = 1

@@ -3,6 +3,7 @@ function init()
   baseValue2 = config.getParameter("energyBonus",0)*(status.resourceMax("energy"))
   
   effect.addStatModifierGroup({
+    {stat = "isCarnivore", amount = 1 },
     {stat = "maxHealth", amount = baseValue },
     {stat = "maxEnergy", amount = baseValue2 },
     {stat = "physicalResistance", amount = 0.15},

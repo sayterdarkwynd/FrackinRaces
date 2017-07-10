@@ -1,5 +1,6 @@
 function init()
   effect.addStatModifierGroup({
+    {stat = "isCarnivore", amount = 1 },
     {stat = "honeyslowImmunity", amount = 1},
     {stat = "grit", amount = 0.3},
     {stat = "beestingImmunity", amount = 1},

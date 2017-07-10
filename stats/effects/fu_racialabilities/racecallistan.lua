@@ -2,6 +2,7 @@ function init()
   baseValue = config.getParameter("healthBonus",0)*(status.resourceMax("health"))
   baseValue2 = config.getParameter("energyBonus",0)*(status.resourceMax("energy"))
   effect.addStatModifierGroup({
+    {stat = "isCarnivore", amount = 1 },
     {stat = "fumudslowImmunity", amount = 1 },
     {stat = "jungleslowImmunity", amount = 1 },
     {stat = "spiderwebImmunity", amount = 1 },
