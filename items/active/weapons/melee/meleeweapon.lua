@@ -315,7 +315,7 @@ if species == "munari" then
 	    {stat = "powerMultiplier", baseMultiplier = 1.1} 
          })   
      end  
-     if root.itemHasTag(heldItem, "fist") then s
+     if root.itemHasTag(heldItem, "fist") then
        status.setPersistentEffects("weaponbonusdualwield", {
 	    {stat = "critChance", amount = 3}      
          })   
