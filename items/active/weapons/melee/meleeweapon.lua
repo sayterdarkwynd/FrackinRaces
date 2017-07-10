@@ -329,6 +329,14 @@ if species == "munari" then
   end
 end
 
+if species == "ningen" and heldItem then  
+     if root.itemHasTag(heldItem, "shortspear") then
+       status.setPersistentEffects("weaponbonusdualwield", {
+	    {stat = "powerMultiplier", baseMultiplier = 1.12},
+	    {stat = "grit", amount = 0.2}      
+         })   
+     end    
+end
 
 if species == "felin" then  
   if heldItem then
@@ -357,31 +365,33 @@ if species == "felin" then
   end
 end
 
-if species == "nightar" then  
-  if heldItem then
-     if root.itemHasTag(heldItem, "shortsword") and opposedhandHeldItem and root.itemHasTag(opposedhandHeldItem, "shield") then --nightar do more damage and have KB resist when using sword/shield
-       self.meleeCount = self.meleeCount + 0.08
-       self.meleeCount2 = self.meleeCount + 0.12
+if species == "nightar" and heldItem then  
+     if root.itemHasTag(heldItem, "shortsword") and opposedhandHeldItem and root.itemHasTag(opposedhandHeldItem, "shield") then 
        status.setPersistentEffects("weaponbonusdualwield", {
+            {stat = "shieldBash", amount = 2},
+            {stat = "shieldBashPush", amount = 2},
 	    {stat = "powerMultiplier", amount = self.meleeCount},
 	    {stat = "grit", amount = self.meleeCount}
          })        
      end
-     if root.itemHasTag(heldItem, "shortsword") and opposedhandHeldItem and root.itemHasTag(opposedhandHeldItem, "shortsword") then --nightar do more damage with dual shortswords
+     if root.itemHasTag(heldItem, "shortsword") and opposedhandHeldItem and root.itemHasTag(opposedhandHeldItem, "shortsword") then 
        self.meleeCount = self.meleeCount + 0.12
        status.setPersistentEffects("weaponbonusdualwield", {
 	    {stat = "powerMultiplier", amount = self.meleeCount}
          })   
      end
-     if root.itemHasTag(heldItem, "broadsword") then --nightar do more damage with broadswords and increased KB resist
-	  self.meleeCount = self.meleeCount + 0.18
-	  self.meleeCount2 = self.meleeCount2 + 0.25
+     if root.itemHasTag(heldItem, "shortsword") then 
 	  status.setPersistentEffects("weaponbonusdmg", {
 	    {stat = "powerMultiplier", amount = self.meleeCount},
 	    {stat = "grit", amount = self.meleeCount2}
 	  })  
+     end     
+     if root.itemHasTag(heldItem, "broadsword") then 
+	  status.setPersistentEffects("weaponbonusdmg", {
+	    {stat = "powerMultiplier", baseMultiplier = 1.05},
+	    {stat = "critChance", amount = 2}
+	  })  
      end
-  end
 end
 
 -- ***************************************************   
@@ -399,15 +409,10 @@ function update(dt, fireMode, shiftHeld)
   local opposedhandHeldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand() == "primary" and "alt" or "primary")
   local species = world.entitySpecies(activeItem.ownerEntityId())
 -- ***********  Nightar  movement bonuses ***************
-if species == "nightar" then  --nightar gain speed and jump when wielding swords
-  if heldItem then
-     if root.itemHasTag(heldItem, "shortsword") then
-       mcontroller.controlModifiers({ speedModifier = 1.03, airJumpModifier = 1.03 })
-     end
-     if root.itemHasTag(heldItem, "broadsword") then
-       mcontroller.controlModifiers( { speedModifier = 1.10 } )
-     end     
-  end
+if species == "nightar" and heldItem then  --nightar gain speed wielding dual shortswords
+     if root.itemHasTag(heldItem, "shortsword") and opposedhandHeldItem and root.itemHasTag(opposedhandHeldItem, "shortsword") then
+       mcontroller.controlModifiers({ speedModifier = 1.05 })
+     end    
 end
 -- ***********  apex  movement bonuses ***************
 if species == "apex" then   --apex move faster with hammers

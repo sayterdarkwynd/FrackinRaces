@@ -4,8 +4,8 @@ function init()
   effect.addStatModifierGroup({
     -- base Attributes
     {stat = "isCarnivore", baseMultiplier = 1},
-    {stat = "maxHealth", amount = self.baseMaxHealth * config.getParameter("healthBonus")},
-    {stat = "maxEnergy", amount = self.baseMaxEnergy * config.getParameter("energyBonus")},
+    --{stat = "maxHealth", amount = self.baseMaxHealth * config.getParameter("healthBonus")},
+    --{stat = "maxEnergy", amount = self.baseMaxEnergy * config.getParameter("energyBonus")},
     {stat = "powerMultiplier", baseMultiplier = config.getParameter("attackBonus")},
     --{stat = "protection", baseMultiplier = config.getParameter("defenseBonus")},
     {stat = "fallDamageMultiplier", baseMultiplier = config.getParameter("fallBonus")},

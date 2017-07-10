@@ -7,10 +7,11 @@
     "path" : "/charCreationTooltip/description" , 
     "value" : "Personable cat-people.
     
-    ^red;-5% Health^reset;
-    ^green;+10% Energy, +25% Poison Resist, +15% Speed, +10% Jump, -50% Fall Damage^reset;
-    ^green;Reduced Energy Regen time^reset;
-    ^green;Fist weapons, Shortswords and Daggers gain +15% Damage^reset;"
+    ^red;-5% Physical, Shadow, Cosmic and Radiation Resist^reset;
+    ^green;+20% Fire, Electric, Ice and Poison resist^reset;
+    ^green;-50% Fall Damage, +20% Energy Regen time^reset;
+    ^green;Fist: +2% Crit, +5% Damage^reset;
+    ^green;Shortsword/Dagger: +10% Damage, +5% Protection^reset;"
     }
 
 ]

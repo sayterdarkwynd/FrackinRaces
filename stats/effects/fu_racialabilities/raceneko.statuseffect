@@ -1,8 +1,21 @@
 {
   "name" : "raceneko",
   "effectConfig" : {
-  "healthBonus" : -0.05,
-  "energyBonus" : 0.10  
+    //Core attributes
+    "healthBonus" : 0,
+    "energyBonus" : 0,
+    "attackBonus" : 1.05,
+    "defenseBonus" : 0,
+    
+    //Resistances
+    "physicalResistance" : -0.05,
+    "electricResistance" : 0.2,
+    "fireResistance" : 0.2,
+    "iceResistance" : 0.2,
+    "poisonResistance" : 0.2,
+    "shadowResistance" : -0.05,
+    "cosmicResistance" : -0.05,
+    "radioactiveResistance" : -0.05
   },
   
   "defaultDuration" : 3,

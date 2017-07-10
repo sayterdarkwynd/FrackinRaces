@@ -162,8 +162,8 @@ local heldItem2 = world.entityHandItem(activeItem.ownerEntityId(), "alt")
 	  end
 	end 
 	
-	-- Humans rock the Assault Rifle and SMG
-	 if species == "human" then   
+
+	 if species == "human" and heldItem then   
 	  local heldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand())
 	  if heldItem then
 	     if root.itemHasTag(heldItem, "assaultrifle") then 
@@ -171,7 +171,16 @@ local heldItem2 = world.entityHandItem(activeItem.ownerEntityId(), "alt")
 	     end
 	  end
 	end           
-    
+
+	 if species == "ningen" and heldItem then   
+	  local heldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand())
+	  if heldItem then
+	     if root.itemHasTag(heldItem, "machinepistol") then 
+		  status.setPersistentEffects("novakidbonusdmg", {{stat = "powerMultiplier", baseMultiplier = 1.12}}) 
+	     end
+	  end
+	end   
+	
 -- Vespoids snipe and smg
  if species == "vespoid" then   
   local heldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand())

@@ -1,10 +1,21 @@
 {
   "name" : "raceningen",
   "effectConfig" : {
-  "healthBonus" : -0.10,
-  "energyBonus" : 0.20,
-  "gritBonus" : 0.15,
-  "foodBonus" : 40
+    //Core attributes
+    "healthBonus" : 0,
+    "energyBonus" : 0,
+    "attackBonus" : 0,
+    "defenseBonus" : 0,
+    
+    //Resistances
+    "physicalResistance" : 0,
+    "electricResistance" : 0,
+    "fireResistance" : 0,
+    "iceResistance" : 0,
+    "poisonResistance" : 0,
+    "shadowResistance" : 0,
+    "cosmicResistance" : 0,
+    "radioactiveResistance" : 0
   },
   "defaultDuration" : 3,
 

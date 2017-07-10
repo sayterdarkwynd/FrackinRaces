@@ -264,25 +264,29 @@ function MeleeCombo:fire()
 		     end
 		  end
 	  end
-	  
-	  if species == "nightar" then   -- in combos, nightar get a bonus to damage and knockback resist with swords
+
+	  if species == "nightar" and heldItem then  
 	    self.meleeCountcombo = self.meleeCountcombo + 0.1
 	    self.meleeCountcombo2 = self.meleeCountcombo2 + 0.07
 	    local lightLevel = getLight()
-		  if heldItem then
 		     if root.itemHasTag(heldItem, "shortsword") then 
 		        attackSpeedUp = 0 + ((1*lightLevel)/100) -- base attackSpeed. Greater speed in darkness
 			local ability = getPrimaryAbility()
 			ability.comboSpeedFactor = ability.comboSpeedFactor - (ability.comboSpeedFactor * 2)
 			
-			if (randValue < 5) and (lightLevel < 26) then  -- spawn a projectile
+			if (randValue < 3) and (lightLevel < 26) then  -- spawn a projectile
 	                  params = { power = 5, damageKind = "shadow" }			
 			  projectileId = world.spawnProjectile("nightarmeleeslash",self:firePosition(),activeItem.ownerEntityId(),self:aimVector(),false,params)
 			  animator.playSound("nightar")
-			end		                        
-			status.setPersistentEffects("combobonusdmg", { {stat = "grit", baseMultiplier = self.meleeCountcombo} }) 				    
+			end				    
 		     end
-		  end
+		     if root.itemHasTag(heldItem, "broadsword") then 
+			if (randValue < 6) and (lightLevel < 26) then  -- spawn a projectile
+	                  params = { power = 5, damageKind = "shadow" }			
+			  projectileId = world.spawnProjectile("nightarmeleeslash",self:firePosition(),activeItem.ownerEntityId(),self:aimVector(),false,params)
+			  animator.playSound("nightar")
+			end		                         				    
+		     end		     
 	  end
 	 	  
           if species == "kemono" then      --each 1-handed combo swing slightly increases kemono defense

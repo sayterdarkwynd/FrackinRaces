@@ -135,16 +135,21 @@ function init()
             end   
             if species == "nightar" then
                 local heldItem = world.entityHandItem(activeItem.ownerEntityId(), "primary")
-                self.blockCountShield2 = 0.2
 			if heldItem ~= nil and isShield(heldItem) then
 				if isShield(heldItem) then
-					status.setPersistentEffects("shieldBonus", {{stat = "grit", amount = self.blockCountShield2}})    	
+					status.setPersistentEffects("shieldBonus", {
+					  {stat = "grit", amount = 0.15},
+					  {stat = "shieldBash", amount = 2}
+					})    	
 				end
 			end
 		heldItem = world.entityHandItem(activeItem.ownerEntityId(), "alt")
 			if heldItem ~= nil then
 				if  isShield(heldItem) then
-					status.setPersistentEffects("shieldBonus", {{stat = "grit", amount = self.blockCountShield2}})   	
+					status.setPersistentEffects("shieldBonus", {
+					  {stat = "grit", amount = 0.15},
+					  {stat = "shieldBash", amount = 2}
+					})   	
 				end
 			end  
             end              
@@ -392,7 +397,15 @@ function raiseShield()
             )  
             animator.burstParticleEmitter("bonusBlock3")
             animator.playSound("bonusEffect")
-          end             
+          end      
+	  if species == "ningen" then 
+            self.blockCountShield = self.blockCountShield + 2
+            status.setPersistentEffects("humanprotection", 
+              {{stat = "powerMultiplier", amount = self.blockCountShield}}
+            )  
+            animator.burstParticleEmitter("bonusBlock4")
+            animator.playSound("bonusEffect")
+          end          
 	  if species == "human" then --human get a defense bonus when perfectly blocking
             self.blockCountShield = self.blockCountShield + 2
             status.setPersistentEffects("humanprotection", 
