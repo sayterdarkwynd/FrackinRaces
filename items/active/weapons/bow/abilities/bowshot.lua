@@ -42,21 +42,18 @@ function BowShot:setCritDamage(damage)
      local weaponModifier = config.getParameter("critChance",0)
      
   if heldItem then
-      if root.itemHasTag(heldItem, "bow") then
-        self.critChance = 0.25 + weaponModifier
-      elseif root.itemHasTag(heldItem, "crossbow") then
-        self.critChance = 0.25 + weaponModifier
-      end
+        self.critChance = 0 + weaponModifier
   end
 
   if not self.critChance then self.critChance = 0 end
-  self.critBonus = ( ( ( (status.stat("critBonus") + config.getParameter("critBonus",0)) * self.critChance ) /100 ) /2 ) or 0  
-  self.critChance = (self.critChance  + config.getParameter("critChanceMultiplier",0)+ status.stat("critChanceMultiplier",0)+ status.stat("critChance",0)) 
+  
+  self.critBonus = (status.stat("critBonus",0) + config.getParameter("critBonus",0))/2  
+  self.critChance = (self.critChance  + config.getParameter("critChanceMultiplier",0) + status.stat("critChanceMultiplier",0) + status.stat("critChance",0)) 
   self.critRoll = math.random(200)
   
-  --apply the crit
   local crit = self.critRoll <= self.critChance
-  damage = crit and (damage*2) + self.critBonus or damage
+  damage = crit and ((damage*2) + self.critBonus) or damage
+  self.critChance = 0
 
   if crit then
     if heldItem then
