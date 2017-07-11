@@ -3,12 +3,11 @@ function init()
   self.baseMaxEnergy = status.stat("maxEnergy")
   effect.addStatModifierGroup({
     -- base Attributes
-    {stat = "isCarnivore", amount = 1},
+    {stat = "isOmnivore", amount = 1},
     {stat = "maxHealth", amount = self.baseMaxHealth * config.getParameter("healthBonus")},
     {stat = "maxEnergy", amount = self.baseMaxEnergy * config.getParameter("energyBonus")},
     {stat = "powerMultiplier", baseMultiplier = config.getParameter("attackBonus")},
     --{stat = "protection", baseMultiplier = config.getParameter("defenseBonus")},
-    {stat = "fallDamageMultiplier", baseMultiplier = config.getParameter("fallBonus")},
     -- resistances
     {stat = "physicalResistance", amount = config.getParameter("physicalResistance")},
     {stat = "electricResistance", amount = config.getParameter("electricResistance")},

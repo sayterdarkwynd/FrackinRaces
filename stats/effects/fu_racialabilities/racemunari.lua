@@ -11,7 +11,6 @@ function init()
     {stat = "maxEnergy", amount = self.baseMaxEnergy * config.getParameter("energyBonus")},
     {stat = "powerMultiplier", baseMultiplier = config.getParameter("attackBonus")},
     --{stat = "protection", baseMultiplier = config.getParameter("defenseBonus")},
-    {stat = "fallDamageMultiplier", baseMultiplier = config.getParameter("fallBonus")},
     -- resistances
     {stat = "physicalResistance", amount = config.getParameter("physicalResistance")},
     {stat = "electricResistance", amount = config.getParameter("electricResistance")},
