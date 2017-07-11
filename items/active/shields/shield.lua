@@ -430,6 +430,9 @@ function raiseShield()
           animator.playSound("block")
         else
           animator.playSound("break")
+          if (self.energyval) <= 20 and (self.randomBash) >= 50 or (self.randomBash) >= 100 then -- if tired, we could end up stunned when our shield breaks!
+	    status.addEphemeralEffect("stun",0.75)
+          end           
 	  if self.debug then sb.logInfo("(FR) shield.lua: hitType %s received, blockCountShield = %s, blockCountShield reset",notification.hitType, self.blockCountShield) end
 	  clearEffects(species)        
         end
