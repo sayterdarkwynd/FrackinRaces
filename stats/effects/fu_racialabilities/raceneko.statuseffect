@@ -15,7 +15,8 @@
     "poisonResistance" : 0.2,
     "shadowResistance" : -0.05,
     "cosmicResistance" : -0.05,
-    "radioactiveResistance" : -0.05
+    "radioactiveResistance" : -0.05,
+	"fallBonus" : 0.5
   },
   
   "defaultDuration" : 3,

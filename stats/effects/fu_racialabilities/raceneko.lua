@@ -18,7 +18,6 @@ function init()
     {stat = "shadowResistance", amount = config.getParameter("shadowResistance")},
     {stat = "cosmicResistance", amount = config.getParameter("cosmicResistance")},
     {stat = "radioactiveResistance", amount = config.getParameter("radioactiveResistance")},
-    {stat = "fallDamageMultiplier", amount = 0.5},
     {stat = "energyRegenBlockTime", baseMultiplier = 0.8}
   })
 
