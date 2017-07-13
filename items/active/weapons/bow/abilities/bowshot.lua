@@ -142,25 +142,28 @@ function BowShot:fire()
 	       end  
 	       local randValueCritBonus = math.random(4)
 	       local critValueLamia = ( randValueCritBonus + math.ceil(self.energyValue/40) ) 	       
-	       if math.random(10)==1 then
-		  self.attackType = math.random(5)
-		  if self.attackType == 1 then
-		    params = { power = self.energyValue/12 , damageKind = "shadow", speed = self.energyValue/2, timeToLive = 1 }	
+	       if math.random(10) ==1  then
+		  self.attackType = math.random(6)
+		  if (self.attackType) == 1 and (self.energyValue) >= 100 then
+		    params = { power = self.energyValue/10 , damageKind = "shadow", speed = 45, timeToLive = 3 }	
 		    projectileId = world.spawnProjectile("purplearrow",self:firePosition(),activeItem.ownerEntityId(),self:aimVector(),false,params)
-		  elseif self.attackType == 2 then
-		    params = { power = self.energyValue/12 , damageKind = "shadow", speed = self.energyValue/2, timeToLive = 1 }	
+		  elseif (self.attackType) == 2 and (self.energyValue) >= 100 then
+		    params = { power = self.energyValue/12 , damageKind = "shadow", speed = 60, timeToLive = 3 }	
 		    projectileId = world.spawnProjectile("chargedpurplearrow",self:firePosition(),activeItem.ownerEntityId(),self:aimVector(),false,params)
-		  elseif self.attackType == 3 then
-		    params = { power = self.energyValue/12 , damageKind = "shadow", speed = self.energyValue/2, timeToLive = 1 }	
-		    projectileId = world.spawnProjectile("magentaglobe",self:firePosition(),activeItem.ownerEntityId(),self:aimVector(),false,params)	
-		  elseif self.attackType == 4 then
-		    params = { power = self.energyValue/12 , damageKind = "poison", speed = self.energyValue/2, timeToLive = 1 }	
+		  elseif (self.attackType) == 3 and (self.energyValue) >= 100 then
+		    params = { power = self.energyValue/12 , damageKind = "shadow", speed = 30, timeToLive = 1 }	
+		    projectileId = world.spawnProjectile("magentaglobelamia",self:firePosition(),activeItem.ownerEntityId(),self:aimVector(),false,params)	
+		  elseif (self.attackType) == 4 and (self.energyValue) >= 100 then
+		    params = { power = self.energyValue/12 , damageKind = "poison", speed = 50, timeToLive = 1 }	
 		    projectileId = world.spawnProjectile("poisonplasma",self:firePosition(),activeItem.ownerEntityId(),self:aimVector(),false,params)			    
-		  elseif self.attackType == 5 then
-		    params = { power = self.energyValue/12 , damageKind = "shadow", speed = self.energyValue/2, timeToLive = 1 }	
+		  elseif (self.attackType) == 5 and (self.energyValue) >= 100 then
+		    params = { power = self.energyValue/12 , damageKind = "shadow", speed = 50, timeToLive = 1 }	
 		    projectileId = world.spawnProjectile("ngravitybolt",self:firePosition(),activeItem.ownerEntityId(),self:aimVector(),false,params)
+		  elseif (self.attackType) == 6 and (self.energyValue) >= 100 then
+		    params = { power = self.energyValue/12 , damageKind = "shadow", speed = 30, timeToLive = 1 }	
+		    projectileId = world.spawnProjectile("orangeglobelamia",self:firePosition(),activeItem.ownerEntityId(),self:aimVector(),false,params)		    
 		  else
-		    params = { power = self.energyValue/12 , damageKind = "shadow", speed = self.energyValue/2, timeToLive = 1 }	
+		    params = { power = self.energyValue/12 , damageKind = "shadow", speed = self.energyValue/3, timeToLive = 3 }	
 		    projectileId = world.spawnProjectile("purplearrow",self:firePosition(),activeItem.ownerEntityId(),self:aimVector(),false,params)		  
 		  end		  
 	       end	       
