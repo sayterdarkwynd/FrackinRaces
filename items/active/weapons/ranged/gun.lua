@@ -125,7 +125,7 @@ local heldItem2 = world.entityHandItem(activeItem.ownerEntityId(), "alt")
 	end 
 	
 	-- Callistan get a bonus with Energy Weapons
-	if species == "callistan" and heldItemthen   	     
+	if species == "callistan" and heldItem then   	     
 	     if root.itemHasTag(heldItem, "energy") then 
 		  status.setPersistentEffects("novakidbonusdmg", {
 		    {stat = "energyRegenPercentageRate", baseMultiplier = 1.25},
