@@ -1,9 +1,21 @@
 {
   "name" : "racetrink",
   "effectConfig" : {
-    "healthBonus" : 0,
-    "energyBonus" : 0.25,
-    "weaknessPenalty" : 2
+    //Core attributes
+    "healthBonus" : 0.0,
+    "energyBonus" : 0.3,
+    "attackBonus" : 0,
+    "defenseBonus" : 0,
+    
+    //Resistances
+    "physicalResistance" : 0.2,
+    "electricResistance" : -1,
+    "fireResistance" : 0.0,
+    "iceResistance" : 0.3,
+    "poisonResistance" : 0.5,
+    "shadowResistance" : 0,
+    "cosmicResistance" : 0,
+    "radioactiveResistance" : 0.5
   },
   
   "defaultDuration" : 3,

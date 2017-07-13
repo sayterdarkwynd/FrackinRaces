@@ -140,11 +140,14 @@ function BowShot:fire()
 	       if not status.resource("energy") then
 	         self.energyValue = 100
 	       end            
-	     local randValueCritBonus = math.random(8)
-	     local critValueLamia = ( randValueCritBonus + math.ceil(self.energyValue/20) ) 
+	     local randValueCritBonus = math.random(4)
+	     local critValueLamia = ( randValueCritBonus + math.ceil(self.energyValue/40) ) 
 		    if self.energyValue >= (status.stat("maxEnergy")*0.5) then   -- with high Energy reserve, lamia get increased Bow crit chance
 		      status.modifyResource("energy", (self.energyValue * -0.01) )  -- consume energy
-		      status.setPersistentEffects("weaponbonusdmgbow", {{stat = "critChance", amount = critValueLamia}})  
+		      status.setPersistentEffects("weaponbonusdmgbow", {
+		        {stat = "critChance", amount = critValueLamia},
+		        {stat = "powerMultiplier", amount = critValueLamia * 2}
+		      })  
 		    end	                         
             end           
          

@@ -196,16 +196,13 @@ end
   end
 end            
 
- if species == "orcana" then  --orcana get health and protection with spears
-  if heldItem then
+if species == "orcana" and heldItem then  --orcana get health and protection with spears
      if root.itemHasTag(heldItem, "spear") then 
-	self.meleeCount = 0.25
 	status.setPersistentEffects("weaponbonusdmg", {
-	{stat = "powerMultiplier", amount = self.meleeCount},
-	{ stat = "maxHealth", baseMultiplier = 1.15 }
+	{stat = "critChance", amount = 3},
+	{ stat = "powerMultiplier", baseMultiplier = 1.2 }
 	})        
      end
-  end
 end  
 
  if species == "avali" and heldItem then  --orcana get health and protection with spears

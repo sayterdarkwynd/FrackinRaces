@@ -7,13 +7,12 @@
     "path" : "/charCreationTooltip/description" , 
     "value" : "Love having a whale of a time!
     
-    ^red;-8% Energy, 35% Weakness: Electric^reset;
-    ^red;Weakness: Electricity^reset;
-    ^green;+25% Health, +10% Physical Resist^reset;
-    ^green;On ocean biomes, gain additional Health and Energy^reset; 
+    ^red;Weak: 30% Electric, 20% Poison^reset;
+    ^green;+30% Health, +10% Protection, 30% Ice Resist, +20% Fire and Rad Resist^reset;
+    ^green;On ocean biomes, gain additional 20% Health and Energy^reset; 
     ^green;In Water: +2000 Breath, +70% Breath Regen, minor health regen^reset; 
     ^green;Consume less food and gain Poison Resist and Speed in Water/Healing Water^reset;
-    ^green;+25% damage and additional health when using a Spear^reset;
+    ^green;+20% damage and +3% Crit when using a Spear^reset;
     ^green;Immune: Wet^reset;"
     }
 

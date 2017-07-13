@@ -7,8 +7,8 @@
     "path" : "/charCreationTooltip/description" , 
     "value" : "Swift and dangerous snake-people
     
-    ^red;-20% Health, 40% Weakness: Ice^reset;
-    ^green;+20% Energy, +25% Shadow Resist, +10% Physical Resist^reset;
+    ^red;-20% Health, Weak: 40% Ice, 20% Cosmic^reset;
+    ^green;+20% Energy, +10% Physical, 20% Fire, 30% Poison and Shadow resists^reset;
     ^green;Reduced food consumption^reset; 
     ^green;+20% Jump^reset; 
     ^green;+15% Bow Damage and gain movement speed^reset;

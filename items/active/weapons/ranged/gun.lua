@@ -125,19 +125,13 @@ local heldItem2 = world.entityHandItem(activeItem.ownerEntityId(), "alt")
 	end 
 	
 	-- Callistan get a bonus with Energy Weapons
-	 if species == "callistan" then   
-	  if heldItem then	     
+	if species == "callistan" and heldItemthen   	     
 	     if root.itemHasTag(heldItem, "energy") then 
-		  self.blockCount = 1.15
-		  self.blockCount2 = 1.25
 		  status.setPersistentEffects("novakidbonusdmg", {
-		    {stat = "powerMultiplier", baseMultiplier = self.blockCount},
-		    {stat = "maxEnergy", baseMultiplier = self.blockCount},
-		    {stat = "energyRegenPercentageRate", baseMultiplier = self.blockCount2},
-		    {stat = "critBonus", baseMultiplier = self.blockCount2}
+		    {stat = "energyRegenPercentageRate", baseMultiplier = 1.25},
+		    {stat = "critChance", amount = 3}
 		  })   
 	     end	     
-	  end
 	end 
 	
 	-- Floran get a bonus with floran needlers
