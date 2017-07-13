@@ -139,16 +139,38 @@ function BowShot:fire()
             if species == "lamia" then      -- lamia get increased crit chance with high energy
 	       if not status.resource("energy") then
 	         self.energyValue = 100
-	       end            
-	     local randValueCritBonus = math.random(4)
-	     local critValueLamia = ( randValueCritBonus + math.ceil(self.energyValue/40) ) 
-		    if self.energyValue >= (status.stat("maxEnergy")*0.5) then   -- with high Energy reserve, lamia get increased Bow crit chance
+	       end  
+	       local randValueCritBonus = math.random(4)
+	       local critValueLamia = ( randValueCritBonus + math.ceil(self.energyValue/40) ) 	       
+	       if math.random(10)==1 then
+		  self.attackType = math.random(5)
+		  if self.attackType == 1 then
+		    params = { power = self.energyValue/12 , damageKind = "shadow", speed = self.energyValue/2, timeToLive = 1 }	
+		    projectileId = world.spawnProjectile("purplearrow",self:firePosition(),activeItem.ownerEntityId(),self:aimVector(),false,params)
+		  elseif self.attackType == 2 then
+		    params = { power = self.energyValue/12 , damageKind = "shadow", speed = self.energyValue/2, timeToLive = 1 }	
+		    projectileId = world.spawnProjectile("chargedpurplearrow",self:firePosition(),activeItem.ownerEntityId(),self:aimVector(),false,params)
+		  elseif self.attackType == 3 then
+		    params = { power = self.energyValue/12 , damageKind = "shadow", speed = self.energyValue/2, timeToLive = 1 }	
+		    projectileId = world.spawnProjectile("magentaglobe",self:firePosition(),activeItem.ownerEntityId(),self:aimVector(),false,params)	
+		  elseif self.attackType == 4 then
+		    params = { power = self.energyValue/12 , damageKind = "poison", speed = self.energyValue/2, timeToLive = 1 }	
+		    projectileId = world.spawnProjectile("poisonplasma",self:firePosition(),activeItem.ownerEntityId(),self:aimVector(),false,params)			    
+		  elseif self.attackType == 5 then
+		    params = { power = self.energyValue/12 , damageKind = "shadow", speed = self.energyValue/2, timeToLive = 1 }	
+		    projectileId = world.spawnProjectile("ngravitybolt",self:firePosition(),activeItem.ownerEntityId(),self:aimVector(),false,params)
+		  else
+		    params = { power = self.energyValue/12 , damageKind = "shadow", speed = self.energyValue/2, timeToLive = 1 }	
+		    projectileId = world.spawnProjectile("purplearrow",self:firePosition(),activeItem.ownerEntityId(),self:aimVector(),false,params)		  
+		  end		  
+	       end	       
+	       if self.energyValue >= (status.stat("maxEnergy")*0.5) then   -- with high Energy reserve, lamia get increased Bow crit chance
 		      status.modifyResource("energy", (self.energyValue * -0.01) )  -- consume energy
 		      status.setPersistentEffects("weaponbonusdmgbow", {
 		        {stat = "critChance", amount = critValueLamia},
-		        {stat = "powerMultiplier", amount = critValueLamia * 2}
+		        {stat = "powerMultiplier", baseMultiplier = 1 + (critValueLamia/100) * 2}
 		      })  
-		    end	                         
+	       end	  
             end           
          
   if not world.pointTileCollision(self:firePosition()) and status.overConsumeResource("energy", self.energyPerShot) then
