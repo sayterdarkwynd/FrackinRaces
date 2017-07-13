@@ -366,6 +366,7 @@ if species == "felin" then
 end
 
 if species == "nightar" and heldItem then  
+    self.meleeCount = self.meleeCount + 0.12
      if root.itemHasTag(heldItem, "shortsword") and opposedhandHeldItem and root.itemHasTag(opposedhandHeldItem, "shield") then 
        status.setPersistentEffects("weaponbonusdualwield", {
             {stat = "shieldBash", amount = 2},
@@ -375,7 +376,6 @@ if species == "nightar" and heldItem then
          })        
      end
      if root.itemHasTag(heldItem, "shortsword") and opposedhandHeldItem and root.itemHasTag(opposedhandHeldItem, "shortsword") then 
-       self.meleeCount = self.meleeCount + 0.12
        status.setPersistentEffects("weaponbonusdualwield", {
 	    {stat = "powerMultiplier", amount = self.meleeCount}
          })   
