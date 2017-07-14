@@ -26,11 +26,7 @@ function init()
     {stat = "poisonResistance", amount = config.getParameter("poisonResistance")},
     {stat = "shadowResistance", amount = config.getParameter("shadowResistance")},
     {stat = "cosmicResistance", amount = config.getParameter("cosmicResistance")},
-    {stat = "radioactiveResistance", amount = config.getParameter("radioactiveResistance")},
-    --other
-    {stat = "poisonStatusImmunity", amount = 1},
-    {stat = "beestingImmunity", amount = 1},
-    {stat = "grit", amount = 0.2}
+    {stat = "radioactiveResistance", amount = config.getParameter("radioactiveResistance")}
   })
 
   script.setUpdateDelta(5)
