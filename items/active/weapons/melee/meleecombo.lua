@@ -280,7 +280,7 @@ function MeleeCombo:fire()
 			  animator.playSound("nightar")
 			end				    
 		     end
-		     if root.itemHasTag(heldItem, "broadsword") then 
+		     if root.itemHasTag(heldItem, "broadsword") or root.itemHasTag(heldItem, "longsword") then 
 			if (randValue < 6) and (lightLevel < 26) then  -- spawn a projectile
 	                  params = { power = 5, damageKind = "shadow" }			
 			  projectileId = world.spawnProjectile("nightarmeleeslash",self:firePosition(),activeItem.ownerEntityId(),self:aimVector(),false,params)

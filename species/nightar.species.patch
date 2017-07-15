@@ -10,7 +10,7 @@
     
     ^red;Lowered defense and damage when in light^reset;
     ^green;40% Shadow Resist. +10% Knockback Resist^reset;
-    ^green;Broadsword: +2% Crit, +5% Damage, +6% Shadow Burst^reset;
+    ^green;Broadsword/Longsword: +2% Crit, +5% Damage, +6% Shadow Burst^reset;
     ^green;Shortsword(single): +5% Damage, +3% Shadow Burst^reset;
     ^green;Shortsword(double): +1% Crit, +5% Speed^reset;
     ^green;Shortsword + Shield: +2 Shield Bash, +2 Shield Bash Push^reset;

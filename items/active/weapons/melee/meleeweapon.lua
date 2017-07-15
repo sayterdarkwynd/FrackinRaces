@@ -383,7 +383,7 @@ if species == "nightar" and heldItem then
 	    {stat = "grit", amount = self.meleeCount2}
 	  })  
      end     
-     if root.itemHasTag(heldItem, "broadsword") then 
+     if root.itemHasTag(heldItem, "broadsword") or root.itemHasTag(heldItem, "longsword") then 
 	  status.setPersistentEffects("weaponbonusdmg", {
 	    {stat = "powerMultiplier", baseMultiplier = 1.05},
 	    {stat = "critChance", amount = 2}
