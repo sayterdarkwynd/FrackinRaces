@@ -167,6 +167,9 @@ function MeleeCombo:preslash()
   self:setState(self.fire)
 end
 
+
+
+
 -- State: fire
 function MeleeCombo:fire()
   local stance = self.stances["fire"..self.comboStep]
@@ -187,7 +190,6 @@ function MeleeCombo:fire()
 --*************************************    
 -- FU/FR ABILITIES
  --*************************************   
-
  local species = world.entitySpecies(activeItem.ownerEntityId())
  if self.meleeCountcombo == nil then self.meleeCountcombo = 0  end
  if self.meleeCountcombo2 == nil then self.meleeCountcombo2 = 0 end
@@ -198,6 +200,23 @@ function MeleeCombo:fire()
  local opposedhandHeldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand() == "primary" and "alt" or "primary")
  local randValue = math.random(100)  -- chance for projectile
 
+	if status.isResource("food") then
+	  self.foodValue = status.resource("food")
+	  hungerLevel = status.resource("food")
+	else
+	  self.foodValue = 50
+	  hungerLevel = 50
+	end
+	--food defaults
+	hungerMax = { pcall(status.resourceMax, "food") }
+	hungerMax = hungerMax[1] and hungerMax[2]
+	if status.isResource("energy") then
+	  self.energyValue = status.resource("energy")  --check our Food level
+	else
+	  self.energyValue = 80
+	end
+	self.critValueGlitch = ( math.ceil(self.energyValue/16) ) 
+	
           if species == "avikan" then      
             self.meleeCountcombo = status.resource("health")/40
             status.setPersistentEffects("combobonusdmg", {
@@ -239,11 +258,28 @@ function MeleeCombo:fire()
 	  end
        end
 
-          if species == "glitch" then      --each 1-handed combo swing slightly increases glitch defense
-            self.meleeCountcombo = self.meleeCountcombo + 3
-            status.setPersistentEffects("combobonusdmg", {{stat = "protection", amount = self.meleeCountcombo}})  
-          end   
-
+       if species == "glitch" and heldItem then  
+            self.meleeCountcombo = self.meleeCountcombo + 3 --all combo attacks with 1h get this bonus
+            status.setPersistentEffects("combobonusdmg", {
+              {stat = "protection", amount = self.meleeCountcombo}
+            }) 
+	     if root.itemHasTag(heldItem, "mace") then -- only maces
+		  if not self.critValueGlitch then
+		    self.critValueGlitch = ( math.ceil(self.energyValue/16) ) 
+		  end  	     
+		  if status.isResource("food") then
+		     adjustedHunger = hungerLevel - (hungerLevel * 0.005)
+		     status.setResource("food", adjustedHunger)	      
+		  end	 
+		  if self.energyValue >= 25 then
+		    status.setPersistentEffects("glitchEnergyPower", {
+			{ stat = "critChance", amount = self.critValueGlitch }
+		      }) 	    
+		  end		  					                        			    
+	     end
+       end
+	
+	
 	  if species == "kazdra" then   -- in combos, kazdra shoot fire and stuff 	  
 	    self.modifier = status.stat("dragonBonus") + 1
 	    self.meleeCountcombo = 1.1
@@ -378,6 +414,7 @@ function MeleeCombo:uninit()
   status.clearPersistentEffects("combobonusdmg2")
   status.clearPersistentEffects("dualwieldbonus")
   status.clearPersistentEffects("hylotlbonusdmg")
+  status.clearPersistentEffects("glitchEnergyPower")
   self.meleeCountcombo = 0
   self.meleeCountcombo2 = 0
 end

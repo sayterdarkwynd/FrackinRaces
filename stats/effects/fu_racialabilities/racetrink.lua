@@ -27,9 +27,18 @@ function init()
 
   script.setUpdateDelta(0)
 	if (world.type() == "snow") or (world.type() == "tundra") or (world.type() == "arctic") or (world.type() == "nitrogensea") or (world.type() == "icemoon") or (world.type() == "frozenvolcanic") or (world.type() == "icewastes") then
-		status.setPersistentEffects("jungleEpic", {{stat = "energyRegenPercentageRate", baseMultiplier = 1.25},{stat = "foodDelta", baseMultiplier = 0.03}})
+		status.setPersistentEffects("jungleEpic", {
+		{stat = "energyRegenPercentageRate", baseMultiplier = 1.25},
+		{stat = "foodDelta", baseMultiplier = 0.03}})
+	elseif (world.type() == "desert") or (world.type() == "desertwastes") or (world.type() == "desertwastesdark") or (world.type() == "magma") or (world.type() == "magmadark") or (world.type() == "volcanic") or (world.type() == "volcanicdark") then
+		status.setPersistentEffects("jungleEpic", {
+		  {stat = "energyRegenPercentageRate", baseMultiplier = 0.5},
+		  {stat = "foodDelta", baseMultiplier = 0.03}
+		})	
 	else
-		status.setPersistentEffects("jungleEpic", {{stat = "foodDelta", baseMultiplier = 0.03}})
+		status.setPersistentEffects("jungleEpic", {
+		  {stat = "foodDelta", baseMultiplier = 0.03}
+		})
 	end  	
 end
 

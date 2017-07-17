@@ -6,7 +6,7 @@
     { "op": "replace", 
     "path" : "/charCreationTooltip/description" , 
     "value" : "Hyper-advanced machines.
-    ^red;-100% Weakness: Electric, Lose energy regen in cold biomes^reset;
+    ^red;-100% Weakness: Electric, Lose 50% energy regen in hot biomes^reset;
     ^red;-50% Power output when Electrified^reset;
     ^green;In cold biomes you gain extensive energy regeneration.^reset; 
     ^green;+25% Energy, +20% Physical Resist, +50% Poison Resist, 50% Radiation Resist^reset;
