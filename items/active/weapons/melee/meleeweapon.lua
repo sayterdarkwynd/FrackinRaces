@@ -216,7 +216,7 @@ end
  if species == "argonian" and heldItem then  --argonian do extra damage with spears
      if root.itemHasTag(heldItem, "spear") then 
 	status.setPersistentEffects("weaponbonusdmg", {
-	{stat = "powerMultiplier", amount = 1.1},
+	{stat = "powerMultiplier", baseMultiplier = 1.1},
 	{ stat = "maxEnergy", baseMultiplier = 1.25 }
 	})        
      end
@@ -255,7 +255,7 @@ end
  if species == "avikan" and heldItem then   --avikan are brutal spears and daggers
      if root.itemHasTag(heldItem, "dagger") or root.itemHasTag(heldItem, "spear") then 
 	status.setPersistentEffects("weaponbonusdmg", {
-	{stat = "powerMultiplier", amount = 1.05},
+	{stat = "powerMultiplier", baseMultiplier = 1.05},
 	{stat = "critChance", amount = 2}
 	})   
      end
