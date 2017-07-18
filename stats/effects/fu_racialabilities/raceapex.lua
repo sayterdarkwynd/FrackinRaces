@@ -18,7 +18,9 @@ function init()
     {stat = "radioactiveResistance", amount = config.getParameter("radioactiveResistance")},
     
     -- other
-    {stat = "foodDelta", baseMultiplier = 1.06146}
+    {stat = "foodDelta", baseMultiplier = 1.06146},
+    {stat = "jungleslowImmunity", amount = 1 },
+    {stat = "fumudslowImmunity", amount = 1 }
   })
 
     --Environment Bonus
