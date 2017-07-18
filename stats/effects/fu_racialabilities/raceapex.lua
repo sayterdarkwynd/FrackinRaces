@@ -70,7 +70,7 @@ function update(dt)
 	    status.setPersistentEffects("apexPower", {
 	      {stat = "maxEnergy", baseMultiplier = self.percentRate },
 	      {stat = "powerMultiplier", baseMultiplier = self.powerMod },
-	      {stat = "protection", amount = self.protectionMod },
+	      {stat = "protection", baseMultiplier = self.protectionMod },
 	      {stat = "critChance", amount = self.critMod }
 	    })	 
         end
