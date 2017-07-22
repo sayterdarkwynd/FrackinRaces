@@ -1,5 +1,5 @@
 {
-  "name" : "carnivorefood",
+  "name" : "carnivorefoodfish",
   "blockingStat" : "poisonStatusImmunity",
 
   "effectConfig" : {
@@ -10,7 +10,7 @@
   "defaultDuration" : 60,
 
   "scripts" : [
-    "carnivorefood.lua"
+    "carnivorefoodfish.lua"
   ],
 
   "animationConfig" : "carnivorefood.animation",

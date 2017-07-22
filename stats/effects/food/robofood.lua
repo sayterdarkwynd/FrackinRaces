@@ -3,19 +3,10 @@ function init()
   baseValue = config.getParameter("healthBonus",0)*(status.resourceMax("health"))
   baseValue2 = config.getParameter("energyBonus",0)*(status.resourceMax("energy"))
   baseValue3 = config.getParameter("fallBonus",0)*(status.stat("fallDamageMultiplier"))
-  self.tickDamagePercentage = 0.01
+  self.tickDamagePercentage = 0.008
   self.tickTime = 2
   self.tickTimer = self.tickTime
-  checkRace()
   script.setUpdateDelta(5)
-end
-
-function checkRace()
-  if status.stat("isRobot") then
-    applyEffects()
-  else
-    self.isNot = 1
-  end
 end
 
 function applyEffects()
@@ -28,17 +19,22 @@ function applyEffects()
 end
 
 function update(dt)
-  if (self.isNot == 1) and (self.tickTimer <= 0) then
-      self.tickTimer = self.tickTime
-      status.applySelfDamageRequest({
-        damageType = "IgnoresDef",
-        damage = math.floor(status.resourceMax("health") * self.tickDamagePercentage) + 1,
-        damageSourceKind = "poison",
-        sourceEntityId = entity.id()
-      })
-      effect.setParentDirectives("fade=806e4f="..self.tickTimer * 0.4) 
-  end
-  self.tickTimer = self.tickTimer - dt
+	 if not status.stat("isRobot") or status.stat("isRobot")==0 then
+	   if (self.tickTimer <= 0) then
+	      self.tickTimer = self.tickTime
+	      status.applySelfDamageRequest({
+		damageType = "IgnoresDef",
+		damage = math.floor(status.resourceMax("health") * self.tickDamagePercentage) + 1,
+		damageSourceKind = "poison",
+		sourceEntityId = entity.id()
+	      })
+	      effect.setParentDirectives("fade=806e4f="..self.tickTimer * 0.4) 
+	   else
+	     self.tickTimer = self.tickTimer - dt
+	   end
+	 else
+	    applyEffects()   
+	 end
 end
 
 function uninit()
