@@ -1,5 +1,5 @@
 {
-  "name" : "carnivorefoodfish",
+  "name" : "herbivorefood",
   "blockingStat" : "poisonStatusImmunity",
 
   "effectConfig" : {
@@ -10,11 +10,11 @@
   "defaultDuration" : 60,
 
   "scripts" : [
-    "carnivorefoodfish.lua"
+    "carnivorefood.lua"
   ],
 
   "animationConfig" : "carnivorefood.animation",
 
-  "label" : "Raw Seafood - Meat eaters and Oceanic species get a buff. Herbivores and Robots get sick.",
-  "icon" : "/interface/statuses/rawfish.png"
+  "label" : "Herbivore Food - Meat eaters and robots get ill, but everyone else benefits.",
+  "icon" : "/interface/statuses/foodpoisonfloran.png"
 }

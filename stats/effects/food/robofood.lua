@@ -19,7 +19,7 @@ function applyEffects()
 end
 
 function update(dt)
-	 if not status.stat("isRobot") or status.stat("isRobot")==0 then
+	 if status.stat("isCarnivore") or status.stat("isHerbivore") or status.stat("isOmnivore") and not self.species=="novakid" then
 	   if (self.tickTimer <= 0) then
 	      self.tickTimer = self.tickTime
 	      status.applySelfDamageRequest({
@@ -32,7 +32,7 @@ function update(dt)
 	   else
 	     self.tickTimer = self.tickTimer - dt
 	   end
-	 else
+	 else 
 	    applyEffects()   
 	 end
 end

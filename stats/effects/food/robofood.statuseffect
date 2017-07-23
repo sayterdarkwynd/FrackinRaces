@@ -16,5 +16,5 @@
   "animationConfig" : "robofood.animation",
 
   "label" : "Mechanical Food - only mechanical beings can digest this. Anything else will suffer for it.",
-  "icon" : "/interface/statuses/foodpoison.png"
+  "icon" : "/interface/statuses/autodrive.png"
 }

@@ -10,10 +10,11 @@ function init()
   animator.setParticleEmitterOffsetRegion("drips", mcontroller.boundBox())
   animator.setParticleEmitterActive("drips", true)
   script.setUpdateDelta(5)
+  self.species = world.entitySpecies(entity.id())
 end
 
 function update(dt)
-	 if not status.stat("isHerbivore") or status.stat("isHerbivore")==0 then
+	 if status.stat("isHerbivore")==1 or not status.stat("isCarnivore")==1 or status.stat("isRobot")==1 then
 	   if (self.tickTimer <= 0) then
 	      self.tickTimer = self.tickTime
 	      status.applySelfDamageRequest({
@@ -22,11 +23,13 @@ function update(dt)
 		damageSourceKind = "poison",
 		sourceEntityId = entity.id()
 	      })
-	      effect.setParentDirectives("fade=806e4f="..self.tickTimer * 0.25) 
+	      mcontroller.controlModifiers({ airJumpModifier = 0.08, speedModifier = 0.08 })      
+	      effect.setParentDirectives("fade=806e4f="..self.tickTimer * 0.4) 	      
+
 	   else
 	     self.tickTimer = self.tickTimer - dt
 	   end
-	 elseif status.stat("isCarnivore") then
+	 elseif status.stat("isCarnivore") or status.stat("isOmnivore") then
 	    applyEffects()   
 	 end
 end
