@@ -3,6 +3,7 @@ function init()
   effect.addStatModifierGroup({
     {stat = "isCarnivore", amount = 1 },
     {stat = "isRobot", amount = 1 },
+    {stat = "isOmnivore", amount = 1},
     {stat = "grit", amount = 0.3},
     {stat = "electricStatusImmunity", amount = 1},
     {stat = "physicalResistance", amount = 0.20},

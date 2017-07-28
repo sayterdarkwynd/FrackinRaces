@@ -3,6 +3,7 @@ function init()
   baseValue2 = config.getParameter("energyBonus",0)*(status.resourceMax("energy"))
   
   effect.addStatModifierGroup({
+    {stat = "isOmnivore", amount = 1},
     {stat = "snowslowImmunity", amount = 1},
     {stat = "iceslipImmunity", amount = 1},
     {stat = "iceStatusImmunity", amount = 1},

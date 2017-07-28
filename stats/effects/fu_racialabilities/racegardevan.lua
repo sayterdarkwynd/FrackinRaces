@@ -5,6 +5,7 @@ function init()
   local bounds = mcontroller.boundBox()
   
   effect.addStatModifierGroup({
+    {stat = "isHerbivore", amount = 1},
     {stat = "maxHealth", amount = baseValue },
     {stat = "maxEnergy", amount = baseValue2 },
     {stat = "electricStatusImmunity", amount = 1},
