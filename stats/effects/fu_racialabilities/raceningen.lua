@@ -19,7 +19,7 @@ function init()
     {stat = "radioactiveResistance", amount = config.getParameter("radioactiveResistance")},
     {stat = "grit", amount = 0.1},
     {stat = "biooozeImmunity", amount = 1}
-
+  })
   self.movementParams = mcontroller.baseParameters()
   local bounds = mcontroller.boundBox()
   script.setUpdateDelta(5)
