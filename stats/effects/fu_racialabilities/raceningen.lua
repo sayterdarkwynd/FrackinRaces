@@ -4,9 +4,9 @@ function init()
   effect.addStatModifierGroup({
     -- base Attributes
     {stat = "isCarnivore", amount = 1},
-    {stat = "maxHealth", amount = self.baseMaxHealth * config.getParameter("healthBonus")},
-    {stat = "maxEnergy", amount = self.baseMaxEnergy * config.getParameter("energyBonus")},
-    {stat = "powerMultiplier", baseMultiplier = config.getParameter("attackBonus")},
+    --{stat = "maxHealth", amount = self.baseMaxHealth + config.getParameter("healthBonus")},
+    --{stat = "maxEnergy", amount = self.baseMaxEnergy + config.getParameter("energyBonus")},
+    --{stat = "powerMultiplier", baseMultiplier = config.getParameter("attackBonus")},
     --{stat = "protection", baseMultiplier = config.getParameter("defenseBonus")},
     -- resistances
     {stat = "physicalResistance", amount = config.getParameter("physicalResistance")},
