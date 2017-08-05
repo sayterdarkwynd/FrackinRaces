@@ -311,14 +311,14 @@ function MeleeCombo:fire()
 			ability.comboSpeedFactor = ability.comboSpeedFactor - (ability.comboSpeedFactor * 2)
 			
 			if (randValue < 3) and (lightLevel < 26) then  -- spawn a projectile
-	                  params = { power = 5, damageKind = "shadow" }			
+	                  params = { power = 5 }			
 			  projectileId = world.spawnProjectile("nightarmeleeslash",self:firePosition(),activeItem.ownerEntityId(),self:aimVector(),false,params)
 			  animator.playSound("nightar")
 			end				    
 		     end
 		     if root.itemHasTag(heldItem, "broadsword") or root.itemHasTag(heldItem, "longsword") then 
 			if (randValue < 6) and (lightLevel < 26) then  -- spawn a projectile
-	                  params = { power = 5, damageKind = "shadow" }			
+	                  params = { power = 5 }			
 			  projectileId = world.spawnProjectile("nightarmeleeslash",self:firePosition(),activeItem.ownerEntityId(),self:aimVector(),false,params)
 			  animator.playSound("nightar")
 			end		                         				    
