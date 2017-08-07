@@ -16,5 +16,5 @@
   "animationConfig" : "carnivorefood.animation",
 
   "label" : "Herbivore Food - Meat eaters and robots get ill, but everyone else benefits.",
-  "icon" : "/interface/statuses/foodpoison.png"
+  "icon" : "/interface/statuses/foodpoisonherbivore.png"
 }
