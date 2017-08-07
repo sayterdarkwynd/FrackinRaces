@@ -24,6 +24,7 @@ function update(dt)
 	      })
 	      mcontroller.controlModifiers({ airJumpModifier = 0.08, speedModifier = 0.08 })          	      
 	      effect.setParentDirectives("fade=806e4f="..self.tickTimer * 0.25) 
+
 	   else
 	     self.tickTimer = self.tickTimer - dt
 	   end
