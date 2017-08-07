@@ -11,7 +11,7 @@ function init()
 end
 
 function update(dt)
-	 if status.stat("isCarnivore")==1 or status.stat("isRobot")==1 then
+	 if status.stat("isCarnivore") or status.stat("isRobot") or self.species=="floran" then
 	   if (self.tickTimer <= 0) then
 	      self.tickTimer = self.tickTime
 	      status.applySelfDamageRequest({
@@ -24,7 +24,7 @@ function update(dt)
 	   else
 	     self.tickTimer = self.tickTimer - dt
 	   end
-	 elseif status.stat("isHerbivore") or status.stat("isOmnivore") then
+	 else
 	    applyEffects()   
 	 end
 end

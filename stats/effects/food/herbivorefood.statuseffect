@@ -10,11 +10,11 @@
   "defaultDuration" : 60,
 
   "scripts" : [
-    "carnivorefood.lua"
+    "herbivorefood.lua"
   ],
 
   "animationConfig" : "carnivorefood.animation",
 
   "label" : "Herbivore Food - Meat eaters and robots get ill, but everyone else benefits.",
-  "icon" : "/interface/statuses/foodpoisonfloran.png"
+  "icon" : "/interface/statuses/foodpoison.png"
 }
