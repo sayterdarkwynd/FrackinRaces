@@ -7,7 +7,7 @@
   "protectionBonus" : 2, 
   "fallBonus" : -0.2
   },
-  "defaultDuration" : 60,
+  "defaultDuration" : 120,
 
   "scripts" : [
     "robofood.lua"

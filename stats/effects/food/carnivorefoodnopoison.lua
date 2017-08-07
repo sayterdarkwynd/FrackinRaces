@@ -3,7 +3,7 @@ function init()
   self.protectionBonus = config.getParameter("protectionBonus", 0)
   baseValue = config.getParameter("healthBonus",0)*(status.resourceMax("health"))
   baseValue2 = config.getParameter("energyBonus",0)*(status.resourceMax("energy"))
-  self.tickDamagePercentage = 0.006
+  self.tickDamagePercentage = 0.005
   self.tickTime = 2
   self.tickTimer = self.tickTime
   script.setUpdateDelta(5)

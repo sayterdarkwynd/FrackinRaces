@@ -7,7 +7,7 @@
     "protectionBonus" : 1  
   },
   
-  "defaultDuration" : 60,
+  "defaultDuration" : 120,
 
   "scripts" : [
     "carnivorefoodcooked.lua"
