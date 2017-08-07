@@ -1,4 +1,5 @@
 function init()
+  world.sendEntityMessage(entity.id(), "queueRadioMessage", "foodtype")
   self.movementParams = mcontroller.baseParameters()  
   self.protectionBonus = config.getParameter("protectionBonus", 0)
   baseValue = config.getParameter("healthBonus",0)*(status.resourceMax("health"))

@@ -1,4 +1,5 @@
 function init()
+  world.sendEntityMessage(entity.id(), "queueRadioMessage", "foodtype")
   self.protectionBonus = config.getParameter("protectionBonus", 0)
   baseValue = config.getParameter("healthBonus",0)*(status.resourceMax("health"))
   baseValue2 = config.getParameter("energyBonus",0)*(status.resourceMax("energy"))

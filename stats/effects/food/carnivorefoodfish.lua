@@ -1,4 +1,5 @@
 function init()
+  world.sendEntityMessage(entity.id(), "queueRadioMessage", "foodtype")
   self.movementParams = mcontroller.baseParameters()  
   local bounds = mcontroller.boundBox()
   self.protectionBonus = config.getParameter("protectionBonus", 0)
