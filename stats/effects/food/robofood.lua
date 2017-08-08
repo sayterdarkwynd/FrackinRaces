@@ -1,5 +1,5 @@
 function init()
-  world.sendEntityMessage(entity.id(), "queueRadioMessage", "foodtype")
+  
   self.protectionBonus = config.getParameter("protectionBonus", 0)
   baseValue = config.getParameter("healthBonus",0)*(status.resourceMax("health"))
   baseValue2 = config.getParameter("energyBonus",0)*(status.resourceMax("energy"))
@@ -21,6 +21,7 @@ end
 
 function update(dt)
 	 if not status.stat("isRobot") or not self.species=="novakid" then
+	   world.sendEntityMessage(entity.id(), "queueRadioMessage", "foodtype")
 	   if (self.tickTimer <= 0) then
 	      self.tickTimer = self.tickTime
 	      status.applySelfDamageRequest({

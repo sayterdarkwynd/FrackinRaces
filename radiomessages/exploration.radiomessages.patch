@@ -4,7 +4,7 @@
     "path": "/foodtype",
     "value": {
       "unique": false,
-      "text": "^red;TOXIN DETECTED ^reset;! While I am sure that *looked* delicious, I regret to inform you that this type of food cannot be digested by your physiology. Avoid foods like this in the future. The next two minutes should help you think on this problem.",
+      "text": "^red;TOXINS DETECTED ^reset;: While I am sure that *looked* delicious, I regret to inform you that this type of food ^orange;cannot be digested by your physiology^reset;. Avoid foods like this in the future.",
       "portraitImage": "yell.<frame>",
       "textSpeed": 70
     }

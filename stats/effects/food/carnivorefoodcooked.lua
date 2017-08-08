@@ -1,5 +1,4 @@
 function init()
-  world.sendEntityMessage(entity.id(), "queueRadioMessage", "foodtype")
   self.movementParams = mcontroller.baseParameters()  
   local bounds = mcontroller.boundBox()
   self.protectionBonus = config.getParameter("protectionBonus", 0)
@@ -16,6 +15,7 @@ end
 
 function update(dt)
 	 if status.stat("isHerbivore")==1 or status.stat("isRobot")==1 then
+	   world.sendEntityMessage(entity.id(), "queueRadioMessage", "foodtype")
 	   if (self.tickTimer <= 0) then
 	      self.tickTimer = self.tickTime
 	      status.applySelfDamageRequest({
@@ -30,7 +30,7 @@ function update(dt)
 	   else
 	     self.tickTimer = self.tickTimer - dt
 	   end
-	 elseif status.stat("isCarnivore") or status.stat("isOmnivore") then
+	 else
 	    applyEffects()   
 	 end
 end
