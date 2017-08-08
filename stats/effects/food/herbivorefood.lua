@@ -11,25 +11,28 @@ function init()
 end
 
 function update(dt)
-	 if status.stat("isCarnivore") or status.stat("isRobot") then
+	 if status.stat("isHerbivore")>0 then
+	   applyEffects() 
+	 elseif status.stat("isCarnivore")>0 or status.stat("isRobot")>0 then
 	   world.sendEntityMessage(entity.id(), "queueRadioMessage", "foodtype")
-	   if (self.tickTimer <= 0) then
-	      self.tickTimer = self.tickTime
-	      status.applySelfDamageRequest({
-		damageType = "IgnoresDef",
-		damage = math.floor(status.resourceMax("health") * self.tickDamagePercentage) + 1,
-		damageSourceKind = "poison",
-		sourceEntityId = entity.id()
-	      })
-	      effect.setParentDirectives("fade=806e4f="..self.tickTimer * 0.25) 
-	   else
-	     self.tickTimer = self.tickTimer - dt
+	   if (self.tickTimer <= 0) then 
+	     applyPenalty() 
+	   else 
+	     self.tickTimer = self.tickTimer - dt 
 	   end
-	 elseif status.stat("isOmnivore") then
-	   effect.expire()
-	 else
-	    applyEffects()   
 	 end
+end
+
+
+function applyPenalty()
+      self.tickTimer = self.tickTime
+      status.applySelfDamageRequest({
+	damageType = "IgnoresDef",
+	damage = math.floor(status.resourceMax("health") * self.tickDamagePercentage) + 1,
+	damageSourceKind = "poison",
+	sourceEntityId = entity.id()
+      })
+      effect.setParentDirectives("fade=806e4f="..self.tickTimer * 0.25) 
 end
 
 function applyEffects()

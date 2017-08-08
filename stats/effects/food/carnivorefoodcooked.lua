@@ -14,7 +14,7 @@ function init()
 end
 
 function update(dt)
-	 if status.stat("isHerbivore")==1 or status.stat("isRobot")==1 then
+	 if status.stat("isHerbivore")>0 or status.stat("isRobot")>0 then
 	   world.sendEntityMessage(entity.id(), "queueRadioMessage", "foodtype")
 	   if (self.tickTimer <= 0) then
 	      self.tickTimer = self.tickTime

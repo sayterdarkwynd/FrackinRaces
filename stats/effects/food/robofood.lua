@@ -20,7 +20,7 @@ function applyEffects()
 end
 
 function update(dt)
-	 if not status.stat("isRobot") or not self.species=="novakid" then
+	 if not status.stat("isRobot")>0 or not self.species=="novakid" then
 	   world.sendEntityMessage(entity.id(), "queueRadioMessage", "foodtype")
 	   if (self.tickTimer <= 0) then
 	      self.tickTimer = self.tickTime
