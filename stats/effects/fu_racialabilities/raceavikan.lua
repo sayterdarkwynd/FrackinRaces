@@ -7,6 +7,7 @@ function init()
     {stat = "maxHealth", amount = self.baseMaxHealth * config.getParameter("healthBonus")},
     {stat = "maxEnergy", amount = self.baseMaxEnergy * config.getParameter("energyBonus")},
     {stat = "powerMultiplier", baseMultiplier = config.getParameter("attackBonus")},
+    {stat = "protection", baseMultiplier = config.getParameter(" 1.05")},
     {stat = "fallDamageMultiplier", baseMultiplier = config.getParameter("fallBonus")},
     {stat = "physicalResistance", amount = config.getParameter("physicalResistance",0)},
     {stat = "electricResistance", amount = config.getParameter("electricResistance",0)},
@@ -24,17 +25,16 @@ function init()
   
   script.setUpdateDelta(0)
 
-
     onColdWorld()
     onHotWorld()
-	if self.isHot == 1 then
+	if (self.isHot) >0 then
 	    status.setPersistentEffects("jungleEpic", {
 	      {stat = "protection", baseMultiplier = 1.05},
 	      {stat = "maxHealth", baseMultiplier = 1.15},
 	      {stat = "healthRegen", amount = 0.04}
 	    })
 	end  
-	if self.isCold == 1 then
+	if (self.isCold) >0 then
 	    status.setPersistentEffects("jungleEpic", {
 	      {stat = "energyRegenPercentageRate", baseMultiplier = 0.5}
 	    })
@@ -43,7 +43,7 @@ end
 
 
 function onColdWorld()
-  if (world.type() == "snow") or (world.type() == "arctic") or (world.type() == "arcticdark") or (world.type() == "icemoon") or (world.type() == "icewaste") or (world.type() == "icewastedark") then
+  if world.type() == "snow" or world.type() == "arctic" or world.type() == "arcticdark" or world.type() == "icemoon" or world.type() == "icewaste" or world.type() == "icewastedark" then
     self.isCold = 1
   else
     self.isCold = 0
@@ -51,7 +51,7 @@ function onColdWorld()
 end
 
 function onHotWorld()
-  if (world.type() == "scorchedcity") or (world.type() == "desert") or (world.type() == "desertwastes") or (world.type() == "desertwastesdark") or (world.type() == "magma") or (world.type() == "magmadark") or (world.type() == "volcanic") or (world.type() == "volcanicdark") then
+  if world.type() == "scorchedcity" or world.type() == "desert" or world.type() == "desertwastes" or world.type() == "desertwastesdark" or world.type() == "magma" or world.type() == "magmadark" or world.type() == "volcanic" or world.type() == "volcanicdark" then
     self.isHot = 1
   else
     self.isHot = 0
