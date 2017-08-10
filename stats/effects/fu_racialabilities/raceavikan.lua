@@ -4,11 +4,9 @@ function init()
   self.baseMaxEnergy = status.stat("maxEnergy")
   effect.addStatModifierGroup({
     {stat = "isOmnivore", amount = 1},
-    {stat = "maxHealth", amount = self.baseMaxHealth * config.getParameter("healthBonus")},
-    {stat = "maxEnergy", amount = self.baseMaxEnergy * config.getParameter("energyBonus")},
-    {stat = "powerMultiplier", baseMultiplier = config.getParameter("attackBonus")},
-    {stat = "protection", baseMultiplier = config.getParameter(" 1.05")},
-    {stat = "fallDamageMultiplier", baseMultiplier = config.getParameter("fallBonus")},
+    {stat = "maxHealth", amount = self.baseMaxHealth * config.getParameter("healthBonus",0)},
+    {stat = "maxEnergy", amount = self.baseMaxEnergy * config.getParameter("energyBonus",0)},
+    {stat = "protection", baseMultiplier = config.getParameter("defenseBonus",0)},
     {stat = "physicalResistance", amount = config.getParameter("physicalResistance",0)},
     {stat = "electricResistance", amount = config.getParameter("electricResistance",0)},
     {stat = "fireResistance", amount = config.getParameter("fireResistance",0)},
@@ -43,7 +41,12 @@ end
 
 
 function onColdWorld()
-  if world.type() == "snow" or world.type() == "arctic" or world.type() == "arcticdark" or world.type() == "icemoon" or world.type() == "icewaste" or world.type() == "icewastedark" then
+  if world.type() == "snow" or 
+     world.type() == "arctic" or 
+     world.type() == "arcticdark" or 
+     world.type() == "icemoon" or 
+     world.type() == "icewaste" or
+     world.type() == "icewastedark" then
     self.isCold = 1
   else
     self.isCold = 0
@@ -51,7 +54,14 @@ function onColdWorld()
 end
 
 function onHotWorld()
-  if world.type() == "scorchedcity" or world.type() == "desert" or world.type() == "desertwastes" or world.type() == "desertwastesdark" or world.type() == "magma" or world.type() == "magmadark" or world.type() == "volcanic" or world.type() == "volcanicdark" then
+  if world.type() == "scorchedcity" or 
+     world.type() == "desert" or 
+     world.type() == "desertwastes" or 
+     world.type() == "desertwastesdark" or 
+     world.type() == "magma" or 
+     world.type() == "magmadark" or 
+     world.type() == "volcanic" or 
+     world.type() == "volcanicdark" then
     self.isHot = 1
   else
     self.isHot = 0
