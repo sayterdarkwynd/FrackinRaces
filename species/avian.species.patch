@@ -2,7 +2,7 @@
 
     { "op": "replace", 
     "path" : "/charCreationTooltip/description" , 
-    "value" : "Avians are natruals with staves and wands and are exceptionally agile.
+    "value" : "Avians are naturals with staves and wands and are exceptionally agile.
     
     ^red;-15% Health, Weak: -40% Ice, -25% Poison, -5% Physical^reset;
     ^green;15% Shadow Resist, 25% Electric Resist, 25% Cosmic Resistance^reset;

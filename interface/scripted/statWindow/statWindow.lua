@@ -2,7 +2,7 @@
 -- Do NOT attempt to print strings through Lua if the string holds a non-modifier % in it. (i.e 20%)
 -- Add another % before it so Lua reads it like a normal % and not a modifier checker
 
-frackinRaces = false
+frackinRaces = true
 elements = { "physical", "fire", "poison", "ice", "electric", "radioactive", "cosmic", "shadow" }
 validRaces = {"apex", "avian", "floran", "glitch", "human", "hylotl", "novakid"}
 statuses = {
