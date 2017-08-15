@@ -18,7 +18,7 @@
       "time" : 0.55,
       "loop" : true,
       "action" : "projectile",
-      "type" : "magnorbhellfire2",
+      "type" : "magnorbhellfire3",
       "inheritDamageFactor" :0.35,
       "fuzzAngle" : 360,
       "projectileParameters" : { "damageSourceKind" : "fireplasma" }
