@@ -82,8 +82,22 @@ function selectUpgrade(widgetName, widgetData)
   updateGui()
 end
 
+
+function isOriginalMM()
+  local mm = player.essentialItem("beamaxe").name or ""
+  if mm == "beamaxe" or 
+     mm == "beamaxeapex" or 
+     mm == "beamaxeelunite" or 
+     mm == "beamaxehylotl" then
+     return 1
+  else
+     return 0
+  end
+end
+
+
 function performUpgrade(widgetName, widgetData)
-  if selectedUpgradeAvailable() then
+  if selectedUpgradeAvailable() and isOriginalMM()==1 then
     local upgrade = self.upgradeConfig[self.selectedUpgrade]
     if player.consumeItem({name = "manipulatormodule", count = upgrade.moduleCost}) then
       if upgrade.setItem then
@@ -202,33 +216,40 @@ function updateCurrentUpgrades()
 
   local mm = player.essentialItem("beamaxe") or {}
   local currentUpgrades = mm.parameters.upgrades or {}
-
-  for i, v in ipairs(currentUpgrades) do
-    self.currentUpgrades[v] = true
+  if isOriginalMM()==1 then
+	  for i, v in ipairs(currentUpgrades) do
+	    self.currentUpgrades[v] = true
+	  end
   end
 end
 
 function hasPrereqs(prereqs)
-  for i, v in ipairs(prereqs) do
-    if not self.currentUpgrades[v] then
-      return false
-    end
-  end
+  if isOriginalMM()==1 then
+	  for i, v in ipairs(prereqs) do
+	    if not self.currentUpgrades[v] then
+	      return false
+	    end
+	  end
 
-  return true
+	  return true
+  end
 end
 
 function selectedUpgradeAvailable()
+  if isOriginalMM()==1 then
   return self.selectedUpgrade
      and not self.currentUpgrades[self.selectedUpgrade]
      and hasPrereqs(self.upgradeConfig[self.selectedUpgrade].prerequisites)
      and (player.hasCountOfItem("manipulatormodule") >= self.upgradeConfig[self.selectedUpgrade].moduleCost)
+  end
 end
 
 function addItemParameters(slot, parameters)
+  if isOriginalMM()==1 then
   local item = player.essentialItem(slot)
   util.mergeTable(item.parameters, parameters)
   player.giveEssentialItem(slot, item)
+  end
 end
 
 function resetTools()
