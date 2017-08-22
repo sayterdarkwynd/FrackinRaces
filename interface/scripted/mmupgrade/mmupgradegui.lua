@@ -97,7 +97,7 @@ end
 
 
 function performUpgrade(widgetName, widgetData)
-  if selectedUpgradeAvailable() and isOriginalMM()==1 then
+  if selectedUpgradeAvailable() then
     local upgrade = self.upgradeConfig[self.selectedUpgrade]
     if player.consumeItem({name = "manipulatormodule", count = upgrade.moduleCost}) then
       if upgrade.setItem then
@@ -136,11 +136,11 @@ function performUpgrade(widgetName, widgetData)
 	    self.beamgunRange = 2	
 
 	  if upgrade.setItemParameters.tileDamage then
-	    upgrade.setItemParameters.tileDamage = item.parameters.tileDamage or root.itemConfig(item).config.tileDamage + self.tileDamageBonus
+	    upgrade.setItemParameters.tileDamage = item.parameters.tileDamage or root.itemConfig(item).config.tileDamage + upgrade.setItemParameters.tileDamage + self.tileDamageBonus
 	    upgrade.setItemParameters.minBeamWidth = item.parameters.minBeamWidth or root.itemConfig(item).config.minBeamWidth + 0.05
 	    upgrade.setItemParameters.maxBeamWidth = item.parameters.maxBeamWidth or root.itemConfig(item).config.maxBeamWidth + 0.05      
 	  elseif upgrade.setItemParameters.blockRadius then
-	    upgrade.setItemParameters.blockRadius = item.parameters.blockRadius or root.itemConfig(item).config.blockRadius + self.blockRadius
+	    upgrade.setItemParameters.blockRadius = item.parameters.blockRadius or root.itemConfig(item).config.blockRadius + self.blockRadius + upgrade.setItemParameters.blockRadius
 	    upgrade.setItemParameters.minBeamJitter = item.parameters.minBeamJitter or root.itemConfig(item).config.minBeamJitter + 0.5
 	    upgrade.setItemParameters.maxBeamJitter = item.parameters.maxBeamJitter or root.itemConfig(item).config.maxBeamJitter + 0.5  	    
 	  elseif upgrade.setItemParameters.bonusBeamGunRadius then
