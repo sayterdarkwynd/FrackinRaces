@@ -140,7 +140,14 @@ function performUpgrade(widgetName, widgetData)
 	    upgrade.setItemParameters.minBeamWidth = item.parameters.minBeamWidth or root.itemConfig(item).config.minBeamWidth + 0.05
 	    upgrade.setItemParameters.maxBeamWidth = item.parameters.maxBeamWidth or root.itemConfig(item).config.maxBeamWidth + 0.05      
 	  elseif upgrade.setItemParameters.blockRadius then
-	    upgrade.setItemParameters.blockRadius = item.parameters.blockRadius or root.itemConfig(item).config.blockRadius + self.blockRadius + upgrade.setItemParameters.blockRadius
+	  
+	  sb.logInfo("core radius = "..root.itemConfig(item).config.blockRadius)
+	  sb.logInfo("upgraded radius = "..upgrade.setItemParameters.blockRadius)
+	  
+	    upgrade.setItemParameters.blockRadius = item.parameters.blockRadius or root.itemConfig(item).config.blockRadius + self.blockRadius
+	    
+	    sb.logInfo("after applied bonus = "..upgrade.setItemParameters.blockRadius)
+	    
 	    upgrade.setItemParameters.minBeamJitter = item.parameters.minBeamJitter or root.itemConfig(item).config.minBeamJitter + 0.5
 	    upgrade.setItemParameters.maxBeamJitter = item.parameters.maxBeamJitter or root.itemConfig(item).config.maxBeamJitter + 0.5  	    
 	  elseif upgrade.setItemParameters.bonusBeamGunRadius then
