@@ -345,13 +345,16 @@ function raiseShield()
 -- *******************************************************
           if species == "glitch" then --glitch get a power bonus when perfectly blocking
             self.blockCountShield = self.blockCountShield + 0.03
-            status.setPersistentEffects("glitchprotection", 
-              { {stat = "powerMultiplier", amount = self.blockCountShield} }
+            status.setPersistentEffects("glitchprotection",  
+              { 
+                {stat = "powerMultiplier", amount = self.blockCountShield} 
+              }
             )  
             animator.burstParticleEmitter("bonusBlock3")
             animator.playSound("bonusEffect")
           end
-	  if species == "mantizi" then --mantizi get a heal and shield health when they perfectly block
+          
+	  if species == "mantizi" then 
 	    if status.isResource("shieldStamina") then
 	      self.baseVal = status.resource("shieldStamina")
 	      self.newVal = 1.2
@@ -359,23 +362,26 @@ function raiseShield()
 	      status.setResource("shieldStamina", self.finalVal)
 	    end
 	    self.blockCountShield = self.blockCountShield + 0.0008
-            status.modifyResourcePercentage("health", 0.005 + self.blockCountShield )  --hylotl get a heal when they perfectly block
+            status.modifyResourcePercentage("health", 0.005 + self.blockCountShield ) 
             animator.burstParticleEmitter("bonusBlock")
             animator.playSound("bonusEffect")
-          end          
+          end 
+          
 	  if species == "hylotl" then --hylotl get a heal when they perfectly block
 	    self.blockCountShield = self.blockCountShield + 0.0008
-            status.modifyResourcePercentage("health", 0.005 + self.blockCountShield )  --hylotl get a heal when they perfectly block
+            status.modifyResourcePercentage("health", 0.005 + self.blockCountShield ) 
             animator.burstParticleEmitter("bonusBlock")
             animator.playSound("bonusEffect")
           end
+          
 	  if species == "trink" then --trink regain energy when blocking
             if status.resource("energy") then
               status.modifyResource("energy", status.stat("maxEnergy"))
             end
             animator.burstParticleEmitter("bonusBlock3")
             animator.playSound("bonusEffect")
-          end            
+          end  
+          
 	  if species == "nightar" then --nightar gain protection when they block
             self.blockCountShield = self.blockCountShield + 1
             status.setPersistentEffects("nightarprotection", 
@@ -385,19 +391,8 @@ function raiseShield()
             )  
             animator.burstParticleEmitter("bonusBlock3")
             animator.playSound("bonusEffect")
-          end    
-	  if species == "nightar" then --nightar gain protection when they block
-            self.blockCountShield = self.blockCountShield + 1
-	    self.blockCountShield2 = self.blockCountShield2 + 0.0008
-            status.modifyResourcePercentage("health", 0.05 + self.blockCountShield2 )  --bunnykin get a heal when they perfectly block            
-            status.setPersistentEffects("nightarprotection", 
-              { 
-                {stat = "protection", amount = self.blockCountShield }
-              }
-            )  
-            animator.burstParticleEmitter("bonusBlock3")
-            animator.playSound("bonusEffect")
-          end      
+          end 
+          
 	  if species == "ningen" then 
             self.blockCountShield = self.blockCountShield + 2
             status.setPersistentEffects("humanprotection", 
@@ -405,7 +400,8 @@ function raiseShield()
             )  
             animator.burstParticleEmitter("bonusBlock4")
             animator.playSound("bonusEffect")
-          end          
+          end   
+          
 	  if species == "human" then --human get a defense bonus when perfectly blocking
             self.blockCountShield = self.blockCountShield + 2
             status.setPersistentEffects("humanprotection", 
@@ -414,12 +410,17 @@ function raiseShield()
             animator.burstParticleEmitter("bonusBlock4")
             animator.playSound("bonusEffect")
           end
-          if species == "ningen" then --human get a defense bonus when perfectly blocking
+          
+          if species == "kemono" then 
             self.blockCountShield = self.blockCountShield + 2
-            status.setPersistentEffects("ningenprotection", {{stat = "protection", amount = self.blockCountShield}})  
+            status.setPersistentEffects("ningenprotection", {
+                {stat = "protection", amount = self.blockCountShield},
+                {stat = "powerMultiplier", amount = self.blockCountShield}
+              })  
             animator.burstParticleEmitter("bonusBlock4")
             animator.playSound("bonusEffect")
-          end          
+          end 
+          
           refreshPerfectBlock()
         elseif status.resourcePositive("shieldStamina") then
           if (self.energyval) >= 50 and (self.randomBash) >= 100 then -- Shield Bash when perfect blocking
