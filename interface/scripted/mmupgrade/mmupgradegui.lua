@@ -24,18 +24,18 @@ function init()
 	    hylotl   = { initLiquid = 1 },
 	    default  = {}
 	}
-	   
+
 	setmetatable(self.MMstats, {
 	  __index = function()
 	    return self.MMstats.default
 	  end
 	})
-	
+
 	-- are they a race that gets a MM bonus?
 
-	local species = world.entitySpecies(player.id()) 
-	
-	
+	local species = world.entitySpecies(player.id())
+
+
 	if self.MMstats[species].initRadius then -- apex get increased Radius
 	  self.powerBonus = self.MMstats[species].initRadius
 	end
@@ -50,10 +50,10 @@ function init()
           util.mergeTable(item.parameters, upgrade.setItemParameters)
           item.parameters.upgrades = item.parameters.upgrades or {}
           table.insert(item.parameters.upgrades, "liquidcollection")
-          player.giveEssentialItem(upgrade.essentialSlot, item)	 
+          player.giveEssentialItem(upgrade.essentialSlot, item)
 	end
 	self.powerBonus = self.powerBonus or 0
-        -- ***************** 
+        -- *****************
 
   updateGui()
 end
@@ -83,10 +83,9 @@ function selectUpgrade(widgetName, widgetData)
 end
 
 
-function isOriginalMM()
+function isRacialMM()
   local mm = player.essentialItem("beamaxe").parameters.itemName or root.itemConfig(player.essentialItem("beamaxe")).config.itemName or ""
-  if mm == "beamaxe" or
-     mm == "beamaxeapex" or
+  if mm == "beamaxeapex" or
      mm == "beamaxeelunite" or
      mm == "beamaxehylotl" then
      return true
@@ -110,9 +109,9 @@ function performUpgrade(widgetName, widgetData)
 -- FR STUFF
 	if upgrade.setItemParameters then
 	  local item = player.essentialItem(upgrade.essentialSlot)
-	  
+
 	  -- Racial bonuses here
-	  if isOriginalMM() then
+	  if isRacialMM() then
 		  if world.entitySpecies(player.id()) == "apex" and upgrade.setItemParameters.blockRadius then
 		    upgrade.setItemParameters.blockRadius = upgrade.setItemParameters.blockRadius + self.powerBonus
 		    upgrade.setItemParameters.minBeamWidth = upgrade.setItemParameters.minBeamWidth + self.powerBonus
@@ -120,14 +119,14 @@ function performUpgrade(widgetName, widgetData)
 		  elseif world.entitySpecies(player.id()) == "elunite" and upgrade.setItemParameters.tileDamage then
 		    upgrade.setItemParameters.tileDamage = upgrade.setItemParameters.tileDamage + self.powerBonus
 		    upgrade.setItemParameters.minBeamJitter = upgrade.setItemParameters.minBeamJitter + 0.15
-		    upgrade.setItemParameters.maxBeamJitter = upgrade.setItemParameters.maxBeamJitter + 0.15   
+		    upgrade.setItemParameters.maxBeamJitter = upgrade.setItemParameters.maxBeamJitter + 0.15
 		  elseif world.entitySpecies(player.id()) == "hylotl" then
 		    local upgrade = self.upgradeConfig.liquidcollection
 		    upgrade.setItemParameters.canCollectLiquid = true
-		  end	  
+		  end
 	  end
-	  
-	  
+
+
 	  --[[ FU Special additions here --]]
 	  -- ***power
 	    self.tileDamageBonus = 2
@@ -138,22 +137,22 @@ function performUpgrade(widgetName, widgetData)
 	    self.rangeBonus = root.itemConfig(item).config.rangeBonus or 0
             self.totalRangeUp = self.beamgunRange + self.rangeBonus
 	  if upgrade.setItemParameters.tileDamage then
-	            upgrade.setItemParameters.tileDamage = (item.parameters.tileDamage or root.itemConfig(item).config.tileDamage) + self.tileDamageBonus 
+	            upgrade.setItemParameters.tileDamage = (item.parameters.tileDamage or root.itemConfig(item).config.tileDamage) + self.tileDamageBonus
 		    upgrade.setItemParameters.minBeamWidth = (item.parameters.minBeamWidth or root.itemConfig(item).config.minBeamWidth) + 0.05
-		    upgrade.setItemParameters.maxBeamWidth = (item.parameters.maxBeamWidth or root.itemConfig(item).config.maxBeamWidth) + 0.05   	    
+		    upgrade.setItemParameters.maxBeamWidth = (item.parameters.maxBeamWidth or root.itemConfig(item).config.maxBeamWidth) + 0.05
 	  elseif upgrade.setItemParameters.blockRadius then
-	            upgrade.setItemParameters.blockRadius = (item.parameters.blockRadius or root.itemConfig(item).config.blockRadius) + self.blockRadius 
+	            upgrade.setItemParameters.blockRadius = (item.parameters.blockRadius or root.itemConfig(item).config.blockRadius) + self.blockRadius
 		    upgrade.setItemParameters.minBeamJitter = (item.parameters.minBeamJitter or root.itemConfig(item).config.minBeamJitter) + 0.06
-		    upgrade.setItemParameters.maxBeamJitter = (item.parameters.maxBeamJitter or root.itemConfig(item).config.maxBeamJitter) + 0.06  	    
+		    upgrade.setItemParameters.maxBeamJitter = (item.parameters.maxBeamJitter or root.itemConfig(item).config.maxBeamJitter) + 0.06
 	  --elseif upgrade.setStatusProperties.bonusBeamGunRadius then
 	  --          upgrade.setStatusProperties.bonusBeamGunRadius = (upgrade.setStatusProperties.bonusBeamGunRadius) + self.totalRangeUp
-	  end	
+	  end
 	  --[[ End FU Special additions here --]]
 
 	  util.mergeTable(item.parameters, upgrade.setItemParameters)
 	  player.giveEssentialItem(upgrade.essentialSlot, item)
 	end
-	
+
       if upgrade.setStatusProperties then
         for k, v in pairs(upgrade.setStatusProperties) do
           status.setStatusProperty(k, v)
@@ -164,7 +163,7 @@ function performUpgrade(widgetName, widgetData)
       local mm = player.essentialItem("beamaxe")
 
 
-        if isOriginalMM() then
+        if isRacialMM() then
             if world.entitySpecies(player.id()) == "apex" then
                 mm.parameters.upgrades = mm.parameters.upgrades or {}
                 table.insert(mm.parameters.upgrades, self.selectedUpgrade)
