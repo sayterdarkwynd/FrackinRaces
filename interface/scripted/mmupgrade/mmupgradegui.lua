@@ -127,7 +127,7 @@ function performUpgrade(widgetName, widgetData)
 	  end
 
 	  --[[ FU Special additions here --]]
-	  self.tileDamageBonus = 1.5
+	  self.tileDamageBonus = 1.2
 	  self.blockRadius = 1
 	  local beamgunStats = root.itemConfig(item).config
 	    
