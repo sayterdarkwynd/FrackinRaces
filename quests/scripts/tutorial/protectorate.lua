@@ -44,13 +44,7 @@ function questStart()
     for _, item in pairs(config.getParameter("skipIntroItems", {})) do
       player.giveItem(item)
     end
-    local frconfig = root.assetJson("/frackinraces.config").manipulators
-    local mm = root.createItem(frconfig[player.species()].item or "beamaxe")
-    if frconfig[player.species()].collectLiquid then
-        mm.parameters.upgrades = { "liquidcollection" }
-        mm.parameters.canCollectLiquid = true
-    end
-    player.giveEssentialItem("beamaxe", mm)
+    giveBeamaxe()
     quest.complete()
     return
   end
@@ -140,7 +134,7 @@ function setStage(newStage)
       world.sendEntityMessage(entity.id(), "playCinematic", config.getParameter("midpointCinematic"))
     elseif newStage == 6 then
       quest.setIndicators({})
-      player.giveEssentialItem("beamaxe", "beamaxe")
+      giveBeamaxe()
       world.sendEntityMessage(entity.id(), "playCinematic", "/cinematics/beamaxe.cinematic")
       quest.setObjectiveList({{config.getParameter("descriptions.escape"), false}})
     elseif newStage == 7 then
@@ -308,4 +302,14 @@ function updatePester(dt)
       player.radioMessage(self.pesterMessage)
     end
   end
+end
+
+function giveBeamaxe()
+    local frconfig = root.assetJson("/frackinraces.config").manipulators
+    local mm = root.createItem(frconfig[player.species()].item or "beamaxe")
+    if frconfig[player.species()].collectLiquid then
+        mm.parameters.upgrades = { "liquidcollection" }
+        mm.parameters.canCollectLiquid = true
+    end
+    player.giveEssentialItem("beamaxe", mm)
 end
