@@ -306,7 +306,6 @@ end
 
 function giveBeamaxe()
     local frconfig = root.assetJson("/frackinraces.config").manipulators
-	local mm
 	if frconfig[player.species()] then
       mm = root.createItem(frconfig[player.species()].item or "beamaxe")
 	else
