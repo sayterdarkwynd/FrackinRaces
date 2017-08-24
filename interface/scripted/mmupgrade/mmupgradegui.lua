@@ -1,188 +1,141 @@
 require "/scripts/util.lua"
 
 function init()
-  self.currentUpgrades = {}
-  self.upgradeConfig = config.getParameter("upgrades")
-  self.buttonStateImages = config.getParameter("buttonStateImages")
-  self.overlayStateImages = config.getParameter("overlayStateImages")
-  self.highlightImages = config.getParameter("highlightImages")
-  self.selectionOffset = config.getParameter("selectionOffset")
-  self.defaultDescription = config.getParameter("defaultDescription")
-  self.autoRefreshRate = config.getParameter("autoRefreshRate")
-  self.autoRefreshTimer = self.autoRefreshRate
+    self.currentUpgrades = {}
+    self.upgradeConfig = config.getParameter("upgrades")
+    self.buttonStateImages = config.getParameter("buttonStateImages")
+    self.overlayStateImages = config.getParameter("overlayStateImages")
+    self.highlightImages = config.getParameter("highlightImages")
+    self.selectionOffset = config.getParameter("selectionOffset")
+    self.defaultDescription = config.getParameter("defaultDescription")
+    self.autoRefreshRate = config.getParameter("autoRefreshRate")
+    self.autoRefreshTimer = self.autoRefreshRate
 
-  self.highlightPulseTimer = 0
+    self.highlightPulseTimer = 0
 
+    giveRacialManipulator()
 
-	-- *****************
-	-- FR STUFF
-
-	-- racial bonuses for MM upgrades in this array
-	self.MMstats = {
-	    elunite  = { initPower = 1 },
-	    apex     = { initRadius = 1 },
-	    hylotl   = { initLiquid = 1 },
-	    default  = {}
-	}
-
-	setmetatable(self.MMstats, {
-	  __index = function()
-	    return self.MMstats.default
-	  end
-	})
-
-	-- are they a race that gets a MM bonus?
-
-	local species = world.entitySpecies(player.id())
-
-
-	if self.MMstats[species].initRadius then -- apex get increased Radius
-	  self.powerBonus = self.MMstats[species].initRadius
-	end
-	if self.MMstats[species].initPower then -- elunite get increased mining power
-	  self.powerBonus = self.MMstats[species].initPower
-	end
-	if self.MMstats[species].initLiquid then --hylotl get water collection by default
-	  self.powerBonus = self.MMstats[species].initLiquid
-          local upgrade = self.upgradeConfig.liquidcollection
-          upgrade.setItemParameters.canCollectLiquid = true
-          local item = player.essentialItem(upgrade.essentialSlot)
-          util.mergeTable(item.parameters, upgrade.setItemParameters)
-          item.parameters.upgrades = item.parameters.upgrades or {}
-          table.insert(item.parameters.upgrades, "liquidcollection")
-          player.giveEssentialItem(upgrade.essentialSlot, item)
-	end
-	self.powerBonus = self.powerBonus or 0
-        -- *****************
-
-  updateGui()
+    updateGui()
 end
 
 function update(dt)
-  self.autoRefreshTimer = math.max(0, self.autoRefreshTimer - dt)
-  if self.autoRefreshTimer == 0 then
-    updateGui()
-    self.autoRefreshTimer = self.autoRefreshRate
-  end
+    self.autoRefreshTimer = math.max(0, self.autoRefreshTimer - dt)
+    if self.autoRefreshTimer == 0 then
+        updateGui()
+        self.autoRefreshTimer = self.autoRefreshRate
+    end
 
-  if self.highlightImage then
-    self.highlightPulseTimer = self.highlightPulseTimer + dt
-    local highlightDirectives = string.format("?multiply=FFFFFF%2x", math.floor((math.cos(self.highlightPulseTimer * 8) * 0.5 + 0.5) * 255))
-    widget.setImage("imgHighlight", self.highlightImage .. highlightDirectives)
-  end
+    if self.highlightImage then
+        self.highlightPulseTimer = self.highlightPulseTimer + dt
+        local highlightDirectives = string.format("?multiply=FFFFFF%2x", math.floor((math.cos(self.highlightPulseTimer * 8) * 0.5 + 0.5) * 255))
+        widget.setImage("imgHighlight", self.highlightImage .. highlightDirectives)
+    end
 end
 
 function selectUpgrade(widgetName, widgetData)
-  for k, v in pairs(self.upgradeConfig) do
-    if v.button == widgetName then
-      self.selectedUpgrade = k
-      self.highlightPulseTimer = 0
+    for k, v in pairs(self.upgradeConfig) do
+        if v.button == widgetName then
+            self.selectedUpgrade = k
+            self.highlightPulseTimer = 0
+        end
     end
-  end
-  updateGui()
+    updateGui()
 end
 
 
-function isRacialMM()
-  local mm = player.essentialItem("beamaxe").parameters.itemName or root.itemConfig(player.essentialItem("beamaxe")).config.itemName or ""
-  if mm == "beamaxeapex" or
-     mm == "beamaxeelunite" or
-     mm == "beamaxehylotl" then
-     return true
-  else
-     return false
-  end
+function isOriginalMM()
+    local mm = player.essentialItem("beamaxe").parameters.itemName or root.itemConfig(player.essentialItem("beamaxe")).config.itemName or ""
+    if mm == "beamaxe" then
+        return true
+    else
+        return false
+    end
 end
 
 
 function performUpgrade(widgetName, widgetData)
-  if selectedUpgradeAvailable() then
-    local upgrade = self.upgradeConfig[self.selectedUpgrade]
-    if player.consumeItem({name = "manipulatormodule", count = upgrade.moduleCost}) then
-      if upgrade.setItem then
-        player.giveEssentialItem(upgrade.essentialSlot, upgrade.setItem)
-      end
-
-
-
--- ***************
--- FR STUFF
-	if upgrade.setItemParameters then
-	  local item = player.essentialItem(upgrade.essentialSlot)
-
-	  -- Racial bonuses here
-	  if isRacialMM() then
-		  if world.entitySpecies(player.id()) == "apex" and upgrade.setItemParameters.blockRadius then
-		    upgrade.setItemParameters.blockRadius = upgrade.setItemParameters.blockRadius + self.powerBonus
-		    upgrade.setItemParameters.minBeamWidth = upgrade.setItemParameters.minBeamWidth + self.powerBonus
-		    upgrade.setItemParameters.maxBeamWidth = upgrade.setItemParameters.maxBeamWidth + self.powerBonus
-		  elseif world.entitySpecies(player.id()) == "elunite" and upgrade.setItemParameters.tileDamage then
-		    upgrade.setItemParameters.tileDamage = upgrade.setItemParameters.tileDamage + self.powerBonus
-		    upgrade.setItemParameters.minBeamJitter = upgrade.setItemParameters.minBeamJitter + 0.15
-		    upgrade.setItemParameters.maxBeamJitter = upgrade.setItemParameters.maxBeamJitter + 0.15
-		  elseif world.entitySpecies(player.id()) == "hylotl" then
-		    local upgrade = self.upgradeConfig.liquidcollection
-		    upgrade.setItemParameters.canCollectLiquid = true
-		  end
-	  end
-
-	  --[[ FU Special additions here --]]
-	  self.tileDamageBonus = 1.2
-	  self.blockRadius = 1
-	  local beamgunStats = root.itemConfig(item).config
-	    
-	  if upgrade.setItemParameters.tileDamage then
-		upgrade.setItemParameters.tileDamage = (item.parameters.tileDamage or beamgunStats.tileDamage) + self.tileDamageBonus 
-		upgrade.setItemParameters.minBeamWidth = (item.parameters.minBeamWidth or beamgunStats.minBeamWidth) + 0.02
-		upgrade.setItemParameters.maxBeamWidth = (item.parameters.maxBeamWidth or beamgunStats.maxBeamWidth) + 0.02   	    
-	  elseif upgrade.setItemParameters.blockRadius then
-		upgrade.setItemParameters.blockRadius = (item.parameters.blockRadius or beamgunStats.blockRadius) + self.blockRadius 
-		upgrade.setItemParameters.minBeamJitter = (item.parameters.minBeamJitter or beamgunStats.minBeamJitter) + 0.04
-		upgrade.setItemParameters.maxBeamJitter = (item.parameters.maxBeamJitter or beamgunStats.maxBeamJitter) + 0.04  	    
-	  end	
-	  --[[ End FU Special additions here --]]
-
-	  util.mergeTable(item.parameters, upgrade.setItemParameters)
-	  player.giveEssentialItem(upgrade.essentialSlot, item)
-	end
-
-      if upgrade.setStatusProperties then
-        for k, v in pairs(upgrade.setStatusProperties) do
-          status.setStatusProperty(k, v)
-        end
-      end
-
-      -- the slot being used
-      local mm = player.essentialItem("beamaxe")
-
-
-        if isRacialMM() then
-            if world.entitySpecies(player.id()) == "apex" then
-                mm.parameters.upgrades = mm.parameters.upgrades or {}
-                table.insert(mm.parameters.upgrades, self.selectedUpgrade)
-                mm.name = "beamaxeapex"
-                player.giveEssentialItem("beamaxe", mm)
-            elseif world.entitySpecies(player.id()) == "elunite" then
-                mm.parameters.upgrades = mm.parameters.upgrades or {}
-                table.insert(mm.parameters.upgrades, self.selectedUpgrade)
-                mm.name = "beamaxeelunite"
-                player.giveEssentialItem("beamaxe", mm)
-            elseif world.entitySpecies(player.id()) == "hylotl" then
-                mm.parameters.upgrades = mm.parameters.upgrades or {}
-                table.insert(mm.parameters.upgrades, self.selectedUpgrade)
-                mm.name = "beamaxehylotl"
-                player.giveEssentialItem("beamaxe", mm)
+    if selectedUpgradeAvailable() then
+        local upgrade = self.upgradeConfig[self.selectedUpgrade]
+        if player.consumeItem({name = "manipulatormodule", count = upgrade.moduleCost}) then
+            if upgrade.setItem then
+                player.giveEssentialItem(upgrade.essentialSlot, upgrade.setItem)
             end
-        else
-            mm.parameters.upgrades = mm.parameters.upgrades or {}
-            table.insert(mm.parameters.upgrades, self.selectedUpgrade)
-            player.giveEssentialItem("beamaxe", mm)
+
+            if upgrade.setItemParameters then
+                local item = player.essentialItem(upgrade.essentialSlot)
+
+	            --[[ FU Special additions here --]]
+                self.tileDamageBonus = 1.2
+                self.blockRadius = 1
+                local beamgunStats = root.itemConfig(item).config
+
+                if upgrade.setItemParameters.tileDamage then
+                    upgrade.setItemParameters.tileDamage = (item.parameters.tileDamage or beamgunStats.tileDamage) + self.tileDamageBonus
+                    upgrade.setItemParameters.minBeamWidth = (item.parameters.minBeamWidth or beamgunStats.minBeamWidth) + 0.02
+                    upgrade.setItemParameters.maxBeamWidth = (item.parameters.maxBeamWidth or beamgunStats.maxBeamWidth) + 0.02
+                elseif upgrade.setItemParameters.blockRadius then
+                    upgrade.setItemParameters.blockRadius = (item.parameters.blockRadius or beamgunStats.blockRadius) + self.blockRadius
+                    upgrade.setItemParameters.minBeamJitter = (item.parameters.minBeamJitter or beamgunStats.minBeamJitter) + 0.04
+                    upgrade.setItemParameters.maxBeamJitter = (item.parameters.maxBeamJitter or beamgunStats.maxBeamJitter) + 0.04
+                end
+	            --[[ End FU Special additions here --]]
+
+                util.mergeTable(item.parameters, upgrade.setItemParameters)
+                player.giveEssentialItem(upgrade.essentialSlot, item)
+            end
+
+            if upgrade.setStatusProperties then
+                for k, v in pairs(upgrade.setStatusProperties) do
+                    status.setStatusProperty(k, v)
+                end
+            end
+
+            updateGui()
         end
-
-
-      updateGui()
     end
-  end
+end
+
+function giveRacialManipulator()
+    if not isOriginalMM() then return end
+
+    local mm = player.essentialItem("beamaxe")
+    local frconfig = root.assetJson("/frackinraces.config").manipulators
+    mm.parameters.upgrades = mm.parameters.upgrades or {}
+    table.insert(mm.parameters.upgrades, self.selectedUpgrade)
+
+    if frconfig[player.species()] then
+        local manip = frconfig[player.species()]
+        if manip.item then
+            local newmm = root.createItem(manip.item)
+            newmm.parameters.upgrades = mm.parameters.upgrades
+            if manip.collectLiquid then
+                newmm.parameters.canCollectLiquid = true
+                table.insert(newmm.parameters.upgrades, "liquidcollection")
+            end
+            local newcfg = root.itemConfig(newmm).config
+            local oldcfg = root.itemConfig(mm).config
+            local newpar = newmm.parameters
+            local oldpar = mm.parameters
+            local statsToUpdate = { "blockRadius", "tileDamage", "minBeamWidth", "maxBeamWidth", "minBeamLines", "maxBeamLines",
+                                    "minBeamJitter", "maxBeamJitter" }
+            for _,v in pairs(statsToUpdate) do
+                newpar[v] = updateMMStats(newcfg[v], newpar[v], oldcfg[v], oldpar[v])
+            end
+            newpar.canCollectLiquid = oldpar.canCollectLiquid
+            newmm.parameters = newpar
+
+            player.giveEssentialItem("beamaxe", newmm)
+        end
+    else
+        player.giveEssentialItem("beamaxe", mm)
+    end
+end
+
+function updateMMStats(new, newpar, old, oldpar)
+    if new ~= old then
+        newpar = (oldpar or old) + (new - old)
+    end
+    return newpar or new
 end
 
 function updateGui()
