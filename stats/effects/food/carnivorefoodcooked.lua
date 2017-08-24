@@ -8,15 +8,15 @@ function init()
   self.tickTimer = self.tickTime
   script.setUpdateDelta(5)
   self.species = world.entitySpecies(entity.id())
-  if status.stat("isHerbivore")>0 or status.stat("isRobot")>0 then
+  if status.statPositive("isHerbivore") or status.statPositive("isRobot") then
     world.sendEntityMessage(entity.id(), "queueRadioMessage", "foodtype")
   end  
 end
 
 function update(dt)
-	 if status.stat("isCarnivore")>0 or status.stat("isOmnivore")>0 then
+	 if status.statPositive("isCarnivore") or status.statPositive("isOmnivore") then
 	   applyEffects() 
-	 elseif status.stat("isHerbivore")>0 or status.stat("isRobot")>0 then
+	 elseif status.statPositive("isHerbivore") or status.statPositive("isRobot") then
 	   if (self.tickTimer <= 0) then 
 	     applyPenalty() 
 	   else 
