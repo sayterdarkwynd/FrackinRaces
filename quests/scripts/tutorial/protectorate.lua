@@ -44,7 +44,12 @@ function questStart()
     for _, item in pairs(config.getParameter("skipIntroItems", {})) do
       player.giveItem(item)
     end
-    player.giveEssentialItem("beamaxe", root.assetJson("/frackinraces.config").manipulators[player.species()].item or "beamaxe")
+    local frconfig = root.assetJson("/frackinraces.config").manipulators
+    local mm = root.createItem(frconfig[player.species()].item or "beamaxe")
+    if frconfig[player.species()].collectLiquid then
+        mm.parameters.upgrades = { "liquidcollection" }
+    end
+    player.giveEssentialItem("beamaxe", mm)
     quest.complete()
     return
   end
