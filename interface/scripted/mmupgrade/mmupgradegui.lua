@@ -108,6 +108,7 @@ function giveRacialManipulator()
         if manip.item then
             local newmm = root.createItem(manip.item)
             newmm.parameters.upgrades = mm.parameters.upgrades
+            newmm.parameters.canCollectLiquid = mm.parameters.canCollectLiquid
             if manip.collectLiquid then
                 newmm.parameters.canCollectLiquid = true
                 table.insert(newmm.parameters.upgrades, "liquidcollection")
@@ -121,7 +122,6 @@ function giveRacialManipulator()
             for _,v in pairs(statsToUpdate) do
                 newpar[v] = updateMMStats(newcfg[v], newpar[v], oldcfg[v], oldpar[v])
             end
-            newpar.canCollectLiquid = oldpar.canCollectLiquid
             newmm.parameters = newpar
 
             player.giveEssentialItem("beamaxe", newmm)
