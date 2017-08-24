@@ -48,6 +48,7 @@ function questStart()
     local mm = root.createItem(frconfig[player.species()].item or "beamaxe")
     if frconfig[player.species()].collectLiquid then
         mm.parameters.upgrades = { "liquidcollection" }
+        mm.parameters.canCollectLiquid = true
     end
     player.giveEssentialItem("beamaxe", mm)
     quest.complete()
