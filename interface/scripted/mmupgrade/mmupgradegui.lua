@@ -84,12 +84,15 @@ function performUpgrade(widgetName, widgetData)
                 player.giveEssentialItem(upgrade.essentialSlot, item)
             end
 
-            if upgrade.setStatusProperties then
-                for k, v in pairs(upgrade.setStatusProperties) do
-                    status.setStatusProperty(k, v)
-                end
-            end
-
+		if upgrade.setStatusProperties then
+			for k, v in pairs(upgrade.setStatusProperties) do
+			    status.setStatusProperty(k, v)
+			end
+		end
+		local mm = player.essentialItem("beamaxe")
+		mm.parameters.upgrades = mm.parameters.upgrades or {}
+		table.insert(mm.parameters.upgrades, self.selectedUpgrade)
+		player.giveEssentialItem("beamaxe", mm)
             updateGui()
         end
     end
