@@ -8,13 +8,14 @@ function init()
   self.tickTimer = self.tickTime
   script.setUpdateDelta(5)
   self.species = world.entitySpecies(entity.id())
-  if not status.statPositive("isRobot") or self.species=="novakid" then
+  if not status.stat("isRobot")==1 then
     world.sendEntityMessage(entity.id(), "queueRadioMessage", "foodtype")
   end    
 end
 
 function update(dt)
-	 if status.statPositive("isRobot") or self.species=="novakid" then
+	 if status.stat("isRobot")==1 then
+	     sb.logInfo("status = ",status.stat("isRobot"))
 	     applyEffects() 
 	 else
 	   if (self.tickTimer <= 0) then 
@@ -27,7 +28,6 @@ end
 
 
 function applyPenalty()
-      
       self.tickTimer = self.tickTime
       status.applySelfDamageRequest({
 	damageType = "IgnoresDef",
