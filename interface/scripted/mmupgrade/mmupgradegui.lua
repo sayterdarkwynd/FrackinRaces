@@ -94,6 +94,7 @@ function performUpgrade(widgetName, widgetData)
             mm.parameters.upgrades = mm.parameters.upgrades or {}
             table.insert(mm.parameters.upgrades, self.selectedUpgrade)
             player.giveEssentialItem("beamaxe", mm)
+
             updateGui()
         end
     end

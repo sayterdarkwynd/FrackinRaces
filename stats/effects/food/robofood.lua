@@ -8,13 +8,13 @@ function init()
   self.tickTimer = self.tickTime
   script.setUpdateDelta(5)
   self.species = world.entitySpecies(entity.id())
-  if not status.stat("isRobot")>0 or self.species=="novakid" then
+  if not status.statPositive("isRobot") or self.species=="novakid" then
     world.sendEntityMessage(entity.id(), "queueRadioMessage", "foodtype")
   end    
 end
 
 function update(dt)
-	 if status.stat("isRobot")>0 or self.species=="novakid" then
+	 if status.statPositive("isRobot") or self.species=="novakid" then
 	     applyEffects() 
 	 else
 	   if (self.tickTimer <= 0) then 
