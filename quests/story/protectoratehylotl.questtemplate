@@ -10,7 +10,7 @@
   "logOnly" : true,
 
   "updateDelta" : 10,
-  "script" : "/quests/scripts/tutorial/protectoratehylotl.lua",
+  "script" : "/quests/scripts/tutorial/protectorate.lua",
   "scriptConfig" : {
     "portraits" : {
       "default" : "player"
