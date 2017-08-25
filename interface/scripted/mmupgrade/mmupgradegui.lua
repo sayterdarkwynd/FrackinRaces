@@ -12,7 +12,7 @@ function init()
     self.autoRefreshTimer = self.autoRefreshRate
 
     self.highlightPulseTimer = 0
-sb.logInfo("giving racial")
+    
     giveRacialManipulator()
 
     updateGui()
@@ -92,14 +92,8 @@ function performUpgrade(widgetName, widgetData)
 
             local mm = player.essentialItem("beamaxe")
             mm.parameters.upgrades = mm.parameters.upgrades or {}
-            for k,v in pairs(mm.parameters.upgrades) do
-                sb.logInfo("before: "..v.." at "..k)
-            end
             table.insert(mm.parameters.upgrades, self.selectedUpgrade)
             player.giveEssentialItem("beamaxe", mm)
-            for k,v in pairs(player.essentialItem("beamaxe").parameters.upgrades) do
-                sb.logInfo("after: "..v.." at "..k)
-            end
             updateGui()
         end
     end
