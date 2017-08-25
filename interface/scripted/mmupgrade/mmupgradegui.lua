@@ -12,7 +12,7 @@ function init()
     self.autoRefreshTimer = self.autoRefreshRate
 
     self.highlightPulseTimer = 0
-
+sb.logInfo("giving racial")
     giveRacialManipulator()
 
     updateGui()
@@ -90,6 +90,16 @@ function performUpgrade(widgetName, widgetData)
                 end
             end
 
+            local mm = player.essentialItem("beamaxe")
+            mm.parameters.upgrades = mm.parameters.upgrades or {}
+            for k,v in pairs(mm.parameters.upgrades) do
+                sb.logInfo("before: "..v.." at "..k)
+            end
+            table.insert(mm.parameters.upgrades, self.selectedUpgrade)
+            player.giveEssentialItem("beamaxe", mm)
+            for k,v in pairs(player.essentialItem("beamaxe").parameters.upgrades) do
+                sb.logInfo("after: "..v.." at "..k)
+            end
             updateGui()
         end
     end
@@ -98,12 +108,11 @@ end
 function giveRacialManipulator()
     if not isOriginalMM() then return end
 
-    local mm = player.essentialItem("beamaxe")
     local frconfig = root.assetJson("/frackinraces.config").manipulators
-    mm.parameters.upgrades = mm.parameters.upgrades or {}
-    table.insert(mm.parameters.upgrades, self.selectedUpgrade)
 
     if frconfig[player.species()] then
+        local mm = player.essentialItem("beamaxe")
+        mm.parameters.upgrades = mm.parameters.upgrades or {}
         local manip = frconfig[player.species()]
         if manip.item then
             local newmm = root.createItem(manip.item)
@@ -126,8 +135,6 @@ function giveRacialManipulator()
 
             player.giveEssentialItem("beamaxe", newmm)
         end
-    else
-        player.giveEssentialItem("beamaxe", mm)
     end
 end
 
