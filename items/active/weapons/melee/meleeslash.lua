@@ -165,9 +165,9 @@ function MeleeSlash:fire()
 	     if root.itemHasTag(heldItem, "dagger") and opposedhandHeldItem and root.itemHasTag(opposedhandHeldItem, "wand") then 
 		if (randValue < 40) and self.energyValue >= 50 then  -- spawn a projectile if rand is good and they have enough energy
 		  if status.resource("energy") then -- if they have energy, and have enough of it, we subtract some
-			  params = { power = self.energyValue/24, damageKind = "cosmic", timeToLive =  0.3, speed = 30, projectileCount = 1, piercing = false }
-			  params2 = { power = self.energyValue/20, damageKind = "cosmic", timeToLive =  0.4, speed = 45, projectileCount = 1, piercing = false }
-			  params3 = { power = self.energyValue/16, damageKind = "cosmic", timeToLive =  0.5, speed = 60, projectileCount = 1, piercing = true }
+			  params = { power = self.energyValue/24, damageKind = "fire", timeToLive =  0.3, speed = 30, projectileCount = 1, piercing = false }
+			  params2 = { power = self.energyValue/20, damageKind = "ice", timeToLive =  0.4, speed = 45, projectileCount = 1, piercing = false }
+			  params3 = { power = self.energyValue/16, damageKind = "poison", timeToLive =  0.5, speed = 60, projectileCount = 1, piercing = true }
 			  local randPower = math.random(5)
 			  if randPower <=3 then
 			    status.modifyResource("energy", self.energyValue * -0.2 )  -- consume energy
