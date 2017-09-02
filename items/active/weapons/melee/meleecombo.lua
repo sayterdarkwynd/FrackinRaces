@@ -341,26 +341,21 @@ function MeleeCombo:fire()
 	end
 
 
-	if species == "viera" then  --viera use energy when attacking, and gain a 5% damage increase as a result. However, they need at least 5 food.
-	    if self.foodValue >= 5 then
-		  if status.isResource("food") then
-		   status.modifyResource("energy", (status.resource("energy") * -0.2) )
-		  end	    
-	    end
-		  if heldItem then
-		     self.roll = 6
-		     if root.itemHasTag(heldItem, "rapier") or root.itemHasTag(heldItem, "dagger") or root.itemHasTag(heldItem, "shortsword") then 
-			if randValue < self.roll then  -- spawn a projectile
-	                  params = { power = 12, damageKind = "electric" }			
-			  projectileId = world.spawnProjectile("meleelash",self:firePosition(),activeItem.ownerEntityId(),self:aimVector(),false,params)
-			end	
-			
-			status.setPersistentEffects("combobonusdmg", { 
-			  {stat = "physicalResistance", baseMultiplier = 1.15},
-			  {stat = "powerMultiplier", baseMultiplier = 1.12} 
-			  }) 				
-		     end
-		  end	    
+	if species == "viera" then 
+	  if heldItem then
+	     self.roll = 6
+	     if root.itemHasTag(heldItem, "rapier") or root.itemHasTag(heldItem, "dagger") or root.itemHasTag(heldItem, "shortsword") then 
+		if randValue < self.roll then  -- spawn a projectile
+		  params = { power = 6, damageKind = "electric" }			
+		  projectileId = world.spawnProjectile("meleelash",self:firePosition(),activeItem.ownerEntityId(),self:aimVector(),false,params)
+		end	
+
+		status.setPersistentEffects("combobonusdmg", { 
+		  {stat = "physicalResistance", baseMultiplier = 1.15},
+		  {stat = "powerMultiplier", baseMultiplier = 1.12} 
+		  }) 				
+	     end
+	  end	    
 	end
 	
 	
