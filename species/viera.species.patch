@@ -13,6 +13,7 @@
     ^green;+15% Damage and Energy with Wands and Staves^reset;
     ^green;+15% Damage and Energy with Bows^reset;
     ^green;Rapier(one): +10% Damage, +1 Protection (Rapier + Dagger) +2% Crit and +10% Physical Resistance.^reset;
+    ^green;Rapier, Shortsword and Dagger have a low chance to shoot mystic blasts during combos^reset;
     ^green;Immune: Slime^reset;"
     }
 ]
