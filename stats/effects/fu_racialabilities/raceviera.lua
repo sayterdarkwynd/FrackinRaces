@@ -1,23 +1,27 @@
 function init()
+  self.baseMaxHealth = status.stat("maxHealth")
+  self.baseMaxEnergy = status.stat("maxEnergy")
   effect.addStatModifierGroup({
+    -- base Attributes
+    {stat = "isOmnivore", amount = 1},
+    {stat = "maxHealth", amount = self.baseMaxHealth * config.getParameter("healthBonus")},
+    {stat = "maxEnergy", amount = self.baseMaxEnergy * config.getParameter("energyBonus")},
+    -- resistances
+    {stat = "physicalResistance", amount = config.getParameter("physicalResistance",0)},
+    {stat = "electricResistance", amount = config.getParameter("electricResistance",0)},
+    {stat = "fireResistance", amount = config.getParameter("fireResistance",0)},
+    {stat = "iceResistance", amount = config.getParameter("iceResistance",0)},
+    {stat = "poisonResistance", amount = config.getParameter("poisonResistance",0)},
+    {stat = "shadowResistance", amount = config.getParameter("shadowResistance",0)},
+    {stat = "cosmicResistance", amount = config.getParameter("cosmicResistance",0)},
+    {stat = "radioactiveResistance", amount = config.getParameter("radioactiveResistance",0)},
+    {stat = "maxBreath", amount = 1100},
     {stat = "foodDelta", baseMultiplier = 1.06146},
     {stat = "slimestickImmunity", amount = 1},
-    {stat = "slimefrictionImmunity", amount = 1},
-    {stat = "physicalResistance", amount = 0},
-    {stat = "fireResistance", amount = 0.20},
-    {stat = "iceResistance", amount = 0.20},
-    {stat = "electricResistance", amount = 0.20},
-    {stat = "poisonResistance", amount = 0.20},
-    {stat = "shadowResistance", amount = -0.5}        
+    {stat = "slimefrictionImmunity", amount = 1}
   })
-
-  baseValue = config.getParameter("healthBonus",0)*(status.resourceMax("health"))
-  effect.addStatModifierGroup({{stat = "maxHealth", amount = baseValue }})
-  baseValue2 = config.getParameter("energyBonus",0)*(status.resourceMax("energy"))
-  effect.addStatModifierGroup({{stat = "maxEnergy", amount = baseValue2 }}) 
   
   local bounds = mcontroller.boundBox()
-  script.setUpdateDelta(10)
 	if (world.type() == "forest") or (world.type() == "thickjungle") or (world.type() == "arboreal") or (world.type() == "arborealdark") then
 		    status.setPersistentEffects("vieraEpic", {
 		      {stat = "protection", baseMultiplier = 1.10},
@@ -29,7 +33,7 @@ function init()
 end
 
 function update(dt)
-  mcontroller.controlModifiers({ speedModifier = 1.12 })
+  mcontroller.controlModifiers({ speedModifier = 1.12 }) 			
 end
 
 function uninit()
