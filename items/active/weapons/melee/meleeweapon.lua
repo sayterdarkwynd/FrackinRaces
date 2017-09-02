@@ -282,14 +282,12 @@ end
 -- *************************************************** 
 -- *********** DUAL WIELD POWERS
 -- *************************************************** 
-if species == "viera" then  --viera are dangerous with daggers
+if species == "viera" then  --viera are dangerous with rapiers
   if heldItem then
      if root.itemHasTag(heldItem, "rapier") then 
-	self.meleeCount = self.meleeCount + 1
-	self.meleeCount2 = 0.10
 	status.setPersistentEffects("weaponbonusdmg", {
-	    {stat = "protection", amount = self.meleeCount},
-	    {stat = "powerMultiplier", amount = self.meleeCount2}
+	    {stat = "protection", amount = 1},
+	    {stat = "powerMultiplier", amount = 0.10}
 	})  
      end
      if root.itemHasTag(heldItem, "rapier") and opposedhandHeldItem and root.itemHasTag(opposedhandHeldItem, "dagger") then -- viera are dangerous with rapier +  daggers
