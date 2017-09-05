@@ -3,7 +3,6 @@ frackinRaces = true
 function init()
 	self.data = root.assetJson("/interface/scripted/statWindow/statWindow.config")
 	self.elements = self.data.elements
-	self.validRaces = self.data.validRaces
 	self.statuses = self.data.statuses
 
 	widget.setText("characterName", "^blue;"..world.entityName(player.id()))
