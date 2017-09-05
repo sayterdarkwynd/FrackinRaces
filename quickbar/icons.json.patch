@@ -1,5 +1,10 @@
-
 [
+	{
+		"op" : "test",
+		"path" : "/normal/0/label",
+		"value" : "Character Status",
+		"inverse" : true
+	},
 	{
 		"op": "add",
 		"path": "/normal/0",
