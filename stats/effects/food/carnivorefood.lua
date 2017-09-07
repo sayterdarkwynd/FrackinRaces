@@ -16,6 +16,8 @@ end
 function update(dt)
 	 if status.stat("isCarnivore")==1 then
 	   applyEffects() 
+	 elseif status.stat("isCarnivore")==1 and status.stat("isOmnivore")==1 then
+	   applyEffects() 
 	 elseif status.stat("isHerbivore")==1 or status.stat("isRobot")==1 or status.stat("isOmnivore")==1 then
 	   if (self.tickTimer <= 0) then 
 	     applyPenalty() 

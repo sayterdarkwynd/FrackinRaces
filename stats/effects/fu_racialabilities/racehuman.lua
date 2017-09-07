@@ -1,9 +1,13 @@
 function init()
   baseValue3 = config.getParameter("foodBonus",0)*(status.resourceMax("food"))
   
+  --[ 
+  Humans
+  --]
   effect.addStatModifierGroup({
     -- base Attributes
     {stat = "isOmnivore", amount = 1},
+    {stat = "isHerbivore", amount = 1},
     --other
     {stat = "physicalResistance", amount = config.getParameter("physicalResistance",0)},
     {stat = "electricResistance", amount = config.getParameter("electricResistance",0)},
