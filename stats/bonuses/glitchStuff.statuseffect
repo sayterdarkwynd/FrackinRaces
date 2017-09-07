@@ -1,0 +1,11 @@
+{
+    "name" : "glitchStuff",
+    "effectConfig" : {
+    },
+
+    "defaultDuration" : 3,
+
+    "scripts" : [
+        "glitchStuff.lua"
+    ]
+}

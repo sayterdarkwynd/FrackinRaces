@@ -1,0 +1,11 @@
+{
+    "name" : "hylotlWaterBonus",
+    "effectConfig" : {
+    },
+
+    "defaultDuration" : 3,
+
+    "scripts" : [
+        "hylotlWaterBonus.lua"
+    ]
+}
