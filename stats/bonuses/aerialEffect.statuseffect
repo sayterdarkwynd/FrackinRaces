@@ -1,11 +1,11 @@
 {
-    "name" : "hylotlWaterBonus",
+    "name" : "aerialEffect",
     "effectConfig" : {
     },
 
     "defaultDuration" : 3,
 
     "scripts" : [
-        "hylotlWaterBonus.lua"
+        "aerialEffect.lua"
     ]
 }

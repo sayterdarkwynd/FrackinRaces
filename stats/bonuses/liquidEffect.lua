@@ -1,4 +1,5 @@
 require("/scripts/vec2.lua")
+require("/scripts/util.lua")
 
 --[[
     This script is for applying effects while the race is in liquids.

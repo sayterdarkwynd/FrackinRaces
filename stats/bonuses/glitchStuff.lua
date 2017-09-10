@@ -25,35 +25,18 @@ function update(dt)
     if self.energyValue <= 0.25 then
         status.setPersistentEffects("glitchweaken", {
             {stat = "physicalResistance", amount = -0.2},
-            {stat = "protection", baseMultiplier = status.stat("protection") * 0.5 }
+            {stat = "protection", baseMultiplier = 0.5 }
         })
     else
         status.clearPersistentEffects("glitchweaken")
     end
 
-    local mouthPosition = vec2.add(mcontroller.position(), status.statusProperty("mouthPosition"))
-    local mouthful = world.liquidAt(mouthposition)
-    if (world.liquidAt(mouthPosition)) and (inWater == 0) and (mcontroller.liquidId()== 5) or (mcontroller.liquidId()== 44) or (mcontroller.liquidId()== 11) then
-        status.setPersistentEffects("glitchliquid",
-        {
-            {stat = "maxEnergy", amount = 1.25 },
-            {stat = "energyRegenPercentageRate", amount = 0.484 },
-            {stat = "healthRegen", amount = 0.484 }
-        })
-        inWater = 1
+    local test = status.getPersistentEffects("glitchLiquidEffect")
+    if #test ~= 0 then
         activateVisualEffects()
     else
-        isDry()
+        deactivateVisualEffects()
     end
-end
-
-function isDry()
-    local mouthPosition = vec2.add(mcontroller.position(), status.statusProperty("mouthPosition"))
-	if not world.liquidAt(mouthPosition) then
-        status.clearPersistentEffects("glitchliquid")
-	    inWater = 0
-	    deactivateVisualEffects()
-	end
 end
 
 function deactivateVisualEffects()
@@ -66,7 +49,5 @@ function activateVisualEffects()
 end
 
 function uninit()
-    status.clearPersistentEffects("glitchshield")
     status.clearPersistentEffects("glitchweaken")
-    status.clearPersistentEffects("glitchliquid")
 end

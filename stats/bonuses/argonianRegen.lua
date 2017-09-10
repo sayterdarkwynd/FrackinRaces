@@ -13,6 +13,6 @@ end
 function update(dt)
     --if not didit then init() end
 
-    self.healingRate = 1.00005 / 420 -- health per time - 0.005% health per 7 seconds, I think
+    self.healingRate = 1.00005 / 420 -- health per time - 0.005% health per 420ms, I think
     status.modifyResourcePercentage("health", self.healingRate * dt)
 end
