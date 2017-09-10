@@ -6,7 +6,7 @@
     "energyBonus" : 0.4,
     "attackBonus" : 0,
     "defenseBonus" : 0,
-    
+
     //Resistances
     "physicalResistance" : -0.2,
     "electricResistance" : -0.5,
@@ -20,7 +20,7 @@
   "defaultDuration" : 3,
 
   "scripts" : [
-    "racefamiliar.lua"
+    "deprecated.lua"
   ]
 
 }

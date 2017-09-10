@@ -8,7 +8,7 @@
   "defaultDuration" : 3,
 
   "scripts" : [
-    "racepeglaci.lua"
+    "deprecated.lua"
   ]
 
 }

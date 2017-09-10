@@ -5,11 +5,11 @@
     "energyBonus" : 0.20,
     "weaknessPenalty" : 2
   },
-  
+
   "defaultDuration" : 3,
 
   "scripts" : [
-    "raceelunite.lua"
+    "deprecated.lua"
   ]
 
 }

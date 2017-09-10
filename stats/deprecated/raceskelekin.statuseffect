@@ -9,7 +9,7 @@
   "defaultDuration" : 3,
 
   "scripts" : [
-    "raceskelekin.lua"
+    "deprecated.lua"
   ]
 
 }

@@ -6,7 +6,7 @@
     "energyBonus" : 0.15,
     "attackBonus" : 1.05,
     "defenseBonus" : 0,
-    
+
     //Resistances
     "physicalResistance" : 0,
     "electricResistance" : -0.4,
@@ -20,7 +20,7 @@
   "defaultDuration" : 3,
 
   "scripts" : [
-    "racemunari.lua"
+    "deprecated.lua"
   ]
 
 }

@@ -1,12 +1,12 @@
 {
   "name" : "racemantizi",
-  "effectConfig" : { 
+  "effectConfig" : {
     "grit" : 0.3
   },
   "defaultDuration" : 3,
 
   "scripts" : [
-    "racemantizi.lua"
+    "deprecated.lua"
   ]
 
 }

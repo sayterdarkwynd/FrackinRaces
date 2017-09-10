@@ -1,5 +1,5 @@
 {
-  "name" : "racegardevan",
+  "name" : "gardevanBonus",
   "effectConfig" : {
   "healthBonus" : 0,
   "energyBonus" : 0.15,
@@ -8,7 +8,7 @@
   "defaultDuration" : 3,
 
   "scripts" : [
-    "deprecated.lua"
+    "gardevanBonus.lua"
   ]
 
 }

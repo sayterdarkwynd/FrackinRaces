@@ -6,11 +6,11 @@
     "defenseBonus" : 3,
     "weaknessPenalty" : 1.75
   },
-  
+
   "defaultDuration" : 3,
 
   "scripts" : [
-    "racegyrusen.lua"
+    "deprecated.lua"
   ]
 
 }

@@ -6,7 +6,7 @@
     "energyBonus" : -0.05,
     "attackBonus" : 1.05,
     "defenseBonus" : 1.05,
-    
+
     //Resistances
     "physicalResistance" : 0,
     "electricResistance" : -0.2,
@@ -17,11 +17,11 @@
     "cosmicResistance" : 0.1,
     "radioactiveResistance" : 0.1
   },
-  
+
   "defaultDuration" : 3,
 
   "scripts" : [
-    "raceargonian.lua"
+    "deprecated.lua"
   ]
 
 }

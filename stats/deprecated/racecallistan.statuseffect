@@ -6,7 +6,7 @@
     "energyBonus" : 0.12,
     "attackBonus" : 1.05,
     "defenseBonus" : 0,
-    
+
     //Resistances
     "physicalResistance" : 0,
     "electricResistance" : -0.3,
@@ -17,11 +17,11 @@
     "cosmicResistance" : -0.2,
     "radioactiveResistance" : 0.2
   },
-  
+
   "defaultDuration" : 3,
 
   "scripts" : [
-    "racecallistan.lua"
+    "deprecated.lua"
   ]
 
 }

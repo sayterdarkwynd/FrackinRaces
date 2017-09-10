@@ -1,5 +1,5 @@
 {
-  "name" : "racekazdra",
+  "name" : "kazdraBonus",
   "effectConfig" : {
     "healthBonus" : 0.30,
     "energyBonus" : -0.20,
@@ -9,7 +9,7 @@
   "defaultDuration" : 3,
 
   "scripts" : [
-    "deprecated.lua"
+    "kazdraBonus.lua"
   ]
 
 }

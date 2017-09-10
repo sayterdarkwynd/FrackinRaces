@@ -5,11 +5,11 @@
     "energyBonus" : 0.12,
     "weaknessPenalty" : 1.5
   },
-  
+
   "defaultDuration" : 3,
 
   "scripts" : [
-    "racevulpes.lua"
+    "deprecated.lua"
   ]
 
 }

@@ -6,7 +6,7 @@
     "energyBonus" : 0.20,
     "attackBonus" : 0,
     "defenseBonus" : 0,
-    
+
     //Resistances
     "physicalResistance" : 0,
     "electricResistance" : 0,
@@ -20,7 +20,7 @@
   "defaultDuration" : 3,
 
   "scripts" : [
-    "raceviera.lua"
+    "deprecated.lua"
   ]
 
 }

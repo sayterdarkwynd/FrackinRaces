@@ -1,0 +1,33 @@
+{
+    "name" : "avaliAerialBonus",
+    "effectConfig" : {
+      //Core attributes
+      "healthBonus" : 0,
+      "energyBonus" : 0,
+      "attackBonus" : 0,
+      "defenseBonus" : 0,
+
+      //Resistances
+      "physicalResistance" : 0,
+      "electricResistance" : 0,
+      "fireResistance" : -0.4,
+      "iceResistance" : 0.4,
+      "poisonResistance" : 0,
+      "shadowResistance" : 0,
+      "cosmicResistance" : 0,
+      "radioactiveResistance" : 0,
+
+    "fallingParameters" : {
+      "airForce" : 40,
+      "runSpeed" : 16,
+      "walkSpeed" : 16
+    },
+    "maxFallSpeed" : -30
+    },
+
+    "defaultDuration" : 3,
+
+    "scripts" : [
+        "avaliAerialBonus.lua"
+    ]
+}

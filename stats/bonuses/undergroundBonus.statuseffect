@@ -1,13 +1,11 @@
 {
-  "name" : "raceinkling",
+  "name" : "undergroundBonus",
   "effectConfig" : {
-    "healthBonus" : 0.25
   },
-
   "defaultDuration" : 3,
 
   "scripts" : [
-    "deprecated.lua"
+    "undergroundBonus.lua"
   ]
 
 }

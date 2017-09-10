@@ -6,7 +6,7 @@
     "energyBonus" : 0.15,
     "attackBonus" : 1.25,
     "defenseBonus" : 0,
-    
+
     //Resistances
     "physicalResistance" : -0.1,
     "electricResistance" : -0.4,
@@ -17,11 +17,11 @@
     "cosmicResistance" : 0,
     "radioactiveResistance" : 0.4
   },
-  
+
   "defaultDuration" : 3,
 
   "scripts" : [
-    "racedroden.lua"
+    "deprecated.lua"
   ]
 
 }

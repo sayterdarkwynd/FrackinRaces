@@ -8,7 +8,7 @@
   "defaultDuration" : 3,
 
   "scripts" : [
-    "racekineptic.lua"
+    "deprecated.lua"
   ]
 
 }

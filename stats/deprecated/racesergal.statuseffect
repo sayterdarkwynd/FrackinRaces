@@ -4,11 +4,11 @@
       "healthBonus" : 0,
       "energyBonus" : -0.20
   },
-  
+
   "defaultDuration" : 3,
 
   "scripts" : [
-    "racesergal.lua"
+    "deprecated.lua"
   ]
 
 }

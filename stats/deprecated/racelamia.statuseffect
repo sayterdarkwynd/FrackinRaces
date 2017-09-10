@@ -6,7 +6,7 @@
     "energyBonus" : 0.2,
     "attackBonus" : 0,
     "defenseBonus" : 0,
-    
+
     //Resistances
     "physicalResistance" : 0.1,
     "electricResistance" : 0,
@@ -17,11 +17,11 @@
     "cosmicResistance" : -0.2,
     "radioactiveResistance" : 0
   },
-  
+
   "defaultDuration" : 3,
 
   "scripts" : [
-    "racelamia.lua"
+    "deprecated.lua"
   ]
 
 }

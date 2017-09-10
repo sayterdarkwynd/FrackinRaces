@@ -6,7 +6,7 @@
     "energyBonus" : 0,
     "attackBonus" : 0,
     "defenseBonus" : 0,
-    
+
     //Resistances
     "physicalResistance" : 0,
     "electricResistance" : 0,
@@ -16,7 +16,7 @@
     "shadowResistance" : 0,
     "cosmicResistance" : 0,
     "radioactiveResistance" : 0,
-    
+
   "fallingParameters" : {
     "airForce" : 40,
     "runSpeed" : 16,
@@ -27,7 +27,7 @@
   "defaultDuration" : 3,
 
   "scripts" : [
-    "raceavali.lua"
+    "deprecated.lua"
   ]
 
 }
