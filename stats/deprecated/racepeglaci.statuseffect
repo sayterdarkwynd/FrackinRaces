@@ -1,0 +1,14 @@
+{
+  "name" : "racepeglaci",
+  "effectConfig" : {
+    "healthBonus" : 0.15,
+    "energyBonus" : -0.12,
+    "foodBonus" : 20
+  },
+  "defaultDuration" : 3,
+
+  "scripts" : [
+    "deprecated.lua"
+  ]
+
+}

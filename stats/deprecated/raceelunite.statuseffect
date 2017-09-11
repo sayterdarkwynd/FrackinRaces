@@ -1,0 +1,15 @@
+{
+  "name" : "raceelunite",
+  "effectConfig" : {
+    "healthBonus" : -0.15,
+    "energyBonus" : 0.20,
+    "weaknessPenalty" : 2
+  },
+
+  "defaultDuration" : 3,
+
+  "scripts" : [
+    "deprecated.lua"
+  ]
+
+}

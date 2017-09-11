@@ -1,0 +1,11 @@
+{
+    "name" : "aerialEffect",
+    "effectConfig" : {
+    },
+
+    "defaultDuration" : 3,
+
+    "scripts" : [
+        "aerialEffect.lua"
+    ]
+}
