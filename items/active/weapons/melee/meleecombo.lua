@@ -259,21 +259,18 @@ function MeleeCombo:fire()
        end
 
        if species == "glitch" and heldItem then  
-            self.meleeCountcombo = self.meleeCountcombo + 3 --all combo attacks with 1h get this bonus
+            self.meleeCountcombo = self.meleeCountcombo + 2 --all combo attacks with 1h get this bonus
             status.setPersistentEffects("combobonusdmg", {
               {stat = "protection", amount = self.meleeCountcombo}
             }) 
-	     if root.itemHasTag(heldItem, "mace") then -- only maces
-		  if not self.critValueGlitch then
-		    self.critValueGlitch = ( math.ceil(self.energyValue/16) ) 
-		  end  	     
+	     if root.itemHasTag(heldItem, "mace") then -- only maces     
 		  if status.isResource("food") then
-		     adjustedHunger = hungerLevel - (hungerLevel * 0.005)
+		     adjustedHunger = hungerLevel - (hungerLevel * 0.0025)
 		     status.setResource("food", adjustedHunger)	      
 		  end	 
 		  if self.energyValue >= 25 then
 		    status.setPersistentEffects("glitchEnergyPower", {
-			{ stat = "critChance", amount = self.critValueGlitch }
+			{ stat = "critChance", amount = 2 }
 		      }) 	    
 		  end		  					                        			    
 	     end
