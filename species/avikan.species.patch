@@ -11,7 +11,7 @@
     ^green;+15% Health, +15% Energy, +5% Protection, +50% Fire Resist, +25% Knockback Resist^reset;
     ^green;Daggers and Spears get +2% Crit and +5% Damage^reset;
     ^green;Energy Weapons gain +15% Damage and +2% Crit^reset;
-    ^green;1 handed combo strikes increase damage^reset;
+    ^green;1 handed combo strikes increase damage (Health/50)^reset;
     ^green;Immunities: Burning, Sandstorms, Quicksand, Tar^reset;"
     }
 ]

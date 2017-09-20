@@ -160,7 +160,6 @@ function GunFire:burst()
   if self.species == "novakid" and daytime then
     if heldItem and root.itemHasTag(heldItem, "pistol") then  -- novakid fire pistols faster when the sun is out..even underground!
       self.energyMax = 1.0 - (lightLevel / 200)
-
     end
   else
     self.energyMax = 1 

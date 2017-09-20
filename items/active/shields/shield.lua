@@ -298,9 +298,9 @@ function raiseShield()
 		if heldItem ~= nil then
 			if isShield(heldItem) then
 				status.setPersistentEffects("shieldBonus", {
-				  {stat = "protection", amount = 5},
-				  {stat = "powerMultiplier", baseMultiplier = 1.05},
-				  {stat = "healthRegen", amount = 0.284 }
+				  {stat = "protection", amount = 3},
+				  {stat = "powerMultiplier", baseMultiplier = 1.03},
+				  {stat = "healthRegen", amount = 0.15 }
 				})  
 			end
 		end
@@ -308,9 +308,9 @@ function raiseShield()
 		if heldItem ~= nil then
 			if isShield(heldItem) then
 				status.setPersistentEffects("shieldBonus", {
-				  {stat = "protection", amount = 5},
-				  {stat = "powerMultiplier", baseMultiplier = 1.05},
-				  {stat = "healthRegen", amount = 0.284 }
+				  {stat = "protection", amount = 3},
+				  {stat = "powerMultiplier", baseMultiplier = 1.03},
+				  {stat = "healthRegen", amount = 0.15 }
 				})   	
 			end
 		end     	    
