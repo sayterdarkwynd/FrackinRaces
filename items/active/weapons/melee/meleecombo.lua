@@ -218,9 +218,9 @@ function MeleeCombo:fire()
 	self.critValueGlitch = ( math.ceil(self.energyValue/16) ) 
 	
           if species == "avikan" then      
-            self.meleeCountcombo = status.resource("health")/40
+            self.meleeCountcombo = self.meleeCountcombo * status.resource("health")/ 50
             status.setPersistentEffects("combobonusdmg", {
-              {stat = "powerMultiplier", baseMultiplier = self.meleeCountcombo}
+              {stat = "powerMultiplier", amount = self.meleeCountcombo}
             })  
           end 
           
