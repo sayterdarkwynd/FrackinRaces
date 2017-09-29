@@ -43,7 +43,7 @@ function applyEffects()
       {stat = "protection", amount = self.protectionBonus},
       {stat = "maxHealth", baseMultiplier = baseValue },
       {stat = "maxEnergy", baseMultiplier = baseValue2 },
-      {stat = "fallDamageMultiplier", baseMultiplier = baseValue3}
+      {stat = "fallDamageMultiplier", baseMultiplier = 0.85}
     })
 end
 
