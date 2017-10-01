@@ -1,8 +1,8 @@
 function init()
   self.movementParams = mcontroller.baseParameters()  
   self.protectionBonus = config.getParameter("protectionBonus", 0)
-  baseValue = config.getParameter("healthBonus",0)*(status.resourceMax("health"))
-  baseValue2 = config.getParameter("energyBonus",0)*(status.resourceMax("energy"))
+  baseValue = (config.getParameter("healthBonus",0)*(status.resourceMax("health"))-status.resourceMax("health"))
+  baseValue2 = (config.getParameter("energyBonus",0)*(status.resourceMax("energy"))-status.resourceMax("energy"))
   self.tickDamagePercentage = 0.005
   self.tickTime = 2
   self.tickTimer = self.tickTime
@@ -15,8 +15,8 @@ end
 
 function update(dt)
 	 if status.stat("isRobot")==1 then
-	     sb.logInfo("status = ",status.stat("isRobot"))
-	     applyEffects() 
+	     --sb.logInfo("status = %s",status.stat("isRobot"))
+	     applyEffects()
 	 else
 	   if (self.tickTimer <= 0) then 
 	     applyPenalty() 
@@ -43,8 +43,8 @@ end
 function applyEffects()
     status.setPersistentEffects("glitchpower1", {
       {stat = "protection", amount = self.protectionBonus},
-      {stat = "maxHealth", baseMultiplier = baseValue },
-      {stat = "maxEnergy", baseMultiplier = baseValue2 },
+      {stat = "maxHealth", amount = baseValue },
+      {stat = "maxEnergy", amount = baseValue2 },
       {stat = "fallDamageMultiplier", baseMultiplier = 0.85}
     })
 end
