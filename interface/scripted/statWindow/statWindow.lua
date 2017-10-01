@@ -70,18 +70,23 @@ function populateRacialDescription(race)
 	local startFound = false
 	local skipped = 0
 	local skip = false
+	local firstskip = false
 	local char = ""
 	
 	for i = 1, string.len(str) do
 		char = string.sub(str, i, i)
 		
 		if char == "\n" then
-			skip = true
-			if startFound then
-				skipped = skipped + 1
-				table.insert(splitters, i-skipped)
+			if firstskip == true then
+				skip = true
+				if startFound then
+					skipped = skipped + 1
+					table.insert(splitters, i-skipped)
+				else
+					startFound = true
+				end
 			else
-				startFound = true
+				firstskip = true
 			end
 		end
 		
