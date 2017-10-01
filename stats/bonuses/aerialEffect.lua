@@ -1,4 +1,5 @@
 require("/scripts/util.lua")
+require("/scripts/FRHelper.lua")
 
 --[[
     This script is for providing bonuses based on the aerial status of the player.
@@ -34,6 +35,8 @@ function init()
     self.species = world.entitySpecies(entity.id())
     if not self.species then return end
 
+    self.helper = FRHelper:new(self.species)
+
     self.raceJson = root.assetJson("/scripts/raceEffects.config")
     self.effectConfig = (self.raceJson[self.species] or {}).aerialEffect
 
@@ -50,44 +53,32 @@ end
 function update(dt)
     if not self.species then init() end
 
-    status.clearPersistentEffects("aerialStats")
-    status.clearPersistentEffects("groundStats")
+    self.helper:clearPersistent()
+
     -- Effects while in the air
     if self.aerialEffect and not mcontroller.onGround() then
-        applyStatus("aerialStats", self.aerialEffect)
+        self.helper:applyStats(self.aerialEffect, "aerialStats")
 	elseif self.groundEffect then
-        applyStatus("groundStats", self.groundEffect)
+        self.helper:applyStats(self.groundEffect, "groundStats")
     end
 
     -- Effects while falling
 	if self.fallEffect and mcontroller.falling() then
-        applyStatus("fallStats", self.fallEffect)
+        self.helper:applyStats(self.fallEffect, "fallStats")
         if self.fallEffect.maxFallSpeed then
             mcontroller.setYVelocity(math.max(mcontroller.yVelocity(), self.fallEffect.maxFallSpeed))
         end
-	else
-        status.clearPersistentEffects("fallStats")
     end
 
     -- Wind effects
-    if self.windEffects and self.windEffects.windHigh and (world.windLevel(mcontroller.position()) >= self.windEffects.windHigh.speed) then
-        applyStatus("windStats", self.windEffects.windHigh)
-	elseif self.windEffects and self.windEffects.windLow and (world.windLevel(mcontroller.position()) >= self.windEffects.windLow.speed ) then
-        applyStatus("windStats", self.windEffects.windHigh)
-	else
-        status.clearPersistentEffects("windStats")
+    local windLevel = world.windLevel(mcontroller.position())
+    if self.windEffects and self.windEffects.windHigh and windLevel >= self.windEffects.windHigh.speed then
+        self.helper:applyStats(self.windEffects.windHigh, "windStats")
+	elseif self.windEffects and self.windEffects.windLow and windLevel >= self.windEffects.windLow.speed then
+        self.helper:applyStats(self.windEffects.windHigh, "windStats")
     end
 end
 
-function applyStatus(name, table)
-    status.setPersistentEffects(name, table.stats or {})
-    mcontroller.controlModifiers(table.controlModifiers or {})
-    mcontroller.controlParameters(table.controlParameters or {})
-end
-
 function uninit()
-    status.clearPersistentEffects("aerialStats")
-    status.clearPersistentEffects("fallStats")
-    status.clearPersistentEffects("groundStats")
-    status.clearPersistentEffects("windStats")
+    self.helper:clearPersistent()
 end
