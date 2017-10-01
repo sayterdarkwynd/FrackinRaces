@@ -8,7 +8,7 @@
     "path" : "/charCreationTooltip/description" , 
     "value" : "Meow. Space-cats. Agility is their forte, and their claws and predatory instincts give them an edge in combat. 
     
-    ^red; 40% Weakness : Fire^reset;
+    ^red; 40% Weakness: Poison^reset;
     ^green;+6% Speed, +12% Jump^reset; 
     ^green;+40% Fall Damage Reduction^reset;
     ^green;In jungle-like environments, gain +2 protection and +10 health^reset;
