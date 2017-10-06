@@ -36,6 +36,8 @@ function applyPenalty()
       })
       mcontroller.controlModifiers({ airJumpModifier = 0.075, speedModifier = 0.075 })   
       effect.setParentDirectives("fade=806e4f="..self.tickTimer * 0.25) 
+	status.removeEphemeralEffect("wellfed")
+	if status.resourcePercentage("food") > 0.85 then status.setResourcePercentage("food", 0.85) end      
 end
 
 function applyEffects()

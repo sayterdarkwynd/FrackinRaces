@@ -15,7 +15,6 @@ end
 
 function update(dt)
 	 if status.stat("isRobot")==1 then
-	     --sb.logInfo("status = %s",status.stat("isRobot"))
 	     applyEffects()
 	 else
 	   if (self.tickTimer <= 0) then 

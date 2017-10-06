@@ -1,6 +1,5 @@
 {
   "name" : "carnivorefood",
-  "blockingStat" : "poisonStatusImmunity",
 
   "effectConfig" : {
     "healthBonus" : 0.10,

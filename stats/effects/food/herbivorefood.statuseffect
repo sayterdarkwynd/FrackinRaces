@@ -1,6 +1,5 @@
 {
   "name" : "herbivorefood",
-  "blockingStat" : "poisonStatusImmunity",
 
   "effectConfig" : {
     "healthBonus" : 0.10,
