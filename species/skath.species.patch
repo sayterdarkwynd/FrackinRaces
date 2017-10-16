@@ -1,0 +1,19 @@
+[
+    { "op": "replace", 
+    "path" : "/charCreationTooltip/description" ,
+    "value" : ""
+    },
+    { "op": "replace", 
+    "path" : "/charCreationTooltip/description" , 
+    "value" : "Tech-savvy reptiles known for intelligence and adaptability.
+    
+    ^red;-30% Ice, -10% Electric^reset;
+    ^green;+20% Energy^reset;
+    ^green;Gain Health and Protection on Desert, Forest, Jungle, Rainforest biomes^reset;
+    ^green;+20% Poison Resist, +20% Fire Resist, +10% Physical Resist^reset;
+    ^green;Energy (ranged): +2% Crit, +15% Dmg^reset;
+    ^green;Assault Rifle: +1% Crit^reset
+    ^green;Shortspear: +2% Crit, +5% Physical Resistance^reset
+    ^green;Immune: Jungle Tiles, Poison^reset;"
+    }
+]
