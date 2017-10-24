@@ -5,11 +5,11 @@
     },
     { "op": "replace", 
     "path" : "/charCreationTooltip/description" , 
-    "value" : "Tech-savvy reptiles known for intelligence and adaptability.
+    "value" : "Tech-savvy aquatic reptiles known for intelligence and adaptability.
     
     ^red;-30% Ice, -10% Electric^reset;
-    ^green;+20% Energy^reset;
-    ^green;Gain Health and Protection on Desert, Forest, Jungle, Rainforest biomes^reset;
+    ^green;+20% Energy, Breathe Underwater^reset;
+    ^green;Gain +25% Health and +8 Protection on Ocean biomes^reset;
     ^green;+20% Poison Resist, +20% Fire Resist, +10% Physical Resist^reset;
     ^green;Energy (ranged): +2% Crit, +15% Dmg^reset;
     ^green;Assault Rifle: +1% Crit^reset
