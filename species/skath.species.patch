@@ -12,8 +12,8 @@
     ^green;Gain +25% Health and +8 Protection on Ocean biomes^reset;
     ^green;+20% Poison Resist, +20% Fire Resist, +10% Physical Resist^reset;
     ^green;Energy (ranged): +2% Crit, +15% Dmg^reset;
-    ^green;Assault Rifle: +1% Crit^reset
-    ^green;Shortspear: +2% Crit, +5% Physical Resistance^reset
+    ^green;Assault Rifle: +1% Crit^reset;
+    ^green;Shortspear: +2% Crit, +5% Physical Resistance^reset;
     ^green;Immune: Jungle Tiles, Poison^reset;"
     }
 ]
