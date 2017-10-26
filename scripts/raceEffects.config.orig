@@ -30,6 +30,7 @@
             }
         ],
 
+<<<<<<< HEAD
         "weaponEffects" : [
             {
                 "weapons" : [ "fist" ],
@@ -48,6 +49,8 @@
             }
         ],
 
+=======
+>>>>>>> 8e24ae96ae705a4953e22f684678c0a8f650c2fe
         "special" : [ "apexRageBonus" ]
     },
 
@@ -144,6 +147,7 @@
             }
         ],
 
+<<<<<<< HEAD
         "weaponEffects" : [
             {
                 "weapons" : [ "bow" ],
@@ -180,6 +184,8 @@
             }
         ],
 
+=======
+>>>>>>> 8e24ae96ae705a4953e22f684678c0a8f650c2fe
         "special" : [ "starvingedgefloran", "lightregenfloran" ]
     },
 
@@ -201,6 +207,7 @@
             { "stat" : "beestingImmunity", "amount" : 1 }
         ],
 
+<<<<<<< HEAD
         "weaponEffects" : [
             {
                 "weapons" : [ "bow" ],
@@ -242,6 +249,8 @@
             }
         ],
 
+=======
+>>>>>>> 8e24ae96ae705a4953e22f684678c0a8f650c2fe
         "special" : [ "liquidEffect", "glitchStuff" ],
         "liquidEffects" : [
             {
@@ -646,23 +655,6 @@
                     { "stat" : "maxEnergy", "baseMultiplier" : 1.20 }
                 ]
             }
-        ],
-
-        "weaponEffects" : [
-            {
-                "weapons" : [ "boomerang", "chakram" ],
-                "stats" : [
-                    { "stat" : "critChance", "amount" : 10 },
-                    { "stat" : "critBonus", "amount" : 20 }
-                ]
-            },
-            {
-                "weapons" : [ "fist" ],
-                "stats" : [
-                    { "stat" : "grit", "amount" : 0.25 },
-                    { "stat" : "physicalResistance", "amount" : 0.2 }
-                ]
-            }
         ]
     },
 
@@ -751,6 +743,7 @@
             "minimumLiquidPercentage" : 0.4,
             "liquidForce" : 25,
             "groundForce" : 115
+<<<<<<< HEAD
         },
 
         "weaponEffects" : [
@@ -779,6 +772,9 @@
                 ]
             }
         ]
+=======
+        }
+>>>>>>> 8e24ae96ae705a4953e22f684678c0a8f650c2fe
     },
 
     "familiar" : {
@@ -834,6 +830,7 @@
                     { "stat" : "protection", "baseMultiplier" : 1.05 }
                 ]
             }
+<<<<<<< HEAD
         ],
 
         "weaponEffects" : [
@@ -865,6 +862,8 @@
                     "airJumpModifier" : 1.05
                 }
             }
+=======
+>>>>>>> 8e24ae96ae705a4953e22f684678c0a8f650c2fe
         ]
     },
 
@@ -898,6 +897,7 @@
             }
         ],
 
+<<<<<<< HEAD
         "weaponEffects" : [
             {
                 "weapons" : [ "boomerang", "chakram", "spear" ],
@@ -908,6 +908,8 @@
             }
         ],
 
+=======
+>>>>>>> 8e24ae96ae705a4953e22f684678c0a8f650c2fe
         "special" : [ "darkregenfenerox" ]
     },
 
@@ -1107,6 +1109,7 @@
 
         "controlModifiers" : {
             "airJumpModifier" : 1.20
+<<<<<<< HEAD
         },
 
         "weaponEffects" : [
@@ -1136,6 +1139,9 @@
                 "contexts" : [ "bowshot-fire" ]
             }
         ]
+=======
+        }
+>>>>>>> 8e24ae96ae705a4953e22f684678c0a8f650c2fe
     },
 
     "mantizi" : {
@@ -1213,6 +1219,7 @@
             }
         ],
 
+<<<<<<< HEAD
         "weaponEffects" : [
             {
                 "weapons" : [ "spear" ],
@@ -1239,6 +1246,8 @@
             }
         ],
 
+=======
+>>>>>>> 8e24ae96ae705a4953e22f684678c0a8f650c2fe
         "special" : [ "liquidEffect", "swimboost2" ],
         "liquidEffects" : [
             {
@@ -1472,6 +1481,7 @@
         "controlModifiers" : {
             "speedModifier" : 1.12,
             "airJumpModifier" : 1.06
+<<<<<<< HEAD
         },
 
         "weaponEffects" : [
@@ -1489,6 +1499,9 @@
                 ]
             }
         ]
+=======
+        }
+>>>>>>> 8e24ae96ae705a4953e22f684678c0a8f650c2fe
     },
 
     "skelekin" : {
@@ -1634,6 +1647,7 @@
                     "speedModifier" : 1.18
                 }
             }
+<<<<<<< HEAD
         ],
 
         "weaponEffects" : [
@@ -1658,6 +1672,8 @@
                     { "stat" : "critChance", "amount" : 2 }
                 ]
             }
+=======
+>>>>>>> 8e24ae96ae705a4953e22f684678c0a8f650c2fe
         ]
     },
 

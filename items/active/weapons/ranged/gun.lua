@@ -22,7 +22,7 @@ local heldItem2 = world.entityHandItem(activeItem.ownerEntityId(), "alt")
  --used for checking dual-wield setups
  local opposedhandHeldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand() == "primary" and "alt" or "primary")
 
-  
+
           if species == "peglaci" then      
             self.blockCount = self.blockCount + 0.05
             status.setPersistentEffects("novakidbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}})  
@@ -31,7 +31,22 @@ local heldItem2 = world.entityHandItem(activeItem.ownerEntityId(), "alt")
             self.blockCount = self.blockCount + 0.08
             status.setPersistentEffects("novakidbonusdmg", {{stat = "powerMultiplier", amount = self.blockCount}})  
           end        
-
+	 if species == "skath" then   
+	  if heldItem then
+	     if root.itemHasTag(heldItem, "energy") then 
+		  self.blockCount = self.blockCount + 0.09
+		  status.setPersistentEffects("novakidbonusdmg", {
+		  {stat = "powerMultiplier", baseMultiplier = 1.15},
+		  {stat = "critChance", amount = 2}
+		  })    
+	     end
+	     if root.itemHasTag(heldItem, "assaultrifle") then 
+		  status.setPersistentEffects("novakidbonusdmg2", {
+		    {stat = "critChance", amount = 1}
+		    })    
+	     end	     
+	  end
+	end
 	-- Novakid get bonus with Pistols and Sniper Rifles
 	 if species == "novakid" then   
 	  if heldItem then

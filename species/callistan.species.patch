@@ -2,7 +2,7 @@
 
     { "op": "replace", 
     "path" : "/charCreationTooltip/description" , 
-    "value" : "Space foxes with a love for energy weapons and tech. They're swift and able, but a tad on the fragile side.
+    "value" : "Space wolves with a love for energy weapons and tech. They're swift and able, but a tad on the fragile side.
     
     ^red;Weak: 20% Poison, Cosmic^reset;
     ^green;+12% Energy,+5% Damage, ,+20% Shadow and Rad Resistance^reset;

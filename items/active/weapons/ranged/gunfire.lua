@@ -7,6 +7,7 @@ GunFire = WeaponAbility:new()
 function GunFire:init()
 self.critChance = config.getParameter("critChance", 0)
 self.critBonus = config.getParameter("critBonus", 0)
+self.isReloader = config.getParameter("isReloader",0)
 -- **** FR ADDITIONS
   daytime = daytimeCheck()
   underground = undergroundCheck()
@@ -151,7 +152,14 @@ function GunFire:auto()
       --sb.logInfo("lightLevel = "..lightLevel)
       --sb.logInfo("energyMax = "..self.energyMax)
       --sb.logInfo("cooldownTimer = "..self.cooldownTimer)
+      
+      
   self:setState(self.cooldown)
+  self.isReloader = config.getParameter("isReloader",0)
+
+  if (self.isReloader) >= 1 then
+    animator.playSound("cooldown") -- adds new sound to reload
+  end
 end
 
 function GunFire:burst()

@@ -1,23 +1,33 @@
-frackinRaces = true
+
+--- THIS IS THE FRACKIN RACES ONE
 
 function init()
 	self.data = root.assetJson("/interface/scripted/statWindow/statWindow.config")
 	self.elements = self.data.elements
 	self.statuses = self.data.statuses
-
+	self.extraOpen = false
+	
 	widget.setText("characterName", "^blue;"..world.entityName(player.id()))
-
+	
 	local playerRace = player.species()
-	widget.setImage("characterSuit", "/interface/scripted/techupgrade/suits/"..playerRace.."-"..player.gender()..".png")
-
-	if frackinRaces then
-		-- widget.setText("racialLabel", "Racial traits - "..playerRace)
-		widget.setVisible("racialDesc", true)
-	else
-		widget.setText("racialLabel", "SoonTM")
+	local recognized = false
+	for _,race in ipairs(self.data.races) do
+		if race == playerRace then
+			recognized = true
+			break
+		end
 	end
-
-	populateRacialDescription()
+	
+	if recognized then
+		widget.setImage("characterSuit", "/interface/scripted/techupgrade/suits/"..playerRace.."-"..player.gender()..".png")
+		widget.setText("racialLabel", "Racial traits - "..playerRace)
+		widget.setVisible("racialDesc", true)
+		widget.setVisible("offline", false)
+		
+		populateRacialDescription(playerRace)
+	else
+		widget.setText("racialLabel", "ERROR - UNRECOGNIZED SPECIES")
+	end
 end
 
 function update()
@@ -45,21 +55,74 @@ function update()
 	end
 end
 
-function populateRacialDescription()
+function expand()
+	player.interact("ScriptPane", "/interface/scripted/statWindow/extraStatsWindow.config", player.id())
+end
+
+function populateRacialDescription(race)
 	widget.clearListItems("racialDesc.textList")
-
-	-- using 'for i' loop because 'i/pairs' tends to fuck up order
-
-	--[[
-	for i = 1, #racialDescription.positive do
-		local listItem = "racialDesc.textList."..widget.addListItem("racialDesc.textList")
-		local text = "^green;"..racialDescription.positive[i]
-		widget.setText(listItem..".trait", text)
+	
+	local JSON = root.assetJson("/species/"..race..".species")
+	local str = JSON.charCreationTooltip.description
+	local strTbl = {}
+	local splitters = {}
+	local lists = {}
+	local startFound = false
+	local skipped = 0
+	local skip = false
+	local firstskip = false
+	local char = ""
+	
+	for i = 1, string.len(str) do
+		char = string.sub(str, i, i)
+		
+		if char == "\n" then
+			if firstskip == true then
+				skip = true
+				if startFound then
+					skipped = skipped + 1
+					table.insert(splitters, i-skipped)
+				else
+					startFound = true
+				end
+			else
+				firstskip = true
+			end
+		end
+		
+		if startFound then
+			if skip then
+				skip = false
+			else
+				table.insert(strTbl, char)
+			end
+		else
+			skipped = skipped + 1
+		end
 	end
-
-	for i = 1, #racialDescription.negative do
+	
+	str = ""
+	for loc, string in ipairs(strTbl) do
+		if loc == #strTbl then
+			str = string.gsub(str..string, "- ", "", 1)
+			table.insert(lists, str)
+		else
+			for _,loc2 in ipairs(splitters) do
+				if loc == loc2 then
+					str = string.gsub(str, "- ", "", 1)
+					table.insert(lists, str)
+					str = ""
+				end
+			end
+			
+			char = string
+			str = string.format("%s%s", str, char) -- At this moment, I learned how important string.format truly is. Its all mightyness is able to merge % without breaking!
+		end
+	end
+	
+	-- using 'for i' loop because 'i/pairs' tends to fuck up the order
+	for i = 1, #lists do
 		local listItem = "racialDesc.textList."..widget.addListItem("racialDesc.textList")
-		local text = "^red;"..racialDescription.negative[i]
-		widget.setText(listItem..".trait", text)
-	end]]
+		widget.setText(listItem..".trait", lists[i])
+	end
 end

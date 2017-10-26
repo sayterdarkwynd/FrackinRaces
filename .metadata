@@ -5,8 +5,9 @@
   "includes" : ["FrackinUniverse"],
   "link" : "steam://url/CommunityFilePage/763259329",
   "name" : "FrackinRaces",
-  "priority" : 101,
+  "priority" : 999,
   "requires" : [],
   "steamContentId" : "763259329",
-  "version" : "4.12"
+  "tags" : "Species|Mechanics",
+  "version" : "4.261"
 }

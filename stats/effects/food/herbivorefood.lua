@@ -35,6 +35,8 @@ function applyPenalty()
 	sourceEntityId = entity.id()
       })
       effect.setParentDirectives("fade=806e4f="..self.tickTimer * 0.25) 
+	status.removeEphemeralEffect("wellfed")
+	if status.resourcePercentage("food") > 0.85 then status.setResourcePercentage("food", 0.85) end      
 end
 
 function applyEffects()
