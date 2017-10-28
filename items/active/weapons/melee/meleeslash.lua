@@ -186,7 +186,17 @@ function MeleeSlash:fire()
 		end		                        			    
 	     end
 	  end
-        end	
+        end
+	if species == "skath" then       
+	  if heldItem then
+	     if root.itemHasTag(heldItem, "broadsword") or root.itemHasTag(heldItem, "greataxe") or root.itemHasTag(heldItem, "spear") or root.itemHasTag(heldItem, "scythe") or root.itemHasTag(heldItem, "quarterstaff") or root.itemHasTag(heldItem, "hammer") then 
+	       	      status.setPersistentEffects("combobonusdmg", { -- 2h enjoy a +15% damage rate
+	       		{stat = "damageMultiplier", baseMultiplier = 1.15}
+		      }) 	    	
+	     end		                        			    
+	  end
+        end
+        
   -- ***********************************************************************************************************
   -- END FR SPECIALS
   -- ***********************************************************************************************************
