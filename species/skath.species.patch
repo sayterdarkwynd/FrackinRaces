@@ -5,15 +5,15 @@
     },
     { "op": "replace", 
     "path" : "/charCreationTooltip/description" , 
-    "value" : "Tech-savvy aquatic reptiles known for intelligence and adaptability.
-    
-    ^red;-30% Ice, -10% Electric^reset;
-    ^green;+20% Energy, Breathe Underwater^reset;
-    ^green;Gain +25% Health and +8 Protection on Ocean biomes^reset;
-    ^green;+20% Poison Resist, +20% Fire Resist, +10% Physical Resist^reset;
+    "value" : "Once invaded by an alien force which forced them to focus on their military and their defenses, they're extraordinary well trained fighters. Their aquatic origins make them especially dangerous in water and make them a force to be reckoned with.
+    ^red;-40% Fire Resist, -10% Electric^reset;
+    ^red;Hot biomes impose a 30% energy penalty^reset;
+    ^green;+20% Energy, +1500s Breath^reset;
+    ^green;Gain +25% Health and +6 Protection on Ocean biomes^reset;
+    ^green;When underwater you move faster and gain slow regeneration^reset;
+    ^green;+30% Ice Resist, +20% Poison Resist, +10% Physical Resist^reset;
     ^green;Energy (ranged): +2% Crit, +15% Dmg^reset;
-    ^green;Assault Rifle: +1% Crit^reset
-    ^green;Shortspear: +2% Crit, +5% Physical Resistance^reset
-    ^green;Immune: Jungle Tiles, Poison^reset;"
+    ^green;Assault Rifle: +1% Crit^reset;
+    ^green;2h melee: +15% damage^reset;"
     }
 ]
