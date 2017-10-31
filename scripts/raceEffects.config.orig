@@ -45,12 +45,6 @@
                 "controlModifiers" : {
                     "speedModifier" : 1.15
                 }
-            },
-            {
-                "weapons" : [ "mininglaser" ],
-                "stats" : [
-                    { "stat" : "powerMultiplier", "baseMultiplier" : 1.5 }
-                ]
             }
         ],
 
@@ -86,12 +80,6 @@
                     { "stat" : "powerMultiplier", "baseMultiplier" : 1.06 },
                     { "stat" : "critChance", "amount" : 1 }
                 ]
-            },
-            {
-                "weapons" : [ "machinepistol" ],
-                "stats" : [
-                    { "stat" : "critChance", "baseMultiplier" : 1 }
-                ]
             }
         ],
 
@@ -100,25 +88,6 @@
                 "script" : "/scripts/fr_weaponscripts/aviancombo.lua",
                 "weapons" : [ "dagger" ],
                 "contexts" : [ "meleeslash-fire" ]
-            },
-            {
-                "script" : "/scripts/fr_weaponscripts/freebonus.lua",
-                "contexts" : [ "staff-init" ],
-                "args" : {
-                    "stats" : [
-                        { "stat" : "powerMultiplier", "baseMultiplier" : 1.20 },
-                        { "stat" : "maxEnergy", "baseMultiplier" : 1.20 }
-                    ],
-
-                    "scripts" : [
-                        {
-                            "script" : "/scripts/fr_weaponscripts/wandresist.lua",
-                            "args" : {
-                                "amount" : 0.15
-                            }
-                        }
-                    ]
-                }
             }
         ],
 
@@ -204,25 +173,13 @@
                 "stats" : [
                     { "stat" : "critChance", "amount" : 3 }
                 ]
-            },
-            {
-                "weapons" : [ "needler" ],
-                "stats" : [
-                    { "stat" : "critChance", "baseMultiplier" : 2 }
-                ]
-            },
-            {
-                "combos" : [ [ "needler", "needler" ] ],
-                "controlModifiers" : {
-                    "speedModifier" : 1.08
-                }
             }
         ],
 
         "weaponScripts" : [
             {
                 "script" : "/scripts/fr_weaponscripts/hungercost.lua",
-                "contexts" : [ "boomerang-fire", "axecleave-fire", "hammersmash-fire" ],
+                "contexts" : [ "boomerang-fire" ],
                 "args" : {
                     "food" : -0.01
                 }
@@ -243,7 +200,7 @@
             },
             {
                 "script" : "/scripts/fr_weaponscripts/hungercost.lua",
-                "contexts" : [ "meleecombo-fire", "whip-fire" ],
+                "contexts" : [ "meleecombo-fire" ],
                 "args" : {
                     "food" : -0.005
                 }
@@ -307,18 +264,6 @@
                 "stats" : [
                     { "stat" : "critChance", "amount" : 4 }
                 ]
-            },
-            {
-                "weapons" : [ "crossbow" ],
-                "stats" : [
-                    { "stat" : "critChance" , "baseMultiplier" : 4 }
-                ]
-            },
-            {
-                "weapons" : [ "shield" ],
-                "stats" : [
-                    { "stat" : "maxHealth", "baseMultiplier" : 1.08 }
-                ]
             }
         ],
 
@@ -350,52 +295,6 @@
                         { "stat" : "critChance", "amount" : 3 },
                         { "stat" : "critBonus", "amount" : 2 }
                     ]
-                }
-            },
-            {
-                "script" : "/scripts/fr_weaponscripts/glitchaxes.lua",
-                "contexts" : [ "axecleave-fire", "hammersmash-fire" ]
-            },
-            {
-                "script" : "/scripts/fr_weaponscripts/glitchbash.lua",
-                "contexts" : [ "shield-bash" ],
-                "args" : {
-                    "healthRecover" : 1.2   // 20% health recovery
-                }
-            },
-            {
-                "script" : "/scripts/fr_weaponscripts/perfectblockbonus.lua",
-                "contexts" : [ "shield-perfectblock" ],
-                "args" : {
-                    "name" : "FR_glitchShieldPerfectBlock",
-                    "stats" : [
-                        { "stat" : "powerMultiplier", "amount" : 0.02 }
-                    ],
-                    "statCombos" : {
-                        "powerMultiplier" : {
-                            "comboBase" : 0.03,
-                            "max" : 0.3
-                        }
-                    }
-                }
-            },
-            {
-                "script" : "/scripts/fr_weaponscripts/freebonus.lua",
-                "contexts" : [ "shield-raised" ],
-                "args" : {
-                    "name" : "FR_glitchShieldRaised",
-                    "stats" : [
-                        { "stat" : "powerMultiplier", "baseMultiplier" : 1.03 },
-                        { "stat" : "protection", "amount" : 3 },
-                        { "stat" : "healthRegen", "amount" : 0.15 }
-                    ]
-                }
-            },
-            {
-                "script" : "/scripts/fr_weaponscripts/shieldcancel.lua",
-                "contexts" : [ "shield-update" ],
-                "args" : {
-                    "energyAmt" : 0.25
                 }
             }
         ],
@@ -433,30 +332,6 @@
                     { "stat" : "powerMultiplier", "baseMultiplier" : 1.12 },
                     { "stat" : "grit", "amount" : 0.20 }
                 ]
-            },
-            {
-                "weapons" : [ "assaultrifle" ],
-                "stats" : [
-                    { "stat" : "powerMultiplier", "baseMultiplier" : 1.12 }
-                ]
-            }
-        ],
-
-        "weaponScripts" : [
-            {
-                "script" : "/scripts/fr_weaponscripts/perfectblockbonus.lua",
-                "args" : {
-                    "stats" : [
-                        { "stat" : "protection", "amount" : 0 }
-                    ],
-                    "statCombos" : {
-                        "powerMultiplier" : {
-                            "comboBase" : 2,
-                            "max" : 16
-                        }
-                    },
-                    "particles" : "bonusBlock4"
-                }
             }
         ]
     },
@@ -537,23 +412,6 @@
             }
         ],
 
-        "weaponScripts" : [
-            {
-                "script" : "/scripts/fr_weaponscripts/perfectblockbonus.lua",
-                "contexts" : [ "shield-perfectblock" ],
-                "args" : {
-                    "resources" : {
-                        "health" : {
-                            "base" : 0.025,
-                            "comboBase" : 0.0008,
-                            "max" : 0.05
-                        }
-                    },
-                    "particles" : "bonusBlock"
-                }
-            }
-        ],
-
         "special" : [ "swimboost2" ],
         "liquidEffects" : [
             {
@@ -596,58 +454,6 @@
                     { "stat" : "maxHealth", "baseMultiplier" : 1.15 },
                     { "stat" : "maxEnergy", "amount" : 1.15 }
                 ]
-            }
-        ],
-
-        "weaponEffects" : [
-            {
-                "weapons" : [ "pistol" ],
-                "stats" : [
-                    { "stat" : "powerMultiplier", "amount" : 0.09 }
-                ]
-            },
-            {
-                "weapons" : [ "sniperrifle", "rifle" ],
-                "stats" : [
-                    { "stat" : "critChance", "amount" : 5 },
-                    { "stat" : "critBonus", "baseMultiplier" : 1.2 }
-                ]
-            },
-            {
-                "weapons" : [ "shotgun" ],
-                "stats" : [
-                    { "stat" : "powerMultiplier", "baseMultiplier" : 1.2 },
-                    { "stat" : "critBonus", "baseMultiplier" : 1.2 }
-                ]
-            },
-            {
-                "combos" : [ [ "pistol", "pistol" ] ],
-                "stats" : [
-                    { "stat" : "grit", "amount" : 0.25 },
-                    { "stat" : "maxEnergy", "baseMultiplier" : 1.15 },
-                    { "stat" : "powerMultiplier", "amount" : 0.09 }
-                ],
-                "controlModifiers" : {
-                    "speedModifier" : 1.08,
-                    "airJumpModifier" : 1.05
-                }
-            },
-            {
-                "weapons" : [ "whip" ],
-                "stats" : [
-                    { "stat" : "powerMultiplier", "baseMultiplier" : 1.19 }
-                ],
-                "controlModifiers" : {
-                    "speedModifier" : 1.10
-                }
-            }
-        ],
-
-        "weaponScripts" : [
-            {
-                "script" : "/scripts/fr_weaponscripts/novakidspeed.lua",
-                "weapons" : [ "pistol" ],
-                "contexts" : [ "gunfire-update", "gunfire-postauto", "gunfire-postburst" ]
             }
         ],
 
@@ -700,13 +506,6 @@
                     { "stat" : "powerMultiplier", "baseMultiplier" : 1.10 },
                     { "stat" : "protection", "baseMultiplier" : 1.10 }
                 ]
-            },
-            {
-                "weapons" : [ "crossbow", "harpoon" ],
-                "stats" : [
-                    { "stat" : "critChance", "amount" : 5 },
-                    { "stat" : "powerMultiplier", "baseMultiplier" : 1.15 }
-                ]
             }
         ],
 
@@ -758,18 +557,6 @@
                 "weapons" : [ "spear" ],
                 "stats" : [
                     { "stat" : "critChance", "amount" : 2 }
-                ]
-            },
-            {
-                "weapons" : [ "energy" ],
-                "stats" : [
-                    { "stat" : "powerMultiplier", "baseMultiplier" : 1.12 }
-                ]
-            },
-            {
-                "weapons" : [ "grenadelauncher" ],
-                "stats" : [
-                    { "stat" : "critBonus", "baseMultiplier" : 1.2 }
                 ]
             }
         ],
@@ -859,13 +646,6 @@
                 "stats" : [
                     { "stat" : "powerMultiplier", "baseMultiplier" : 1.05 },
                     { "stat" : "critChance", "amount" : 2 }
-                ]
-            },
-            {
-                "weapons" : [ "energy" ],
-                "stats" : [
-                    { "stat" : "critChance", "amount" : 2 },
-                    { "stat" : "powerMultiplier", "baseMultiplier" : 1.15 }
                 ]
             }
         ],
@@ -975,16 +755,6 @@
             }
         ],
 
-        "weaponEffects" : [
-            {
-                "weapons" : [ "energy" ],
-                "stats" : [
-                    { "stat" : "energyRegenPercentageRate", "baseMultiplier" : 1.25 },
-                    { "stat" : "critChance", "amount" : 3 }
-                ]
-            }
-        ],
-
         "special" : [ "callistanFoodRush" ]
     },
 
@@ -1013,12 +783,6 @@
                 "weapons" : [ "shortsword", "broadsword" ],
                 "stats" : [
                     { "stat" : "critChance", "amount" : 2 }
-                ]
-            },
-            {
-                "weapons" : [ "crossbow" ],
-                "stats" : [
-                    { "stat" : "critDamage" , "baseMultiplier" : 1.25 }
                 ]
             }
         ]
@@ -1157,27 +921,6 @@
                     "speedModifier" : 1.08,
                     "airJumpModifier" : 1.05
                 }
-            },
-            {
-                "weapons" : [ "pistol", "machinepistol" ],
-                "stats" : [
-                    { "stat" : "critDamage", "baseMultiplier" : 1.2 },
-                    { "stat" : "critChance", "amount" : 1 }
-                ]
-            },
-            {
-                "weapons" : [ "wand" ],
-                "stats" : [
-                    { "stat" : "powerMultiplier", "baseMultiplier" : 1.10 },
-                    { "stat" : "protection", "baseMultiplier" : 1.05 }
-                ]
-            },
-            {
-                "weapons" : [ "staff" ],
-                "stats" : [
-                    { "stat" : "powerMultiplier", "baseMultiplier" : 1.10 },
-                    { "stat" : "protection", "baseMultiplier" : 1.15 }
-                ]
             }
         ]
     },
@@ -1219,23 +962,6 @@
                     { "stat" : "powerMultiplier", "baseMultiplier" : 1.10 },
                     { "stat" : "critChance", "amount" : 2 }
                 ]
-            },
-            {
-                "weapons" : [ "spear" ],
-                "stats" : [
-                    { "stat" : "protection", "amount" : 2 }
-                ]
-            }
-        ],
-
-        "weaponScripts" : [
-            {
-                "script" : "/scripts/fr_weaponscripts/hungercost.lua",
-                "weapons" : [ "spear" ],
-                "contexts" : [ "spearstab-fire" ],
-                "args" : {
-                    "food" : -0.05
-                }
             }
         ],
 
@@ -1251,19 +977,6 @@
         "controlModifiers" : {
             "speedModifier" : 1.08
         },
-
-        "weaponEffects" : [
-            {
-                "weapons" : [ "whip" ],
-                "stats" : [
-                    { "stat" : "powerMultiplier", "baseMultiplier" : 1.20 }
-                ],
-                "controlModifiers" : {
-                    "speedModifier" : 1.15,
-                    "airJumpModifier" : 1.15
-                }
-            }
-        ],
 
         "special" : [ "gardevanBonus", "lighthunter", "lightregenfloran" ]
     },
@@ -1297,19 +1010,6 @@
             }
         ],
 
-        "weaponScripts" : [
-            {
-                "script" : "/scripts/fr_weaponscripts/freebonus.lua",
-                "contexts" : [ "staff-init" ],
-                "args" : {
-                    "stats" : [
-                        { "stat" : "powerMultiplier", "baseMultiplier" : 1.30 },
-                        { "stat" : "physicalResistance", "amount" : 0.10 }
-                    ]
-                }
-            }
-        ],
-
         "special" : [ "undergroundBonus" ],
         "undergroundBonus" : {
             "stats" : [
@@ -1338,22 +1038,6 @@
                 "weapons" : [ "axe", "hammer" ],
                 "stats" : [
                     { "stat" : "powerMultiplier", "baseMultiplier" : 1.20 }
-                ]
-            },
-            {
-                "weapons" : [ "rocketlauncher", "grenadelauncher" ],
-                "stats" : [
-                    { "stat" : "powerMultiplier", "baseMultiplier" : 1.15 }
-                ]
-            },
-            {
-                "combos" : [
-                    [ "rocketlauncher", "rocketlauncher" ],
-                    [ "rocketlauncher", "grenadelauncher" ],
-                    [ "grenadelauncher", "grenadelauncher" ]
-                ],
-                "stats" : [
-                    { "stat" : "powerMultiplier", "baseMultiplier" : 1.15 }
                 ]
             }
         ]
@@ -1455,26 +1139,6 @@
                         { "stat" : "protection", "amount" : 3}
                     ]
                 }
-            },
-            {
-                "script" : "/scripts/fr_weaponscripts/perfectblockbonus.lua",
-                "contexts" : [ "shield-perfectblock" ],
-                "args" : {
-                    "stats" : [
-                        { "stat" : "powerMultiplier", "baseMultiplier" : 0.02 },
-                        { "stat" : "protection", "amount" : 0 }
-                    ],
-                    "statCombos" : {
-                        "powerMultiplier" : {
-                            "comboBase" : 0.02,
-                            "max" : 0.3
-                        },
-                        "protection" : {
-                            "comboBase" : 2,
-                            "max" : 16
-                        }
-                    }
-                }
             }
         ]
     },
@@ -1503,20 +1167,6 @@
                     { "stat" : "protection", "amount" : 3 },
                     { "stat" : "powerMultiplier", "baseMultiplier" : 1.15 }
                 ]
-            }
-        ],
-
-        "weaponScripts" : [
-            {
-                "script" : "/scripts/fr_weaponscripts/freebonus.lua",
-                "contexts" : [ "staff-init" ],
-                "args" : {
-                    "stats" : [
-                        { "stat" : "powerMultiplier", "baseMultiplier" : 1.25 },
-                        { "stat" : "energyRegenPercentageRate", "baseMultiplier" : 1.2 },
-                        { "stat" : "energyRegenBlockTime", "baseMultiplier" : 0.5 }
-                    ]
-                }
             }
         ],
 
@@ -1563,12 +1213,6 @@
                 "controlModifiers" : {
                     "speedModifier" : 1.20
                 }
-            },
-            {
-                "weapons" : [ "whip" ],
-                "stats" : [
-                    { "stat" : "protection", "amount" : 6 }
-                ]
             }
         ],
 
@@ -1614,26 +1258,6 @@
                     { "stat" : "powerMultiplier", "baseMultiplier" : 1.20 },
                     { "stat" : "protection", "baseMultiplier" : 1.20 }
                 ]
-            }
-        ],
-
-        "weaponScripts" : [
-            {
-                "script" : "/scripts/fr_weaponscripts/perfectblockbonus.lua",
-                "contexts" : [ "shield-perfectblock" ],
-                "args" : {
-                    "resources" : {
-                        "health" : {
-                            "base" : 0.025,
-                            "comboBase" : 0.0008,
-                            "max" : 0.05
-                        },
-                        "shieldStamina" : {
-                            "base" : 0.2
-                        }
-                    },
-                    "particles" : "bonusBlock"
-                }
             }
         ]
     },
@@ -1799,20 +1423,6 @@
                 "controlModifiers" : {
                     "speedModifier" : 1.05
                 }
-            },
-            {
-                "weapons" : [ "whip" ],
-                "stats" : [
-                    { "stat" : "powerMultiplier", "baseMultiplier" : 1.19 },
-                    { "stat" : "maxHealth", "baseMultiplier" : 1.11 }
-                ]
-            },
-            {
-                "weapons" : [ "shield" ],
-                "stats" : [
-                    { "stat" : "grit", "amount" : 0.15 },
-                    { "stat" : "shieldBash", "amount" : 2 }
-                ]
             }
         ],
 
@@ -1854,20 +1464,6 @@
                         }
                     ]
                 }
-            },
-            {
-                "script" : "/scripts/fr_weaponscripts/perfectblockbonus.lua",
-                "args" : {
-                    "stats" : [
-                        { "stat" : "protection", "amount" : 0 }
-                    ],
-                    "statCombos" : {
-                        "protection" : {
-                            "comboBase" : 1,
-                            "max" : 10
-                        }
-                    }
-                }
             }
         ],
 
@@ -1894,39 +1490,6 @@
                     { "stat" : "powerMultiplier", "baseMultiplier" : 1.12 },
                     { "stat" : "grit", "amount" : 0.2 }
                 ]
-            },
-            {
-                "weapons" : [ "machinepistol" ],
-                "stats" : [
-                    { "stat" : "powerMultiplier", "baseMultiplier" : 1.12 }
-                ]
-            }
-        ],
-
-        "weaponScripts" : [
-            {
-                "script" : "/scripts/fr_weaponscripts/freebonus.lua",
-                "contexts" : [ "staff-init" ],
-                "args" : {
-                    "stats" : [
-                        { "stat" : "maxEnergy", "baseMultiplier" : 1.15 }
-                    ]
-                }
-            },
-            {
-                "script" : "/scripts/fr_weaponscripts/perfectblockbonus.lua",
-                "args" : {
-                    "stats" : [
-                        { "stat" : "powerMultiplier", "amount" : 0.02 }
-                    ],
-                    "statCombos" : {
-                        "powerMultiplier" : {
-                            "comboBase" : 0.02,
-                            "max" : 30
-                        }
-                    },
-                    "particles" : "bonusBlock4"
-                }
             }
         ]
     },
@@ -1992,18 +1555,6 @@
             { "stat" : "liquidnitrogenImmunity", "amount" : 1 },
             { "stat" : "iceslipImmunity", "amount" : 1 },
             { "stat" : "iceStatusImmunity", "amount" : 1 }
-        ],
-
-        "weaponScripts" : [
-            {
-                "script" : "/scripts/fr_weaponscripts/freebonus.lua",
-                "contexts" : [ "gun-init" ],
-                "args" : {
-                    "stats" : [
-                        { "stat" : "powerMultiplier", "amount" : 0.05 }
-                    ]
-                }
-            }
         ],
 
         "envEffects" : [
@@ -2156,20 +1707,6 @@
                     { "stat" : "energyRegenPercentageRate", "baseMultiplier" : 0.5 }
                 ]
             }
-        ],
-
-        "weaponScripts" : [
-            {
-                "script" : "/scripts/fr_weaponscripts/perfectblockbonus",
-                "contexts" : [ "shield-perfectblock" ],
-                "args" : {
-                    "resources" : {
-                        "energy" : {  //100% energy recovery
-                            "base" : 1
-                        }
-                    }
-                }
-            }
         ]
     },
 
@@ -2192,22 +1729,7 @@
             "stickyForce" : 2,
             "airForce" : 65.0,
             "liquidForce" : 20.0
-        },
-
-        "weaponEffects" : [
-            {
-                "weapons" : [ "machinepistol", "sniperrifle", "rifle" ],
-                "stats" : [
-                    { "stat" : "powerMultiplier", "baseMultiplier" : 1.15 }
-                ]
-            },
-            {
-                "combos" : [ [ "machinepistol", "machinepistol" ] ],
-                "stats" : [
-                    { "stat" : "powerMultiplier", "baseMultiplier" : 1.15 }
-                ]
-            }
-        ]
+        }
     },
 
     "viera" : {
@@ -2285,16 +1807,6 @@
                         "damageKind" : "electric"
                     }
                 }
-            },
-            {
-                "script" : "/scripts/fr_weaponscripts/freebonus.lua",
-                "contexts" : [ "staff-init" ],
-                "args" : {
-                    "stats" : [
-                        { "stat" : "powerMultiplier", "baseMultiplier" : 1.15 },
-                        { "stat" : "maxEnergy", "baseMultiplier" : 1.15 }
-                    ]
-                }
             }
         ]
     },
@@ -2322,44 +1834,6 @@
                 "stats" : [
                     { "stat" : "protection", "amount" : 2 }
                 ]
-            },
-            {
-                "weapons" : [ "whip" ],
-                "stats" : [
-                    { "stat" : "powerMultiplier", "baseMultiplier" : 1.12 }
-                ]
-            }
-        ],
-
-        "weaponScripts" : [
-            {
-                "script" : "/scripts/fr_weaponscripts/freebonus.lua",
-                "contexts" : [ "gun-init" ],
-                "args" : {
-                    "stats" : [
-                        { "stat" : "powerMultiplier", "amount" : 0.08 }
-                    ]
-                }
-            },
-            {
-                "script" : "/scripts/fr_weaponscripts/perfectblockbonus.lua",
-                "args" : {
-                    "stats" : [
-                        { "stat" : "powerMultiplier", "amount" : 0.02 },
-                        { "stat" : "protection", "amount" : 0 }
-                    ],
-                    "statCombos" : {
-                        "powerMultiplier" : {
-                            "comboBase" : 0.02,
-                            "max" : 30
-                        },
-                        "protection" : {
-                            "comboBase" : 2,
-                            "max" : 16
-                        }
-                    },
-                    "particles" : "bonusBlock4"
-                }
             }
         ]
     },
@@ -2403,39 +1877,26 @@
             }
         }
     },
+<<<<<<< HEAD
 
     "skath" : {
+=======
+    
+    "skath" : { 
     //their damage is increased while wielding two handed weaponry (melee)
+>>>>>>> da771c7159c4353ee4fe9c3c4f3126a6350287c6
         "stats" : [
             { "stat" : "isOmnivore", "amount" : 1 },
             { "stat" : "maxEnergy", "baseMultiplier" : 1.2 },
-
+            
             { "stat" : "physicalResistance", "amount" : 0.1 },
-            { "stat" : "electricResistance", "amount" : -0.1 },
+            { "stat" : "electricResistance", "amount" : -0.1 }, 
             { "stat" : "fireResistance", "amount" : -0.4 }, // negative
             { "stat" : "iceResistance", "amount" : 0.3 }, //posiitive
             { "stat" : "poisonResistance", "amount" : 0.2 },
             { "stat" : "maxBreath", "amount" : 1500 }
         ],
-
-        "special" : [ "swimboost2" ],
-
-        "weaponEffects" : [
-            {
-                "weapons" : [ "energy" ],
-                "stats" : [
-                    { "stat" : "powerMultiplier", "baseMultiplier" : 1.15 },
-                    { "stat" : "critChance" , "amount" : 2 }
-                ]
-            },
-            {
-                "weapons" : [ "assaultrifle" ],
-                "stats" : [
-                    { "stat" : "critChance", "amount" : 1 }
-                ]
-            }
-        ],
-
+        "special" : [ "liquidEffect", "swimboost2" ],
         "liquidEffects" : [
             {
                 "liquids" : [ 1, 6, 58, 12 ],
@@ -2446,7 +1907,6 @@
                 ]
             }
         ],
-
         "envEffects" : [
             {
                 "biomes" : [ "ocean", "oceanfloor" ],
@@ -2456,7 +1916,7 @@
                 ]
             },
             {
-                "biomes" : "hot",
+                "biomes" : [ "desert", "desertwastes", "desertwastesdark", "magma", "magmadark", "volcanic", "volcanicdark" ],
                 "stats" : [
                     { "stat" : "maxEnergy", "baseMultiplier" : 0.3 }
                 ]

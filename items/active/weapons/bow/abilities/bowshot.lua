@@ -1,15 +1,16 @@
 require "/scripts/vec2.lua"
+require "/scripts/FRHelper.lua"
 
 -- Bow primary ability
 BowShot = WeaponAbility:new()
 
 function BowShot:init()
 	if not status.resource("food") then
-	 self.foodValue = 35
+	 	self.foodValue = 35
 	end
 	if not status.resource("energy") then
-	 self.energyValue = 100
-	end  
+		self.energyValue = 100
+	end
 	self.critChance = config.getParameter("critChance", 0)
 	self.critBonus = config.getParameter("critBonus", 0)
 	self.energyPerShot = self.energyPerShot or 0
@@ -20,17 +21,17 @@ function BowShot:init()
 	self:reset()
 
 	self.weapon.onLeaveAbility = function()
-	  self:reset()
+		self:reset()
 	end
 end
 
 
 
-  -- *******************************************************
-  -- FU Crit Damage Script
+	-- *******************************************************
+	-- FU Crit Damage Script
 
 function BowShot:setCritDamage(damage)
-	if not self.critChance then 
+	if not self.critChance then
 		self.critChance = config.getParameter("critChance", 0)
 	end
 	if not self.critBonus then
@@ -66,164 +67,119 @@ function BowShot:setCritDamage(damage)
 
   return damage
 end
-  -- *******************************************************
+	-- *******************************************************
 
 
 
 function BowShot:update(dt, fireMode, shiftHeld)
-  WeaponAbility.update(self, dt, fireMode, shiftHeld)
+	WeaponAbility.update(self, dt, fireMode, shiftHeld)
 
-  self.cooldownTimer = math.max(0, self.cooldownTimer - self.dt)
+	self.cooldownTimer = math.max(0, self.cooldownTimer - self.dt)
 
-  if not self.weapon.currentAbility and self.fireMode == (self.activatingFireMode or self.abilitySlot) and self.cooldownTimer == 0 and (self.energyPerShot == 0 or not status.resourceLocked("energy")) then
-    self:setState(self.draw)
-  end
+	if not self.weapon.currentAbility and self.fireMode == (self.activatingFireMode or self.abilitySlot) and self.cooldownTimer == 0 and (self.energyPerShot == 0 or not status.resourceLocked("energy")) then
+		self:setState(self.draw)
+	end
 end
 
 function BowShot:uninit()
-  status.clearPersistentEffects("weaponbonusdmgbow")
-  self:reset()
+	if self.helper then
+		self.helper:clearPersistent()
+	end
+	self:reset()
 end
 
 function BowShot:reset()
-  animator.setGlobalTag("drawFrame", "0")
-  self.weapon:setStance(self.stances.idle)
+	animator.setGlobalTag("drawFrame", "0")
+	self.weapon:setStance(self.stances.idle)
 end
 
 function BowShot:draw()
-  self.weapon:setStance(self.stances.draw)
+	self.weapon:setStance(self.stances.draw)
 
-  animator.playSound("draw")
+	animator.playSound("draw")
 
-  while self.fireMode == (self.activatingFireMode or self.abilitySlot) do
-    if self.walkWhileFiring then mcontroller.controlModifiers({runningSuppressed = true}) end
+	while self.fireMode == (self.activatingFireMode or self.abilitySlot) do
+		if self.walkWhileFiring then mcontroller.controlModifiers({runningSuppressed = true}) end
 
-    self.drawTime = self.drawTime + self.dt
+		self.drawTime = self.drawTime + self.dt
 
-    local drawFrame = math.floor(root.evalFunction(self.drawFrameSelector, self.drawTime))
-    animator.setGlobalTag("drawFrame", drawFrame)
-    self.stances.draw.frontArmFrame = self.drawArmFrames[drawFrame + 1]
+		local drawFrame = math.floor(root.evalFunction(self.drawFrameSelector, self.drawTime))
+		animator.setGlobalTag("drawFrame", drawFrame)
+		self.stances.draw.frontArmFrame = self.drawArmFrames[drawFrame + 1]
 
-    coroutine.yield()
-  end
+		coroutine.yield()
+	end
 
-  self:setState(self.fire)
+	self:setState(self.fire)
 end
 
 function BowShot:fire()
-  self.weapon:setStance(self.stances.fire)
+	self.weapon:setStance(self.stances.fire)
 
-  animator.stopAllSounds("draw")
-  animator.setGlobalTag("drawFrame", "0")
+	animator.stopAllSounds("draw")
+	animator.setGlobalTag("drawFrame", "0")
 
-      -- *********************************
-      -- FR RACIAL BONUSES FOR WEAPONS   --- Bonus effect when attacking 
-      -- *********************************
-     self.foodValue = status.resource("food")  --check our Food level
-     self.energyValue = status.resource("energy")  --check our energy level
-     
-     local species = world.entitySpecies(activeItem.ownerEntityId())
-     -- Primary hand, or single-hand equip  
-     local heldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand())
-     --used for checking dual-wield setups
-     local opposedhandHeldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand() == "primary" and "alt" or "primary")
+	-- *********************************
+	-- FR RACIAL BONUSES FOR WEAPONS	--- Bonus effect when attacking
+	-- *********************************
+	self.species = world.entitySpecies(activeItem.ownerEntityId())
 
-	 if species == "floran" then
-	  if heldItem and status.resource("food") then
-	    status.modifyResource("food", (self.foodValue * -0.02) )
-	  elseif not status.resource("food") then
-	    self.foodValue = 35
-	  end
-         end
-         
-            if species == "lamia" then      -- lamia get increased crit chance with high energy
-	       if not status.resource("energy") then
-	         self.energyValue = 100
-	       end  
-	       local randValueCritBonus = math.random(4)
-	       local critValueLamia = ( randValueCritBonus + math.ceil(self.energyValue/40) ) 	       
-	       if math.random(10) ==1  then
-		  self.attackType = math.random(6)
-		  if (self.attackType) == 1 and (self.energyValue) >= 100 then
-		    params = { power = self.energyValue/10 , damageKind = "default", speed = 45, timeToLive = 3 }	
-		    projectileId = world.spawnProjectile("purplearrow",self:firePosition(),activeItem.ownerEntityId(),self:aimVector(),false,params)
-		  elseif (self.attackType) == 2 and (self.energyValue) >= 100 then
-		    params = { power = self.energyValue/12 , damageKind = "default", speed = 60, timeToLive = 3 }	
-		    projectileId = world.spawnProjectile("chargedpurplearrow",self:firePosition(),activeItem.ownerEntityId(),self:aimVector(),false,params)
-		  elseif (self.attackType) == 3 and (self.energyValue) >= 100 then
-		    params = { power = self.energyValue/12 , damageKind = "electric", speed = 30, timeToLive = 1 }	
-		    projectileId = world.spawnProjectile("magentaglobelamia",self:firePosition(),activeItem.ownerEntityId(),self:aimVector(),false,params)	
-		  elseif (self.attackType) == 4 and (self.energyValue) >= 100 then
-		    params = { power = self.energyValue/12 , damageKind = "poison", speed = 50, timeToLive = 1 }	
-		    projectileId = world.spawnProjectile("poisonplasma",self:firePosition(),activeItem.ownerEntityId(),self:aimVector(),false,params)			    
-		  elseif (self.attackType) == 5 and (self.energyValue) >= 100 then
-		    params = { power = self.energyValue/12 , damageKind = "default", speed = 50, timeToLive = 1 }	
-		    projectileId = world.spawnProjectile("ngravitybolt",self:firePosition(),activeItem.ownerEntityId(),self:aimVector(),false,params)
-		  elseif (self.attackType) == 6 and (self.energyValue) >= 100 then
-		    params = { power = self.energyValue/12 , damageKind = "fire", speed = 30, timeToLive = 1 }	
-		    projectileId = world.spawnProjectile("orangeglobelamia",self:firePosition(),activeItem.ownerEntityId(),self:aimVector(),false,params)		    
-		  else
-		    params = { power = self.energyValue/12 , damageKind = "poison", speed = self.energyValue/3, timeToLive = 3 }	
-		    projectileId = world.spawnProjectile("purplearrow",self:firePosition(),activeItem.ownerEntityId(),self:aimVector(),false,params)		  
-		  end		  
-	       end	       
-	       if self.energyValue >= (status.stat("maxEnergy")*0.5) then   -- with high Energy reserve, lamia get increased Bow crit chance
-		      status.modifyResource("energy", (self.energyValue * -0.01) )  -- consume energy
-		      status.setPersistentEffects("weaponbonusdmgbow", {
-		        {stat = "critChance", amount = critValueLamia},
-		        {stat = "powerMultiplier", baseMultiplier = 1 + (critValueLamia/100) * 2}
-		      })  
-	       end	  
-            end           
-         
-  if not world.pointTileCollision(self:firePosition()) and status.overConsumeResource("energy", self.energyPerShot) then
-    world.spawnProjectile(
-        self:perfectTiming() and self.powerProjectileType or self.projectileType,
-        self:firePosition(),
-        activeItem.ownerEntityId(),
-        self:aimVector(),
-        false,
-        self:currentProjectileParameters()
-      )
+    if self.species then
+		if not self.helper then
+			self.helper = FRHelper:new(self.species)
+			self.helper:loadWeaponScripts("bowshot-fire")
+		end
+		self.helper:runScripts("bowshot-fire", self)
+	end
 
-    if self:perfectTiming() then
-      animator.playSound("perfectRelease")
-    else
-      animator.playSound("release")
-    end
+	if not world.pointTileCollision(self:firePosition()) and status.overConsumeResource("energy", self.energyPerShot) then
+		world.spawnProjectile(
+			self:perfectTiming() and self.powerProjectileType or self.projectileType,
+			self:firePosition(),
+			activeItem.ownerEntityId(),
+			self:aimVector(),
+			false,
+			self:currentProjectileParameters()
+		)
 
-    self.drawTime = 0
+		if self:perfectTiming() then
+			animator.playSound("perfectRelease")
+		else
+			animator.playSound("release")
+		end
 
-    util.wait(self.stances.fire.duration)
-  end
+		self.drawTime = 0
 
-  self.cooldownTimer = self.cooldownTime
-  activeItem.setInstanceValue("critChanceMultiplier",0 )  -- set crit back to default value
+		util.wait(self.stances.fire.duration)
+	end
+
+	self.cooldownTimer = self.cooldownTime
+	activeItem.setInstanceValue("critChanceMultiplier",0 )	-- set crit back to default value
 end
 
 function BowShot:perfectTiming()
-  return self.drawTime > self.powerProjectileTime[1] and self.drawTime < self.powerProjectileTime[2]
+	return self.drawTime > self.powerProjectileTime[1] and self.drawTime < self.powerProjectileTime[2]
 end
 
 function BowShot:currentProjectileParameters()
-  local projectileParameters = copy(self.projectileParameters or {})
-  local projectileConfig = root.projectileConfig(self:perfectTiming() and self.powerProjectileType or self.projectileType)
-  projectileParameters.speed = projectileParameters.speed or projectileConfig.speed
-  projectileParameters.speed = projectileParameters.speed * root.evalFunction(self.drawSpeedMultiplier, self.drawTime)
-  projectileParameters.power = projectileParameters.power or projectileConfig.power
-  --projectileParameters.power = projectileParameters.power* self.weapon.damageLevelMultiplier* root.evalFunction(self.drawPowerMultiplier, self.drawTime) + BowShot:setCritDamage(damage)
-  projectileParameters.power = BowShot:setCritDamage( projectileParameters.power* self.weapon.damageLevelMultiplier* root.evalFunction(self.drawPowerMultiplier, self.drawTime))
-  projectileParameters.powerMultiplier = activeItem.ownerPowerMultiplier()
+	local projectileParameters = copy(self.projectileParameters or {})
+	local projectileConfig = root.projectileConfig(self:perfectTiming() and self.powerProjectileType or self.projectileType)
+	projectileParameters.speed = projectileParameters.speed or projectileConfig.speed
+	projectileParameters.speed = projectileParameters.speed * root.evalFunction(self.drawSpeedMultiplier, self.drawTime)
+	projectileParameters.power = projectileParameters.power or projectileConfig.power
+	--projectileParameters.power = projectileParameters.power* self.weapon.damageLevelMultiplier* root.evalFunction(self.drawPowerMultiplier, self.drawTime) + BowShot:setCritDamage(damage)
+	projectileParameters.power = BowShot:setCritDamage( projectileParameters.power* self.weapon.damageLevelMultiplier* root.evalFunction(self.drawPowerMultiplier, self.drawTime))
+	projectileParameters.powerMultiplier = activeItem.ownerPowerMultiplier()
 
-  return projectileParameters
+	return projectileParameters
 end
 
 function BowShot:aimVector()
-  local aimVector = vec2.rotate({1, 0}, self.weapon.aimAngle + sb.nrand(self.inaccuracy or 0, 0))
-  aimVector[1] = aimVector[1] * self.weapon.aimDirection
-  return aimVector
+	local aimVector = vec2.rotate({1, 0}, self.weapon.aimAngle + sb.nrand(self.inaccuracy or 0, 0))
+	aimVector[1] = aimVector[1] * self.weapon.aimDirection
+	return aimVector
 end
 
 function BowShot:firePosition()
-  return vec2.add(mcontroller.position(), activeItem.handPosition(self.fireOffset))
+	return vec2.add(mcontroller.position(), activeItem.handPosition(self.fireOffset))
 end

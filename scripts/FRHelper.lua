@@ -1,9 +1,11 @@
 require("/scripts/util.lua")
 
 FRHelper = {}
+DynamicScripts = {}
 
 function FRHelper:new(species)
     local frHelper = {}
+    frHelper.frconfig = root.assetJson("/frackinraces.config")
 
     frHelper.species = species
     frHelper.config = root.assetJson("/scripts/raceEffects.config")
@@ -12,11 +14,11 @@ function FRHelper:new(species)
     frHelper.stats = frHelper.speciesConfig.stats                          -- status modifiers
     frHelper.controlModifiers = frHelper.speciesConfig.controlModifiers    -- control modifiers
     frHelper.controlParameters = frHelper.speciesConfig.controlParameters  -- control parameters
-    frHelper.envEffects = frHelper.speciesConfig.envEffects                -- environmental effects
-    frHelper.weaponEffects = frHelper.speciesConfig.weaponEffects          -- weapon effects
+    --frHelper.envEffects = frHelper.speciesConfig.envEffects              -- environmental effects
+    --frHelper.weaponEffects = frHelper.speciesConfig.weaponEffects        -- weapon effects
     frHelper.special = frHelper.speciesConfig.special                      -- status effects applied
 
-    frHelper.scripts = frHelper.speciesConfig.scripts                      -- Scripts
+    --frHelper.scripts = frHelper.speciesConfig.weaponScripts              -- Scripts
     frHelper.scriptCalls = {}                                              -- Stores the loaded script calls
 
     frHelper.persistentEffects = {}
@@ -26,44 +28,18 @@ function FRHelper:new(species)
 end
 
 -- Applies the given status parameters (name is required for setting persistent effects)
-function FRHelper:applyStats(stats, name, params)
+-- Extra arguments are sent to any scripts run
+function FRHelper:applyStats(stats, name, ...)
     if name then
         status.setPersistentEffects(name, stats.stats or {})
         self.persistentEffects[name] = true
     end
     self:applyControlModifiers(stats.controlModifiers, stats.controlParameters)
-    self:loadScripts(stats.scripts)
-    self:runScripts(stats.scripts, params)
-end
-
--- Grabs the valid weapon effects and loads any attached scripts
-function FRHelper:initWeaponEffects(primaryItem, altItem)
-    if not self.weaponEffects then return end
-    if not self.currentWeaponEffects then self.currentWeaponEffects = {} end
-
-    for i,weap in ipairs(self.weaponEffects or {}) do
-        if weap.combos then -- Weapon combos
-            for _,combo in ipairs(weap.combos) do
-                if self:validCombo(primaryItem, altItem, combo) then
-                    self.currentWeaponEffects[weap.name or "FR_weaponComboEffect"..i] = weap
-                    break
-                end
-            end
-        elseif weap.weapons then -- Single weapons
-            for _,thing in ipairs(weap.weapons) do
-                if (primaryItem and root.itemHasTag(primaryItem, thing)) or (altItem and root.itemHasTag(altItem, thing)) then
-                    self.currentWeaponEffects[weap.name or "FR_weaponEffect"..i] = weap
-                    break
-                end
-            end
+    if stats.scripts then
+        for _,script in ipairs(stats.scripts) do
+            sb.logInfo(script.script)
+            self:runScript(script, ...)
         end
-    end
-end
-
--- Applies the effects gathered in initWeaponEffects
-function FRHelper:applyWeaponEffects()
-    for name,e in pairs(self.currentWeaponEffects or {}) do
-        self:applyStats(e, name)
     end
 end
 
@@ -97,32 +73,60 @@ function FRHelper:clearPersistent(name)
     end
 end
 
+-- For weaponabilities
+function clearPersistent(name)
+    if not self.helper then return end
+    self.helper:clearPersistent(name)
+end
+
 -- Applies the set control modifiers/parameters. Missing arguments are replaced with default.
 function FRHelper:applyControlModifiers(cM, cP)
     mcontroller.controlModifiers(cM or self.controlModifiers or {})
     mcontroller.controlParameters(cP or self.controlParameters or {})
 end
 
--- Loads all scripts that match the given contexts
-function FRHelper:loadScripts(contexts)
+-- Load the given script (scripts without context are added to "racialscript" instead)
+function FRHelper:loadScript(script)
+    local contexts = script.contexts
+    local path = script.script
+    local args = script.args
     if type(contexts) == "string" then contexts = {contexts} end
-    if self.scripts and contexts then
-        -- For each script setting
-        for _,thing in ipairs(self.scripts) do
-            -- Check if it matches any of the contexts
-            for _,context in ipairs(contexts) do
-                -- If it matches, load the script and add the call and args to the list
-                if contains(thing.contexts, context) then
-                    self.scriptCalls[context] = self.scriptCalls[context] or {}
-                    if self:scriptLoaded(thing.script) then
-                        self.scriptCalls[context][thing.script] = { call=self.scriptCalls[thing.script], args=thing.args}
-                    else
-                        require(thing.script)
-                        self.scriptCalls[thing.script] = call
-                        _SBLOADED[thing.script] = true
-                        self.scriptCalls[context][thing.script] = { call=call, args=thing.args }
-                        call = nil
+    if not contexts then contexts = {"racialscript"} end
+    for _,context in ipairs(contexts) do
+        self.scriptCalls[context] = self.scriptCalls[context] or {}
+        self.scriptCalls[context][args or path] = path
+        if not scriptLoaded(script.script) then
+            self.call = nil
+            require(script.script)
+            DynamicScripts[path] = self.call   -- Add to loaded script list
+            self.call = nil
+        end
+    end
+end
+
+-- Loads weapon scripts (important)
+function FRHelper:loadWeaponScripts(contexts)
+    if type(contexts) == "string" then contexts = {contexts} end
+    -- For each script setting
+    for _,thing in ipairs(self.speciesConfig.weaponScripts or {}) do
+        -- Check if it matches any of the contexts
+        for _,context in ipairs(contexts or {}) do
+            -- If it matches, load the script and add the call and args to the list
+            if contains(thing.contexts, context) then
+                -- If there's a weapon type restriction, check it
+                if thing.weapons then
+                    local doLoad = false
+                    for _,weap in ipairs(thing.weapons) do
+                        if root.itemHasTag(world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand()), weap) then
+                            doLoad = true
+                            break
+                        end
                     end
+                    -- If blacklisting, don't load weapons that matched, but load those that didn't
+                    if thing.blacklist then doLoad = not doLoad end
+                    if doLoad then self:loadScript(thing) end
+                else
+                    self:loadScript(thing)
                 end
             end
         end
@@ -131,19 +135,35 @@ end
 
 -- Runs all of the loaded scripts of the given context(s)
 -- Params is extra things that can be sent (typically parameters from the parent function)
-function FRHelper:runScripts(contexts, params)
-    params = params or {}
-    params.helper = self  -- Fix weird scope issues
+-- NOTE: For extra parameters, the standard is self, method args, then anything extra!
+function FRHelper:runScripts(contexts, ...)
     if type(contexts) == "string" then contexts = {contexts} end
     for _,context in ipairs(contexts or {}) do
-        if not context or not self.scriptCalls[context] then return end
-        for _,thing in pairs(self.scriptCalls[context] or {}) do
-            thing.call(thing.args, params)
+        for args,path in pairs(self.scriptCalls[context] or {}) do
+            if DynamicScripts[path] then
+                self.call = DynamicScripts[path]
+                self:call(args, ...)
+                self.call = nil
+            end
         end
     end
 end
 
+-- For running one specific script, loads if necessary.
+function FRHelper:runScript(script, ...)
+    local path = script.script
+    local args = script.args
+    if not scriptLoaded(path) then
+        self:loadScript(script)
+    end
+    if DynamicScripts[path] then
+        self.call = DynamicScripts[path]
+        self:call(args, ...)
+        self.call = nil
+    end
+end
+
 -- Returns whether the given script is loaded
-function FRHelper:scriptLoaded(script)
+function scriptLoaded(script)
     return _SBLOADED[script] or false
 end

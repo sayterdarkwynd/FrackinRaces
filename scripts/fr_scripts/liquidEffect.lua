@@ -23,42 +23,28 @@ require("/scripts/util.lua")
 
 ]]
 
-function init()
-    self.species = world.entitySpecies(entity.id())
-    if not self.species then return end
-
-    self.raceConfig = root.assetJson("/scripts/raceEffects.config")[self.species]
-
-    script.setUpdateDelta(10)
-end
-
-function update(dt)
-    if not self.raceConfig then init() end
-
+function FRHelper:call(args, ...)
     local mouthPosition = vec2.add(mcontroller.position(), status.statusProperty("mouthPosition"))
 
-    for i,thing in ipairs(self.raceConfig.liquidEffects or {}) do
+    for i,thing in ipairs(args or {}) do
+        if thing.liquids then
+            -- Liquid map translation, allows for easy file reading (put in "milk" instead of 7)
+            for i,liquid in ipairs(thing.liquids) do
+                if type(liquid) == "string" then
+                    thing.liquids[i] = self.frconfig.liquidMaps[liquid]
+                end
+            end
+        end
         if world.liquidAt(mouthPosition) and (not thing.liquids or contains(thing.liquids, mcontroller.liquidId())) then
-            status.setPersistentEffects(thing.name or "liquidEffect"..i, thing.stats)
-            mcontroller.controlModifiers(thing.controlModifiers)
-            mcontroller.controlParameters(thing.controlParameters)
+            self:applyStats(thing, thing.name or "liquidEffect"..i, ...)
             for x,thing2 in ipairs(thing.status or {}) do
                 status.addEphemeralEffect(thing2, math.huge)
             end
         else
-            status.clearPersistentEffects(thing.name or "liquidEffect"..i)
+            self:clearPersistent(thing.name or "liquidEffect"..i)
             for x,thing2 in ipairs(thing.status or {}) do
                 status.removeEphemeralEffect(thing2)
             end
-        end
-    end
-end
-
-function uninit()
-    for i,thing in ipairs(self.raceConfig.liquidEffects or {}) do
-        status.clearPersistentEffects(thing.name or "liquidEffect"..i)
-        for x,thing2 in ipairs(thing.status or {}) do
-            status.removeEphemeralEffect(thing2)
         end
     end
 end
