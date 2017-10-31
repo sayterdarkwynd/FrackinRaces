@@ -30,7 +30,6 @@
             }
         ],
 
-<<<<<<< HEAD
         "weaponEffects" : [
             {
                 "weapons" : [ "fist" ],
@@ -49,8 +48,6 @@
             }
         ],
 
-=======
->>>>>>> 8e24ae96ae705a4953e22f684678c0a8f650c2fe
         "special" : [ "apexRageBonus" ]
     },
 
@@ -86,7 +83,14 @@
             }
         ],
 
-        "special" : [ "aerialEffect" ],
+        "weaponScripts" : [
+            {
+                "script" : "/scripts/fr_weaponscripts/aviancombo.lua",
+                "weapons" : [ "dagger" ],
+                "contexts" : [ "meleeslash-fire" ]
+            }
+        ],
+
         "aerialEffect" : {
             "airStats" : {
                 "stats" : [
@@ -147,7 +151,6 @@
             }
         ],
 
-<<<<<<< HEAD
         "weaponEffects" : [
             {
                 "weapons" : [ "bow" ],
@@ -164,15 +167,28 @@
                 "stats" : [
                     { "stat" : "powerMultiplier", "baseMultiplier" : 1.08 }
                 ]
+            },
+            {
+                "weapons" : [ "spear" ],
+                "stats" : [
+                    { "stat" : "critChance", "amount" : 3 }
+                ]
             }
         ],
 
         "weaponScripts" : [
             {
                 "script" : "/scripts/fr_weaponscripts/hungercost.lua",
-                "contexts" : [ "boomerang-fire", "fist-combo" ],
+                "contexts" : [ "boomerang-fire" ],
                 "args" : {
-                    "food" : -0.02
+                    "food" : -0.01
+                }
+            },
+            {
+                "script" : "/scripts/fr_weaponscripts/hungercost.lua",
+                "contexts" : [ "fist-combo" ],
+                "args" : {
+                    "food" : -0.002
                 }
             },
             {
@@ -181,11 +197,46 @@
                 "args" : {
                     "food" : -0.02
                 }
+            },
+            {
+                "script" : "/scripts/fr_weaponscripts/hungercost.lua",
+                "contexts" : [ "meleecombo-fire" ],
+                "args" : {
+                    "food" : -0.005
+                }
+            },
+            {
+                "script" : "/scripts/fr_weaponscripts/hungercost.lua",
+                "blacklist" : true,
+                "weapons" : [ "spear", "dagger" ],
+                "contexts" : [ "meleeslash-fire" ],
+                "args" : {
+                    "food" : -0.005
+                }
+            },
+            {
+                "script" : "/scripts/fr_weaponscripts/hungercost.lua",
+                "weapons" : [ "spear", "dagger" ],
+                "contexts" : [ "meleeslash-fire" ],
+                "args" : {
+                    "food" : -0.01
+                }
+            },
+            {
+                "script" : "/scripts/fr_weaponscripts/randprojectile.lua",
+                "weapons" : [ "spear", "dagger" ],
+                "contexts" : [ "meleeslash-fire" ],
+                "args" : {
+                    "projectile" : "furazorleafinvis",
+                    "chance" : 3,
+                    "params" : {
+                        "hungermod" : 12,
+                        "damageKind" : "poison"
+                    }
+                }
             }
         ],
 
-=======
->>>>>>> 8e24ae96ae705a4953e22f684678c0a8f650c2fe
         "special" : [ "starvingedgefloran", "lightregenfloran" ]
     },
 
@@ -207,7 +258,6 @@
             { "stat" : "beestingImmunity", "amount" : 1 }
         ],
 
-<<<<<<< HEAD
         "weaponEffects" : [
             {
                 "weapons" : [ "bow" ],
@@ -249,9 +299,7 @@
             }
         ],
 
-=======
->>>>>>> 8e24ae96ae705a4953e22f684678c0a8f650c2fe
-        "special" : [ "liquidEffect", "glitchStuff" ],
+        "special" : [ "glitchStuff" ],
         "liquidEffects" : [
             {
                 "name" : "glitchLiquidEffect",
@@ -364,7 +412,7 @@
             }
         ],
 
-        "special" : [ "liquidEffect", "swimboost2" ],
+        "special" : [ "swimboost2" ],
         "liquidEffects" : [
             {
                 "liquids" : [ 1, 6, 58, 12 ],
@@ -513,7 +561,6 @@
             }
         ],
 
-        "special" : [ "aerialEffect" ],
         "aerialEffect" : {
             "airStats" : {
                 "stats" : [
@@ -655,6 +702,23 @@
                     { "stat" : "maxEnergy", "baseMultiplier" : 1.20 }
                 ]
             }
+        ],
+
+        "weaponEffects" : [
+            {
+                "weapons" : [ "boomerang", "chakram" ],
+                "stats" : [
+                    { "stat" : "critChance", "amount" : 10 },
+                    { "stat" : "critBonus", "amount" : 20 }
+                ]
+            },
+            {
+                "weapons" : [ "fist" ],
+                "stats" : [
+                    { "stat" : "grit", "amount" : 0.25 },
+                    { "stat" : "physicalResistance", "amount" : 0.2 }
+                ]
+            }
         ]
     },
 
@@ -743,7 +807,6 @@
             "minimumLiquidPercentage" : 0.4,
             "liquidForce" : 25,
             "groundForce" : 115
-<<<<<<< HEAD
         },
 
         "weaponEffects" : [
@@ -772,9 +835,6 @@
                 ]
             }
         ]
-=======
-        }
->>>>>>> 8e24ae96ae705a4953e22f684678c0a8f650c2fe
     },
 
     "familiar" : {
@@ -830,7 +890,6 @@
                     { "stat" : "protection", "baseMultiplier" : 1.05 }
                 ]
             }
-<<<<<<< HEAD
         ],
 
         "weaponEffects" : [
@@ -849,7 +908,8 @@
             {
                 "combos" : [
                     [ "fist", "fist" ],
-                    [ "dagger", "dagger" ]],
+                    [ "dagger", "dagger" ]
+                ],
                 "stats" : [
                     { "stat" : "powerMultiplier", "baseMultiplier" : 1.03 },
                     { "stat" : "critBonus", "amount" : 10 }
@@ -862,8 +922,6 @@
                     "airJumpModifier" : 1.05
                 }
             }
-=======
->>>>>>> 8e24ae96ae705a4953e22f684678c0a8f650c2fe
         ]
     },
 
@@ -897,7 +955,6 @@
             }
         ],
 
-<<<<<<< HEAD
         "weaponEffects" : [
             {
                 "weapons" : [ "boomerang", "chakram", "spear" ],
@@ -908,8 +965,6 @@
             }
         ],
 
-=======
->>>>>>> 8e24ae96ae705a4953e22f684678c0a8f650c2fe
         "special" : [ "darkregenfenerox" ]
     },
 
@@ -1024,8 +1079,25 @@
             {
                 "weapons" : [ "broadsword" ],
                 "stats" : [
-                    { "stats" : "powerMultiplier", "baseMultiplier" : 1.20 }
+                    { "stat" : "powerMultiplier", "baseMultiplier" : 1.20 },
+                    { "stat" : "physicalResistance", "amount" : 0.1 }
                 ]
+            }
+        ],
+
+        "weaponScripts" : [
+            {
+                "weapons" : [ "broadsword" ],
+                "contexts" : [ "meleecombo-fire" ],
+                "script" : "/scripts/fr_weaponscripts/randprojectile.lua",
+                "args" : {
+                    "projectile" : "fireball",
+                    "chance" : 10,
+                    "params" : {
+                        "power" : 2.2,
+                        "damageKind" : "fire"
+                    }
+                }
             }
         ],
 
@@ -1055,6 +1127,18 @@
                 "stats" : [
                     { "stat" : "powerMultiplier", "baseMultiplier" : 1.30 }
                 ]
+            }
+        ],
+
+        "weaponScripts" : [
+            {
+                "script" : "/scripts/fr_weaponscripts/combobonus.lua",
+                "contexts" : [ "meleecombo-fire" ],
+                "args" : {
+                    "stats" : [
+                        { "stat" : "protection", "amount" : 3}
+                    ]
+                }
             }
         ]
     },
@@ -1109,7 +1193,6 @@
 
         "controlModifiers" : {
             "airJumpModifier" : 1.20
-<<<<<<< HEAD
         },
 
         "weaponEffects" : [
@@ -1139,9 +1222,6 @@
                 "contexts" : [ "bowshot-fire" ]
             }
         ]
-=======
-        }
->>>>>>> 8e24ae96ae705a4953e22f684678c0a8f650c2fe
     },
 
     "mantizi" : {
@@ -1219,7 +1299,6 @@
             }
         ],
 
-<<<<<<< HEAD
         "weaponEffects" : [
             {
                 "weapons" : [ "spear" ],
@@ -1246,9 +1325,7 @@
             }
         ],
 
-=======
->>>>>>> 8e24ae96ae705a4953e22f684678c0a8f650c2fe
-        "special" : [ "liquidEffect", "swimboost2" ],
+        "special" : [ "swimboost2" ],
         "liquidEffects" : [
             {
                 "liquids" : [ 1, 58, 12 ],  // water, healing water, and swamp water
@@ -1349,6 +1426,47 @@
             }
         ],
 
+        "weaponScripts" : [
+            {
+                "weapons" : [ "shortsword" ],
+                "contexts" : [ "meleecombo-fire" ],
+                "script" : "/scripts/fr_scripts/lightEffect.lua",
+                "args" : {
+                    "lightLevel" : 26,
+                    "dark" : true,
+                    "scripts" : [
+                        {
+                            "script" : "/scripts/fr_weaponscripts/randprojectile.lua",
+                            "args" : {
+                                "projectile" : "nightarmeleeslash",
+                                "chance" : 3,
+                                "params" : { "power" : 5 }
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "weapons" : [ "broadsword" ],
+                "contexts" : [ "meleecombo-fire" ],
+                "script" : "/scripts/fr_scripts/lightEffect.lua",
+                "args" : {
+                    "lightLevel" : 26,
+                    "dark" : true,
+                    "scripts" : [
+                        {
+                            "script" : "/scripts/fr_weaponscripts/randprojectile.lua",
+                            "args" : {
+                                "projectile" : "nightarmeleeslash",
+                                "chance" : 6,
+                                "params" : { "power" : 5 }
+                            }
+                        }
+                    ]
+                }
+            }
+        ],
+
         "special" : [ "nightarglow3", "darkhunternightar" ]
     },
 
@@ -1413,7 +1531,7 @@
             }
         ],
 
-        "special" : [ "liquidEffect", "swimboost3" ],
+        "special" : [ "swimboost3" ],
         "liquidEffects" : [
             {
                 "liquids" : [ 1, 6 ],
@@ -1481,7 +1599,6 @@
         "controlModifiers" : {
             "speedModifier" : 1.12,
             "airJumpModifier" : 1.06
-<<<<<<< HEAD
         },
 
         "weaponEffects" : [
@@ -1499,9 +1616,6 @@
                 ]
             }
         ]
-=======
-        }
->>>>>>> 8e24ae96ae705a4953e22f684678c0a8f650c2fe
     },
 
     "skelekin" : {
@@ -1535,11 +1649,11 @@
             }
         ],
 
-        "special" : [ "liquidEffect", "skelekinRegen" ],
+        "special" : [ "skelekinRegen" ],
         "liquidEffects" : [
             {   // milk, alien juice, blood, and dark water
                 "name" : "skelekinGoodLiquid",
-                "liquids" : [ 7, 55, 40, 60],
+                "liquids" : [ "milk", "alienjuice", "blood", "darkwater"],
                 "stats" : [
                     { "stat" : "maxHealth", "baseMultiplier" : 1.25 },
                     { "stat" : "maxEnergy", "baseMultiplier" : 1.25 },
@@ -1549,7 +1663,7 @@
             },
             {   // healing water bad
                 "name" : "skelekinBadLiquid",
-                "liquids" : [ 6 ],
+                "liquids" : [ "healingwater" ],
                 "stats" : [
                     { "stat" : "maxHealth", "baseMultiplier" : 0.85 },
                     { "stat" : "maxEnergy", "baseMultiplier" : 0.85 },
@@ -1647,7 +1761,6 @@
                     "speedModifier" : 1.18
                 }
             }
-<<<<<<< HEAD
         ],
 
         "weaponEffects" : [
@@ -1671,9 +1784,30 @@
                     { "stat" : "physicalResistance", "amount" : 0.05 },
                     { "stat" : "critChance", "amount" : 2 }
                 ]
+            },
+            {
+                "weapons" : [ "rapier", "dagger", "shortsword" ],
+                "stats" : [
+                    { "stat" : "physicalResistance", "amount" : 0.15 },
+                    { "stat" : "powerMultiplier", "baseMultiplier" : 1.12 }
+                ]
             }
-=======
->>>>>>> 8e24ae96ae705a4953e22f684678c0a8f650c2fe
+        ],
+
+        "weaponScripts" : [
+            {
+                "weapons" : [ "rapier", "dagger", "shortsword" ],
+                "script" : "/scripts/fr_weaponscripts/randprojectile.lua",
+                "contexts" : [ "meleecombo-fire" ],
+                "args" : {
+                    "projectile" : "meleelash",
+                    "chance" : 5,
+                    "params" : {
+                        "power" : 6,
+                        "damageKind" : "electric"
+                    }
+                }
+            }
         ]
     },
 
@@ -1732,7 +1866,6 @@
             }
         ],
 
-        "special" : [ "aerialEffect" ],
         "aerialEffect" : {
             "fallStats" : {
                 "controlParameters" : {
@@ -1744,28 +1877,48 @@
             }
         }
     },
-    
+<<<<<<< HEAD
+
     "skath" : {
+=======
+    
+    "skath" : { 
+    //their damage is increased while wielding two handed weaponry (melee)
+>>>>>>> da771c7159c4353ee4fe9c3c4f3126a6350287c6
         "stats" : [
             { "stat" : "isOmnivore", "amount" : 1 },
             { "stat" : "maxEnergy", "baseMultiplier" : 1.2 },
-
-            { "stat" : "electricResistance", "amount" : -0.1 },
-            { "stat" : "fireResistance", "amount" : 0.2 },
-            { "stat" : "iceResistance", "amount" : -0.3 },
+            
+            { "stat" : "physicalResistance", "amount" : 0.1 },
+            { "stat" : "electricResistance", "amount" : -0.1 }, 
+            { "stat" : "fireResistance", "amount" : -0.4 }, // negative
+            { "stat" : "iceResistance", "amount" : 0.3 }, //posiitive
             { "stat" : "poisonResistance", "amount" : 0.2 },
-            { "stat" : "breathProtection", "amount" : 1 },
-            { "stat" : "poisonStatusImmunity", "amount" : 1 },
-            { "stat" : "fujungleslowImmunity", "amount" : 1 },
-            { "stat" : "jungleslowImmunity", "amount" : 1 }
+            { "stat" : "maxBreath", "amount" : 1500 }
         ],
-
+        "special" : [ "liquidEffect", "swimboost2" ],
+        "liquidEffects" : [
+            {
+                "liquids" : [ 1, 6, 58, 12 ],
+                "stats" : [
+                    { "stat" : "maxHealth", "baseMultiplier" : 1.15 },
+                    { "stat" : "physicalResistance", "amount" : 0.15 },
+                    { "stat" : "healthRegen", "amount" : 0.005 }
+                ]
+            }
+        ],
         "envEffects" : [
             {
                 "biomes" : [ "ocean", "oceanfloor" ],
                 "stats" : [
                     { "stat" : "maxHealth", "baseMultiplier" : 1.25 },
-                    { "stat" : "protection", "amount" : 8 }
+                    { "stat" : "protection", "amount" : 6 }
+                ]
+            },
+            {
+                "biomes" : [ "desert", "desertwastes", "desertwastesdark", "magma", "magmadark", "volcanic", "volcanicdark" ],
+                "stats" : [
+                    { "stat" : "maxEnergy", "baseMultiplier" : 0.3 }
                 ]
             }
         ]

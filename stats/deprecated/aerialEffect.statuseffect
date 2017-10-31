@@ -6,6 +6,6 @@
     "defaultDuration" : 3,
 
     "scripts" : [
-        "aerialEffect.lua"
+        "deprecated.lua"
     ]
 }

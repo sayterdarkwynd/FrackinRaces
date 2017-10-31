@@ -7,6 +7,13 @@ function init()
 
     self.helper = FRHelper:new(self.species)
 
+    -- Load extra scripts (environmental effects, aerial bonuses, etc.)
+    for map,path in pairs(self.helper.frconfig.scriptMaps) do
+        if self.helper.speciesConfig[map] then
+            self.helper:loadScript({script=path, args=self.helper.speciesConfig[map]})
+        end
+    end
+
     -- Add the stats
     self.statID = effect.addStatModifierGroup(self.helper.stats or {})
 
@@ -17,13 +24,8 @@ function update(dt)
     if not self.species then init() end
 
 	self.helper:applyControlModifiers()
-
-    -- Environmental Effects
-    for i,thing in ipairs(self.helper.envEffects or {}) do
-        if thing.biomes and contains(thing.biomes, world.type()) then
-            self.helper:applyStats(thing, "envEffect"..i)
-        end
-    end
+    self.helper:clearPersistent()
+    self.helper:runScripts("racialscript", self, dt)
 end
 
 function uninit()
