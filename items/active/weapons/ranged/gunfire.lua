@@ -152,7 +152,8 @@ function GunFire:auto()
 	end
 
     if self.helper then self.helper:runScripts("gunfire-postauto", self) end
-
+    
+    self.cooldownTimer = self.fireTime --* self.energymax
 	--sb.logInfo("lightLevel = "..lightLevel)
 	--sb.logInfo("energyMax = "..self.energyMax)
 	--sb.logInfo("cooldownTimer = "..self.cooldownTimer)
