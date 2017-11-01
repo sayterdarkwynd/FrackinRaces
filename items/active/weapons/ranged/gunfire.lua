@@ -1,6 +1,6 @@
 require "/scripts/util.lua"
 require "/scripts/interp.lua"
-
+require "/scripts/FRHelper.lua"
 -- Base gun fire ability
 GunFire = WeaponAbility:new()
 
