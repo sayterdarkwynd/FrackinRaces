@@ -4,10 +4,12 @@
 "value" : "A species of once livestock pigs were given a special drug by the miniknog which made them sentient. They then began an uprising and reproduced to create a race of pigmen. That race is the pyg.
 
 ^red;Big bellies require more food^reset;
-^red;Weak: 20% Fire^reset;
-^red;-5% walk speed^reset;
-^green;+10% jump, Resist: 30% Cold, 10% Poison^reset;
-^green;Gain additional vitality in gardens^reset;
+^red;Weak: 20% Fire, -5% walk speed^reset;
+^green;+10% jump, Resist: 30% Cold, 10% Poison, +20% HP^reset;
+^green;Gain additional vitality on Lush, Forest and Rainforest biomes^reset;
+^green;Attacking with Axe/Greataxe fills hunger^reset;
+^green;Spears and Shortspears gain +10% damage and speed^reset;
+^green;Scythes get +25% damage^reset;
 ^green;Attacking with axes fills hunger^reset;
 ^green;Unaffected by Mud^reset;"
 }
