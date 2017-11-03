@@ -37,7 +37,6 @@ function FRHelper:applyStats(stats, name, ...)
     self:applyControlModifiers(stats.controlModifiers, stats.controlParameters)
     if stats.scripts then
         for _,script in ipairs(stats.scripts) do
-            sb.logInfo(script.script)
             self:runScript(script, ...)
         end
     end
