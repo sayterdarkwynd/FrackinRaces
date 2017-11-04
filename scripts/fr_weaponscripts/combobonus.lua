@@ -7,7 +7,6 @@
 --     args.scripts            -- Activate other scripts?! #NOT HERE
 
 function FRHelper:call(args, main, ...)
-    sb.logInfo(sb.print(main.comboStep))
     if not main.comboStep then return end  -- Don't run in the wrong place!
     local multiplier = main.comboStep * (args.comboMult or 1)
     local newargs = {stats={}}
