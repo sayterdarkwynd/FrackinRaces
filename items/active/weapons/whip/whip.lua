@@ -2,6 +2,7 @@ require "/scripts/util.lua"
 require "/scripts/vec2.lua"
 require "/scripts/status.lua"
 require "/items/active/weapons/weapon.lua"
+require("/scripts/FRHelper.lua")
 
 function init()
     self.critChance = config.getParameter("critChance", 0)

@@ -1,6 +1,7 @@
 require "/scripts/util.lua"
 require "/scripts/interp.lua"
 require "/items/active/weapons/melee/meleeslash.lua"
+require("/scripts/FRHelper.lua")
 
 -- Axe primary attack
 -- Extends default melee attack and overrides windup and fire

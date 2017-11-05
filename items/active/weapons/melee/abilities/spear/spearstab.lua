@@ -1,4 +1,5 @@
 require "/items/active/weapons/melee/meleeslash.lua"
+require("/scripts/FRHelper.lua")
 
 -- Spear stab attack
 -- Extends normal melee attack and adds a hold state
