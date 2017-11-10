@@ -1,18 +1,11 @@
 require "/scripts/vec2.lua"
 require "/scripts/FRHelper.lua"
+require "/items/active/weapons/crits.lua"
 
 -- Bow primary ability
 BowShot = WeaponAbility:new()
 
 function BowShot:init()
-	if not status.resource("food") then
-	 	self.foodValue = 35
-	end
-	if not status.resource("energy") then
-		self.energyValue = 100
-	end
-	self.critChance = config.getParameter("critChance", 0)
-	self.critBonus = config.getParameter("critBonus", 0)
 	self.energyPerShot = self.energyPerShot or 0
 
 	self.drawTime = 0
@@ -24,52 +17,6 @@ function BowShot:init()
 		self:reset()
 	end
 end
-
-
-
-	-- *******************************************************
-	-- FU Crit Damage Script
-
-function BowShot:setCritDamage(damage)
-	if not self.critChance then
-		self.critChance = config.getParameter("critChance", 0)
-	end
-	if not self.critBonus then
-		self.critBonus = config.getParameter("critBonus", 0)
-	end
-
-     local heldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand())
-     local opposedhandHeldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand() == "primary" and "alt" or "primary")  
-     local weaponModifier = config.getParameter("critChance",0)
-     
-  if heldItem then
-        self.critChance = 0 + weaponModifier
-  end
-
-  if not self.critChance then self.critChance = 0 end
-  
-  self.critBonus = (status.stat("critBonus",0) + config.getParameter("critBonus",0))/2  
-  self.critChance = (self.critChance  + config.getParameter("critChanceMultiplier",0) + status.stat("critChanceMultiplier",0) + status.stat("critChance",0)) 
-  self.critRoll = math.random(200)
-  
-  local crit = self.critRoll <= self.critChance
-  damage = crit and ((damage*2) + self.critBonus) or damage
-  self.critChance = 0
-
-  if crit then
-    if heldItem then
-      -- exclude mining lasers
-      if not root.itemHasTag(heldItem, "mininggun") then 
-        status.addEphemeralEffect("crithit", 0.3, activeItem.ownerEntityId())
-      end
-    end
-  end
-
-  return damage
-end
-	-- *******************************************************
-
-
 
 function BowShot:update(dt, fireMode, shiftHeld)
 	WeaponAbility.update(self, dt, fireMode, shiftHeld)
@@ -154,7 +101,6 @@ function BowShot:fire()
 	end
 
 	self.cooldownTimer = self.cooldownTime
-	activeItem.setInstanceValue("critChanceMultiplier",0 )	-- set crit back to default value
 end
 
 function BowShot:perfectTiming()
@@ -168,7 +114,7 @@ function BowShot:currentProjectileParameters()
 	projectileParameters.speed = projectileParameters.speed * root.evalFunction(self.drawSpeedMultiplier, self.drawTime)
 	projectileParameters.power = projectileParameters.power or projectileConfig.power
 	--projectileParameters.power = projectileParameters.power* self.weapon.damageLevelMultiplier* root.evalFunction(self.drawPowerMultiplier, self.drawTime) + BowShot:setCritDamage(damage)
-	projectileParameters.power = BowShot:setCritDamage( projectileParameters.power* self.weapon.damageLevelMultiplier* root.evalFunction(self.drawPowerMultiplier, self.drawTime))
+	projectileParameters.power = Crits.setCritDamage(self, projectileParameters.power* self.weapon.damageLevelMultiplier* root.evalFunction(self.drawPowerMultiplier, self.drawTime))
 	projectileParameters.powerMultiplier = activeItem.ownerPowerMultiplier()
 
 	return projectileParameters

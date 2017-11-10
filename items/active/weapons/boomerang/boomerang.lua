@@ -2,10 +2,9 @@ require "/scripts/vec2.lua"
 require "/scripts/util.lua"
 require "/scripts/activeitem/stances.lua"
 require "/scripts/FRHelper.lua"
+require "/items/active/weapons/crits.lua"
 
 function init()
-    self.critChance = config.getParameter("critChance", 0)
-    self.critBonus = config.getParameter("critBonus", 0)
     --*************************************
     -- FU/FR ADDONS
 
@@ -32,31 +31,6 @@ function init()
     end
 
 end
-
-
-
--- *******************************************************
--- FU Crit Damage Script
-
-function setCritDamageBoomerang(damage)
-    -- check their equipped weapon
-    -- Primary hand, or single-hand equip
-    local heldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand())
-    --used for checking dual-wield setups
-    local opposedhandHeldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand() == "primary" and "alt" or "primary")
-
-    local critBonus = (status.stat("critBonus",0) + self.critBonus)/2
-    local critChance = self.critChance + config.getParameter("critChanceMultiplier",0) + status.stat("critChanceMultiplier",0) + status.stat("critChance",0)
-    local critRoll = math.random(200)
-
-    local crit = critRoll <= critChance
-    damage = crit and ((damage*2) + critBonus) or damage
-
-    return damage
-end
--- *******************************************************
-
-
 
 function update(dt, fireMode, shiftHeld)
     if not self.species then init() end
@@ -101,7 +75,7 @@ function fire()
     params.powerMultiplier = activeItem.ownerPowerMultiplier()
     params.ownerAimPosition = activeItem.ownerAimPosition()
 
-    params.power = setCritDamageBoomerang(params.power)
+    params.power = Crits.setCritDamage(self, params.power)
 
     -- Params enables modifying the boomerang projectile
     self.helper:runScripts("boomerang-fire", self, params)

@@ -193,14 +193,6 @@ function MeleeCombo:fire()
     -- FU/FR ABILITIES
     --*************************************
     local species = world.entitySpecies(activeItem.ownerEntityId())
-    if self.meleeCountcombo == nil then self.meleeCountcombo = 0	end
-    if self.meleeCountcombo2 == nil then self.meleeCountcombo2 = 0 end
-
-    -- Primary hand, or single-hand equip
-    local heldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand())
-    --used for checking dual-wield setups
-    local opposedhandHeldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand() == "primary" and "alt" or "primary")
-    local randValue = math.random(100)	-- chance for projectile
 
     if not self.helper then
 		self.helper = FRHelper:new(species)
@@ -208,7 +200,7 @@ function MeleeCombo:fire()
 	end
     self.helper:runScripts("meleecombo-fire", self)
 
---**************************************
+	--**************************************
 
 	util.wait(stance.duration, function()
         local damageArea = partDamageArea("swoosh")
@@ -219,13 +211,13 @@ function MeleeCombo:fire()
         self.comboStep = self.comboStep + 1
         self:setState(self.wait)
 	else
-        self.cooldownTimer = self.cooldowns[self.comboStep]
-	-- **** FR
-	-- old	self.cooldownTimer = math.max(0, self.cooldowns[self.comboStep] - attackSpeedUp)
+    	self.cooldownTimer = self.cooldowns[self.comboStep]
+		-- **** FR
+		-- old	self.cooldownTimer = math.max(0, self.cooldowns[self.comboStep] - attackSpeedUp)
 
-        self.cooldownTimer = math.max(0, self.cooldowns[self.comboStep] *( 1 - attackSpeedUp))
-	-- *****
-        self.comboStep = 1
+    	self.cooldownTimer = math.max(0, self.cooldowns[self.comboStep] *( 1 - attackSpeedUp))
+		-- *****
+    	self.comboStep = 1
 	end
 end
 
@@ -280,12 +272,4 @@ function MeleeCombo:uninit()
         self.helper:clearPersistent()
     end
 	self.weapon:setDamage()
-	status.clearPersistentEffects("floranFoodPowerBonus")
-	status.clearPersistentEffects("combobonusdmg")
-	status.clearPersistentEffects("combobonusdmg2")
-	status.clearPersistentEffects("dualwieldbonus")
-	status.clearPersistentEffects("hylotlbonusdmg")
-	status.clearPersistentEffects("glitchEnergyPower")
-	self.meleeCountcombo = 0
-	self.meleeCountcombo2 = 0
 end

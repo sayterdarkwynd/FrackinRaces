@@ -4,9 +4,6 @@ require "/items/active/weapons/weapon.lua"
 require "/scripts/FRHelper.lua"
 
 function init()
-    self.critChance = config.getParameter("critChance", 0)
-    self.critBonus = config.getParameter("critBonus", 0)
-
     --*************************************
     -- FU/FR ADDONS
 
