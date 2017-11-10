@@ -1,0 +1,16 @@
+[
+    { "op": "replace", 
+    "path" : "/charCreationTooltip/description" , 
+    "value" : "A race of clever colonial foxes. 
+    
+    ^red;Weak: 40% Shadow and Cosmic^reset;
+    ^red;Weak: 50% Poison and Radiation^reset;
+    ^red;Double Knockback^reset;
+    ^green;+15% speed and jump^reset;
+    ^green;10% less fall damage^reset; 
+    ^green;Resist: 20% Cold, 10% Fire^reset; 
+    ^green;Immunity to mild cold^reset;
+    ^green;Immunity to rainforest/desert heat^reset; 
+    ^green;Unaffected by slush and Snow^reset;"
+    }
+]
