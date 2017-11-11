@@ -5,8 +5,6 @@ require "/scripts/FRHelper.lua"
 
 
 function init()
-    self.critChance = config.getParameter("critChance", 0)
-    self.critBonus = config.getParameter("critBonus", 0)
     activeItem.setCursor("/cursors/reticle0.cursor")
 
     self.weapon = Weapon:new()
@@ -49,5 +47,4 @@ function uninit()
         self.helper:clearPersistent()
     end
     self.weapon:uninit()
-    activeItem.setInstanceValue("critChanceMultiplier",0 )  -- set crit back to default value
 end
