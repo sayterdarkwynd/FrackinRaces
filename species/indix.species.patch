@@ -12,6 +12,7 @@
     ^green;+20 % Ice, Cosmic and Shadow Resist^reset;
     Assault Rifle:^green;+2% Crit^reset;
     Machine Pistol:^green;+25% Crit Damage^reset;
-    Dagger:^green;+10% Damage, +2% Crit^reset;"
+    Dagger:^green;+10% Damage, +2% Crit^reset;
+    ^green;When 50% or higher in energy, gain health regen^reset;"
     }
 ]
