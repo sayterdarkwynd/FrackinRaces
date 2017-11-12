@@ -9,9 +9,9 @@
     ^green;+10% Energy, +5% Damage, Jump Boost, -65% Fall Damage, Slowed Fall^reset;
     ^green;Gain air mobility and additional Slowed Fall in light to moderate wind conditions^reset;
     ^green;When airborne gain +12% damage^reset;
-    ^green;Wands and Staves increase energy and +20% damage^reset;
-    ^green;Short Spear: +6% dmg, +1% Crit^reset;
-    ^green;Machine Pistol: +1% Crit^reset;
+    Wands and Stave: ^green; Increase energy and +20% damage^reset;
+    Short Spear: ^green;+6% dmg, +1% Crit^reset;
+    Machine Pistol: ^green;+1% Crit^reset;
     ^orange;Gain +15% resistance in wand/staves element^reset;
     ^yellow;Wand and Dagger combo can fire Cosmic Blasts (Energy/16 dmg)^reset;
     "

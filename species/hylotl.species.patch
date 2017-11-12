@@ -9,11 +9,11 @@
     ^green;On ocean biomes, gain protection , health and energy^reset; 
     ^green;Start game with Liquid Collection unlocked^reset; 
     ^green;Perfect Blocks restore HP (stacks)^reset; 
-    ^green;Swords: At 75% health, gain +2% Crit^reset;
-    ^green;Katana + Dagger: +8% Speed, +4 Protection, +1% Crit^reset;
-    ^green;Katana + Empty hand: +10% damage, +25% Crit Damage^reset;
-    ^green;Shortsword: +6% Dmg, +4% Speed^reset;    
-    ^green;Quarterstaff: +12% Speed, +6 Protection^reset;
+    Swords: ^green;At 75% health, gain +2% Crit^reset;
+    Katana + Dagger: ^green;+8% Speed, +4 Protection, +1% Crit^reset;
+    Katana + Empty hand: ^green;+10% damage, +25% Crit Damage^reset;
+    Shortsword: ^green;+6% Dmg, +4% Speed^reset;    
+    Quarterstaff:^green; +12% Speed, +6 Protection^reset;
     ^green;In Water, Healing Water, Waste Water and Swamp Water: +4 Protection, +20 HP, Swim Boost^reset;"
     }
 

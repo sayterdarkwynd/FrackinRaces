@@ -11,9 +11,9 @@
     ^green;Heal and regain power within Oil/Liquid Protocite/Erchius liquids^reset; 
     ^green;Consumes food to increase Crit chance by +2% with Maces, Greataxes and Axes.^reset;
     ^green;1h combos increase defense by +2^reset;
-    ^green;Bow/Crossbow: Crit 3%^reset;
-    ^green;Shield: +3 Protection, +3% Dmg, +8% Max Health, 1% Health Regen.^reset;
-    ^green;Shield: Perfect Blocks increase damage (stacks), Shield Bash restores health.^reset;
-    ^green;Immune: Poison, Bee Stings^reset;"
+    Bow/Crossbow: ^green;Crit 3%^reset;
+    Shield: ^green;+3 Protection, +3% Dmg, +8% Max Health, 1% Health Regen.^reset;
+    Shield: ^green;Perfect Blocks increase damage (stacks), Shield Bash restores health.^reset;
+    Immune: ^green;Poison, Bee Stings^reset;"
     }
 ]

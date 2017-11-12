@@ -9,10 +9,10 @@
     ^red;Weak: 40% Fire, on Hot biomes lose air-damage bonus, speed bonus and -25% health.^reset;
     ^green;In mild to severe winds, gain additional agility. When airborne gain +10% damage^reset; 
     ^green;On cold biomes, gain +5% speed and +15% health^reset;
-    ^green;Grenade Launchers do +20% Crit Damage^reset;
-    ^green;Energy Guns do +12% damage^reset;
-    ^green;Spears gain +2% Crit^reset;
-    ^green;Immunities: Snow and Ice^reset;
+    Grenade Launchers: ^green;+20% Crit Damage^reset;
+    Energy Guns: ^green; do +12% damage^reset;
+    Spears: ^green;+2% Crit^reset;
+    Immunities: ^green;Snow and Ice^reset;
     ^green;Fall much slower thanks to their feathered wings. 35% total Fall damage."
     }
 ]

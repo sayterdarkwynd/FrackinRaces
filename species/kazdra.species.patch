@@ -12,10 +12,10 @@
     ^green;Protection and Health bonus on Volcanic, Magma, Mountainous and Desert biomes^reset;
     ^green;+30% Health, +50% Fire Resist^reset;
     ^green;40% Hunger reduction^reset;
-    ^green;+20% Damage with Broadswords, and shoot blasts of fire^reset;
-    ^green;Broadsword combos increase Physical Resistance per swing^reset;
+    Broadsword:^green;+20% Damage, and shoot blasts of fire^reset;
+    Broadsword:^green; Combos increase Physical Resistance per swing^reset;
     ^green;When wounded, bleed fire^reset;
-    ^green;Immune: Burning^reset;"
+    Immune: ^green;Burning^reset;"
     }
 
 ]
