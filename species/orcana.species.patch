@@ -12,8 +12,8 @@
     ^green;On ocean biomes, gain additional 20% Health and Energy^reset; 
     ^green;In Water: +2000 Breath, +70% Breath Regen, minor health regen^reset; 
     ^green;Consume less food and gain Poison Resist and Speed in Water/Healing Water^reset;
-    ^green;+20% damage and +3% Crit when using a Spear^reset;
-    ^green;Immune: Wet^reset;"
+    Spear: ^green;+20% damage and +3% Crit^reset;
+    Immune: ^green;Wet^reset;"
     }
 
 ]

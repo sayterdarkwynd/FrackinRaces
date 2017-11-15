@@ -13,8 +13,8 @@
     ^red;+10% Energy, +5% Damage,+12% speed and 11% jump height^reset;
     ^green;Regenerate at night and gain 25% Energy Regeneration^reset;
     ^green;If fed well at night, gain +2 protection and +15% Physical Resistance.^reset;
-    ^green;+10% boomerang/chakram damage, +2% Crit^reset;
-    ^green;Spears get +2% Crit, +10% Damage. +20% protection when spear is held out.^reset;
+    Boomerang/Chakram: ^green;+10% Damage, +2% Crit^reset;
+    Spears: ^green;get +2% Crit, +10% Damage. +20% protection when spear is held out.^reset;
     ^green;Add your current speed/4 as bonus damage in melee.^reset;"
     }
 ]

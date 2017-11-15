@@ -6,7 +6,7 @@
     ^red;No penalties^reset;
     ^green; +0.08 jump time^reset;
     ^green;Perfect Blocks increase defense^reset;
-    ^green;+12% Damage with Assault Rifles^reset;
-    ^green;+12% Damage and +20% Knockback Resistance with Shortswords^reset;"
+    Assault Rifle: ^green;+12% Damage^reset;
+    Shortswords: ^green;+12% Damage and +20% Knockback Resistance^reset;"
     }
 ]

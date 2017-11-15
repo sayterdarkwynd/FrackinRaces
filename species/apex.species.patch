@@ -9,9 +9,10 @@
     ^green;Gain additional vitality and protection in jungles^reset; 
     ^green;+1 Radius Matter Manipulator^reset;
     ^green;Damage decreases Energy but increases Protection, Damage and Crit^reset;
-    ^green;Fists: +1% Crit, Hammers: +10% Dmg ^reset;
-    ^green;Mining Lasers: +50% Dmg^reset;
-    ^green;Magnorbs: +12% Dmg, +Protection^reset;
+    Fists: ^green;+1% Crit^reset; 
+    Hammers: ^green;+10% Dmg^reset;
+    Mining Lasers: ^green;+50% Dmg^reset;
+    Magnorbs: ^green;+12% Dmg, +Protection^reset;
     ^green;Unaffected by Jungle Dirt and Mud^reset;"
     }
 ]

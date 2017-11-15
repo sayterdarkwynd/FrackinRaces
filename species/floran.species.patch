@@ -10,10 +10,10 @@
     ^green;+25% Electric, +25% Ice and +20% Radiation Resistance^reset;
     ^green;In forest-like biomes gain additional health and energy^reset; 
     ^green;Regenerate health and food during daylight hours. If Health and Food are full, gain energy regen^reset;
-    ^green;Bow: +4% Crit, +20% Crit Damage, +15% Movement Speed^reset;
-    ^green;Spear / Dagger: +8% dmg, +3% Crit, 3% Poison Strike chance. If fed, strike faster.^reset;
-    ^green;Floran Weapons: +2% Crit^reset;
-    ^green;Shock Immunity^reset;"
+    Bow: ^green;+4% Crit, +20% Crit Damage, +15% Movement Speed^reset;
+    Spear / Dagger: ^green;+8% dmg, +3% Crit, 3% Poison Strike chance. If fed, strike faster.^reset;
+    Floran Weapons: ^green;+2% Crit^reset;
+    Immunity: ^green;Electrified^reset;"
     }
 
 ]

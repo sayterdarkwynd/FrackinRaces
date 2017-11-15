@@ -12,8 +12,8 @@
     ^green;Gain +25% Health and +6 Protection on Ocean biomes^reset;
     ^green;When underwater you move faster and gain slow regeneration^reset;
     ^green;+30% Ice Resist, +20% Poison Resist, +10% Physical Resist^reset;
-    ^green;Energy (ranged): +2% Crit, +15% Dmg^reset;
-    ^green;Assault Rifle: +1% Crit^reset;
-    ^green;2h melee: +15% damage^reset;"
+    Energy (ranged): ^green;+2% Crit, +15% Dmg^reset;
+    Assault Rifle: ^green;+1% Crit^reset;
+    2h melee: ^green;+15% damage^reset;"
     }
 ]

@@ -11,6 +11,6 @@
     ^green;In cold biomes you gain extensive energy regeneration.^reset; 
     ^green;+25% Energy, +20% Physical Resist, +50% Poison Resist, 50% Radiation Resist^reset;
     ^green;Perfect Blocks restore energy^reset;
-    ^green;Immunities: Cold, Snow, Ice, Slush, Poison, Breath^reset;"
+    Immunities: ^green;Cold, Snow, Ice, Slush, Poison, Breath^reset;"
     }
 ]

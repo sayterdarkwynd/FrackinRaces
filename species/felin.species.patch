@@ -12,8 +12,8 @@
     ^green;+6% Speed, +12% Jump^reset; 
     ^green;+40% Fall Damage Reduction^reset;
     ^green;In jungle-like environments, gain +2 protection and +10 health^reset;
-    ^green;+5% with all daggers, fists, shortswords and axes^reset;
-    ^green;Dual Wield: 2 fists gives +13% damage, +5% Jump and +15% movement speed^reset;
-    ^green;Dual Wield: 2 daggers gives +8% damage, +2 protection and 25% Knockback Resist^reset;"
+    Daggers, Fists, Shortswords, Axes: ^green;+5% Damage ^reset;
+    Dual Wield: ^green;2 fists gives +13% damage, +5% Jump and +15% movement speed^reset;
+    Dual Wield: ^green;2 daggers gives +8% damage, +2 protection and 25% Knockback Resist^reset;"
     }
 ]
