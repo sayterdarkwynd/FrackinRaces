@@ -2,7 +2,7 @@
   "name" : "indixregen",
     "blockingStat" : "healingStatusImmunity",
   "effectConfig" : {
-    "healTime" : 320
+    "healTime" : 220
   },
   "defaultDuration" : 1,
 
