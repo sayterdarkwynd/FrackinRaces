@@ -1,4 +1,10 @@
 [
+    { // Test for if quickbar is installed
+        "op" : "test",
+        "path" : "/replaced",
+        "value" : true,
+        "inverse" : true
+    },
     {
         "op" : "replace",
         "path" : "/upgrades/size1/description",
