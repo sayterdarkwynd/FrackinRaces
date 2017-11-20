@@ -1,6 +1,12 @@
 require "/scripts/util.lua"
 
 function init()
+    self.baseStats = {
+        beamaxe=root.itemConfig("beamaxe").config,
+        wiretool=root.itemConfig("wiretool").config,
+        painttool=root.itemConfig("painttool").config,
+        inspectiontool=root.itemConfig("scanmode").config
+    }
     self.currentUpgrades = {}
     self.upgradeConfig = config.getParameter("upgrades")
     self.buttonStateImages = config.getParameter("buttonStateImages")
@@ -9,6 +15,7 @@ function init()
     self.selectionOffset = config.getParameter("selectionOffset")
     self.defaultDescription = config.getParameter("defaultDescription")
     self.autoRefreshRate = config.getParameter("autoRefreshRate")
+
     self.autoRefreshTimer = self.autoRefreshRate
 
     self.highlightPulseTimer = 0
@@ -35,13 +42,15 @@ end
 function selectUpgrade(widgetName, widgetData)
     for k, v in pairs(self.upgradeConfig) do
         if v.button == widgetName then
+            if self.selectedUpgrade == k then
+                performUpgrade("finally", "this ui is fixed")
+            end
             self.selectedUpgrade = k
             self.highlightPulseTimer = 0
         end
     end
     updateGui()
 end
-
 
 function isOriginalMM()
     local mm = player.essentialItem("beamaxe").parameters.itemName or root.itemConfig(player.essentialItem("beamaxe")).config.itemName or ""
@@ -52,11 +61,10 @@ function isOriginalMM()
     end
 end
 
-
 function performUpgrade(widgetName, widgetData)
     if selectedUpgradeAvailable() then
         local upgrade = self.upgradeConfig[self.selectedUpgrade]
-        if player.consumeItem({name = "manipulatormodule", count = upgrade.moduleCost}) then
+        if player.isAdmin() or player.consumeItem({name = "manipulatormodule", count = upgrade.moduleCost}) then
             if upgrade.setItem then
                 player.giveEssentialItem(upgrade.essentialSlot, upgrade.setItem)
             end
@@ -64,23 +72,20 @@ function performUpgrade(widgetName, widgetData)
             if upgrade.setItemParameters then
                 local item = player.essentialItem(upgrade.essentialSlot)
 
-	            --[[ FU Special additions here --]]
-                self.tileDamageBonus = 1.2
-                self.blockRadius = 1
+                --[[ FU Special additions here --]]
                 local beamgunStats = root.itemConfig(item).config
 
-                if upgrade.setItemParameters.tileDamage then
-                    upgrade.setItemParameters.tileDamage = (item.parameters.tileDamage or beamgunStats.tileDamage) + self.tileDamageBonus
-                    upgrade.setItemParameters.minBeamWidth = (item.parameters.minBeamWidth or beamgunStats.minBeamWidth) + 0.02
-                    upgrade.setItemParameters.maxBeamWidth = (item.parameters.maxBeamWidth or beamgunStats.maxBeamWidth) + 0.02
-                elseif upgrade.setItemParameters.blockRadius then
-                    upgrade.setItemParameters.blockRadius = (item.parameters.blockRadius or beamgunStats.blockRadius) + self.blockRadius
-                    upgrade.setItemParameters.minBeamJitter = (item.parameters.minBeamJitter or beamgunStats.minBeamJitter) + 0.04
-                    upgrade.setItemParameters.maxBeamJitter = (item.parameters.maxBeamJitter or beamgunStats.maxBeamJitter) + 0.04
+                for stat,value in pairs(upgrade.setItemParameters) do
+                    -- Subtract out the vanilla MM value to get the amount to add
+                    -- This fixes issues with mods like Enhanced Matter Manipulator
+                    if type(value) == "number" then
+                        item.parameters[stat] = beamgunStats[stat] + value - self.baseStats[upgrade.essentialSlot][stat]
+                    else
+                        item.parameters[stat] = value
+                    end
                 end
-	            --[[ End FU Special additions here --]]
+                --[[ End FU Special additions here --]]
 
-                util.mergeTable(item.parameters, upgrade.setItemParameters)
                 player.giveEssentialItem(upgrade.essentialSlot, item)
             end
 
@@ -107,74 +112,72 @@ function giveRacialManipulator()
 
     if frconfig[player.species()] then
         local mm = player.essentialItem("beamaxe")
-        mm.parameters.upgrades = mm.parameters.upgrades or {}
         local manip = frconfig[player.species()]
         if manip.item then
-            local newmm = root.createItem(manip.item)
-            newmm.parameters.upgrades = mm.parameters.upgrades
-            newmm.parameters.canCollectLiquid = mm.parameters.canCollectLiquid or false
-            if manip.collectLiquid then
-                newmm.parameters.canCollectLiquid = true
-                table.insert(newmm.parameters.upgrades, "liquidcollection")
+            mm.name = manip.item
+
+            if manip.collectLiquid and not contains(mm.parameters.upgrades or {}, "liquidcollection") then
+                mm.parameters.upgrades = mm.parameters.upgrades or {}
+                mm.parameters.canCollectLiquid = true
+                mm.parameters.upgrades[#mm.parameters.upgrades + 1] = "liquidcollection"
             end
-            local newcfg = root.itemConfig(newmm).config
+
+            local newcfg = root.itemConfig(manip.item).config
             local oldcfg = root.itemConfig(mm).config
-            local newpar = newmm.parameters
             local oldpar = mm.parameters
             local statsToUpdate = { "blockRadius", "tileDamage", "minBeamWidth", "maxBeamWidth", "minBeamLines", "maxBeamLines",
                                     "minBeamJitter", "maxBeamJitter" }
             for _,v in pairs(statsToUpdate) do
-                newpar[v] = updateMMStats(newcfg[v], newpar[v], oldcfg[v], oldpar[v])
+                oldpar[v] = updateMMStats(newcfg[v], oldcfg[v], oldpar[v])
             end
-            newmm.parameters = newpar
-            table.insert(newmm.parameters.upgrades, "fixme")
-            player.giveEssentialItem("beamaxe", newmm)
+
+            player.giveEssentialItem("beamaxe", mm)
         end
     end
 end
 
-function updateMMStats(new, newpar, old, oldpar)
+function updateMMStats(new, old, oldpar)
     if new ~= old then
-        newpar = (oldpar or old) + (new - old)
+        oldpar = (oldpar or old) + (new - old)
     end
-    return newpar or new
+    return oldpar or new
 end
 
 function updateGui()
-  updateCurrentUpgrades()
+    updateCurrentUpgrades()
 
-  for k, v in pairs(self.upgradeConfig) do
-    if self.currentUpgrades[k] then
-      widget.setButtonImages(v.button, self.buttonStateImages.complete)
-      widget.setButtonOverlayImage(v.button, self.overlayStateImages.complete)
-    elseif hasPrereqs(v.prerequisites) then
-      widget.setButtonImages(v.button, self.buttonStateImages.available)
-      widget.setButtonOverlayImage(v.button, v.icon)
-    else
-      widget.setButtonImages(v.button, self.buttonStateImages.locked)
-      widget.setButtonOverlayImage(v.button, self.overlayStateImages.locked)
+    for k, v in pairs(self.upgradeConfig) do
+        if self.currentUpgrades[k] then
+            widget.setButtonImages(v.button, self.buttonStateImages.complete)
+            widget.setButtonOverlayImage(v.button, self.overlayStateImages.complete)
+        elseif hasPrereqs(v.prerequisites) then
+            widget.setButtonImages(v.button, self.buttonStateImages.available)
+            widget.setButtonOverlayImage(v.button, v.icon)
+        else
+            widget.setButtonImages(v.button, self.buttonStateImages.locked)
+            widget.setButtonOverlayImage(v.button, self.overlayStateImages.locked)
+        end
     end
-  end
 
-  local playerModuleCount = player.hasCountOfItem("manipulatormodule")
-  if self.selectedUpgrade then
-    local upgrade = self.upgradeConfig[self.selectedUpgrade]
-    widget.setVisible("imgSelection", true)
-    local buttonPosition = widget.getPosition(upgrade.button)
-    widget.setPosition("imgSelection", {buttonPosition[1] + self.selectionOffset[1], buttonPosition[2] + self.selectionOffset[2]})
-    widget.setVisible("imgHighlight", true)
-    self.highlightImage = self.highlightImages[upgrade.highlight] or ""
-    widget.setText("lblUpgradeDescription", upgrade.description)
-    widget.setText("lblModuleCount", string.format("%s / %s", playerModuleCount, upgrade.moduleCost))
-    widget.setButtonEnabled("btnUpgrade", selectedUpgradeAvailable())
-  else
-    widget.setVisible("imgSelection", false)
-    widget.setVisible("imgHighlight", false)
-    self.highlightImage = nil
-    widget.setText("lblUpgradeDescription", self.defaultDescription)
-    widget.setText("lblModuleCount", string.format("%s / --", playerModuleCount))
-    widget.setButtonEnabled("btnUpgrade", false)
-  end
+    local playerModuleCount = player.isAdmin() and math.huge or player.hasCountOfItem("manipulatormodule")
+    if self.selectedUpgrade then
+        local upgrade = self.upgradeConfig[self.selectedUpgrade]
+        widget.setVisible("imgSelection", true)
+        local buttonPosition = widget.getPosition(upgrade.button)
+        widget.setPosition("imgSelection", {buttonPosition[1] + self.selectionOffset[1], buttonPosition[2] + self.selectionOffset[2]})
+        widget.setVisible("imgHighlight", true)
+        self.highlightImage = self.highlightImages[upgrade.highlight] or ""
+        widget.setText("lblUpgradeDescription", upgrade.description)
+        widget.setText("lblModuleCount", string.format("%s / %s", playerModuleCount, upgrade.moduleCost))
+        widget.setButtonEnabled("btnUpgrade", selectedUpgradeAvailable())
+    else
+        widget.setVisible("imgSelection", false)
+        widget.setVisible("imgHighlight", false)
+        self.highlightImage = nil
+        widget.setText("lblUpgradeDescription", self.defaultDescription)
+        widget.setText("lblModuleCount", string.format("%s / --", playerModuleCount))
+        widget.setButtonEnabled("btnUpgrade", false)
+    end
 end
 
 function updateCurrentUpgrades()
@@ -201,7 +204,7 @@ function selectedUpgradeAvailable()
   return self.selectedUpgrade
      and not self.currentUpgrades[self.selectedUpgrade]
      and hasPrereqs(self.upgradeConfig[self.selectedUpgrade].prerequisites)
-     and (player.hasCountOfItem("manipulatormodule") >= self.upgradeConfig[self.selectedUpgrade].moduleCost)
+     and (player.isAdmin() or player.hasCountOfItem("manipulatormodule") >= self.upgradeConfig[self.selectedUpgrade].moduleCost)
 end
 
 function addItemParameters(slot, parameters)
@@ -211,22 +214,22 @@ function addItemParameters(slot, parameters)
 end
 
 function resetTools()
-  player.giveEssentialItem("beamaxe", "beamaxe")
-  player.removeEssentialItem("wiretool")
-  player.removeEssentialItem("painttool")
-  status.setStatusProperty("bonusBeamGunRadius", 0)
-  updateGui()
+    player.giveEssentialItem("beamaxe", "beamaxe")
+    player.removeEssentialItem("wiretool")
+    player.removeEssentialItem("painttool")
+    status.setStatusProperty("bonusBeamGunRadius", 0)
+    updateGui()
 end
 
 function resetToolsUpgrade()
-  player.removeEssentialItem("wiretool")
-  player.removeEssentialItem("painttool")
-  status.setStatusProperty("bonusBeamGunRadius", 0)
-  status.setStatusProperty("minBeamWidth", 0)
-  status.setStatusProperty("maxBeamWidth", 0)
-  status.setStatusProperty("blockRadius", 0)
-  status.setStatusProperty("tileDamage", 0)
-  status.setStatusProperty("minBeamJitter", 0)
-  status.setStatusProperty("maxBeamJitter", 0)
-  updateGui()
+    player.removeEssentialItem("wiretool")
+    player.removeEssentialItem("painttool")
+    status.setStatusProperty("bonusBeamGunRadius", 0)
+    status.setStatusProperty("minBeamWidth", 0)
+    status.setStatusProperty("maxBeamWidth", 0)
+    status.setStatusProperty("blockRadius", 0)
+    status.setStatusProperty("tileDamage", 0)
+    status.setStatusProperty("minBeamJitter", 0)
+    status.setStatusProperty("maxBeamJitter", 0)
+    updateGui()
 end
