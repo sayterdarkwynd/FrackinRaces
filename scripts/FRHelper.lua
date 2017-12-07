@@ -3,7 +3,7 @@ require("/scripts/util.lua")
 FRHelper = {}
 DynamicScripts = {}
 
-function FRHelper:new(species)
+function FRHelper:new(species,gender)
     local frHelper = {}
     frHelper.frconfig = root.assetJson("/frackinraces.config")
 

@@ -5,7 +5,7 @@ function init()
     self.species = world.entitySpecies(entity.id())
     if not self.species then return end
 
-    self.helper = FRHelper:new(self.species)
+    self.helper = FRHelper:new(self.species,world.entityGender(entity.id()))
 
     -- Load extra scripts (environmental effects, aerial bonuses, etc.)
     for map,path in pairs(self.helper.frconfig.scriptMaps) do
