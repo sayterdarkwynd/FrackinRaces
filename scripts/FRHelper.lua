@@ -3,13 +3,18 @@ require("/scripts/util.lua")
 FRHelper = {}
 DynamicScripts = {}
 
-function FRHelper:new(species)
+function FRHelper:new(species,gender)
     local frHelper = {}
     frHelper.frconfig = root.assetJson("/frackinraces.config")
 
     frHelper.species = species
     frHelper.config = root.assetJson("/scripts/raceEffects.config")
     frHelper.speciesConfig = frHelper.config[species] or {}
+	
+	if frHelper.speciesConfig.gender and frHelper.speciesConfig.gender[gender] then
+	  frHelper.speciesConfig = util.mergeTable(frHelper.speciesConfig,frHelper.speciesConfig.gender[gender])
+	end
+	frHelper.speciesConfig.gender = nil
 
     frHelper.stats = frHelper.speciesConfig.stats                          -- status modifiers
     frHelper.controlModifiers = frHelper.speciesConfig.controlModifiers    -- control modifiers
