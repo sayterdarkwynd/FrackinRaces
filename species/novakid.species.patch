@@ -1,7 +1,7 @@
 [
     { "op": "replace", 
     "path" : "/charCreationTooltip/description" , 
-    "value" : "The Novakids are a mysterious race of 'interstellar gas-bag people'. They have no charted settlements and no documented history. They have a love of gunslinging and the wild west. No one knows why. 
+    "value" : "The Novakids are a mysterious race of 'interstellar gas-bag people'. They have few charted settlements and no documented history. They have a love of gunslinging and the wild west. No one knows why. 
     
     ^red;-10% Health, Weak: -15% Physical,20% Electric,-40% Shadow^reset;
     ^green;+20% Energy, +25% Fire, +20% Ice and +40% Radiation Resist, Glow in the dark^reset;
