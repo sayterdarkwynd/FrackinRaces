@@ -5,7 +5,7 @@
     },
     { "op": "replace", 
     "path" : "/charCreationTooltip/description" , 
-    "value" : "Swift and dangerous snake-people
+    "value" : "Swift and dangerous snake-people. Their efficient metabolisms allow them to function on almost no food, and their powerful tails give them a mighty spring in their step.
     
     ^red;-20% Health, Weak: 40% Ice, 20% Cosmic^reset;
     ^green;+20% Energy, +10% Physical, 20% Fire, 30% Poison and Shadow resists^reset;
