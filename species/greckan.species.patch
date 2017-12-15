@@ -2,11 +2,11 @@
 
     { "op": "replace", 
     "path" : "/charCreationTooltip/description" , 
-    "value" : "Evolved from raw Erchius energy. High energy, resistant to damage but have weak immune systems. Exceptional when underground.
+    "value" : "Born from raw Erchius, the greckan seek to understand their origins, and have a strong kinship with other Erchius lifeforms. High energy, resistant to damage but have weak immune systems. Exceptional when underground.
     
     ^red;-30% Health, 50% Electric Weakness^reset;
     ^green;+40% Energy, 15% Physical Resist, 12% Shadow Resist, 20% Poison Resist^reset;
-    ^green;On Moon-type biomes gain +15% Speed and Jump^reset;
+    ^green;On Moon-type biomes gain +15% Speed and Jump, invisible to Erchius Ghosts^reset;
     ^green;When underground, gain +15% Health and 10% Jump^reset;
     Wands and Staves: ^green;gain +30% Damage and +10% Physical Resistance^reset;
     Immune: ^green;Poison^reset;"

@@ -5,7 +5,7 @@
     },
     { "op": "replace", 
     "path" : "/charCreationTooltip/description" , 
-    "value" : "Adorable fuzzy space raptors with wings.
+    "value" : "Adorable fuzzy space raptors with wings. Highly adapted to arctic climates and low gravity, they can use the wind to control their falls, and they are deadly with heavy weapons. 
     ^red;Weak: 40% Fire, on Hot biomes lose air-damage bonus, speed bonus and -25% health.^reset;
     ^green;In mild to severe winds, gain additional agility. When airborne gain +10% damage^reset; 
     ^green;On cold biomes, gain +5% speed and +15% health^reset;

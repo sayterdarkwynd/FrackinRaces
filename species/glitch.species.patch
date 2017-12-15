@@ -2,7 +2,7 @@
 
     { "op": "replace", 
     "path" : "/charCreationTooltip/description" , 
-    "value" : "Hardy, strong automatons. Their creation is lost to history. This suits them just fine, as they prefer a primitive state of being.
+    "value" : "Hardy, strong automatons. Their creation is lost to history. This suits them just fine, as they prefer a primitive state of being. Their medieval background includes extensive training with shields and other chivalrous weapons.
     
     ^red;Weak:-30% Electric,-30% Cosmic^reset;
     ^red;When Electrified lose 50% power and 50% energy^reset;
