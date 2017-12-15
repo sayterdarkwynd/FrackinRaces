@@ -2,7 +2,7 @@
 
     { "op": "replace", 
     "path" : "/charCreationTooltip/description" , 
-    "value" : "Florans are known throughout the universe to be aggressive, carnivorous hunters.
+    "value" : "Florans are known throughout the universe to be aggressive, carnivorous hunters. They still partially sustain themselves on sunlight, but every blow they strike only adds to their hunger.
     
     ^red;Basic attacks consume food, -10% HP and -30% Energy at night^reset;
     ^red;Weak: 50% Fire, 25% Poison^reset;
