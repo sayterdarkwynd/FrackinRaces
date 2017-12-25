@@ -6,7 +6,7 @@
     
     { "op": "replace", 
     "path" : "/charCreationTooltip/description" , 
-    "value" : "Meow. Space-cats. Agility is their forte, and their claws and predatory instincts give them an edge in combat. 
+    "value" : "Meow. Space-cats with a funky culture and quirky language. Agility is their forte, and their claws and predatory instincts give them an edge in combat. 
     
     ^red; 40% Weakness: Poison^reset;
     ^green;+6% Speed, +12% Jump^reset; 

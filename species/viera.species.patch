@@ -5,7 +5,7 @@
     },
     { "op": "replace", 
     "path" : "/charCreationTooltip/description" , 
-    "value" : "Cosmic-attuned bunny-men
+    "value" : "Cosmic-attuned bunny-folk from a distant world of fantasy. Skilled fencers, archers, and spellcasters.
     
     ^red;30% Weakness: Shadow, Slighty increased hunger, -20% Health^reset;
     ^green;+20% Energy, 30% Cosmic Resist, +12% Speed^reset;

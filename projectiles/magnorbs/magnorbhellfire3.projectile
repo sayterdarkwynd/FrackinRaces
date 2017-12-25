@@ -29,7 +29,7 @@
       "type" : "firelight",
       "fuzzAngle" : 0,
       "inheritDamageFactor" : 0.1,
-      "angleAdjust" : 35
+      "angleAdjust" : 0
     },
     {
       "action" : "sound",
