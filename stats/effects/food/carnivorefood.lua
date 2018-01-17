@@ -8,7 +8,7 @@ function init()
   self.tickTimer = self.tickTime
   script.setUpdateDelta(5)
   self.species = world.entitySpecies(entity.id())
-  if status.stat("isHerbivore")==1 or status.stat("isRobot")==1 or status.stat("isOmnivore")==1 then
+  if (status.stat("isHerbivore")==1 or status.stat("isRobot")==1 or status.stat("isOmnivore")==1) and (not(status.stat("isOmnivore")==1 and status.stat("isCarnivore")==1)) then
     world.sendEntityMessage(entity.id(), "queueRadioMessage", "foodtype")
   end
 end
