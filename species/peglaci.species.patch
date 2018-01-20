@@ -1,15 +1,13 @@
 [
-
     { "op": "replace", 
     "path" : "/charCreationTooltip/description" , 
-    "value" : "Resilient, cold-dwelling creatures.
+    "value" : "Resilient, cold-dwelling omnivorous creatures with a love for science.
     
     ^red;-12% Energy, 40% Weakness : Fire^reset;
-    ^green;+25% Health, +40% Ice Resist^reset;
+    ^green;+15% Health, +40% Ice Resist^reset;
     ^green;25% Knockback Resistance, +5% Speed^reset;
-    ^green;On Arctic and Snow biomes, gain increased Health and Energy ^reset;
-    ^green;+5% Damage with all Firearms^reset;
+    ^green;On frozen biomes, gain 15% increased Health and Energy ^reset;
+    ^green;+5% Damage with all Firearms, and +5 Crit Damage^reset;
     ^green;Immune: Liquid Nitrogen, Cold, Ice^reset;"
     }
-
 ]
