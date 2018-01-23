@@ -1,0 +1,14 @@
+[
+    { "op": "replace", 
+    "path" : "/charCreationTooltip/description" ,
+    "value" : ""
+    },
+    { "op": "replace", 
+    "path" : "/charCreationTooltip/description" , 
+    "value" : "Possessing an unbalanced and unstable genetic makeup, it conceals many possible evolutions. How it came to end up in space is a complete mystery. Scientists are still perplexed by this creature, and it has only recently appeared with a humanoid form. They are a very adaptable species and are able to change their biology for most, though ^red;not all^reset; problems.
+    
+    ^green;+10% Energy, +15% Movement Speed^reset;
+    ^red;-5% Jump Height, -5% Health^reset;
+    ^red;+15% Hunger Rate^reset;"
+    }
+]
