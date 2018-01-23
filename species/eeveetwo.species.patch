@@ -10,6 +10,7 @@
     ^green;+10% Energy, +15% Movement Speed^reset;
     ^red;-5% Jump Height, -5% Health^reset;
     ^red;+15% Hunger Rate^reset;
-    ^red;-20% Radiation Resistance^reset;"
+    ^red;-20% Radiation Resistance^reset;
+    ^red;Weakness on Irradiated Planets^reset;"
     }
 ]
