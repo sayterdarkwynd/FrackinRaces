@@ -7,6 +7,7 @@
     ^red;Bigger hitbox^reset;
     ^green;+50 Health, Resist: 20% Poison, 20% Shadow^reset;
     ^green;Gain additional health and energy in dark biomes^reset;
+    ^green;Can regenerate health^reset;
     Spears: ^green; +20% Dmg, +15% Crit Dmg^reset;
     Dual-Wielding (Bladed): ^green; +10% Dmg, +1% Crit^reset;
     ^green;Unaffected by webs and insanity^reset;"
