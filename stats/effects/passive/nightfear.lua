@@ -29,14 +29,14 @@ function update(dt)
 	  mcontroller.controlModifiers({ speedModifier = 1.5 }) 	
 	elseif lightLevel <= 26 then
 	  status.setPersistentEffects("webberEffects", {
-	  {stat = "maxHealth", baseMultiplier = config.getParameter("powerBonus",0) + 0.6},
-	  {stat = "powerMultiplier", baseMultiplier = config.getParameter("powerBonus",0) + 1.06}
+	  {stat = "maxHealth", baseMultiplier = config.getParameter("powerBonus",0) + 0.55},
+	  {stat = "powerMultiplier", baseMultiplier = config.getParameter("powerBonus",0) + 0.55}
 	  })		
 	  mcontroller.controlModifiers({ speedModifier = 1.4 }) 
 	elseif lightLevel <= 28 then
 	  status.setPersistentEffects("webberEffects", {
-	  {stat = "maxHealth", baseMultiplier = config.getParameter("powerBonus",0) + 1.05},
-	  {stat = "powerMultiplier", baseMultiplier = config.getParameter("powerBonus",0) + 1.05}
+	  {stat = "maxHealth", baseMultiplier = config.getParameter("powerBonus",0) + 0.6},
+	  {stat = "powerMultiplier", baseMultiplier = config.getParameter("powerBonus",0) + 0.6}
 	  })		
 	  mcontroller.controlModifiers({ speedModifier = 1.2 }) 	  
 	elseif lightLevel <= 30 then
@@ -48,7 +48,7 @@ function update(dt)
 	elseif lightLevel <= 35 then
 	  status.setPersistentEffects("webberEffects", {
 	  {stat = "maxHealth", baseMultiplier = config.getParameter("powerBonus",0) + 0.70},
-	  {stat = "powerMultiplier", baseMultiplier = config.getParameter("powerBonus",0) + 0.72.5}
+	  {stat = "powerMultiplier", baseMultiplier = config.getParameter("powerBonus",0) + 0.72}
 	  })		
 	  mcontroller.controlModifiers({ speedModifier = 1.2 })	  
 	elseif lightLevel <= 40 then
