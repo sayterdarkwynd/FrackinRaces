@@ -42,6 +42,7 @@ function init()
         self.blockhelper:loadWeaponScripts("shield-perfectblock")
     end
 
+  
 	-- FU special effects
 	-- health effects
 	self.critChance = config.getParameter("critChance", 0)
@@ -80,7 +81,25 @@ function init()
  		shieldBash = config.getParameter("shieldBash",0)
  		shieldBashPush = config.getParameter("shieldBashPush",0)
 
- 	status.setPersistentEffects("shieldEffects", {
+ 	        --shieldBonusApply()
+	-- end FU special effects
+        
+
+
+	animator.setGlobalTag("directives", "")
+	animator.setAnimationState("shield", "idle")
+	activeItem.setOutsideOfHand(true)
+
+	self.stances = config.getParameter("stances")
+	setStance(self.stances.idle)
+
+	updateAim()
+end
+
+
+function shieldBonusApply()
+
+status.setPersistentEffects("shieldEffects", {
  		{stat = "baseShieldHealth", amount = config.getParameter("shieldBonusShield", 0) },
  		{stat = "energyRegenPercentageRate", amount = config.getParameter("shieldEnergyRegen",0)},
  		{stat = "maxHealth", amount = config.getParameter("shieldHealthBonus",0)*(status.resourceMax("health"))},
@@ -116,20 +135,8 @@ function init()
  		{stat = "shieldBash", amount = shieldBash},
  		{stat = "shieldBashPush", amount = shieldBashPush}
  	})
-	-- end FU special effects
-
-
-
-	animator.setGlobalTag("directives", "")
-	animator.setAnimationState("shield", "idle")
-	activeItem.setOutsideOfHand(true)
-
-	self.stances = config.getParameter("stances")
-	setStance(self.stances.idle)
-
-	updateAim()
+ 	
 end
-
 
 function isShield(name) -- detect if they have a shield equipped for racial tag checks
 	if root.itemHasTag(name, "shield") then
@@ -194,6 +201,7 @@ function uninit()
 	status.clearPersistentEffects(activeItem.hand().."Shield")
 	activeItem.setItemShieldPolys({})
 	activeItem.setItemDamageSources({})
+	
 end
 
 function updateAim()
@@ -232,7 +240,7 @@ function raiseShield()
 	status.setPersistentEffects(activeItem.hand().."Shield", {{stat = "shieldHealth", amount = shieldHealth()}})
 	local shieldPoly = animator.partPoly("shield", "shieldPoly")
 	activeItem.setItemShieldPolys({shieldPoly})
-
+        shieldBonusApply()
 	if self.knockback > 0 then
         local knockbackDamageSource = {
             poly = shieldPoly,
@@ -363,6 +371,7 @@ function lowerShield()
 	activeItem.setItemDamageSources({})
 	self.cooldownTimer = self.cooldownTime
 	status.clearPersistentEffects("shieldBonus")
+	status.clearPersistentEffects("shieldEffects")
 end
 
 function shieldHealth()
