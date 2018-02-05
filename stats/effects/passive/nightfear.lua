@@ -15,48 +15,48 @@ end
 
 function update(dt)
   local lightLevel = getLight()
-	if lightLevel <= 22 then
-	  status.setPersistentEffects("webberEffects", {
-	  {stat = "maxHealth", baseMultiplier = config.getParameter("powerBonus",0) + 0.4},
-	  {stat = "powerMultiplier", baseMultiplier = config.getParameter("powerBonus",0) + 0.4}
-	  })		
-	  mcontroller.controlModifiers({ speedModifier = 1.7 }) 
-	elseif lightLevel <= 24 then
+	if lightLevel <= 1 then
 	  status.setPersistentEffects("webberEffects", {
 	  {stat = "maxHealth", baseMultiplier = config.getParameter("powerBonus",0) + 0.5},
 	  {stat = "powerMultiplier", baseMultiplier = config.getParameter("powerBonus",0) + 0.5}
 	  })		
-	  mcontroller.controlModifiers({ speedModifier = 1.5 }) 	
-	elseif lightLevel <= 26 then
+	  mcontroller.controlModifiers({ speedModifier = 1.4 }) 
+	elseif lightLevel <= 2 then
 	  status.setPersistentEffects("webberEffects", {
 	  {stat = "maxHealth", baseMultiplier = config.getParameter("powerBonus",0) + 0.55},
 	  {stat = "powerMultiplier", baseMultiplier = config.getParameter("powerBonus",0) + 0.55}
 	  })		
-	  mcontroller.controlModifiers({ speedModifier = 1.4 }) 
-	elseif lightLevel <= 28 then
+	  mcontroller.controlModifiers({ speedModifier = 1.3 }) 	
+	elseif lightLevel <= 5 then
 	  status.setPersistentEffects("webberEffects", {
 	  {stat = "maxHealth", baseMultiplier = config.getParameter("powerBonus",0) + 0.6},
 	  {stat = "powerMultiplier", baseMultiplier = config.getParameter("powerBonus",0) + 0.6}
 	  })		
-	  mcontroller.controlModifiers({ speedModifier = 1.2 }) 	  
-	elseif lightLevel <= 30 then
+	  mcontroller.controlModifiers({ speedModifier = 1.2 }) 
+	elseif lightLevel <= 7 then
 	  status.setPersistentEffects("webberEffects", {
-	  {stat = "maxHealth", baseMultiplier = config.getParameter("powerBonus",0) + 0.65},
+	  {stat = "maxHealth", baseMultiplier = config.getParameter("powerBonus",0) + 0.7},
 	  {stat = "powerMultiplier", baseMultiplier = config.getParameter("powerBonus",0) + 0.7}
 	  })		
-	  mcontroller.controlModifiers({ speedModifier = 1.2 })	
-	elseif lightLevel <= 35 then
+	  mcontroller.controlModifiers({ speedModifier = 1.1 }) 	  
+	elseif lightLevel <= 8 then
 	  status.setPersistentEffects("webberEffects", {
-	  {stat = "maxHealth", baseMultiplier = config.getParameter("powerBonus",0) + 0.70},
-	  {stat = "powerMultiplier", baseMultiplier = config.getParameter("powerBonus",0) + 0.72}
+	  {stat = "maxHealth", baseMultiplier = config.getParameter("powerBonus",0) + 0.8},
+	  {stat = "powerMultiplier", baseMultiplier = config.getParameter("powerBonus",0) + 0.8}
 	  })		
-	  mcontroller.controlModifiers({ speedModifier = 1.2 })	  
-	elseif lightLevel <= 40 then
+	  mcontroller.controlModifiers({ speedModifier = 1.0 })	
+	elseif lightLevel <= 9 then
 	  status.setPersistentEffects("webberEffects", {
-	  {stat = "maxHealth", baseMultiplier = config.getParameter("powerBonus",0) + 0.75},
-	  {stat = "powerMultiplier", baseMultiplier = config.getParameter("powerBonus",0) + 0.75}
+	  {stat = "maxHealth", baseMultiplier = config.getParameter("powerBonus",0) + 0.9},
+	  {stat = "powerMultiplier", baseMultiplier = config.getParameter("powerBonus",0) + 0.9}
 	  })		
-	  mcontroller.controlModifiers({ speedModifier = 1.2 })
+	  mcontroller.controlModifiers({ speedModifier = 1.0 })	  
+	elseif lightLevel <= 10 then
+	  status.setPersistentEffects("webberEffects", {
+	  {stat = "maxHealth", baseMultiplier = config.getParameter("powerBonus",0) + 1.0},
+	  {stat = "powerMultiplier", baseMultiplier = config.getParameter("powerBonus",0) + 1.0}
+	  })		
+	  mcontroller.controlModifiers({ speedModifier = 1.0 })
 	else
 	  status.clearPersistentEffects("webberEffects")
 	end  
