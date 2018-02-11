@@ -3,10 +3,10 @@ function FRHelper:call(args, main, ...)
     local speedMod = (args.minSpeed or 1) - (lightLevel / (args.lightValue or 200))
     if select(1, ...) and type(select(1, ...)) == "number" then
         main.cooldownTimer = main.cooldownTimer * speedMod
-        self:applyStats({ stats={ {stat="powerMultiplier", effectiveMultiplier=1 - (1 - speedMod) * 0.5} } }, "FR_novakidSpeedPenalty")
+        self:applyStats({ stats={ {stat="powerMultiplier", baseMultiplier=1 - (1 - speedMod) * 0.5} } }, "FR_novakidSpeedPenalty")
     elseif main.fireType == "burst" then
         main.cooldownTimer = main.cooldownTimer * speedMod
-        self:applyStats({ stats={ {stat="powerMultiplier", effectiveMultiplier=1 - (1 - speedMod) * 0.5} } }, "FR_novakidSpeedPenalty")
+        self:applyStats({ stats={ {stat="powerMultiplier", baseMultiplier=1 - (1 - speedMod) * 0.5} } }, "FR_novakidSpeedPenalty")
     else
         main.cooldownTimer = main.fireTime * speedMod
     end
