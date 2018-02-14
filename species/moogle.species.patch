@@ -9,6 +9,7 @@
     
     ^red;Weakness: Bad swimmers, -20% Life, +20% Knockback Taken^reset;
     ^green;Strength: +10% Speed, +20% Energy, Gliding, Halved Fall Damage
-    Guns: ^green;+5% Damage, +5 Crit. Damage^reset;"
+    Guns: ^green;+5% Damage, +5 Crit. Damage^reset;
+    Built into racemod: ^green;Extra upgraded mech body.^reset;"
     }
 ]
