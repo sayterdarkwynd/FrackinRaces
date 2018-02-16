@@ -1,0 +1,16 @@
+[
+    { "op": "replace", 
+    "path" : "/charCreationTooltip/description" , 
+    "value" : ""
+    },
+    { "op": "replace", 
+    "path" : "/charCreationTooltip/description" , 
+    "value" : "When seeking the best of the best for mercenary and assassination work, you look for a Thelusian. Nobody murders quite like they do. Carnivores, they've spent eons perfecting their war skills and devouring the slain.
+    ^red;-40% Weakness: Poison, -10% Energy^reset;
+    ^red;Stupid. Suffers -25% on all trades at space stations^reset;
+    ^green;Gain additional 10% health on hot biomes^reset; 
+    ^green;+20% Physical Resist, +20% Radiation Resist^reset;
+    ^green;+15% Damage (Ranged), +2% Crit and +50% Knockback Resistance (Melee)^reset;
+    Immunities: ^green;Insanity. Too stupid to care about hallucinations.^reset;"
+    }
+]
