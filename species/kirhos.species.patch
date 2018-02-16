@@ -1,0 +1,19 @@
+[
+    { "op": "replace", 
+    "path" : "/charCreationTooltip/description" ,
+    "value" : ""
+    },
+    { "op": "replace", 
+    "path" : "/charCreationTooltip/description" , 
+    "value" : "Adorable, omnivorous and nearly electric-proof space rodents. They prowl the stars seeking excitement, and are abnormally brave for rodents. Trustworthy and wise, they've earn a reputation as traders.
+    
+    ^red;-20% Physical, Shadow, Cosmic and Radiation Resist^reset;
+    ^green;+50% Electric, 20% Ice, and Cosmic resist^reset;
+    ^green;-20% Fall Damage, +10 Charmisma^reset;
+    ^green;10% Speed, +10% Jump. Immune to Electrified status.^reset;
+    Striker: ^green;+1% Crit, +5 Crit Damage^reset;
+    Shortsword/Dagger: ^green;+15% Protection^reset;"
+    }    
+
+]
+
