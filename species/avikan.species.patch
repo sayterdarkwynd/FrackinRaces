@@ -8,7 +8,7 @@
     "value" : "Noble desert nomads.
     ^red;-50% Weakness: Ice, Lose 50% energy regen on cold biomes^reset;
     ^green;In desert biomes you gain additional +5% Protection and +15% Health, and Health Regen.^reset; 
-    ^green;+15% Health, +15% Energy, +5% Protection, +50% Fire Resist, +25% Knockback Resist^reset;
+    ^green;+15% Health, +15% Energy, +5% Protection, +50% Fire Resist, +20% Rad Resist, +25% Knockback Resist^reset;
     ^green;Daggers and Spears get +2% Crit and +5% Damage^reset;
     ^green;Energy Weapons gain +15% Damage and +2% Crit^reset;
     ^green;1 handed combo strikes increase damage (Health/50)^reset;
