@@ -8,7 +8,8 @@
     "value" : "Adorable, fluffy lagomorphic critters from a distant world of fantasy that have a pom-pom, bat wings and a thing for saying \"Kupo!\". They are usually machinists, but on occasion, they become knights or mages instead.
     
     ^red;Weakness: Bad swimmers, -20% Life, +20% Knockback Taken^reset;
-    ^green;Strength: +10% Speed, +20% Energy, Gliding, Halved Fall Damage
-    Guns: ^green;+5% Damage, +5 Crit. Damage^reset;"
+    ^green;Strength: +10% Speed, +20% Energy, Gliding, Halved Fall Damage^reset;
+    Guns: ^green;+5% Damage, +5 Crit. Damage^reset;
+    Built-In: ^green;Extra upgraded mech body.^reset;"
     }
 ]
