@@ -9,7 +9,7 @@
     ^red;-40% Weakness: Poison, -10% Energy^reset;
     ^red;Stupid. Suffers -25% Charisma for trades^reset;
     ^green;Gain additional 10% health on hot biomes^reset; 
-    ^green;+20% Physical Resist, +20% Radiation Resist^reset;
+    ^green;+20% HP, +20% Physical Resist, +20% Radiation Resist^reset;
     ^green;+15% Damage (Ranged), +2% Crit and +50% Knockback Resistance (Melee)^reset;
     Immunities: ^green;Insanity. Too stupid to care about hallucinations.^reset;"
     }

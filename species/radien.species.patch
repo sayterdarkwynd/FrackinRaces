@@ -1,0 +1,13 @@
+[
+    { "op": "replace", 
+    "path" : "/charCreationTooltip/description" , 
+    "value" : "Walking, talking radioactive materials. Nobody knows how this is possible.
+    
+    ^red;Weak: -40% Fire Resistance. Hot biomes weaken.^reset;
+    ^green;+5% speed, Resist: 50% Radioactive, 25% Poison^reset; 
+    ^green;Gain additional power and vitality in irradiated biomes^reset; 
+    ^green;Can eat almost anything edible without concern^reset;
+    Melee: ^green;+15% Dmg^reset;
+    ^green;Immune to Radiation Burn^reset;"
+    }
+]
