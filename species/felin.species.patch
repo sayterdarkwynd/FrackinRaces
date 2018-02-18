@@ -9,8 +9,8 @@
     "value" : "Meow. Space-cats with a funky culture and quirky language. Agility is their forte, and their claws and predatory instincts give them an edge in combat. 
     
     ^red; 40% Weakness: Poison^reset;
-    ^green;+6% Speed, +12% Jump^reset; 
-    ^green;+40% Fall Damage Reduction^reset;
+    ^green;+6% Speed, +25% Jump(^yellow;Race Mod^reset;)^reset; 
+    ^green;+75% Fall Damage effective reduction(^yellow;Race Mod^reset;)^reset;
     ^green;In jungle-like environments, gain +2 protection and +10 health^reset;
     Daggers, Fists, Shortswords, Axes: ^green;+5% Damage ^reset;
     Dual Wield: ^green;2 fists gives +13% damage, +5% Jump and +15% movement speed^reset;
