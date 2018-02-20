@@ -5,28 +5,37 @@ function update(dt)
     self.foodValue = 30
   end
 
-
-  self.foodValueBase = self.foodValue
+  self.foodValueBase = self.foodValue  -- store value unmodified
   
   self.foodValue = (self.foodValue / 1.4) /100
   self.poisonValueBonus = self.foodValue /2
   self.powerMultBonus = self.foodValue /3.3
+  self.healthMultPenalty = self.foodValue /4
   
-  if self.foodValueBase < 35 then
-    self.firePenaltyBonusMod = -0.4
+  if self.foodValueBase < 35 then  --failsafes
+      self.firePenaltyBonusMod = -0.4
+      self.foodValue = 0.25
+      self.poisonValueBonus = 0.185
+      self.powerMultBonus = 1.0   
+      self.healthMultPenalty = 0.75
   else
-    self.firePenaltyBonusMod = -0.4 + (self.powerMultBonus)
+      self.firePenaltyBonusMod = -0.4 + (self.powerMultBonus)
   end
   
-  if self.foodValueBase < 60 then  -- only negatively affect them after a certain percentage is gone
+if self.foodValueBase < 60 then  -- only negatively affect them after a certain percentage is gone
         status.setPersistentEffects("radienPower", {
+            {stat = "maxHealth", baseMultiplier = 0.95 + self.healthMultPenalty  },
+            {stat = "maxEnergy", baseMultiplier = 1.15 - self.powerMultBonus  },         
             {stat = "powerMultiplier", baseMultiplier = 1 + self.powerMultBonus },
             {stat = "radioactiveResistance", amount = self.foodValue },
             {stat = "poisonResistance", amount = self.poisonValueBonus },
             {stat = "fireResistance", amount = self.firePenaltyBonusMod }
         })
+        
   else
         status.setPersistentEffects("radienPower", {
+            {stat = "maxHealth", baseMultiplier = 0.95}, 
+            {stat = "maxEnergy", baseMultiplier = 1.15 },     
             {stat = "powerMultiplier", baseMultiplier = 1.15 },
             {stat = "radioactiveResistance", amount = 0.5 },
             {stat = "poisonResistance", amount = 0.25},
