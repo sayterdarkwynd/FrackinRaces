@@ -1,13 +1,15 @@
+
 function update(dt)
   if status.isResource("food") then
     self.foodValue = status.resource("food")
   else
     self.foodValue = 30
   end
-
+  
+  self.foodValue = self.foodValue / 100
   self.foodValueBase = self.foodValue  -- store value unmodified
   
-  self.foodValue = (self.foodValue / 1.4) /100
+  self.radiationBoost = self.foodValue / 1.4
   self.poisonValueBonus = self.foodValue /2
   self.powerMultBonus = self.foodValue /3.3
   self.healthMultPenalty = self.foodValue /4
@@ -22,20 +24,17 @@ function update(dt)
       self.firePenaltyBonusMod = -0.4 + (self.powerMultBonus)
   end
   
-if self.foodValueBase < 60 then  -- only negatively affect them after a certain percentage is gone
+  if self.foodValueBase < 65 then  -- only negatively affect them after a certain percentage is gone
         status.setPersistentEffects("radienPower", {
-            {stat = "maxHealth", baseMultiplier = 0.95 + self.healthMultPenalty  },
-            {stat = "maxEnergy", baseMultiplier = 1.15 - self.powerMultBonus  },         
+            {stat = "maxHealth", amount = self.healthMultPenalty  },
+            {stat = "maxEnergy", amount = self.powerMultBonus },         
             {stat = "powerMultiplier", baseMultiplier = 1 + self.powerMultBonus },
-            {stat = "radioactiveResistance", amount = self.foodValue },
+            {stat = "radioactiveResistance", amount = self.radiationBoost },
             {stat = "poisonResistance", amount = self.poisonValueBonus },
             {stat = "fireResistance", amount = self.firePenaltyBonusMod }
-        })
-        
+        })    
   else
-        status.setPersistentEffects("radienPower", {
-            {stat = "maxHealth", baseMultiplier = 0.95}, 
-            {stat = "maxEnergy", baseMultiplier = 1.15 },     
+        status.setPersistentEffects("radienPower", {   
             {stat = "powerMultiplier", baseMultiplier = 1.15 },
             {stat = "radioactiveResistance", amount = 0.5 },
             {stat = "poisonResistance", amount = 0.25},
