@@ -44,7 +44,6 @@ end
 
 function update(dt)
   foodCheck()  -- check if they have food bar or not
-  sb.logInfo(" food =  "..self.foodValue)
   if self.foodValue >= 0.69970657348633 then
     self.dt = 1
     self.baseMod = 1
