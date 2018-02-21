@@ -3,15 +3,16 @@
     "path" : "/charCreationTooltip/description" , 
     "value" : "A race of clever colonial foxes. 
     
-    ^red;Weak: 20% Radiation^reset;
-    ^red;Weak: 40% Shadow and Cosmic^reset;
-    ^red;Weak: 50% Poison^reset;
-    ^red;Double Knockback^reset;
+    ^red;Weak: 40% Poison,  20% Shadow , Radiation and Cosmic^reset;
+    ^red;-15% Health and Power on Toxic/Radioactive worlds^reset;
+    ^red;-50% Knockback^reset;
     ^green;+15% speed and jump^reset;
-    ^green;10% less fall damage^reset; 
-    ^green;Resist: 20% Cold, 10% Fire^reset; 
-    ^green;Immunity to mild cold^reset;
-    ^green;Immunity to rainforest/desert heat^reset; 
-    ^green;Unaffected by slush and Snow^reset;"
+    ^green;10% fall damage reduction^reset; 
+    ^green;Gain increased protection on forest, jungle and plains type biomes.^reset; 
+    ^green;Resist: 20% Cold, Fire and Electric^reset; 
+    Shortsword,Shortspear,Spear,Rapier: ^green;+10% Damage^reset; 
+    Sniper Rifle: ^green;+2% Crit Chance^reset; 
+    ^green;Immunity to mild cold, rainforest/desert heat^reset;
+    ^green;Unaffected by Slush and Snow, Jungle Tiles and Sandstorms^reset;"
     }
 ]
