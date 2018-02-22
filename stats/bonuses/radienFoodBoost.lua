@@ -35,7 +35,7 @@ end
 
 function update(dt)
   self.foodValue = status.resourcePercentage("food")
-  sb.logInfo("food = "..self.foodValue)
+
   if self.foodValue >= 0.98 then
     self.dt = 1
     self.baseMod = 1
