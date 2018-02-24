@@ -6,12 +6,14 @@
     { "op": "replace", 
     "path" : "/charCreationTooltip/description" , 
     "value" : "The carnivorous Thelusians are well known for their tough chitin shell and exceptionally dangerous combat abilities. Individually dull...but extremely dangerous in large groups.
-    ^red;-40% Weakness: Poison, -10% Energy^reset;
-    ^red;Stupid. Suffers -25% Charisma for trades^reset;
+    ^red;-40% Weakness: Poison, -20% Energy, Suffers -25% Charisma for trades^reset;
     ^green;Gain additional 10% health on hot biomes^reset; 
-    ^green;Increased ground friction^reset; 
+    ^green;Increased ground friction. +2 Defense with shield blocks^reset; 
     ^green;+20% HP, +20% Physical Resist, +20% Radiation Resist^reset;
-    ^green;+15% Damage (Ranged), +2% Crit and +50% Knockback Resistance (Melee)^reset;
+    Scythe:^green;+15% Damage, +50% Knockback Resist^reset;
+    Bow/Crossbow/Striker:^green;+1.5% Crit Chance^reset;
+    Shortspear/Longsword and Shield:^green;+0.5% Crit, +50% Knockback Resist^reset;
+    ^orange;Perfect Block: Increases Shield Bash chance^reset;
     Immunities: ^green;Insanity. Too stupid to care about hallucinations.^reset;"
     }
 ]
