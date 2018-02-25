@@ -14,7 +14,7 @@ function init()
 end
 
 function update(dt)
-	 if status.stat("isCarnivore")==1 then
+	 if status.stat("isCarnivore")==1 or status.stat("isRadien")==1 then
 	   applyEffects() 
 	 elseif status.stat("isCarnivore")==1 and status.stat("isOmnivore")==1 then
 	   applyEffects() 
