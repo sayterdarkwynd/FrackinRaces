@@ -329,7 +329,7 @@ function bashEnemy()
     if self.raisedhelper then self.raisedhelper:runScripts("shield-bash", self) end
 
 	-- lets limit how much damage they can do
-	self.damageLimit = (self.energyval/50) + (status.stat("health")/50) + math.random(6)
+	self.damageLimit = (self.energyval/50) + (status.stat("health")/50) + math.random(6) + (status.stat("shieldBashBonus",0))
 
 	if status.resourcePositive("perfectBlock") then
         self.pushBack = math.random(24) + config.getParameter("shieldBashPush",0) + status.stat("shieldBashPush",0) + 6
