@@ -2,12 +2,13 @@
 
     { "op": "replace",
     "path" : "/charCreationTooltip/description" ,
-    "value" : "Humans trapped in strange, otherworldly spiders. They're capable of unspeakable evil at fast speeds, but they're just too darn friendly to eat you. Unless if you're dead, of course. They also have no nightvision, and they're extremely nyctophobic because they're afraid of what they can't see.
-    
-    ^red;Weakness: Nyctophobic (run faster while losing max health and energy in darkness), -20% fire resistance, -30% electric resistance 3/4 damage with melee.^reset;
+    "value" : "Humans trapped in strange, otherworldly spiders, with no known origin. They're capable of unspeakable evil at fast speeds, but they're just too darn friendly to eat you. Unless if you're dead, of course. They also have no nightvision, and they're extremely nyctophobic because they're afraid of what they can't see.
+
+    ^red;Weakness: Nyctophobic (run faster while losing max health and energy in darkness), -70% shadow resistance -10% fire resistance.^reset;
     ^green;+20% movement speed.^reset;
+    ^green;+30% poison immunity, +40% cold resistance.^reset;
     ^green;Immune to spider webbing.^reset;
-    ^green;Spears do full damage, extra speed when weilding bows, full damage with all ranged weapons.^reset;
+    ^green;+5% damage with bows and spears^reset;
     ^cyan;Adapts well in most cold and temperate environments. Looses %5 health but gains 40% energy regen on radioactive and proto planets.^reset;
     "
     }
