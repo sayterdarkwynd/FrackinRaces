@@ -15,7 +15,7 @@
   },
   {
     "op": "replace",
-    "path": "/foodValue"
+    "path": "/foodValue",
     "value": 15
   }
 ]
