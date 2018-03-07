@@ -2,13 +2,10 @@
   {
     "op": "add",
     "path": "/effects",
-    "value": []
-  },
-  {
-    "op": "add",
-    "path": "/effects/0/0",
-    "value": {
-      "effect": "herbivorefood"
-    }
+    "value": [
+      [
+        "herbivorefood"
+      ]
+    ]
   }
 ]
