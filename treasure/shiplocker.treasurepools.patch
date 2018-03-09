@@ -2,9 +2,11 @@
   {"op": "add", "path": "/glitchStarterTreasure/0/1/fill/-", "value": {"item": [ "currentcornseed", 3]}},
   {"op": "add", "path": "/glitchStarterTreasure/0/1/fill/-", "value": {"item": [ "hoe", 1]}},
   {"op": "add", "path": "/glitchStarterTreasure/0/1/fill/-", "value": {"item": [ "Wooden_Watering_Can", 1]}},
+  {"op": "add", "path": "/drodenStarterTreasure", "value": []},
   {"op": "add", "path": "/drodenStarterTreasure/0/1/fill/-", "value": {"item": [ "currentcornseed", 3]}},
   {"op": "add", "path": "/drodenStarterTreasure/0/1/fill/-", "value": {"item": [ "hoe", 1]}},
   {"op": "add", "path": "/drodenStarterTreasure/0/1/fill/-", "value": {"item": [ "Wooden_Watering_Can", 1]}},
+  {"op": "add", "path": "/trinkStarterTreasure", "value": []},
   {"op": "add", "path": "/trinkStarterTreasure/0/1/fill/-", "value": {"item": [ "currentcornseed", 3]}},
   {"op": "add", "path": "/trinkStarterTreasure/0/1/fill/-", "value": {"item": [ "hoe", 1]}},
   {"op": "add", "path": "/trinkStarterTreasure/0/1/fill/-", "value": {"item": [ "Wooden_Watering_Can", 1]}}
