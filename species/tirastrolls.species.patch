@@ -1,0 +1,16 @@
+[
+    { "op": "replace", 
+    "path" : "/charCreationTooltip/description" , 
+    "value" : ""
+    },
+    { "op": "replace", 
+    "path" : "/charCreationTooltip/description" , 
+    "value" : "Grey, horned insectoids with a talent for the unusual. The brutality of their homeworld has made them incredibly hardy, but they're very susceptible to psionics- even their own.^reset;
+    ^reset; 
+    ^red;Weak: 40% Cosmic.^reset;
+    ^green;30% Physical and 10% Poison resist.^reset;
+    Striker and Magnorbs:^green;+5% damage.^reset;
+    ^orange; In bright light you lose speed and energy. Gain speed and energy in darkness.^reset; 
+    "
+    }
+]
