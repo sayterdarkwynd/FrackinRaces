@@ -8,15 +8,15 @@
     "path" : "/charCreationTooltip/description" , 
     "value" : "An offshoot of humanity that loves the dark. They are exceptional combatants and have honed the use of swords and shields into an artform. 
     
-    ^red;Lowered stats when in sunlight.^reset;
-    ^green;30% Shadow Resist. +10% Knockback Resist^reset;
-    ^green;Broadsword: +18% Damage, +25% Knockback Resist^reset;
-    ^green;Shortsword(single):+5% Damage, (double): +12% damage, (sword + shield): +8% Damage, +12% Knockback Resist^reset;
-    ^green;Combo attacks with shortswords gain +10% Knockback Resist^reset;
-    ^green;When using shortswords, gain +3% Speed and Jump from each. Broadswords grant +10% Speed.^reset;
-    ^green;Perfect Blocks increase protection. With a shield equipped, you gain +20% Knockback Resist^reset;
-    ^green;In darkness, gain additional Health, Energy and Physical Resistance.^reset; 
-    ^green;In darkness when using a shortsword, 4% chance for Shadow Attack^reset; 
+    ^red;Lowered defense and damage when in light^reset;
+    ^green;40% Shadow Resist. +10% Knockback Resist^reset;
+    Broadsword/Longsword:^green; +2% Crit, +5% Damage, +6% Shadow Burst^reset;
+    Shortsword(single): ^green;+5% Damage, +3% Shadow Burst^reset;
+    Shortsword(double): ^green;+1% Crit, +5% Speed^reset;
+    Shortsword + Shield:^green; +2 Shield Bash, +2 Shield Bash Push^reset;
+    Shield: ^green;+2 Shield Bash, +15% Knockback Resist^reset;
+    Perfect Blocks ^green;increase protection.^reset;
+    ^green;In darkness gain Physical Resistance and Damage.^reset;
     ^green;Immune: Bio-Ooze^reset;"
     }
 

@@ -1,19 +1,18 @@
 [
-
     { "op": "replace", 
     "path" : "/charCreationTooltip/description" , 
-    "value" : "The Novakids are a mysterious race of 'interstellar gas-bag people'. They have no charted settlements and no documented history. They have a love of gunslinging and the wild west. No one knows why. 
+    "value" : "The Novakids are a mysterious race of 'interstellar gas-bag people'. They have few charted settlements and no documented history. They have a love of gunslinging and the wild west. No one knows why. 
     
-    ^red;-15% Health, 10% Weakness: Physical, 35% Weakness: Shadow^reset;
-    ^green;+20% Energy, +20% Fire Resist, +35% Radiation Resist^reset;
+    ^red;-10% Health, Weak: -15% Physical,20% Electric,-40% Shadow^reset;
+    ^green;+20% Energy, +25% Fire, +20% Ice and +40% Radiation Resist, Glow in the dark^reset;
     ^green;25% Knockback Resistance, +5% Speed^reset;
-    ^green;Regenerate health when well fed during the day. Regen slowly at night but consume extra food.^reset;
-    ^green;Pistols: (single) +9% damage, (dual):+20% Knockback Resist, +8% Speed, +5% Jump, +10% Energy^reset;
-    ^green;During the day your pistols gain increased firing speed in brighter light^reset;
-    ^green;Glow in the dark^reset;
-    ^green;+2% to 5% Crit Chance and 1d10 Crit Damage bonus with Sniper Rifles^reset;
-    ^green;+20% Damage and +10% Speed with Whips^reset;
-    ^green;Immune: Burning, Radiation Burn^reset;"
+    ^green;On radioactive planets you gain +15% Energy and Health^reset;    
+    ^green;Regenerate energy, and health (when well fed) during the day. Regen slowly at night but  ^red;consume extra food^reset; and ^red;lose 25% Energy^reset;
+    ^orange;During the day your pistols gain increased firing speed in brighter light^reset;
+    Pistols(dual):^green;+25% Knockback Resist, +15% Energy^reset;
+    Sniper Rifle: ^green;+5% Crit and +20% Crit Damage^reset;
+    Shotgun: ^green;+20% dmg, +20% Crit Dmg^reset;
+    Whip: ^green;+15% Damage and +10% Speed^reset;    
+    Immune: ^green;Burning, Radiation Burn^reset;"
     }
-
 ]

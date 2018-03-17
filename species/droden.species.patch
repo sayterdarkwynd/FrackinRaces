@@ -5,10 +5,11 @@
     },
     { "op": "replace", 
     "path" : "/charCreationTooltip/description" , 
-    "value" : "Near-sentient light warframe droids. 
-    ^red;-25% Health, -35% Weakness: Electric^reset;
-    ^green;+15% Energy, +25% Damage, +25% Radiation Resist, +80% Poison Resist, +10% Speed^reset;
-    ^green;Increased Crit Chance with Broadswords and Shortswords^reset;
-    ^green;Immunities: Poison, Breath, Rad Burn^reset;"
+    "value" : "Effective, light combat droids. Fragile, but resistant to radiation and poison. Capable with swords and assault rifles. 
+    ^red;Weak: -40% Electric, -25% Physical^reset;
+    ^green;+15% Energy, +10% Damage, +40% Radiation Resist, +40% Poison Resist, +10% Speed^reset;
+    Broadswords and Shortswords:^green;2% Crit Chance^reset;
+    Assault Rifle: ^green;+25% Crit Dmg^reset;
+    Immunities: ^green;Poison, Breath, Hunger^reset;"
     }
 ]

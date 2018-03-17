@@ -7,12 +7,14 @@
     "path" : "/charCreationTooltip/description" , 
     "value" : "Wonderful fish-men.
     
-    ^red;-10% Health, 45% Weakness: Electric^reset;
-    ^green;+10% Energy, +25% Poison Resist^reset;
+    ^red;-40% Electric, -15% Shadow and Cosmic Resistance^reset;
+    ^green;+15% HP, +5% Damage^reset;
     ^green;Gain Physical Resistance and Energy on Ocean biomes^reset;
     ^green;In Water/Waste Water/Swamp Water you rarely need food and regenerate slowly^reset;
-    ^green;Fist Weapons increase your damage, speed and grant a bonus to Health and Energy^reset;
-    ^green;Immune: Mud, Breathing, Wet^reset;"
+    Fist: ^green;+3% Crit, +5% Speed^reset;
+    Spear: ^green;+2% Crit, +10% Damage^reset;
+    Shortspear: ^green;+2% Crit, +5% Physical Resistance^reset;
+    Immune: ^green;Mud, Breathing, Wet^reset;"
     }
 
 ]

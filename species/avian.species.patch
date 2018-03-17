@@ -2,15 +2,19 @@
 
     { "op": "replace", 
     "path" : "/charCreationTooltip/description" , 
-    "value" : "Avians are natruals with staves and wands, and have a mean-streak when threatened that makes them quite dangerous. Their lithe bodies give them great jumping and thanks to (nearly useless) wings they are less at risk from a long fall.
+    "value" : "A people of powerful faith and strongly attuned to the universe, Avians are naturals with staves and wands and are exceptionally agile.
     
-    ^red;-15% Health, 40% Weakness: Ice^reset;
-    ^green;+10% Energy, Jump Boost, 15% Shadow Resist, 30% Electric Resist, 20% Cosmic Resistance^reset;
-    ^green;-65% Fall Damage, + Slowed Fall^reset;
+    ^red;-15% Health, Weak: -40% Ice, -25% Poison, -5% Physical^reset;
+    ^green;15% Shadow Resist, 25% Electric Resist, 25% Cosmic Resistance^reset;
+    ^green;+10% Energy, +5% Damage, Jump Boost, -65% Fall Damage, Slowed Fall^reset;
     ^green;Gain air mobility and additional Slowed Fall in light to moderate wind conditions^reset;
-    ^green;Channel energy from wands into an offhand dagger, producing cosmic blasts.^reset;
-    ^orange;+5.5% Damage^reset;^white;(increases as your HP depletes)^reset;
-    ^yellow;+20% Wand/Staff damage, and gain additional Energy. Also gain Crit Damage with one-handed weapons when using Wand+Weapon^reset;"
+    ^green;When airborne gain +12% damage^reset;
+    Wands and Staves: ^green; Increase energy and +20% damage^reset;
+    Short Spear: ^green;+6% dmg, +1% Crit^reset;
+    Machine Pistol: ^green;+1% Crit^reset;
+    ^orange;Gain +15% resistance in wand/staves element^reset;
+    ^yellow;Wand and Dagger combo can fire Cosmic Blasts (Energy/16 dmg)^reset;
+    "
     }
 
 ]

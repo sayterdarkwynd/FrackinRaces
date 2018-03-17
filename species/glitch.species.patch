@@ -2,17 +2,18 @@
 
     { "op": "replace", 
     "path" : "/charCreationTooltip/description" , 
-    "value" : "Hardy, strong automatons. Their creation is lost to history. This suits them just fine, as they prefer a primitive state of being. They run on their own energy source, which means they need to ingest little food, and are quite sturdy so long as they aren't soaking wet.
+    "value" : "Hardy, strong automatons. Their creation is lost to history. This suits them just fine, as they prefer a primitive state of being. Their medieval background includes extensive training with shields and other chivalrous weapons.
     
-    ^red;-Energy Regen, Weakened when submerged(waters)^reset;
-    ^red;35% Weakness: Electric, 15% Weakness: Ice^reset;
-    ^green;+5% Energy, Low Hunger Rate^reset;
-    ^green;+14% HP, +15% Physical Resist, +20% Poison Resist^reset;
-    ^green;Heal and regain power within Oil/Liquid Protocite^reset; 
-    ^green;Shields give +1 Protection. Perfect Blocks increase damage (stacks)^reset;
-    ^green;Consume food to increase Crit chance (Energy/16) with both Hammers and Axes.^reset;
-    ^green;1h combos increase protection^reset;
-    ^green;Immune: Poison, Bee Stings^reset;"
+    ^red;Weak:-30% Electric,-30% Cosmic^reset;
+    ^red;When Electrified lose 50% power and 50% energy^reset;
+    ^green;+15% HP, +5% Energy, +5% Protection, +2% Shield Bash^reset;
+    ^green;20% Physical, 20% Poison, 20% Radiation Resistance^reset;
+    ^green;Heal and regain power within Oil/Liquid Protocite/Erchius liquids^reset; 
+    ^green;Consumes food to increase Crit chance by +2% with Maces, Greataxes and Axes.^reset;
+    ^green;1h combos increase defense by +2^reset;
+    Bow/Crossbow: ^green;Crit 3%^reset;
+    Shield: ^green;+3 Protection, +3% Dmg, +8% Max Health, 1% Health Regen.^reset;
+    Shield: ^green;Perfect Blocks increase damage (stacks), Shield Bash restores health.^reset;
+    Immune: ^green;Poison, Bee Stings^reset;"
     }
-
 ]

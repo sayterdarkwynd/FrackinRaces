@@ -7,10 +7,10 @@
     "path" : "/charCreationTooltip/description" , 
     "value" : "Offshoot of humanity.
     
-    ^red;-10% Health^reset;
-    ^green;+20% Energy, +15% Shield Regen, +0.275% Jump Time^reset;
-    ^green;Perfect Blocks increase Protection^reset;
-    ^green;+15% Damage with Staves and Wands^reset;"
+    ^red;Exactly like a human^reset;
+    Machine Pistol:^green;+23% Damage^reset;
+    Perfect Blocks ^green;increase Damage^reset;
+    Shortspears: ^green;+12% Damage, +20% Knockback Resist^reset;"
     }
 
 ]

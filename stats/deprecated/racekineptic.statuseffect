@@ -1,0 +1,14 @@
+{
+  "name" : "racekineptic",
+  "effectConfig" : {
+      "powerModifier" : 1.08,
+      "healthBonus" : 0.06,
+      "energyBonus" : 0.22
+      },
+  "defaultDuration" : 3,
+
+  "scripts" : [
+    "deprecated.lua"
+  ]
+
+}

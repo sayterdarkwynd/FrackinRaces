@@ -1,0 +1,12 @@
+[
+  {
+    "op": "add",
+    "path": "/foodtype",
+    "value": {
+      "unique": false,
+      "text": "^red;TOXINS DETECTED ^reset;: While I am sure that *looked* delicious, I regret to inform you that this type of food ^orange;cannot be digested by your physiology^reset;. Avoid foods like this in the future.",
+      "portraitImage": "yell.<frame>",
+      "textSpeed": 70
+    }
+  }
+]

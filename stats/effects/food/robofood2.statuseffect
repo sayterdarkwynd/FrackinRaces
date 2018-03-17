@@ -7,7 +7,7 @@
   "protectionBonus" : 2, 
   "fallBonus" : -0.4
   },
-  "defaultDuration" : 60,
+  "defaultDuration" : 120,
 
   "scripts" : [
     "robofood.lua"
@@ -15,6 +15,6 @@
 
   "animationConfig" : "robofood.animation",
 
-  "label" : "Glitch Food",
-  "icon" : "/interface/statuses/foodpoison.png"
+  "label" : "Mechanical Food - only mechanical beings can digest this. Anything else will suffer for it.",
+  "icon" : "/interface/statuses/autodrive.png"
 }

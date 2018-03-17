@@ -28,7 +28,7 @@ local energyMin = 1
 local energyRange = energyMax - energyMin
 local finalEnergy = math.floor((energyMin + energyRange * ratio) * 100) / 100
 
-if self.foodValue > foodMin then
+if self.foodValue >= foodMin then
   status.setPersistentEffects("starvationpower2", {{stat = "maxEnergy", baseMultiplier = finalEnergy}})
 end
 

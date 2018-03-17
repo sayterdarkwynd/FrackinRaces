@@ -1,0 +1,13 @@
+{
+  "name" : "foodcontrol",
+
+  "effectConfig" : {
+    
+  },
+  
+  "defaultDuration" : 1,
+
+  "scripts" : [
+    "foodcontrol.lua"
+  ]
+}

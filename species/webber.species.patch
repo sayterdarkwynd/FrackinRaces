@@ -1,0 +1,17 @@
+[
+
+    { "op": "replace",
+    "path" : "/charCreationTooltip/description" ,
+    "value" : "Strange, otherworldly spiders, with no known origin. They're capable of unspeakable evil at fast speeds, but they're just too darn friendly to eat you. Unless you're dead, of course. They also have no nightvision, and are afraid of what they can't see. They are not fans of the dark.
+
+    ^red;Weakness: -40% shadow resistance -10% fire resistance.^reset;
+    ^orange;Nyctophobic (run faster while losing max health and energy in darkness)^reset;
+    ^green;+20% movement speed.^reset;
+    ^green;+30% poison immunity, +40% cold resistance^reset;
+    ^green;Immune to spider webbing^reset;
+    ^green;+5% damage with bows and spears^reset;
+    ^green;Gain energy or health bonuses on Cold, Lush, Forest, Rainforest and Savannah biomes
+    ^cyan;Loses %5 health but gains 40% energy regen on radioactive and proto planets.^reset;"
+    }
+
+]

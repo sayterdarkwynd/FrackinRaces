@@ -1,0 +1,20 @@
+[
+    { "op": "replace", 
+    "path" : "/charCreationTooltip/description" ,
+    "value" : ""
+    },
+    { "op": "replace", 
+    "path" : "/charCreationTooltip/description" , 
+    "value" : "An unusually evolved carnivorous humanoid with reptilian aspects melded into their forms.
+    
+    ^red;Weak: 40% Poison, 40% Cold^reset;
+    ^green;40% Fire, 20% Physical resistance^reset;
+    ^green;Immune to Burning and Heat^reset;
+    ^green;Hot biomes increase your health and speed by 15%^reset;
+    ^red;Cold biomes reduce your health by 25% and your speed by 10%^reset;
+    ^green;Exceptional aerial agility. 50% Fall Damage resist.^reset;
+    Hammer/Mace: ^green;+2% Crit^reset;
+    Wand/Staff: ^green;+12% Damage^reset;
+    Dagger: ^green;get +20% Crit Damage^reset;"
+    }
+]

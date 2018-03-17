@@ -1,22 +1,32 @@
 function init()
   self.movementParams = mcontroller.baseParameters()  
-  local bounds = mcontroller.boundBox()
   self.protectionBonus = config.getParameter("protectionBonus", 0)
   baseValue = config.getParameter("healthBonus",0)*(status.resourceMax("health"))
   baseValue2 = config.getParameter("energyBonus",0)*(status.resourceMax("energy"))
-  self.tickDamagePercentage = 0.01
+  self.tickDamagePercentage = 0.005
   self.tickTime = 2
-  self.tickTimer = self.tickTime 
-  animator.setParticleEmitterOffsetRegion("drips", mcontroller.boundBox())
-  animator.setParticleEmitterActive("drips", true)
- 
-  checkRace()
+  self.tickTimer = self.tickTime
   script.setUpdateDelta(5)
+  self.species = world.entitySpecies(entity.id())
+  if status.stat("isHerbivore")==1 or status.stat("isRobot")==1 then
+    world.sendEntityMessage(entity.id(), "queueRadioMessage", "foodtype")
+  end  
 end
 
 function update(dt)
-  if (world.entitySpecies(entity.id()) == "floran") or (world.entitySpecies(entity.id()) == "felin") then 
-    if (self.tickTimer <= 0) then
+	 if status.stat("isCarnivore")==1 or status.stat("isOmnivore")==1 or status.stat("isRadien")==1 then
+	   applyEffects() 
+	 elseif status.statPositive("isHerbivore") or status.statPositive("isRobot") then
+	   if (self.tickTimer <= 0) then 
+	     applyPenalty() 
+	   else 
+	     self.tickTimer = self.tickTimer - dt 
+	   end
+	 end
+end
+
+
+function applyPenalty()
       self.tickTimer = self.tickTime
       status.applySelfDamageRequest({
 	damageType = "IgnoresDef",
@@ -24,14 +34,10 @@ function update(dt)
 	damageSourceKind = "poison",
 	sourceEntityId = entity.id()
       })
-      mcontroller.controlModifiers({
-	airJumpModifier = 0.08,
-	speedModifier = 0.08
-      })      
-      effect.setParentDirectives("fade=806e4f="..self.tickTimer * 0.4)
-    end     
-  end
-  self.tickTimer = self.tickTimer - dt
+      mcontroller.controlModifiers({ airJumpModifier = 0.08, speedModifier = 0.08 })   
+      effect.setParentDirectives("fade=806e4f="..self.tickTimer * 0.25) 
+	status.removeEphemeralEffect("wellfed")
+	if status.resourcePercentage("food") > 0.85 then status.setResourcePercentage("food", 0.85) end      
 end
 
 function applyEffects()
@@ -42,22 +48,6 @@ function applyEffects()
     })
 end
 
-function checkRace()  -- are we carnivorous or omnivorous? customize per effect
-  if (world.entitySpecies(entity.id()) == "floran") 
-  or (world.entitySpecies(entity.id()) == "felin") 
-  or (world.entitySpecies(entity.id()) == "fenerox") 
-  or (world.entitySpecies(entity.id()) == "orcana")  
-  or (world.entitySpecies(entity.id()) == "ponex") 
-  or (world.entitySpecies(entity.id()) == "kazdra") 
-  or (world.entitySpecies(entity.id()) == "vespoid") 
-  or (world.entitySpecies(entity.id()) == "lamia") 
-  or (world.entitySpecies(entity.id()) == "callistan") then
-    applyEffects()
-  else
-    self.isNot = 1
-  end
-end
-
 function uninit()
-    status.clearPersistentEffects("floranpower1")
+  status.clearPersistentEffects("floranpower1")
 end

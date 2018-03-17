@@ -2,18 +2,18 @@
 
     { "op": "replace", 
     "path" : "/charCreationTooltip/description" , 
-    "value" : "Florans are known throughout the universe to be aggressive, carnivorous hunters.
+    "value" : "Florans are known throughout the universe to be aggressive, carnivorous hunters. They still partially sustain themselves on sunlight, but every blow they strike only adds to their hunger.
     
-    ^red;-10% HP, Basic attacks consume food^reset;
-    ^red;Lose 10% Health and 30% Energy at night^reset;
-    ^red;50% Weakness: Fire^reset;
-    ^green;+15% Energy, +20% Poison Resist^reset;
+    ^red;Basic attacks consume food, -10% HP and -30% Energy at night^reset;
+    ^red;Weak: 50% Fire, 25% Poison^reset;
+    ^green;+5% dmg, +5% HP, +20% Energy^reset;
+    ^green;+25% Electric, +25% Ice and +20% Radiation Resistance^reset;
     ^green;In forest-like biomes gain additional health and energy^reset; 
     ^green;Regenerate health and food during daylight hours. If Health and Food are full, gain energy regen^reset;
-    ^green;Damage increases the hungrier you get. When well fed, your Energy increases^reset;
-    ^green;Bows +15% dmg, and give you a 15% speed boost^reset;
-    ^green;+2 protection with Spear-Hold. When fed, spears gain Attack Speed and Crit Chance^reset;
-    ^green;Shock Immunity^reset;"
+    Bow: ^green;+4% Crit, +20% Crit Damage, +15% Movement Speed^reset;
+    Spear / Dagger: ^green;+8% dmg, +3% Crit, 3% Poison Strike chance. If fed, strike faster.^reset;
+    Floran Weapons: ^green;+2% Crit^reset;
+    Immunity: ^green;Electrified^reset;"
     }
 
 ]

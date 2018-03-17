@@ -5,16 +5,16 @@
     },
     { "op": "replace", 
     "path" : "/charCreationTooltip/description" , 
-    "value" : "Swift and dangerous snake-people
+    "value" : "Swift and dangerous snake-people. Their efficient metabolisms allow them to function on almost no food, and their powerful tails give them a mighty spring in their step.
     
-    ^red;-20% Health, 40% Weakness: Ice^reset;
-    ^green;+20% Energy, +25% Shadow Resist, +10% Physical Resist^reset;
+    ^red;-20% Health, Weak: 40% Ice, 20% Cosmic^reset;
+    ^green;+20% Energy, +10% Physical, 20% Fire, 30% Poison and Shadow resists^reset;
     ^green;Reduced food consumption^reset; 
     ^green;+20% Jump^reset; 
-    ^green;+15% Bow Damage and gain movement speed^reset;
-    ^green;+20% Damage, +10% Health and +10 Knockback Resist with Chakrams^reset;
+    Bow:^green;+15% Damage and increased movement speed^reset;
+    Chakram: ^green;+20% Damage, +10% Health and +10 Knockback Resist^reset;
     ^green;When high in energy, gain increased Crit Chance with Bows^reset;
-    ^green;Immune: Jungle, Black Tar^reset;"
+    Immune: ^green;Jungle, Black Tar^reset;"
     }
 
 ]

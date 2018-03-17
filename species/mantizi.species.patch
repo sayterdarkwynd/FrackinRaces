@@ -1,0 +1,14 @@
+[
+    { "op": "replace", 
+    "path" : "/charCreationTooltip/description" , 
+    "value" : "Dangerous republic of hardcore beetle-men. 
+    
+    ^red;30% Weakness: Fire, 20% Weakness: Ice^reset;
+    ^green;20% Physical, Poison and Electric Resistance^reset; 
+    ^green;Gain additional energy and protection on jungles, deserts and sulphuric worlds^reset; 
+    ^cyan;30% Knockback Resistance^reset;
+    Shortsword or Shortspear + Shield gain:
+    ^yellow;+20% protection^reset; and ^yellow;+20% damage^reset;
+    ^orange;Perfect Blocks restore health and restore 20% shield stamina^reset;"
+    }
+]
