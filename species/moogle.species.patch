@@ -9,7 +9,7 @@
     
     ^red;Weakness: Bad swimmers, -20% Life, -10% Physical Resist^reset;
     ^green;Strength: +10% Speed, +20% Energy, Gliding, Halved Fall Damage, +10% Cosmic Resist^reset;
-    Guns: ^green;+10% Damage, +5 Crit. Chance^reset;
+    Guns: ^green;+10% Damage, +3 Crit^reset;
     Built-In: ^green;Extra upgraded mech body.^reset;"
     }
 ]
