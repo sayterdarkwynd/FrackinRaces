@@ -17,6 +17,6 @@
     Shortspear / Spear / Axe: ^green;+8% dmg, +5% Crit.^reset;
     Hammer / Greataxe / Broadsword: ^green;5% Damage, +3% Crit, +15% Crit Damage^reset;
     Bows / Wands / Staves: ^green;10% Damage and Energy^reset;
-    ^green;Immunities: Jungle Tiles, Desert Heat^reset;
+    ^green;Immunities: Jungle Tiles, Desert Heat^reset;"
     }
 ]
