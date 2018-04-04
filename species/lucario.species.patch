@@ -1,0 +1,20 @@
+[
+    { "op": "replace", 
+    "path" : "/charCreationTooltip/description" ,
+    "value" : ""
+    },
+    { "op": "replace", 
+    "path" : "/charCreationTooltip/description" , 
+    "value" : "Despite their fluffy appearance, this species is incredibly adaptive. They are no strangers to fighting and have their own unique power named Aura. In past they were guardians of their home world, and merged perfectly with the Protectorate."
+
+
+    ^red;Weak: 20% Fire, 30% Radiation, -5% Protection^reset;
+    ^green;+10% Health, +10% Damage, 20% Ice Resist, 35% Shadow Resist^reset;
+    ^green;Omnivore with prefering of raw meat, but avoid mechanical food^reset;
+    ^green;Elemental Affinity: Gain +10% additional resistance of current weapon element^reset;
+    Pistol / Machinepistol: ^green;+15% Damage and Energy^reset;
+    Shortspear / Spear: ^green;+8% dmg, +5% Crit. Strike faster when full^reset;
+    Wands / Staves: ^green;5% Damage and Energy^reset;
+     Playstyle: ^yellow;Balanced^reset;
+    }
+]
