@@ -15,6 +15,7 @@
     Pistol / Machinepistol: ^green;+15% Damage and Energy^reset;
     Shortspear / Spear: ^green;+8% dmg, +5% Crit. Strike faster when full^reset;
     Wands / Staves: ^green;5% Damage and Energy^reset;
+    
      Playstyle: ^yellow;Balanced^reset;
     }
 ]
