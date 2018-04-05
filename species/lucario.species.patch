@@ -11,7 +11,8 @@
     ^red;Weak: -20% Fire, -30% Radiation, -5% Protection^reset;
     ^green;+10% Health, +10% Damage, 20% Ice Resist^reset;
     ^green;Omnivore with prefering of raw meat, but avoid mechanical food^reset;
-    ^yellow;Aura Immunity to ^green;Shadow^reset;
+    ^yellow;Aura Resistance to ^green;Shadow (25%)^reset;
+    ^yellow;Immunity to ^green;Poison^reset;
     Pistol / Machinepistol: ^green;+15% Damage and Energy^reset;
     Shortspear / Spear: ^green;+8% dmg, +5% Crit. Strike faster when full^reset;
     Wands / Staves: ^green;5% Damage and Energy^reset;
