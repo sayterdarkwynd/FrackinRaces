@@ -9,11 +9,11 @@
 
 
     ^red;Weak: -20% Fire, -30% Radiation, -30% Electric^reset;
-    ^red;Weak: -5% Health, -5% Protection^reset;
+    ^red;-5% Health, -5% Protection^reset;
     ^green;+5% Damage, +10% Energy, 20% Ice^reset;
     ^yellow;Aura Resistance to ^green;Shadow (25%)^reset;
     ^yellow;Immunity to ^green;Poison^reset;
-    ^green;Omnivore with prefering of berries, but avoid mechanical food^reset;
+    ^green;Omnivore with preference for berries, avoids mechanical food^reset;
     
     Pistol / Machinepistol: ^green;+15% Damage and Energy^reset;
     Shortspear / Spear: ^green;+8% dmg, +5% Crit. Strike faster when full^reset;
