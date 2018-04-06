@@ -1,7 +1,7 @@
 {
   "name" : "auraRageBonus",
   "effectConfig" : {
-    "healthRange" : 1
+    "healthRange" : 0.75
   },
 
   "defaultDuration" : 3,
