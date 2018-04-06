@@ -8,7 +8,7 @@ function init()
     self.specialConfig = self.raceJson[self.species].specialConfig or nil
 
     if self.specialConfig then
-        self.specialConfig = self.specialConfig.lucarioBerserk or nil
+        self.specialConfig = self.specialConfig.lucarioAuraBerserk or nil
     end
 
     self.healthRange = nil
@@ -64,9 +64,9 @@ function update(dt)
 
     -- lucario should gain bonuses only when under a certain threshold
 	if (self.healthMin > self.healthRangeHi) then
-        status.clearPersistentEffects("lucarioBerserk")
+        status.clearPersistentEffects("lucarioAuraBerserk")
 	else
-        status.setPersistentEffects("lucarioBerserk", {
+        status.setPersistentEffects("lucarioAuraBerserk", {
             {stat = "powerMultiplier", baseMultiplier = self.powerMod },
             {stat = "protection", baseMultiplier = self.protectionMod },
             {stat = "critChance", amount = self.critMod }
@@ -75,5 +75,5 @@ function update(dt)
 end
 
 function uninit()
-    status.clearPersistentEffects("lucarioBerserk")
+    status.clearPersistentEffects("lucarioAuraBerserk")
 end
