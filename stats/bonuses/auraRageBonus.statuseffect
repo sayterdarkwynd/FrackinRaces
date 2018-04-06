@@ -1,0 +1,13 @@
+{
+  "name" : "auraRageBonus",
+  "effectConfig" : {
+    "healthRange" : 1
+  },
+
+  "defaultDuration" : 3,
+
+  "scripts" : [
+    "auraRageBonus.lua"
+  ]
+
+}
