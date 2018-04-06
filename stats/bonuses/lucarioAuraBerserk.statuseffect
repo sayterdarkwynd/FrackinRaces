@@ -1,5 +1,5 @@
 {
-  "name" : "lucarioBerserk",
+  "name" : "lucarioAuraBerserk",
   "effectConfig" : {
 	"healthRangeHi" : 0.75
 	"healthRangeMi" : 0.50
@@ -9,7 +9,7 @@
   "defaultDuration" : 3,
 
   "scripts" : [
-    "lucarioBerserk.lua"
+    "lucarioAuraBerserk.lua"
   ]
 
 }
