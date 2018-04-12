@@ -10,7 +10,7 @@
     ^red;Larger body demands twice as much food^reset;
     ^red;Heavy. -10% Speed, -10% Jump^reset;
     ^red;Weak: 50% Fire, 20% Shadow, 20% Radiation^reset;
-    Machine Pistol, Pistol, Assault Rifle, Shotgun, Grenade Launcher, Rocket Launcher: -10% Damage^reset;
+    Machine Pistol, Pistol, Assault Rifle, Shotgun, Grenade Launcher, Rocket Launcher: ^red;-10% Damage^reset;
     ^green;+30 Health, +5 Protection, +10% Damage, 10% Electric Resist, 20% Poison Resist, 30% Ice Resist^reset;
     ^green;Omnivore, but avoid raw meat and mechanical food^reset;
     ^green;In Jungle, Forest, Snow, Savannah and Garden biomes, gain increased Speed and Jump^reset;
