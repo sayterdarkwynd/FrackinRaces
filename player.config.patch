@@ -1,7 +1,7 @@
 [
 
-	{ "op": "add", "path": "/defaultBlueprints/tier1/-", "value": {"item": "meatkibble"} },
-
+    { "op": "add", "path": "/defaultBlueprints/tier1/-", "value": {"item": "robosnax"} },
+    { "op": "add", "path": "/defaultBlueprints/tier1/-", "value": {"item": "meatkibble"} },   
     { "op": "add", "path" : "/statusControllerSettings/primaryScriptSources/-" , "value" : "/scripts/raceEffects.lua" }
 
 ]

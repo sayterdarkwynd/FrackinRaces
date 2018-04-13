@@ -1,19 +1,19 @@
 {
-  "itemName" : "meatkibble",
+  "itemName" : "robosnax",
   "rarity" : "Common",
   "price" : 4,
   "category" : "food",
   "eventCategory" : "cookingIngredient",
-  "inventoryIcon" : "meatkibble.png",
-  "description" : "Great for carnivores.",
-  "shortdescription" : "Meaty Kibble",
+  "inventoryIcon" : "robosnax.png",
+  "description" : "Specially formulated Robo-Food.",
+  "shortdescription" : "Robo-Snax",
   "foodValue" : 11,
   "tooltipKind" : "food",
   "builder" : "/items/buildscripts/buildfood.lua",
   "maxStack" : 100,
-  "effects" : [ [ { "effect" : "carnivorefood" }] ],
+  "effects" : [ [ { "effect" : "robofood" }] ],
   "itemAgingScripts" : ["/scripts/items/rotting.lua"],
-  "rottingMultiplier" : 0.25,
+  "rottingMultiplier" : 0.5,
   "blockingEffects" : [
     "wellfed"
   ]

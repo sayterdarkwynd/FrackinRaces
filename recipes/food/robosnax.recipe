@@ -1,7 +1,7 @@
 {
   "input" : [
-    { "item" : "alienmeat", "count" : 1 }
+    { "item" : "ironore", "count" : 1 }
   ],
-  "output" : { "item" : "meatkibble", "count" : 3 },
+  "output" : { "item" : "robosnax", "count" : 6 },
   "groups" : [ "craftingfood", "mains", "campfire", "consumables", "all" ]
 }
