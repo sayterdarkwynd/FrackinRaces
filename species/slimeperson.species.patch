@@ -9,7 +9,8 @@
 
     ^red;-50% Ice Resistance, -25% HP on cold biomes^reset; 
     ^green;+25% Health and +15% speed on Gelatinous, Bog and Swamp biomes^reset;
-    ^green;20 % Electric Resist, +40% Fire Resist^reset; 
+    ^green;Regenerate^reset; 
+    ^green;+20% Electric Resist, +40% Fire Resist^reset; 
     ^green;+20% Poison Resist, -15% Fall Damage^reset; 
     Whips: ^green;+20% damage, +12% protection^reset; 
     Bio/Slime: ^green;+15% damage, +2 Crit Damage^reset; 
