@@ -1,0 +1,16 @@
+[
+    { "op": "replace", 
+    "path" : "/charCreationTooltip/description" , 
+    "value" : ""
+    },
+    { "op": "replace", 
+    "path" : "/charCreationTooltip/description" , 
+    "value" : "A mysterious carnivorous race bearing a resemblance to ancient Earth demons. Not much is known of these creatures.
+    
+    ^red;-50% Weakness: Ice, -10% Energy^reset;
+    ^green;+30% Cosmic Resist, +50% Shadow Resist^reset;
+    ^green;+Low hunger rate^reset;
+    Immunity: ^green;Electrified^reset;
+    Crossbow/Bow/Sniper/Whip: ^green;+20% Damage, +4% Crit Chance^reset;"
+    }
+]
