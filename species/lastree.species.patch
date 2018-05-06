@@ -11,6 +11,8 @@
     ^green;+30% Cosmic Resist, +50% Shadow Resist^reset;
     ^green;+Low hunger rate^reset;
     Immunity: ^green;Electrified^reset;
-    Crossbow/Bow/Sniper/Whip: ^green;+20% Damage, +4% Crit Chance^reset;"
+    Sniper Rifle: ^green;+5 Crit Damage, +3% Crit Chance^reset;
+    Scythe/Axe/Greataxe: ^green;+8 Protection^reset;
+    Pistol/Machine Pistol: ^green;+10% Damage, +50% Knockback Resist, +0.25% Crit Chance^reset;"
     }
 ]
