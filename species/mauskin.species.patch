@@ -1,0 +1,15 @@
+[
+
+    { "op": "replace", 
+    "path" : "/charCreationTooltip/description" , 
+    "value" : "A history as a prey-animal has led these now highly evolved rodents to become protectors of the weak and downtrodden.
+    
+    ^red;Weak:-30% Electric, Shadow, Radiation Resistance^reset;
+    ^red;+30% Ice, Poison and Cosmic Resistance^reset;
+    ^green;Highly reduced food consumption^reset;
+    ^green;1h combos increase protection^reset;
+    Rapier/Shortsword/Mace: ^green;+10% Damage, +0.25% Crit Chance^reset;
+    Rapier/Dagger: ^green;+25% Protection^reset;
+    Immune: ^green;Poison, Bee Stings^reset;"
+    }
+]
