@@ -8,7 +8,7 @@
     "path" : "/charCreationTooltip/description" , 
     "value" : "Colorful, chatty squid people. Light on their feet, sensitive to climate and liquids, and quite talented with their energy-based firearms.
 	
-  ^green; 20% Physical resist, 30% Radioactive resist^reset;
+        ^green; 20% Physical resist, 30% Radioactive resist^reset;
 	^green; 5% movement speed increase, 20% jump height increase^reset;
 	^red;Weak: 20% Poison, Electric^reset;
 	^green; Ocean biomes significantly increase stats and give breath immunity^reset;
