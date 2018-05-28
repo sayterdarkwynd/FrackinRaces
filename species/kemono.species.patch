@@ -5,12 +5,12 @@
     },
     { "op": "replace", 
     "path" : "/charCreationTooltip/description" , 
-    "value" : "Able fox-like warriors.
+    "value" : "Able fox-like warriors. Carnivorous.
     
     ^red;-12% Energy, 50% Weakness: Shadow^reset;
     ^green;+10% Speed, +10% Jump, +30 Health^reset;
     ^green;Increased Shield Regen and Perfect Block time^reset;
-    ^green;Perfect Blocks increase Protection and heals^reset;
+    ^green;Perfect Blocks increase Protection and damage^reset;
     Dagger/Sword^green;+30% Damage. Combos increase defense.^reset;"
     }
 ]
