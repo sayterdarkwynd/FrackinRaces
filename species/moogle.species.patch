@@ -10,7 +10,7 @@
     ^red;Weakness: -20% Life, -5% Physical Resist, -5% Radioactive Resist, -15% Shadow Resist^reset;
     ^green;Strength: +10% Speed, +20% Energy, +20% Cosmic Resist^reset;
     ^yellow;Effects: ^green;Adorable, Quarter Fall Damage
-    ^blue;Movement: ^green;Gliding, ^red;Bad swimmers^reset;
+    ^blue;Movement: ^green;Gliding, Increased Agility, ^red;Bad swimmers^reset;
     ^orange;Combat: Firearms gain ^green;+10% Damage, +3 Crit^reset;
     ^orange;Rapiers, Energy Weapons, Staves and Wands gain ^green;+5% Damage, +1 Crit^reset;
     ^violet;Built-In: ^green;Extra craftable racial mech body tier.^reset;"
