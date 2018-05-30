@@ -7,10 +7,13 @@
     "path" : "/charCreationTooltip/description" , 
     "value" : "Adorable, fluffy, cosmic-attuned lagomorphic critters from a distant world of fantasy that have a pom-pom, bat wings and a thing for saying \"Kupo!\". They are usually expert machinists, but on occasion, they may become a knight or a mage instead.
     
-    ^red;Weakness: Bad swimmers, -20% Life, -10% Physical Resist, -10% Shadow Resist^reset;
-    ^green;Strength: +10% Speed, +20% Energy, +20% Cosmic Resist^reset;
-    ^yellow;Effects: ^green;Charismatic, Gliding, Half Fall Damage^reset;
-    ^orange;Combat: All guns gain ^green;+10% Damage, +3 Crit^reset;
-    ^violet;Built-In: ^green;Extra upgraded mech body.^reset;"
+    ^red;-20% Life, -5% Physical, -15% Shadow, -10% Radioactive Resistances^reset;
+    ^green;+10% Speed, +20% Energy, +30% Cosmic Resistance^reset;
+    ^green;Adorable, 40% Fall Damage^reset;
+    ^cyan;Gliding, ^green;+10% Speed and Jump, ^red;Bad at swimming^reset;
+    ^magenta;Extra craftable mech body.^reset;
+    ^yellow;Firearms gain ^green;+5% Damage, +1% Crit^reset;
+    ^yellow;Broadswords, Shortswords, Staves and Wands gain ^green;5% damage^reset;
+    ^yellow;Rapiers, Spears, Energy, Pistols and Machine Pistols gain ^green;10% damage, +2% Crit^reset;"
     }
 ]
