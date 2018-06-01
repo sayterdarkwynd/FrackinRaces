@@ -13,7 +13,8 @@
     ^cyan;Gliding, ^green;+10% Speed and Jump, ^red;Bad at swimming^reset;
     ^magenta;Extra craftable mech body.^reset;
     ^yellow;Firearms gain ^green;+5% Damage, +1% Crit^reset;
-    ^yellow;Broadswords, Shortswords, Staves and Wands gain ^green;5% damage^reset;
-    ^yellow;Rapiers, Spears, Energy Weapons, Pistols and Machine Pistols gain ^green;10% damage, +2% Crit^reset;"
+    ^yellow;Broadswords, Shortswords, Staves, and Wands gain ^green;+5% damage^reset;
+    ^yellow;Rapiers, Spears, Pistols and Machine Pistols gain ^green;+10% damage, +1% Crit^reset;
+    ^yellow;Energy Weapons gain ^green;+5% damage, +2% Crit^reset;"
     }
 ]
