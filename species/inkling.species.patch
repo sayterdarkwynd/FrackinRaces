@@ -8,21 +8,21 @@
     "path" : "/charCreationTooltip/description" , 
     "value" : "Colorful, chatty squid people. Light on their feet, sensitive to climate and liquids, and quite talented with their energy-based firearms.
 	
-        ^green; 10% Physical resist, 30% Radioactive resist^reset;
-	^green; 5% movement speed increase, 20% jump height increase^reset;
-	^red;Weak: 20% Ice, Electric^reset;
-	^green; Ocean biomes significantly increase stats and give breath immunity^reset;
-	^green; Warm biomes slightly increase Health and Energy^reset;
-	^red; Cold biomes slightly reduce Health and Energy^reset;
-	^green;Oil, slime, dark water and healing water increase stats & give breath immunity^reset;
-	^red;Waste water and swamp water greatly reduce stats and breath^reset;
+    ^green;10% Physical resist, 30% Radioactive resist^reset;
+    ^green;5% movement speed increase, 20% jump height increase^reset;
+    ^red;Weak: 20% Ice, Electric^reset;
+    ^green;Ocean biomes significantly increase stats and give breath immunity^reset;
+    ^green;Warm biomes slightly increase Health and Energy^reset;
+    ^red;Cold biomes slightly reduce Health and Energy^reset;
+    ^green;Oil, slime, dark water and healing water increase stats & give breath immunity^reset;
+    ^red;Waste water and swamp water greatly reduce stats and breath^reset;
 	
-	Pistol/Machine Pistol: ^green;+20% damage, 15% Energy increase^reset;
-	Sniper Rifle: ^green; +2% crit, +5 crit damage^reset;
-	Grenade Launcher: ^green; +2% crit, +5 crit damage^reset;
-	Energy Weapon: ^green; +5% damage, +5% Energy increase^reset;
+    Pistol/Machine Pistol: ^green;+20% damage, 15% Energy increase^reset;
+    Sniper Rifle: ^green; +2% crit, +5 crit damage^reset;
+    Grenade Launcher: ^green; +2% crit, +5 crit damage^reset;
+    Energy Weapon: ^green; +5% damage, +5% Energy increase^reset;
 
-	Immunities: ^green;Slime & Wet^reset;
-	^green; Lightweight, boneless bodies adapted to jumping. 65% total fall damage."
+    Immunities: ^green;Slime & Wet^reset;
+    ^green; Lightweight, boneless bodies adapted to jumping. 65% total fall damage."
     }
 ]
