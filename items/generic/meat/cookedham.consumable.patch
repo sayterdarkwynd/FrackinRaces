@@ -10,6 +10,6 @@
   {
     "op": "replace",
     "path": "/description",
-    "value": "A haunch of roasted alien ham. \n ^orange;Cooked Meat^reset;, ^cyan;poisonous^reset; to ^green;herbivores^reset; and ^yellow;robots^reset;"
+    "value": "A haunch of roasted alien ham. ^orange;Cooked Meat^reset;"
   }
 ]
