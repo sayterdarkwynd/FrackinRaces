@@ -10,6 +10,6 @@
   {
     "op": "replace",
     "path": "/description",
-    "value": A thick, shake-like drink of meat and pussplum. \n ^Red;Contains raw meat^reset;, ^cyan;poisonous to all^reset; EXCEPT ^red;carnivores^reset;"
+    "value": A thick, shake-like drink of meat and pussplum. ^Red;Contains raw meat^reset;"
   }
 ]
