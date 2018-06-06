@@ -9,6 +9,6 @@
   {
     "op": "replace",
     "path": "/description",
-    "value": A healthy mix of bananas and grapes. \n ^green;Herbivore food^reset;, ^cyan;poisonous^reset; to ^red;carnivores^reset; and ^yellow;robots^reset;"
+    "value": A healthy mix of bananas and grapes. ^green;Herbivore food^reset;"
   }
 ]
