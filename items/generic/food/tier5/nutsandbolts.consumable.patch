@@ -9,6 +9,6 @@
   {
     "op": "replace",
     "path": "/description",
-    "value": Assorted copper flavoured morsels. \n ^yellow;Robot food^reset;, ^cyan;poisonous to everyone^reset; EXCEPT ^yellow;robots^reset;"
+    "value": Assorted copper flavoured morsels. ^yellow;Robot food^reset;"
   }
 ]
