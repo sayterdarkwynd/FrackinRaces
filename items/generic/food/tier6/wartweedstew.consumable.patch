@@ -9,6 +9,6 @@
   {
     "op": "replace",
     "path": "/description",
-    "value": A hearty, thick stew of wartweed and vegetables. \n ^green;Herbivore food^reset;, ^cyan;poisonous^reset; to ^red;carnivores^reset; and ^yellow;robots^reset;"
+    "value": A hearty, thick stew of wartweed and vegetables. ^green;Herbivore food^reset;"
   }
 ]
