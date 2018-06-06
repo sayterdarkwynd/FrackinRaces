@@ -9,6 +9,6 @@
   {
     "op": "replace",
     "path": "/description",
-    "value": "Simple fish dumplings, steamed and lightly seasoned. \n ^orange;Cooked Meat^reset;, ^cyan;poisonous^reset; to ^green;herbivores^reset; and ^yellow;robots^reset;"
+    "value": "Simple fish dumplings, steamed and lightly seasoned. ^orange;Cooked Meat^reset;"
   }
 ]
