@@ -9,7 +9,7 @@
   {
     "op": "replace",
     "path": "/description",
-    "value": A sweet and flavoursome preserve, precious among Avians. \n ^green;Herbivore food^reset;, ^cyan;poisonous^reset; to ^red;carnivores^reset; and ^yellow;robots^reset;"
+    "value": A sweet and flavoursome preserve, precious among Avians. ^green;Herbivore food^reset;"
   }
 
 ]
