@@ -5,5 +5,10 @@
     "value": {
       "effect": "robofood"
     }
+  },
+  {
+    "op": "replace",
+    "path": "/description",
+    "value": Tastes like an actual stuffed tomato, if you can get through it without breaking your teeth! \n ^yellow;Robot food^reset;, ^cyan;poisonous to all^reset; EXCEPT ^yellow;robots^reset;"
   }
 ]
