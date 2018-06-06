@@ -9,6 +9,6 @@
   {
     "op": "replace",
     "path": "/description",
-    "value": A loaf of carrot bread. Let's be honest, it's just bread-shaped cake. \n ^green;Herbivore food^reset;, ^cyan;poisonous^reset; to ^red;carnivores^reset; and ^yellow;robots^reset;"
+    "value": A loaf of carrot bread. Let's be honest, it's just bread-shaped cake. ^green;Herbivore food^reset;"
   }
 ]
