@@ -9,6 +9,6 @@
   {
     "op": "replace",
     "path": "/description",
-    "value": A Hylotl dish, overloaded with ingredients of questionable oceanic origin. \n ^orange;Contains cooked meat^reset;, ^cyan;poisonous^reset; to ^green;herbivores^reset; and ^yellow;robots^reset;"
+    "value": A Hylotl dish, overloaded with ingredients of questionable oceanic origin. ^orange;Contains cooked meat^reset;"
   }
 ]
