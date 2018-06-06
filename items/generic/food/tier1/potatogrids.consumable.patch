@@ -9,6 +9,6 @@
   {
     "op": "replace",
     "path": "/description",
-    "value": "A crispy golden exterior protects the soft and fluffy potato within. \n ^green;Herbivore food^reset;, ^cyan;poisonous^reset; to ^red;carnivores^reset; and ^yellow;robots^reset;"
+    "value": "A crispy golden exterior protects the soft and fluffy potato within. ^green;Herbivore food^reset;"
   }
 ]
