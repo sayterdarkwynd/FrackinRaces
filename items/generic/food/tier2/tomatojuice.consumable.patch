@@ -9,6 +9,6 @@
   {
     "op": "replace",
     "path": "/description",
-    "value": A hearty tomato juice. \n ^green;Herbivore food^reset;, ^cyan;poisonous^reset; to ^red;carnivores^reset; and ^yellow;robots^reset;"
+    "value": A hearty tomato juice. ^green;Herbivore food^reset;"
   }
 ]
