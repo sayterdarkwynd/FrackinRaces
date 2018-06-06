@@ -6,5 +6,10 @@
   { "op":"add", 
 "path":"/effects/-", 
 "value": [ { "effect" : "carnivorefoodnopoison" } ]
+  },
+  {
+    "op": "replace",
+    "path": "/description",
+    "value": SPancake. Bacon. Pancake. Bacon. Pancake. Butter. Eat. \n ^orange;Contains cooked meat^reset;, ^cyan;poisonous^reset; to ^green;herbivores^reset; and ^yellow;robots^reset;"
   }
 ]
