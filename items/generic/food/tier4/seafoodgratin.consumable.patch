@@ -9,6 +9,6 @@
   {
     "op": "replace",
     "path": "/description",
-    "value": Fish baked with fish-like fruit. A fishy dish! \n ^orange;Contains cooked meat^reset;, ^cyan;poisonous^reset; to ^green;herbivores^reset; and ^yellow;robots^reset;"
+    "value": Fish baked with fish-like fruit. A fishy dish! ^orange;Contains cooked meat^reset;"
   }
 ]
