@@ -9,6 +9,6 @@
   {
     "op": "replace",
     "path": "/description",
-    "value": "Just like mama used to make! \n ^orange;Contains cooked meat^reset;, ^cyan;poisonous^reset; to ^green;herbivores^reset; and ^yellow;robots^reset;"
+    "value": "Just like mama used to make! ^orange;Contains cooked meat^reset;"
   }
 ]
