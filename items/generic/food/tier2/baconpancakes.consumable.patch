@@ -10,6 +10,6 @@
   {
     "op": "replace",
     "path": "/description",
-    "value": SPancake. Bacon. Pancake. Bacon. Pancake. Butter. Eat. ^orange;Contains cooked meat^reset;"
+    "value": "Pancake. Bacon. Pancake. Bacon. Pancake. Butter. Eat. ^orange;Type: Cooked Meat^reset;"
   }
 ]
