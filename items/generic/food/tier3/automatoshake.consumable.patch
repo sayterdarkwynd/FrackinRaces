@@ -9,6 +9,6 @@
   {
     "op": "replace",
     "path": "/description",
-    "value": An automato milkshake! Mmm. \n ^yellow;Robot food^reset;, ^cyan;poisonous to everyone^reset; EXCEPT ^yellow;robots^reset;"
+    "value": An automato milkshake! Mmm. ^yellow;Robot food^reset;"
   }
 ]
