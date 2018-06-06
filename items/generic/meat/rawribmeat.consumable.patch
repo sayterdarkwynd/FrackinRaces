@@ -11,5 +11,10 @@
     "op": "replace",
     "path": "/foodValue",
     "value": 22
+  },
+  {
+    "op": "replace",
+    "path": "/description",
+    "value": "Raw meat cut from some unfortunate creature's ribs. Sounds tasty but it should be cooked. \n ^red;Raw meat^reset;, ^cyan;poisonous to everything^reset; EXCEPT ^red;carnivores^reset;"
   }
 ]
