@@ -9,6 +9,6 @@
   {
     "op": "replace",
     "path": "/description",
-    "value": A mixture of only the sweetest of sweet fruit. \n ^green;Herbivore food^reset;, ^cyan;poisonous^reset; to ^red;carnivores^reset; and ^yellow;robots^reset;"
+    "value": A mixture of only the sweetest of sweet fruit. ^green;Herbivore food^reset;"
   }
 ]
