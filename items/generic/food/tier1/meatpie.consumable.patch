@@ -9,6 +9,6 @@
   {
     "op": "replace",
     "path": "/description",
-    "value": "Minced meat in a rich gravy, topped with creamy mash. \n ^orange;Contains cooked meat^reset;, ^cyan;poisonous^reset; to ^green;herbivores^reset; and ^yellow;robots^reset;"
+    "value": "Minced meat in a rich gravy, topped with creamy mash. ^orange;Contains cooked meat^reset;"
   }
 ]
