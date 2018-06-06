@@ -9,6 +9,6 @@
   {
     "op": "replace",
     "path": "/description",
-    "value": What do you get if you blend a toxictop with an alien fruit? That's right, you guessed it. \n ^green;Herbivore food^reset;, ^cyan;poisonous^reset; to ^red;carnivores^reset; and ^yellow;robots^reset;"
+    "value": What do you get if you blend a toxictop with an alien fruit? That's right, you guessed it. ^green;Herbivore food^reset;"
   }
 ]
