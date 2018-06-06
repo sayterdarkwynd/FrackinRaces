@@ -9,6 +9,6 @@
   {
     "op": "replace",
     "path": "/description",
-    "value": You can't see the coconut, but it's there! The taste is amazing. \n ^green;Herbivore food^reset;, ^cyan;poisonous^reset; to ^red;carnivores^reset; and ^yellow;robots^reset;"
+    "value": You can't see the coconut, but it's there! The taste is amazing. ^green;Herbivore food^reset;"
   }
 ]
