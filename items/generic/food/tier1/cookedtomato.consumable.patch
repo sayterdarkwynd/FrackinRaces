@@ -11,6 +11,6 @@
   {
     "op": "replace",
     "path": "/description",
-    "value": "Mmm, fresh out of the oven. \n ^green;Herbivore food^reset;, ^cyan;poisonous^reset; to ^red;carnivores^reset; and ^yellow;robots^reset;"
+    "value": "Mmm, fresh out of the oven. ^green;Herbivore food^reset;"
   }
 ]
