@@ -5,5 +5,10 @@
     "value": {
       "effect": "robofood"
     }
+  },
+  {
+    "op": "replace",
+    "path": "/description",
+    "value": A popular Glitch energy drink. Or is it just a placebo? \n ^yellow;Robot food^reset;, ^cyan;poisonous to everyone^reset; EXCEPT ^yellow;robots^reset;"
   }
 ]
