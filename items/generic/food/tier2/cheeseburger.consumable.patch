@@ -20,6 +20,6 @@
   {
     "op": "replace",
     "path": "/description",
-    "value": A juicy hamburger, topped with cheese. \n ^orange;Contains cooked meat^reset;, ^cyan;poisonous^reset; to ^green;herbivores^reset; and ^yellow;robots^reset;"
+    "value": A juicy hamburger, topped with cheese. ^orange;Contains cooked meat^reset;"
   }
 ]
