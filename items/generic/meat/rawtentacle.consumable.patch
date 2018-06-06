@@ -15,6 +15,6 @@
   {
     "op": "replace",
     "path": "/description",
-    "value": "A raw tentacle. Might be more edible if it's cooked... \n ^red;Raw meat^reset;, ^cyan;poisonous to everything^reset; EXCEPT ^red;carnivores^reset;"
+    "value": "A raw tentacle. Might be more edible if it's cooked... ^red;Raw meat^reset;"
   }
 ]
