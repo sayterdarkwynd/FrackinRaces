@@ -7,5 +7,10 @@
         "herbivorefood"
       ]
     ]
+  },
+  {
+    "op": "replace",
+    "path": "/description",
+    "value": "Crispy on the outside, hot as molten lava on the inside. \n ^green;Herbivore food^reset;, ^orange;poisonous to carnivores and robots^reset;"
   }
 ]
