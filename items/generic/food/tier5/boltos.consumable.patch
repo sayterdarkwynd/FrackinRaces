@@ -9,6 +9,6 @@
   {
     "op": "replace",
     "path": "/description",
-    "value": Bolt O's, for when you wake up so hungry you don't care what you're putting in your mouth! \n ^yellow;Robot food^reset;, ^cyan;poisonous to everyone^reset; EXCEPT ^yellow;robots^reset;"
+    "value": Bolt O's, for when you wake up so hungry you don't care what you're putting in your mouth! ^yellow;Robot food^reset;"
   }
 ]
