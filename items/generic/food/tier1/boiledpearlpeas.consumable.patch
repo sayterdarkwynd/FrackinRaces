@@ -11,6 +11,6 @@
   {
     "op": "replace",
     "path": "/description",
-    "value": "A bowl of rather bland boiled pearlpeas. \n ^green;Herbivore food^reset;, ^cyan;poisonous^reset; to ^red;carnivores^reset; and ^yellow;robots^reset;"
+    "value": "A bowl of rather bland boiled pearlpeas. ^green;Herbivore food^reset;"
   }
 ]
