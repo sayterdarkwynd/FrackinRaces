@@ -21,6 +21,6 @@
   {
     "op": "replace",
     "path": "/description",
-    "value": "Diodia, tastes like copper. \n ^yellow;Robot food^reset;, ^cyan;poisonous to all^reset; EXCEPT ^yellow;robots^reset;"
+    "value": "Diodia, tastes like copper. ^yellow;Robot food^reset;"
   }
 ]
