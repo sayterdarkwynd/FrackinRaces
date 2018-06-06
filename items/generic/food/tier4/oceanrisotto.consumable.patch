@@ -9,6 +9,6 @@
   {
     "op": "replace",
     "path": "/description",
-    "value": A salty and aromatic rice dish. \n ^orange;Contains cooked meat^reset;, ^cyan;poisonous^reset; to ^green;herbivores^reset; and ^yellow;robots^reset;"
+    "value": A salty and aromatic rice dish. ^orange;Contains cooked meat^reset;"
   }
 ]
