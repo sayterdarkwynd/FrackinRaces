@@ -5,5 +5,10 @@
     "value": {
       "effect": "robofood"
     }
+  },
+  {
+    "op": "replace",
+    "path": "/description",
+    "value": A surprisingly tasty stew, if you watch out for the bits of metal. \n ^yellow;Robot food^reset;, ^cyan;poisonous to everyone^reset; EXCEPT ^yellow;robots^reset;"
   }
 ]
