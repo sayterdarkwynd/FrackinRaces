@@ -16,6 +16,6 @@
   {
     "op": "replace",
     "path": "/description",
-    "value": "Avesmingo, the plant of a 100 different flavours. \n ^green;Herbivore food^reset;, ^cyan;poisonous^reset; to ^red;carnivores^reset; and ^yellow;robots^reset;"
+    "value": "Avesmingo, the plant of a 100 different flavours. ^green;Herbivore food^reset;"
   }
 ]
