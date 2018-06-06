@@ -7,5 +7,10 @@
         "robofood"
       ]
     ]
+  },
+  {
+    "op": "replace",
+    "path": "/description",
+    "value": "Likely incredibly inedible for non-mechanicals. \n ^yellow;Robot food^reset;, ^cyan;poisonous to all EXCEPT^reset; ^yellow;robots^reset;"
   }
 ]
