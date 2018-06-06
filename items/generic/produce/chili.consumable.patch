@@ -12,5 +12,10 @@
     "op": "replace",
     "path": "/maxStack",
     "value": 20
+  },
+  {
+    "op": "replace",
+    "path": "/description",
+    "value": "Super hot to humans, super, super hot to everyone else. \n ^green;Herbivore food^reset;, ^cyan;poisonous^reset; to ^red;carnivores^reset; and ^yellow;robots^reset;"
   }
 ]
