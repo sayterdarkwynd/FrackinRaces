@@ -9,7 +9,7 @@
   {
     "op": "replace",
     "path": "/description",
-    "value": Beakseed and dried corn. A common Avian trail mix, or breakfast cereal. \n ^green;Herbivore food^reset;, ^cyan;poisonous^reset; to ^red;carnivores^reset; and ^yellow;robots^reset;"
+    "value": Beakseed and dried corn. A common Avian trail mix, or breakfast cereal. ^green;Herbivore food^reset;"
   }
 
 ]
