@@ -16,6 +16,6 @@
   {
     "op": "replace",
     "path": "/description",
-    "value": So long as you watch out for the thorns, these are delicious. \n ^green;Herbivore food^reset;, ^cyan;poisonous^reset; to ^red;carnivores^reset; and ^yellow;robots^reset;"
+    "value": So long as you watch out for the thorns, these are delicious. ^green;Herbivore food^reset;"
   }
 ]
