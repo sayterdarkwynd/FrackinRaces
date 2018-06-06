@@ -9,6 +9,6 @@
   {
     "op": "replace",
     "path": "/description",
-    "value": Alien fruit jam. Sticky. \n ^green;Herbivore food^reset;, ^cyan;poisonous^reset; to ^red;carnivores^reset; and ^yellow;robots^reset;"
+    "value": Alien fruit jam. Sticky. ^green;Herbivore food^reset;"
   }
 ]
