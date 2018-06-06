@@ -5,5 +5,10 @@
     "value": {
       "effect": "herbivorefood"
     }
+  },
+  {
+    "op": "replace",
+    "path": "/description",
+    "value": What do you get if you blend a toxictop with an alien fruit? That's right, you guessed it. ^green;Herbivore food^reset;"
   }
 ]

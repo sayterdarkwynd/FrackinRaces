@@ -5,5 +5,10 @@
     "value": {
       "effect": "herbivorefood"
     }
+  },
+  {
+    "op": "replace",
+    "path": "/description",
+    "value": A simple snack formed of rice, held together by seaweed. ^green;Herbivore food^reset;"
   }
 ]

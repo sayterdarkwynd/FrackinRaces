@@ -5,5 +5,10 @@
     "value": {
       "effect": "herbivorefood"
     }
+  },
+  {
+    "op": "replace",
+    "path": "/description",
+    "value": Sweet, stewed apple under a blanket of golden crumble. ^green;Herbivore food^reset;"
   }
 ]

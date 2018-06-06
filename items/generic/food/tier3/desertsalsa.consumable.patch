@@ -5,5 +5,10 @@
     "value": {
       "effect": "robofood"
     }
+  },
+  {
+    "op": "replace",
+    "path": "/description",
+    "value": A refreshing salsa made from desert fruits. The taste is amazing. ^yellow;Robot food^reset;"
   }
 ]

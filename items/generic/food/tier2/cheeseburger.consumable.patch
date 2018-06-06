@@ -16,5 +16,10 @@
     },
     { "effect" : "carnivorefoodcooked" }
   ]
+  },
+  {
+    "op": "replace",
+    "path": "/description",
+    "value": A juicy hamburger, topped with cheese. ^orange;Contains cooked meat^reset;"
   }
 ]

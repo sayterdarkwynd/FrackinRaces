@@ -12,5 +12,10 @@
     "op": "replace",
     "path": "/maxStack",
     "value": 20
+  },
+  {
+    "op": "replace",
+    "path": "/description",
+    "value": "A genetically enhanced banana. ^green;Herbivore food^reset;"
   }
 ]

@@ -5,5 +5,10 @@
     "value": {
       "effect": "herbivorefood"
     }
+  },
+  {
+    "op": "replace",
+    "path": "/description",
+    "value": Sweet, tasty pineapple juice. ^green;Herbivore food^reset;"
   }
 ]

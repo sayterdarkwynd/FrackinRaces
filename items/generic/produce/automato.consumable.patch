@@ -17,5 +17,10 @@
     "op": "replace",
     "path": "/foodValue",
     "value": 10
+  },
+  {
+    "op": "replace",
+    "path": "/description",
+    "value": "Automatoes! Be sure to spit out the screws. ^yellow;Robot food^reset;"
   }
 ]

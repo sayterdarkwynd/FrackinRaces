@@ -7,5 +7,10 @@
         "carnivorefoodnopoison"
       ]
     ]
+  },
+  {
+    "op": "replace",
+    "path": "/description",
+    "value": A traditional Earthling pastry meant for snacking on when underground. ^orange;Contains cooked meat^reset;"
   }
 ]

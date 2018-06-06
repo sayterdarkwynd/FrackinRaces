@@ -12,5 +12,10 @@
     "op": "replace",
     "path": "/maxStack",
     "value": 20
+  },
+  {
+    "op": "replace",
+    "path": "/description",
+    "value": "Pearlpeas! I'll need to bite down hard. ^green;Herbivore food^reset;"
   }
 ]

@@ -17,5 +17,10 @@
     "op": "replace",
     "path": "/foodValue",
     "value": 15
+  },
+  {
+    "op": "replace",
+    "path": "/description",
+    "value": "Boltbulb! Surprisingly soft. ^yellow;Robot food^reset;"
   }
 ]

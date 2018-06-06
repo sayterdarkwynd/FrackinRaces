@@ -5,5 +5,10 @@
     "value": {
       "effect": "herbivorefood"
     }
+  },
+  {
+    "op": "replace",
+    "path": "/description",
+    "value": A loaf of carrot bread. Let's be honest, it's just bread-shaped cake. ^green;Herbivore food^reset;"
   }
 ]

@@ -13,5 +13,10 @@
     "op": "replace",
     "path": "/foodValue",
     "value": 20
+  },
+  {
+    "op": "replace",
+    "path": "/description",
+    "value": "Raw poultry. Might wanna cook it first... ^red;Raw meat^reset;"
   }
 ]

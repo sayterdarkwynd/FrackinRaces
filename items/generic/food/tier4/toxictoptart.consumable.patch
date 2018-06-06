@@ -5,5 +5,10 @@
     "value": {
       "effect": "herbivorefood"
     }
+  },
+  {
+    "op": "replace",
+    "path": "/description",
+    "value": What else are you going to do with all that toxictop jam? ^green;Herbivore food^reset;"
   }
 ]

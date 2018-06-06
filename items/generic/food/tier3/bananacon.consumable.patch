@@ -5,5 +5,10 @@
     "value": {
       "effect": "carnivorefoodnopoison"
     }
+  },
+  {
+    "op": "replace",
+    "path": "/description",
+    "value": With bacon, a banana and some wizardry, you get a bananacon. ^orange;Contains cooked meat^reset;"
   }
 ]

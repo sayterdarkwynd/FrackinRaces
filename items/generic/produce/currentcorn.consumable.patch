@@ -17,5 +17,10 @@
     "op": "replace",
     "path": "/foodValue",
     "value": 20
+  },
+  {
+    "op": "replace",
+    "path": "/description",
+    "value": "Grows currentcorn, full of acid. Not good for fleshy creatures. ^yellow;Robot food^reset;"
   }
 ]

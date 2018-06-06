@@ -5,5 +5,10 @@
     "value": {
       "effect": "herbivorefood"
     }
+  },
+  {
+    "op": "replace",
+    "path": "/description",
+    "value": Your standard banana, battered and fried in a rich dough. ^green;Herbivore food^reset;"
   }
 ]

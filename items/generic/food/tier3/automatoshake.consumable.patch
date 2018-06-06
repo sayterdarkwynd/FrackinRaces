@@ -5,5 +5,10 @@
     "value": {
       "effect": "robofood"
     }
+  },
+  {
+    "op": "replace",
+    "path": "/description",
+    "value": An automato milkshake! Mmm. ^yellow;Robot food^reset;"
   }
 ]

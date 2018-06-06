@@ -5,5 +5,10 @@
     "value": {
       "effect": "herbivorefood"
     }
+  },
+  {
+    "op": "replace",
+    "path": "/description",
+    "value": "A bowl of rather bland boiled pearlpeas. ^green;Herbivore food^reset;"
   }
 ]

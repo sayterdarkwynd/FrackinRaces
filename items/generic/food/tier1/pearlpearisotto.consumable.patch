@@ -5,5 +5,10 @@
     "value": {
       "effect": "herbivorefood"
     }
+  },
+  {
+    "op": "replace",
+    "path": "/description",
+    "value": "Perfectly ripe pearlpeas work best for this hearty rice dish. ^green;Herbivore food^reset;"
   }
 ]

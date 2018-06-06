@@ -5,5 +5,10 @@
     "value": {
       "effect": "carnivorefoodnopoison"
     }
+  },
+  {
+    "op": "replace",
+    "path": "/description",
+    "value": Easily prepared and delicious, you can't go wrong with an omelette! ^orange;Contains cooked meat^reset;"
   }
 ]

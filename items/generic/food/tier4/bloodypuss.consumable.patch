@@ -6,5 +6,10 @@
   { "op":"add", 
 "path":"/effects/-", 
 "value": [{ "effect" : "carnivorefood" }]
+  },
+  {
+    "op": "replace",
+    "path": "/description",
+    "value": A thick, shake-like drink of meat and pussplum. ^Red;Contains raw meat^reset;"
   }
 ]

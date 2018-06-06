@@ -5,5 +5,10 @@
     "value": {
       "effect": "herbivorefood"
     }
+  },
+  {
+    "op": "replace",
+    "path": "/description",
+    "value": You can't see the coconut, but it's there! The taste is amazing. ^green;Herbivore food^reset;"
   }
 ]

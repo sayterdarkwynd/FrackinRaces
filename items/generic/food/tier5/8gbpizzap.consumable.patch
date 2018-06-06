@@ -5,5 +5,10 @@
     "value": {
       "effect": "robofood"
     }
+  },
+  {
+    "op": "replace",
+    "path": "/description",
+    "value": It's good if you can get past the metallic aftertaste! ^yellow;Robot food^reset;"
   }
 ]

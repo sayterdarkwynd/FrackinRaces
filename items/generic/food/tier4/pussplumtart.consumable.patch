@@ -5,5 +5,10 @@
     "value": {
       "effect": "herbivorefood"
     }
+  },
+  {
+    "op": "replace",
+    "path": "/description",
+    "value": Pretty much the only good use for pussplum jam. ^green;Herbivore food^reset;"
   }
 ]

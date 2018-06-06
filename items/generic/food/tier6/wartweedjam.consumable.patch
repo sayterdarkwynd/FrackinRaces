@@ -5,5 +5,10 @@
     "value": {
       "effect": "herbivorefood"
     }
+  },
+  {
+    "op": "replace",
+    "path": "/description",
+    "value": A coarse, seedy jam that leaves behind a dry taste in your mouth. ^green;Herbivore food^reset;"
   }
 ]

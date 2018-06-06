@@ -5,7 +5,7 @@
   "category" : "food",
   "eventCategory" : "cookingIngredient",
   "inventoryIcon" : "meatkibble.png",
-  "description" : "Bloody, raw chunks of meat. Great for carnivores.",
+  "description" : "Bloody, raw chunks of meat. Great for carnivores. ^red;Raw meat^reset;",
   "shortdescription" : "Meaty Kibble",
   "foodValue" : 11,
   "tooltipKind" : "food",

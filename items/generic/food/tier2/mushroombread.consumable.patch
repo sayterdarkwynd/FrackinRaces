@@ -5,5 +5,10 @@
     "value": {
       "effect": "herbivorefood"
     }
+  },
+  {
+    "op": "replace",
+    "path": "/description",
+    "value": This loaf of bread has mushrooms baked right into it. Yum! ^green;Herbivore food^reset;"
   }
 ]

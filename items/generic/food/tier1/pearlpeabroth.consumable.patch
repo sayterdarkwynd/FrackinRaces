@@ -5,5 +5,10 @@
     "value": {
       "effect": "herbivorefood"
     }
+  },
+  {
+    "op": "replace",
+    "path": "/description",
+    "value": "A slightly more substantial meal than just boiling pearlpeas. ^green;Herbivore food^reset;"
   }
 ]

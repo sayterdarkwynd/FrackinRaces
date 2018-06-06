@@ -5,5 +5,10 @@
     "value": {
       "effect": "herbivorefood"
     }
+  },
+  {
+    "op": "replace",
+    "path": "/description",
+    "value": Sweet and crunchy. If only there was a seedless variety. ^green;Herbivore food^reset;"
   }
 ]

@@ -12,5 +12,10 @@
     "op": "replace",
     "path": "/maxStack",
     "value": 20
+  },
+  {
+    "op": "replace",
+    "path": "/description",
+    "value": "Avesmingo, the plant of a 100 different flavours. ^green;Herbivore food^reset;"
   }
 ]

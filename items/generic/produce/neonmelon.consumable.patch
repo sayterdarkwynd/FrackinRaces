@@ -12,5 +12,10 @@
     "op": "replace",
     "path": "/maxStack",
     "value": 20
+  },
+  {
+    "op": "replace",
+    "path": "/description",
+    "value": "A slice of bubblegum flavoured neonmelon. ^green;Herbivore food^reset;"
   }
 ]

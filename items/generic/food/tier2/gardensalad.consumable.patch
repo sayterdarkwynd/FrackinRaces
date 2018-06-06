@@ -5,5 +5,10 @@
     "value": {
       "effect": "herbivorefood"
     }
+  },
+  {
+    "op": "replace",
+    "path": "/description",
+    "value": A big bowl of mixed veggies. Nutritious! ^green;Herbivore food^reset;"
   }
 ]

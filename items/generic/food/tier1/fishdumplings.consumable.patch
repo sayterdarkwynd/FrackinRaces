@@ -5,5 +5,10 @@
     "value": {
       "effect": "carnivorefoodnopoison"
     }
+  },
+  {
+    "op": "replace",
+    "path": "/description",
+    "value": "Simple fish dumplings, steamed and lightly seasoned. ^orange;Cooked Meat^reset;"
   }
 ]
