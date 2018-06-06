@@ -11,6 +11,6 @@
   {
     "op": "replace",
     "path": "/description",
-    "value": "Roasted to perfection. \n ^green;Herbivore food^reset;, ^cyan;poisonous^reset; to ^red;carnivores^reset; and ^yellow;robots^reset;"
+    "value": "Roasted to perfection. ^green;Herbivore food^reset;"
   }
 ]
