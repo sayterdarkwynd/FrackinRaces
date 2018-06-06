@@ -9,6 +9,6 @@
   {
     "op": "replace",
     "path": "/description",
-    "value": Jellied coralcreep inside of a glazed pineapple, served warm. A fancy Hylotl treat! \n ^green;Herbivore food^reset;, ^cyan;poisonous^reset; to ^red;carnivores^reset; and ^yellow;robots^reset;"
+    "value": Jellied coralcreep inside of a glazed pineapple, served warm. A fancy Hylotl treat! ^green;Herbivore food^reset;"
   }
 ]
