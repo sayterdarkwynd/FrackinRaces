@@ -5,5 +5,10 @@
     "value": {
       "effect": "carnivorefood"
     }
+  },
+  {
+    "op": "replace",
+    "path": "/description",
+    "value": Oculemon stuffed inside half an eggshoot, \n ^red;Contains raw meat^reset;, ^cyan;poisonous to everyone^reset; EXCEPT ^red;carnivores^reset;"
   }
 ]
