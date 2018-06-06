@@ -9,6 +9,6 @@
   {
     "op": "replace",
     "path": "/description",
-    "value": Sweet and sticky ribs. Delicious! \n ^green;Herbivore food^reset;, ^cyan;poisonous^reset; to ^red;carnivores^reset; and ^yellow;robots^reset;"
+    "value": Sweet and sticky ribs. Delicious! ^green;Cooked meat.^reset;"
   }
 ]
