@@ -11,5 +11,10 @@
     "op": "replace",
     "path": "/foodValue",
     "value": 20
+  },
+  {
+    "op": "replace",
+    "path": "/description",
+    "value": "A fillet of raw fish...slimy. \n ^red;Raw meat^reset;, ^cyan;poisonous to everything^reset; EXCEPT ^red;carnivores^reset;"
   }
 ]
