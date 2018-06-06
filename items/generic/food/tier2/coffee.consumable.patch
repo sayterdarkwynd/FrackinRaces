@@ -9,6 +9,6 @@
   {
     "op": "replace",
     "path": "/description",
-    "value": Freshly brewed coffee. \n ^green;Herbivore food^reset;, ^cyan;poisonous^reset; to ^red;carnivores^reset; and ^yellow;robots^reset;"
+    "value": Freshly brewed coffee. ^green;Herbivore food^reset;"
   }
 ]
