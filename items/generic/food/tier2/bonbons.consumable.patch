@@ -9,6 +9,6 @@
   {
     "op": "replace",
     "path": "/description",
-    "value": Confectionery perfection. ^green;Herbivore food^reset;"
+    "value": "Confectionery perfection. ^green;Type: Herbivore^reset;"
   }
 ]

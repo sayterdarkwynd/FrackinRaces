@@ -9,6 +9,6 @@
   {
     "op": "replace",
     "path": "/description",
-    "value": Boneboo roasted with chillies makes for a crunchy, spicy Floran treat. ^orange;Contains cooked meat^reset;"
+    "value": "Boneboo roasted with chillies makes for a crunchy, spicy Floran treat. ^orange;Contains Type: Cooked Meat^reset;"
   }
 ]

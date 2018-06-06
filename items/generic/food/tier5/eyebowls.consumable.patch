@@ -9,6 +9,6 @@
   {
     "op": "replace",
     "path": "/description",
-    "value": Oculemon stuffed inside half an eggshoot, ^red;Contains raw meat^reset;"
+    "value": "Oculemon stuffed inside half an eggshoot, ^red;Type: Raw Meat^reset;"
   }
 ]

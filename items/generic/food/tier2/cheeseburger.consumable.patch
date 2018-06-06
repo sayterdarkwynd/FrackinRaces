@@ -20,6 +20,6 @@
   {
     "op": "replace",
     "path": "/description",
-    "value": A juicy hamburger, topped with cheese. ^orange;Contains cooked meat^reset;"
+    "value": "A juicy hamburger, topped with cheese. ^orange;Type: Cooked Meat^reset;"
   }
 ]

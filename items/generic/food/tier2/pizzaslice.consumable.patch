@@ -9,6 +9,6 @@
   {
     "op": "replace",
     "path": "/description",
-    "value": A hot slice of pepperoni pizza. ^orange;Contains cooked meat.^reset;"
+    "value": "A hot slice of pepperoni pizza. ^orange;Type: Cooked Meat.^reset;"
   }
 ]

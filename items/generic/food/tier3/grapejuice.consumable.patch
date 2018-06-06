@@ -9,6 +9,6 @@
   {
     "op": "replace",
     "path": "/description",
-    "value": A sweet juice made of grapes. ^green;Herbivore food^reset;"
+    "value": "A sweet juice made of grapes. ^green;Type: Herbivore^reset;"
   }
 ]

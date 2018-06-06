@@ -9,6 +9,6 @@
   {
     "op": "replace",
     "path": "/description",
-    "value": Alien fruit jam. Sticky. ^green;Herbivore food^reset;"
+    "value": "Alien fruit jam. Sticky. ^green;Type: Herbivore^reset;"
   }
 ]

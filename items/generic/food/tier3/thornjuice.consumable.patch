@@ -9,6 +9,6 @@
   {
     "op": "replace",
     "path": "/description",
-    "value": More thorn than juice. ^green;Herbivore food^reset;"
+    "value": "More thorn than juice. ^green;Type: Herbivore^reset;"
   }
 ]

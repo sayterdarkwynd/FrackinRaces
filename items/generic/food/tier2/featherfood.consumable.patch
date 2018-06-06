@@ -9,6 +9,6 @@
   {
     "op": "replace",
     "path": "/description",
-    "value": A traditional Avian ceremonial food eaten at celebrations. ^green;Herbivore food^reset;"
+    "value": "A traditional Avian ceremonial food eaten at celebrations. ^green;Type: Herbivore^reset;"
   }
 ]
