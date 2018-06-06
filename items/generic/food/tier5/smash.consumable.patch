@@ -9,6 +9,6 @@
   {
     "op": "replace",
     "path": "/description",
-    "value": A famous Glitch chef tried to imitate mashed potatoes. He succeeded. Kinda. \n ^yellow;Robot food^reset;, ^cyan;poisonous to everyone^reset; EXCEPT ^yellow;robots^reset;"
+    "value": A famous Glitch chef tried to imitate mashed potatoes. He succeeded. Kinda. ^yellow;Robot food^reset;"
   }
 ]
