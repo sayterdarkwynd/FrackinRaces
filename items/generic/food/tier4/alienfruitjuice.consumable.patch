@@ -5,5 +5,10 @@
     "value": {
       "effect": "herbivorefood"
     }
+  },
+  {
+    "op": "replace",
+    "path": "/description",
+    "value": A pleasantly sweet juice made from an alien fruit. \n ^green;Herbivore food^reset;, ^cyan;poisonous^reset; to ^red;carnivores^reset; and ^yellow;robots^reset;"
   }
 ]
