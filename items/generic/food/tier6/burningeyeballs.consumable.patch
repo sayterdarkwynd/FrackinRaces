@@ -5,7 +5,7 @@
   },
   { "op":"add", 
 "path":"/effects/-", 
-"value": [
+"value": [ 
     {
         "effect" : "maxhealthscalingboostfood",
         "duration" : 158
@@ -24,6 +24,6 @@
   {
     "op": "replace",
     "path": "/description",
-    "value": Watch out, they're super spicy! ^orange;Contains cooked meat^reset;"
+    "value": "Watch out, they're super spicy! ^orange;Type: Cooked Meat^reset;"
   }
 ]

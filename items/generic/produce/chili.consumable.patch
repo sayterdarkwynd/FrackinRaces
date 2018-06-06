@@ -16,6 +16,6 @@
   {
     "op": "replace",
     "path": "/description",
-    "value": "Super hot to humans, super, super hot to everyone else. ^green;Herbivore food^reset;"
+    "value": "Super hot to humans, super, super hot to everyone else. ^green;Type: Herbivore^reset;"
   }
 ]

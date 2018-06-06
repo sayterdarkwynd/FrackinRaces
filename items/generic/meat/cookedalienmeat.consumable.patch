@@ -11,6 +11,6 @@
   {
     "op": "replace",
     "path": "/description",
-    "value": "A slab of delicious cooked alien meat. ^orange;Cooked Meat^reset;"
+    "value": "A slab of delicious cooked alien meat. ^orange;Type: Cooked Meat^reset;"
   }
 ]

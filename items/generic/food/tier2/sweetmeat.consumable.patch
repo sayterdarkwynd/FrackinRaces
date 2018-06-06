@@ -9,6 +9,6 @@
   {
     "op": "replace",
     "path": "/description",
-    "value": A rare sweet Floran dish of candied bacon. ^orange;Cooked meat^reset;"
+    "value": "A rare sweet Floran dish of candied bacon. ^orange;Type: Cooked Meat^reset;"
   }
 ]

@@ -9,6 +9,6 @@
   {
     "op": "replace",
     "path": "/description",
-    "value": A salty and aromatic rice dish. ^orange;Contains cooked meat^reset;"
+    "value": "A salty and aromatic rice dish. ^orange;Type: Cooked Meat^reset;"
   }
 ]

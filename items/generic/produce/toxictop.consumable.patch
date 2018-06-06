@@ -16,6 +16,6 @@
   {
     "op": "replace",
     "path": "/description",
-    "value": A toxic looking fruit. Can looks be deceiving? ^green;Herbivore food^reset;"
+    "value": "A toxic looking fruit. Can looks be deceiving? ^green;Type: Herbivore^reset;"
   }
 ]

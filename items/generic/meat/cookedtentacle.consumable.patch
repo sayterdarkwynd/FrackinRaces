@@ -10,6 +10,6 @@
   {
     "op": "replace",
     "path": "/description",
-    "value": "Chewy... But in a nice way. ^orange;Cooked Meat^reset;"
+    "value": "Chewy... But in a nice way. ^orange;Type: Cooked Meat^reset;"
   }
 ]

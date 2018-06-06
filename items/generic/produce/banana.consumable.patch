@@ -16,6 +16,6 @@
   {
     "op": "replace",
     "path": "/description",
-    "value": "A genetically enhanced banana. ^green;Herbivore food^reset;"
+    "value": "A genetically enhanced banana. ^green;Type: Herbivore^reset;"
   }
 ]

@@ -9,6 +9,6 @@
   {
     "op": "replace",
     "path": "/description",
-    "value": It looks like the old spooky holiday treat, but there's actual corn in the centre of each morsel. ^green;Herbivore food^reset;"
+    "value": "It looks like the old spooky holiday treat, but there's actual corn in the centre of each morsel. ^green;Type: Herbivore^reset;"
   }
 ]

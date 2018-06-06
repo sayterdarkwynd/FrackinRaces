@@ -9,6 +9,6 @@
   {
     "op": "replace",
     "path": "/description",
-    "value": Tangy and refreshing. Try it on toast! ^green;Herbivore food^reset;"
+    "value": "Tangy and refreshing. Try it on toast! ^green;Type: Herbivore^reset;"
   }
 ]

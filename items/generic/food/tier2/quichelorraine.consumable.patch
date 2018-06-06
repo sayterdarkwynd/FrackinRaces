@@ -9,6 +9,6 @@
   {
     "op": "replace",
     "path": "/description",
-    "value": A classic bacon quiche. Perfect for picnics! ^orange;Contains cooked meat^reset;"
+    "value": "A classic bacon quiche. Perfect for picnics! ^orange;Type: Cooked Meat^reset;"
   }
 ]

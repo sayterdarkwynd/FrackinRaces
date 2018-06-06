@@ -17,6 +17,6 @@
   {
     "op": "replace",
     "path": "/description",
-    "value": "Raw poultry. Might wanna cook it first... ^red;Raw meat^reset;"
+    "value": "Raw poultry. Might wanna cook it first... ^red;Type: Raw Meat^reset;"
   }
 ]

@@ -16,6 +16,6 @@
   {
     "op": "replace",
     "path": "/description",
-    "value": "Grapes, nature's snackfood. ^green;Herbivore food^reset;"
+    "value": "Grapes, nature's snackfood. ^green;Type: Herbivore^reset;"
   }
 ]
