@@ -9,6 +9,6 @@
   {
     "op": "replace",
     "path": "/description",
-    "value": It's like an automato flavoured lollipop! Which is kind of weird. \n ^yellow;Robot food^reset;, ^cyan;poisonous to all^reset; EXCEPT ^yellow;robots^reset;"
+    "value": It's like an automato flavoured lollipop! Which is kind of weird. ^yellow;Robot food^reset;"
   }
 ]
