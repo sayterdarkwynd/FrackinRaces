@@ -9,6 +9,6 @@
   {
     "op": "replace",
     "path": "/description",
-    "value": "Fry all the things! This is an old favorite for humans. \n ^orange;Cooked Meat^reset;, ^cyan;poisonous^reset; to ^green;herbivores^reset; and ^yellow;robots^reset;"
+    "value": "Fry all the things! This is an old favorite for humans. ^orange;Cooked Meat^reset;"
   }
 ]
