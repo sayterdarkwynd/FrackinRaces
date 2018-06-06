@@ -9,6 +9,6 @@
   {
     "op": "replace",
     "path": "/description",
-    "value": "A slice of warm, eggy bread. Delicious. \n ^green;Herbivore food^reset;, ^cyan;poisonous^reset; to ^red;carnivores^reset; and ^yellow;robots^reset;"
+    "value": "A slice of warm, eggy bread. Delicious. ^green;Herbivore food^reset;"
   }
 ]
