@@ -15,6 +15,6 @@
   {
     "op": "replace",
     "path": "/description",
-    "value": "Raw strips of bacon. I should cook them first, right? \n ^red;Raw meat^reset;, ^cyan;poisonous to everything^reset; EXCEPT ^red;carnivores^reset;"
+    "value": "Raw strips of bacon. I should cook them first, right? ^red;Raw meat^reset;"
   }
 ]
