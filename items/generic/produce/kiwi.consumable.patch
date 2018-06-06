@@ -16,6 +16,6 @@
   {
     "op": "replace",
     "path": "/description",
-    "value": "Soft texture and sweet flavour, yum. ^green;Herbivore food^reset;"
+    "value": "Soft texture and sweet flavour, yum. ^green;Type: Herbivore^reset;"
   }
 ]

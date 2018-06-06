@@ -21,6 +21,6 @@
   {
     "op": "replace",
     "path": "/description",
-    "value": "Automatoes! Be sure to spit out the screws. ^yellow;Robot food^reset;"
+    "value": "Automatoes! Be sure to spit out the screws. ^yellow;Type: Robot^reset;"
   }
 ]

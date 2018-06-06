@@ -13,6 +13,6 @@
   {
     "op": "replace",
     "path": "/description",
-    "value": Mmm, milk. \n ^cyan;Poisonous^reset; to ^green;herbivores^reset; and ^yellow;robots^reset;"
+    "value": "Mmm, milk. ^orange;Type: Cooked Meat^reset;"
   }
 ]

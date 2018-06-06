@@ -16,6 +16,6 @@
   {
     "op": "replace",
     "path": "/description",
-    "value": "The coralcreep fruit turns red when cooked, like a lobster. ^green;Herbivore food^reset;"
+    "value": "The coralcreep fruit turns red when cooked, like a lobster. ^green;Type: Herbivore^reset;"
   }
 ]

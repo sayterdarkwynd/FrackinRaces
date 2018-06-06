@@ -15,6 +15,6 @@
   {
     "op": "replace",
     "path": "/description",
-    "value": "Raw meat cut from some unfortunate creature's ribs. Sounds tasty but it should be cooked. ^red;Raw meat^reset;"
+    "value": "Type: Raw Meat cut from some unfortunate creature's ribs. Sounds tasty but it should be cooked. ^red;Type: Raw Meat^reset;"
   }
 ]

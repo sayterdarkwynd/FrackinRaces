@@ -16,6 +16,6 @@
   {
     "op": "replace",
     "path": "/description",
-    "value": "Kind of squidgy and a bit tasteless. ^green;Herbivore food^reset;"
+    "value": "Kind of squidgy and a bit tasteless. ^green;Type: Herbivore^reset;"
   }
 ]

@@ -16,6 +16,6 @@
   {
     "op": "replace",
     "path": "/description",
-    "value": Fruit of the ocean. ^green;Herbivore food^reset;"
+    "value": "Fruit of the ocean. ^green;Type: Herbivore^reset;"
   }
 ]
