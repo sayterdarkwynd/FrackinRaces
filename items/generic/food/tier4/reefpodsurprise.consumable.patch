@@ -9,6 +9,6 @@
   {
     "op": "replace",
     "path": "/description",
-    "value": A lot more sour than you might have expected. Surprise! \n ^green;Herbivore food^reset;, ^cyan;poisonous^reset; to ^red;carnivores^reset; and ^yellow;robots^reset;"
+    "value": A lot more sour than you might have expected. Surprise! ^green;Herbivore food^reset;"
   }
 ]
