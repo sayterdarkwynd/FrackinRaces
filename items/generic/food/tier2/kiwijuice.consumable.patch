@@ -9,6 +9,6 @@
   {
     "op": "replace",
     "path": "/description",
-    "value": A sweet and tropical juice made of kiwis. \n ^green;Herbivore food^reset;, ^cyan;poisonous^reset; to ^red;carnivores^reset; and ^yellow;robots^reset;"
+    "value": A sweet and tropical juice made of kiwis. ^green;Herbivore food^reset;"
   }
 ]
