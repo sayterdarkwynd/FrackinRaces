@@ -11,6 +11,6 @@
   {
     "op": "replace",
     "path": "/description",
-    "value": "A slab of delicious cooked alien meat. \n ^orange;Cooked Meat^reset;, ^cyan;poisonous^reset; to ^green;herbivores^reset; and ^yellow;robots^reset;"
+    "value": "A slab of delicious cooked alien meat. ^orange;Cooked Meat^reset;"
   }
 ]
