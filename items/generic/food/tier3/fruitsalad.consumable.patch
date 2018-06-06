@@ -9,6 +9,6 @@
   {
     "op": "replace",
     "path": "/description",
-    "value": Various fruits all conveniently mixed together. \n ^green;Herbivore food^reset;, ^cyan;poisonous^reset; to ^red;carnivores^reset; and ^yellow;robots^reset;"
+    "value": Various fruits all conveniently mixed together. ^green;Herbivore food^reset;"
   }
 ]
