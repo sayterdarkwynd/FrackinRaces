@@ -6,10 +6,5 @@
   { "op":"add", 
 "path":"/effects/-", 
 "value": [{ "effect" : "carnivorefoodcooked" }]
-  },
-  {
-    "op": "replace",
-    "path": "/description",
-    "value": "A haunch of roasted alien ham. ^orange;Cooked Meat^reset;"
   }
 ]

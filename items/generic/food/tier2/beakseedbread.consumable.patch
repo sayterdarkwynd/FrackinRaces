@@ -5,11 +5,6 @@
     "value": {
       "effect": "herbivorefood"
     }
-  },
-  {
-    "op": "replace",
-    "path": "/description",
-    "value": Dense, heavy bread packed full of seeds. ^green;Herbivore food^reset;"
   }
 ]
         

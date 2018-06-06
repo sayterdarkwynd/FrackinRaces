@@ -5,10 +5,5 @@
     "value": {
       "effect": "robofood"
     }
-  },
-  {
-    "op": "replace",
-    "path": "/description",
-    "value": Bolt O's, for when you wake up so hungry you don't care what you're putting in your mouth! ^yellow;Robot food^reset;"
   }
 ]

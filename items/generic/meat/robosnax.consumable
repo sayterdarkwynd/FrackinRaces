@@ -5,7 +5,7 @@
   "category" : "food",
   "eventCategory" : "cookingIngredient",
   "inventoryIcon" : "robosnax.png",
-  "description" : "Specially formulated Robo-Food. \n ^yellow;Robot food^reset;",
+  "description" : "Specially formulated Robo-Food.",
   "shortdescription" : "Robo-Snax",
   "foodValue" : 11,
   "tooltipKind" : "food",

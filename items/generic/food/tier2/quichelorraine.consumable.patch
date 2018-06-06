@@ -5,10 +5,5 @@
     "value": {
       "effect": "carnivorefoodnopoison"
     }
-  },
-  {
-    "op": "replace",
-    "path": "/description",
-    "value": A classic bacon quiche. Perfect for picnics! ^orange;Contains cooked meat^reset;"
   }
 ]

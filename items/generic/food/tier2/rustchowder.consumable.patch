@@ -7,10 +7,5 @@
         "robofood"
       ]
     ]
-  },
-  {
-    "op": "replace",
-    "path": "/description",
-    "value": Jamed full of nutritious rust and iron. ^yellow;Robot food^reset;"
   }
 ]

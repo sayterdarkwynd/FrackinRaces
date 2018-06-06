@@ -5,10 +5,5 @@
     "value": {
       "effect": "carnivorefoodnopoison"
     }
-  },
-  {
-    "op": "replace",
-    "path": "/description",
-    "value": A Hylotl dish, overloaded with ingredients of questionable oceanic origin. ^orange;Contains cooked meat^reset;"
   }
 ]

@@ -7,10 +7,5 @@
         "herbivorefood"
       ]
     ]
-  },
-  {
-    "op": "replace",
-    "path": "/description",
-    "value": "Roasted to perfection. ^green;Herbivore food^reset;"
   }
 ]

@@ -5,10 +5,5 @@
     "value": {
       "effect": "herbivorefood"
     }
-  },
-  {
-    "op": "replace",
-    "path": "/description",
-    "value": Various fruits all conveniently mixed together. ^green;Herbivore food^reset;"
   }
 ]

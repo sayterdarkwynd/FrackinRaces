@@ -5,11 +5,5 @@
     "value": {
       "effect": "herbivorefood"
     }
-  },
-  {
-    "op": "replace",
-    "path": "/description",
-    "value": A sweet and flavoursome preserve, precious among Avians. ^green;Herbivore food^reset;"
   }
-
 ]

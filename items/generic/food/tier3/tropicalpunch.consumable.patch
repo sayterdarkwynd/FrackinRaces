@@ -5,10 +5,5 @@
     "value": {
       "effect": "herbivorefood"
     }
-  },
-  {
-    "op": "replace",
-    "path": "/description",
-    "value": A tropical mix that packs a punch. ^green;Herbivore food^reset;"
   }
 ]

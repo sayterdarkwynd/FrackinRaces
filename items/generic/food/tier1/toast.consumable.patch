@@ -5,10 +5,5 @@
     "value": {
       "effect": "herbivorefood"
     }
-  },
-  {
-    "op": "replace",
-    "path": "/description",
-    "value": "A slice of warm, eggy bread. Delicious. ^green;Herbivore food^reset;"
   }
 ]

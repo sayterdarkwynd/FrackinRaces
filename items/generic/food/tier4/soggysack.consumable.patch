@@ -5,10 +5,5 @@
     "value": {
       "effect": "herbivorefood"
     }
-  },
-  {
-    "op": "replace",
-    "path": "/description",
-    "value": Dirturchin innards stuffed into a coralcreep to make a dish that sounds terrible and tastes alright. ^green;Herbivore food^reset;"
   }
 ]

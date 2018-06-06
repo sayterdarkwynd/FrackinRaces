@@ -5,10 +5,5 @@
     "value": {
       "effect": "herbivorefood"
     }
-  },
-  {
-    "op": "replace",
-    "path": "/description",
-    "value": "Smashing potatoes is scientifically proven to make them 500% tastier. ^green;Herbivore food^reset;"
   }
 ]

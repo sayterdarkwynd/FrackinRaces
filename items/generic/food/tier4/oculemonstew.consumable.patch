@@ -5,10 +5,5 @@
     "value": {
       "effect": "carnivorefoodnopoison"
     }
-  },
-  {
-    "op": "replace",
-    "path": "/description",
-    "value": A tangy, somewhat slimy stew made of oculemon and meat scraps. ^orange;Contains cooked meat^reset;"
   }
 ]

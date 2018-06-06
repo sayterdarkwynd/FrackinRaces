@@ -20,10 +20,5 @@
     },
    { "effect" : "carnivorefoodnopoison" }
     ]
-  },
-  {
-    "op": "replace",
-    "path": "/description",
-    "value": Watch out, they're super spicy! ^orange;Contains cooked meat^reset;"
   }
 ]

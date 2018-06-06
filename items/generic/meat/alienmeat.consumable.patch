@@ -12,10 +12,5 @@
     "op": "replace",
     "path": "/foodValue",
     "value": 20
-  },
-  {
-    "op": "replace",
-    "path": "/description",
-    "value": "A raw slab of weird, stringy alien meat. Maybe I should cook it. ^red;Raw meat^reset;"
   }
 ]

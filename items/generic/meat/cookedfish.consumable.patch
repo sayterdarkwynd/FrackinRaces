@@ -6,10 +6,5 @@
   { "op":"add", 
 "path":"/effects/-", 
 "value": [{ "effect" : "carnivorefoodcooked" }]
-  },
-  {
-    "op": "replace",
-    "path": "/description",
-    "value": "A tasty fillet of cooked fish. ^orange;Cooked Meat^reset;"
   }
 ]

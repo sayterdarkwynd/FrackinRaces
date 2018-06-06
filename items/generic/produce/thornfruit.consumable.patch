@@ -12,10 +12,5 @@
     "op": "replace",
     "path": "/maxStack",
     "value": 20
-  },
-  {
-    "op": "replace",
-    "path": "/description",
-    "value": So long as you watch out for the thorns, these are delicious. ^green;Herbivore food^reset;"
   }
 ]

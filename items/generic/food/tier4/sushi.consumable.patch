@@ -5,10 +5,5 @@
     "value": {
       "effect": "carnivorefoodnopoison"
     }
-  },
-  {
-    "op": "replace",
-    "path": "/description",
-    "value": Delicious rolls of rice and seaweed. A Hylotl favourite. ^orange;Contains cooked meat^reset;"
   }
 ]

@@ -5,10 +5,5 @@
     "value": {
       "effect": "robofood"
     }
-  },
-  {
-    "op": "replace",
-    "path": "/description",
-    "value": The most basic of Glitch cuisine. ^yellow;Robot food^reset;"
   }
 ]

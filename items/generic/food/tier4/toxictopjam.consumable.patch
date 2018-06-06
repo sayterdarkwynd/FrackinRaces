@@ -5,10 +5,5 @@
     "value": {
       "effect": "herbivorefood"
     }
-  },
-  {
-    "op": "replace",
-    "path": "/description",
-    "value": Jam made from toxictop fruit. But is it actually toxic to eat? Only one way to find out! ^green;Herbivore food^reset;"
   }
 ]

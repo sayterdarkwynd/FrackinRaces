@@ -5,10 +5,5 @@
     "value": {
       "effect": "herbivorefood"
     }
-  },
-  {
-    "op": "replace",
-    "path": "/description",
-    "value": Freshly brewed coffee. ^green;Herbivore food^reset;"
   }
 ]

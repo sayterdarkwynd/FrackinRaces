@@ -5,10 +5,5 @@
     "value": {
       "effect": "carnivorefoodnopoison"
     }
-  },
-  {
-    "op": "replace",
-    "path": "/description",
-    "value": A hot slice of pepperoni pizza. ^orange;Contains cooked meat.^reset;"
   }
 ]

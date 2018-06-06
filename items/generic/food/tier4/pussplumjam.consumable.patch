@@ -5,10 +5,5 @@
     "value": {
       "effect": "herbivorefood"
     }
-  },
-  {
-    "op": "replace",
-    "path": "/description",
-    "value": Jam made from pussplum. It's surprisingly chunky. ^green;Herbivore food^reset;"
   }
 ]

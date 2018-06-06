@@ -5,10 +5,5 @@
     "value": {
       "effect": "herbivorefood"
     }
-  },
-  {
-    "op": "replace",
-    "path": "/description",
-    "value": A sweet and tropical juice made of kiwis. ^green;Herbivore food^reset;"
   }
 ]

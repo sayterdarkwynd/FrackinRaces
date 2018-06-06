@@ -5,10 +5,5 @@
     "value": {
       "effect": "robofood"
     }
-  },
-  {
-    "op": "replace",
-    "path": "/description",
-    "value": A variation on pizzap, it's got more of a coppery tang to it. ^yellow;Robot food^reset;"
   }
 ]
