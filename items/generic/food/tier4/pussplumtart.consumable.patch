@@ -9,6 +9,6 @@
   {
     "op": "replace",
     "path": "/description",
-    "value": Pretty much the only good use for pussplum jam. \n ^green;Herbivore food^reset;, ^cyan;poisonous^reset; to ^red;carnivores^reset; and ^yellow;robots^reset;"
+    "value": Pretty much the only good use for pussplum jam. ^green;Herbivore food^reset;"
   }
 ]
