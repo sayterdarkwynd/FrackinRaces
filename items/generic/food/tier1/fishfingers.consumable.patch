@@ -9,6 +9,6 @@
   {
     "op": "replace",
     "path": "/description",
-    "value": "Tasty fried fish in stick form. Where's the custard? ^orange;Cooked Meat^reset;"
+    "value": "Tasty fried fish in stick form. Where's the custard? ^orange;Type: Cooked Meat^reset;"
   }
 ]
