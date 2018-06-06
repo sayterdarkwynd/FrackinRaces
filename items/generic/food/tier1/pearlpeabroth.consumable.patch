@@ -9,6 +9,6 @@
   {
     "op": "replace",
     "path": "/description",
-    "value": "A slightly more substantial meal than just boiling pearlpeas. \n ^green;Herbivore food^reset;, ^cyan;poisonous^reset; to ^red;carnivores^reset; and ^yellow;robots^reset;"
+    "value": "A slightly more substantial meal than just boiling pearlpeas. ^green;Herbivore food^reset;"
   }
 ]
