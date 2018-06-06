@@ -9,6 +9,6 @@
   {
     "op": "replace",
     "path": "/description",
-    "value": More thorn than juice. \n ^green;Herbivore food^reset;, ^cyan;poisonous^reset; to ^red;carnivores^reset; and ^yellow;robots^reset;"
+    "value": More thorn than juice. ^green;Herbivore food^reset;"
   }
 ]
