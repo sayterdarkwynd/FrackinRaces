@@ -5,10 +5,5 @@
     "value": {
       "effect": "carnivorefoodnopoison"
     }
-  },
-  {
-    "op": "replace",
-    "path": "/description",
-    "value": Sweet and spicy ribs. Delicious! ^orange;Cooked meat^reset;"
   }
 ]

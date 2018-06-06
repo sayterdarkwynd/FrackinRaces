@@ -5,10 +5,5 @@
     "value": {
       "effect": "herbivorefood"
     }
-  },
-  {
-    "op": "replace",
-    "path": "/description",
-    "value": A refreshing salsa made from tropical and ocean fruits. ^green;Herbivore food^reset;"
   }
 ]

@@ -5,10 +5,5 @@
     "value": {
       "effect": "herbivorefood"
     }
-  },
-  {
-    "op": "replace",
-    "path": "/description",
-    "value": A hearty, thick stew of wartweed and vegetables. ^green;Herbivore food^reset;"
   }
 ]

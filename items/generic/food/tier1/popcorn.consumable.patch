@@ -7,10 +7,5 @@
         "herbivorefood"
       ]
     ]
-  },
-  {
-    "op": "replace",
-    "path": "/description",
-    "value": "Pop it like it's hot! ^green;Herbivore food^reset;"
   }
 ]

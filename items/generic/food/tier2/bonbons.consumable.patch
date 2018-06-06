@@ -5,10 +5,5 @@
     "value": {
       "effect": "herbivorefood"
     }
-  },
-  {
-    "op": "replace",
-    "path": "/description",
-    "value": Confectionery perfection. ^green;Herbivore food^reset;"
   }
 ]

@@ -6,10 +6,5 @@
   { "op":"add", 
 "path":"/effects/-", 
 "value": [{ "effect" : "carnivorefoodcooked" }]
-  },
-  {
-    "op": "replace",
-    "path": "/description",
-    "value": "Chewy... But in a nice way. ^orange;Cooked Meat^reset;"
   }
 ]

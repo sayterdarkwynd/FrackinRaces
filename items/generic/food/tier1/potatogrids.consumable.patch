@@ -5,10 +5,5 @@
     "value": {
       "effect": "herbivorefood"
     }
-  },
-  {
-    "op": "replace",
-    "path": "/description",
-    "value": "A crispy golden exterior protects the soft and fluffy potato within. ^green;Herbivore food^reset;"
   }
 ]

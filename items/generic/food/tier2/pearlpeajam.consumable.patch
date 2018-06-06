@@ -5,10 +5,5 @@
     "value": {
       "effect": "herbivorefood"
     }
-  },
-  {
-    "op": "replace",
-    "path": "/description",
-    "value": Commonly known as \"pearl jam\". Has a nice ring to it. ^green;Herbivore food^reset;"
   }
 ]

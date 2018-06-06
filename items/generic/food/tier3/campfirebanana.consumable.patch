@@ -5,10 +5,5 @@
     "value": {
       "effect": "herbivorefood"
     }
-  },
-  {
-    "op": "replace",
-    "path": "/description",
-    "value": A banana roasted over a campfire, with gratuitous amounts of chocolate. ^green;Herbivore food^reset;"
   }
 ]

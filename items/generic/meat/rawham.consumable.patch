@@ -11,10 +11,5 @@
     "op": "replace",
     "path": "/foodValue",
     "value": 20
-  },
-  {
-    "op": "replace",
-    "path": "/description",
-    "value": "Raw ham. It's probably best if I cook it first. ^red;Raw meat^reset;"
   }
 ]

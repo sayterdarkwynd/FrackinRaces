@@ -5,10 +5,5 @@
     "value": {
       "effect": "robofood"
     }
-  },
-  {
-    "op": "replace",
-    "path": "/description",
-    "value": A famous Glitch chef tried to imitate mashed potatoes. He succeeded. Kinda. ^yellow;Robot food^reset;"
   }
 ]

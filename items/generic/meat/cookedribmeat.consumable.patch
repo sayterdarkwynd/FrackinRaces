@@ -6,10 +6,5 @@
   { "op":"add", 
 "path":"/effects/-", 
 "value": [{ "effect" : "carnivorefoodcooked" }]
-  },
-  {
-    "op": "replace",
-    "path": "/description",
-    "value": "Pass the barbecue sauce! ^orange;Cooked Meat^reset;"
   }
 ]

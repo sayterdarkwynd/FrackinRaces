@@ -5,10 +5,5 @@
     "value": {
       "effect": "carnivorefoodnopoison"
     }
-  },
-  {
-    "op": "replace",
-    "path": "/description",
-    "value": "A light stew that goes down easy. ^orange;Contains cooked meat^reset;"
   }
 ]

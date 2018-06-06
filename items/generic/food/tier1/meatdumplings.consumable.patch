@@ -5,10 +5,5 @@
     "value": {
       "effect": "carnivorefoodnopoison"
     }
-  },
-  {
-    "op": "replace",
-    "path": "/description",
-    "value": "Steamed meat dumplings. Beautifully simple! ^orange;Contains cooked meat^reset;"
   }
 ]

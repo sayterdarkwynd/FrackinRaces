@@ -5,10 +5,5 @@
     "value": {
       "effect": "herbivorefood"
     }
-  },
-  {
-    "op": "replace",
-    "path": "/description",
-    "value": "A buttery ear of corn on the cob. ^green;Herbivore food^reset;"
   }
 ]

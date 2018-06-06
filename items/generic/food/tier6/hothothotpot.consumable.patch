@@ -5,10 +5,5 @@
     "value": {
       "effect": "carnivorefoodnopoison"
     }
-  },
-  {
-    "op": "replace",
-    "path": "/description",
-    "value": So incredibly hot! ^orange;Contains cooked meat^reset;"
   }
 ]

@@ -5,10 +5,5 @@
     "value": {
       "effect": "carnivorefoodnopoison"
     }
-  },
-  {
-    "op": "replace",
-    "path": "/description",
-    "value": A whole fish shoved haphazardly inside a boneboo. ^orange;Contains cooked meat^reset;"
   }
 ]
