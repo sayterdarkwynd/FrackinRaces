@@ -10,6 +10,6 @@
   {
     "op": "replace",
     "path": "/description",
-    "value": "A tasty fillet of cooked fish. \n ^orange;Cooked Meat^reset;, ^cyan;poisonous^reset; to ^green;herbivores^reset; and ^yellow;robots^reset;"
+    "value": "A tasty fillet of cooked fish. ^orange;Cooked Meat^reset;"
   }
 ]
