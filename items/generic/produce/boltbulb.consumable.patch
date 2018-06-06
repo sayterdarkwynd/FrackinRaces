@@ -21,6 +21,6 @@
   {
     "op": "replace",
     "path": "/description",
-    "value": "Boltbulb! Surprisingly soft. \n ^yellow;Robot food^reset;, ^cyan;poisonous to all^reset; EXCEPT ^yellow;robots^reset;"
+    "value": "Boltbulb! Surprisingly soft. ^yellow;Robot food^reset;"
   }
 ]
