@@ -5,5 +5,10 @@
     "value": {
       "effect": "herbivorefood"
     }
+  },
+  {
+    "op": "replace",
+    "path": "/description",
+    "value": All the nutritious value of an apple masked by globs of sweet, sweet sugar. \n ^green;Herbivore food^reset;, ^cyan;poisonous^reset; to ^red;carnivores^reset; and ^yellow;robots^reset;"
   }
 ]
