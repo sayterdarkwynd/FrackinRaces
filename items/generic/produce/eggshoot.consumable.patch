@@ -12,5 +12,10 @@
     "op": "replace",
     "path": "/maxStack",
     "value": 20
+  },
+  {
+    "op": "replace",
+    "path": "/description",
+    "value": "Eggshoot, soft-boiled in texture. Break it open to find a yolk. \n ^green;Herbivore food^reset;, ^cyan;poisonous^reset; to ^red;carnivores^reset; and ^yellow;robots^reset;"
   }
 ]
