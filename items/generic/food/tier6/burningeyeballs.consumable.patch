@@ -24,6 +24,6 @@
   {
     "op": "replace",
     "path": "/description",
-    "value": "Watch out, they're super spicy! ^orange;Contains Type: Cooked Meat^reset;"
+    "value": "Watch out, they're super spicy! ^orange;Type: Cooked Meat^reset;"
   }
 ]
