@@ -1,0 +1,22 @@
+[
+    { "op": "replace", 
+    "path" : "/charCreationTooltip/description" , 
+    "value" : "A species of vulpine/feline hybrids that merged themselves with technology out of desperation for survival. They are incredibly skilled with the technology they once inhabited, and quickly approaching unsafe technological territory.
+    
+	Diet: Carnivore
+	
+	^green;+5 Health, +15 Energy^reset;, ^red;-10 Defense^reset;
+	^red;Weak: 30% Ice, 50% Radiation^reset;
+	^green;Resist: 10% Melee, 70% Electric, 5% Cosmic^reset;
+	^green;-25% decreased fall damage^reset;
+	^green;Immune to Electrified^reset;
+	^green;Hunger decreases 25% slower^reset;
+	^green;+10% jump height (Males)/+10% running speed (Females)^reset;
+	
+	Irradiated: ^red;-10% energy, -10% attack^reset;
+	Lush, Forest, and Jungle: ^green;+20 Health/Energy/Attack^reset;
+	
+	Bows: ^green;+10% damage, +15% speed^reset;
+	Melee: ^green;+10% damage, +20% speed^reset;"
+    }
+]
