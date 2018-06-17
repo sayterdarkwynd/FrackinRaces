@@ -1,0 +1,18 @@
+[
+    { "op": "replace",
+    "path" : "/charCreationTooltip/description" ,
+    "value" : ""
+    },
+
+
+
+    { "op": "replace",
+    "path" : "/charCreationTooltip/description" ,
+    "value" : "A particularly elusive species, the Lombaxes are reknowned for their knack for inventions and gadgetry. Not much is known of them, but what is known is that they come in all shapes, stripes and colors.
+    ^red;-25% HP, Weak: 30% Poison, 30% Ice^reset;
+    ^green;20% Energy, 50% Fire Resist, 20% Electric Resist, +10% Speed, +15% Jump^reset;
+    ^green;In hot biomes, gain an additional 5% Speed and Jump, +10 Protection and +25% Energy Regen^reset;
+    Assault Rifles, Sniper Rifles, Grenade Launcher, Melee Weapons: ^green; +5% damage^reset;
+    Pistols, Shotgun, Melee Weapons: ^green; +25% Energy Regen^reset;
+    Immunities: ^green;Heat^reset;" }
+]
