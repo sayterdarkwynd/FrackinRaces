@@ -1,0 +1,13 @@
+[
+  {
+    "op": "add",
+    "path": "/races/14",
+    "value": "lombax_striped"
+  },
+
+  {
+    "op": "add",
+    "path": "/races/14",
+    "value": "lombax_pointed"
+  }
+]
