@@ -4,7 +4,6 @@
     "value" : "Skittery half-spiders.
     
     ^red;Weak: 20% Fire. 20% Cosmic^reset;
-    ^red;Bigger hitbox^reset;
     ^green;+25 Health, Resist: 40% Poison, 20% Shadow^reset;
     ^green;Gain additional health and energy in dark biomes^reset;
     Spears: ^green; +25% Dmg, +15% Crit Dmg^reset;
