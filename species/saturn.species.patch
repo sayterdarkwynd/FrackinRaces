@@ -1,0 +1,18 @@
+[
+    { "op": "replace", 
+    "path" : "/charCreationTooltip/description" ,
+    "value" : ""
+    },
+    { "op": "replace", 
+    "path" : "/charCreationTooltip/description" , 
+    "value" : "A winged, moth-like race from far across the stars.
+    
+    ^red;Weakness: 45% Fire, 20% Poison^reset;
+    ^green;+35% Shadow and Cosmic resistance^reset;
+    ^green;Take only 40% of all fall damage^reset;
+    
+    Bow/Crossbow:^green;+5% Crit Chance, +5 Crit Damage^reset;
+    Scythe:^green;+12% damage^reset;"
+    }
+
+]

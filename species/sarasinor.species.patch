@@ -1,0 +1,17 @@
+[
+    { "op": "replace", 
+    "path" : "/charCreationTooltip/description" ,
+    "value" : ""
+    },
+    { "op": "replace", 
+    "path" : "/charCreationTooltip/description" , 
+    "value" : "A peaceful race, the Sarasinor are wandering weaver-monks who seek enlightenment and new discoveries. Their silk is prized for its strength and can be used for many different applications.
+    
+    ^red;Weakness: 25% Fire, 25% Ice^reset;
+    ^green;Omnivore^reset;
+    ^green;+22% Jump height^reset;
+    ^green;40% of Fall Damage taken^reset;
+    ^green;+30% Shadow and Cosmic resistance^reset;"
+    }
+
+]
