@@ -16,12 +16,12 @@
  In ^green;forest-like^reset; biomes gain additional ^green;health and energy^reset;
 
  ^orange;Weapons^reset;:
- Bow: ^green;4%^reset; Crit, +^green;20%^reset; Crit Damage, +^green;15%^reset; Movement Speed
+ Bow: ^green;4%^reset; Crit, +^green;20%^reset; Crit Dmg, +^green;15%^reset; Speed
  Spear / Dagger: ^green;+8%^reset; Dmg, +^green;3%^reset; Crit, ^green;3%^reset; Poison Strike chance. If well fed, strike faster.
  Floran Weapons: ^green;+2%^reset; Crit
     
  ^red;Weaknesses^reset;: 
- Basic attacks ^red;consume food^reset;, 
+ All basic attacks ^red;consume food^reset; 
  -^red;10%^reset; HP and -^red;30%^reset; Energy at night
  ^red;50%^reset; Fire, ^red;25%^reset; Poison" 
     }

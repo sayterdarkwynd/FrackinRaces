@@ -2,7 +2,7 @@
 
     { "op": "replace", 
     "path" : "/charCreationTooltip/description" , 
-    "value" : "Hardy, strong automatons. Their creation is lost to history. This suits them just fine, as they prefer a primitive state of being. Their medieval culture favors training with shields, maces and crossbows.
+    "value" : "Their creation is lost to history. This suits them just fine, as they prefer a primitive state of being. Their medieval culture favors training with shields, maces and crossbows.
 
  Diet: Robotic 
  
@@ -12,15 +12,15 @@
  Immune: Poison, Bee Stings
  
  ^orange;Environment^reset;: 
- Regen ^green;Health and Energy^reset; within ^green;Oil/Liquid Protocite/Erchius Fluid^reset;
+ ^green;Regen^reset; within ^green;Oil/Liquid Proto/Erchius^reset;
  
  ^orange;Weapons^reset;:
- Mace/Greataxes/Axe: Consume food to increase Crit ^green;2%^reset;
+ Mace/Greataxes/Axe: Consumes food to increase Crit +^green;2%^reset;
  1h combos increase defense by +^green;2^reset;
  Shield Bash ^green;restores health^reset;
  Bow/Crossbow: ^green;+3%^reset; Crit Chance
  Shield: +^green;2%^reset; Shield Bash, +^green;3^reset; Protection, +^green;8%^reset; Health, +^green;1%^reset; Regen
- Shield: Perfect Blocks ^green;increase damage^reset;(stacks)
+ Shield: Perfect Blocks ^green;increase damage^reset; (stacks)
     
  ^red;Weaknesses^reset;: 
  When Electrified lose ^red;50%^reset; power and energy
