@@ -2,18 +2,32 @@
 
     { "op": "replace", 
     "path" : "/charCreationTooltip/description" , 
-    "value" : "Hardy, strong automatons. Their creation is lost to history. This suits them just fine, as they prefer a primitive state of being. Their medieval background includes extensive training with shields and other chivalrous weapons.
+    "value" : "Hardy, strong automatons. Their creation is lost to history. This suits them just fine, as they prefer a primitive state of being. Their medieval culture favors training with shields, maces and crossbows.
+
+ Diet: Robotic 
+ 
+ ^orange;Perks^reset;: 
+ ^green;+15%^reset; Health, +^green;5%^reset; Energy, +^green;5%^reset; Protection
+ Resist: ^green;20%^reset; Physical, Poison, Radiation
+ Immune: Poison, Bee Stings
+ 
+ ^orange;Environment^reset;: 
+ Regen ^green;Health and Energy^reset; within ^green;Oil/Liquid Protocite/Erchius Fluid^reset;
+ 
+ ^orange;Weapons^reset;:
+ Mace/Greataxes/Axe: Consume food to increase Crit chance ^green;2%^reset;
+ 1h combos increase defense by +^green;2^reset;
+ Shield Bash ^green;restores health^reset;
+ Bow/Crossbow: ^green;+3%^reset; Crit Chance
+ Shield: +^green;2%^reset; Shield Bash, +^green;3^reset; Protection, +^green;8%^reset; Health, +^green;1%^reset; Regen
+ Shield: Perfect Blocks ^green;increase damage^reset;(stacks)
     
-    ^red;Weak:-30% Electric,-30% Cosmic^reset;
-    ^red;When Electrified lose 50% power and 50% energy^reset;
-    ^green;+15% HP, +5% Energy, +5% Protection, +2% Shield Bash^reset;
-    ^green;20% Physical, 20% Poison, 20% Radiation Resistance^reset;
-    ^green;Heal and regain power within Oil/Liquid Protocite/Erchius liquids^reset; 
-    ^green;Consumes food to increase Crit chance by +2% with Maces, Greataxes and Axes.^reset;
-    ^green;1h combos increase defense by +2^reset;
-    Bow/Crossbow: ^green;Crit 3%^reset;
-    Shield: ^green;+3 Protection, +3% Dmg, +8% Max Health, 1% Health Regen.^reset;
-    Shield: ^green;Perfect Blocks increase damage (stacks), Shield Bash restores health.^reset;
-    Immune: ^green;Poison, Bee Stings^reset;"
+ ^red;Weaknesses^reset;: 
+ When Electrified lose ^red;50%^reset; power and energy
+ ^red;30%^reset; Electric, Cosmic" 
     }
 ]
+
+
+
+ 

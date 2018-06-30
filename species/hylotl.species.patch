@@ -2,19 +2,29 @@
 
     { "op": "replace", 
     "path" : "/charCreationTooltip/description" , 
-    "value" : "The peaceful Hylotl place great value on ancestral tradition and take great comfort in the arts. While not lovers of violence, they are quite skilled in martial arts and are not to be trifled with. They are at best in water, where they are exceptionally well suited to survive.
+    "value" : "The peaceful Hylotl place great value on ancestral tradition and take great comfort in the arts. While not lovers of violence, they are quite skilled in martial arts and are not to be trifled with.
+
+ Diet: Omnivorous 
+ 
+ ^orange;Perks^reset;: 
+ ^green;+20%^reset; Health, Start game with Liquid Collection unlocked
+ Resist: ^green;20%^reset; Ice
+ 
+ ^orange;Environment^reset;: 
+ On ^green;oceanic^reset; biomes, gain ^green;protection , health, energy^reset;
+ In water you gain +^green;4^reset; Protection, +^green;20^reset; Health, ^green;Swim Boost^reset;
+
+ ^orange;Weapons^reset;:
+ Shield: Perfect Blocks ^green;restore health^reset;
+ Sword: ^green;+20%^reset; Crit Chance when above ^green;75%^reset; health
+ Katana + Dagger: +^green;8%^reset; Speed, +^green;4^reset; Protection, +^green;1%^reset; Crit
+ Katana (single): +^green;6%^reset; Dmg, +^green;4%^reset; Speed
+ Shortsword: ^green;+6%^reset; Dmg, +4%^reset; Speed 
+ Quarterstaff: +^green;12%^reset; Speed, +^green;6^reset; Protection
     
-    ^red;Weak: 40% Electric, 10% Shadow^reset;
-    ^green;+20% HP, +20% Ice Resistance, +1500 Oxygen^reset;
-    ^green;On ocean biomes, gain protection , health and energy^reset; 
-    ^green;Start game with Liquid Collection unlocked^reset; 
-    ^green;Perfect Blocks restore HP (stacks)^reset; 
-    Swords: ^green;At 75% health, gain +2% Crit^reset;
-    Katana + Dagger: ^green;+8% Speed, +4 Protection, +1% Crit^reset;
-    Katana + Empty hand: ^green;+10% damage, +25% Crit Damage^reset;
-    Shortsword: ^green;+6% Dmg, +4% Speed^reset;    
-    Quarterstaff:^green; +12% Speed, +6 Protection^reset;
-    ^green;In Water, Healing Water, Waste Water and Swamp Water: +4 Protection, +20 HP, Swim Boost^reset;"
+ ^red;Weaknesses^reset;: 
+ ^red;40%^reset; Electric, ^red;10%^reset; Shadow"   
+
     }
 
 ]

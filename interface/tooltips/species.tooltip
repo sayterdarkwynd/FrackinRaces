@@ -11,6 +11,7 @@
     "position" : [11, 242],
     "hAnchor" : "left",
     "vAnchor" : "top",
-    "wrapWidth" : 240
+    "wrapWidth" : 240,
+    "fontSize" : 7
   }
 }

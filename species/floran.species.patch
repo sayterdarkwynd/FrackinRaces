@@ -3,17 +3,31 @@
     { "op": "replace", 
     "path" : "/charCreationTooltip/description" , 
     "value" : "Florans are known throughout the universe to be aggressive, carnivorous hunters. They still partially sustain themselves on sunlight, but every blow they strike only adds to their hunger.
+ 
+ Diet: Carnivorous 
+ 
+ ^orange;Perks^reset;: 
+ ^green;+5%^reset; Dmg, Health, +^green;20%^reset; Energy
+ Resist: ^green;25%^reset; Electric, Ice, ^green;20%^reset; Radiation
+ ^green;Regenerate^reset; during daylight. If HP+Food are full, +^green;energy regen^reset;
+ Immune: ^green;Electrified^reset;
+ 
+ ^orange;Environment^reset;: 
+ In ^green;forest-like^reset; biomes gain additional ^green;health and energy^reset;
+
+ ^orange;Weapons^reset;:
+ Bow: ^green;4%^reset; Crit, +^green;20%^reset; Crit Damage, +^green;15%^reset; Movement Speed
+ Spear / Dagger: ^green;+8%^reset; Dmg, +^green;3%^reset; Crit, ^green;3%^reset; Poison Strike chance. If well fed, strike faster.
+ Floran Weapons: ^green;+2%^reset; Crit
     
-    ^red;Basic attacks consume food, -10% HP and -30% Energy at night^reset;
-    ^red;Weak: 50% Fire, 25% Poison^reset;
-    ^green;+5% dmg, +5% HP, +20% Energy^reset;
-    ^green;+25% Electric, +25% Ice and +20% Radiation Resistance^reset;
-    ^green;In forest-like biomes gain additional health and energy^reset; 
-    ^green;Regenerate health and food during daylight hours. If Health and Food are full, gain energy regen^reset;
-    Bow: ^green;+4% Crit, +20% Crit Damage, +15% Movement Speed^reset;
-    Spear / Dagger: ^green;+8% dmg, +3% Crit, 3% Poison Strike chance. If fed, strike faster.^reset;
-    Floran Weapons: ^green;+2% Crit^reset;
-    Immunity: ^green;Electrified^reset;"
+ ^red;Weaknesses^reset;: 
+ Basic attacks ^red;consume food^reset;, 
+ -^red;10%^reset; HP and -^red;30%^reset; Energy at night
+ ^red;50%^reset; Fire, ^red;25%^reset; Poison" 
     }
 
 ]
+
+
+
+ 
