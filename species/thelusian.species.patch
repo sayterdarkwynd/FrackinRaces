@@ -6,14 +6,25 @@
     { "op": "replace", 
     "path" : "/charCreationTooltip/description" , 
     "value" : "The carnivorous Thelusians are well known for their tough chitin shell and exceptionally dangerous combat abilities. Individually dull...but extremely dangerous in large groups.
-    ^red;-40% Weakness: Poison, -20% Energy, Suffers -25% Charisma for trades^reset;
-    ^green;Gain additional 10% health on hot biomes^reset; 
-    ^green;Increased ground friction. +2 Defense with shield blocks^reset; 
-    ^green;+20% HP, +20% Physical Resist, +20% Radiation Resist^reset;
-    Scythe:^green;+15% Damage, +50% Knockback Resist^reset;
-    Bow/Crossbow/Striker:^green;+1.5% Crit Chance^reset;
-    Shortspear/Longsword and Shield:^green;+0.5% Crit, +50% Knockback Resist^reset;
-    ^orange;Perfect Block: Increases Shield Bash chance^reset;
-    Immunities: ^green;Insanity. Too stupid to care about hallucinations.^reset;"
+
+ Diet: Carnivore 
+ 
+ ^orange;Perks^reset;: 
+ +^green;20%^reset; Health, +^green;25%^reset; Knockback Resist, +^green;5%^reset; Speed
+ Resist: ^green;20%^reset; Physical, ^green;20%^reset; Radiation, ^green;30%^reset; Shadow
+ Immune: Insanity
+ 
+ ^orange;Environment^reset;: 
+ On ^green;hot^reset; biomes gain ^green;10%^reset; Health
+ 
+ ^orange;Weapons^reset;:    
+ Scythe: +^green;15%^reset; Damage, +^green;50%^reset; Knockback Resist
+ Bow/Crossbow/Striker: +^green;1.5%^reset; Crit Chance
+ Shortspear/Longsword + Shield: +^green;0.5%^reset; Crit, +^green;50%^reset; Knockback Resist
+ Shield: Perfect Block increases ^green;Shield Bash^reset; chance
+ 
+ ^red;Weaknesses^reset;: 
+ -^red;20%^reset; Energy, -^red;25%^reset; Charisma
+ Weak: -^red;40%^reset; Poison, -^red;30%^reset; Ice" 
     }
 ]

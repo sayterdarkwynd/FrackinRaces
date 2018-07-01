@@ -2,15 +2,24 @@
     { "op": "replace", 
     "path" : "/charCreationTooltip/description" , 
     "value" : "A unisex race of shy radioactive beings with a disputed origin. Their main weapons are their pointed legs, giving them speed and prowess in melee. This species is intended for Survival or Hardcore modes, and will recieve 50% reduced benefits without Hunger.
-    
-    ^red;Weak: -40% Fire Resistance. Hot biomes lower defense.^reset;
-    ^red;Increased Hunger rate^reset;
-    ^orange;Keeping well fed keeps your bonuses high. Hunger will reduce them.^reset;
-    ^green;Can eat almost anything edible without concern^reset;
-    ^green;+5% speed, Special: 50% Rad Resist, 25% Poison Resist, +15% Damage^reset; 
-    ^green;Gain 15% power and energy regen in irradiated biomes^reset; 
-    Rapier/Shortsword/Short-Spear/Dagger: ^green;+1% Crit, +4 Crit Damage^reset;
-    ^green;Immune: Radiation Burn^reset;"
+ 
+ Diet: Any 
+ 
+ ^orange;Perks^reset;: 
+ +^green;10%^reset; Energy, +^green;5%^reset; Speed
+ Resist: ^green;25%^reset; Fire, ^green;50%^reset; Radiation
+ Immune: Radiation Burn
+ 
+ ^orange;Environment^reset;: 
+ On ^green;Radioactive^reset; biomes gain ^green;15%^reset; Dmg and Energy Regen
+ Keeping fed keeps bonuses high. Hunger weakens you.
+ 
+ ^orange;Weapons^reset;:    
+ Rapier/Shortsword/Short-Spear/Dagger: +^green;1%^reset; Crit and +^green;4%^reset; Crit Dmg
+ 
+ ^red;Weaknesses^reset;: 
+ ^red;High Hunger^reset;
+ -^red;5%^reset; Health
+ Weak: -^red;40%^reset; Fire, -^red;25%^reset;Poison"  
     }
 ]
- 

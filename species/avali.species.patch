@@ -6,13 +6,28 @@
     { "op": "replace", 
     "path" : "/charCreationTooltip/description" , 
     "value" : "Adorable fuzzy space raptors with wings. Highly adapted to arctic climates and low gravity, they can use the wind to control their falls, and they are deadly with heavy weapons. 
-    ^red;Weak: 40% Fire, on Hot biomes lose air-damage bonus, speed bonus and -25% health.^reset;
-    ^green;In mild to severe winds, gain additional agility. When airborne gain +10% damage^reset; 
-    ^green;On cold biomes, gain +5% speed and +15% health^reset;
-    Grenade Launchers: ^green;+20% Crit Damage^reset;
-    Energy Guns: ^green; do +12% damage^reset;
-    Spears: ^green;+2% Crit^reset;
-    Immunities: ^green;Snow and Ice^reset;
-    ^green;Fall much slower thanks to their feathered wings. 35% total Fall damage."
+
+ Diet: Omnivore 
+ 
+ ^orange;Perks^reset;: 
+ +^green;9%^reset; Jump, +^green;9%^reset; Speed
+ Slow Fall (wings)
+ Resist: ^green;40%^reset; Ice, -^green;65%^reset; Fall Dmg
+ Immune: Snow, Ice
+ 
+ ^orange;Environment^reset;: 
+ On ^green;hot^reset; biomes lose air damage bonus, speed bonus and -^red;25%^reset; health
+ On ^green;cold^reset;biomes gain +^green;5%^reset; speed and +^green;15%^reset; health
+ High winds grant additional agility
+ 
+ ^orange;Weapons^reset;:
+ +^green;10%^reset; airborne damage
+ Energy: +^green;12%^reset; Dmg
+ Grenade Launcher: +^green;20%^reset; Crit Dmg
+ Spear: +^green;2%^reset; Crit
+ 
+ ^red;Weaknesses^reset;: 
+ Weak: -^red;40%^reset; Fire" 
     }
 ]
+ 
