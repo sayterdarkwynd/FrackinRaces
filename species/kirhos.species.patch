@@ -10,7 +10,8 @@
  Diet: Omnivore 
  
  ^orange;Perks^reset;: 
- +^green;15%^reset; Charisma, +^green;10%^reset; Speed, +^green;10%^reset; Jump
+ Great Traders: +^green;15%^reset; Charisma 
+ +^green;10%^reset; Speed, +^green;10%^reset; Jump
  Resist: ^green;50%^reset; Electric, ^green;20%^reset; Ice, ^green;40%^reset; Radiation
  Immune: Electrified
  
@@ -21,7 +22,10 @@
  ^red;Weaknesses^reset;: 
  -^red;10%^reset; Health
  Weak: -^red;20%^reset; Fire, -^red;25%^reset;Poison, -^red;20%^reset; Cosmic" 
+
     }    
 
 ]
+
+
 
