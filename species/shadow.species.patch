@@ -4,7 +4,7 @@
     "path" : "/charCreationTooltip/description" , 
     "value" : "A mystery to the cosmos, the illusive Shadow people prefer to speak only to each other. This is simple, as other species cannot even hear their language.
 
- Diet: Carnivorous 
+ Diet: Any 
  
  ^orange;Perks^reset;: 
  ^green;+15%^reset; Health, +^green;5%^reset; Energy, +^green;5%^reset; Protection
@@ -17,14 +17,14 @@
  Darkness increases power and protection. Light reduces it.
  
  ^orange;Weapons^reset;:
- Quarterstaff: +^green;25%^reset; health
+ Staff/Wand: +^green;25%^reset; health
  Dagger: ^green;+3%^reset; Crit Chance,^green;7.5%^reset; Shadow Burst chance
  Spear: ^green;20%^reset; Shadow Burst chance 
  Magnorb: +^green;25%^reset; Protection
     
  ^red;Weaknesses^reset;: 
  Increased metabolism requires frequent feeding
- ^red;30%^reset; Fire, Cosmic, Poison" 
+ ^red;40%^reset; Fire, Cosmic, Poison" 
     }
 ]
 
