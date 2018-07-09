@@ -2,17 +2,11 @@
   {
     "op": "add",
     "path": "/effects",
-    "value": [
-      [
-        {
-          "effect": "carnivorefoodnopoison"
-        }
-      ]
-    ]
+    "value": []
   },
   {
     "op": "replace",
     "path": "/description",
-    "value": "Mmm, milk. ^orange;Type: Cooked Meat^reset;"
+    "value": "Mmm, milk."
   }
 ]

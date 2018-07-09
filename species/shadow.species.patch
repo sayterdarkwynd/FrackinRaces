@@ -18,7 +18,7 @@
  
  ^orange;Weapons^reset;:
  Staff/Wand: +^green;25%^reset; health
- Dagger: ^green;+3%^reset; Crit Chance,^green;7.5%^reset; Shadow Burst chance
+ Dagger: ^green;+6%^reset; Damage,^green;7.5%^reset; Shadow Burst chance
  Spear: ^green;20%^reset; Shadow Burst chance 
  Magnorb: +^green;25%^reset; Protection
     
