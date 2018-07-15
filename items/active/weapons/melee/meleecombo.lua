@@ -193,7 +193,6 @@ function MeleeCombo:fire()
     -- FU/FR ABILITIES
     --*************************************
     local species = world.entitySpecies(activeItem.ownerEntityId())
-
     if not self.helper then
 		self.helper = FRHelper:new(species)
 		self.helper:loadWeaponScripts("meleecombo-fire")

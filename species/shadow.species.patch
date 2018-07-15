@@ -18,10 +18,11 @@
  
  ^orange;Weapons^reset;:
  Staff/Wand: +^green;25%^reset; health
- Dagger: ^green;+6%^reset; Damage,^green;7.5%^reset; Shadow Burst chance
- Spear: ^green;20%^reset; Shadow Burst chance 
  Magnorb: +^green;25%^reset; Protection
-    
+ Katana/Shortsword: ^green;3%^reset; Shadow Blast chance 
+ Dagger/Rapier: ^green;+6%^reset; Damage,^green;7.5%^reset; Penubral Wave chance
+ Spear/Scythe: ^green;20%^reset; Shadow Burst chance 
+
  ^red;Weaknesses^reset;: 
  Increased metabolism requires frequent feeding
  ^red;40%^reset; Fire, Cosmic, Poison" 

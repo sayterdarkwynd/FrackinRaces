@@ -18,7 +18,7 @@
  Fists: ^green;+1%^reset; Crit Chance
  Hammers: ^green;+10%^reset; Dmg
  Mining Lasers: ^green;+50%^reset; Dmg
- Magnorbs: ^green;+12%^reset; Dmg, +Protection
+ Magnorb/Thrown: ^green;+12%^reset; Dmg, +Protection
     
  ^red;Weaknesses^reset;:
  Metabolism requires more food
