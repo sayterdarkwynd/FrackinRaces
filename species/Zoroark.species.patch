@@ -1,0 +1,23 @@
+[
+    { "op": "replace", 
+    "path" : "/charCreationTooltip/description" , 
+    "value" : "Zoroark are bipedal fox-like beings that use illusions to fool their prey or predators, to hide their territory, or to protect their young. Like a handful of other races, they too escaped the destruction of Earth. However, it is unclear whether the remaining Pokemon or their trainers escaped the destruction. 
+    
+	Diet: Omnivore
+	^green;Immune to:^reset; Jungle, Mud
+	^green;+15% run speed, +10% jump height +10% attack^reset;
+	^red;-20% Defense^reset;, ^red;-5% Health^reset;, ^green;+5% Energy^reset;
+	
+	Resistances:
+	^orange;-45%^reset; Physical^reset; Weakness
+	^orange;+25%^reset; Shadow^reset; and ^orange;Cosmic^reset; Resist
+	Damage and Physical resistance lowered during the day, and heightened during the night
+	
+	Enviornment-
+	^orange;Midnight/Penumbra:^reset; +15% Energy, +10% Health
+	
+	Combat Perks-
+	^orange;Melee:^reset; +5% Damage
+	^orange;Energy:^reset; +15% Damage, +5% Crit"
+    }
+]
