@@ -1,17 +1,16 @@
 function init()
 	darkHunterEffects=effect.addStatModifierGroup({})
-  local bounds = mcontroller.boundBox()
-  self.powerBonus = config.getParameter("powerBonus",0)
-  script.setUpdateDelta(10)
+	self.powerBonus = config.getParameter("powerBonus",0)
+	script.setUpdateDelta(10)
 end
 
 function getLight()
-  local position = mcontroller.position()
-  position[1] = math.floor(position[1])
-  position[2] = math.floor(position[2])
-  local lightLevel = world.lightLevel(position)
-  lightLevel = math.floor(lightLevel * 100)
-  return lightLevel
+	local position = mcontroller.position()
+	position[1] = math.floor(position[1])
+	position[2] = math.floor(position[2])
+	local lightLevel = world.lightLevel(position)
+	lightLevel = math.floor(lightLevel * 100)
+	return lightLevel
 end
 
 function update(dt)
@@ -71,5 +70,5 @@ function update(dt)
 end
 
 function uninit()
-  status.removeStatModifierGroup(darkHunterEffects)
+	status.removeStatModifierGroup(darkHunterEffects)
 end
