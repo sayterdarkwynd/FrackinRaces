@@ -1,7 +1,3 @@
-require "/scripts/vec2.lua"
-require "/scripts/util.lua"
-require "/scripts/interp.lua"
-
 function init()
 	self.healingRate = 1.007 / config.getParameter("healTime", 220)
 	self.powerBonus=config.getParameter("powerBonus",0)
