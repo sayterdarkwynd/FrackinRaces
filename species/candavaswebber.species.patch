@@ -1,0 +1,28 @@
+[
+
+    { "op": "replace",
+    "path" : "/charCreationTooltip/description" ,
+    "value" : "An odd and magical variation of the webber clones. Composed of nothing but abnormal substances and plenty of sugar, their biology is left to be questioned.
+
+    Diet: Sugar-rich food
+
+    ^orange;Perks^reset;:
+    +^green;20%^reset; Energy, +^green;10%^reset; Speed
+    Resist: ^green;40%^reset; Cosmic and Shadow
+    Immune: Spider webs, Aether
+    ^orange;Glows^reset;
+
+    ^orange;Environment^reset;:
+    On ^cyan;cold^reset; biomes gain ^green;20%^reset; physical resistance but lose 10% energy
+    On ^purple;aether^reset;planets, gain ^green;5%^reset; health.
+
+    ^orange;Weapons^reset;:
+    Staves: +^green;5%^reset; damage
+    Quarterstaff/Energy Weapons: +^green;3%^reset; crit chance
+
+    ^red;Weaknesses^reset;:
+    -^red;10%^reset; Health
+    Weak: -^red;50%^reset; Fire, -^red;20%^reset;Poison and Ice, -^red;30%^reset;Radiation"
+    }
+
+]
