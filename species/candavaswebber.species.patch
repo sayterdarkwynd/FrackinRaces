@@ -8,12 +8,12 @@
 
     ^orange;Perks^reset;:
     +^green;20%^reset; Energy, +^green;10%^reset; Speed
-    Resist: ^green;40%^reset; Cosmic and Shadow
+    Resist: ^green;40%^reset; Cosmic, ^green;30%^reset; Shadow
     Immune: Spider webs
-    ^orange;Glows^reset;
+    ^orange;Faintly glows^reset;
 
     ^orange;Environment^reset;:
-    On ^cyan;cold^reset; biomes gain ^green;20%^reset; physical resistance but lose 10% energy
+    On ^cyan;cold^reset; biomes gain ^green;20%^reset; physical resistance but lose 10% speed
     On ^purple;aether^reset;planets, gain ^green;5%^reset; health.
 
     ^orange;Weapons^reset;:
@@ -22,7 +22,7 @@
 
     ^red;Weaknesses^reset;:
     -^red;10%^reset; Health
-    Weak: -^red;50%^reset; Fire, -^red;20%^reset;Poison and Ice, -^red;30%^reset;Radiation"
+    Weak: -^red;40%^reset; Fire, -^red;20%^reset;Poison, -^red;30%^reset;Radiation"
     }
 
 ]
