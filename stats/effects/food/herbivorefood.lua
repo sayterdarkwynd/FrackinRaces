@@ -18,7 +18,7 @@ function update(dt)
 	   applyEffects()
    elseif status.stat("isSugar")==1 and (status.statPositive("sugarfood")) then
   	   applyEffects()
-	 elseif status.statPositive("isCarnivore") or status.statPositive("isRobot") then
+	 elseif status.statPositive("isCarnivore") or status.statPositive("isRobot") or status.statPositve("isSugar") then
 	   if (self.tickTimer <= 0) then
 	     applyPenalty()
 	   else
