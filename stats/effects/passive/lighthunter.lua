@@ -9,7 +9,7 @@ function init()
 		break
 	end
 	
-	lightHunterEffects=status.addStatModifierGroup({})
+	lightHunterEffects=effect.addStatModifierGroup({})
 	self.powerBonus = config.getParameter("powerBonus",0)
 	script.setUpdateDelta(10)
 end

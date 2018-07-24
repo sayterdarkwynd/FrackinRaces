@@ -5,7 +5,7 @@ function init()
 		break
 	end
 	
-	nightFearEffects=status.addStatModifierGroup({})
+	nightFearEffects=effect.addStatModifierGroup({})
 	script.setUpdateDelta(10)
 end
 

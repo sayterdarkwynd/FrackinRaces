@@ -5,7 +5,7 @@ function init()
 		break
 	end
 
-	starvationPower=status.addStatModifierGroup({}) 
+	starvationPower=effect.addStatModifierGroup({}) 
 	script.setUpdateDelta(5)
 end
 
