@@ -24,16 +24,16 @@ function update(dt)
 		self.effectValue=0.5+(0.05*lightLevel)
 		self.speedValue=1+(0.04*(10-lightLevel))
 		
-		status.setStatModifierGroup(nightFearEffects,{
+		effect.setStatModifierGroup(nightFearEffects,{
 			{stat = "maxHealth", baseMultiplier = self.effectValue},
 			{stat = "powerMultiplier", baseMultiplier = self.effectValue}
 		})
 		mcontroller.controlModifiers({speedModifier=speedValue})
 	else
-		status.setStatModifierGroup(nightFearEffects,{})
+		effect.setStatModifierGroup(nightFearEffects,{})
 	end
 end
 
 function uninit()
-	status.removeStatModifierGroup(nightFearEffects)
+	effect.removeStatModifierGroup(nightFearEffects)
 end

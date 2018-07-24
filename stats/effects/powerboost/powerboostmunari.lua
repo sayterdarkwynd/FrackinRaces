@@ -11,5 +11,5 @@ function update(dt)
 end
 
 function uninit()
-	status.removeStatModifierGroup(munariPower)
+	effect.removeStatModifierGroup(munariPower)
 end

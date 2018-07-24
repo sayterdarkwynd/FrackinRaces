@@ -15,5 +15,5 @@ function update()
 end
  
 function unit()
-	status.removeStatModifierGroup(avianPower)
+	effect.removeStatModifierGroup(avianPower)
 end

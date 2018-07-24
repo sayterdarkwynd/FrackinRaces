@@ -19,5 +19,5 @@ function update(dt)
 end
 
 function uninit()
-	status.removeStatModifierGroup(metabolismDelta)
+	effect.removeStatModifierGroup(metabolismDelta)
 end

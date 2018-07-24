@@ -13,5 +13,5 @@ end
 
 
 function uninit()
-	status.removeStatModifierGroup(attrition)
+	effect.removeStatModifierGroup(attrition)
 end

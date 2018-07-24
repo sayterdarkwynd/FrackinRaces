@@ -8,7 +8,7 @@ function init()
 	self.healingRate = 1.007 / config.getParameter("healTime", 220)
 	self.powerBonus=config.getParameter("powerBonus",0)
 	script.setUpdateDelta(10)
-	darkRegenFenerox=status.addStatModifierGroup({})
+	darkRegenFenerox=effect.addStatModifierGroup({})
 end
 --[[--isnt used, go figure
 function getLight()
@@ -34,16 +34,16 @@ function update(dt)
 
 	if nighttimeCheck() or undergroundCheck() and (self.foodValue >= 45) then
 		status.modifyResourcePercentage("health", self.healingRate * dt)
-		status.setStatModifierGroup(darkRegenFenerox, {
+		effect.setStatModifierGroup(darkRegenFenerox, {
 			{stat = "energyRegenPercentageRate", amount = self.powerBonus},
 			{stat = "maxHealth", baseMultiplier = self.powerBonus + 1.08},
 			{stat = "powerMultiplier", baseMultiplier = self.powerBonus + 1.08}
 		})
 	else
-		status.setStatModifierGroup(darkRegenFenerox,{})
+		effect.setStatModifierGroup(darkRegenFenerox,{})
 	end
 end
 
 function uninit()
-	status.removeStatModifierGroup(darkRegenFenerox)
+	effect.removeStatModifierGroup(darkRegenFenerox)
 end
