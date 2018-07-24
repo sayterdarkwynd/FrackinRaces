@@ -1,5 +1,10 @@
 function init()
-	status.clearPersistentEffects("feneroxEffects")
+	--removal of persistent handlers, should be removed after a few weeks.
+	for _,_ in pairs(status.getPersistentEffects()) do
+		status.clearPersistentEffects("feneroxEffects")
+		break
+	end
+	
 	self.healingRate = 1.007 / config.getParameter("healTime", 220)
 	self.powerBonus=config.getParameter("powerBonus",0)
 	script.setUpdateDelta(10)
