@@ -1,4 +1,6 @@
 function init()
+	--removal of persistent handlers, should be removed after a few weeks.
+	status.clearPersistentEffects("feneroxEffects")
 	nightarDarkHunterEffects=status.addStatModifierGroup({})
 	script.setUpdateDelta(10)
 end

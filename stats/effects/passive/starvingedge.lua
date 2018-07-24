@@ -1,4 +1,6 @@
 function init()
+	--removal of persistent handlers, should be removed after a few weeks.
+	status.clearPersistentEffects("starvationpower")
 	starvationPower=status.addStatModifierGroup({}) 
 	script.setUpdateDelta(5)
 end

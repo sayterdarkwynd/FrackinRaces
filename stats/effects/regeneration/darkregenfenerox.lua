@@ -1,4 +1,5 @@
 function init()
+	status.clearPersistentEffects("feneroxEffects")
 	self.healingRate = 1.007 / config.getParameter("healTime", 220)
 	self.powerBonus=config.getParameter("powerBonus",0)
 	script.setUpdateDelta(10)

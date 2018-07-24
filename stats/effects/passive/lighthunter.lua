@@ -1,4 +1,7 @@
 function init()
+	--removal of persistent handlers, should be removed after a few weeks.
+	status.clearPersistentEffects("feneroxEffects")
+	status.clearPersistentEffects("gardevanEffects")
 	lightHunterEffects=status.addStatModifierGroup({})
 	self.powerBonus = config.getParameter("powerBonus",0)
 	script.setUpdateDelta(10)
