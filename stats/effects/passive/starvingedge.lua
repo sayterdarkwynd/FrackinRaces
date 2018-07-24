@@ -1,6 +1,6 @@
 function init()
 	--removal of persistent handlers, should be removed after a few weeks.
-	for _,_ in pairs(status.getPersistentEffects()) do
+	for _,_ in pairs(status.getPersistentEffects("starvationpower")) do
 		status.clearPersistentEffects("starvationpower")
 		break
 	end
