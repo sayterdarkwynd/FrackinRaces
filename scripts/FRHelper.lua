@@ -36,8 +36,10 @@ end
 -- Extra arguments are sent to any scripts run
 function FRHelper:applyStats(stats, name, ...)
     if name then
-        status.setPersistentEffects(name, stats.stats or {})
-        self.persistentEffects[name] = true
+		if not compare(stats.stats or {},self.persistentEffects[name]) then
+			status.setPersistentEffects(name, stats.stats or {})
+			self.persistentEffects[name] = stats.stats or {}
+		end
     end
     self:applyControlModifiers(stats.controlModifiers, stats.controlParameters)
     if stats.scripts then
