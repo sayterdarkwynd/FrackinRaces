@@ -1,0 +1,19 @@
+{
+  "name" : "sugarfood",
+
+  "effectConfig" : {
+    "healthBonus" : 0.10,
+    "energyBonus" : 0.10,
+    "protectionBonus" : 2
+  },
+  "defaultDuration" : 120,
+
+  "scripts" : [
+    "sugarfood.lua"
+  ],
+
+  "animationConfig" : "carnivorefood.animation",
+
+  "label" : "Sugar-rich food.",
+  "icon" : "/interface/statuses/foodpoisonsugar.png"
+}
