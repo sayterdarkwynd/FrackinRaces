@@ -5,19 +5,18 @@
     
 	Diet: Omnivore
 	
-	^green;+5 Health, +10 Energy^reset;, ^red;-5 Defense^reset;
+	^green;+15 Energy^reset;, ^red;-5 Defense^reset;
 	^red;Weak: 50% Melee, 10% Poison, 5% Shadow^reset;
 	^green;Resist: 5% Cosmic, 20% Radiation^reset;
 	^green;+15% movement speed^reset;
 	^green;Immune to mild radiation^reset;
-	^green;+10% mobility^reset; / ^red;-5% attack^reset; during the day
-	^green;+15% attack^reset; / ^red;-7.5% defense^reset; during the night
+	^green;+15% Jump height and run speed^reset;
 	
 	Lush, Forest, and Jungle: ^green;+10% Mobility^reset;
 	Hot Biomes: ^green;+15% fire resist^reset; / ^red;-15% ice resist^reset;
 	Cold Biomes: ^green;+15% ice resist^reset; / ^red;-15% fire resist^reset;
 	
 	Melee: ^green;+20% damage^reset;
-	Ranged: ^red;-15% damage^reset;, ^green;+10% speed^reset;"
+	Ranged: ^red;-15% damage^reset;"
     }
 ]
