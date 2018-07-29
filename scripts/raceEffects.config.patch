@@ -1,0 +1,161 @@
+[
+	{
+		"op":"add",
+		"path":"/lombax_striped",
+		"value":{
+			"stats":[
+				{
+					"stat":"isOmnivore",
+					"amount":1
+				},
+				{
+					"stat":"maxHealth",
+					"baseMultiplier":0.75
+				},
+				{
+					"stat":"maxEnergy",
+					"baseMultiplier":1.20
+				},
+				{
+					"stat":"fireResistance",
+					"amount":0.5
+				},
+				{
+					"stat":"iceResistance",
+					"amount":-0.3
+				},
+				{
+					"stat":"poisonResistance",
+					"amount":-0.3
+				},
+				{
+					"stat":"electricResistance",
+					"amount":0.2
+				},
+				{
+					"stat":"coldimmunity",
+					"amount":-0.3
+				},
+				{
+					"stat":"biomecoldImmunity",
+					"amount":-0.3
+				}
+			],
+			"controlModifiers":{
+				"speedModifier":1.2,
+				"airJumpModifier":1.3
+			},
+			"weaponEffects" : [
+            {
+                "weapons" : [ "assaultrifle", "sniperrifle", "uniqueweapon", "grenadelauncher", "broadsword", "shortsword", "spear" ],
+                "stats" : [
+                    { "stat" : "powerMultiplier", "baseMultiplier" : 1.05 }
+                ]
+            },
+            {
+                "weapons" : [ "machinepistol", "pistol", "shotgun", "broadsword", "shortsword", "spear" ],
+                "stats" : [
+					{ "stat" : "energyRegenPercentageRate", "amount" : 0.30 }
+                ] }
+
+							],
+			"envEffects":[
+				{
+				"biomes":[
+					"desert", "scorchedcity", "hot", "desertwastesdark", "magma", "savannah", "magmadark", "desertwastes", "volcanicdark"
+					],
+					"stats":[
+						{
+							"stat":"protection",
+							"amount" : 10 },
+						{ "stat" : "energyRegenPercentageRate", "amount" : 0.25 }
+					],
+					"controlModifiers":{
+						"speedModifier":1.15,
+						"airJumpModifier":1.15
+					}
+				}
+			]
+	}
+	},
+
+	{
+		"op":"add",
+		"path":"/lombax_pointed",
+		"value":{
+			"stats":[
+				{
+					"stat":"isOmnivore",
+					"amount":1
+				},
+				{
+					"stat":"maxHealth",
+					"baseMultiplier":0.75
+				},
+				{
+					"stat":"maxEnergy",
+					"baseMultiplier":1.20
+				},
+				{
+					"stat":"fireResistance",
+					"amount":0.5
+				},
+				{
+					"stat":"iceResistance",
+					"amount":-0.3
+				},
+				{
+					"stat":"poisonResistance",
+					"amount":-0.3
+				},
+				{
+					"stat":"electricResistance",
+					"amount":0.2
+				},
+				{
+					"stat":"coldimmunity",
+					"amount":-0.3
+				},
+				{
+					"stat":"biomecoldImmunity",
+					"amount":-0.3
+				}
+			],
+			"controlModifiers":{
+				"speedModifier":1.2,
+				"airJumpModifier":1.3
+			},
+			"weaponEffects" : [
+            {
+                "weapons" : [ "assaultrifle", "sniperrifle", "uniqueweapon", "grenadelauncher", "broadsword", "shortsword", "spear" ],
+                "stats" : [
+                    { "stat" : "powerMultiplier", "baseMultiplier" : 1.05 }
+                ]
+            },
+            {
+                "weapons" : [ "machinepistol", "pistol", "shotgun", "broadsword", "shortsword", "spear" ],
+                "stats" : [
+					{ "stat" : "energyRegenPercentageRate", "amount" : 0.30 }
+                ] }
+
+							],
+			"envEffects":[
+				{
+					"biomes":[
+						"desert", "scorchedcity", "hot", "desertwastesdark", "magma", "savannah", "magmadark", "desertwastes", "volcanicdark"
+					],
+					"stats":[
+						{
+							"stat":"protection",
+							"amount" : 10 },
+						{ "stat" : "energyRegenPercentageRate", "amount" : 0.25 }
+					],
+					"controlModifiers":{
+						"speedModifier":1.15,
+						"airJumpModifier":1.15
+					}
+				}
+			]
+	}
+	}
+]
