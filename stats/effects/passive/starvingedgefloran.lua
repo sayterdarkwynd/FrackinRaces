@@ -1,5 +1,4 @@
 function init()
-  local bounds = mcontroller.boundBox()
   script.setUpdateDelta(5)
   local foodValue = status.resource("food")
 end
