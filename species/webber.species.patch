@@ -4,9 +4,9 @@
     "path" : "/charCreationTooltip/description" ,
     "value" : "Strange spider-people clones from a totally different and maddened universe. Webbers are spider-human beings who were cloned by mistake, improperly. All throughout their \"race\", defects run wild. They are instinctively afraid of the dark.
 
-    ^red;Weakness: -50% shadow resistance -20% fire resistance, -40% electric resistance.^reset;
+    ^red;Weakness: -40% shadow resistance -20% fire resistance, -30% electric resistance.^reset;
     ^orange;Nyctophobic (run faster while losing max health and energy in darkness)^reset;
-    ^green;+30% movement speed.^reset;
+    ^green;+10% movement speed.^reset;
     ^green;+30 energy^reset;
     ^green;+20% poison immunity, +20% cold resistance, immune to spider webbing^reset;
     ^green;+10% damage with spears, machine pistols and assult rifles,+20% damage with bows & pistols^reset;
