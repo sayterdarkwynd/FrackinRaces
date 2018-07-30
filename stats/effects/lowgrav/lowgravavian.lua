@@ -3,7 +3,7 @@ function init()
     effect.addStatModifierGroup({ {stat = "gravrainImmunity", amount = 1} })
     local bounds = mcontroller.boundBox()
     self.powerModifier = config.getParameter("powerModifier", 0)
-    avianPower=effect.addStatModifierGroup({{stat = "powerMultiplier", baseMultiplier = self.powerModifier}})
+    effect.addStatModifierGroup({{stat = "powerMultiplier", baseMultiplier = self.powerModifier}})
 end
  
 function update()
@@ -15,5 +15,5 @@ function update()
 end
  
 function unit()
-	effect.removeStatModifierGroup(avianPower)
+
 end

@@ -1,6 +1,9 @@
 {
   "name" : "nightfear",
-  "effectConfig" : {},
+  "effectConfig" : {
+    "powerBonus" : 0.1,
+    "powerPenalty" : -0.2
+  },
   "defaultDuration" : 60,
 
   "scripts" : [
