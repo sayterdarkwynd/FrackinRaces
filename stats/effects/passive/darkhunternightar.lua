@@ -31,8 +31,43 @@ function update(dt)
 	local daytime = daytimeCheck()
 	local underground = undergroundCheck()
 	local lightLevel = getLight()
-	-- day penalty
-	if daytime and not underground then
+	
+	if lightLevel <= 25 then
+		effect.setStatModifierGroup(nightarDarkHunterEffects, {
+			{stat = "powerMultiplier", baseMultiplier = 1.25},
+			{stat = "physicalResistance", amount = 0.25}
+		})		
+	elseif lightLevel <= 27 then
+		effect.setStatModifierGroup(nightarDarkHunterEffects, {
+			{stat = "powerMultiplier", baseMultiplier = 1.20},
+			{stat = "physicalResistance", amount = 0.225}
+		})			
+	elseif lightLevel <= 29 then
+		effect.setStatModifierGroup(nightarDarkHunterEffects, {
+			{stat = "powerMultiplier", baseMultiplier = 1.18},
+			{stat = "physicalResistance", amount = 0.20}
+		})		
+	elseif lightLevel <= 31 then
+		effect.setStatModifierGroup(nightarDarkHunterEffects, {
+			{stat = "powerMultiplier", baseMultiplier = 1.16},
+			{stat = "physicalResistance", amount = 0.15}
+		})			
+	elseif lightLevel <= 33 then
+		effect.setStatModifierGroup(nightarDarkHunterEffects, {
+			{stat = "powerMultiplier", baseMultiplier = 1.14},
+			{stat = "physicalResistance", amount = 0.12}
+		})			
+	elseif lightLevel <= 35 then
+		effect.setStatModifierGroup(nightarDarkHunterEffects, {
+			{stat = "powerMultiplier", baseMultiplier = 1.12},
+			{stat = "physicalResistance", amount = 0.10}
+		})			
+	elseif lightLevel <= 45 then
+		effect.setStatModifierGroup(nightarDarkHunterEffects, {
+			{stat = "powerMultiplier", baseMultiplier = 1.10},
+			{stat = "physicalResistance", amount = 0.05}
+		})		
+	elseif daytime and not underground then
 		if lightLevel > 85 then
 			effect.setStatModifierGroup(nightarDarkHunterEffects, {
 				{stat = "physicalResistance", amount = -0.15},
@@ -56,48 +91,9 @@ function update(dt)
 				{stat = "physicalResistance", amount = -0.05},
 				{stat = "powerMultiplier", baseMultiplier = 0.95}
 			})
-		else
-			effect.setStatModifierGroup(nightarDarkHunterEffects,{})
 		end
-	elseif not daytime or underground then
-		if lightLevel <= 22 then
-			effect.setStatModifierGroup(nightarDarkHunterEffects, {
-				{stat = "powerMultiplier", baseMultiplier = 1.25},
-				{stat = "physicalResistance", amount = 0.25}
-			})		
-		elseif lightLevel <= 24 then
-			effect.setStatModifierGroup(nightarDarkHunterEffects, {
-				{stat = "powerMultiplier", baseMultiplier = 1.20},
-				{stat = "physicalResistance", amount = 0.225}
-			})			
-		elseif lightLevel <= 26 then
-			effect.setStatModifierGroup(nightarDarkHunterEffects, {
-				{stat = "powerMultiplier", baseMultiplier = 1.18},
-				{stat = "physicalResistance", amount = 0.20}
-			})		
-		elseif lightLevel <= 28 then
-			effect.setStatModifierGroup(nightarDarkHunterEffects, {
-				{stat = "powerMultiplier", baseMultiplier = 1.16},
-				{stat = "physicalResistance", amount = 0.15}
-			})			
-		elseif lightLevel <= 30 then
-			effect.setStatModifierGroup(nightarDarkHunterEffects, {
-				{stat = "powerMultiplier", baseMultiplier = 1.14},
-				{stat = "physicalResistance", amount = 0.12}
-			})			
-		elseif lightLevel <= 35 then
-			effect.setStatModifierGroup(nightarDarkHunterEffects, {
-				{stat = "powerMultiplier", baseMultiplier = 1.12},
-				{stat = "physicalResistance", amount = 0.10}
-			})			
-		elseif lightLevel <= 45 then
-			effect.setStatModifierGroup(nightarDarkHunterEffects, {
-				{stat = "powerMultiplier", baseMultiplier = 1.10},
-				{stat = "physicalResistance", amount = 0.05}
-			})		
-		else
-			effect.setStatModifierGroup(nightarDarkHunterEffects,{})
-		end
+	else
+		effect.setStatModifierGroup(nightarDarkHunterEffects,{})
 	end
 end
 
