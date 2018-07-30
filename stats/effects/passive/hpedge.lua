@@ -7,7 +7,7 @@ end
 function update(dt)
 
  if status.statPositive("maxHealth") then 
-   self.healthRatio = status.resource("health") / status.stat("maxHealth") 
+   self.healthRatio = status.resourcePercentage("health")
  else 
    self.healthRatio = 0 
  end
