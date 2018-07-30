@@ -4,7 +4,7 @@
 "value": [ ]
   },
   { "op":"add",
-"path":"/effects/-", 
+"path":"/effects/-",
 "value": [
     { "effect" : "herbivorefood" },
     { "effect" : "sugarfood" }
