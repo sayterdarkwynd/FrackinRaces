@@ -1,11 +1,7 @@
 {
   "name" : "sugarfood",
 
-  "effectConfig" : {
-    "healthBonus" : 0.10,
-    "energyBonus" : 0.10,
-    "protectionBonus" : 2
-  },
+  "effectConfig" : {},
   "defaultDuration" : 120,
 
   "scripts" : [
