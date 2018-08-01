@@ -20,25 +20,21 @@ function update(dt)
 		self.foodValue = 50
 	end
 
-	if self.foodValue >= 35 then
-		--[[local foodMax = 100
-		local foodMin = 35
-		local foodRange = foodMax - foodMin--100-35=65
-		]]
-		local ratio = math.max(0, (self.foodValue - 35) / 65)
+	--[[local foodMax = 100
+	local foodMin = 35
+	local foodRange = foodMax - foodMin--100-35=65
+	]]
+	--local ratio = math.max(0, (self.foodValue - 35) / 65)
 
-		--[[
-		local energyMax = 1.3
-		local energyMin = 1
-		local energyRange = energyMax - energyMin--1.3-1=0.3
-		local finalEnergy = math.floor((energyMin + energyRange * ratio) * 100) / 100
-		--at 35 food, the min, this equates to 0. meaning they will have zero energy whatsoever. combined with photosynthesis, it goes negative.
-		]]
-		local finalEnergy = math.floor((1.3 * ratio) * 100) / 100
-		effect.setStatModifierGroup(starvationpower2, {{stat = "maxEnergy", baseMultiplier = finalEnergy}})
-	else
-		effect.setStatModifierGroup(starvationpower2, {})
-	end
+	--[[
+	local energyMax = 1.3
+	local energyMin = 1
+	local energyRange = energyMax - energyMin--1.3-1=0.3
+	local finalEnergy = math.floor((energyMin + energyRange * ratio) * 100) / 100
+	]]
+
+	local finalEnergy = math.max(math.floor((1+(0.3 * math.max(0, (self.foodValue - 35) / 65))) * 100) / 100,0)
+	effect.setStatModifierGroup(starvationpower2, {{stat = "maxEnergy", baseMultiplier = finalEnergy}})
 
 	if self.foodValue < 5 then
 		effect.setStatModifierGroup(starvationpower, {{stat = "powerMultiplier", baseMultiplier = 1.24}})
