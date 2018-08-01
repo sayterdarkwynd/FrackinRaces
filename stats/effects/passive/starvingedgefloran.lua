@@ -32,9 +32,12 @@ function update(dt)
 	local energyRange = energyMax - energyMin--1.3-1=0.3
 	local finalEnergy = math.floor((energyMin + energyRange * ratio) * 100) / 100
 	]]
-
-	local finalEnergy = math.max(math.floor((1+(0.3 * math.max(0, (math.max(35,self.foodValue) - 35) / 65))) * 100) / 100,0)
-	effect.setStatModifierGroup(starvationpower2, {{stat = "maxEnergy", baseMultiplier = finalEnergy}})
+	if self.foodValue>=35 then
+		local finalEnergy = math.floor((1+(0.3 * (self.foodValue - 35) / 65)) * 100) / 100
+		effect.setStatModifierGroup(starvationpower2, {{stat = "maxEnergy", baseMultiplier = finalEnergy}})
+	else
+		effect.setStatModifierGroup(starvationpower2, {})
+	end
 
 	if self.foodValue < 5 then
 		effect.setStatModifierGroup(starvationpower, {{stat = "powerMultiplier", baseMultiplier = 1.24}})
