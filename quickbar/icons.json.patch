@@ -21,7 +21,7 @@
 	    "path": "/normal/-",
 	    "value": {
 	      "label": "Updates",
-	      "pane": "/interface/scripted/fu_updateInfoWindow/updateInfoWindow.config",
+	      "pane": "/zb/updateInfoWindow/updateInfoWindow.config",
 	      "icon": "/interface/quest.png"
 	    }
 	  }]	
