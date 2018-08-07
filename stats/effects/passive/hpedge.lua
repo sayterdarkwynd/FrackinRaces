@@ -1,5 +1,4 @@
 function init()
-  local bounds = mcontroller.boundBox()
   script.setUpdateDelta(5)
   self.healthRatio = 1
 end
@@ -7,7 +6,7 @@ end
 function update(dt)
 
  if status.statPositive("maxHealth") then 
-   self.healthRatio = status.resource("health") / status.stat("maxHealth") 
+   self.healthRatio = status.resourcePercentage("health")
  else 
    self.healthRatio = 0 
  end
@@ -36,15 +35,3 @@ end
 function uninit()
   status.clearPersistentEffects("healthpower")
 end
-
-
-
-
-
-
-
-
-
-
-
-
