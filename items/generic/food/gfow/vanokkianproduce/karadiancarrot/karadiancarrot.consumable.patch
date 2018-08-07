@@ -1,13 +1,9 @@
-[
-{
+[{
   "op": "add",
   "path": "/effects",
   "value": [
     [
-      {
-        "effect": "carnivorefoodcooked"
-      }
+        { "effect" : "herbivorefood" }
     ]
   ]
-}
-]
+}]
