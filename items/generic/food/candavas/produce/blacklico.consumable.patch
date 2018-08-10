@@ -1,0 +1,12 @@
+[{
+  "op": "add",
+  "path": "/effects",
+  "value": [
+    [
+        {
+          "effect" : "sugarfood",
+          "duration" : 30
+        }
+    ]
+  ]
+}]
