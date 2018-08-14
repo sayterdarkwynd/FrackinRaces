@@ -1,9 +1,9 @@
 {
-  "itemName" : "lobster",
+  "itemName" : "fulobster",
   "rarity" : "Common",
   "price" : 100,
   "category" : "preparedFood",
-  "inventoryIcon" : "lobster.png",
+  "inventoryIcon" : "fulobster.png",
   "description" : "Delicious aquatic horror.",
   "shortdescription" : "Lobster",
   "foodValue" : 30,
