@@ -12,9 +12,9 @@
   "chipCost" : 1,
   "energyCostPerSecond" : 1.2,
 
-  "maxFallSpeed" : -39,
+  "maxFallSpeed" : -41,
   "fallingParameters" : {
-    "gravityMultiplier" : 0.85,
+    
     "airForce" : 40,
     "runSpeed" : 24,
     "walkSpeed" : 24,    
