@@ -9,7 +9,7 @@ function activate(fireMode, shiftHeld)
         player.makeTechAvailable("flight_avali")
         player.enableTech("flight_avali")
         player.equipTech("flight_avali")
-      elseif self.species == "saturnian" then
+      elseif self.species == "saturn" then
         player.makeTechAvailable("flight_saturnian")
         player.enableTech("flight_saturnian")
         player.equipTech("flight_saturnian")

@@ -32,7 +32,7 @@ function activeFlight()
 end
 
 function animateFlight()
-    if self.species == "saturnian" then
+    if self.species == "saturn" then
     	animator.setParticleEmitterOffsetRegion("butterflies", mcontroller.boundBox())
     	animator.setParticleEmitterActive("butterflies", true)	    
     else
