@@ -1,8 +1,6 @@
 {
   "name" : "foodcost",
-  "effectConfig" : { 
-    "foodCost" : 4
-  },
+  "effectConfig" : {},
   "defaultDuration" : 3,
 
   "scripts" : [

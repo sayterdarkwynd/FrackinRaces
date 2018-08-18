@@ -1,23 +1,23 @@
 {
-  "name" : "flight_avian",
+  "name" : "flight_avali",
   "type" : "head",
 
   "scripts" : ["flighttest.lua"],
   "animator" : "flighttest.animation",
 
   "description" : "Your race can glide...just a bit. Use ^green;[F]^reset;.",
-  "shortDescription" : "Avian Slowfall",
+  "shortDescription" : "Avali Glide",
   "rarity" : "Legendary",
   "icon" : "/tech/boosterrocket.png",
   "chipCost" : 1,
-  "energyCostPerSecond" : 1.5,
+  "energyCostPerSecond" : 1,
 
-  "maxFallSpeed" : -40,
+  "maxFallSpeed" : -10,
   "fallingParameters" : {
     "gravityMultiplier" : 0.85,
-    "airForce" : 30,
-    "runSpeed" : 24,
-    "walkSpeed" : 24,    
-    "flySpeed" : 30
+    "airForce" : 50,
+    "runSpeed" : 25,
+    "walkSpeed" : 25,    
+    "flySpeed" : 32
   }
 }

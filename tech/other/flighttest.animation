@@ -18,9 +18,9 @@
 
   "particleEmitters" : {
     "feathers" : {
-      "enabled" : true,
-      "emissionRate" : 1.0,
-      "emissionRateVariance" : 0.5,
+      "enabled" : false,
+      "emissionRate" : 2.0,
+      "emissionRateVariance" : 1.5,
       "particles" : [
         {
           "particle" : {
@@ -32,7 +32,7 @@
             "initialVelocity" : [0.0, -1],
             "rotation" : 0,
             "angularVelocity" : 0,
-            "timeToLive" : 0.5,
+            "timeToLive" : 1,
             "destructionAction" : "shrink",
             "destructionTime" : 0.5,
             "layer" : "back",
@@ -45,7 +45,35 @@
           }
         }
       ]
-    }
+    },
+    "butterflies" : {
+      "enabled" : false,
+      "emissionRate" : 2.0,
+      "emissionRateVariance" : 1.5,
+      "particles" : [
+        {
+          "particle" : {
+		"type" : "animated",
+		"animation" : "/animations/butterflies/butterfly1.animation",
+		"velocity" : [0, 0.20],
+		"fade" : 0.9,
+		"looping" : true,
+		"destructionTime" : 1,
+		"timeToLive" : 1,
+		"collidesForeground" : false,
+		"collidesLiquid" : true,
+		"ignoreWind" : true
+          }
+        }
+      ]
+    }    
+  },
+  
+  "sounds" : {
+    "activate" : [ "/sfx/tech/tech_hoverloop.ogg" ],
+    "recharge" : [ "/sfx/tech/tech_blink_cooldown1.ogg" ]
   }
+  
+  
 }
 
