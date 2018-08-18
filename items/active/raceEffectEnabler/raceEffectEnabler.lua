@@ -13,6 +13,10 @@ function activate(fireMode, shiftHeld)
         player.makeTechAvailable("flight_saturnian")
         player.enableTech("flight_saturnian")
         player.equipTech("flight_saturnian")
+      elseif self.species == "kazdra" then
+        player.makeTechAvailable("dragonfireburst")
+        player.enableTech("dragonfireburst")
+        player.equipTech("dragonfireburst")        
       end
       animate()
     else

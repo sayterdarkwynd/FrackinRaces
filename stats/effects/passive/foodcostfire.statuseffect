@@ -1,16 +1,16 @@
 {
-  "name" : "foodcost",
+  "name" : "foodcostfire",
   "effectConfig" : {
     "foodCost" : 5
   },
   "defaultDuration" : 3,
 
   "scripts" : [
-    "foodcost.lua"
+    "foodcostfire.lua"
   ],
   
   "animationConfig" : "/tech/other/flighttest.animation",
 
-  "label" : "Racial Flight/Slowfall",
-  "icon" : "/interface/statuses/nofalldamage.png"
+  "label" : "Racial Flame Attack [F]",
+  "icon" : "/interface/statuses/fire.png"
 }
