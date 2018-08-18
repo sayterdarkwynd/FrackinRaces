@@ -5,6 +5,7 @@ function init()
   self.active=false
   self.available = true
   self.species = world.entitySpecies(entity.id())
+  self.timer = 0
 end
 
 function uninit()
@@ -25,7 +26,6 @@ function activeFlight()
     if config.getParameter("removesFallDamage",0) == 1 then
 	status.addEphemeralEffects{{effect = "nofalldamage", duration = 0.1}}
     end
-
     mcontroller.controlParameters(config.getParameter("fallingParameters"))
     mcontroller.setYVelocity(math.max(mcontroller.yVelocity(), config.getParameter("maxFallSpeed")))
     animateFlight()
@@ -39,13 +39,20 @@ function animateFlight()
     	animator.setParticleEmitterOffsetRegion("feathers", mcontroller.boundBox())
     	animator.setParticleEmitterActive("feathers", true)	
     end
-    animator.playSound("activate",2)
+    
     animator.setFlipped(mcontroller.facingDirection() < 0)   
 end
 
 function update(args)
         checkFood()
-
+	if self.timer then
+	  self.timer = math.max(0, self.timer - args.dt)
+	  if self.timer == 0 then
+	    animator.playSound("activate")
+	    self.timer = 1
+	  end
+	end
+	
 	if args.moves["special1"] and not mcontroller.onGround() and not mcontroller.zeroG() and status.overConsumeResource("energy", 0.001) then 
 		if self.foodValue > 15 then
 		    status.addEphemeralEffects{{effect = "foodcost", duration = 0.1}}

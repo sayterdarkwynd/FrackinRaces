@@ -10,14 +10,14 @@
   "rarity" : "Legendary",
   "icon" : "/tech/boosterrocket.png",
   "chipCost" : 1,
-  "energyCostPerSecond" : 1,
+  "energyCostPerSecond" : 1.2,
 
   "maxFallSpeed" : -10,
   "fallingParameters" : {
     "gravityMultiplier" : 0.85,
-    "airForce" : 50,
-    "runSpeed" : 25,
-    "walkSpeed" : 25,    
-    "flySpeed" : 32
+    "airForce" : 30,
+    "runSpeed" : 24,
+    "walkSpeed" : 24,    
+    "flySpeed" : 30
   }
 }
