@@ -5,7 +5,7 @@ function init()
   if self.species == "kazdra" then
     self.foodCost = 4
   else
-    self.foodCost = 2
+    self.foodCost = 6
   end
   
   effect.addStatModifierGroup({
