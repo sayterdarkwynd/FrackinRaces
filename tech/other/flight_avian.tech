@@ -1,0 +1,23 @@
+{
+  "name" : "flight_avian",
+  "type" : "head",
+
+  "scripts" : ["flighttest.lua"],
+  "animator" : "flighttest.animation",
+
+  "description" : "Your race can glide...just a bit. Use ^green;[F]^reset;.",
+  "shortDescription" : "Avian Slowfall",
+  "rarity" : "Legendary",
+  "icon" : "/tech/boosterrocket.png",
+  "chipCost" : 1,
+  "energyCostPerSecond" : 1.5,
+  "foodCost" : 10,
+  "maxFallSpeed" : -40,
+  "fallingParameters" : {
+    "gravityMultiplier" : 0.85,
+    "airForce" : 30,
+    "runSpeed" : 24,
+    "walkSpeed" : 24,    
+    "flySpeed" : 30
+  }
+}
