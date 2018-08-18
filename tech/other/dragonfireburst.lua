@@ -23,8 +23,17 @@ function checkFood()
 	end
 end
 
+function damageConfig()
+  foodVal = self.foodValue /60
+  energyVal = status.resource("energy")/150
+  defenseVal =  status.stat("protection") /250
+  totalVal = foodVal + energyVal + defenseVal
+end
+
 function activeFlight()
-    local damageConfig = { power = (self.foodValue/50), damageSourceKind = "fire" } 
+    damageConfig()
+    local damageConfig = { power = totalVal, damageSourceKind = "fire" }
+    --sb.logInfo("power value from food, energy and protection = "..damageConfig.power)
     animator.playSound("activate",3)
     animator.playSound("recharge")
     animator.setSoundVolume("activate", 0.5,0)
