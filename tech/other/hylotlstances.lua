@@ -48,15 +48,15 @@ function update(args)
   end
   
   self.specialLast = args.moves["special1"]
-  self.pressJump = args.moves["jump"]
-  self.pressUp = args.moves["up"]
-  self.pressDown = args.moves["down"]
   
   if not args.moves["special1"] then
     self.forceTimer = nil
   end
 
-
+    local primaryItem = world.entityHandItem(entity.id(), "primary")
+    local altItem = world.entityHandItem(entity.id(), "alt")
+    
+    
   if self.active2 == 1 then  -- in defense stance, we are slow
 	      mcontroller.controlModifiers({
 	        speedModifier = 0.75
@@ -76,38 +76,19 @@ function update(args)
 	      self.bombTimer = math.max(0, self.bombTimer - args.dt)
 	    end
 
-	    if self.pressDown or self.pressJump and self.active2== 1 then  --defense stance	    
+
+    if primaryItem and root.itemHasTag(primaryItem, "katana") and not altItem then
 	      status.setPersistentEffects("bugarmor", {
-		{stat = "protection", effectiveMultiplier = 1.25},
-		{stat = "powerMultiplier", effectiveMultiplier = 0.75},
-		{stat = "maxEnergy", effectiveMultiplier = 0.75}
-	      })
-	      if self.bombTimer == 0 then
-	        checkStance()
-	      end
-	    end
-	    if self.pressUp or self.pressJump and self.active3== 1 then  -- shielding stance
-	      status.setPersistentEffects("bugarmor", {
-		{stat = "shieldBash", amount = 25},
-		{stat = "shieldStaminaRegenBlock", effectiveMultiplier = 0.5},
-		{stat = "perfectBlockLimit", effectiveMultiplier = 2},
-		{stat = "shieldBashPush", amount = 5},
-		{stat = "maxEnergy", effectiveMultiplier = 0.50}
-	      })  
-	      if self.bombTimer == 0 then
-	        checkStance()
-	      end	      
-	    end
-	    if self.pressJump or self.pressJump and self.active4== 1 then -- power stance	  
-	      status.setPersistentEffects("bugarmor", {
-		{stat = "protection", effectiveMultiplier = 0.75},
-		{stat = "powerMultiplier", effectiveMultiplier = 1.25},
-		{stat = "maxEnergy", effectiveMultiplier = 0.75}
+ 		{stat = "protection", effectiveMultiplier = 1.25},
+ 		{stat = "maxEnergy", effectiveMultiplier = 0.75}
 	      })    
-	      if self.bombTimer == 0 then
-	        checkStance()
-	      end	      
-	    end      
+    elseif primaryItem and root.itemHasTag(primaryItem, "katana") and altItem and root.itemHasTag(altItem, "katana") then
+ 	      status.setPersistentEffects("bugarmor", {
+ 		{stat = "powerMultiplier", effectiveMultiplier = 1.25},
+ 		{stat = "maxEnergy", effectiveMultiplier = 0.75}
+ 	      })    
+    end
+    
     checkForceDeactivate(args.dt)
   end
 end
