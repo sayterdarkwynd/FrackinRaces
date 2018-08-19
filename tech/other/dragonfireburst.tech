@@ -8,7 +8,7 @@
   "description" : "Breathe Fire! Use ^green;[F]^reset;.",
   "shortDescription" : "Dragonfire",
   "rarity" : "Legendary",
-  "icon" : "/tech/boosterrocket.png",
+  "icon" : "/interface/statuses/fire.png",
   "chipCost" : 1,
   "energyCostPerSecond" : 1.2
 }

@@ -8,7 +8,7 @@
   "description" : "Your race can glide...just a bit. Use ^green;[F]^reset;.",
   "shortDescription" : "Avali Glide",
   "rarity" : "Legendary",
-  "icon" : "/tech/boosterrocket.png",
+  "icon" : "/items/active/raceEffectEnabler/raceeffectenabler.png",
   "chipCost" : 1,
   "energyCostPerSecond" : 1.5,
 
