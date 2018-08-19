@@ -11,6 +11,8 @@ function init()
   if (status.stat("isHerbivore")==1 or status.stat("isRobot")==1 or status.stat("isOmnivore")==1 or status.stat("isSugar")==1) and (not(status.stat("isOmnivore")==1 and status.stat("isCarnivore")==1)) then
     world.sendEntityMessage(entity.id(), "queueRadioMessage", "foodtype")
   end
+  status.clearPersistentEffects("glitchpower1")
+  status.clearPersistentEffects("veggiepower")    
 end
 
 function update(dt)

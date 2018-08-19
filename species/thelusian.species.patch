@@ -5,7 +5,7 @@
     },
     { "op": "replace", 
     "path" : "/charCreationTooltip/description" , 
-    "value" : "The carnivorous Thelusians are well known for their tough chitin shell and exceptionally dangerous combat abilities. Individually dull...but extremely dangerous in large groups.
+    "value" : "The carnivorous Thelusians are well known for their tough chitin shell and exceptionally dangerous combat abilities. Able to adapt to suit any combat situation.
 
  Diet: Carnivore 
  
@@ -13,6 +13,7 @@
  +^green;20%^reset; Health, +^green;25%^reset; Knockback Resist, +^green;5%^reset; Speed
  Resist: ^green;20%^reset; Physical, ^green;20%^reset; Radiation, ^green;30%^reset; Shadow
  Immune: Insanity
+ Tech: Craft Thelusian Warrior tech via Racial Tech Enabler ^green;[C]^reset;
  
  ^orange;Environment^reset;: 
  On ^green;hot^reset; biomes gain ^green;10%^reset; Health
