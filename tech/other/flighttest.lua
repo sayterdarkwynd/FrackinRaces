@@ -9,9 +9,9 @@ function init()
 end
 
 function uninit()
-  animator.setParticleEmitterActive("feathers", false)	
-  animator.stopAllSounds("activate")
-  effect.removeStatModifierGroup(foodPower)
+  	    animator.setParticleEmitterActive("feathers", false)
+  	    animator.setParticleEmitterActive("butterflies", false)
+  	    animator.stopAllSounds("activate")	
 end
 
 function checkFood()
@@ -45,15 +45,14 @@ end
 
 function update(args)
         checkFood()
-	if self.timer then
-	  self.timer = math.max(0, self.timer - args.dt)
-	  if self.timer == 0 then
-	    animator.playSound("activate")
-	    self.timer = 1
-	  end
-	end
-	
 	if args.moves["special1"] and not mcontroller.onGround() and not mcontroller.zeroG() and status.overConsumeResource("energy", 0.001) then 
+		if self.timer then
+		  self.timer = math.max(0, self.timer - args.dt)
+		  if self.timer == 0 then
+		    animator.playSound("activate")
+		    self.timer = 1
+		  end
+		end	
 		if self.foodValue > 15 then
 		    status.addEphemeralEffects{{effect = "foodcost", duration = 0.1}}
 		else
@@ -61,12 +60,12 @@ function update(args)
 		end	
 	    	activeFlight()
 	else
-  	    animator.setParticleEmitterActive("feathers", false)
-  	    animator.setParticleEmitterActive("butterflies", false)
-  	    animator.stopAllSounds("activate")	
+  	    idle()
 	end
 end
 
 function idle()
-
+  	    animator.setParticleEmitterActive("feathers", false)
+  	    animator.setParticleEmitterActive("butterflies", false)
+  	    animator.stopAllSounds("activate")	
 end

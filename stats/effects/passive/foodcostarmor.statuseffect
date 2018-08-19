@@ -1,0 +1,16 @@
+{
+  "name" : "foodcostarmor",
+  "effectConfig" : {
+    "foodCost" : 2
+  },
+  "defaultDuration" : 3,
+
+  "scripts" : [
+    "foodcost.lua"
+  ],
+  
+  "animationConfig" : "/tech/other/flighttest.animation",
+
+  "label" : "Thelusian Chitin",
+  "icon" : "/interface/statuses/bugarmor.png"
+}

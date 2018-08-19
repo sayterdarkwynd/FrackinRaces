@@ -1,0 +1,14 @@
+{
+  "name" : "bugarmor",
+  "type" : "head",
+
+  "scripts" : ["bugarmor.lua"],
+  "animator" : "flighttest.animation",
+
+  "description" : "Sacrifice Energy for Defense. ^green;[F]^reset;",
+  "shortDescription" : "Insect Armor",
+  "rarity" : "Legendary",
+  "icon" : "/interface/statuses/bugarmor.png",
+  "chipCost" : 1,
+  "energyCostPerSecond" : 0.4
+}

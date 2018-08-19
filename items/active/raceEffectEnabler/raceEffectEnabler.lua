@@ -16,7 +16,11 @@ function activate(fireMode, shiftHeld)
       elseif self.species == "kazdra" then
         player.makeTechAvailable("dragonfireburst")
         player.enableTech("dragonfireburst")
-        player.equipTech("dragonfireburst")        
+        player.equipTech("dragonfireburst")  
+      elseif self.species == "thelusian" then
+        player.makeTechAvailable("bugarmor")
+        player.enableTech("bugarmor")
+        player.equipTech("bugarmor")        
       end
       animate()
     else
