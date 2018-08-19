@@ -1,0 +1,24 @@
+[
+    { "op": "replace", 
+    "path" : "/charCreationTooltip/description" , 
+    "value" : "Biological descendants of the Spirit Tree, these frail little creatures dance through the air, trying to take as little damage as possible. Their origins are unknown, though they thrive in forests and jungles.
+    
+Diet: Herbivorous 
+ 
+^orange;Perks^reset;: 
+^green;+25%^reset; speed and jump height
+Resist: ^green;10%^reset; Cosmic, Shadow 
+^green;+30%%^reset; Energy 
+Glow in the Dark
+ 
+^orange;Environment^reset;: 
+Gain +15% Health and protection in ^green;Jungle-type^reset; biomes 
+    
+^orange;Weapons^reset;:
+Wand and Staff: ^green;+30% damage, +10% Protection^reset;
+    
+^red;Weaknesses^reset;: 
+^red;-30%^reset; Health
+^red;40%^reset; Physical, Poison"
+    }
+]
