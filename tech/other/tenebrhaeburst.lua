@@ -30,6 +30,13 @@ function getLight()
 	return lightLevel
 end
 
+function daytimeCheck()
+	return world.timeOfDay() < 0.5 -- true if daytime
+end
+
+function undergroundCheck()
+	return world.underground(mcontroller.position())
+end
 
 function checkFood()
 	if status.isResource("food") then
@@ -40,10 +47,12 @@ function checkFood()
 end
 
 function damageConfig()
-  local lightLevel = getLight()
+	local daytime = daytimeCheck()
+	local underground = undergroundCheck()
+	local lightLevel = getLight()
   foodVal = self.foodValue /60
   energyVal = status.resource("energy")/150
-  totalVal = foodVal + energyVal + (lightLevel/2)
+  totalVal = foodVal + energyVal + (27 - (lightLevel/2))
 end
 
 function activeFlight()
