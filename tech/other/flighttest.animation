@@ -99,7 +99,7 @@
   },
   
   "sounds" : {
-    "activate" : [ "/sfx/tech/tech_hoverloop.ogg" ],
+    "activate" : [ ],
     "recharge" : [ "/sfx/tech/tech_blink_cooldown1.ogg" ]
   }
   
