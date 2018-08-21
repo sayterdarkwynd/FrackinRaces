@@ -5,11 +5,11 @@ function init()
   if self.species == "avian" then
     self.foodCost = 3
   elseif self.species == "avali" then
-    self.foodCost = 5
-  elseif self.species == "saturnian" then
-    self.foodCost = 8
-  else
     self.foodCost = 3
+  elseif self.species == "saturnian" then
+    self.foodCost = 4
+  else
+    self.foodCost = 4
   end
   
   effect.addStatModifierGroup({

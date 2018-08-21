@@ -20,7 +20,11 @@ function activate(fireMode, shiftHeld)
       elseif self.species == "thelusian" then
         player.makeTechAvailable("bugarmor")
         player.enableTech("bugarmor")
-        player.equipTech("bugarmor")        
+        player.equipTech("bugarmor")       
+      elseif self.species == "shadow" then
+        player.makeTechAvailable("tenebrhaeburst")
+        player.enableTech("tenebrhaeburst")
+        player.equipTech("tenebrhaeburst")            
       end
       animate()
     else

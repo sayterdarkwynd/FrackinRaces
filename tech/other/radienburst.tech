@@ -1,12 +1,12 @@
 {
-  "name" : "dragonfireburst",
+  "name" : "radienburst",
   "type" : "head",
 
-  "scripts" : ["dragonfireburst.lua"],
-  "animator" : "dragonfireburst.animation",
+  "scripts" : ["radienburst.lua"],
+  "animator" : "radienburst.animation",
 
   "description" : "Breathe Fire! Use ^green;[F]^reset;.",
-  "shortDescription" : "Dragonfire",
+  "shortDescription" : "Radien",
   "rarity" : "Legendary",
   "icon" : "/interface/statuses/fire.png",
   "chipCost" : 1,

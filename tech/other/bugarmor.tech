@@ -3,10 +3,10 @@
   "type" : "head",
 
   "scripts" : ["bugarmor.lua"],
-  "animator" : "flighttest.animation",
+  "animator" : "bugarmor.animation",
 
-  "description" : "Sacrifice Energy for Defense. ^green;[F]^reset;",
-  "shortDescription" : "Insect Armor",
+  "description" : "Push [Up],[Down] or [Jump] for combat stances. ^green;[F]^reset;",
+  "shortDescription" : "Thelusian Warrior",
   "rarity" : "Legendary",
   "icon" : "/interface/statuses/bugarmor.png",
   "chipCost" : 1,
