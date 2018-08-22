@@ -12,6 +12,8 @@ function initCommonParameters()
   self.available = true
   self.species = world.entitySpecies(entity.id())
   self.timer = 0  
+  self.active2 = 0
+  self.active3 = 0
 end
 
 function uninit()
@@ -31,10 +33,14 @@ function checkFood()
 end
 
 function checkStance()
-    if self.pressDown then
+    if self.pressDown and self.active2 == 0 then
+      animator.playSound("slowfallMode")
+      animator.setSoundVolume("slowfallMode", 2,0)
       self.active2 = 1
       self.active3 = 0   
-    elseif self.pressUp then
+    elseif self.pressUp and self.active3 == 0 then
+      animator.playSound("glideMode")
+      animator.setSoundVolume("glideMode", 2,0)
       self.active2 = 0
       self.active3 = 1	        
     end 
@@ -80,7 +86,7 @@ function update(args)
 	      if not mcontroller.onGround() and not mcontroller.zeroG() then
 		      status.setPersistentEffects("glide", {
 			{stat = "fallDamageResistance", effectiveMultiplier = 1.65},
-			{stat = "gliding", effectiveMultiplier = 0}
+			{stat = "gliding", amount = 0}
 		      })	      
 	      end
 	      if self.bombTimer == 0 then
@@ -92,7 +98,7 @@ function update(args)
 	      if not mcontroller.onGround() and not mcontroller.zeroG() then
 		      status.setPersistentEffects("glide", {
 			{stat = "fallDamageResistance", effectiveMultiplier = 1.45},
-			{stat = "gliding", effectiveMultiplier = 1}
+			{stat = "gliding", amount = 1}
 		      })  	      
 	      end
 	      if self.bombTimer == 0 then
@@ -102,11 +108,9 @@ function update(args)
 
 	  if not mcontroller.onGround() and not mcontroller.zeroG() then
 		  if self.active2 == 1 then
-			status.addEphemeralEffects{{effect = "nofalldamage", duration = 0.1}}
 			mcontroller.controlParameters(config.getParameter("fallingParameters1"))
 			mcontroller.setYVelocity(math.max(mcontroller.yVelocity(), config.getParameter("maxFallSpeed1")))
 		  elseif self.active3 == 1 then
-			status.addEphemeralEffects{{effect = "nofalldamage", duration = 0.1}}
 			mcontroller.controlParameters(config.getParameter("fallingParameters2"))
 			mcontroller.setYVelocity(math.max(mcontroller.yVelocity(), config.getParameter("maxFallSpeed2")))
 		  end

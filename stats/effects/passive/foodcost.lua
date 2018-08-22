@@ -3,21 +3,17 @@ function init()
   self.species = world.entitySpecies(entity.id())
   
   if self.species == "avian" then
-    self.foodCost = 1.5
+    self.foodCost = 0.1
   elseif self.species == "avali" then
     if status.stat("gliding") == 1 then
-      self.foodCost = 4.5
+      self.foodCost = 1.0
     else
-      self.foodCost = 1.5
+      self.foodCost = 0.15
     end
   elseif self.species == "saturnian" then
-    self.foodCost = 10
-  else
-    if status.stat("gliding") == 1 then
-      self.foodCost = 4.5
-    else
-      self.foodCost = 1.5
-    end
+    self.foodCost = 1.5
+  else  -- comment this last section out when not testing.
+      self.foodCost = 2
   end
   
   effect.addStatModifierGroup({
