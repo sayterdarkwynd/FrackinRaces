@@ -10,7 +10,7 @@
   "rarity" : "Legendary",
   "icon" : "/items/active/raceEffectEnabler/raceeffectenabler.png",
   "chipCost" : 1,
-  "energyCostPerSecond" : 0.99,
+  "energyCostPerSecond" : 0.5,
 
   "maxFallSpeed" : -39,
   "fallingParameters" : {
