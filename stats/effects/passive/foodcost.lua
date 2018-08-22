@@ -6,17 +6,17 @@ function init()
     self.foodCost = 2
   elseif self.species == "avali" then
     if status.stat("gliding") == 1 then
-      self.foodCost = 8
+      self.foodCost = 9
     else
-      self.foodCost = 4
+      self.foodCost = 2
     end
   elseif self.species == "saturnian" then
-    self.foodCost = 10
+    self.foodCost = 11
   else
     if status.stat("gliding") == 1 then
-      self.foodCost = 8
+      self.foodCost = 9
     else
-      self.foodCost = 4
+      self.foodCost = 2
     end
   end
   
