@@ -79,7 +79,8 @@ function update(args)
 	    if self.pressDown or self.active2== 1 then  --slowfall stance	
 	      if not mcontroller.onGround() and not mcontroller.zeroG() then
 		      status.setPersistentEffects("glide", {
-			{stat = "fallDamageResistance", effectiveMultiplier = 1.65}
+			{stat = "fallDamageResistance", effectiveMultiplier = 1.65},
+			{stat = "gliding", effectiveMultiplier = 0}
 		      })	      
 	      end
 	      if self.bombTimer == 0 then
@@ -90,7 +91,8 @@ function update(args)
 	    if self.pressUp or self.active3== 1 then  -- glide stance
 	      if not mcontroller.onGround() and not mcontroller.zeroG() then
 		      status.setPersistentEffects("glide", {
-			{stat = "fallDamageResistance", effectiveMultiplier = 1.45}
+			{stat = "fallDamageResistance", effectiveMultiplier = 1.45},
+			{stat = "gliding", effectiveMultiplier = 1}
 		      })  	      
 	      end
 	      if self.bombTimer == 0 then
