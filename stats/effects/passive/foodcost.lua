@@ -21,7 +21,7 @@ function init()
   end
   
   effect.addStatModifierGroup({
-    {stat = "foodDelta", baseMultiplier = self.foodCost }
+    {stat = "foodDelta", amount = -self.foodCost }
   })
 end
 
