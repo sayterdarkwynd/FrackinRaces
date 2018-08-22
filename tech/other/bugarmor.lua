@@ -76,7 +76,7 @@ function update(args)
 	      self.bombTimer = math.max(0, self.bombTimer - args.dt)
 	    end
 
-	    if self.pressDown or self.pressJump and self.active2== 1 then  --defense stance	    
+	    if self.pressDown or self.pressDown and self.active2== 1 then  --defense stance	    
 	      status.setPersistentEffects("bugarmor", {
 		{stat = "protection", effectiveMultiplier = 1.25},
 		{stat = "powerMultiplier", effectiveMultiplier = 0.75},
@@ -86,7 +86,7 @@ function update(args)
 	        checkStance()
 	      end
 	    end
-	    if self.pressUp or self.pressJump and self.active3== 1 then  -- shielding stance
+	    if self.pressUp or self.pressUp and self.active3== 1 then  -- shielding stance
 	      status.setPersistentEffects("bugarmor", {
 		{stat = "shieldBash", amount = 25},
 		{stat = "shieldStaminaRegenBlock", effectiveMultiplier = 0.5},
