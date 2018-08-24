@@ -10,7 +10,7 @@
     ^orange;Diet: Omnivore^reset;
     ^red;-20% Life, -20% Physical, -30% Shadow Resistances^reset;
     ^green;+20% Energy, +20% Electric, 30% Cosmic Resistances^reset;
-    ^green;Adorable, Half Fall Damage^reset;
+    ^green;Adorable, Halved Fall Damage^reset;
     ^cyan;Gliding, ^green;+10% Speed and Jump, ^red;Bad at swimming^reset;
     ^magenta;Moogle Glide tech (Obtain in [C] Menu), Extra craftable mech body^reset;
     ^yellow;Firearms gain ^green;+5% Damage, +1% Crit^reset;
