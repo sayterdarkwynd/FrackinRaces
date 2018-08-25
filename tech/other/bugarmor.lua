@@ -35,11 +35,11 @@ function checkStance()
       self.active4 = 1    
        animator.setParticleEmitterActive("defenseStance", false)
        animator.setParticleEmitterActive("shieldStance", false)	    
-      animator.setParticleEmitterActive("powerStance", true)
+       animator.setParticleEmitterActive("powerStance", true)
     end 
     local configBombDrop = { power = 0 }
     world.spawnProjectile("activeStance", mcontroller.position(), entity.id(), {0, 0}, false, configBombDrop)
-    self.bombTimer = 1    
+    self.bombTimer = 3   
 end
 
 function update(args)

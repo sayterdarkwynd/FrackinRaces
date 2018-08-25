@@ -15,10 +15,10 @@
   "maxFallSpeed" : -5,
   "removesFallDamage" : 1,
   "fallingParameters" : {
-    "gravityMultiplier" : -0.05,
+    "gravityMultiplier" : -0.025,
     "airForce" : 30,
-    "runSpeed" : 18,
-    "walkSpeed" : 18,
-    "flySpeed" : 18
+    "runSpeed" : 12,
+    "walkSpeed" : 12,
+    "flySpeed" : 12
   }
 }
