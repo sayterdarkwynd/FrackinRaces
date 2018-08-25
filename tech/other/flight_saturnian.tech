@@ -2,7 +2,7 @@
   "name" : "flight_saturnian",
   "type" : "head",
 
-  "scripts" : ["flighttest.lua"],
+  "scripts" : ["flighttestsaturn.lua"],
   "animator" : "flighttest.animation",
 
   "description" : "Flutter like a Butterfly. Use ^green;[F]^reset;.",
