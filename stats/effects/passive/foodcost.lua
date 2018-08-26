@@ -10,10 +10,18 @@ function init()
     else
       self.foodCost = 0.2
     end
-  elseif self.species == "saturnian" then
-    self.foodCost = 3.2
-  else  -- comment this last section out when not testing.
-      self.foodCost = 4
+  elseif self.species == "saturn" then
+    if status.stat("gliding") == 1 then
+      self.foodCost = 0.2
+    else
+      self.foodCost = 3.2
+    end
+  else
+    if status.stat("gliding") == 1 then
+      self.foodCost = 0.2
+    else
+      self.foodCost = 3.2
+    end
   end
   
   effect.addStatModifierGroup({ {stat = "foodDelta", amount = status.stat("foodDelta")-self.foodCost } })
