@@ -81,7 +81,6 @@ function update(args)
 	    if self.runVal and not self.downVal and not self.leftVal and not self.rightVal and not self.upVal then
 		    status.setPersistentEffects("glide", {
 		      {stat = "gliding", amount = 1},
-		      {stat = "foodDelta", amount = -0.5}, 
 		      {stat = "fallDamageResistance", effectiveMultiplier = 1.65}
 		    })     
 	    else
