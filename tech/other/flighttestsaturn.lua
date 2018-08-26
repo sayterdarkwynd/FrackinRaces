@@ -6,7 +6,7 @@ function init()
   self.available = true
   self.species = world.entitySpecies(entity.id())
   self.timer = 0
-  self.boostSpeed = 4
+  self.boostSpeed = 8
   self.active=false
   self.available = true
   self.forceDeactivateTime = 3
@@ -93,15 +93,17 @@ function update(args)
 	    end
     else
 	    if self.runVal and not self.downVal and not self.leftVal and not self.rightVal and not self.upVal then
-		    status.setPersistentEffects("glide", {
+	            status.overConsumeResource("energy", 0.008)
+	            status.setPersistentEffects("glide", {
 		      {stat = "fallDamageResistance", effectiveMultiplier = 1.65}
 		    })     
 	    else
+	            status.overConsumeResource("energy", 0.65)
 		    status.setPersistentEffects("glide", {
 		      {stat = "fallDamageResistance", effectiveMultiplier = 1.65}
 		    })     
 	    end  
-	    status.overConsumeResource("energy", 1)
+	    
     end    
     checkForceDeactivate(args.dt)  -- force deactivation
   end
@@ -144,7 +146,7 @@ function deactivate()
   if self.active then
     status.clearPersistentEffects("glide") 
     animator.setParticleEmitterActive("feathers", false)
-    self.boostSpeed = 4
+    self.boostSpeed = 8
     status.addEphemeralEffects{{effect = "nofalldamage", duration = 2}}
   end
   self.active = false  
