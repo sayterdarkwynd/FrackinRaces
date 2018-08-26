@@ -11,7 +11,7 @@
   
  ^orange;Perks^reset;:
  +^green;10%^reset; Energy, +^green;5%^reset; Damage 
- +^green;30%^reset; Jump Boost
+ +^green;15%^reset; Jump Boost
  Resist: ^green;15%^reset; Shadow and Cosmic
  Tech: ^green;Saturnian Flight - build in [C] menu^reset;
  
@@ -24,8 +24,8 @@
  Scythe:^green;+12% damage^reset;
     
  ^red;Weaknesses^reset;:
- -^red;15%^reset; Health, 
- Weak: ^red;45%^reset; Fire, ^red;20%^reset; Poison" 
+ -^red;25%^reset; Health, 
+ Weak: ^red;35%^reset; Fire, ^red;20%^reset; Poison, ^red;15%^reset; Physical" 
   }
 
 ]
