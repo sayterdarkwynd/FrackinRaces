@@ -14,6 +14,7 @@ function initCommonParameters()
   self.timer = 0  
   self.active2 = 0
   self.active3 = 0
+  self.forceDeactivateTime = 3
 end
 
 function uninit()

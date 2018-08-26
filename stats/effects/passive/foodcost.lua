@@ -20,7 +20,7 @@ function init()
     if status.stat("gliding") == 1 then
       self.foodCost = 0.2
     else
-      self.foodCost = 3.2
+      self.foodCost = 4
     end
   end
   

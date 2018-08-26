@@ -7,9 +7,9 @@ function init()
   self.species = world.entitySpecies(entity.id())
   self.timer = 0
   self.boostSpeed = 4
-  idle()
   self.active=false
   self.available = true
+  self.forceDeactivateTime = 3
 end
 
 function uninit()
@@ -33,68 +33,82 @@ function boost(direction)
   end    
 end
 
-function checkMovement()
-  if self.upVal or self.downVal or self.leftVal or self.rightVal then
-    status.setPersistentEffects("glide", {
-      {stat = "gliding", amount = 0},
-      {stat = "fallDamageResistance", effectiveMultiplier = 1.65}
-    }) 
-  else 
-    status.setPersistentEffects("glide", {
-      {stat = "gliding", amount = 1},
-      {stat = "fallDamageResistance", effectiveMultiplier = 1.65}
-    }) 
-  end
-end
-
 function update(args)
-  checkFood()
-
-  if not self.specialLast and args.moves["special1"] then 
+  if not self.specialLast and args.moves["special1"] then   --toggle on
     attemptActivation() 
   end
 
   self.specialLast = args.moves["special1"]
-  self.upVal = args.moves["up"]
-  self.downVal = args.moves["down"]
-  self.leftVal = args.moves["right"]
-  self.rightVal = args.moves["left"]  
 
-  
   if not args.moves["special1"] then 
     self.forceTimer = nil 
   end
+
+  if status.resource("energy") < 1 then 
+    deactivate()
+  end
   
-  if self.active and status.overConsumeResource("energy", 0.01) then
-    if not mcontroller.zeroG() and not mcontroller.liquidMovement() then 
-	  mcontroller.controlParameters(config.getParameter("fallingParameters"))
-	  mcontroller.setYVelocity(math.max(mcontroller.yVelocity(), config.getParameter("maxFallSpeed")))  
-	  
-	  local direction = {0, 0}
-	  if args.moves["up"] then direction[2] = direction[2] + 1 end     
-	  if args.moves["down"] then direction[2] = direction[2] - 1 end                    
-	  if args.moves["right"] then direction[1] = direction[1] + 1 end  
-	  if args.moves["left"] then direction[1] = direction[1] - 1 end 
-          self.boostSpeed = self.boostSpeed + args.dt
-	  boost(direction) 
-	  if vec2.eq(direction, {0, 0}) then 
-	    direction = {0, 0} 		    
-	  end
-	  mcontroller.controlApproachVelocity(self.boostVelocity, 30)
-	  
-          checkMovement()
-	  if self.foodValue > 15 then
-	    status.addEphemeralEffects{{effect = "foodcost", duration = 0.1}} 
-	  else
-	    status.overConsumeResource("energy", config.getParameter("energyCostPerSecond"),1)
-	  end	
-    end  
-    checkForceDeactivate(args.dt)
+  if self.active and status.overConsumeResource("energy", 0.0001) and not mcontroller.zeroG() and not mcontroller.liquidMovement() then -- do we have energy and the ability is active?
+    checkFood()
+    status.addEphemeralEffects{{effect = "saturnflight", duration = 2}}
+    
+    self.upVal = args.moves["up"]  --set core movement variables
+    self.downVal = args.moves["down"]
+    self.leftVal = args.moves["right"]
+    self.rightVal = args.moves["left"]
+    self.runVal = args.moves["run"]
+    
+    --enable air physics
+    mcontroller.controlParameters(config.getParameter("fallingParameters"))
+    mcontroller.setYVelocity(math.max(mcontroller.yVelocity(), config.getParameter("maxFallSpeed")))  
+
+    -- boost in direction pressed
+    local direction = {0, 0} -- set default
+    if self.upVal then direction[2] = direction[2] + 1 end     
+    if self.downVal then direction[2] = direction[2] - 1 end                    
+    if self.leftVal then direction[1] = direction[1] + 1 end  
+    if self.rightVal then direction[1] = direction[1] - 1 end 
+    
+    self.boostSpeed = self.boostSpeed + args.dt
+    boost(direction) 
+    if vec2.eq(direction, {0, 0}) then 
+      direction = {0, 0} 		    
+    end
+    mcontroller.controlApproachVelocity(self.boostVelocity, 30)
+    -- end boost
+
+    if self.foodValue > 15 then
+	    if self.runVal and not self.downVal and not self.leftVal and not self.rightVal and not self.upVal then
+		    status.setPersistentEffects("glide", {
+		      {stat = "gliding", amount = 1},
+		      {stat = "foodDelta", amount = -0.5}, 
+		      {stat = "fallDamageResistance", effectiveMultiplier = 1.65}
+		    })     
+	    else
+		    status.setPersistentEffects("glide", {
+		      {stat = "gliding", amount = 0},
+		      {stat = "foodDelta", amount = -5}, 
+		      {stat = "fallDamageResistance", effectiveMultiplier = 1.65}
+		    })     
+	    end
+    else
+	    if self.runVal and not self.downVal and not self.leftVal and not self.rightVal and not self.upVal then
+		    status.setPersistentEffects("glide", {
+		      {stat = "fallDamageResistance", effectiveMultiplier = 1.65}
+		    })     
+	    else
+		    status.setPersistentEffects("glide", {
+		      {stat = "fallDamageResistance", effectiveMultiplier = 1.65}
+		    })     
+	    end  
+	    status.overConsumeResource("energy", 1)
+    end    
+    checkForceDeactivate(args.dt)  -- force deactivation
   end
 end
 
 function attemptActivation()
-  if not self.active then
+  if not self.active then 
     activate()
   elseif self.active then
       deactivate()
@@ -121,10 +135,7 @@ end
 
 function activate()
   if not self.active then
-        animator.playSound("activate") 	
-  else
-        status.clearPersistentEffects("glide")      
-        deactivate()
+        animator.playSound("activate") 
   end
   self.active = true
 end
@@ -134,12 +145,7 @@ function deactivate()
     status.clearPersistentEffects("glide") 
     animator.setParticleEmitterActive("feathers", false)
     self.boostSpeed = 4
+    status.addEphemeralEffects{{effect = "nofalldamage", duration = 2}}
   end
   self.active = false  
-end
-
-
-function idle()
-    animator.stopAllSounds("activate")	
-    self.boostSpeed = 4
 end
