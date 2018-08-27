@@ -47,17 +47,14 @@ function checkFood()
 end
 
 function damageConfig()
-  foodVal = (self.foodValue /12)
-  healthVal = status.resource("health")/12
+  foodVal = (self.foodValue /20)
+  healthVal = status.resource("health")/30
   totalVal = foodVal + healthVal 
 end
 
 function activeFlight()
     damageConfig()
-    local damageConfig = { 
-      power = totalVal, 
-      knockback = 5
-      }
+    local damageConfig = { power = totalVal}
     world.spawnProjectile("hunterclaw", mcontroller.position(), entity.id(), aimVector(), false, damageConfig)
 end
 
@@ -103,14 +100,14 @@ function update(args)
 	
 	if args.moves["special1"] and self.firetimer == 0 and not (primaryItem and root.itemHasTag(primaryItem, "weapon")) and not (altItem and root.itemHasTag(altItem, "weapon")) then 
 		if self.foodValue > 10 then
-		    status.addEphemeralEffects{{effect = "foodcostclaw", duration = 0.04}}
+		    status.addEphemeralEffects{{effect = "foodcostclaw", duration = 0.03}}
 		else
-		    status.overConsumeResource("energy", 2)
+		    status.overConsumeResource("energy", 3)
 		end	
-		self.firetimer = 0.2
+		self.firetimer = 0.3
 		activeFlight()
-		self.dashCooldownTimer = 0.2
-		self.flashCooldownTimer = 0.2
+		self.dashCooldownTimer = 0.3
+		self.flashCooldownTimer = 0.3
 		self.halted = 0
 	end
 end
