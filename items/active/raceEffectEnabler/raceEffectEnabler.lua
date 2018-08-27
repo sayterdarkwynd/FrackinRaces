@@ -33,6 +33,10 @@ function activate(fireMode, shiftHeld)
 	player.makeTechAvailable("huntersclaw")
 	player.enableTech("huntersclaw")
 	player.equipTech("huntersclaw")	
+      elseif self.species == "gyrusens" then
+	player.makeTechAvailable("minersclaw")
+	player.enableTech("minersclaw")
+	player.equipTech("minersclaw")		
       end
       animate()
     else
