@@ -25,10 +25,14 @@ function activate(fireMode, shiftHeld)
         player.makeTechAvailable("tenebrhaeburst")
         player.enableTech("tenebrhaeburst")
         player.equipTech("tenebrhaeburst")            
-	  elseif self.species == "moogle" then
-	    player.makeTechAvailable("flight_moogle")
-		player.enableTech("flight_moogle")
-		player.equipTech("flight_moogle")
+      elseif self.species == "moogle" then
+	player.makeTechAvailable("flight_moogle")
+	player.enableTech("flight_moogle")
+	player.equipTech("flight_moogle")
+      elseif self.species == "felin" or self.species == "fenerox" then
+	player.makeTechAvailable("huntersclaw")
+	player.enableTech("huntersclaw")
+	player.equipTech("huntersclaw")	
       end
       animate()
     else
