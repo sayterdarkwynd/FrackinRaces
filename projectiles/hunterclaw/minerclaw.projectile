@@ -16,8 +16,8 @@
   "actionOnReap" : [
     {
       "action" : "explosion",
-      "foregroundRadius" : 2,
-      "backgroundRadius" : 1,
+      "foregroundRadius" : 3,
+      "backgroundRadius" : 2,
       "explosiveDamageAmount" : 2,
       "harvestLevel" : 99,
       "delaySteps" : 2

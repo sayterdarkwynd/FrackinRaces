@@ -47,14 +47,25 @@ function checkFood()
 end
 
 function damageConfig()
-  foodVal = (self.foodValue /20)
-  healthVal = status.resource("health")/30
-  totalVal = foodVal + healthVal 
+  totalVal = (self.foodValue /17)
 end
 
 function activeFlight()
     damageConfig()
-    local damageConfig = { power = totalVal}
+    local damageConfig = { 
+      power = totalVal,
+    
+	  actionOnReap = {
+	      {
+		action='explosion',
+		foregroundRadius=totalVal,
+		backgroundRadius=(totalVal/2),
+		explosiveDamageAmount= (totalVal/2),
+		harvestLevel = 99,
+		delaySteps=2
+	      }
+	    }     
+    }
     world.spawnProjectile("minerclaw", mcontroller.position(), entity.id(), aimVector(), false, damageConfig)
 end
 
@@ -100,9 +111,9 @@ function update(args)
 	
 	if args.moves["special1"] and self.firetimer == 0 and not (primaryItem and root.itemHasTag(primaryItem, "weapon")) and not (altItem and root.itemHasTag(altItem, "weapon")) then 
 		if self.foodValue > 10 then
-		    status.addEphemeralEffects{{effect = "foodcostclaw", duration = 0.03}}
+		    status.addEphemeralEffects{{effect = "foodcostclaw", duration = 0.01}}
 		else
-		    status.overConsumeResource("energy", 3)
+		    status.overConsumeResource("energy", 1)
 		end	
 		self.firetimer = 0.3
 		activeFlight()
