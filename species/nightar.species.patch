@@ -1,23 +1,25 @@
 [
     { "op": "replace", 
     "path" : "/charCreationTooltip/description" , 
-    "value" : ""
-    },
-    
-    { "op": "replace", 
-    "path" : "/charCreationTooltip/description" , 
     "value" : "An offshoot of humanity that loves the dark. They are exceptional combatants and have honed the use of swords and shields into an artform. 
+  
+ Diet: Omnivorous
+  
+ ^orange;Perks^reset;:
+ +^green;1^reset; Darkness increases Physical Resistance and Damage
+ +^green;10%^reset; damage,+^green;10%^reset; knockback resist, Resist: ^green;40%^reset; Shadow, ^green;20%^reset; Ice
+ Immune: Bio-Ooze
+  
+ ^orange;Weapons^reset;:
+ Broadsword/Longsword:^green; +1% Crit, +5% Damage, +6% Shadow Burst^reset;
+ Shortsword(single): ^green;+5% Damage, +3% Shadow Burst^reset;
+ Shortsword(double): ^green;+1% Crit, +5% Speed^reset;
+ Shortsword + Shield:^green; +2 Shield Bash, +2 Shield Bash Push^reset;
+ Shield: ^green;+2 Shield Bash, +15% Knockback Resist^reset;
+ Perfect Blocks ^green;increase protection.^reset;
     
-    ^red;Lowered defense and damage when in light^reset;
-    ^green;40% Shadow Resist. +10% Knockback Resist^reset;
-    Broadsword/Longsword:^green; +2% Crit, +5% Damage, +6% Shadow Burst^reset;
-    Shortsword(single): ^green;+5% Damage, +3% Shadow Burst^reset;
-    Shortsword(double): ^green;+1% Crit, +5% Speed^reset;
-    Shortsword + Shield:^green; +2 Shield Bash, +2 Shield Bash Push^reset;
-    Shield: ^green;+2 Shield Bash, +15% Knockback Resist^reset;
-    Perfect Blocks ^green;increase protection.^reset;
-    ^green;In darkness gain Physical Resistance and Damage.^reset;
-    ^green;Immune: Bio-Ooze^reset;"
+ ^red;Weaknesses^reset;:
+ Lose protection and damage when in light.
+ Weak: ^red;40%^reset; Cosmic, ^red;20%^reset; Radiation"
     }
-
 ]
