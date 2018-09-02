@@ -55,7 +55,6 @@ end
 function activeFlight()
     damageConfig()
     local damageConfig = { power = totalVal}
-    if not worlddata.
     world.spawnProjectile("hunterclaw", mcontroller.position(), entity.id(), aimVector(), false, damageConfig)
 end
 
