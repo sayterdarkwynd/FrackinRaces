@@ -6,18 +6,19 @@
 Diet: Omnivorous 
  
 ^orange;Perks^reset;: 
+^green;+5^reset; Protection
 ^green;+30%^reset; Knockback Resistance
-Resist: ^green;20%^reset; Physical, Electric 
-Great Traders: ^green;+15^reset; Charisma
+Resist: ^green;20%^reset;Electric, Radioactive 
  
 ^orange;Environment^reset;: 
-Gain additional energy and protection in ^green;Jungles, Deserts and Sulphuric Worlds^reset; biomes 
+Gain additional energy and protection in ^green;Jungles, Deserts and Sulphuric^reset; biomes 
     
 ^orange;Weapons^reset;:
-Short Spear/Short Sword + Shield: ^green;+20%^reset; Damage,  ^green;+20%^reset; Protection
+Short Spear/Short Sword (+Shield): ^green;+20%^reset; Damage, ^green;+20%^reset; Protection
 Perfect Block restores ^green;health and 20% shield stamina^reset;
     
 ^red;Weaknesses^reset;: 
+Poor traders (^red;-25%^reset; Charisma penalty)
 ^red;30%^reset; Fire, ^red;20%^reset; Ice"
     }
 ]
