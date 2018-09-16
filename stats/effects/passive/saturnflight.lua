@@ -53,10 +53,17 @@ function update(dt)
     self.tickTimerPenalty = self.tickTimerPenalty - dt
     self.foodValue = status.resource("food")
     
-    if daytime and lightLevel <= 60 or underground then --if its dark or underground, a saturnian can regen their food if its dark enough
+    if not daytime and lightLevel <= 60 or underground then --if its dark or underground, a saturnian can regen their food if its dark enough
     		if (hungerLevel < hungerMax) and ( self.tickTimer <= 0 ) then
     			self.tickTimer = self.tickTime
-    			adjustedHunger = hungerLevel + (hungerLevel * 0.008)
+    			adjustedHunger = hungerLevel + (hungerLevel * 0.0075)
+    			status.setResource("food", adjustedHunger)
+		end	
+    end
+    if not daytime and lightLevel >= 60 then --if its night and they are in bright light, a saturnian can regen their food 
+    		if (hungerLevel < hungerMax) and ( self.tickTimer <= 0 ) then
+    			self.tickTimer = self.tickTime
+    			adjustedHunger = hungerLevel + (lightLevel * 0.007)
     			status.setResource("food", adjustedHunger)
 		end	
     end
