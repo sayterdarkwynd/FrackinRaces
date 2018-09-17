@@ -5,7 +5,7 @@
     },
     { "op": "replace", 
     "path" : "/charCreationTooltip/description" , 
-    "value" : "A winged, moth-like race from far across the stars. Diurnal.
+    "value" : "A winged, moth-like race from far across the stars. Nocturnal.
     
  Diet: Herbivore
   

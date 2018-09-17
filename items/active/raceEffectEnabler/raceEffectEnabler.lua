@@ -13,6 +13,10 @@ function activate(fireMode, shiftHeld)
         player.makeTechAvailable("flight_saturnian")
         player.enableTech("flight_saturnian")
         player.equipTech("flight_saturnian")
+      elseif self.species == "saturnmoth" then
+        player.makeTechAvailable("flight_saturnianmoth")
+        player.enableTech("flight_saturnianmoth")
+        player.equipTech("flight_saturnianmoth")        
       elseif self.species == "kazdra" then
         player.makeTechAvailable("dragonfireburst")
         player.enableTech("dragonfireburst")
@@ -29,7 +33,7 @@ function activate(fireMode, shiftHeld)
 	player.makeTechAvailable("flight_moogle")
 	player.enableTech("flight_moogle")
 	player.equipTech("flight_moogle")
-      elseif self.species == "felin" or self.species == "fenerox" then
+      elseif self.species == "felin" or self.species == "fenerox" or self.species == "sergal" then
 	player.makeTechAvailable("huntersclaw")
 	player.enableTech("huntersclaw")
 	player.equipTech("huntersclaw")	
@@ -40,9 +44,9 @@ function activate(fireMode, shiftHeld)
       end
       animate()
     else
-	  animator.setParticleEmitterActive("butterflies", false)	
-	  animator.setParticleEmitterActive("butterflies2", false) 
-	  animator.setParticleEmitterActive("butterflies3", false)      
+      animator.setParticleEmitterActive("butterflies", false)	
+      animator.setParticleEmitterActive("butterflies2", false) 
+      animator.setParticleEmitterActive("butterflies3", false)      
     end
     
 end
