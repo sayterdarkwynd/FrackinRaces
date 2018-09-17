@@ -5,17 +5,17 @@
     },
     { "op": "replace", 
     "path" : "/charCreationTooltip/description" , 
-    "value" : "Adorable, fluffy, cosmic-attuned lagomorphic critters from a distant world of fantasy that have a pom-pom, bat wings and a thing for saying \"Kupo!\". They are usually expert machinists, but on occasion, they may become a knight or a mage instead.
+    "value" : "Adorable, fluffy, cosmic-attuned lagomorphic critters from a distant world of fantasy that have a pom-pom, bat-like wings, and a thing for saying \"Kupo!\". They are usually expert machinists, but on occasion, they may choose to become a knight or a mage instead.
     
     ^orange;Diet: Omnivore^reset;
-    ^red;-20% Life, -20% Physical, -30% Shadow Resistances^reset;
-    ^green;+20% Energy, +20% Electric, 30% Cosmic Resistances^reset;
+    ^green;+20% Energy, +30% Electric, Ice, Cosmic Resistances^reset;
+    ^red;-20% Life, -20% Physical, Fire, Shadow Resistances^reset;
     ^green;Adorable, Halved Fall Damage^reset;
-    ^cyan;Gliding, ^green;+10% Speed and Jump, ^red;Bad at swimming^reset;
-    ^magenta;Moogle Glide tech (Obtain in [C] Menu), Extra craftable mech body^reset;
+    ^cyan;Gliding, ^green;+15% Agility, ^red;Terrible swimmers^reset;
+    ^magenta;Moogle Glide tech (Obtain in [C] Menu), Extra craftable mech body (Built-In)^reset;
     ^yellow;Firearms gain ^green;+5% Damage, +1% Crit^reset;
-    ^yellow;Broadswords, Shortswords, Staves, and Wands gain ^green;+5% damage^reset;
-    ^yellow;Rapiers, Spears, Pistols and Machine Pistols gain ^green;+10% damage, +1% Crit^reset;
-    ^yellow;Energy Weapons gain ^green;+5% damage, +2% Crit^reset;"
+    ^yellow;Shortswords, Staves, and Wands gain ^green;+5% damage^reset;
+    ^yellow;Rapiers, Spears, and Pistols gain ^green;+10% damage, +1% Crit^reset;
+    ^yellow;Energy Weapons gain ^green;+10% damage, +2% Crit^reset;"
     }
 ]
