@@ -1,0 +1,21 @@
+[
+  {
+    "op": "add",
+    "path": "/effects",
+    "value": [
+      [
+        "herbivorefood"
+      ]
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/maxStack",
+    "value": 20
+  },
+  {
+    "op": "replace",
+    "path": "/description",
+    "value": "So long as you watch out for the thorns, these are delicious. ^green;Type: Herbivore^reset;"
+  }
+]

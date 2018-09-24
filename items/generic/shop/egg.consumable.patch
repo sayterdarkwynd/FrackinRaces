@@ -9,5 +9,10 @@
         }
       ]
     ]
+  },
+  {
+    "op": "replace",
+    "path": "/description",
+    "value": "It's an egg! ^orange;Type: Cooked Meat^reset;"
   }
 ]

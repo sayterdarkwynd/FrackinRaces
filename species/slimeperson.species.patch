@@ -5,12 +5,15 @@
     },
     { "op": "replace", 
     "path" : "/charCreationTooltip/description" , 
-    "value" : "Ew. You're made of slime. 
+    "value" : "A strange and blobby sort of people. They are resilient, at least in regards to certain conditions...
 
-    ^red;In liquids you suffer reduced Shield Regen, Physical Resistance, Health and Energy^reset; 
-    ^green;+25% Health, +25% Physical Resist^reset;
-    ^green;-15% Fall Damage^reset; 
-    ^green;+25% Whip damage. Increased speed when using whips^reset; 
+    ^red;-50% Ice Resistance, -25% HP on cold biomes^reset; 
+    ^green;+25% Health and +15% speed on Gelatinous, Bog and Swamp biomes^reset;
+    ^green;Regenerate^reset; 
+    ^green;+20% Electric Resist, +40% Fire Resist^reset; 
+    ^green;+20% Poison Resist, -15% Fall Damage^reset; 
+    Whips: ^green;+20% damage, +12% protection^reset; 
+    Bio/Slime: ^green;+15% damage, +2 Crit Damage^reset; 
     ^green;Immune: Slime Bounce, Slime Stick, Poison, Webs^reset;" 
     }
 

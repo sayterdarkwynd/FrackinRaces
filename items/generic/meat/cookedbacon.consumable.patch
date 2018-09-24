@@ -7,5 +7,10 @@
   { "op":"add", 
 "path":"/effects/-", 
 "value": [{ "effect" : "carnivorefoodcooked" }]
+  },
+  {
+    "op": "replace",
+    "path": "/description",
+    "value": "Salty, crispy alien bacon. ^orange;Type: Cooked Meat^reset;"
   }
 ]

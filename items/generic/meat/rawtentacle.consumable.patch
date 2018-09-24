@@ -11,5 +11,10 @@
     "op": "replace",
     "path": "/foodValue",
     "value": 20
+  },
+  {
+    "op": "replace",
+    "path": "/description",
+    "value": "A raw tentacle. Might be more edible if it's cooked... ^red;Type: Raw Meat^reset;"
   }
 ]

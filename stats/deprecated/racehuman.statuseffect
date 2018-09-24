@@ -1,0 +1,42 @@
+{
+  "name" : "racehuman",
+  "effectConfig" : {
+    //Core attributes
+    "healthBonus" : 0.15,
+    "energyBonus" : 0.05,
+    "attackBonus" : 0,
+    "defenseBonus" : 5,
+
+    //Resistances
+    "physicalResistance" : 0,
+    "electricResistance" : 0,
+    "fireResistance" : 0,
+    "iceResistance" : 0,
+    "poisonResistance" : 0,
+    "shadowResistance" : 0,
+    "cosmicResistance" : 0,
+    "radioactiveResistance" : 0,
+
+    //Mobility
+    "speedBonus" : 0,
+    "jumpBonus" : 0,
+    "fallBonus" : 0,
+    "otherBonus" : 0,
+    "knockbackBonus" : 0,
+
+    //Environmental bonuses
+    "environmentBonusHealth" : 0,
+    "environmentBonusEnergy" : 0,
+    "environmentBonusAttack" : 0,
+    "environmentBonusDefense" : 0,
+    "environmentBonusResistance" : 0,
+    "environmentBonusResistance2" : 0,
+    "environmentBonusOther" : 0
+  },
+  "defaultDuration" : 3,
+
+  "scripts" : [
+    "deprecated.lua"
+  ]
+
+}

@@ -5,12 +5,23 @@ function init()
   animator.setParticleEmitterActive("sparks", true)
   effect.setParentDirectives("fade=7733AA=0.25")
 
-  script.setUpdateDelta(5)
 
+
+  -- *** FU additions
+	if world.entitySpecies(entity.id()) == "glitch" then -- when electrified, glitch lose 50% power and Energy
+          effect.addStatModifierGroup({
+            {stat = "powerMultiplier", baseMultiplier = 0.5 },
+            {stat = "maxEnergy", baseMultiplier = 0.5 }
+          })
+	end
+	if world.entitySpecies(entity.id()) == "trink" then -- when electrified, trinks lose 50% power
+          effect.addStatModifierGroup({{stat = "powerMultiplier", baseMultiplier = 0.5 }})
+	end
+	
   self.damageClampRange = config.getParameter("damageClampRange")
-
   self.tickTime = config.getParameter("boltInterval", 1.0)
   self.tickTimer = self.tickTime
+  script.setUpdateDelta(5)
 end
 
 function update(dt)
@@ -45,13 +56,7 @@ function update(dt)
         return
       end
     end
-  end
-  
--- *** FU additions
-	if world.entitySpecies(entity.id()) == "trink" then -- when electrified, trinks lose 50% power
-          effect.addStatModifierGroup({{stat = "powerMultiplier", baseMultiplier = 0.5 }})
-	end
-	
+  end	
 end
 
 function uninit()

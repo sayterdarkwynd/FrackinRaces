@@ -1,0 +1,14 @@
+{
+  "name" : "racekemono",
+  "effectConfig" : {
+      "powerModifier" : 1.08,
+      "healthBonus" : 0.30,
+      "energyBonus" : -0.12
+      },
+  "defaultDuration" : 3,
+
+  "scripts" : [
+    "deprecated.lua"
+  ]
+
+}

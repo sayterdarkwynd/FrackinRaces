@@ -1,0 +1,15 @@
+{
+  "name" : "racemlp",
+  "effectConfig" : {
+  //because fuck bronies
+    "healthBonus" : -0.99,
+    "energyBonus" : -0.99
+  },
+
+  "defaultDuration" : 3,
+
+  "scripts" : [
+    "deprecated.lua"
+  ]
+
+}

@@ -5,5 +5,10 @@
     "value": {
       "effect": "carnivorefoodnopoison"
     }
+  },
+  {
+    "op": "replace",
+    "path": "/description",
+    "value": "Fish baked with fish-like fruit. A fishy dish! ^orange;Type: Cooked Meat^reset;"
   }
 ]

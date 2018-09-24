@@ -1,0 +1,18 @@
+[
+  { "op":"replace",
+"path":"/effects",
+"value": [ ]
+  },
+  { "op":"add",
+"path":"/effects/-",
+"value": [
+    { "effect" : "herbivorefood" },
+    { "effect" : "sugarfood" }
+  ]
+  },
+  {
+    "op": "replace",
+    "path": "/description",
+    "value": "Alien fruit jam. Sticky. ^green;Type: Herbivore^reset;"
+  }
+]

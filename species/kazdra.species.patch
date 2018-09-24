@@ -7,15 +7,29 @@
     "path" : "/charCreationTooltip/description" , 
     "value" : "Space Dragons!
     
-    ^red;-20% Energy, 50% Weakness: Ice^reset;
-    ^red;Cold biomes sap health and protection^reset;
-    ^green;Protection and Health bonus on Volcanic, Magma, Mountainous and Desert biomes^reset;
-    ^green;+30% Health, +50% Fire Resist^reset;
-    ^green;40% Hunger reduction^reset;
-    ^green;+20% Damage with Broadswords, and shoot blasts of fire^reset;
-    ^green;Broadsword combos increase Physical Resistance per swing^reset;
-    ^green;When wounded, bleed fire^reset;
-    ^green;Immune: Burning^reset;"
+ Diet: Carnivore
+ 
+ ^orange;Perks^reset;:
+ +^green;30%^reset; Health, +^green;40%^reset; Hunger Reduction 
+ Resist: ^green;50%^reset; Fire, ^green;15%^reset; Physical
+ Immunity: Burning
+ Tech: ^green;Fire Breath - build in [C] menu^reset;
+ 
+ ^orange;Environment^reset;:
+ ^red;Cold^reset; biomes sap your health and protection.
+ ^green;Volcanic, Magma, Mountainous and Desert^reset; biomes increase your protection and health.
+  
+ ^orange;Weapons^reset;:
+ Broadsword: +^green;20%^reset; damage
+ Broadsword:  Combos increase Physical Resistance per swing
+    
+ ^red;Weaknesses^reset;:
+ Weak: ^red;50%^reset; Ice, -^reset;20%^reset; Energy"
     }
 
 ]
+
+
+
+
+   

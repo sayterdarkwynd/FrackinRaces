@@ -7,5 +7,10 @@
   { "op":"add", 
 "path":"/effects/-", 
 "value": [{ "effect" : "carnivorefoodcooked" }]
+  },
+  {
+    "op": "replace",
+    "path": "/description",
+    "value": "A slab of delicious cooked alien meat. ^orange;Type: Cooked Meat^reset;"
   }
 ]

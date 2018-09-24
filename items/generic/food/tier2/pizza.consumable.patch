@@ -5,5 +5,10 @@
     "value": {
       "effect": "carnivorefoodnopoison"
     }
+  },
+  {
+    "op": "replace",
+    "path": "/description",
+    "value": "A whole pizza! Are you going to eat all that? ^orange;Type: Cooked Meat^reset;"
   }
 ]

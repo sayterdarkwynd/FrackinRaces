@@ -1,0 +1,21 @@
+[
+  {
+    "op": "add",
+    "path": "/effects",
+    "value": [
+      [
+        "herbivorefood"
+      ]
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/maxStack",
+    "value": 20
+  },
+  {
+    "op": "replace",
+    "path": "/description",
+    "value": "The coralcreep fruit turns red when cooked, like a lobster. ^green;Type: Herbivore^reset;"
+  }
+]

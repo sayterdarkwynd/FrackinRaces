@@ -1,0 +1,14 @@
+[
+  {
+    "op": "add",
+    "path": "/effects/0/0",
+    "value": {
+      "effect": "herbivorefood"
+    }
+  },
+  {
+    "op": "replace",
+    "path": "/description",
+    "value": "A mulled drink made of oculemon and pussplum. Delicious! ^green;Type: Herbivore^reset;"
+  }
+]

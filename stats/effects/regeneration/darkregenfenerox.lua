@@ -30,39 +30,29 @@ function update(dt)
   nighttime = nighttimeCheck()
   underground = undergroundCheck()
   valueVal = 5
+  
+  if status.isResource("food") then
+    self.foodValue = status.resource("food")
+  else
+    self.foodValue = 70
+  end
+  
   local lightLevel = getLight()
-    if nighttime or underground then
-	if lightLevel <= 1 then
-	    self.healingRate = 1.01 / config.getParameter("healTime", 180)
-	    status.modifyResourcePercentage("health", self.healingRate * dt)
-	elseif lightLevel <= 2 then
-	    self.healingRate = 1.008 / config.getParameter("healTime", 200)
-	    status.modifyResourcePercentage("health", self.healingRate * dt)
-	elseif lightLevel <= 5 then
-	    self.healingRate = 1.007 / config.getParameter("healTime", 220)
-	    status.modifyResourcePercentage("health", self.healingRate * dt)
-	elseif lightLevel <= 7 then
-	    self.healingRate = 1.006 / config.getParameter("healTime", 240)
-	    status.modifyResourcePercentage("health", self.healingRate * dt)
-	elseif lightLevel <= 12 then
-	    self.healingRate = 1.005 / config.getParameter("healTime", 280)
-	    status.modifyResourcePercentage("health", self.healingRate * dt)
-	elseif lightLevel <= 15 then
-	    self.healingRate = 1.004 / config.getParameter("healTime", 320)
-	    status.modifyResourcePercentage("health", self.healingRate * dt)
-	elseif lightLevel <= 18 then
-	    self.healingRate = 1.003 / config.getParameter("healTime", 350)
-	    status.modifyResourcePercentage("health", self.healingRate * dt)
-	elseif lightLevel <= 22 then
-	    self.healingRate = 1.002 / config.getParameter("healTime", 380)
-	    status.modifyResourcePercentage("health", self.healingRate * dt)
-	elseif lightLevel <= 25 then
-	    self.healingRate = 1.001 / config.getParameter("healTime", 420)
-	    status.modifyResourcePercentage("health", self.healingRate * dt)
-	end  
+  
+    if nighttime or underground and (self.foodValue >= 45) then
+	  self.healingRate = 1.007 / config.getParameter("healTime", 220)
+	  status.modifyResourcePercentage("health", self.healingRate * dt)
+	  
+	  status.setPersistentEffects("feneroxEffects", {
+	    {stat = "energyRegenPercentageRate", amount = config.getParameter("powerBonus",0)},
+	    {stat = "maxHealth", baseMultiplier = config.getParameter("powerBonus",0) + 1.08},
+	    {stat = "powerMultiplier", baseMultiplier = config.getParameter("powerBonus",0) + 1.08}
+	  })
+    else
+          status.clearPersistentEffects("feneroxEffects")
     end
 end
 
 function uninit()
-
+  status.clearPersistentEffects("feneroxEffects")
 end

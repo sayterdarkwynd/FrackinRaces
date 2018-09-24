@@ -1,0 +1,21 @@
+[
+  {
+    "op": "add",
+    "path": "/effects",
+    "value": [
+      [
+        "herbivorefood"
+      ]
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/maxStack",
+    "value": 20
+  },
+  {
+    "op": "replace",
+    "path": "/description",
+    "value": "Avesmingo, the plant of a 100 different flavours. ^green;Type: Herbivore^reset;"
+  }
+]

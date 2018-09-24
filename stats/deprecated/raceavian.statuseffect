@@ -1,0 +1,50 @@
+{
+  "name" : "raceavian",
+  "effectConfig" : {
+    //Core attributes
+    "healthBonus" : -0.15,
+    "energyBonus" : 0.1,
+    "attackBonus" : 1.05,
+    "defenseBonus" : 0,
+
+    //Resistances
+    "physicalResistance" : -0.05,
+    "electricResistance" : 0.25,
+    "fireResistance" : 0,
+    "iceResistance" : -0.4,
+    "poisonResistance" : -0.25,
+    "shadowResistance" : 0.15,
+    "cosmicResistance" : 0.25,
+    "radioactiveResistance" : 0,
+
+    //Mobility
+    "speedBonus" : 0,
+    "jumpBonus" : 1.05,
+    "fallBonus" : 0.65,
+    "otherBonus" : 0,
+    "knockbackBonus" : 0,
+
+    //Environmental bonuses
+    "environmentBonusHealth" : 0,
+    "environmentBonusEnergy" : 0,
+    "environmentBonusAttack" : 0,
+    "environmentBonusDefense" : 0,
+    "environmentBonusResistance" : 0,
+    "environmentBonusResistance2" : 0,
+    "environmentBonusOther" : 0,
+
+  "fallingParameters" : {
+    "airForce" : 30,
+    "runSpeed" : 14,
+    "walkSpeed" : 14
+  },
+  "maxFallSpeed" : -39
+
+  },
+  "defaultDuration" : 3,
+
+  "scripts" : [
+    "deprecated.lua"
+  ]
+
+}

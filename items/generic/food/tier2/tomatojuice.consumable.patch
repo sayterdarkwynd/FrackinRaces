@@ -1,0 +1,14 @@
+[
+  {
+    "op": "add",
+    "path": "/effects/0/0",
+    "value": {
+      "effect": "herbivorefood"
+    }
+  },
+  {
+    "op": "replace",
+    "path": "/description",
+    "value": "A hearty tomato juice. ^green;Type: Herbivore^reset;"
+  }
+]

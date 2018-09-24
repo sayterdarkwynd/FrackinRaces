@@ -3,10 +3,24 @@
     "path" : "/charCreationTooltip/description" , 
     "value" : "Humans are well rounded, and have excellent defensive ability. Ever met one of these things? They are a strange bunch. I advise avoiding them.
     
-    ^red;No penalties^reset;
-    ^green; +0.07 jump time^reset;
-    ^green;Perfect Blocks increase defense^reset;
-    ^green;+15% Damage with Assault Rifles and Machine Pistols^reset;
-    ^green;+20% Damage and Knockback Resistance with Shortswords^reset;"
+ Diet: Omnivore 
+ 
+ ^orange;Perks^reset;: 
+ +^green;0.08s^reset; jump time
+ 
+ ^orange;Environment^reset;: 
+ None
+ 
+ ^orange;Weapons^reset;:
+ Assault Rifle: +^green;12%^reset; Dmg
+ Yo-Yo: +^green;10%^reset; Dmg
+ Shortsword: +^green;12%^reset; Damage and +^green;20%^reset; Knockback Resistance
+ Shield: Perfect Blocks ^green;increase defense^reset;(stacks)
+    
+ ^red;Weaknesses^reset;: 
+ None" 
     }
 ]
+
+
+

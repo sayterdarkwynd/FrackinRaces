@@ -5,5 +5,10 @@
     "value": {
       "effect": "carnivorefoodnopoison"
     }
+  },
+  {
+    "op": "replace",
+    "path": "/description",
+    "value": "Boneboo roasted with chillies makes for a crunchy, spicy Floran treat. ^orange;Type: Cooked Meat^reset;"
   }
 ]

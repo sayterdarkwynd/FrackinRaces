@@ -2,12 +2,12 @@
   "name" : "carnivorefoodcooked",
 
   "effectConfig" : {
-    "healthBonus" : -0.15,
-    "energyBonus" : -0.15,
-    "protectionBonus" : -2  
+    "healthBonus" : 0.15,
+    "energyBonus" : 0.15,
+    "protectionBonus" : 1  
   },
   
-  "defaultDuration" : 60,
+  "defaultDuration" : 120,
 
   "scripts" : [
     "carnivorefoodcooked.lua"
@@ -15,6 +15,6 @@
 
   "animationConfig" : "carnivorefoodcooked.animation",
 
-  "label" : "Cooked Meat - Will make carnivores ill.",
+  "label" : "Cooked Meat - Delicious! Unless you're a herbivore or mechanical, I guess...",
   "icon" : "/interface/statuses/foodpoison.png"
 }

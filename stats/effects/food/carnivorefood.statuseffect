@@ -1,13 +1,12 @@
 {
   "name" : "carnivorefood",
-  "blockingStat" : "poisonStatusImmunity",
 
   "effectConfig" : {
-  "healthBonus" : 0.10,
-  "energyBonus" : 0.10,
-  "protectionBonus" : 2
+    "healthBonus" : 0.10,
+    "energyBonus" : 0.10,
+    "protectionBonus" : 2
   },
-  "defaultDuration" : 60,
+  "defaultDuration" : 120,
 
   "scripts" : [
     "carnivorefood.lua"
@@ -15,6 +14,6 @@
 
   "animationConfig" : "carnivorefood.animation",
 
-  "label" : "Carnivore Food - Meat eaters get a buff. Omnivores and Herbivores get sick.",
+  "label" : "Carnivore Food - Meat eaters get a buff. Omnivores, Robots and Herbivores get sick.",
   "icon" : "/interface/statuses/foodpoisonfloran.png"
 }

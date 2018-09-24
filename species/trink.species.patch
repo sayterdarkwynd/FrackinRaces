@@ -6,11 +6,22 @@
     { "op": "replace", 
     "path" : "/charCreationTooltip/description" , 
     "value" : "Hyper-advanced machines.
-    ^red;-100% Weakness: Electric, Lose energy regen in cold biomes^reset;
-    ^red;-50% Power output when Electrified^reset;
-    ^green;In cold biomes you gain extensive energy regeneration.^reset; 
-    ^green;+25% Energy, +25% Physical Resist, +50% Poison Resist, 50% Radiation Resist^reset;
-    ^green;Perfect Blocks restore energy^reset;
-    ^green;Immunities: Cold, Snow, Ice, Slush, Poison, Breath^reset;"
+ Diet: Robotic 
+ 
+ ^orange;Perks^reset;: 
+ +^green;25%^reset; Energy, +^green;25%^reset; Knockback Resist, +^green;5%^reset; Speed
+ Resist: ^green;25%^reset; Physical, ^green;50%^reset; Poison, ^green;50%^reset; Radiation
+ Immune: Cold, Snow, Ice, Slush, Poison, Breath
+ 
+ ^orange;Environment^reset;: 
+ On ^green;hot^reset; biomes you lose -^red;50%^reset; Energy Regen
+ In ^green;cold^reset; biomes you gain ^green;extensive energy regen^reset;
+ 
+ ^red;Weaknesses^reset;: 
+ -^red;50%^reset; Energy when Electrified
+ Weak: -^red;15%^reset; Physical, -^red;100%^reset;Electric" 
     }
 ]
+
+
+

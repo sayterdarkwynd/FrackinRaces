@@ -60,7 +60,8 @@
   "sounds" : {
     "raiseShield" : [ ],
     "lowerShield" : [ ],
-    "perfectBlock" : [ ],
+    "perfectBlock" : [ "/sfx/weapons/shieldblock.ogg" ],
+    "shieldBash" : [ "/sfx/melee/blunt_hit_metal3.ogg", "/sfx/melee/dagger_hit_metal1.ogg" ],
     "bonusEffect" : [ "/sfx/statuseffects/powerup.ogg" ],
     "block" : [ ],
     "break" : [ ]
@@ -77,7 +78,18 @@
         { "particle" : "sparkle5"}
       ]
     },
-    
+    "shieldBashHit" : {
+      "active" : false,
+      "transformationGroups" : ["shield"],
+      "emissionRate" : 30,
+      "offsetRegion" : [-0.5, -1.0, 0.5, 1.0],
+      "particles" : [
+        { "particle" : "charge"},
+        { "particle" : "charge"},      
+        { "particle" : "charge"},
+        { "particle" : "charge"}
+      ]
+    },    
     "bonusBlock" : {
       "active" : false,
       "transformationGroups" : ["shield"],

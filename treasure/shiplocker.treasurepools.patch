@@ -1,0 +1,26 @@
+[
+    [{
+            "op": "test",
+            "path": "/glitchStarterTreasure"
+        },  
+  	{"op": "add", "path": "/glitchStarterTreasure/0/1/fill/-", "value": {"item": [ "currentcornseed", 3]}},
+  	{"op": "add", "path": "/glitchStarterTreasure/0/1/fill/-", "value": {"item": [ "hoe", 1]}},
+  	{"op": "add", "path": "/glitchStarterTreasure/0/1/fill/-", "value": {"item": [ "woodenwateringcan", 1]}}   
+    ],      
+    [{
+            "op": "test",
+            "path": "/drodenStarterTreasure"
+        },  
+        {"op": "add", "path": "/glitchStarterTreasure/0/1/fill/-", "value": {"item": [ "currentcornseed", 3]}},
+        {"op": "add", "path": "/glitchStarterTreasure/0/1/fill/-", "value": {"item": [ "hoe", 1]}},
+        {"op": "add", "path": "/glitchStarterTreasure/0/1/fill/-", "value": {"item": [ "woodenwateringcan", 1]}}
+    ],  
+    [{
+            "op": "test",
+            "path": "/trinkStarterTreasure"
+        },  
+	  {"op": "add", "path": "/trinkStarterTreasure/0/1/fill/-", "value": {"item": [ "currentcornseed", 3]}},
+ 	 {"op": "add", "path": "/trinkStarterTreasure/0/1/fill/-", "value": {"item": [ "hoe", 1]}},
+ 	 {"op": "add", "path": "/trinkStarterTreasure/0/1/fill/-", "value": {"item": [ "woodenwateringcan", 1]}}
+    ]      
+]

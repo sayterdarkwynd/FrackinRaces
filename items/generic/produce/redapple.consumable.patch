@@ -1,0 +1,21 @@
+[
+  {
+    "op": "add",
+    "path": "/effects",
+    "value": [
+      [
+        "herbivorefood"
+      ]
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/maxStack",
+    "value": 20
+  },
+  {
+    "op": "replace",
+    "path": "/description",
+    "value": "A ripe red apple. ^green;Type: Herbivore^reset;"
+  }
+]

@@ -1,0 +1,11 @@
+{
+  "name" : "racewasphive",
+  "effectConfig" : {
+  },
+  "defaultDuration" : 3,
+
+  "scripts" : [
+    "deprecated.lua"
+  ]
+
+}

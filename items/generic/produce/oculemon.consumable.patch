@@ -1,0 +1,21 @@
+[
+  {
+    "op": "add",
+    "path": "/effects",
+    "value": [
+      [
+        "carnivorefood"
+      ]
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/maxStack",
+    "value": 20
+  },
+  {
+    "op": "replace",
+    "path": "/description",
+    "value": "Sour but so worth it. ^green;Type: Carnivore^reset;"
+  }
+]

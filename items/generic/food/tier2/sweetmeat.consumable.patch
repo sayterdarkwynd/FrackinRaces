@@ -5,5 +5,10 @@
     "value": {
       "effect": "carnivorefoodnopoison"
     }
+  },
+  {
+    "op": "replace",
+    "path": "/description",
+    "value": "A rare sweet Floran dish of candied bacon. ^orange;Type: Cooked Meat^reset;"
   }
 ]

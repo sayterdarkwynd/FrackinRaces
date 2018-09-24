@@ -10,10 +10,10 @@
     ^red;-20% Energy, 40% Weakness : Fire^reset;
     ^green;+15% Energy, 10% Physical Resist, +8% Speed^reset;
     ^green;Increased stats during daylight hours^reset;
-    ^green;Regenerate in sunlight^reset;
+    ^green;Regenerate in sunlight (see Floran ability)^reset;
     ^green;+20% Damage with Whips. Also gain jump height.^reset;
     ^green;When damaged, spread flowers where you walk^reset;
-    ^green;Ummine: Shock, Poison, Bio-ooze^reset;"
+    ^green;Immune: Shock, Poison, Bio-ooze^reset;"
     }
 
 ]

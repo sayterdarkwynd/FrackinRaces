@@ -5,12 +5,14 @@
     },
     { "op": "replace", 
     "path" : "/charCreationTooltip/description" , 
-    "value" : "Personable cat-people.
+    "value" : "Personable cat-people. Light on their feet and quick to regain their stamina, they excel in close quarters despite their frailty, and are hardned against the forces of nature.
     
-    ^red;-5% Health^reset;
-    ^green;+10% Energy, +25% Poison Resist, +15% Speed, +10% Jump, -50% Fall Damage^reset;
-    ^green;Reduced Energy Regen time^reset;
-    ^green;Fist weapons, Shortswords and Daggers gain +15% Damage^reset;"
-    }
+    ^red;-20% Physical, Shadow, Cosmic and Radiation Resist^reset;
+    ^green;+20% Fire, Electric, Ice and Poison resist^reset;
+    ^green;-20% Fall Damage, +20% Energy Regen time^reset;
+    ^green;-5% Speed, +10% Jump^reset;
+    Fist: ^green;+2% Crit, +5% Damage^reset;
+    Shortsword/Dagger: ^green;+10% Damage, +5% Protection^reset;"
+    }    
 
 ]

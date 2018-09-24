@@ -11,7 +11,7 @@
     ^green;+18% speed and +20% jump^reset; 
     ^green;Gain additional vitality and protection in jungles^reset; 
     ^green;On Garden, Forest, Tundra and Snow biomes, gain + 10% Health and Energy^reset;
-    ^green;+20% dmg with Boomerangs^reset;
+    Boomerang/Chakram: ^green;+10% Crit Chance, +15% Crit Damage^reset;
     ^green;Fist Weapons give increased Protection and Knockback Resist^reset;
     ^green;Immune: Slime Stick, Jungle Tiles, Mud^reset; "
     }
