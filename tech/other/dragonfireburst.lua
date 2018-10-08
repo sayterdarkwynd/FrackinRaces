@@ -38,7 +38,7 @@ function activeFlight()
     animator.playSound("recharge")
     animator.setSoundVolume("activate", 0.5,0)
     animator.setSoundVolume("recharge", 0.375,0)
-    world.spawnProjectile("flamethrower", mcontroller.position(), entity.id(), aimVector(), false, damageConfig)
+    world.spawnProjectile("flamethrower", self.mouthPosition, entity.id(), aimVector(), false, damageConfig)
 end
 
 function aimVector()
@@ -50,12 +50,28 @@ end
 
 function update(args)
         checkFood()
+        
+        if mcontroller.facingDirection() == 1 then -- what direction are we facing?
+           if args.moves["down"] then -- are we crouching?
+             self.mouthPosition = vec2.add(mcontroller.position(), {1,-0.7})  
+           else
+             self.mouthPosition = vec2.add(mcontroller.position(), {1,0.15}) 
+           end
+           
+        else
+           if args.moves["down"] then -- are we crouching?
+             self.mouthPosition = vec2.add(mcontroller.position(), {-1,-0.7})  
+           else
+             self.mouthPosition = vec2.add(mcontroller.position(), {-1,0.15}) 
+           end          
+        end
+        
         self.firetimer = math.max(0, self.firetimer - args.dt)
 	if args.moves["special1"] and status.overConsumeResource("energy", 0.001) then 
 		if self.foodValue > 15 then
-		    status.addEphemeralEffects{{effect = "foodcostfire", duration = 0.1}}
+		    status.addEphemeralEffects{{effect = "foodcostfire", duration = 0.02}}
 		else
-		    status.overConsumeResource("energy", 0.7)
+		    status.overConsumeResource("energy", 0.6)
 		end	
 	   
 	      if self.firetimer == 0 then

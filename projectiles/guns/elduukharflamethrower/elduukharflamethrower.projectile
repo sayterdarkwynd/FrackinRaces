@@ -1,6 +1,6 @@
 {
   "projectileName" : "elduukharflamethrower",
-  "image" : "flamethrower.png",
+  "image" : "elduukharflamethrower.png",
   "physics" : "flame",
   "animationCycle" : 1,
   "animationLoops" : false,
