@@ -32,7 +32,7 @@ end
 
 function activeFlight()
     damageConfig()
-    local damageConfig = { power = totalVal, damageSourceKind = "electric", speed = 20 }
+    local damageConfig = { power = totalVal, damageSourceKind = "electric", speed = 12 }
     --sb.logInfo("power value from food, energy and protection = "..damageConfig.power)
     animator.playSound("activate",3)
     animator.playSound("recharge")
