@@ -17,5 +17,6 @@
   "damageKind" : "flamethrower",
   "damageKindImage" : "/interface/statuses/fire.png",
   "statusEffects" : [ "burning" ],
-  "hydrophobic" : true
+  "hydrophobic" : true,
+  "fullbright" : true
 }
