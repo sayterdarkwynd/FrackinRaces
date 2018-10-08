@@ -15,7 +15,7 @@ function update(dt)
     if self.timer <= 0 then
         if self.healthRatio < 0.50 then
             local configBombDrop = { power = 3 }
-            world.spawnProjectile("icecloud", mcontroller.position(), entity.id(), {0, 0}, false, configBombDrop)
+            world.spawnProjectile("firefinish", mcontroller.position(), entity.id(), {0, 0}, false, configBombDrop)
         end
         self.timer=2
     end

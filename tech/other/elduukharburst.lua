@@ -32,13 +32,13 @@ end
 
 function activeFlight()
     damageConfig()
-    local damageConfig = { power = totalVal, damageSourceKind = "electric", speed = 12 }
+    local damageConfig = { power = totalVal, damageSourceKind = "fire", speed = 12 }
     --sb.logInfo("power value from food, energy and protection = "..damageConfig.power)
     animator.playSound("activate",3)
     animator.playSound("recharge")
     animator.setSoundVolume("activate", 0.5,0)
     animator.setSoundVolume("recharge", 0.375,0)
-    world.spawnProjectile("energyshard", mcontroller.position(), entity.id(), aimVector(), false, damageConfig)
+    world.spawnProjectile("elduukharflamethrower", mcontroller.position(), entity.id(), aimVector(), false, damageConfig)
 end
 
 function aimVector()
