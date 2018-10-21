@@ -10,6 +10,8 @@ function init()
     -- load robot effect
   elseif status.stat("isSugar") then
     -- load sugar effect
+  elseif status.stat("isRadien") then
+    -- load sugar effect    
   end
 
   --script.setUpdateDelta(5)

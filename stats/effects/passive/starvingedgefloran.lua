@@ -22,7 +22,7 @@ function update(dt)
 
 	--[[local foodMax = 100
 	local foodMin = 35
-	local foodRange = foodMax - foodMin--100-35=65
+	local foodRange = foodMax - foodMin    --100-35=65
 	]]
 	--local ratio = math.max(0, (self.foodValue - 35) / 65)
 

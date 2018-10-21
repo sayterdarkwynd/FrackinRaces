@@ -1,0 +1,21 @@
+{
+  "itemName" : "fulobster",
+  "rarity" : "Common",
+  "price" : 100,
+  "category" : "preparedFood",
+  "inventoryIcon" : "fulobster.png",
+  "description" : "Delicious aquatic horror.",
+  "shortdescription" : "Lobster",
+  "foodValue" : 30,
+  "tooltipKind" : "food",
+  "builder" : "/items/buildscripts/buildfood.lua",
+  "maxStack" : 99,
+  "blockingEffects" : [
+    "wellfed"
+  ],
+  "effects" : [ [
+    {
+        "effect" : "carnivorefood"
+    }    
+  ] ]
+}

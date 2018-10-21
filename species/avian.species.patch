@@ -8,9 +8,10 @@
   
  ^orange;Perks^reset;:
  +^green;10%^reset; Energy, +^green;5%^reset; Damage 
- Jump Boost, -^green;65%^reset; Fall Damage, Slow Fall
+ Jump Boost, -^green;65%^reset; Fall Damage
  Resist: ^green;15%^reset; Shadow, ^green;25%^reset; Electric, Cosmic
-  
+ Tech: ^green;Avian Slowfall - build in [C] menu^reset;
+ 
  ^orange;Environment^reset;:
  When airborne gain +^green;12%^reset; damage
  Gain air mobility in low to moderate wind conditions

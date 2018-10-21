@@ -1,0 +1,16 @@
+[
+
+    { "op": "replace", 
+    "path" : "/charCreationTooltip/description" , 
+    "value" : "Space wolves with a love for energy weapons and tech. They're swift and extremely mobile, navigating almost any terrain, but a tad on the fragile side.
+    
+    ^red;Weak: 20% Poison, Cosmic^reset;
+    ^green;+12% Energy,+5% Damage, ,+20% Shadow and Rad Resistance^reset;
+    ^green;Extra power and health on Lush, Forest, Snow and Tundra biomes^reset;
+    ^green;Increase movement speed the more fed you are (max +16.6%).^reset;
+    ^green;40% reduced hunger^reset;
+    ^green;+25% Energy Regen and +3% Crit Chance when using energy firearms^reset;
+    ^green;Immune: Slush, Snow, Jungle, Mud, Web, Sandstorms^reset;"
+    }
+
+]
