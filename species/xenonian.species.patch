@@ -1,0 +1,25 @@
+[
+  {
+    "op": "replace",
+    "path" : "/charCreationTooltip/description" ,
+    "value" : "Slug-like aliens from Xen-789. Skilled in biotic weaponry, the Xenonians are immune to toxicity, but are stressed in clean and sanitary conditions.
+    Diet: Anything
+
+    ^orange;Perks^reset;:
+    Resist: ^green;40%^reset; Poison
+    Immune: Most diseases (In-mod), poisoned, and slime.
+    ^orange;Bioluminescence^reset;
+
+    ^orange;Environment^reset;:
+    On all ^green;poisonous^reset;, ^green;fungal^reset; and ^red;atropus^reset; planets, gain an additional ^green;20%^reset; poison immunity.
+
+    ^orange;Weapons^reset;:
+    Injectors and syringes: ^green;+20%^reset; damage and ^green;+5%^reset; crit chance.
+    Bio-weapons: ^green;+10%^reset; damage
+
+    ^red;Weaknesses^reset;:
+    ^red;-30%^reset; cosmic, ^red;-20%^reset; electric
+    ^red;-10%^reset; energy
+    "
+  }
+]
