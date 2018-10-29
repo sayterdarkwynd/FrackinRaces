@@ -18,7 +18,7 @@
  
  ^orange;Weapons^reset;:
  Shield: Perfect Blocks ^green;restore health^reset;
- Sword: ^green;+20%^reset; Crit Chance when above ^green;75%^reset; health
+ Sword: ^green;+2%^reset; Crit Chance when above ^green;75%^reset; health
  Katana + Dagger: +^green;8%^reset; Speed, +^green;4^reset; Protection, +^green;1%^reset; Crit
  Katana (single): +^green;6%^reset; Dmg, +^green;4%^reset; Speed
  Shortsword: ^green;+6%^reset; Dmg, +4%^reset; Speed 
