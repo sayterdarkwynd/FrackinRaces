@@ -11,8 +11,8 @@
  
  ^orange;Perks^reset;:
  +^green;20%^reset; Energy, +^green;2^reset; Protection
- Advantages: When wounded, bleed fire
- Resist: ^green;30%^reset; Fire, ^green;10%^reset; Shadow
+ Advantages: When at 50% HP, emit slowing ice clouds
+ Resist: ^green;30%^reset; Ice, ^green;10%^reset; Shadow
  Tech: ^green;Crystal Breath - build in [C] menu^reset;
  
  ^orange;Environment^reset;:
@@ -25,7 +25,7 @@
  Lunari:  +^green;12%^reset; damage, +^green;25%^reset; Max Energy
     
  ^red;Weaknesses^reset;:
- Weak: ^red;30%^reset; Ice, ^red;10%^reset; Poison"
+ Weak: ^red;30%^reset; Fire, ^red;10%^reset; Poison"
     }
 
 ]
