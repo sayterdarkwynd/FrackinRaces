@@ -31,7 +31,14 @@ function update(dt)
 	local daytime = daytimeCheck()
 	local underground = undergroundCheck()
 	local lightLevel = getLight()
-
+	
+	if (lightLevel < 50) then
+		status.addEphemeralEffect("drainnightar")
+	else
+		status.removeEphemeralEffect("drainnightar")
+	end
+	
+	
 	if status.resource("health") == status.stat("maxHealth") then
 	--used for checking sword setups
 	    local primaryItem = world.entityHandItem(entity.id(), "primary")
@@ -47,7 +54,9 @@ function update(dt)
 			})
 		end
 	end
+   
 
+	
 	if lightLevel <= 25 then
 		effect.setStatModifierGroup(nightarDarkHunterEffects, {
 			{stat = "powerMultiplier", baseMultiplier = 1.25},

@@ -40,6 +40,10 @@ end
 
 function update(dt)
   local lightLevel = getLight()
+  local lightMutator = (1 - (lightLevel / 100))/4
+  if lightMutator < 0 then lightMutator = 0 end
+  self.drainMultiplier = config.getParameter("drainMultiplier") or 0.01
+  self.drainMultiplier = self.drainMultiplier + lightMutator
   
   if lightLevel < 50 then
   

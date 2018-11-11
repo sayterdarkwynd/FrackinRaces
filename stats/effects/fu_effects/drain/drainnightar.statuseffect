@@ -12,6 +12,6 @@
 
   "animationConfig" : "drain.animation",
 
-  "label" : "Health Vampire - drain enemy health on hits.",
+  "label" : "Health Vampire - drain enemy health on hits during nighttime or in darkness.",
   "icon" : "/interface/statuses/absorb.png"
 }
