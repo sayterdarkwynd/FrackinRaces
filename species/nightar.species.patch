@@ -11,9 +11,9 @@
  Immune: Bio-Ooze, Poison
   
  ^orange;Weapons^reset;:
- All Swords: ^green;+1%^reset; Crit Chance, ^green;+10%^reset; damage and ^green;3%^reset; Shadow Burst (^green;5 damage^reset;) Chance when fully healed. 
+ All Swords: ^green;+1%^reset; Crit Chance, ^green;+10%^reset; damage and ^green;3%^reset; Shadow Burst Chance (^green;5 damage^reset;) when fully healed. 
  Shortswords or Daggers: ^green;+20%^reset; Crit Damage
- Longsword or Katana: ^green;+10%^reset; Damage
+ Longsword or Katana: ^green;+6%^reset; Damage
  Katana/Rapier + Dagger: ^green;+1.5%^reset; Crit Chance
  2x Small Blades: ^green;+12%^reset; Protection, ^green;+5%^reset; Movement Speed
  Shield: ^green;+2 Shield Bash, +25% Knockback Resist^reset;
