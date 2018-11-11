@@ -1,17 +1,17 @@
 {
-  "name" : "drain",
+  "name" : "drainnightar",
   "effectConfig" : {
-    "drainMultiplier" : 1,
-    "cooldown" : 1
+    "drainMultiplier" : 0.05,
+    "cooldown" : 0.5
   },
   "defaultDuration" : 60,
 
   "scripts" : [
-    "drain.lua"
+    "drainnightar.lua"
   ],
 
   "animationConfig" : "drain.animation",
 
-  "label" : "Drain",
+  "label" : "Health Vampire - drain enemy health on hits.",
   "icon" : "/interface/statuses/absorb.png"
 }

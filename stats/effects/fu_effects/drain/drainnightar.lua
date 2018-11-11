@@ -21,6 +21,16 @@ function init()
   self.queryDamageSince = 0
 end
 
+function getLight()
+	local position = mcontroller.position()
+	position[1] = math.floor(position[1])
+	position[2] = math.floor(position[2])
+	local lightLevel = world.lightLevel(position)
+	lightLevel = math.floor(lightLevel * 100)
+	return lightLevel
+end
+
+
 function resetDrain()
   self.cooldownTimer = self.cooldown
   self.triggerDrain = false
@@ -29,28 +39,33 @@ function resetDrain()
 end
 
 function update(dt)
-  if self.cooldownTimer <= 0 then
-    local damageNotifications, nextStep = status.inflictedDamageSince(self.queryDamageSince)
-    self.queryDamageSince = nextStep
-    for _, notification in ipairs(damageNotifications) do
-      if notification.healthLost > 0 and notification.sourceEntityId ~= notification.targetEntityId then
-        triggerDrain(notification.healthLost * self.drainMultiplier)
-        self.cooldownTimer = self.cooldown
-        break
-      end
-    end
-  end
+  local lightLevel = getLight()
+  
+  if lightLevel < 50 then
+  
+	  if self.cooldownTimer <= 0 then
+	    local damageNotifications, nextStep = status.inflictedDamageSince(self.queryDamageSince)
+	    self.queryDamageSince = nextStep
+	    for _, notification in ipairs(damageNotifications) do
+	      if notification.healthLost > 0 and notification.sourceEntityId ~= notification.targetEntityId then
+		triggerDrain(notification.healthLost * self.drainMultiplier)
+		self.cooldownTimer = self.cooldown
+		break
+	      end
+	    end
+	  end
 
-  if self.cooldownTimer > 0 then
-    self.cooldownTimer = self.cooldownTimer - dt
-  end
+	  if self.cooldownTimer > 0 then
+	    self.cooldownTimer = self.cooldownTimer - dt
+	  end
 
-  if self.triggerDrain then
-    self.drainTimer = self.drainTimer - dt
-    if self.drainTimer <= 0 then
-        animator.setParticleEmitterActive("healing", false)
-        self.triggerDrain = false
-    end
+	  if self.triggerDrain then
+	    self.drainTimer = self.drainTimer - dt
+	    if self.drainTimer <= 0 then
+		animator.setParticleEmitterActive("healing", false)
+		self.triggerDrain = false
+	    end
+	  end
   end
 end
 
