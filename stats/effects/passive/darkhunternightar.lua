@@ -96,19 +96,19 @@ function update(dt)
 	elseif daytime and not underground then
 		if lightLevel > 85 then
 			effect.setStatModifierGroup(nightarDarkHunterEffects, {
-				{stat = "physicalResistance", amount = -0.15},
+				{stat = "physicalResistance", amount = -0.20},
 				{stat = "powerMultiplier", baseMultiplier = 0.75}
 			})		
 			mcontroller.controlModifiers({ speedModifier = 0.90 })
 		elseif lightLevel > 75 then
 			effect.setStatModifierGroup(nightarDarkHunterEffects, {
-				{stat = "physicalResistance", amount = -0.12},
+				{stat = "physicalResistance", amount = -0.15},
 				{stat = "powerMultiplier", baseMultiplier = 0.80}
 			})		
 			mcontroller.controlModifiers({ speedModifier = 0.95 })
 		elseif lightLevel > 65 then
 			effect.setStatModifierGroup(nightarDarkHunterEffects, {
-				{stat = "physicalResistance", amount = -0.09},
+				{stat = "physicalResistance", amount = -0.10},
 				{stat = "powerMultiplier", baseMultiplier = 0.85}
 			})		
 			mcontroller.controlModifiers({ speedModifier = 0.97 })
