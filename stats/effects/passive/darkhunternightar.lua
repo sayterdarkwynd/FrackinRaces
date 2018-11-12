@@ -5,7 +5,8 @@ function init()
 		break
 	end
 
-	nightarDarkHunterEffects=effect.addStatModifierGroup({})
+	nightarDarkHunterEffects = effect.addStatModifierGroup({})
+	nightarDarkHunterEffects2 = effect.addStatModifierGroup({})
 	script.setUpdateDelta(10)
 end
 
