@@ -4,7 +4,8 @@ function init()
 		status.clearPersistentEffects("feneroxEffects")
 		break
 	end
-
+	self.species = world.entitySpecies(entity.id())
+	
 	nightarDarkHunterEffects = effect.addStatModifierGroup({})
 	nightarDarkHunterEffects2 = effect.addStatModifierGroup({})
 	script.setUpdateDelta(10)
@@ -33,28 +34,33 @@ function update(dt)
 	local underground = undergroundCheck()
 	local lightLevel = getLight()
 	
-	if (lightLevel < 50) then
-		status.addEphemeralEffect("drainnightar")
-	else
-		status.removeEphemeralEffect("drainnightar")
-	end
 	
-	
-	if status.resource("health") == status.stat("maxHealth") then
-	--used for checking sword setups
-	    local primaryItem = world.entityHandItem(entity.id(), "primary")
-	    local altItem = world.entityHandItem(entity.id(), "alt")		
-		if (primaryItem and root.itemHasTag(primaryItem, "broadsword")) or (altItem and root.itemHasTag(altItem,  "broadsword")) or
-		   (primaryItem and root.itemHasTag(primaryItem, "dagger")) or (altItem and root.itemHasTag(altItem,  "dagger")) or
-		   (primaryItem and root.itemHasTag(primaryItem, "shortsword")) or (altItem and root.itemHasTag(altItem,  "shortsword")) or
-		   (primaryItem and root.itemHasTag(primaryItem, "longsword")) or (altItem and root.itemHasTag(altItem,  "longsword")) or
-		   (primaryItem and root.itemHasTag(primaryItem, "rapier")) or (altItem and root.itemHasTag(altItem,  "rapier")) or
-		   (primaryItem and root.itemHasTag(primaryItem, "katana")) or (altItem and root.itemHasTag(altItem,  "katana"))then
-			effect.setStatModifierGroup(nightarDarkHunterEffects2, {
-				{stat = "powerMultiplier", baseMultiplier = 1.1}
-			})
+	if self.species == "nightar" then 
+		if (lightLevel < 50) then
+			status.addEphemeralEffect("drainnightar")
+		else
+			status.removeEphemeralEffect("drainnightar")
 		end
+
+
+		if status.resource("health") == status.stat("maxHealth") then
+		--used for checking sword setups
+		    local primaryItem = world.entityHandItem(entity.id(), "primary")
+		    local altItem = world.entityHandItem(entity.id(), "alt")		
+			if (primaryItem and root.itemHasTag(primaryItem, "broadsword")) or (altItem and root.itemHasTag(altItem,  "broadsword")) or
+			   (primaryItem and root.itemHasTag(primaryItem, "dagger")) or (altItem and root.itemHasTag(altItem,  "dagger")) or
+			   (primaryItem and root.itemHasTag(primaryItem, "shortsword")) or (altItem and root.itemHasTag(altItem,  "shortsword")) or
+			   (primaryItem and root.itemHasTag(primaryItem, "longsword")) or (altItem and root.itemHasTag(altItem,  "longsword")) or
+			   (primaryItem and root.itemHasTag(primaryItem, "rapier")) or (altItem and root.itemHasTag(altItem,  "rapier")) or
+			   (primaryItem and root.itemHasTag(primaryItem, "katana")) or (altItem and root.itemHasTag(altItem,  "katana"))then
+				effect.setStatModifierGroup(nightarDarkHunterEffects2, {
+					{stat = "powerMultiplier", baseMultiplier = 1.1}
+				})
+			end
+		end	
 	end
+	
+
    
 
 	

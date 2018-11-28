@@ -16,6 +16,6 @@
   {
     "op": "replace",
     "path": "/description",
-    "value": "A tangy jam made from neonmelons. ^green;Type: Herbivore^reset;"
+    "value": "A tangy fruit with a highly sought flavor. ^green;Type: Herbivore^reset;"
   }
 ]

@@ -38,6 +38,14 @@ function resetDrain()
   self.drainDamage = 0
 end
 
+function notDungeon()
+  if not world.type("eldershoggoth") or not world.type("precursordungeon2") or not world.type("spaceencounter") or not world.type("tentaclemission") then
+    self.dungeon = 1
+  else
+    self.dungeon = 0
+  end
+end
+
 function update(dt)
   local lightLevel = getLight()
   local lightMutator = (1 - (lightLevel / 100))/4
@@ -45,7 +53,8 @@ function update(dt)
   self.drainMultiplier = config.getParameter("drainMultiplier") or 0.01
   self.drainMultiplier = self.drainMultiplier + lightMutator
   
-  if lightLevel < 50 then
+  notDungeon()
+  if (lightLevel < 50) then
   
 	  if self.cooldownTimer <= 0 then
 	    local damageNotifications, nextStep = status.inflictedDamageSince(self.queryDamageSince)
