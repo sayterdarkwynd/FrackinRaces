@@ -1,9 +1,5 @@
 function init()
-	--removal of persistent handlers, should be removed after a few weeks.
-	for _,_ in pairs(status.getPersistentEffects("feneroxEffects")) do
-		status.clearPersistentEffects("feneroxEffects")
-		break
-	end
+
 	self.species = world.entitySpecies(entity.id())
 	
 	nightarDarkHunterEffects = effect.addStatModifierGroup({})
