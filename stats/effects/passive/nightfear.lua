@@ -1,9 +1,5 @@
 function init()
-	--removal of persistent handlers, should be removed after a few weeks.
-	for _,_ in pairs(status.getPersistentEffects("webberEffects")) do
-		status.clearPersistentEffects("webberEffects")
-		break
-	end
+
 	
 	nightFearEffects=effect.addStatModifierGroup({})
 	script.setUpdateDelta(10)
