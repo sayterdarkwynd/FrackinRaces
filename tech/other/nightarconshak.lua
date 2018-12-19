@@ -63,7 +63,6 @@ function update(args)
         self.conshakTimer = 0
       end
 
-      
       status.setPersistentEffects("nightarconshak", {
 	{stat = "protection", effectiveMultiplier = 0.5},
 	{stat = "powerMultiplier", effectiveMultiplier = 0.5},
@@ -72,6 +71,7 @@ function update(args)
 	{stat = "breathRegenerationRate", effectiveMultiplier = 1.25},
 	{stat = "foodDelta", effectiveMultiplier = 0.25}
       })
+      
       animator.setParticleEmitterActive("defenseStance", true)
       if self.bombTimer == 0 then
 	checkStance()
@@ -82,8 +82,7 @@ function update(args)
         animator.setParticleEmitterActive("conshak", true)
         local configBombDrop = { power = 0 }
         world.spawnProjectile("activeConshakCharged", mcontroller.position(), entity.id(), {0, 0}, false, configBombDrop)    
-        status.addEphemeralEffects{{effect = "defense6", duration = 30}}
-        status.addEphemeralEffects{{effect = "physicalblock3", duration = 30}}
+        status.addEphemeralEffects{{effect = "entropicward", duration = 30}}
         self.conshakTimer = 0
       end
       
