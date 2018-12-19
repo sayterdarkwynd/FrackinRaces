@@ -14,6 +14,22 @@ function uninit()
   deactivate()
 end
 
+function getLight()
+	local position = mcontroller.position()
+	position[1] = math.floor(position[1])
+	position[2] = math.floor(position[2])
+	local lightLevel = world.lightLevel(position)
+	lightLevel = math.floor(lightLevel * 100)
+	return lightLevel
+end
+
+function daytimeCheck()
+	return world.timeOfDay() < 0.5 -- true if daytime
+end
+
+function undergroundCheck()
+	return world.underground(mcontroller.position())
+end
 
 function checkStance()
 
@@ -22,7 +38,6 @@ function checkStance()
     else
       animator.playSound("conshakActivate")
     end
-    
     if self.pressDown then    
        animator.setParticleEmitterActive("defenseStance", true)
        animator.playSound("conshakCharge")
@@ -34,9 +49,13 @@ function checkStance()
 end
 
 function update(args)
-
+	local daytime = daytimeCheck()
+	local underground = undergroundCheck()
+	local lightLevel = getLight()
+	
   if not self.specialLast and args.moves["special1"] then
     attemptActivation()
+    animator.playSound("activate")
   end
   
   self.specialLast = args.moves["special1"]
@@ -50,50 +69,56 @@ function update(args)
     self.forceTimer = nil
   end
 
-  if self.active then
-    if self.bombTimer > 0 then
-      self.bombTimer = math.max(0, self.bombTimer - args.dt)
-    end
-    if (self.pressDown) and not self.pressLeft and not self.pressRight and not self.pressUp and not self.pressJump then
-      
-      if (self.conshakTimer < 500) then
-        self.conshakTimer = self.conshakTimer + 1
-        sb.logInfo(self.conshakTimer)      
-      else
-        self.conshakTimer = 0
-      end
+  -- make sure its dark, or they are underground
+  if (lightLevel <= 60) or underground then
+	  if self.active then
+	    if self.bombTimer > 0 then
+	      self.bombTimer = math.max(0, self.bombTimer - args.dt)
+	    end
+	    if (self.pressDown) and not self.pressLeft and not self.pressRight and not self.pressUp and not self.pressJump then
 
-      status.setPersistentEffects("nightarconshak", {
-	{stat = "protection", effectiveMultiplier = 0.5},
-	{stat = "powerMultiplier", effectiveMultiplier = 0.5},
-	{stat = "maxEnergy", effectiveMultiplier = 0.5},
-	{stat = "breathDepletionRate", effectiveMultiplier = 0.25},
-	{stat = "breathRegenerationRate", effectiveMultiplier = 1.25},
-	{stat = "foodDelta", effectiveMultiplier = 0.25}
-      })
-      
-      animator.setParticleEmitterActive("defenseStance", true)
-      if self.bombTimer == 0 then
-	checkStance()
-      end
-      
-      if (self.conshakTimer >= 500) then
-        animator.setParticleEmitterActive("defenseStance", false)
-        animator.setParticleEmitterActive("conshak", true)
-        local configBombDrop = { power = 0 }
-        world.spawnProjectile("activeConshakCharged", mcontroller.position(), entity.id(), {0, 0}, false, configBombDrop)    
-        status.addEphemeralEffects{{effect = "entropicward", duration = 30}}
-        self.conshakTimer = 0
-      end
-      
-    else
-      animator.setParticleEmitterActive("defenseStance", false)
-      animator.setParticleEmitterActive("conshak", false)
-      status.clearPersistentEffects("nightarconshak") 
-    end   
-    
-    checkForceDeactivate(args.dt)
+	      if (self.conshakTimer < 500) then
+		self.conshakTimer = self.conshakTimer + 1
+		sb.logInfo(self.conshakTimer)      
+	      else
+		self.conshakTimer = 0
+	      end
+
+	      status.setPersistentEffects("nightarconshak", {
+		{stat = "protection", effectiveMultiplier = 0.01},
+		{stat = "powerMultiplier", effectiveMultiplier = 0.01},
+		{stat = "maxEnergy", effectiveMultiplier = 0.05},
+		{stat = "breathDepletionRate", effectiveMultiplier = 0.25},
+		{stat = "breathRegenerationRate", effectiveMultiplier = 1.25},
+		{stat = "foodDelta", amount = -0.25}
+	      })
+
+	      animator.setParticleEmitterActive("defenseStance", true)
+	      if self.bombTimer == 0 then
+		checkStance()
+	      end
+
+	      if (self.conshakTimer >= 500) then
+		animator.setParticleEmitterActive("defenseStance", false)
+		animator.setParticleEmitterActive("conshak", true)
+		local configBombDrop = { power = 0 }
+		world.spawnProjectile("activeConshakCharged", mcontroller.position(), entity.id(), {0, 0}, false, configBombDrop)    
+		status.addEphemeralEffects{{effect = "entropicward", duration = 60}}
+		status.addEphemeralEffects{{effect = "thorns", duration = 60}}
+		self.conshakTimer = 0
+	      end
+
+	    else
+	      animator.setParticleEmitterActive("defenseStance", false)
+	      animator.setParticleEmitterActive("conshak", false)
+	      status.clearPersistentEffects("nightarconshak")
+	      self.conshakTimer = 0
+	    end   
+
+	    checkForceDeactivate(args.dt)
+	  end  
   end
+
 end
 
 function attemptActivation()

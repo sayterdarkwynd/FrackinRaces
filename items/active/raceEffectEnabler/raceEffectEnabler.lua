@@ -44,7 +44,11 @@ function activate(fireMode, shiftHeld)
       elseif self.species == "elduukhar" then
 	player.makeTechAvailable("elduukharburst")
 	player.enableTech("elduukharburst")
-	player.equipTech("elduukharburst")		
+	player.equipTech("elduukharburst")
+      elseif self.species == "nightar" then
+        player.makeTechAvailable("nightarconshak")
+        player.enableTech("nightarconshak")
+        player.equipTech("nightarconshak")  	
       end
       animate()
     else

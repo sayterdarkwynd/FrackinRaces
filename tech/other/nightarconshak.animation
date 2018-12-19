@@ -49,14 +49,14 @@
     "conshak" : {
       "enabled" : false,
       "emissionRate" : 10.0,
-      "emissionRateVariance" : 1.5,
+      "emissionRateVariance" : 7.5,
       "particles" : [      
         {
           "particle" : {
             "type" : "textured",
             "image" : "/interface/statuses/conshakready.png",
             "size" : 1,
-            "color" : [212, 239, 245, 255],
+            "color" : [255, 255, 255, 255],
             "fade" : 0.9,
             "initialVelocity" : [0.0, 2],
             "rotation" : 0,
@@ -78,7 +78,7 @@
   },
   
   "sounds" : {
-    "activate" : [ "/sfx/tech/tech_multijump.ogg" ],
+    "activate" : [ "/sfx/projectiles/bullet_ricochet1.ogg" ],
     "conshakActivate" : [ "/sfx/tech/tech_rocketjump_charge2.ogg" ],
     "conshakCharge" : [ "/sfx/tools/energypickaxe_idle.ogg" ]
   }
