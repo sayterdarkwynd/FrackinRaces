@@ -78,7 +78,8 @@ function update(args)
 	    if (self.pressDown) and not self.pressLeft and not self.pressRight and not self.pressUp and not self.pressJump then
 
 	      if (self.conshakTimer < 500) then
-		self.conshakTimer = self.conshakTimer + 1    
+		self.conshakTimer = self.conshakTimer + 1
+		sb.logInfo(self.conshakTimer)      
 	      else
 		self.conshakTimer = 0
 	      end
@@ -89,7 +90,7 @@ function update(args)
 		{stat = "maxEnergy", effectiveMultiplier = 0.05},
 		{stat = "breathDepletionRate", effectiveMultiplier = 0.25},
 		{stat = "breathRegenerationRate", effectiveMultiplier = 1.25},
-		{stat = "foodDelta", amount = 0.25}
+		{stat = "foodDelta", amount = -0.25}
 	      })
 
 	      animator.setParticleEmitterActive("defenseStance", true)
