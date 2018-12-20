@@ -83,7 +83,7 @@ function update(args)
 		{stat = "maxEnergy", effectiveMultiplier = 0.05},
 		{stat = "breathDepletionRate", effectiveMultiplier = 0.25},
 		{stat = "breathRegenerationRate", effectiveMultiplier = 1.25},
-		{stat = "foodDelta", amount = -0.25}
+		{stat = "foodDelta", amount = 0.25}
 	      })
 
 	      animator.setParticleEmitterActive("defenseStance", true)
