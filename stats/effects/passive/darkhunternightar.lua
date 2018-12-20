@@ -1,3 +1,5 @@
+require "/scripts/util.lua"
+
 function init()
 	self.species = world.entitySpecies(entity.id())
 	nightarDarkHunterEffects = effect.addStatModifierGroup({})
@@ -40,6 +42,7 @@ function update(dt)
 		--used for checking sword setups
 		    local primaryItem = world.entityHandItem(entity.id(), "primary")
 		    local altItem = world.entityHandItem(entity.id(), "alt")		
+	
 			if (primaryItem and root.itemHasTag(primaryItem, "broadsword")) or (altItem and root.itemHasTag(altItem,  "broadsword")) or
 			   (primaryItem and root.itemHasTag(primaryItem, "dagger")) or (altItem and root.itemHasTag(altItem,  "dagger")) or
 			   (primaryItem and root.itemHasTag(primaryItem, "shortsword")) or (altItem and root.itemHasTag(altItem,  "shortsword")) or
@@ -53,74 +56,26 @@ function update(dt)
 		end	
 	end
 	
-
-   
-
-	
-	if lightLevel <= 25 then
-		effect.setStatModifierGroup(nightarDarkHunterEffects, {
-			{stat = "powerMultiplier", baseMultiplier = 1.25},
-			{stat = "physicalResistance", amount = 0.25}
-		})		
-	elseif lightLevel <= 27 then
-		effect.setStatModifierGroup(nightarDarkHunterEffects, {
-			{stat = "powerMultiplier", baseMultiplier = 1.20},
-			{stat = "physicalResistance", amount = 0.225}
-		})			
-	elseif lightLevel <= 29 then
-		effect.setStatModifierGroup(nightarDarkHunterEffects, {
-			{stat = "powerMultiplier", baseMultiplier = 1.18},
-			{stat = "physicalResistance", amount = 0.20}
-		})		
-	elseif lightLevel <= 31 then
-		effect.setStatModifierGroup(nightarDarkHunterEffects, {
-			{stat = "powerMultiplier", baseMultiplier = 1.16},
-			{stat = "physicalResistance", amount = 0.15}
-		})			
-	elseif lightLevel <= 33 then
-		effect.setStatModifierGroup(nightarDarkHunterEffects, {
-			{stat = "powerMultiplier", baseMultiplier = 1.14},
-			{stat = "physicalResistance", amount = 0.12}
-		})			
-	elseif lightLevel <= 35 then
-		effect.setStatModifierGroup(nightarDarkHunterEffects, {
-			{stat = "powerMultiplier", baseMultiplier = 1.12},
-			{stat = "physicalResistance", amount = 0.10}
-		})			
-	elseif lightLevel <= 45 then
-		effect.setStatModifierGroup(nightarDarkHunterEffects, {
-			{stat = "powerMultiplier", baseMultiplier = 1.10},
-			{stat = "physicalResistance", amount = 0.05}
-		})		
-	elseif daytime and not underground then
-		if lightLevel > 85 then
-			effect.setStatModifierGroup(nightarDarkHunterEffects, {
-				{stat = "physicalResistance", amount = -0.20},
-				{stat = "powerMultiplier", baseMultiplier = 0.75}
-			})		
-			mcontroller.controlModifiers({ speedModifier = 0.90 })
-		elseif lightLevel > 75 then
-			effect.setStatModifierGroup(nightarDarkHunterEffects, {
-				{stat = "physicalResistance", amount = -0.15},
-				{stat = "powerMultiplier", baseMultiplier = 0.80}
-			})		
-			mcontroller.controlModifiers({ speedModifier = 0.95 })
-		elseif lightLevel > 65 then
-			effect.setStatModifierGroup(nightarDarkHunterEffects, {
-				{stat = "physicalResistance", amount = -0.10},
-				{stat = "powerMultiplier", baseMultiplier = 0.85}
-			})		
-			mcontroller.controlModifiers({ speedModifier = 0.97 })
-		elseif lightLevel > 55 then
-			effect.setStatModifierGroup(nightarDarkHunterEffects, {
-				{stat = "physicalResistance", amount = -0.05},
-				{stat = "powerMultiplier", baseMultiplier = 0.95}
-			})
-		end
+	if lightLevel <= 50 then
+	    local mult = 1-math.min(math.max((lightLevel-25)/20,0),1)
+	    effect.setStatModifierGroup(nightarDarkHunterEffects, {
+		{stat = "powerMultiplier", effectiveMultiplier = 1+mult*0.25},
+		{stat = "physicalResistance", amount = mult*0.25}
+	    })
+	elseif daytime and not underground and lightLevel > 50 then
+	    local mult = math.min(math.max((lightLevel-55)/30,0),1)
+	    local healthPenalty = 1-mult*0.25
+	    effect.setStatModifierGroup(nightarDarkHunterEffects, {
+		{stat = "physicalResistance", amount = mult*-0.33},
+		{stat = "powerMultiplier", effectiveMultiplier = 1-mult*0.5},
+		{stat = "maxHealth", effectiveMultiplier = util.round(healthPenalty,1)},
+		{stat = "maxEnergy", effectiveMultiplier = util.round(healthPenalty,1)}
+	    })
 	else
-		effect.setStatModifierGroup(nightarDarkHunterEffects,{})
-		status.removeEphemeralEffect("drainnightar")
+	    effect.setStatModifierGroup(nightarDarkHunterEffects,{})
+	    status.removeEphemeralEffect("drainnightar")
 	end
+
 end
 
 function uninit()
