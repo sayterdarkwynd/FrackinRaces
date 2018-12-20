@@ -1,0 +1,19 @@
+[
+    { "op": "replace", 
+    "path" : "/charCreationTooltip/description" , 
+    "value" : "A race of shapeshifting and insecure creatures borne from a planet called Gaia.
+    
+	Diet: Omnivorous
+
+	^orange;Perks^reset;:
+	^green;Adaptive^reset;: +damage +resistances +health
+	^green;Immune^reset; to cold. ^red;Weak^reset; to hot.
+
+	^orange;Environment^reset;:
+	^green;Familiar^reset;: +speed +jump in some biomes
+
+	^orange;Weaknesses^reset;:
+	^red;Unfamiliar^reset;: -speed -jump in some biomes
+	^red;Clumsy^reset;: -energy"
+    }
+]
