@@ -5,6 +5,7 @@ function init()
 	nightarDarkHunterEffects = effect.addStatModifierGroup({})
 	nightarDarkHunterEffects2 = effect.addStatModifierGroup({})
 	getLight()
+	self.activateDrainTimer = 0
 	script.setUpdateDelta(10)
 end
 
@@ -30,14 +31,15 @@ function update(dt)
 	local daytime = daytimeCheck()
 	local underground = undergroundCheck()
 	local lightLevel = getLight()
+
+	if (self.species == "nightar") then 
 	
-	if (lightLevel < 50) then
-		status.addEphemeralEffect("drainnightar")
-	else
-		status.removeEphemeralEffect("drainnightar")
-	end	
-	
-	if self.species == "nightar" then 
+		if (lightLevel < 50) then  --activate nightar drain
+			status.addEphemeralEffect("drainnightar")
+		else
+			status.removeEphemeralEffect("drainnightar")
+		end		
+		
 		if status.resource("health") == status.stat("maxHealth") then
 		--used for checking sword setups
 		    local primaryItem = world.entityHandItem(entity.id(), "primary")
@@ -56,7 +58,7 @@ function update(dt)
 		end	
 	end
 	
-	if lightLevel <= 50 then
+	if (lightLevel <= 50) then
 	    local mult = 1-math.min(math.max((lightLevel-25)/20,0),1)
 	    effect.setStatModifierGroup(nightarDarkHunterEffects, {
 		{stat = "powerMultiplier", effectiveMultiplier = 1+mult*0.25},
@@ -65,21 +67,31 @@ function update(dt)
 	elseif daytime and not underground and lightLevel > 50 then
 	    local mult = math.min(math.max((lightLevel-55)/30,0),1)
 	    local healthPenalty = 1-mult*0.25
-	    effect.setStatModifierGroup(nightarDarkHunterEffects, {
-		{stat = "physicalResistance", amount = mult*-0.33},
-		{stat = "powerMultiplier", effectiveMultiplier = 1-mult*0.5},
-		{stat = "maxHealth", effectiveMultiplier = util.round(healthPenalty,1)},
-		{stat = "maxEnergy", effectiveMultiplier = util.round(healthPenalty,1)}
-	    })
+	    if (self.species == "nightar") then
+		    effect.setStatModifierGroup(nightarDarkHunterEffects, {
+			{stat = "physicalResistance", amount = mult*-0.33},
+			{stat = "powerMultiplier", effectiveMultiplier = 1-mult*0.5},
+			{stat = "maxHealth", effectiveMultiplier = util.round(healthPenalty,1)},
+			{stat = "maxEnergy", effectiveMultiplier = util.round(healthPenalty,1)}
+		    })	    
+	    else  --tenebraeh have different bonuses than nightar
+		    effect.setStatModifierGroup(nightarDarkHunterEffects, {
+			{stat = "physicalResistance", amount = mult*-0.25},
+			{stat = "powerMultiplier", effectiveMultiplier = 1-mult*0.4}
+		    })	    
+	    end
+
 	else
 	    effect.setStatModifierGroup(nightarDarkHunterEffects,{})
-	    status.removeEphemeralEffect("drainnightar")
+	    if (self.species == "nightar") then
+	    	status.removeEphemeralEffect("drainnightar")
+	    end
 	end
 
 end
 
+
 function uninit()
 	effect.removeStatModifierGroup(nightarDarkHunterEffects)
 	effect.removeStatModifierGroup(nightarDarkHunterEffects2)
-	status.removeEphemeralEffect("drainnightar")
 end
