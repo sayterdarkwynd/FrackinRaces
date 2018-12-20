@@ -44,7 +44,7 @@ function update(dt)
   self.drainMultiplier = config.getParameter("drainMultiplier") or 0.01
   self.drainMultiplier = self.drainMultiplier + lightMutator
   
-  if (lightLevel <=50) then
+
 	  if self.cooldownTimer <= 0 then
 	    local damageNotifications, nextStep = status.inflictedDamageSince(self.queryDamageSince)
 	    self.queryDamageSince = nextStep
@@ -68,7 +68,7 @@ function update(dt)
 		self.triggerDrain = false
 	    end
 	  end
-  end
+  
 end
 
 function triggerDrain(damage)

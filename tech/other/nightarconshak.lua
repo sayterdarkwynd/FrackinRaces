@@ -23,16 +23,11 @@ function getLight()
 	return lightLevel
 end
 
-function daytimeCheck()
-	return world.timeOfDay() < 0.5 -- true if daytime
-end
-
 function undergroundCheck()
 	return world.underground(mcontroller.position())
 end
 
 function checkStance()
-
     if (self.conshakTimer < 500) then
     	animator.setParticleEmitterActive("conshak", false)
     else
@@ -49,9 +44,8 @@ function checkStance()
 end
 
 function update(args)
-	local daytime = daytimeCheck()
-	local underground = undergroundCheck()
-	local lightLevel = getLight()
+  local underground = undergroundCheck()
+  local lightLevel = getLight()
 	
   if not self.specialLast and args.moves["special1"] then
     attemptActivation()
@@ -78,8 +72,7 @@ function update(args)
 	    if (self.pressDown) and not self.pressLeft and not self.pressRight and not self.pressUp and not self.pressJump then
 
 	      if (self.conshakTimer < 500) then
-		self.conshakTimer = self.conshakTimer + 1
-		sb.logInfo(self.conshakTimer)      
+		self.conshakTimer = self.conshakTimer + 1   
 	      else
 		self.conshakTimer = 0
 	      end
@@ -160,6 +153,5 @@ function deactivate()
 	if self.active then
 	  status.clearPersistentEffects("nightarconshak")  
 	end
-	self.conshakTimer = 0
 	self.active = false
 end

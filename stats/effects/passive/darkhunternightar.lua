@@ -29,6 +29,11 @@ function update(dt)
 	local underground = undergroundCheck()
 	local lightLevel = getLight()
 	
+	if (lightLevel < 50) then
+		status.addEphemeralEffect("drainnightar")
+	else
+		status.removeEphemeralEffect("drainnightar")
+	end	
 	
 	if self.species == "nightar" then 
 		if status.resource("health") == status.stat("maxHealth") then
