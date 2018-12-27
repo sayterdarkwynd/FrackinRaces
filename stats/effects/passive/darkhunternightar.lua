@@ -4,7 +4,6 @@ function init()
 	self.species = world.entitySpecies(entity.id())
 	nightarDarkHunterEffects = effect.addStatModifierGroup({})
 	nightarDarkHunterEffects2 = effect.addStatModifierGroup({})
-	getLight()
 	self.activateDrainTimer = 0
 	script.setUpdateDelta(10)
 end
@@ -33,13 +32,6 @@ function update(dt)
 	local lightLevel = getLight()
 
 	if (self.species == "nightar") then 
-	
-		if (lightLevel < 50) then  --activate nightar drain
-			status.addEphemeralEffect("drainnightar")
-		else
-			status.removeEphemeralEffect("drainnightar")
-		end		
-		
 		if status.resource("health") == status.stat("maxHealth") then
 		--used for checking sword setups
 		    local primaryItem = world.entityHandItem(entity.id(), "primary")
@@ -83,9 +75,6 @@ function update(dt)
 
 	else
 	    effect.setStatModifierGroup(nightarDarkHunterEffects,{})
-	    if (self.species == "nightar") then
-	    	status.removeEphemeralEffect("drainnightar")
-	    end
 	end
 
 end
