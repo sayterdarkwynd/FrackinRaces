@@ -1,0 +1,19 @@
+{
+  "name" : "radioactiveplant",
+
+  "effectConfig" : {
+    "healthBonus" : 0.10,
+    "energyBonus" : 0.10,
+    "protectionBonus" : 2
+  },
+  "defaultDuration" : 1,
+
+  "scripts" : [
+    "radioactiveplant.lua"
+  ],
+
+  "animationConfig" : "radioactiveplant.animation",
+
+  "label" : "Radioactive Plant! Standing near the X'i bulbs is hazardous to carbon-based life. X'ians get regeneration.",
+  "icon" : "/interface/statuses/biomeradioactive.png"
+}

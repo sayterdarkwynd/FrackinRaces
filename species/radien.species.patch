@@ -1,7 +1,42 @@
 [
+  {
+    "op": "add",
+    "path": "/defaultBlueprints/tier1/-",
+    "value": {
+      "item": "uraniumradien"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/defaultBlueprints/tier1/-",
+    "value": {
+      "item": "uranium"
+    }
+  },  
+  {
+    "op": "add",
+    "path": "/defaultBlueprints/tier1/-",
+    "value": {
+      "item": "plutoniumradien"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/defaultBlueprints/tier1/-",
+    "value": {
+      "item": "neptuniumradien"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/defaultBlueprints/tier1/-",
+    "value": {
+      "item": "thoriumradien"
+    }
+  },
     { "op": "replace", 
     "path" : "/charCreationTooltip/description" , 
-    "value" : "A unisex race of shy radioactive beings with a disputed origin. Their main weapons are their pointed legs, giving them speed and prowess in melee. This species is intended for Survival or Hardcore modes, and will recieve 50% reduced benefits without Hunger.
+    "value" : "A race of shy radioactive beings with a disputed origin. Their main weapons are their pointed legs, giving them speed and prowess in melee. This species is intended for Survival or Hardcore modes, and will recieve 50% reduced benefits without Hunger.
  
  Diet: Any 
  
@@ -15,7 +50,7 @@
  Keeping fed keeps bonuses high. Hunger weakens you.
  
  ^orange;Weapons^reset;:    
- Rapier/Shortsword/Short-Spear/Dagger: +^green;1%^reset; Crit and +^green;4%^reset; Crit Dmg
+ Radien Weapons: +^green;1%^reset; Crit and +^green;14%^reset; Protection
  
  ^red;Weaknesses^reset;: 
  ^red;High Hunger^reset;

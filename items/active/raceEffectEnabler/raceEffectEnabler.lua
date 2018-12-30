@@ -25,6 +25,10 @@ function activate(fireMode, shiftHeld)
         player.makeTechAvailable("bugarmor")
         player.enableTech("bugarmor")
         player.equipTech("bugarmor")       
+      elseif self.species == "radien" then
+        player.makeTechAvailable("xi_bulb")
+        player.enableTech("xi_bulb")
+        player.equipTech("xi_bulb")         
       elseif self.species == "shadow" then
         player.makeTechAvailable("tenebrhaeburst")
         player.enableTech("tenebrhaeburst")
