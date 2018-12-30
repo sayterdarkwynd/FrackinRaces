@@ -8,8 +8,8 @@ function init()
   self.tickTimer = self.tickTime
   script.setUpdateDelta(5)
   self.species = world.entitySpecies(entity.id())
-  if (status.stat("isHerbivore")==1 or status.stat("isRobot")==1 or status.stat("isOmnivore")==1 or status.stat("isSugar")==1) and (not(status.stat("isOmnivore")==1 and status.stat("isCarnivore")==1)) then
-    world.sendEntityMessage(entity.id(), "queueRadioMessage", "foodtype")
+  if (status.stat("isHerbivore")==1 or status.stat("isRobot")==1 or status.stat("isOmnivore")==1 or status.stat("isSugar")==1) and (not(status.stat("isRadien")==1)) then
+    world.sendEntityMessage(entity.id(), "queueRadioMessage", "foodtyperad")
   end
   status.clearPersistentEffects("glitchpower1")
   status.clearPersistentEffects("veggiepower")   
@@ -21,7 +21,6 @@ function update(dt)
 	   applyEffects()
 	 else
 	   if (self.tickTimer <= 0) then
-	   sb.logInfo(self.species)
 	     applyPenalty()
 	   else
 	     self.tickTimer = self.tickTimer - dt
@@ -45,9 +44,7 @@ function applyPenalty()
 end
 
 function applyEffects()
-    status.setPersistentEffects("floranpower1", {
-      {stat = "healthRegen", amount = 1}
-    })
+    status.setPersistentEffects("floranpower1", { {stat = "healthRegen", amount = 0.8} })
 end
 
 function uninit()

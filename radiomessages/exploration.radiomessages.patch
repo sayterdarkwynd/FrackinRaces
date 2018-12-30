@@ -8,5 +8,15 @@
       "portraitImage": "yell.<frame>",
       "textSpeed": 70
     }
-  }
+  },
+  {
+    "op": "add",
+    "path": "/foodtyperad",
+    "value": {
+      "unique": false,
+      "text": "^red;RADIOACTIVE MATERIAL DETECTED ^reset;: You just ate potentially lethal radioactive isotopes. Your chance of painful death has increased by 99.72%.",
+      "portraitImage": "yell.<frame>",
+      "textSpeed": 70
+    }
+  }  
 ]
