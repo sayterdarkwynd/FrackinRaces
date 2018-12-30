@@ -1,3 +1,8 @@
+function init()
+  self.armorTimer = 0
+  self.armorTotal = 1
+end
+
 function checkHealth()
   self.baseHealth = config.getParameter("baseHealth")
   self.baseEnergy =  config.getParameter("baseEnergy")
@@ -48,7 +53,21 @@ end
 
 function update(dt)
   self.foodValue = status.resourcePercentage("food")
-
+  
+  self.armorTimer = self.armorTimer + 1
+  
+  if self.armorTimer == 3000 then
+    self.armorTimer = 0
+    self.armorTotal = self.armorTotal + 1
+    if self.armorTotal >= 25 then
+      self.armorTotal = 25
+    end
+    
+    status.setPersistentEffects("radienArmor", {  
+      {stat = "protection", amount = 1+ self.armorTotal }
+    })  
+  end
+  
   if self.foodValue >= 0.98 then
     self.dt = 1
     self.baseMod = 1
@@ -65,4 +84,7 @@ end
 
 function uninit()
   status.clearPersistentEffects("radienPower")
+  status.clearPersistentEffects("radienArmor")
+  self.armorTotal = 1
+  self.armorTimer = 0
 end
