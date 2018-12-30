@@ -46,8 +46,7 @@ end
 
 function applyEffects()
     status.setPersistentEffects("floranpower1", {
-      {stat = "healthRegen", amount = 1},
-      {"stat": "foodDelta","baseMultiplier": 1.1}
+      {stat = "healthRegen", amount = 1}
     })
 end
 
