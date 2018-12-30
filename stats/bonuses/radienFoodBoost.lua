@@ -3,35 +3,40 @@ function checkHealth()
   self.baseEnergy =  config.getParameter("baseEnergy")
   self.healthMultPenalty = self.baseHealth * ( self.baseHealth *  -(1 - (self.foodValue))) 
   self.energyMultBonus = self.baseEnergy * ( self.baseEnergy *  -(1 - (self.foodValue)))  
-  self.finalHealth = math.ceil(self.healthMultPenalty * self.baseMod)
-  self.finalEnergy = math.ceil(self.healthMultPenalty * self.baseMod)
+  self.finalHealth = math.ceil(self.healthMultPenalty * self.baseMod) -2
+  self.finalEnergy = math.ceil(self.healthMultPenalty * self.baseMod) -3
 end
 
 function setValues()
-  self.radiationBoost = self.foodValue * 0.5 
+  self.radiationBoost = self.foodValue * 0.4 
+  self.poisonBoost = self.foodValue * 0.25 
   self.powerMultBonus = self.foodValue * 0.15
-  self.poisonPenaltyBonusMod = -0.4 + (self.powerMultBonus)
   self.firePenaltyBonusMod = -0.4 + (self.powerMultBonus)
-  self.icePenaltyBonusMod = self.foodValue * 0.2
-  self.electricPenaltyBonusMod = self.foodValue * 0.1
-  self.shadowPenaltyBonusMod = self.foodValue * 0.03
+  self.icePenaltyBonusMod = self.foodValue * 0.05
+  self.electricPenaltyBonusMod = self.foodValue * 0.05
+  self.shadowPenaltyBonusMod = -0.25 + (self.powerMultBonus)
   self.cosmicPenaltyBonusMod = self.foodValue * 0.07
   
-  --failsafes so that at 50% food you are hard-locked to a particular amount to not get too weak
-  if self.foodValue < 0.5 then  
-      self.firePenaltyBonusMod = -0.4
-      self.poisonPenaltyBonusMod = -0.34
+  --failsafes so that at 10% food you are hard-locked to a particular amount to not get too weak
+  if self.foodValue < 0.1 then  
+      self.firePenaltyBonusMod = -0.5
+      self.poisonBoost = 0
       self.powerMultBonus = 0 
-      self.radiationBoost = 0.25
+      self.radiationBoost = 0.20
+      self.icePenaltyBonusMod = 0
+      self.electricPenaltyBonusMod = -0.2
+      self.cosmicPenaltyBonusMod = -0.2
+      self.shadowPenaltyBonusMod = -0.25
   end
 
   status.setPersistentEffects("radienPower", {  
       {stat = "maxHealth", amount = self.finalHealth },
       {stat = "maxEnergy", amount = self.finalEnergy },             
-      {stat = "powerMultiplier", baseMultiplier = 1 + self.powerMultBonus},
-      {stat = "radioactiveResistance", amount = self.radiationBoost },
-      {stat = "poisonResistance", amount = self.poisonPenaltyBonusMod},
+      --penalties
+      {stat = "poisonResistance", amount = self.poisonBoost},
       {stat = "fireResistance", amount = self.firePenaltyBonusMod },
+      --bonuses
+      {stat = "radioactiveResistance", amount = self.radiationBoost },
       {stat = "iceResistance", amount = self.icePenaltyBonusMod },
       {stat = "electricResistance", amount = self.electricPenaltyBonusMod },
       {stat = "shadowResistance", amount = self.shadowPenaltyBonusMod },
@@ -52,10 +57,7 @@ function update(dt)
     self.baseMod = 1 * (10 + self.dt)  
     self.dt = dt + (self.baseMod)   
   end
-  
 
-
-  
   checkHealth()  -- set health adjustment stats 
   setValues() -- set adjustments to stats
 

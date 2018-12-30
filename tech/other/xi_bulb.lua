@@ -70,7 +70,7 @@ function update(args)
 
 	      if (self.conshakTimer < 350) then
 		self.conshakTimer = self.conshakTimer + 1  
-		if (self.foodValue >=30) then
+		if (self.foodValue >=10) then
 		  status.setResource("food",self.foodValue -0.05)  --set food to almost nothing
 		else
 		  status.overConsumeResource("energy", config.getParameter("energyCostPerSecond"),1)
@@ -88,7 +88,7 @@ function update(args)
 	      end
 
 	      if (self.conshakTimer >= 350) then
-		      if (self.foodValue >=30) then    --must have sufficient food to grow a seed
+		      if (self.foodValue >=10) then    --must have sufficient food to grow a seed
 			animator.setParticleEmitterActive("bulbStance", false)
 			animator.setParticleEmitterActive("bulb", true)
 			--world.placeObject("xi_bulb",mcontroller.position(),1) -- doesnt seem to work with that position
@@ -96,7 +96,7 @@ function update(args)
 			local configBombDrop = { power = 0 }
 			world.spawnProjectile("activeBulbCharged", mcontroller.position(), entity.id(), {0, 0}, false, configBombDrop)    
 			self.conshakTimer = 0
-		      elseif (self.foodValue < 30) and self.energyValue > 20 then
+		      elseif (self.foodValue < 10) and self.energyValue > 20 then
 			animator.setParticleEmitterActive("bulbStance", false)
 			animator.setParticleEmitterActive("bulb", true)
 			world.spawnItem("xi_bulb", mcontroller.position(), 1)
