@@ -9,14 +9,18 @@ end
 
 function setValues()
   self.radiationBoost = self.foodValue * 0.5 
-  self.poisonValueBonus = self.foodValue * 0.25 
   self.powerMultBonus = self.foodValue * 0.15
+  self.poisonPenaltyBonusMod = -0.4 + (self.powerMultBonus)
   self.firePenaltyBonusMod = -0.4 + (self.powerMultBonus)
+  self.icePenaltyBonusMod = self.foodValue * 0.2
+  self.electricPenaltyBonusMod = self.foodValue * 0.1
+  self.shadowPenaltyBonusMod = self.foodValue * 0.03
+  self.cosmicPenaltyBonusMod = self.foodValue * 0.07
   
   --failsafes so that at 50% food you are hard-locked to a particular amount to not get too weak
   if self.foodValue < 0.5 then  
       self.firePenaltyBonusMod = -0.4
-      self.poisonValueBonus = 0.125
+      self.poisonPenaltyBonusMod = -0.34
       self.powerMultBonus = 0 
       self.radiationBoost = 0.25
   end
@@ -26,8 +30,12 @@ function setValues()
       {stat = "maxEnergy", amount = self.finalEnergy },             
       {stat = "powerMultiplier", baseMultiplier = 1 + self.powerMultBonus},
       {stat = "radioactiveResistance", amount = self.radiationBoost },
-      {stat = "poisonResistance", amount = self.poisonValueBonus},
-      {stat = "fireResistance", amount = self.firePenaltyBonusMod }
+      {stat = "poisonResistance", amount = self.poisonPenaltyBonusMod},
+      {stat = "fireResistance", amount = self.firePenaltyBonusMod },
+      {stat = "iceResistance", amount = self.icePenaltyBonusMod },
+      {stat = "electricResistance", amount = self.electricPenaltyBonusMod },
+      {stat = "shadowResistance", amount = self.shadowPenaltyBonusMod },
+      {stat = "cosmicResistance", amount = self.cosmicPenaltyBonusMod }
   }) 
 end
 
