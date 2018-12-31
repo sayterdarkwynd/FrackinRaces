@@ -88,18 +88,19 @@ function update(args)
 	      end
 
 	      if (self.conshakTimer >= 350) then
+	      self.rand = math.random(1,1)
 		      if (self.foodValue >=10) then    --must have sufficient food to grow a seed
 			animator.setParticleEmitterActive("bulbStance", false)
 			animator.setParticleEmitterActive("bulb", true)
 			--world.placeObject("xi_bulb",mcontroller.position(),1) -- doesnt seem to work with that position
-			world.spawnItem("xi_bulb", mcontroller.position(), 1)
+			world.spawnItem("xi_bulb", mcontroller.position(), self.rand)
 			local configBombDrop = { power = 0 }
 			world.spawnProjectile("activeBulbCharged", mcontroller.position(), entity.id(), {0, 0}, false, configBombDrop)    
 			self.conshakTimer = 0
 		      elseif (self.foodValue < 10) and self.energyValue > 20 then
 			animator.setParticleEmitterActive("bulbStance", false)
 			animator.setParticleEmitterActive("bulb", true)
-			world.spawnItem("xi_bulb", mcontroller.position(), 1)
+			world.spawnItem("xi_bulb", mcontroller.position(), self.rand)
 			local configBombDrop = { power = 0 }
 			world.spawnProjectile("activeBulbCharged", mcontroller.position(), entity.id(), {0, 0}, false, configBombDrop)    
 			self.conshakTimer = 0		      

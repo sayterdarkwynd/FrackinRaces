@@ -11,16 +11,14 @@ function init()
   if (status.stat("isHerbivore")==1 or status.stat("isRobot")==1 or status.stat("isOmnivore")==1 or status.stat("isSugar")==1) and (not(status.stat("isRadien")==1)) then
     world.sendEntityMessage(entity.id(), "queueRadioMessage", "foodtyperad")
   end
-  status.clearPersistentEffects("glitchpower1")
-  status.clearPersistentEffects("veggiepower")   
   self.species = world.entitySpecies(entity.id())
 end
 
 function update(dt)
-	 if self.species == "radien" or self.species == "novakid" then
+	 if self.species == "radien" or self.species == "novakid" or self.species == "thelusian" then
 	   applyEffects()
 	 else
-	   if (self.tickTimer <= 0) then
+	   if not self.species == "radien" and (self.tickTimer <= 0) then
 	     applyPenalty()
 	   else
 	     self.tickTimer = self.tickTimer - dt
@@ -37,14 +35,16 @@ function applyPenalty()
 	damageSourceKind = "poison",
 	sourceEntityId = entity.id()
       })
-      mcontroller.controlModifiers({ airJumpModifier = 0.08, speedModifier = 0.08 })
       effect.setParentDirectives("fade=806e4f="..self.tickTimer * 0.25)
-	status.removeEphemeralEffect("wellfed")
-	if status.resourcePercentage("food") > 0.85 then status.setResourcePercentage("food", 0.85) end
+      mcontroller.controlModifiers({ airJumpModifier = 0.08, speedModifier = 0.08 })    
 end
 
 function applyEffects()
-    status.setPersistentEffects("floranpower1", { {stat = "healthRegen", amount = 0.8} })
+    status.setPersistentEffects("floranpower1", { {stat = "healthRegen", amount = 0.8},{stat = "foodDelta", effectiveMultiplier = -1} })
+    --radiens dont get full when near these plants. eat up!
+    self.foodValue = status.resourcePercentage("food")
+    status.removeEphemeralEffect("wellfed")
+    if status.resourcePercentage("food") > 0.99 then status.setResourcePercentage("food", 0.99) end    
 end
 
 function uninit()

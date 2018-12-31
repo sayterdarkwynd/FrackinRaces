@@ -8,7 +8,7 @@
   "objectType" : "farmable",
   "printable" : false,
   "price" : 1,
-  "lightColor" : [75, 75, 32],
+  "lightColor" : [100, 100, 42],
   "inventoryIcon" : "xi_bulbicon.png",
   "largeImage" : "xi_bulb.png:default.3.0",
   "orientations" : [

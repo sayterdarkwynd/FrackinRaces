@@ -3,8 +3,8 @@
     "op": "add",
     "path": "/radienmsg",
     "value": {
-      "unique": false,
-      "text": "^green;Excellent ^reset;!You have remembered how to spawn X'i Bulbs. With them you can craft many things in your [C] menu, or use them for other purposes unique to the X'i.",
+      "unique": true,
+      "text": "^green;Excellent^reset;! You have remembered how to spawn X'i Bulbs. With them you can craft many things in your [C] menu, or use them for other purposes unique to the X'i.",
       "portraitImage": "yell.<frame>",
       "textSpeed": 70
     }
