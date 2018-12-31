@@ -1,6 +1,16 @@
 [
   {
     "op": "add",
+    "path": "/radienmsg",
+    "value": {
+      "unique": true,
+      "text": "^green;Excellent^reset;! You have remembered how to spawn X'i Bulbs. With them you can craft many things in your [C] menu, or use them for other purposes unique to the X'i.",
+      "portraitImage": "yell.<frame>",
+      "textSpeed": 70
+    }
+  },
+  {
+    "op": "add",
     "path": "/foodtype",
     "value": {
       "unique": false,
@@ -8,5 +18,15 @@
       "portraitImage": "yell.<frame>",
       "textSpeed": 70
     }
-  }
+  },
+  {
+    "op": "add",
+    "path": "/foodtyperad",
+    "value": {
+      "unique": false,
+      "text": "^red;RADIOACTIVE MATERIAL DETECTED ^reset;: You just ate potentially lethal radioactive isotopes. Your chance of painful death has increased by 99.72%.",
+      "portraitImage": "yell.<frame>",
+      "textSpeed": 70
+    }
+  }  
 ]

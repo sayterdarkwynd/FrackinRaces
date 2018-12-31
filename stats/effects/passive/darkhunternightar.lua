@@ -4,7 +4,6 @@ function init()
 	self.species = world.entitySpecies(entity.id())
 	nightarDarkHunterEffects = effect.addStatModifierGroup({})
 	nightarDarkHunterEffects2 = effect.addStatModifierGroup({})
-	getLight()
 	self.activateDrainTimer = 0
 	script.setUpdateDelta(10)
 end
@@ -33,13 +32,6 @@ function update(dt)
 	local lightLevel = getLight()
 
 	if (self.species == "nightar") then 
-	
-		if (lightLevel < 50) then  --activate nightar drain
-			status.addEphemeralEffect("drainnightar")
-		else
-			status.removeEphemeralEffect("drainnightar")
-		end		
-		
 		if status.resource("health") == status.stat("maxHealth") then
 		--used for checking sword setups
 		    local primaryItem = world.entityHandItem(entity.id(), "primary")
@@ -74,7 +66,7 @@ function update(dt)
 			{stat = "maxHealth", effectiveMultiplier = util.round(healthPenalty,1)},
 			{stat = "maxEnergy", effectiveMultiplier = util.round(healthPenalty,1)}
 		    })	    
-	    else  --tenebraeh have different bonuses than nightar
+	    else  --tenebrhae have different bonuses than nightar
 		    effect.setStatModifierGroup(nightarDarkHunterEffects, {
 			{stat = "physicalResistance", amount = mult*-0.25},
 			{stat = "powerMultiplier", effectiveMultiplier = 1-mult*0.4}
@@ -83,9 +75,6 @@ function update(dt)
 
 	else
 	    effect.setStatModifierGroup(nightarDarkHunterEffects,{})
-	    if (self.species == "nightar") then
-	    	status.removeEphemeralEffect("drainnightar")
-	    end
 	end
 
 end
