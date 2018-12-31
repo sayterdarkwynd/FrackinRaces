@@ -40,7 +40,7 @@ function applyPenalty()
 end
 
 function applyEffects()
-    status.setPersistentEffects("floranpower1", { {stat = "healthRegen", amount = 0.8},{stat = "foodDelta", effectiveMultiplier = -1} })
+    status.setPersistentEffects("floranpower1", { {stat = "healthRegen", amount = 0.8},{stat = "foodDelta", effectiveMultiplier = -1.08} })
     --radiens dont get full when near these plants. eat up!
     self.foodValue = status.resourcePercentage("food")
     status.removeEphemeralEffect("wellfed")

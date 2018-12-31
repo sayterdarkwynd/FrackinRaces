@@ -88,7 +88,7 @@ function update(args)
 	      end
 
 	      if (self.conshakTimer >= 350) then
-	      self.rand = math.random(1,1)
+	      self.rand = math.random(1,2)
 		      if (self.foodValue >=10) then    --must have sufficient food to grow a seed
 			animator.setParticleEmitterActive("bulbStance", false)
 			animator.setParticleEmitterActive("bulb", true)
