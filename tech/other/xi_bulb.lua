@@ -8,6 +8,7 @@ function initCommonParameters()
   self.energyCost = config.getParameter("energyCostPerSecond")
   self.bombTimer = 0
   self.conshakTimer = 0
+  self.xiBonus = status.stat("xiBonus")
 end
 
 function uninit()
@@ -22,11 +23,10 @@ function getFood()
 		self.foodValue = 50
 		self.energyValue = status.resource("energy")
 	end
-	--sb.logInfo(self.foodValue)
 end
 
 function checkStance()
-    if (self.conshakTimer < 500) then
+    if (self.conshakTimer < 350) then
     	animator.setParticleEmitterActive("bulb", false)
     else
       animator.playSound("xibulbActivate")
@@ -89,18 +89,31 @@ function update(args)
 
 	      if (self.conshakTimer >= 350) then
 	      self.rand = math.random(1,2)
+	      self.onehundred = math.random(1,100)
 		      if (self.foodValue >=10) then    --must have sufficient food to grow a seed
 			animator.setParticleEmitterActive("bulbStance", false)
 			animator.setParticleEmitterActive("bulb", true)
 			--world.placeObject("xi_bulb",mcontroller.position(),1) -- doesnt seem to work with that position
-			world.spawnItem("xi_bulb", mcontroller.position(), self.rand)
+			if self.onehundred == 100 then
+			  world.spawnItem("xi_bulb3", mcontroller.position(), self.rand)
+			elseif self.onehundred > 80 then
+			  world.spawnItem("xi_bulb2", mcontroller.position(), self.rand)
+			else
+			  world.spawnItem("xi_bulb", mcontroller.position(), self.rand)
+			end
 			local configBombDrop = { power = 0 }
 			world.spawnProjectile("activeBulbCharged", mcontroller.position(), entity.id(), {0, 0}, false, configBombDrop)    
 			self.conshakTimer = 0
 		      elseif (self.foodValue < 10) and self.energyValue > 20 then
 			animator.setParticleEmitterActive("bulbStance", false)
 			animator.setParticleEmitterActive("bulb", true)
-			world.spawnItem("xi_bulb", mcontroller.position(), self.rand)
+			if self.onehundred == 100 then
+			  world.spawnItem("xi_bulb3", mcontroller.position(), self.rand)
+			elseif self.onehundred > 95 then
+			  world.spawnItem("xi_bulb2", mcontroller.position(), self.rand)
+			else
+			  world.spawnItem("xi_bulb", mcontroller.position(), self.rand)
+			end
 			local configBombDrop = { power = 0 }
 			world.spawnProjectile("activeBulbCharged", mcontroller.position(), entity.id(), {0, 0}, false, configBombDrop)    
 			self.conshakTimer = 0		      

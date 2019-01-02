@@ -2,8 +2,8 @@
   "name" : "radioactivefood",
 
   "effectConfig" : {
-    "healthBonus" : 0.10,
-    "energyBonus" : 0.10,
+    "healthBonus" : 1.14,
+    "energyBonus" : 1.14,
     "protectionBonus" : 2
   },
   "defaultDuration" : 200,
