@@ -2,14 +2,6 @@ function init()
 	script.setUpdateDelta(5)
 	starvationpower2=effect.addStatModifierGroup({})
 	starvationpower=effect.addStatModifierGroup({})
-	for _,_ in pairs(status.getPersistentEffects("starvationpower2")) do
-		status.clearPersistentEffects("starvationpower2")
-		break
-	end
-	for _,_ in pairs(status.getPersistentEffects("starvationpower")) do
-		status.clearPersistentEffects("starvationpower")
-		break
-	end
 end
 
 function update(dt)
@@ -22,7 +14,7 @@ function update(dt)
 
 	--[[local foodMax = 100
 	local foodMin = 35
-	local foodRange = foodMax - foodMin--100-35=65
+	local foodRange = foodMax - foodMin    --100-35=65
 	]]
 	--local ratio = math.max(0, (self.foodValue - 35) / 65)
 

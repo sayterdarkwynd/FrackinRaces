@@ -1,14 +1,7 @@
 [
   {
-    "op": "add",
-    "path": "/effects/0/0",
-    "value": {
-      "effect": "herbivorefood"
-    }
-  },
-  {
     "op": "replace",
     "path": "/description",
-    "value": "Freshly brewed coffee. ^green;Type: Herbivore^reset;"
+    "value": "Freshly brewed coffee. ^green;Type: Any^reset;"
   }
 ]

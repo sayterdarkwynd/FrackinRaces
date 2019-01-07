@@ -1,0 +1,10 @@
+{
+  "input" : [
+    { "item" : "money", "count" : 1 }
+  ],
+  "output" : {
+    "item" : "raceEffectEnabler",
+    "count" : 1
+  },
+  "groups" : [ "plain", "all" ]
+}
