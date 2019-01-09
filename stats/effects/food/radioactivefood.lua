@@ -1,8 +1,8 @@
 function init()
   self.movementParams = mcontroller.baseParameters()
   self.protectionBonus = config.getParameter("protectionBonus", 0)
-  baseValue = config.getParameter("healthBonus",0)*(status.resourceMax("health"))
-  baseValue2 = config.getParameter("energyBonus",0)*(status.resourceMax("energy"))
+  baseValue = config.getParameter("healthBonus",0)
+  baseValue2 = config.getParameter("energyBonus",0)
   self.tickDamagePercentage = 0.01
   self.tickTime = 2
   self.tickTimer = self.tickTime
@@ -11,8 +11,7 @@ function init()
   if (status.stat("isHerbivore")==1 or status.stat("isRobot")==1 or status.stat("isOmnivore")==1 or status.stat("isSugar")==1) and (not(status.stat("isOmnivore")==1 and status.stat("isCarnivore")==1)) then
     world.sendEntityMessage(entity.id(), "queueRadioMessage", "foodtype")
   end
-  status.clearPersistentEffects("glitchpower1")
-  status.clearPersistentEffects("veggiepower")   
+  status.clearPersistentEffects("floranpower1")
   self.species = world.entitySpecies(entity.id())
 end
 
@@ -21,7 +20,6 @@ function update(dt)
 	   applyEffects()
 	 else
 	   if (self.tickTimer <= 0) then
-	   sb.logInfo(self.species)
 	     applyPenalty()
 	   else
 	     self.tickTimer = self.tickTimer - dt
@@ -46,12 +44,12 @@ end
 
 function applyEffects()
     status.setPersistentEffects("floranpower1", {
-      {stat = "healthRegen", amount = 1},
-      {stat = "maxHealth", amount = baseValue },
-      {stat = "maxEnergy", amount = baseValue2 }
+      {stat = "healthRegen", amount = 0.5},
+      {stat = "maxHealth", baseMultiplier = baseValue },
+      {stat = "maxEnergy", baseMultiplier = baseValue }
     })
 end
 
 function uninit()
-  status.clearPersistentEffects("floranpower1")
+
 end

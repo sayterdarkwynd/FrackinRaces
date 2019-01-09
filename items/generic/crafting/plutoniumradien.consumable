@@ -5,7 +5,7 @@
   "category" : "preparedFood",
   "inventoryIcon" : "plutoniumore.png",
   "description" : "X'ian processes have stripped the impurities.",
-  "shortdescription" : "Edible Uranium",
+  "shortdescription" : "Edible Plutonium",
   "foodValue" : 4,
   "tooltipKind" : "food",
   "builder" : "/items/buildscripts/buildfood.lua",
