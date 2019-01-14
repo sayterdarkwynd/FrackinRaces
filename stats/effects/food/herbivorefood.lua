@@ -18,7 +18,7 @@ end
 
 function update(dt)
 
-	 if status.stat("isHerbivore")==1 or status.stat("isOmnivore")==1 or status.stat("isRadien")==1 or (status.stat("isCarnivore")==1 and status.stat("isOmnivore")==1) then
+	 if status.stat("isHerbivore")==1 or status.stat("isOmnivore")==1 or status.stat("isRadien")==1 or (status.stat("isCarnivore")==1 and status.stat("isOmnivore")==1) or status.stat("isMantizi")==1 then
 	   applyEffects()
    elseif status.stat("isSugar")==1 and (status.statPositive("sugarfood")) then
   	   applyEffects()
