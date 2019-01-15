@@ -1,0 +1,203 @@
+{
+	"stats": [{
+			"stat": "isCarnivore",
+			"amount": 1
+		},
+		{
+			"stat": "maxHealth",
+			"baseMultiplier": 1.05
+		},
+		{
+			"stat": "maxEnergy",
+			"baseMultiplier": 1.2
+		},
+		{
+			"stat": "powerMultiplier",
+			"baseMultiplier": 1.05
+		},
+		{
+			"stat": "electricResistance",
+			"amount": 0.25
+		},
+		{
+			"stat": "fireResistance",
+			"amount": -0.5
+		},
+		{
+			"stat": "iceResistance",
+			"amount": 0.25
+		},
+		{
+			"stat": "poisonResistance",
+			"amount": -0.25
+		},
+		{
+			"stat": "radioactiveResistance",
+			"amount": 0.2
+		},
+		{
+			"stat": "electricStatusImmunity",
+			"amount": 1
+		}
+	],
+	"envEffects": [{
+		"biomes": "jungle",
+		"stats": [{
+				"stat": "maxHealth",
+				"baseMultiplier": 1.1
+			},
+			{
+				"stat": "maxEnergy",
+				"baseMultiplier": 1.1
+			}
+		]
+	}],
+	"weaponEffects": [{
+			"weapons": [
+				"bow"
+			],
+			"stats": [{
+					"stat": "critChance",
+					"amount": 4
+				},
+				{
+					"stat": "critDamage",
+					"amount": 0.2
+				}
+			],
+			"controlModifiers": {
+				"speedModifier": 1.15
+			}
+		},
+		{
+			"weapons": [
+				"dagger",
+				"spear"
+			],
+			"stats": [{
+					"stat": "powerMultiplier",
+					"baseMultiplier": 1.08
+				},
+				{
+					"stat": "critChance",
+					"amount": 3
+				}
+			]
+		},
+		{
+			"weapons": [
+				"needler",
+				"thrown",
+				"floran"
+			],
+			"stats": [{
+				"stat": "critChance",
+				"baseMultiplier": 2
+			}]
+		},
+		{
+			"combos": [
+				[
+					"needler",
+					"needler"
+				],
+				[
+					"floran",
+					"floran"
+				]
+			],
+			"controlModifiers": {
+				"speedModifier": 1.08
+			}
+		}
+	],
+	"weaponScripts": [{
+			"script": "/scripts/fr_weaponscripts/hungercost.lua",
+			"contexts": [
+				"boomerang-fire",
+				"axecleave-fire",
+				"hammersmash-fire"
+			],
+			"args": {
+				"food": -0.01
+			}
+		},
+		{
+			"script": "/scripts/fr_weaponscripts/hungercost.lua",
+			"contexts": [
+				"fist-combo"
+			],
+			"args": {
+				"food": -0.002
+			}
+		},
+		{
+			"script": "/scripts/fr_weaponscripts/hungercost.lua",
+			"contexts": [
+				"bowshot-fire"
+			],
+			"args": {
+				"food": -0.02
+			}
+		},
+		{
+			"script": "/scripts/fr_weaponscripts/hungercost.lua",
+			"contexts": [
+				"meleecombo-fire",
+				"whip-fire"
+			],
+			"args": {
+				"food": -0.005
+			}
+		},
+		{
+			"script": "/scripts/fr_weaponscripts/hungercost.lua",
+			"blacklist": true,
+			"weapons": [
+				"spear",
+				"dagger"
+			],
+			"contexts": [
+				"meleeslash-fire"
+			],
+			"args": {
+				"food": -0.005
+			}
+		},
+		{
+			"script": "/scripts/fr_weaponscripts/hungercost.lua",
+			"weapons": [
+				"spear",
+				"dagger"
+			],
+			"contexts": [
+				"meleeslash-fire"
+			],
+			"args": {
+				"food": -0.01
+			}
+		},
+		{
+			"script": "/scripts/fr_weaponscripts/randprojectile.lua",
+			"weapons": [
+				"spear",
+				"dagger"
+			],
+			"contexts": [
+				"meleeslash-fire"
+			],
+			"args": {
+				"projectile": "furazorleafinvis",
+				"chance": 3,
+				"params": {
+					"hungermod": 12,
+					"damageKind": "poison"
+				}
+			}
+		}
+	],
+	"special": [
+		"starvingedgefloran",
+		"lightregenfloran"
+	]
+}

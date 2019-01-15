@@ -1,0 +1,68 @@
+{
+	"stats": [{
+			"stat": "isOmnivore",
+			"amount": 1
+		},
+		{
+			"stat": "grit",
+			"amount": 0.2
+		}
+	],
+	"controlParameters": {
+		"liquidJumpProfile": {
+			"jumpHoldTime": 0.28
+		}
+	},
+	"weaponEffects": [{
+			"weapons": [
+				"shortsword"
+			],
+			"stats": [{
+					"stat": "powerMultiplier",
+					"baseMultiplier": 1.12
+				},
+				{
+					"stat": "grit",
+					"amount": 0.2
+				}
+			]
+		},
+		{
+			"weapons": [
+				"assaultrifle"
+			],
+			"stats": [{
+				"stat": "powerMultiplier",
+				"baseMultiplier": 1.12
+			}]
+		},
+		{
+			"weapons": [
+				"yoyo"
+			],
+			"stats": [{
+				"stat": "powerMultiplier",
+				"baseMultiplier": 1.1
+			}]
+		}
+	],
+	"weaponScripts": [{
+		"script": "/scripts/fr_weaponscripts/perfectblockbonus.lua",
+		"contexts": [
+			"shield-perfectblock"
+		],
+		"args": {
+			"stats": [{
+				"stat": "protection",
+				"amount": 0
+			}],
+			"statCombos": {
+				"powerMultiplier": {
+					"comboBase": 2,
+					"max": 16
+				}
+			},
+			"particles": "bonusBlock4"
+		}
+	}]
+}

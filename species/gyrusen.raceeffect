@@ -1,0 +1,72 @@
+{
+	"stats": [{
+			"stat": "isOmnivore",
+			"amount": 1
+		},
+		{
+			"stat": "foodDelta",
+			"baseMultiplier": 0.7
+		},
+		{
+			"stat": "maxHealth",
+			"baseMultiplier": 1.1
+		},
+		{
+			"stat": "maxEnergy",
+			"baseMultiplier": 0.8
+		},
+		{
+			"stat": "insanityImmunity",
+			"amount": 1
+		},
+		{
+			"stat": "fireResistance",
+			"amount": 0.25
+		},
+		{
+			"stat": "iceResistance",
+			"amount": -0.35
+		}
+	],
+	"weaponEffects": [{
+			"weapons": [
+				"axe",
+				"hammer"
+			],
+			"stats": [{
+				"stat": "powerMultiplier",
+				"baseMultiplier": 1.2
+			}]
+		},
+		{
+			"weapons": [
+				"rocketlauncher",
+				"grenadelauncher"
+			],
+			"stats": [{
+				"stat": "powerMultiplier",
+				"baseMultiplier": 1.15
+			}]
+		},
+		{
+			"combos": [
+				[
+					"rocketlauncher",
+					"rocketlauncher"
+				],
+				[
+					"rocketlauncher",
+					"grenadelauncher"
+				],
+				[
+					"grenadelauncher",
+					"grenadelauncher"
+				]
+			],
+			"stats": [{
+				"stat": "powerMultiplier",
+				"baseMultiplier": 1.15
+			}]
+		}
+	]
+}

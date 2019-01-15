@@ -8,8 +8,15 @@ function FRHelper:new(species,gender)
     frHelper.frconfig = root.assetJson("/frackinraces.config")
 
     frHelper.species = species
-    frHelper.config = root.assetJson("/scripts/raceEffects.config")
-    frHelper.speciesConfig = frHelper.config[species] or {}
+	local success
+	if species then
+		success, frHelper.speciesConfig = pcall(
+			function () 
+				return root.assetJson(string.format("/species/%s.raceeffect", species))
+			end
+		)
+	end
+	if not success then frHelper.speciesConfig = {} end
 	
 	if frHelper.speciesConfig.gender and frHelper.speciesConfig.gender[gender] then
 	  frHelper.speciesConfig = util.mergeTable(frHelper.speciesConfig,frHelper.speciesConfig.gender[gender])

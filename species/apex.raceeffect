@@ -1,0 +1,115 @@
+{
+	"stats": [
+		{
+			"stat": "isOmnivore",
+			"amount": 1
+		},
+		{
+			"stat": "maxEnergy",
+			"baseMultiplier": 1.3
+		},
+		{
+			"stat": "foodDelta",
+			"baseMultiplier": 1.06146
+		},
+		{
+			"stat": "fireResistance",
+			"amount": -0.3
+		},
+		{
+			"stat": "iceResistance",
+			"amount": 0.3
+		},
+		{
+			"stat": "poisonResistance",
+			"amount": 0.1
+		},
+		{
+			"stat": "cosmicResistance",
+			"amount": -0.1
+		},
+		{
+			"stat": "mudslowImmunity",
+			"amount": 1
+		},
+		{
+			"stat": "fujungleslowImmunity",
+			"amount": 1
+		},
+		{
+			"stat": "jungleslowImmunity",
+			"amount": 1
+		}
+	],
+	"controlModifiers": {
+		"speedModifier": 1.08,
+		"airJumpModifier": 1.15
+	},
+	"envEffects": [
+		{
+			"biomes": [
+				"jungle",
+				"thickjungle",
+				"forest",
+				"snow",
+				"arboreal",
+				"arborealdark"
+			],
+			"stats": [
+				{
+					"stat": "maxHealth",
+					"baseMultiplier": 1.1
+				},
+				{
+					"stat": "maxEnergy",
+					"baseMultiplier": 1.15
+				}
+			]
+		}
+	],
+	"weaponEffects": [
+		{
+			"weapons": [ "fist" ],
+			"stats": [
+				{
+					"stat": "critChance",
+					"amount": 1
+				}
+			]
+		},
+		{
+			"weapons": [ "hammer" ],
+			"stats": [
+				{
+					"stat": "powerMultiplier",
+					"baseMultiplier": 1.1
+				}
+			]
+		},
+		{
+			"weapons": [ "mininglaser" ],
+			"stats": [
+				{
+					"stat": "powerMultiplier",
+					"baseMultiplier": 1.5
+				}
+			]
+		},
+		{
+			"weapons": [ "magnorb", "thrown" ],
+			"stats": [
+				{
+					"stat": "powerMultiplier",
+					"baseMultiplier": 1.12
+				},
+				{
+					"stat": "protection",
+					"amount": 2
+				}
+			]
+		}
+	],
+	"special": [
+		"apexRageBonus"
+	]
+}
