@@ -16,7 +16,7 @@ function init()
 end
 
 function update(dt)
-	 if self.species == "radien" or self.species == "novakid" then
+	 if self.species == "radien" or self.species == "novakid" or status.stat("isRadien")==1) then
 	   applyEffects()
 	 else
 	   if (self.tickTimer <= 0) then

@@ -87,10 +87,12 @@ function FUOverHeating:update(dt, fireMode, shiftHeld)
         self.overheatLimitedCharge = config.getParameter("overheatLimitedCharge")  -- if this is set, you can never reach max overheat
         if not self.overheatLimitedCharge then
           self.overheatActive = true
+          playSoundCooldown()
         end
   	activeItem.setInstanceValue("overheat", true)
   elseif self.currentHeat >= self.highLevel then
   	animator.setAnimationState("weapon", "high")
+  	self.playCooldownSound = true
   elseif self.currentHeat >= self.medLevel then
   	animator.setAnimationState("weapon", "med")
   elseif self.currentHeat >= self.lowLevel then
@@ -118,6 +120,13 @@ function FUOverHeating:update(dt, fireMode, shiftHeld)
   elseif self.overheatActive then-- is currently overheated
   	self:setState(self.overheating)
   end
+end
+
+function playSoundCooldown()
+  if (self.playCooldownSound==true) then
+    animator.playSound("cooldown")
+    self.playCooldownSound = false
+  end  
 end
 
 function FUOverHeating:auto()
@@ -224,7 +233,6 @@ function FUOverHeating:overheating()
 	--set the stance
 	self.weapon:setStance(self.stances.overheat)
 	self.weapon:updateAim()
-	animator.playSound("cooldown")
 	-- reset aim
 	self.weapon.aimAngle = 0
 	while self.currentHeat > 0 do
