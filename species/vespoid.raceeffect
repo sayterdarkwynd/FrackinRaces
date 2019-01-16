@@ -1,0 +1,69 @@
+{
+	"stats": [{
+			"stat": "isHerbivore",
+			"amount": 1
+		},
+		{
+			"stat": "isSugar",
+			"amount": 1
+		},
+		{
+			"stat": "maxHealth",
+			"baseMultiplier": 1.15
+		},
+		{
+			"stat": "fallDamageMultiplier",
+			"baseMultiplier": 0.8
+		},
+		{
+			"stat": "fireResistance",
+			"amount": -0.5
+		},
+		{
+			"stat": "iceResistance",
+			"amount": -0.3
+		},
+		{
+			"stat": "poisonResistance",
+			"amount": 0.5
+		},
+		{
+			"stat": "beestingImmunity",
+			"amount": 1
+		},
+		{
+			"stat": "honeyslowImmunity",
+			"amount": 1
+		}
+	],
+	"controlModifiers": {
+		"speedModifier": 1.1,
+		"stickyForce": 2,
+		"airForce": 65,
+		"liquidForce": 20
+	},
+	"weaponEffects": [{
+			"weapons": [
+				"machinepistol",
+				"sniperrifle",
+				"rifle"
+			],
+			"stats": [{
+				"stat": "powerMultiplier",
+				"baseMultiplier": 1.15
+			}]
+		},
+		{
+			"combos": [
+				[
+					"machinepistol",
+					"machinepistol"
+				]
+			],
+			"stats": [{
+				"stat": "powerMultiplier",
+				"baseMultiplier": 1.15
+			}]
+		}
+	]
+}

@@ -1,0 +1,160 @@
+{
+	"stats": [{
+			"stat": "isRadien",
+			"amount": 1
+		},
+		{
+			"stat": "foodDelta",
+			"baseMultiplier": 1.06146
+		},
+		{
+			"stat": "iceResistance",
+			"amount": 0.4
+		},
+		{
+			"stat": "shadowResistance",
+			"amount": 0.4
+		},
+		{
+			"stat": "poisonResistance",
+			"amount": -0.3
+		},
+		{
+			"stat": "cosmicResistance",
+			"amount": -0.3
+		},
+		{
+			"stat": "fireResistance",
+			"amount": -0.3
+		},
+		{
+			"stat": "shadowImmunity",
+			"amount": 1
+		},
+		{
+			"stat": "darknessImmunity",
+			"amount": 1
+		}
+	],
+	"envEffects": [{
+		"biomes": [
+			"shadow",
+			"penumbra",
+			"lightless",
+			"midnight",
+			"atropusdark",
+			"arborealdark",
+			"magmadark",
+			"volcanicdark",
+			"arcticdark",
+			"desertwastesdark",
+			"sulphuricdark"
+		],
+		"stats": [{
+				"stat": "critChance",
+				"baseMultiplier": 1.02
+			},
+			{
+				"stat": "maxEnergy",
+				"baseMultiplier": 1.15
+			}
+		]
+	}],
+	"weaponEffects": [{
+			"weapons": [
+				"staff",
+				"wand"
+			],
+			"stats": [{
+				"stat": "maxHealth",
+				"baseMultiplier": 1.25
+			}]
+		},
+		{
+			"weapons": [
+				"dagger",
+				"rapier"
+			],
+			"stats": [{
+				"stat": "powerMultiplier",
+				"effectiveMultiplier": 1.06
+			}]
+		},
+		{
+			"weapons": [
+				"magnorb"
+			],
+			"stats": [{
+				"stat": "protection",
+				"effectiveMultiplier": 1.25
+			}]
+		}
+	],
+	"weaponScripts": [{
+			"script": "/scripts/fr_weaponscripts/randprojectile.lua",
+			"weapons": [
+				"spear",
+				"scythe"
+			],
+			"contexts": [
+				"meleeslash-fire",
+				"meleecombo-fire"
+			],
+			"args": {
+				"projectile": "fumechbladeshadowswoosh",
+				"chance": 20,
+				"params": {
+					"power": 12,
+					"hungermod": 20,
+					"damageKind": "shadow",
+					"speed": 50,
+					"piercing": true
+				}
+			}
+		},
+		{
+			"script": "/scripts/fr_weaponscripts/randprojectile.lua",
+			"weapons": [
+				"katana",
+				"shortsword"
+			],
+			"contexts": [
+				"meleeslash-fire",
+				"meleecombo-fire"
+			],
+			"args": {
+				"projectile": "shadowshot",
+				"chance": 3,
+				"params": {
+					"power": 7.5,
+					"hungermod": 10,
+					"damageKind": "shadow"
+				}
+			}
+		},
+		{
+			"script": "/scripts/fr_weaponscripts/randprojectile.lua",
+			"weapons": [
+				"dagger",
+				"rapier"
+			],
+			"contexts": [
+				"meleeslash-fire",
+				"meleecombo-fire"
+			],
+			"args": {
+				"projectile": "nightarmeleeslash",
+				"chance": 7.5,
+				"params": {
+					"power": 7.5,
+					"hungermod": 10,
+					"damageKind": "shadow"
+				}
+			}
+		}
+	],
+	"special": [
+		"shadowglow1",
+		"darkhunternightar"
+	]
+}
