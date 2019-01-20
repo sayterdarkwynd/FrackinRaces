@@ -4,7 +4,7 @@ function init()
     self.species = world.entitySpecies(entity.id())
     if not self.species then return end
 
-    self.raceJson = root.assetJson("/scripts/raceEffects.config")[self.species]
+    self.raceJson = root.assetJson("/species/skelekin.raceeffect")
 
     self.healingRateGood = 0.015
     self.healingRateBad = 0.045
