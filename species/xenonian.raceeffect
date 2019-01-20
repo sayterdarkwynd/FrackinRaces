@@ -5,16 +5,12 @@
 			"amount": 1
 		},
 		{
-			"stat": "maxEnergy",
-			"baseMultiplier": 0.9
-		},
-		{
 			"stat": "poisonResistance",
 			"amount": 0.4
 		},
 		{
 			"stat": "electricResistance",
-			"amount": -0.2
+			"amount": -0.3
 		},
 		{
 			"stat": "cosmicResistance",
@@ -36,13 +32,18 @@
 	"envEffects": [
 			{
 				"biomes": [
+					"atropus",
+					"atropusdark",
 					"toxic",
 					"protoworld",
 					"protoworlddark",
+					"tidewater"
+					"strangesea",
 					"fungus",
 					"fungal",
-					"atropus",
-					"atropusdark",
+					"penumbra",
+					"moon_toxic",
+					"fugasgiant2",
 					"slimeworld"
 				],
 				"stats": [{
