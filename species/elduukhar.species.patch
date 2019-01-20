@@ -10,22 +10,24 @@
  Diet: Can eat almost anything
  
  ^orange;Perks^reset;:
- +^green;20%^reset; Energy, +^green;2^reset; Protection
- Advantages: When wounded, bleed fire
- Resist: ^green;30%^reset; Fire, ^green;10%^reset; Shadow
+ +^green;10%^reset; Energy, +^green;2^reset; Protection
+ Advantages: When at 50% HP, emit slowing ice clouds
+ Resist: ^green;20%^reset; Fire, ^green;20%^reset; Shadow, ^green;20%^reset; Ice
  Tech: ^green;Crystal Breath - build in [C] menu^reset;
  
  ^orange;Environment^reset;:
  ^green;Aether Sea, Crystalline, Chromatic, Red Desert^reset; biomes increase your health and crit damage.
- ^green;Hot^reset; biomes increase your protection and health.
-  
+ ^green;Hot^reset; biomes increase ^green;15% protection^reset; and ^green;25% health^reset;.
+ ^red;Cold^reset; biomes decrease ^red;15% protection^reset; and ^red;25% health^reset;.
+ 
  ^orange;Weapons^reset;:
  Longsword, Axe, Greataxe:  +^green;20%^reset; max Health, +^green;15%^reset; Protection
  Whip, Chakram, Boomerang: +^green;20%^reset; damage, +^green;15%^reset; Max Energy
  Lunari:  +^green;12%^reset; damage, +^green;25%^reset; Max Energy
     
  ^red;Weaknesses^reset;:
- Weak: ^red;30%^reset; Ice, ^red;10%^reset; Poison"
+ ^red;High Food Cost^reset; for Crystal Breath attack.
+ Weak: ^red;20%^reset; Electric, ^red;20%^reset; Poison"
     }
 
 ]

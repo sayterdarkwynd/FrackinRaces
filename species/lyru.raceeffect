@@ -1,0 +1,110 @@
+{
+	"stats": [
+		{ 
+			"stat": "isCarnivore",
+			"amount": 1 
+		},
+		{
+			"stat": "isOmnivore",
+			"amount": 1 
+		},
+		{
+			"stat": "maxHealth",
+			"baseMultiplier": 0.8
+		},			
+		{
+			"stat": "fireResistance",
+			"amount": 0.2
+		},
+		{
+			"stat" : "poisonResistance",
+			"amount" : 0.1
+		},
+		{
+			"stat": "shadowResistance",
+			"amount": 0.1
+		},
+		{
+			"stat": "radioactiveResistance",
+			"amount": -0.15
+		},
+		{
+			"stat": "electricResistance",
+			"amount": -0.3
+		},			
+		{
+			"stat" : "fallDamageMultiplier",
+			"baseMultiplier" : 0.5
+		},
+		{
+			"stat" : "erchiusImmunity",
+			"amount" : 1
+		}
+	],
+	"controlModifiers": {
+		"speedModifier": 1.05,
+		"airJumpModifier": 1.15
+	},
+	"weaponEffects": [
+		{
+			"weapons" : [ "shortsword" ],
+			"stats" : [
+				{ "stat" : "powerMultiplier", "baseMultiplier" : 1.12 },
+				{ "stat" : "grit", "amount" : 0.20 }
+			]
+		},
+		{
+			"weapons" : [ "dagger", "spear" ],
+			"stats" : [
+				{ "stat" : "powerMultiplier", "baseMultiplier" : 1.12 },
+				{ "stat" : "critChance", "amount" : 5 }
+			]
+		},
+		{
+			"weapons" : [ "machinepistol" ],
+			"stats" : [
+				{ "stat" : "powerMultiplier", "baseMultiplier" : 1.1 },
+				{ "stat" : "critDamage", "amount" : 1 }
+			]
+		},
+		{
+			"weapons" : [ "sniperrifle", "rifle" ],
+			"stats" : [
+				{ "stat" : "critChance", "amount" : 3 },
+				{ "stat" : "critDamage", "amount" : 10 }
+			]
+		},
+		{
+			"weapons" : [ "shotgun" ],
+			"stats" : [
+				{ "stat" : "powerMultiplier", "baseMultiplier" : 1.12 },
+				{ "stat" : "critDamage", "amount" : 1 }
+			]
+		},
+		{
+			"weapons" : [ "boomerang", "chakram" ],
+			"stats" : [
+				{ "stat" : "protection", "amount" : 2 },
+				{ "stat" : "powerMultiplier", "baseMultiplier" : 1.12 }
+			]
+		}
+	],
+	"weaponScripts" : [
+		{
+			"script" : "/scripts/fr_weaponscripts/perfectblockbonus.lua",
+			"contexts" : [ "shield-perfectblock" ],
+			"args" : {
+				"stats" : [
+					{ "stat" : "protection", "amount" : 0 }
+				],
+				"statCombos" : {
+					"powerMultiplier" : {
+						"comboBase" : 2,
+						"max" : 16
+					}
+				},
+				"particles" : "bonusBlock4"
+			}
+		}
+	]
+}

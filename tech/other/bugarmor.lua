@@ -22,6 +22,7 @@ function checkStance()
        animator.setParticleEmitterActive("shieldStance", false)
        animator.setParticleEmitterActive("powerStance", false)	    
        animator.setParticleEmitterActive("defenseStance", true)
+       animator.playSound("activate")
     elseif self.pressUp then
       self.active2 = 0
       self.active3 = 1
@@ -29,6 +30,7 @@ function checkStance()
        animator.setParticleEmitterActive("defenseStance", false)
        animator.setParticleEmitterActive("powerStance", false)	    
        animator.setParticleEmitterActive("shieldStance", true)
+       animator.playSound("activate2")
     elseif self.pressJump then
       self.active2 = 0
       self.active3 = 0
@@ -36,9 +38,10 @@ function checkStance()
        animator.setParticleEmitterActive("defenseStance", false)
        animator.setParticleEmitterActive("shieldStance", false)	    
        animator.setParticleEmitterActive("powerStance", true)
+       animator.playSound("activate3")
     end 
-    local configBombDrop = { power = 0 }
-    world.spawnProjectile("activeStance", mcontroller.position(), entity.id(), {0, 0}, false, configBombDrop)
+    --local configBombDrop = { power = 0 }
+    --world.spawnProjectile("activeStance", mcontroller.position(), entity.id(), {0, 0}, false, configBombDrop)
     self.bombTimer = 3   
 end
 

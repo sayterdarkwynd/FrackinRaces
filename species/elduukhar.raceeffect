@@ -1,0 +1,136 @@
+{
+	"stats": [
+		{
+			"stat": "isRadien",
+			"amount": 1
+		},
+		{
+			"stat": "isOmnivore",
+			"amount": 1
+		},
+		{
+			"stat": "protection",
+			"amount": 2
+		},
+		{
+			"stat": "maxEnergy",
+			"effectiveMultiplier": 1.10
+		},
+		{
+			"stat": "poisonResistance",
+			"amount": -0.2
+		},
+		{
+			"stat": "electricResistance",
+			"amount": -0.2
+		},
+		{
+			"stat": "shadowResistance",
+			"amount": 0.2
+		},
+		{
+			"stat": "fireResistance",
+			"amount": 0.2
+		},			
+		{
+			"stat": "iceResistance",
+			"amount": 0.2
+		}
+	],
+	"envEffects": [
+		{
+			"biomes": [
+				"aethersea",
+				"aetherseafloor",
+				"crystalmoon",
+				"chromatic",
+				"desertwastes",
+				"crystaldesert",
+				"crystaldesertaether",
+				"crystalplain",
+				"crystalswamp",
+				"crystalswampaether"
+			],
+			"stats": [
+				{
+					"stat": "maxHealth",
+					"effectiveMultiplier": 1.25
+				},
+				{
+					"stat": "critBonus",
+					"amount": 10
+				}
+			]
+		},
+		{
+			"biomes": "hot",
+			"stats": [
+				{
+					"stat": "maxHealth",
+					"effectiveMultiplier": 1.25
+				},
+				{
+					"stat": "protection",
+					"effectiveMultiplier": 1.15
+				}
+			]
+		},
+		{
+			"biomes": "cold",
+			"stats": [
+				{
+					"stat": "maxHealth",
+					"effectiveMultiplier": 0.75
+				},
+				{
+					"stat": "protection",
+					"effectiveMultiplier": 0.85
+				}
+			]
+		}
+	],
+	"weaponEffects": [
+		{
+			"weapons": [ "longsword", "axe", "greataxe" ],
+			"stats": [
+				{
+					"stat": "maxHealth",
+					"effectiveMultiplier": 1.15
+				},
+				{
+					"stat": "protection",
+					"effectiveMultiplier": 1.15
+				}
+			]
+		},
+		{
+			"weapons": [ "whip", "chakram", "boomerang" ],
+			"stats": [
+				{
+					"stat": "powerMultiplier",
+					"effectiveMultiplier": 1.20
+				},
+				{
+					"stat": "maxEnergy",
+					"effectiveMultiplier": 1.15
+				}
+			]
+		},
+		{
+			"weapons": ["lunari"],
+			"stats": [
+				{
+					"stat": "powerMultiplier",
+					"effectiveMultiplier": 1.12
+				},
+				{
+					"stat": "maxEnergy",
+					"effectiveMultiplier": 1.25
+				}
+			]
+		}
+	],
+	"special": [
+		"elduukharBonus"
+	]
+}

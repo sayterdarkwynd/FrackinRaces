@@ -6,16 +6,11 @@
   "inventoryIcon" : "fulobster.png",
   "description" : "Delicious aquatic horror.",
   "shortdescription" : "Lobster",
-  "foodValue" : 30,
+  "foodValue" : 5,
   "tooltipKind" : "food",
   "builder" : "/items/buildscripts/buildfood.lua",
   "maxStack" : 99,
-  "blockingEffects" : [
-    "wellfed"
-  ],
-  "effects" : [ [
-    {
-        "effect" : "carnivorefood"
-    }    
-  ] ]
+  "learnBlueprintsOnPickup" : [ "fulobstercooked" ],
+  "blockingEffects" : ["wellfed"],
+  "effects" : [ [ {"effect" : "carnivorefood"} ] ]
 }

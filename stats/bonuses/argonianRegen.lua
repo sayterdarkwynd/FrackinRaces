@@ -4,8 +4,8 @@ function init()
     --[[self.species = world.entitySpecies(entity.id())
     if not self.species then return else didit = true end
 
-    self.raceJson = root.assetJson("/scripts/raceEffects.config")
-    self.specialConfig = self.raceJson[self.species].specialConfig
+    self.raceJson = root.assetJson("/species/argonian.raceeffect")
+    self.specialConfig = self.raceJson.specialConfig
 ]]
     script.setUpdateDelta(10)
 end

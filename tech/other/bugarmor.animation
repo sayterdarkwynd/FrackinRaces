@@ -22,6 +22,26 @@
       "emissionRate" : 0.25,
       "emissionRateVariance" : 1.5,
       "particles" : [
+       {
+          "particle" : {
+            "type" : "ember",
+            "size" : 1.5,
+            "color" : [222, 66, 30, 230],
+            "fade" : 0.9,
+            "destructionAction" : "shrink",
+            "destructionTime" : 0.8,
+            "position" : [0.0, 0.0],
+            "offsetRegion" : [0, 0, 0, 0],
+            "initialVelocity" : [0, 5.0],
+            "finalVelocity" : [0, 10],
+            "approach" : [0, 10],
+            "timeToLive" : 0.6,
+            "variance" : {
+              "initialVelocity" : [0.2, 0],
+              "size" : 0.5
+            }
+          }
+        },        
         {
           "particle" : {
             "type" : "textured",
@@ -50,7 +70,27 @@
       "enabled" : false,
       "emissionRate" : 0.25,
       "emissionRateVariance" : 1.5,
-      "particles" : [
+      "particles" : [       
+       {
+          "particle" : {
+            "type" : "ember",
+            "size" : 1.5,
+            "color" : [122, 122, 122, 230],
+            "fade" : 0.9,
+            "destructionAction" : "shrink",
+            "destructionTime" : 0.8,
+            "position" : [0.0, 0.0],
+            "offsetRegion" : [0, 0, 0, 0],
+            "initialVelocity" : [0, 5.0],
+            "finalVelocity" : [0, 10],
+            "approach" : [0, 10],
+            "timeToLive" : 0.6,
+            "variance" : {
+              "initialVelocity" : [0.2, 0],
+              "size" : 0.5
+            }
+          }
+        },      
         {
           "particle" : {
             "type" : "textured",
@@ -80,6 +120,26 @@
       "emissionRate" : 0.25,
       "emissionRateVariance" : 1.5,
       "particles" : [
+       {
+          "particle" : {
+            "type" : "ember",
+            "size" : 1.5,
+            "color" : [22, 55, 222, 230],
+            "fade" : 0.9,
+            "destructionAction" : "shrink",
+            "destructionTime" : 0.8,
+            "position" : [0.0, 0.0],
+            "offsetRegion" : [0, 0, 0, 0],
+            "initialVelocity" : [0, 5.0],
+            "finalVelocity" : [0, 10],
+            "approach" : [0, 10],
+            "timeToLive" : 0.6,
+            "variance" : {
+              "initialVelocity" : [0.2, 0],
+              "size" : 0.5
+            }
+          }
+        },       
         {
           "particle" : {
             "type" : "textured",
@@ -109,6 +169,26 @@
       "emissionRate" : 2.0,
       "emissionRateVariance" : 1.5,
       "particles" : [
+       {
+          "particle" : {
+            "type" : "ember",
+            "size" : 1.5,
+            "color" : [22, 22, 22, 230],
+            "fade" : 0.9,
+            "destructionAction" : "shrink",
+            "destructionTime" : 0.8,
+            "position" : [0.0, 0.0],
+            "offsetRegion" : [0, 0, 0, 0],
+            "initialVelocity" : [0, 5.0],
+            "finalVelocity" : [0, 10],
+            "approach" : [0, 10],
+            "timeToLive" : 0.6,
+            "variance" : {
+              "initialVelocity" : [0.2, 0],
+              "size" : 0.5
+            }
+          }
+        },       
         {
           "particle" : {
             "type" : "textured",
@@ -136,7 +216,9 @@
   },
   
   "sounds" : {
-    "activate" : [ "/sfx/melee/shield_block_wood_perfect.ogg" ]
+    "activate" : [ "/sfx/tech/tech_multijump.ogg" ],
+    "activate2" : [ "/sfx/tech/tramplatform_close.ogg" ],
+    "activate3" : [ "/sfx/tech/vehicle_appear3.ogg" ]
   }
   
   

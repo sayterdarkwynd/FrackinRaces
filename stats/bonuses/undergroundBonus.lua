@@ -2,7 +2,7 @@ function init()
     self.species = world.entitySpecies(entity.id())
     if not self.species then return end
 
-    self.raceConfig = root.assetJson("/scripts/raceEffects.config")[self.species]
+    self.raceConfig = root.assetJson("/species/greckan.raceeffect")
 
     underground = undergroundCheck()
 
