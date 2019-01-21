@@ -13,9 +13,9 @@ function init()
             self.helper:loadScript({script=path, args=self.helper.speciesConfig[map]})
         end
     end
-
-    -- Add the stats
-    self.statID = effect.addStatModifierGroup(self.helper.stats or {})
+	for _,script in pairs(self.helper.speciesConfig.scripts or {}) do
+		self.helper:loadScript(script)
+	end
 
     script.setUpdateDelta(10)
 end
@@ -23,15 +23,13 @@ end
 function update(dt)
     if not self.species then init() end
 
-	self.helper:applyControlModifiers()
     self.helper:clearPersistent()
+	self.helper:applyControlModifiers()
+	self.helper:applyPersistent(self.helper.speciesConfig.stats, "FR_racialStats")
     self.helper:runScripts("racialscript", self, dt)
 end
 
 function uninit()
-    if self.statID then
-        effect.removeStatModifierGroup(self.statID)
-    end
     if self.helper then
         self.helper:clearPersistent()
     end
