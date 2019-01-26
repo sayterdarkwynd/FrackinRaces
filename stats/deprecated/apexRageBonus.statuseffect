@@ -7,7 +7,7 @@
   "defaultDuration" : 3,
 
   "scripts" : [
-    "apexRageBonus.lua"
+    "deprecated.lua"
   ]
 
 }
