@@ -5,15 +5,15 @@ local FR_old_init = init
 local FR_old_update = update
 
 function init()
-    FR_old_init()
-    self.lastYPosition = 0
-    self.lastYVelocity = 0
-    self.fallDistance = 0
-    local bounds = mcontroller.boundBox() --Mcontroller for movement
+	FR_old_init()
+	self.lastYPosition = 0
+	self.lastYVelocity = 0
+	self.fallDistance = 0
+	local bounds = mcontroller.boundBox() --Mcontroller for movement
 end
 
 function update(dt)
-    FR_old_update(dt)
+	FR_old_update(dt)
 	
 	if not self.species then
 		self.species = world.entitySpecies(entity.id())
