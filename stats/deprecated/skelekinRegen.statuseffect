@@ -9,7 +9,7 @@
   "defaultDuration" : 3,
 
   "scripts" : [
-    "skelekinRegen.lua"
+    "deprecated.lua"
   ]
 
 }
