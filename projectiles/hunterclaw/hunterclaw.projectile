@@ -12,5 +12,15 @@
   "piercing" : true,
   "flippable" : true,
   "damageKind" : "bow",
-  "knockback" : 12
+  "knockback" : 15,
+  "actionOnReap" : [
+    {
+      "action" : "explosion",
+      "foregroundRadius" : 3,
+      "backgroundRadius" : 2,
+      "explosiveDamageAmount" : 1,
+      "harvestLevel" : 99,
+      "delaySteps" : 2
+    }  
+  ]
 }

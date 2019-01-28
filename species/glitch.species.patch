@@ -17,10 +17,10 @@
  ^orange;Weapons^reset;:
  Mace/Greataxes/Axe: Consumes food to increase Crit +^green;2%^reset;
  1h combos increase defense by +^green;2^reset;
- Shield Bash ^green;restores health^reset;
- Bow/Crossbow: ^green;+3%^reset; Crit Chance
- Shield: +^green;2%^reset; Shield Bash, +^green;3^reset; Protection, +^green;8%^reset; Health, +^green;1%^reset; Regen
+ Bow/Crossbow: ^green;+2%^reset; Crit Chance
+ Shield: +^green;8%^reset; Health,+^green;2%^reset; Shield Bash, (Raised)+^green;3^reset; Protection,  (Raised)+^green;1%^reset; Regen
  Shield: Perfect Blocks ^green;increase damage^reset; (stacks)
+ Shield Bash ^green;restores health^reset;
     
  ^red;Weaknesses^reset;: 
  When Electrified lose ^red;50%^reset; power and energy

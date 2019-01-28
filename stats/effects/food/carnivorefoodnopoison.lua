@@ -14,7 +14,7 @@ function init()
 end
 
 function update(dt)
-	 if status.statPositive("isCarnivore") or status.statPositive("isOmnivore") or status.stat("isRadien")==1 then
+	 if status.statPositive("isCarnivore") or status.statPositive("isOmnivore") or status.stat("isRadien")==1 or status.stat("isMantizi")==1 then
 	   applyEffects()
 	 elseif status.statPositive("isHerbivore") or status.statPositive("isRobot")  or status.statPositive("isSugar") then
 	   if (self.tickTimer <= 0) then

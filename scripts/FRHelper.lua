@@ -8,8 +8,15 @@ function FRHelper:new(species,gender)
     frHelper.frconfig = root.assetJson("/frackinraces.config")
 
     frHelper.species = species
-    frHelper.config = root.assetJson("/scripts/raceEffects.config")
-    frHelper.speciesConfig = frHelper.config[species] or {}
+	local success
+	if species then
+		success, frHelper.speciesConfig = pcall(
+			function () 
+				return root.assetJson(string.format("/species/%s.raceeffect", species))
+			end
+		)
+	end
+	if not success then frHelper.speciesConfig = {} end
 	
 	if frHelper.speciesConfig.gender and frHelper.speciesConfig.gender[gender] then
 	  frHelper.speciesConfig = util.mergeTable(frHelper.speciesConfig,frHelper.speciesConfig.gender[gender])
@@ -33,14 +40,10 @@ function FRHelper:new(species,gender)
 end
 
 -- Applies the given status parameters (name is required for setting persistent effects)
+-- Is a combination of applying persistent effects, control modifiers, and scripts all in one
 -- Extra arguments are sent to any scripts run
 function FRHelper:applyStats(stats, name, ...)
-    if name then
-		if not compare(stats.stats or {},self.persistentEffects[name]) then
-			status.setPersistentEffects(name, stats.stats or {})
-			self.persistentEffects[name] = stats.stats or {}
-		end
-    end
+    if name then self:applyPersistent(stats.stats, name) end
     self:applyControlModifiers(stats.controlModifiers, stats.controlParameters)
     if stats.scripts then
         for _,script in ipairs(stats.scripts) do
@@ -63,6 +66,15 @@ end
 -- Checks for if the given persistent effect is currently applied
 function FRHelper:checkStatusApplied(name)
     return #status.getPersistentEffects(name) > 0 and true or false
+end
+
+-- Apply the given persistent effect with the given name
+function FRHelper:applyPersistent(stats, name)
+	-- Don't reapply an identical persistent effect
+	if not compare(stats or {},self.persistentEffects[name]) then
+		status.setPersistentEffects(name, stats or {})
+		self.persistentEffects[name] = stats or {}
+	end
 end
 
 -- Function for clearing applied persistent effects added through applyStats()

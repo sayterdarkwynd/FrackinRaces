@@ -61,17 +61,17 @@ function update(args)
   -- make sure they are fed enough
   getFood()
   -- if fed, move to the effect
-  
 	  if self.active then
 	    if self.bombTimer > 0 then
 	      self.bombTimer = math.max(0, self.bombTimer - args.dt)
 	    end
-	    if (self.pressDown) and not self.pressLeft and not self.pressRight and not self.pressUp and not self.pressJump then
-
+	    --make sure we are only holding down
+	    if (self.pressDown) and not self.pressLeft and not self.pressRight and not self.pressUp and not self.pressJump then 
 	      if (self.conshakTimer < 350) then
 		self.conshakTimer = self.conshakTimer + 1  
-		if (self.foodValue >=10) then
-		  status.setResource("food",self.foodValue -0.05)  --set food to almost nothing
+		--set food to reduce, but never to 0
+		if (self.foodValue >=10) then 
+		  status.setResource("food",self.foodValue -0.05)  
 		else
 		  status.overConsumeResource("energy", config.getParameter("energyCostPerSecond"),1)
 		  status.overConsumeResource("health", 0.035,1)
@@ -88,14 +88,14 @@ function update(args)
 	      end
 
 	      if (self.conshakTimer >= 350) then
-	      self.rand = math.random(1,2)
-	      self.onehundred = math.random(1,100)
+	      self.rand = math.random(1,3)  -- how many Bulbs can we potentially spawn?
+	      self.onehundred = math.random(1,100)   --chance to spawn rarer bulb types
 		      if (self.foodValue >=10) then    --must have sufficient food to grow a seed
 			animator.setParticleEmitterActive("bulbStance", false)
 			animator.setParticleEmitterActive("bulb", true)
 			--world.placeObject("xi_bulb",mcontroller.position(),1) -- doesnt seem to work with that position
 			if self.onehundred == 100 then
-			  world.spawnItem("xi_bulb3", mcontroller.position(), self.rand)
+			  world.spawnItem("xi_bulb3", mcontroller.position(), 1)
 			elseif self.onehundred > 80 then
 			  world.spawnItem("xi_bulb2", mcontroller.position(), self.rand)
 			else
@@ -108,7 +108,7 @@ function update(args)
 			animator.setParticleEmitterActive("bulbStance", false)
 			animator.setParticleEmitterActive("bulb", true)
 			if self.onehundred == 100 then
-			  world.spawnItem("xi_bulb3", mcontroller.position(), self.rand)
+			  world.spawnItem("xi_bulb3", mcontroller.position(), 1)
 			elseif self.onehundred > 95 then
 			  world.spawnItem("xi_bulb2", mcontroller.position(), self.rand)
 			else

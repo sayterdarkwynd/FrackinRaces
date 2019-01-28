@@ -47,9 +47,10 @@ function checkFood()
 end
 
 function damageConfig()
-  foodVal = (self.foodValue /20)
-  healthVal = status.resource("health")/30
-  totalVal = foodVal + healthVal 
+  foodVal = (self.foodValue / 20)
+  healthVal = status.resource("health") / 30
+  worldLevel = world.threatLevel()
+  totalVal = (foodVal + healthVal) + worldLevel 
 end
 
 function activeFlight()
@@ -100,7 +101,7 @@ function update(args)
 	
 	if args.moves["special1"] and self.firetimer == 0 and not (primaryItem and root.itemHasTag(primaryItem, "weapon")) and not (altItem and root.itemHasTag(altItem, "weapon")) then 
 		if self.foodValue > 10 then
-		    status.addEphemeralEffects{{effect = "foodcostclaw", duration = 0.03}}
+		    status.addEphemeralEffects{{effect = "foodcostclaw", duration = 0.01}}
 		else
 		    status.overConsumeResource("energy", 3)
 		end	
