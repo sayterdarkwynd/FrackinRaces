@@ -55,7 +55,7 @@
 			],
 			"stats": [{
 				"stat": "critChance",
-				"amount": 3
+				"amount": 2
 			}]
 		},
 		{
@@ -65,6 +65,10 @@
 			"stats": [{
 				"stat": "maxHealth",
 				"baseMultiplier": 1.08
+			},
+			{
+				"stat": "shieldBash",
+				"amount": 3
 			}]
 		}
 	],
@@ -92,19 +96,13 @@
 		},
 		{
 			"script": "/scripts/fr_weaponscripts/energybonus.lua",
-			"contexts": [
-				"meleecombo-fire"
-			],
-			"weapons": [
-				"mace",
-				"axe",
-				"greataxe"
-			],
+			"contexts": [ "meleecombo-fire" ],
+			"weapons": [ "mace","axe","greataxe" ],
 			"args": {
 				"energyReq": 0.25,
 				"stats": [{
 					"stat": "critChance",
-					"amount": 3
+					"amount": 2
 				}]
 			}
 		},
@@ -150,10 +148,7 @@
 			],
 			"args": {
 				"name": "FR_glitchShieldRaised",
-				"stats": [{
-						"stat": "powerMultiplier",
-						"baseMultiplier": 1.03
-					},
+				"stats": [
 					{
 						"stat": "protection",
 						"amount": 3
@@ -180,11 +175,7 @@
 	],
 	"liquidEffects": [{
 		"name": "glitchLiquidEffect",
-		"liquids": [
-			5,
-			44,
-			11
-		],
+		"liquids": [ 5,44,11 ],
 		"stats": [{
 				"stat": "maxEnergy",
 				"baseMultiplier": 1.25
