@@ -106,15 +106,16 @@ function update(dt)
 			status.clearPersistentEffects("hungerBoost")
 		end
 	
-	  -- when the sun is out, florans regenerate food    
+	  -- when the sun is out, florans regenerate food   
+	  if not world.entityType(entity.id()) == "npc" then
 		if (hungerLevel < hungerMax) and ( self.tickTimer <= 0 ) then
 			self.tickTimer = self.tickTime
 			adjustedHunger = hungerLevel + (hungerLevel * 0.008)
-				if not world.entityType(entity.id()) == "npc" then
+				
 				  status.setResource("food", adjustedHunger)
-				end
+				
 		end		
-	       
+	   end    
 	   -- When it is sunny and they are well fed, florans regenerate
 		if hungerLevel >= 28  then -- 28 is 40% of 70, which is the maxFood value
 			if underground and lightLevel < 60 then -- we cant do it well underground
