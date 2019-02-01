@@ -6,10 +6,17 @@ function init()
     -- regen default
     self.healingRate = 1.01 / config.getParameter("healTime", 220)
     --food defaults
-    hungerMax = { pcall(status.resourceMax, "food") }
-    hungerMax = hungerMax[1] and hungerMax[2]
-    hungerLevel = status.resource("food")
-    baseValue = config.getParameter("healthDown",0)*(status.resourceMax("food"))
+    if not world.entityType(entity.id()) == "npc" then
+	    hungerMax = { pcall(status.resourceMax, "food") }
+	    hungerMax = hungerMax[1] and hungerMax[2]
+	    hungerLevel = status.resource("food")    
+    else
+	    hungerMax = 70
+	    hungerLevel = 30  
+    end
+    
+    baseValue = config.getParameter("healthDown",0)*(hungerLevel)
+    
     self.tickTime = 1.0
     self.tickTimePenalty = 5.0
     self.tickTimer = self.tickTime 
@@ -47,14 +54,15 @@ function update(dt)
 		hungerLevel = 50
 	end
     --food defaults
-    hungerMax = { pcall(status.resourceMax, "food") }
+    hungerMax = { pcall(status.resourceMax, self.foodValue) }
     hungerMax = hungerMax[1] and hungerMax[2]
 
-
-    baseValue = config.getParameter("healthDown",0)*(status.resourceMax("food"))
     self.tickTimer = self.tickTimer - dt
     self.tickTimerPenalty = self.tickTimerPenalty - dt
-    self.foodValue = status.resource("food")
+    self.foodValue = status.resource("food") or 30
+    
+    baseValue = config.getParameter("healthDown",0)*(self.foodValue)
+
 	-- Night penalties
 	if not daytime then  -- Florans lose HP and Energy when the sun is not out
 		status.setPersistentEffects("nightpenalty", { 
@@ -62,17 +70,23 @@ function update(dt)
 		{stat = "maxEnergy", baseMultiplier = 0.70 }
 		}) 
 		-- when the sun is down, florans lose food
-		if (hungerLevel < hungerMax) and ( self.tickTimerPenalty <= 0 ) then
-			self.tickTimerPenalty = self.tickTimePenalty
-			--reduce the hunger drain if bathed in light
-			if lightLevel > 25 then --you can reduce the drain with light
-				adjustedHunger = hungerLevel - (hungerLevel * 0.0095)
-				status.setResource("food", adjustedHunger)
-			else
-			-- otherwise we lose normal amount
-				adjustedHunger = hungerLevel - (hungerLevel * 0.016)
-				status.setResource("food", adjustedHunger)	           
-			end	
+		if not world.entityType(entity.id()) == "npc" then
+			if (hungerLevel < hungerMax) and ( self.tickTimerPenalty <= 0 ) then
+				self.tickTimerPenalty = self.tickTimePenalty
+				--reduce the hunger drain if bathed in light
+				if lightLevel > 25 then --you can reduce the drain with light
+					adjustedHunger = hungerLevel - (hungerLevel * 0.0095)
+					if not world.entityType(entity.id()) == "npc" then
+					  status.setResource("food", adjustedHunger)
+					end
+				else
+				-- otherwise we lose normal amount
+					adjustedHunger = hungerLevel - (hungerLevel * 0.016)
+					if not world.entityType(entity.id()) == "npc" then
+					  status.setResource("food", adjustedHunger)
+					end	           
+				end	
+			end
 		end
 	end
 	
@@ -92,20 +106,25 @@ function update(dt)
 			status.clearPersistentEffects("hungerBoost")
 		end
 	
-	  -- when the sun is out, florans regenerate food    
+	  -- when the sun is out, florans regenerate food   
+	  if not world.entityType(entity.id()) == "npc" then
 		if (hungerLevel < hungerMax) and ( self.tickTimer <= 0 ) then
 			self.tickTimer = self.tickTime
 			adjustedHunger = hungerLevel + (hungerLevel * 0.008)
-			status.setResource("food", adjustedHunger)
+				
+				  status.setResource("food", adjustedHunger)
+				
 		end		
-	       
+	   end    
 	   -- When it is sunny and they are well fed, florans regenerate
 		if hungerLevel >= 28  then -- 28 is 40% of 70, which is the maxFood value
 			if underground and lightLevel < 60 then -- we cant do it well underground
 				self.healingRate = 0
 				status.modifyResourcePercentage("health", self.healingRate * dt)  
 			elseif underground and lightLevel > 60 then -- we cant do it well underground and it costs food
-				status.modifyResource("food", (status.resource("food") * -0.005) )
+				if not world.entityType(entity.id()) == "npc" then
+				  status.modifyResource("food", (status.resource("food") * -0.005) )
+				end			
 				self.healingRate = 1.00005 / config.getParameter("healTime", 320)
 				status.modifyResourcePercentage("health", self.healingRate * dt)
 			elseif lightLevel > 95 then
