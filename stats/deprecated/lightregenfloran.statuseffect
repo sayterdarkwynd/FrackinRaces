@@ -7,7 +7,7 @@
   "defaultDuration" : 1,
 
   "scripts" : [
-    "lightregenfloran.lua"
+    "deprecated.lua"
   ],
 
   "animationConfig" : "lightregen.animation",

@@ -196,8 +196,38 @@
 			}
 		}
 	],
+	"scripts" : [
+		{
+			"script" : "/scripts/fr_scripts/floranStuff.lua",
+			"args" : {
+				"daytimeConfig" : {
+					"stats" : [
+						{ "stat" : "energyRegenBlockTime", "amount" : -0.35 },
+						{ "stat" : "energyRegenPercentageRate", "amount" : 0.35 }
+					],
+					"hungerRegen" : 0.008,
+					"hungerThreshold" : 0.40,
+					"maxLight" : 0.95,
+					"minLight" : 0.25,
+					"maxRegen" : 0.003,
+					"minRegen" : 0.001,
+					"undergroundLight" : 0.60,
+					"undergroundScale" : 0.5,
+					"undergroundHunger" : -0.005
+				},
+				"nightConfig" : {
+					"stats" : [
+						{ "stat" : "maxHealth", "baseMultiplier" : 0.90 },
+						{ "stat" : "maxEnergy", "baseMultiplier" : 0.70 }
+					],
+					"hungerLoss" : -0.0032,
+					"hungerLossLight" : -0.0019,
+					"lightThreshold" : 0.25
+				}
+			}
+		}
+	],
 	"special": [
-		"starvingedgefloran",
-		"lightregenfloran"
+		"starvingedgefloran"
 	]
 }
