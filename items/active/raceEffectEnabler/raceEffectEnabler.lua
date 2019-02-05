@@ -8,7 +8,11 @@ function activate(fireMode, shiftHeld)
       elseif self.species == "veluu" then
         player.makeTechAvailable("veluuclaw")
         player.enableTech("veluuclaw")
-        player.equipTech("veluuclaw")        
+        player.equipTech("veluuclaw")  
+	  elseif self.species == "cat" then
+        player.makeTechAvailable("veluuclaw")
+        player.enableTech("veluuclaw")
+        player.equipTech("veluuclaw") 		
       elseif self.species == "avali" or self.species == "novali" then
         player.makeTechAvailable("flight_avali")
         player.enableTech("flight_avali")
