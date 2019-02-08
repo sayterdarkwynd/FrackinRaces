@@ -1,7 +1,7 @@
 [
     { "op": "replace", 
     "path" : "/charCreationTooltip/description" , 
-    "value" : "An uplifted species by the Vel'uuish. This telepathic and telekinetic species follows their uplifters in their culture and use of technology. One of their favorite things to do is to make bad cat-based puns. Many have overcome the tendency to be enticed to pounce, but others embrace it, not wanting to forsake their origins as a tiknass, or cat.
+    "value" : "An uplifted species by the Vel'uuish. This telepathic and telekinetic species follows their uplifters in their culture and use of technology. They love making terrible cat-based puns.
   
  Diet: Carnivorous
   
