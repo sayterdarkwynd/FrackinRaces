@@ -1,0 +1,16 @@
+[
+  { "op":"add", 
+"path":"/effects", 
+"value": [ ]
+  },
+  {
+  "op": "add",
+  "path": "/effects",
+  "value": [
+    [
+        {
+          "effect" : "carnivorefoodnopoison"
+        }
+    ]
+  ]
+}]

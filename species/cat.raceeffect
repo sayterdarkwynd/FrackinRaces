@@ -1,7 +1,7 @@
 {
 	"stats": [
 		{
-			"stat": "isOmnivore",
+			"stat": "isCarnivore",
 			"amount": 1
 		},
 		{
@@ -22,7 +22,7 @@
 		},
 		{
 			"stat": "fallDamageMultiplier",
-			"baseMultiplier": 0.5
+			"baseMultiplier": 0.2
 		},		
 		{
 			"stat": "fujungleslowImmunity",
@@ -102,6 +102,6 @@
 		}		
 	],
 	"special": [
-		"headlampveluu"
+		"headlampcat"
 	]	
 }
