@@ -56,7 +56,6 @@ function FRHelper:call(args, main, dt, ...)
 		local hungerCalc = math.min(1, (hungerPerc - dayConfig.minHunger) / (dayConfig.maxHunger - dayConfig.minHunger))
 		local regenCalc = (dayConfig.maxRegen - dayConfig.minRegen) * hungerCalc + dayConfig.minRegen
 		
-		-- When it is sunny and they are well fed, florans regenerate
 		if hungerPerc >= dayConfig.minHunger then
 			status.modifyResourcePercentage("health", regenCalc * dt)
 		end
