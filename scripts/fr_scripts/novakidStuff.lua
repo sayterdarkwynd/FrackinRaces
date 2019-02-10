@@ -1,5 +1,5 @@
 --[[
-	Provides a variety of effects designed for use by the Floran race.
+	Provides a variety of effects designed for use by the Novakid race.
 	Arguments:
 	
 	"args" : {
