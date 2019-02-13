@@ -50,7 +50,7 @@
 			"combos": [ [ "pistol", "pistol" ] ],
 			"stats": [
 				{ "stat": "grit", "amount": 0.25 },
-				{ "stat": "maxEnergy", "baseMultiplier": 1.15 },
+				{ "stat": "maxEnergy", "effectiveMultiplier": 1.15 },
 				{ "stat": "powerMultiplier", "amount": 0.09 }
 			],
 			"controlModifiers": {
@@ -69,19 +69,19 @@
 		}
 	],
 	"weaponScripts": [
-		{
-			"script": "/scripts/fr_weaponscripts/novakidspeed.lua",
-			"weapons": [ "pistol" ],
-			"contexts": [ "gunfire-update", "gunfire-postauto", "gunfire-postburst" ],
-			"args": {
-				"damageProportion": 0.5,
-				"damageFloor": 0.5,
-				"damageCeiling": 1,
-				"lightValue": 200,
-				"minSpeed": 1,
-				"maxSpeed": 0
-			}
-		}
+		//{  disabled this ability. too OP.
+		//	"script": "/scripts/fr_weaponscripts/novakidspeed.lua",
+		//	"weapons": [ "pistol" ],
+		//	"contexts": [ "gunfire-update", "gunfire-postauto", "gunfire-postburst" ],
+		//	"args": {
+		//		"damageProportion": 0.5,
+		//		"damageFloor": 0.5,
+		//		"damageCeiling": 1,
+		//		"lightValue": 200,
+		//		"minSpeed": 1,
+		//		"maxSpeed": 0
+		//	}
+		//}
 	],
 	"scripts" : [
 		{
