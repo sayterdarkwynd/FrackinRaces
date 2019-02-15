@@ -4,7 +4,7 @@
 			"amount": 1
 		},
 		{
-			"stat": "foodDelta",
+			"stat": "maxFood",
 			"baseMultiplier": 1.06146
 		},
 		{

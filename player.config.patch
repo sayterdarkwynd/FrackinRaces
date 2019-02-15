@@ -1,5 +1,20 @@
 [
-
+  {
+    "op": "remove",
+    "path": "/statusControllerSettings/resources/food/maxValue"
+  },
+  {
+    "op": "add",
+    "path": "/statusControllerSettings/resources/food/maxStat",
+    "value": "maxFood"
+  },
+    {
+    "op": "add",
+    "path": "/statusControllerSettings/stats/maxFood",
+    "value": {
+      "baseValue": 70
+    }
+  },
     { "op": "add", "path": "/defaultBlueprints/tier1/-", "value": {"item": "robosnax"} },
     { "op": "add", "path": "/defaultBlueprints/tier1/-", "value": {"item": "raceEffectEnabler"} },
     { "op": "add", "path": "/defaultBlueprints/tier1/-", "value": {"item": "meatkibble"} },   

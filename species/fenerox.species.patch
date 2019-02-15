@@ -6,16 +6,28 @@
     { "op": "replace", 
     "path" : "/charCreationTooltip/description" , 
     "value" : "The primitive Fenerox are new to the established galactic order. Their tech is generally rather low, and only a few have moved beyond their hunter-gatherer lifestyle. These nocturnal hunters are exceptional at their craft, and are agile and deadly.
+
+ Diet: Carnivorous
+  
+ ^orange;Perks^reset;:
+ +^green;10%^reset; Energy, +^green;12%^reset; Speed, 11% Jump 
+ ^green;Regenerate at night and gain energy regeneration^reset;
+ Resist: ^green;40%^reset; Poison, ^green;40%^reset; Electric
+ Tech: ^green;Hunter's Claw - build in [C] menu^reset;
+ 
+ ^orange;Environment^reset;:
+ In dry grasslands you gain +15% Damage
+ At night, if well fed, gain +15% Physical Resistance and +2 protection
+  
+ ^orange;Weapons^reset;:
+ Boomerang/Chakram: ^green;+10% Damage, +2% Crit^reset;
+ Spear: ^green;get +2% Crit, +10% Damage. +20% protection when spear is held out.^reset;
+ ^green;Add your current speed/4 as bonus melee damage.^reset;
     
-    ^red;-10% HP, Weak: 20% Fire, 20% Shadow, Eats often^reset;
-    ^green;40% Electric and 40% Poison resistance^reset;
-    ^green;When in a dry grassland, gain +15% Damage^reset;
-    Gains Hunter's Claw tech (use Race Tech Enabler). When unarmed, can hunt with F.
-    ^red;+10% Energy, +5% Damage,+12% speed and 11% jump height^reset;
-    ^green;Regenerate at night and gain 25% Energy Regeneration^reset;
-    ^green;If fed well at night, gain +2 protection and +15% Physical Resistance.^reset;
-    Boomerang/Chakram: ^green;+10% Damage, +2% Crit^reset;
-    Spears: ^green;get +2% Crit, +10% Damage. +20% protection when spear is held out.^reset;
-    ^green;Add your current speed/4 as bonus damage in melee.^reset;"
+ ^red;Weaknesses^reset;:
+ -^red;10%^reset; Health, 
+ Weak: ^red;20%^reset; Fire, ^red;20%^reset; Shadow, -25% Max Food"   
     }
 ]
+
+ 

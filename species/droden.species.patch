@@ -11,7 +11,8 @@
  ^orange;Perks^reset;: 
  +^green;15%^reset; Energy, +^green;10%^reset; Dmg, +^green;10%^reset; Speed
  Resist: ^green;40%^reset; Poison, ^green;40%^reset; Radiation
- Immune: Poison, Breath, Hunger
+ ^green;+250% Max Food^reset;
+ Immune: Poison, Breath
  
  ^orange;Weapons^reset;:    
  Broadsword/Shortsword: +^green;2%^reset; Crit Chance

@@ -16,6 +16,10 @@
 			"baseMultiplier": 0.835
 		},
 		{
+			"stat": "maxFood",
+			"amount": 80
+		},			
+		{
 			"stat": "physicalResistance",
 			"amount": 0.15
 		},
