@@ -103,7 +103,7 @@
 						{ "stat" : "maxEnergy", "baseMultiplier" : 0.75 }
 					],
 					"hungerThreshold" : 0.5,     // Hunger% at which regeneration is allowed at night
-					"hungerLoss" : -0.005,      // Hunger%/s lost at night
+					"hungerLoss" : -0.002,      // Hunger%/s lost at night
 					"regen" : 0.010              // Health%/s gained at night
 				}
 			}
