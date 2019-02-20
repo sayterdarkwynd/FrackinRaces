@@ -42,7 +42,7 @@ function FRHelper:call(args, main, dt, ...)
 	if not daytime then
 		local nightConfig = args.nightConfig
 		self:applyStats(nightConfig, "FR_novakidNight", main, dt, ...)
-		if hungerPerc > nightConfig.hungerThreshold then
+		if hungerPerc > nightConfig.hungerThreshold and status.resourcePercentage("health") < 1.0 then
 			if hungerEnabled then
 				status.modifyResourcePercentage("food", nightConfig.hungerLoss * dt)
 			end
