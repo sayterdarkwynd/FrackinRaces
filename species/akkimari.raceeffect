@@ -9,8 +9,8 @@
 			"amount": 1
 		},
 		{
-			"stat": "foodDelta",
-			"baseMultiplier": 0.8
+			"stat": "maxFood",
+			"effectiveMultiplier": 2
 		},
 		{
 			"stat": "physicalResistance",

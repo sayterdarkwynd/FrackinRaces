@@ -45,10 +45,10 @@ function init()
   
 	-- FU special effects
 	-- health effects
-	self.critChance = config.getParameter("critChance", 0)
-	self.critBonus = config.getParameter("critBonus", 0)
-	self.shieldBonusShield = config.getParameter("shieldBonusShield", 0)	-- bonus shield HP
-	self.shieldBonusRegen = config.getParameter("shieldBonusRegen", 0)	-- bonus shield regen time
+	        self.critChance = config.getParameter("critChance", 0)
+	        self.critBonus = config.getParameter("critBonus", 0)
+	        self.shieldBonusShield = config.getParameter("shieldBonusShield", 0)	-- bonus shield HP
+	        self.shieldBonusRegen = config.getParameter("shieldBonusRegen", 0)	-- bonus shield regen time
  		self.shieldHealthRegen = config.getParameter("shieldHealthRegen", 0)
  		shieldStamina = config.getParameter("shieldStamina",0)
  		protectionBee = config.getParameter("protectionBee",0)
@@ -78,6 +78,7 @@ function init()
  		protectionXHeat = config.getParameter("protectionXHeat",0)
  		protectionRads = config.getParameter("protectionRads",0)
  		protectionXRads = config.getParameter("protectionXRads",0)
+ 		stunChance = config.getParameter("stunChance", 0)
  		shieldBash = config.getParameter("shieldBash",0)
  		shieldBashPush = config.getParameter("shieldBashPush",0)
 
@@ -97,9 +98,26 @@ function init()
 end
 
 
+function shieldBonusApplyPartial()
+
+	status.setPersistentEffects("shieldEffects", {
+ 		{stat = "maxHealth", amount = config.getParameter("shieldHealthBonus",0)*(status.resourceMax("health"))},
+ 		{stat = "maxEnergy", amount = config.getParameter("shieldEnergyBonus",0)*(status.resourceMax("energy"))},
+ 		{stat = "protection", amount = config.getParameter("shieldProtection",0)},
+ 		{stat = "shieldStaminaRegen", amount = shieldStamina},
+ 		{stat = "fallDamageMultiplier", amount = config.getParameter("shieldFalling",0)},
+ 		{stat = "stunChance", amount =  stunChance},
+ 		{stat = "shieldBash", amount =  shieldBash},
+ 		{stat = "shieldBashPush", amount =  shieldBashPush},
+ 		{stat = "critChance", amount =  self.critChance},
+ 		{stat = "critChance", amount =  self.critBonus} 		
+ 	})
+ 	
+end
+
 function shieldBonusApply()
 
-status.setPersistentEffects("shieldEffects", {
+	status.setPersistentEffects("shieldEffects", {
  		{stat = "baseShieldHealth", amount = config.getParameter("shieldBonusShield", 0) },
  		{stat = "energyRegenPercentageRate", amount = config.getParameter("shieldEnergyRegen",0)},
  		{stat = "maxHealth", amount = config.getParameter("shieldHealthBonus",0)*(status.resourceMax("health"))},
@@ -146,6 +164,7 @@ function isShield(name) -- detect if they have a shield equipped for racial tag 
 end
 
 function update(dt, fireMode, shiftHeld)
+shieldBonusApplyPartial()
     if not species then init() end
     if self.helper then self.helper:runScripts("shield-update", self, dt, fireMode, shiftHeld) end
 
@@ -168,6 +187,7 @@ function update(dt, fireMode, shiftHeld)
 
         self.damageListener:update()
 
+	
         -- ************************************** FU SPECIALS **************************************
         status.modifyResourcePercentage("health", self.shieldHealthRegen * dt)
         -- *****************************************************************************************
@@ -198,6 +218,8 @@ function uninit()
         self.raisedhelper:clearPersistent()
         self.blockhelper:clearPersistent()
     end
+	status.clearPersistentEffects("shieldBonus")
+	status.clearPersistentEffects("shieldEffects")    
 	status.clearPersistentEffects(activeItem.hand().."Shield")
 	activeItem.setItemShieldPolys({})
 	activeItem.setItemDamageSources({})

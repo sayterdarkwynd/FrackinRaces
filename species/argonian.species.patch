@@ -8,7 +8,7 @@
     "value" : "Sturdy reptilian people. They are resilient and agile, with the ability to thrive both on land and underwater. Amphibious life has increased their natural energy stores, but they are less hardy than land-based reptiles.
     
     ^red;HP -12%, Energy -5%, Weak: 40% Ice and 20% Electric^reset; 
-    ^green;Low food consumption, +6% speed and +11% jump^reset;
+    ^green;+40% Max Food, +6% speed and +11% jump^reset;
     ^green;,+40% Poison, +10% Cosmic and +10% Radioactive Resist^reset;   
     ^green;Gain a hefty health bonus in bogs, swamps and strange seas^reset;
     ^green;Spears do +10% damage and +10% protection^reset; 

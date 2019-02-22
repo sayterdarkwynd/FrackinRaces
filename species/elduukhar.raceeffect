@@ -17,6 +17,10 @@
 			"effectiveMultiplier": 1.10
 		},
 		{
+			"stat": "maxFood",
+			"effectiveMultiplier": 1.30
+		},		
+		{
 			"stat": "poisonResistance",
 			"amount": -0.2
 		},

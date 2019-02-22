@@ -4,8 +4,8 @@
 			"amount": 1
 		},
 		{
-			"stat": "foodDelta",
-			"baseMultiplier": 0.6
+			"stat": "maxFood",
+			"effectiveMultiplier": 0.6
 		},
 		{
 			"stat": "maxEnergy",

@@ -5,6 +5,10 @@
 			"amount": 1
 		},
 		{
+			"stat": "isCarnivore",
+			"amount": 1
+		},		
+		{
 			"stat": "iceResistance",
 			"amount": 0.20
 		},

@@ -4,8 +4,8 @@
 			"amount": 1
 		},
 		{
-			"stat": "foodDelta",
-			"baseMultiplier": 1.06146
+			"stat": "maxFood",
+			"effectiveMultiplier": 0.8
 		},
 		{
 			"stat": "maxHealth",

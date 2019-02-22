@@ -52,7 +52,11 @@ end
 
 
 function update(dt)
-  self.foodValue = status.resourcePercentage("food")
+	if status.isResource("food") then
+		self.foodValue = status.resourcePercentage("food")
+	else
+		self.foodValue=0.5
+	end
   
   self.armorTimer = self.armorTimer + 1
   

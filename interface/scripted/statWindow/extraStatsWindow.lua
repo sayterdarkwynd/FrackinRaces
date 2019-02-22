@@ -40,9 +40,9 @@ function update()
 			widget.setText(stat, value)
 			
 		elseif type == "food" then
-			value = tostring(math.abs(shorten(1 / (value / status.resourceMax("food")) * 0.01)))
+			--value = tostring(math.abs(shorten(1 / (value / status.stat("maxFood")) * 0.01)))
+			value = tostring(math.abs(shorten((value / status.stat("maxFood")) * 0.01)))
 			widget.setText(stat, value)
-		
 		elseif type == "breath" then
 			breathRate = value
 			if breathMax > 0 then

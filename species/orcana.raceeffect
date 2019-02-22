@@ -12,6 +12,10 @@
 			"effectiveMultiplier": 1.1
 		},
 		{
+			"stat": "maxFood",
+			"effectiveMultiplier": 2
+		},		
+		{
 			"stat": "maxBreath",
 			"amount": 2000
 		},

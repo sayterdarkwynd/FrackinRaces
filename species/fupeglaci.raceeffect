@@ -20,6 +20,10 @@
 			"amount": 0.4
 		},
 		{
+			"stat": "maxFood",
+			"amount": 75
+		},		
+		{
 			"stat": "grit",
 			"amount": 0.25
 		},

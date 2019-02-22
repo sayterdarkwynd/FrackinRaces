@@ -9,8 +9,8 @@
 			"baseMultiplier": 1.3
 		},
 		{
-			"stat": "foodDelta",
-			"baseMultiplier": 1.06146
+			"stat": "maxFood",
+			"baseMultiplier": 60
 		},
 		{
 			"stat": "fireResistance",
