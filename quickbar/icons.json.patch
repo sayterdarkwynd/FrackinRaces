@@ -9,17 +9,5 @@
 		"op": "add",
 		"path": "/normal/0",
 		"value": { "label" : "Character Status", "pane" : "/interface/scripted/statWindow/statWindow.config", "icon" : "/items/tools/inspectiontool/inspectionmode.png" }
-	}],
-	
-	[{
-		"op" : "test",
-		"path" : "/normal/0/label",
-		"value" : "Mech Fuel",
-		"inverse" : true
-	},
-	{
-		"op": "add",
-		"path": "/normal/0",
-		"value": { "label" : "Mech Fuel", "pane": "/interface/mechfuel/mechfuel.config", "icon": "/interface/mechfuel/icon.png" }
 	}]		
 ]
