@@ -10,7 +10,7 @@
 		},
 		{
 			"stat": "maxFood",
-			"baseMultiplier": 60
+			"baseMultiplier": 0.80
 		},
 		{
 			"stat": "fireResistance",
