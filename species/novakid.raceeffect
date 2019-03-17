@@ -100,7 +100,8 @@
 				},
 				"nightConfig" : {
 					"stats" : [                  // Applied at night
-						{ "stat" : "maxEnergy", "baseMultiplier" : 0.75 }
+						{ "stat" : "maxEnergy", "baseMultiplier" : 0.75 },
+						{ "stat" : "energyRegenPercentageRate", "baseMultiplier" : 1.0 }
 					],
 					"hungerThreshold" : 0.5,     // Hunger% at which regeneration is allowed at night
 					"hungerLoss" : -0.002,      // Hunger%/s lost at night
