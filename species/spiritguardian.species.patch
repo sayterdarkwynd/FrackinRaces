@@ -1,0 +1,30 @@
+[
+		{ 
+		"op": "replace", 
+		"path" : "/charCreationTooltip/description", 
+		"value" :
+ "Biological descendants of the ^#99BBFF;The Spirit Tree^reset; created via a unique asexual reproduction cycle using uniquely generated DNA template. These frail creatures exhibit extreme agility and exceptional capabilities in navigating and remembering the layout of natural areas. Their origins are on a world known as \"Nibel\".
+ 
+ ^orange;Diet:^reset; Herbivorous
+ 
+ ^orange;Immunities:^reset; Jungle Slow, Mud Slow
+ 
+ ^orange;Stats:^reset;
+ ^red;-20% Health^reset;
+ ^green;+20% Energy^reset;
+ ^green;+20% Speed, +20% Jump Height^reset;
+ ^green;-20% Metabolism^reset;
+ 
+ ^orange;Resistances:^reset;
+ ^red;-30% Physical, Poison^reset;
+ ^green;+10% Shadow, Cosmic^reset;
+ 
+ ^orange;Enviornment:^reset;
+ ^yellow;Garden, Jungle:^reset; ^green;+15% Protection, +10% Health^reset;
+ 
+ ^orange;Weapons:^reset;
+ ^yellow;Wand, Staff:^reset; ^green;+30% Power, +10% Protection^reset;
+ 
+ ^green;Glow in the Dark^reset;"
+		}
+]
