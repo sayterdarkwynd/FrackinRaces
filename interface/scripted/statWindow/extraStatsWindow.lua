@@ -5,7 +5,6 @@ function init()
 	self.delayCounter = self.data.tooltipCheckDelay
 	
 	widget.setText("tooltip", self.data.defaultTooltip)
-	updateInterface()
 end
 
 function updateInterface()
@@ -52,6 +51,7 @@ function updateInterface()
 end
 
 function update()
+	updateInterface()
 	if self.delayCounter == 0 then
 		self.delayCounter = self.data.tooltipLifespan
 		
