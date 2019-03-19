@@ -1,5 +1,4 @@
-
---- THIS IS THE FRACKIN RACES ONE
+-- THIS IS THE FRACKIN RACES ONE
 
 function init()
 	self.data = root.assetJson("/interface/scripted/statWindow/statWindow.config")
