@@ -7,7 +7,7 @@ function init()
 	widget.setText("tooltip", self.data.defaultTooltip)
 end
 
-function updateInterface()
+function update()
 	-- Breath calculated separetly
 	local breatRegen = status.stat("breathRegenerationRate")
 	local breathRate = status.stat("breathDepletionRate")
@@ -48,10 +48,7 @@ function updateInterface()
 			end
 		end
 	end
-end
-
-function update()
-	updateInterface()
+	
 	if self.delayCounter == 0 then
 		self.delayCounter = self.data.tooltipLifespan
 		
