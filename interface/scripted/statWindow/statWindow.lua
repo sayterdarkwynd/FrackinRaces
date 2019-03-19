@@ -28,9 +28,11 @@ function init()
 	else
 		widget.setText("racialLabel", "ERROR - UNRECOGNIZED SPECIES")
 	end
+	
+	updateInterface()
 end
 
-function update()
+function updateInterface()
 	for _, element in ipairs(self.elements) do
 		widget.setText(element.."Resist", math.floor(status.stat(element.."Resistance")*100+0.5).."%")
 	end
@@ -55,6 +57,9 @@ function update()
 	end
 end
 
+function update()
+end
+
 function expand()
 	player.interact("ScriptPane", "/interface/scripted/statWindow/extraStatsWindow.config", player.id())
 end
@@ -72,6 +77,10 @@ function populateRacialDescription(race)
 	local skip = false
 	local firstskip = false
 	local char = ""
+	
+	--Some text editors use the windows line ending, like notepad++
+	--We need to normalize this to just use the unix style ending (\n), as Windows line endings are CRLF (\r\n) and cause double-newlines.
+	str = str:gsub("\r\n", "\n")
 	
 	for i = 1, string.len(str) do
 		char = string.sub(str, i, i)
