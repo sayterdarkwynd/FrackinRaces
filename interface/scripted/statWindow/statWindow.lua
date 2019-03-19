@@ -63,9 +63,11 @@ function populateRacialDescription(race)
 	widget.clearListItems("racialDesc.textList")
 	
 	local JSON = root.assetJson("/species/"..race..".species")
-	local charGenLabels = JSON.charGenTextLabels
-	local racialName = charGenLabels[#charGenLabels-1] --NOTE: In the species file there is the character generation label list. The second to last is the user-friendly display name of the race.
-	widget.setText("racialLabel", "RACIAL TRAITS - " .. racialName:upper()) --It's a standard that this name is all caps but in case someone didn't do that, we'll do it for them.
+	--local charGenLabels = JSON.charGenTextLabels
+	--local racialName = charGenLabels[#charGenLabels-1] --NOTE: In the species file there is the character generation label list. The second to last is the user-friendly display name of the race.
+	--Edit: Go with the character creation tooltip title.
+	local racialName = JSON.charCreationTooltip.title
+	widget.setText("racialLabel", "Racial Traits - " .. racialName)
 	
 	local str = JSON.charCreationTooltip.description
 	local strTbl = {}
