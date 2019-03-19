@@ -1,7 +1,3 @@
-
-
-
-
 function init()
 	self.data = root.assetJson("/interface/scripted/statWindow/extraStatsWindow.config")
 	canvas = widget.bindCanvas("tooltipHandler")
