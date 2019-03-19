@@ -20,7 +20,7 @@ function init()
 	
 	if recognized then
 		widget.setImage("characterSuit", "/interface/scripted/techupgrade/suits/"..playerRace.."-"..player.gender()..".png")
-		widget.setText("racialLabel", "Racial traits - "..playerRace)
+		--widget.setText("racialLabel", "Racial traits - "..playerRace) --Moved into populateRacialDescription to get the friendly-text name.
 		widget.setVisible("racialDesc", true)
 		widget.setVisible("offline", false)
 		
@@ -28,11 +28,9 @@ function init()
 	else
 		widget.setText("racialLabel", "ERROR - UNRECOGNIZED SPECIES")
 	end
-	
-	updateInterface()
 end
 
-function updateInterface()
+function update()
 	for _, element in ipairs(self.elements) do
 		widget.setText(element.."Resist", math.floor(status.stat(element.."Resistance")*100+0.5).."%")
 	end
@@ -57,9 +55,6 @@ function updateInterface()
 	end
 end
 
-function update()
-end
-
 function expand()
 	player.interact("ScriptPane", "/interface/scripted/statWindow/extraStatsWindow.config", player.id())
 end
@@ -68,6 +63,10 @@ function populateRacialDescription(race)
 	widget.clearListItems("racialDesc.textList")
 	
 	local JSON = root.assetJson("/species/"..race..".species")
+	local charGenLabels = JSON.charGenTextLabels
+	local racialName = charGenLabels[#charGenLabels-1] --NOTE: In the species file there is the character generation label list. The second to last is the user-friendly display name of the race.
+	widget.setText("racialLabel", "RACIAL TRAITS - " .. racialName:upper()) --It's a standard that this name is all caps but in case someone didn't do that, we'll do it for them.
+	
 	local str = JSON.charCreationTooltip.description
 	local strTbl = {}
 	local splitters = {}
