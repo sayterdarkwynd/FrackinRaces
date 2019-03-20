@@ -1,8 +1,8 @@
 [
-		{ 
-		"op": "replace", 
-		"path" : "/charCreationTooltip/description", 
-		"value" :
+{ 
+"op": "replace", 
+"path" : "/charCreationTooltip/description", 
+"value" :
 "Biological descendants of the ^#99BBFF;The Spirit Tree^reset; created via a unique asexual reproduction cycle using a uniquely generated DNA template that is scrambled with each new guardian to offer population diversity.
 These frail creatures exhibit extreme agility and exceptional capabilities in navigating and remembering the layout of natural areas. Their origins are on a world known as \"Nibel\".
 
@@ -24,6 +24,9 @@ These frail creatures exhibit extreme agility and exceptional capabilities in na
 ^yellow;Garden, Jungle:^reset; ^green;+15% Protection, +10% Health^reset;
 
 ^orange;Weapons:^reset;
-^yellow;Wand, Staff:^reset; ^green;+30% Power, +10% Protection^reset;"
-		}
+^yellow;Wand, Staff:^reset; ^green;+30% Power, +10% Protection^reset;
+
+^orange;Other:^reset;
+^green;Bioluminescent^reset;"
+}
 ]
