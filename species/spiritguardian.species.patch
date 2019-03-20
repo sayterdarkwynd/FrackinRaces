@@ -3,8 +3,8 @@
 "op": "replace", 
 "path" : "/charCreationTooltip/description", 
 "value" :
-"Biological descendants of the ^#99BBFF;The Spirit Tree^reset; created via a unique asexual reproduction cycle using a uniquely generated DNA template that is scrambled with each new guardian to offer population diversity.
-These frail creatures exhibit extreme agility and exceptional capabilities in navigating and remembering the layout of natural areas. Their origins are on a world known as \"Nibel\".
+"Biological descendants of ^#99BBFF;The Spirit Tree^reset; created via a unique asexual reproduction cycle. This cycle involves using a uniquely generated DNA template that has a select group of traits scrambled on the creation of a new guardian, simulating population diversity on a level unparalleled by conventional reproduction. Their origins are on a world known as \"Nibel\".
+These creatures exhibit extreme agility and exceptional capabilities in navigating and remembering the layout of natural areas. Unfortunately, this agile nature comes with a limited capability in withstanding physical trauma as well as low tolerance for toxic elements.
 
 ^orange;Diet:^reset; Herbivorous
 
@@ -15,6 +15,7 @@ These frail creatures exhibit extreme agility and exceptional capabilities in na
 ^green;+20% Energy^reset;
 ^green;+20% Speed, +20% Jump Height^reset;
 ^green;-20% Metabolism^reset;
+^green;-40% Fall Damage^reset;
 
 ^orange;Resistances:^reset;
 ^red;-30% Physical, Poison^reset;
