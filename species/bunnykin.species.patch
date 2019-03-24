@@ -7,13 +7,22 @@
     "path" : "/charCreationTooltip/description" , 
     "value" : "Hoppy space explorers. 
     
-    ^red;-20% Health, -5% Energy, 40% Weakness: Electricity ^reset; 
-    ^green;+18% speed and +20% jump^reset; 
-    ^green;Gain additional vitality and protection in jungles^reset; 
-    ^green;On Garden, Forest, Tundra and Snow biomes, gain + 10% Health and Energy^reset;
-    Boomerang/Chakram: ^green;+10% Crit Chance, +15% Crit Damage^reset;
-    ^green;Fist Weapons give increased Protection and Knockback Resist^reset;
-    ^green;Immune: Slime Stick, Jungle Tiles, Mud^reset; "
+    ^orange;Perks^reset;:
+    ^green;+18%^reset speed and ^green;+20%^reset jump
+    Immune: Slime Stick, Jungle Tiles, Mud
+ 
+    ^orange;Environment^reset;:
+    On Garden, Forest, Tundra and Snow biomes, gain ^green;+10%^reset Health and Energy
+    Gain additional vitality and protection in jungles
+ 
+    ^orange;Weapons^reset;:
+    Boomerang/Chakram: ^green;+10%^reset Crit Chance, ^green;+15%^reset Crit Damage
+    Fist Weapons: ^green;+15%^reset Protection and ^green;+25%^reset Knockback Resist
+ 
+    ^red;Weaknesses^reset;:
+    ^red;-20%^reset Health, ^red;-5%^reset Energy 
+    ^red;40%^reset Weakness: Electricity
+     "
     }
 
 ]
