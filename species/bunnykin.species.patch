@@ -7,6 +7,8 @@
     "path" : "/charCreationTooltip/description" , 
     "value" : "Hoppy space explorers. 
     
+    Diet: Herbivore
+    
     ^orange;Perks^reset;:
     ^green;+18%^reset Speed, ^green;+20%^reset Jump, ^green;-35%^reset Fall Damage.
     ^green;+30%^reset Ice Resist, ^green;+20%^reset Cosmic Resist.
