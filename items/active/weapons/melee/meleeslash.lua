@@ -114,6 +114,7 @@ function MeleeSlash:fire()
 	--local opposedhandHeldItem = world.entityHandItem(activeItem.ownerEntityId(), activeItem.hand() == "primary" and "alt" or "primary")
 	--local randValue = math.random(100)	-- chance for projectile
 
+
     if species then
         if not self.helper then
             self.helper = FRHelper:new(species)

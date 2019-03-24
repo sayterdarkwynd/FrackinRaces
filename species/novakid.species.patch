@@ -1,18 +1,32 @@
 [
     { "op": "replace", 
     "path" : "/charCreationTooltip/description" , 
-    "value" : "The Novakids are a mysterious race of 'interstellar gas-bag people'. They have few charted settlements and no documented history. They have a love of gunslinging and the wild west. No one knows why. 
-    
-    ^red;-10% Health, Weak: -15% Physical,20% Electric,-40% Shadow^reset;
-    ^green;+20% Energy, +25% Fire, +20% Ice and +40% Radiation Resist, Glow in the dark^reset;
-    ^green;25% Knockback Resistance, +5% Speed^reset;
-    ^green;On radioactive planets you gain +15% Energy and Health^reset;    
-    ^green;Regenerate energy, and health (when well fed) during the day. Regen slowly at night but  ^red;consume extra food^reset; and ^red;lose 25% Energy^reset;
-    ^orange;During the day your pistols gain increased firing speed in brighter light^reset;
-    Pistols(dual):^green;+25% Knockback Resist, +15% Energy^reset;
-    Sniper Rifle: ^green;+5% Crit and +20% Crit Damage^reset;
-    Shotgun: ^green;+20% dmg, +20% Crit Dmg^reset;
-    Whip: ^green;+15% Damage and +10% Speed^reset;    
-    Immune: ^green;Burning, Radiation Burn^reset;"
+    "value" : "The Novakids are a mysterious race of 'interstellar gas-bag people'. They have few charted settlements and no documented history. 
+ 
+ Diet: Omnivore 
+ 
+ ^orange;Perks^reset;: 
+ +^green;20%^reset; Energy, +^green;25%^reset; Knockback Resist, +^green;5%^reset; Speed
+ Resist: ^green;25%^reset; Fire, ^green;20%^reset; Ice, ^green;40%^reset; Radiation
+ Immune: Burning, Radiation Burn
+ 
+ ^orange;Environment^reset;: 
+ On ^green;Radioactive^reset; biomes gain ^green;15%^reset; Energy and Health
+ ^green;Regenerate^reset; from sunlight when fed. Night regen ^red;consumes food^reset; and -^red;25%^reset; Energy 
+ 
+ ^orange;Weapons^reset;:    
+ Pistols gain increased firing speed in daylight
+ Pistol (dual): +^green;25%^reset; Knockback Resist, +^green;15%^reset; Energy
+ Sniper: +^green;5%^reset; Crit and +^green;20%^reset; Crit Damage
+ Shotgun: +^green;20%^reset; dmg, +^green;20%^reset; Crit Dmg
+ Whip: +^green;15%^reset; Damage and +^green;10%^reset; Speed
+ 
+ ^red;Weaknesses^reset;: 
+ -^red;10%^reset; Health
+ Weak: -^red;15%^reset; Physical, -^red;20%^reset;Electric, -^red;40%^reset; Shadow" 
     }
 ]
+
+
+
+

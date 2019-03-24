@@ -1,0 +1,14 @@
+{
+  "itemName" : "raceEffectEnabler",
+  "shortdescription" : "Race Tech Enabler",
+  "description" : "Enables race-specific techs for FR races.",
+  "price" : 1,
+  "maxStack" : 1,
+  "rarity" : "essential",
+  "category" : "Console",
+  "twoHanded" : true,
+  "itemTags" : ["tool"],
+  "inventoryIcon" : "raceeffectenabler.png",
+  "animation" : "raceEffectEnabler.animation",
+  "scripts" : ["raceEffectEnabler.lua"]
+}

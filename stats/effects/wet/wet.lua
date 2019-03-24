@@ -8,7 +8,12 @@ function init()
 end
 
 function update(dt)
-
+	if world.entitySpecies(entity.id()) == "hylotl" then
+	  self.foodRate = 0.001
+	  if status.isResource("food") then
+            status.modifyResourcePercentage("food", self.foodRate * dt)
+          end
+	end
 	if world.entitySpecies(entity.id()) == "floran" then
 	  self.healingRate = 0.001
 	  self.foodRate = 0.001

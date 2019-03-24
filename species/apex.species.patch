@@ -2,17 +2,26 @@
     { "op": "replace", 
     "path" : "/charCreationTooltip/description" , 
     "value" : "A race of highly intelligent primates. These masters of science are skilled miners and agile combatants, but become near-unstoppable brutes when wounded. 
+  
+ Diet: Omnivorous
+  
+ ^orange;Perks^reset;:
+ +^green;1^reset; Radius Matter Manipulator
+ Taking Damage ^red;decreases Energy^reset; but ^green;increases Protection, Damage and Crit Chance^reset;
+ +^green;8%^reset; speed and +^green;15%^reset; jump, Resist: ^green;30%^reset; Cold, ^green;10%^reset; Poison
+ Immune: Jungle Dirt and Mud
+  
+ ^orange;Environment^reset;: 
+ Gain additional vitality and protection in ^green;Jungle, Primeval, Forest, Rainforest, Snow^reset; biomes
     
-    ^red;Metabolism requires more food^reset; 
-    ^red;Weak: 30% Fire, 10% Cosmic^reset;
-    ^green;+8% speed and +15% jump, Resist: 30% Cold, 10% Poison^reset; 
-    ^green;Gain additional vitality and protection in jungles^reset; 
-    ^green;+1 Radius Matter Manipulator^reset;
-    ^green;Damage decreases Energy but increases Protection, Damage and Crit^reset;
-    Fists: ^green;+1% Crit^reset; 
-    Hammers: ^green;+10% Dmg^reset;
-    Mining Lasers: ^green;+50% Dmg^reset;
-    Magnorbs: ^green;+12% Dmg, +Protection^reset;
-    ^green;Unaffected by Jungle Dirt and Mud^reset;"
+ ^orange;Weapons^reset;:
+ Fists: ^green;+1%^reset; Crit Chance
+ Hammers: ^green;+10%^reset; Dmg
+ Mining Lasers: ^green;+50%^reset; Dmg
+ Magnorb/Thrown: ^green;+12%^reset; Dmg, +Protection
+    
+ ^red;Weaknesses^reset;:
+ Metabolism requires more food
+ Weak: ^red;30%^reset; Fire, ^red;10%^reset; Cosmic"
     }
 ]

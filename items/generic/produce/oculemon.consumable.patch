@@ -4,7 +4,7 @@
     "path": "/effects",
     "value": [
       [
-        "herbivorefood"
+        "carnivorefood"
       ]
     ]
   },
@@ -16,6 +16,6 @@
   {
     "op": "replace",
     "path": "/description",
-    "value": "Sour but so worth it. ^green;Type: Herbivore^reset;"
+    "value": "Sour but so worth it. ^green;Type: Carnivore^reset;"
   }
 ]

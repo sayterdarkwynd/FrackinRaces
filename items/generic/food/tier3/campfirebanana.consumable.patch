@@ -1,10 +1,10 @@
 [
-  {
-    "op": "add",
-    "path": "/effects/0/0",
-    "value": {
-      "effect": "herbivorefood"
-    }
+  { "op":"add",
+"path":"/effects/-",
+"value": [
+    { "effect" : "herbivorefood" },
+    { "effect" : "sugarfood" }
+  ]
   },
   {
     "op": "replace",

@@ -1,16 +1,64 @@
 [
+  {
+    "op": "add",
+    "path": "/defaultBlueprints/tier1/-",
+    "value": {
+      "item": "uraniumradien"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/defaultBlueprints/tier1/-",
+    "value": {
+      "item": "uranium"
+    }
+  },  
+  {
+    "op": "add",
+    "path": "/defaultBlueprints/tier1/-",
+    "value": {
+      "item": "plutoniumradien"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/defaultBlueprints/tier1/-",
+    "value": {
+      "item": "neptuniumradien"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/defaultBlueprints/tier1/-",
+    "value": {
+      "item": "thoriumradien"
+    }
+  },
     { "op": "replace", 
     "path" : "/charCreationTooltip/description" , 
-    "value" : "A unisex race of shy radioactive beings with a disputed origin. Their main weapons are their pointed legs, giving them speed and prowess in melee. This species is intended for Survival or Hardcore modes, and will recieve 50% reduced benefits without Hunger.
-    
-    ^red;Weak: -40% Fire Resistance. Hot biomes lower defense.^reset;
-    ^red;Increased Hunger rate^reset;
-    ^orange;Keeping well fed keeps your bonuses high. Hunger will reduce them.^reset;
-    ^green;Can eat almost anything edible without concern^reset;
-    ^green;+5% speed, Special: 50% Rad Resist, 25% Poison Resist, +15% Damage^reset; 
-    ^green;Gain 15% power and energy regen in irradiated biomes^reset; 
-    Rapier/Shortsword/Short-Spear/Dagger: ^green;+1% Crit, +4 Crit Damage^reset;
-    ^green;Immune: Radiation Burn^reset;"
+    "value" : "A race of shy radioactive beings with a disputed origin. This species is intended for Survival or Hardcore modes, and will recieve 50% reduced benefits without Hunger. Challenge is high.
+ 
+ Diet: Any, including prepared Isotopes.
+ 
+ ^orange;Perks^reset;: 
+ +^green;10%^reset; Energy
+ Resist: ^green;40%^reset; Radiation, 10% Ice & Electric, 7% Cosmic
+ Tech: Generate Seed Bulb (craft with Race Tech Enabler [C])
+ Immune: Radiation Burn
+ 
+ ^orange;Environment^reset;: 
+ On ^green;Radioactive-type^reset; biomes :^green;+15%^reset; Dmg and Energy Regen, Reduced Hunger
+ On ^red;Hot^reset; biomes:^red;-15%^reset; Protection increased Hunger.
+ Protection increases over time
+ Racial Tech is integral to success.
+ 
+ ^orange;Weapons^reset;:    
+ X'i Weapons: +^green;1%^reset; Crit and +^green;14%^reset; Protection
+ 
+ ^red;Weaknesses^reset;: 
+ ^red;High Hunger Rate^reset;
+ -^red;10%^reset; Health
+ Resist: -^red;25%^reset; Fire, -^red;10%^reset; Shadow. Worsens with hunger.
+ ^red;CAN NOT^reset; use Healing items. Must use racial heals."  
     }
 ]
- 

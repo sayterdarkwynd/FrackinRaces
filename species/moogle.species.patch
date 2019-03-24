@@ -5,16 +5,18 @@
     },
     { "op": "replace", 
     "path" : "/charCreationTooltip/description" , 
-    "value" : "Adorable, fluffy, cosmic-attuned lagomorphic critters from a distant world of fantasy that have a pom-pom, bat wings and a thing for saying \"Kupo!\". They are usually expert machinists, but on occasion, they may become a knight or a mage instead.
+    "value" : "Fluffy, adorable, cosmic-attuned lagomorphic critters from a distant world of fantasy that have a pom-pom, bat-like wings, and a thing for saying \"Kupo!\". They typically are very skilled machinists, but they sometimes choose to become a knight or a mage instead.
     
-    ^red;-20% Life, -20% Physical, -10% Shadow and Radioactive Resistances^reset;
-    ^green;+20% Energy, +20% Electric and Cosmic Resistances^reset;
-    ^green;Adorable, 40% Fall Damage^reset;
-    ^cyan;Gliding, ^green;+10% Speed and Jump, ^red;Bad at swimming^reset;
-    ^magenta;Extra craftable mech body.^reset;
-    ^yellow;Firearms gain ^green;+5% Damage, +1% Crit^reset;
-    ^yellow;Broadswords, Shortswords, Staves, and Wands gain ^green;+5% damage^reset;
-    ^yellow;Rapiers, Spears, Pistols and Machine Pistols gain ^green;+10% damage, +1% Crit^reset;
-    ^yellow;Energy Weapons gain ^green;+5% damage, +2% Crit^reset;"
+    ^orange;Omnivore, ^red;Slightly increased hunger^reset;
+    ^green;+10% Energy, +30% Cosmic/Ice Resist, +20% Electric Resist^reset;
+    ^red;-20% Life, -40% Shadow Resist, -20% Fire/Physical Resist^reset;
+    ^magenta;Immune: Electrified, Mud
+    ^violet;Adorable, ^green;Halved Fall Damage^reset;
+    ^green;+10% Speed, +20% Jump, ^red;Terrible swimmers^reset;
+    ^cyan;Moogle Glide tech (Obtain in [C] Menu)^reset;
+    ^cyan;Extra craftable mech body upgrade (Built-In)^reset;
+    ^yellow;Shortswords, Staves, and Wands gain ^green;+5% damage^reset;
+    ^yellow;Pistols, Spears, and Daggers gain ^green;+10% damage, +1% crit^reset;
+    ^yellow;Energy Weapons gain ^green;+15% damage, +10% crit damage^reset;"
     }
 ]

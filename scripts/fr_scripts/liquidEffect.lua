@@ -25,7 +25,6 @@ require("/scripts/util.lua")
 
 function FRHelper:call(args, ...)
     local mouthPosition = vec2.add(mcontroller.position(), status.statusProperty("mouthPosition"))
-
     for i,thing in ipairs(args or {}) do
         if thing.liquids then
             -- Liquid map translation, allows for easy file reading (put in "milk" instead of 7)

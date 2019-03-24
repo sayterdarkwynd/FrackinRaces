@@ -1,0 +1,22 @@
+[
+    { "op": "replace", 
+    "path" : "/charCreationTooltip/description" , 
+    "value" : "A creation of the now extinct Ancient Aurorans, these vulpine feline creatures hold the power of lightning and are skilled blacksmiths. They are also gifted with melee weapons and bows, though some turn to seek more...
+    
+	Diet: Carnivore
+	
+	^green;+5 Health, +25 Energy^reset;, ^red;-10 Defense^reset;
+	^red;Weak: 30% Ice, 30% Radiation^reset;
+	^green;Resist: 10% Melee, 40% Electric, 5% Cosmic^reset;
+	^green;-25% decreased fall damage^reset;
+	^green;Immune to Electrified^reset;
+	^green;Hunger decreases 15% slower^reset;
+	^green;+30% run speed, +5% jump height^reset;
+	
+	Irradiated: ^red;-50% energy, -15% attack^reset;
+	Lush, Forest, and Jungle: ^green;+20 Health/Energy/Attack^reset;
+	
+	Bows: ^green;+10% damage, +15% speed^reset;
+	Melee: ^green;+10% damage, +20% speed^reset;"
+    }
+]

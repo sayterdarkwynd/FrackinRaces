@@ -8,9 +8,10 @@
  
   "descriptionLabel" : {
     "type" : "label",
-    "position" : [11, 242],
+    "position" : [11, 248],
     "hAnchor" : "left",
     "vAnchor" : "top",
-    "wrapWidth" : 240
+    "wrapWidth" : 240,
+    "fontSize" : 7
   }
 }

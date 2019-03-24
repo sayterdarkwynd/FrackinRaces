@@ -13,16 +13,12 @@
 	[{
 		"op" : "test",
 		"path" : "/normal/0/label",
-		"value" : "Updates",
+		"value" : "Mech Fuel",
 		"inverse" : true
 	},
-	  {
-	    "op": "add",
-	    "path": "/normal/-",
-	    "value": {
-	      "label": "Updates",
-	      "pane": "/interface/scripted/fu_updateInfoWindow/updateInfoWindow.config",
-	      "icon": "/interface/quest.png"
-	    }
-	  }]	
+	{
+		"op": "add",
+		"path": "/normal/0",
+		"value": { "label" : "Mech Fuel", "pane": "/interface/mechfuel/mechfuel.config", "icon": "/interface/mechfuel/icon.png" }
+	}]	
 ]

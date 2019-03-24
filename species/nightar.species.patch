@@ -1,23 +1,27 @@
 [
     { "op": "replace", 
     "path" : "/charCreationTooltip/description" , 
-    "value" : ""
-    },
+    "value" : "Evolved in the depths of a Penumbral world, the Nightar dislike light intensely. They are noble warriors of Shadow.
+  
+ Diet: Omnivorous
+  
+ ^orange;Perks^reset;:
+ ^green;Darkness^reset; increases ^green;Physical Resistance^reset; and ^green;Damage^reset; and enables Vampiric strikes.
+ Racial Tech: ^green;Conshak^reset;: Kneel for 10 seconds, in darkness. Increase resists and gain Thorns for 60 seconds.
+ Resist: ^green;40%^reset; Shadow, ^green;10%^reset; Ice
+ Immune: Bio-Ooze, Poison
+  
+ ^orange;Weapons^reset;:
+ All Swords: ^green;+1%^reset; Crit Chance, ^green;+10%^reset; damage and ^green;3%^reset; Shadow Burst Chance (^green;5 damage^reset;) when fully healed. 
+ Shortswords or Daggers: ^green;+10%^reset; Crit Damage
+ Longsword or Katana: ^green;+6%^reset; Damage
+ Katana/Rapier + Dagger: ^green;+1.5%^reset; Crit Chance
+ 2x Small Blades: ^green;+12%^reset; Protection, ^green;+5%^reset; Movement Speed
+ Shield: ^green;+2 Shield Bash, +25% Knockback Resist^reset;
+ Whip: ^green;+10%^reset; Movement Speed
     
-    { "op": "replace", 
-    "path" : "/charCreationTooltip/description" , 
-    "value" : "An offshoot of humanity that loves the dark. They are exceptional combatants and have honed the use of swords and shields into an artform. 
-    
-    ^red;Lowered defense and damage when in light^reset;
-    ^green;40% Shadow Resist. +10% Knockback Resist^reset;
-    Broadsword/Longsword:^green; +2% Crit, +5% Damage, +6% Shadow Burst^reset;
-    Shortsword(single): ^green;+5% Damage, +3% Shadow Burst^reset;
-    Shortsword(double): ^green;+1% Crit, +5% Speed^reset;
-    Shortsword + Shield:^green; +2 Shield Bash, +2 Shield Bash Push^reset;
-    Shield: ^green;+2 Shield Bash, +15% Knockback Resist^reset;
-    Perfect Blocks ^green;increase protection.^reset;
-    ^green;In darkness gain Physical Resistance and Damage.^reset;
-    ^green;Immune: Bio-Ooze^reset;"
+ ^red;Weaknesses^reset;:
+ Weak: ^red;20%^reset; Cosmic, ^red;20%^reset; Radiation, ^red;20%^reset; Electric
+ ^red;Light^reset; reduces ^red;Energy, Health, Physical Resistance and Damage^reset; and cancels ^red;Vampiric effect^reset; of attacks."
     }
-
 ]

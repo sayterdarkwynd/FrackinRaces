@@ -1,0 +1,22 @@
+[
+    { "op": "replace", 
+    "path" : "/charCreationTooltip/description" , 
+    "value" : "Adaptive and agile, the once quadruped Pokemon has become more humanoid at the cost of their ability to evolve. However, they have rectified this by inventing specialized equipment.
+    
+	Diet: Omnivore
+	
+	^green;+15 Energy^reset;, ^red;-5 Defense^reset;
+	^red;Weak: 50% Melee, 10% Poison, 5% Shadow^reset;
+	^green;Resist: 5% Cosmic, 20% Radiation^reset;
+	^green;+15% movement speed^reset;
+	^green;Immune to mild radiation^reset;
+	^green;+15% Jump height and run speed^reset;
+	
+	Lush, Forest, and Jungle: ^green;+10% Mobility^reset;
+	Hot Biomes: ^green;+15% fire resist^reset; / ^red;-15% ice resist^reset;
+	Cold Biomes: ^green;+15% ice resist^reset; / ^red;-15% fire resist^reset;
+	
+	Melee: ^green;+20% damage^reset;
+	Ranged: ^red;-15% damage^reset;"
+    }
+]

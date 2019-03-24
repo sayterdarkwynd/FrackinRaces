@@ -1,5 +1,4 @@
-
---- THIS IS THE FRACKIN RACES ONE
+-- THIS IS THE FRACKIN RACES ONE
 
 function init()
 	self.data = root.assetJson("/interface/scripted/statWindow/statWindow.config")
@@ -20,7 +19,7 @@ function init()
 	
 	if recognized then
 		widget.setImage("characterSuit", "/interface/scripted/techupgrade/suits/"..playerRace.."-"..player.gender()..".png")
-		widget.setText("racialLabel", "Racial traits - "..playerRace)
+		--widget.setText("racialLabel", "Racial traits - "..playerRace) --Moved into populateRacialDescription to get the friendly-text name.
 		widget.setVisible("racialDesc", true)
 		widget.setVisible("offline", false)
 		
@@ -63,6 +62,12 @@ function populateRacialDescription(race)
 	widget.clearListItems("racialDesc.textList")
 	
 	local JSON = root.assetJson("/species/"..race..".species")
+	--local charGenLabels = JSON.charGenTextLabels
+	--local racialName = charGenLabels[#charGenLabels-1] --NOTE: In the species file there is the character generation label list. The second to last is the user-friendly display name of the race.
+	--Edit: Go with the character creation tooltip title.
+	local racialName = JSON.charCreationTooltip.title
+	widget.setText("racialLabel", "Racial Traits - " .. racialName)
+	
 	local str = JSON.charCreationTooltip.description
 	local strTbl = {}
 	local splitters = {}
@@ -72,6 +77,10 @@ function populateRacialDescription(race)
 	local skip = false
 	local firstskip = false
 	local char = ""
+	
+	--Some text editors use the windows line ending, like notepad++
+	--We need to normalize this to just use the unix style ending (\n), as Windows line endings are CRLF (\r\n) and cause double-newlines.
+	str = str:gsub("\r\n", "\n")
 	
 	for i = 1, string.len(str) do
 		char = string.sub(str, i, i)

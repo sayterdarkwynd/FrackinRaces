@@ -7,7 +7,7 @@
     "path" : "/charCreationTooltip/description" , 
     "value" : "Cosmic-attuned bunny-folk from a distant world of fantasy. Skilled fencers, archers, and spellcasters.
     
-    ^red;30% Weakness: Shadow, Slighty increased hunger, -20% Health^reset;
+    ^red;30% Weakness: Shadow, -20% Max Food, -20% Health^reset;
     ^green;+20% Energy, 30% Cosmic Resist, +12% Speed^reset;
     ^green;In Rainforest, Forest and Primeval biomes you gain increased Energy and Speed^reset;
     Wands and Staves: ^green;+15% Damage and Energy^reset;
