@@ -17,12 +17,12 @@
 	^green;+25%^reset Health Regen & Energy in Lava
     
 	^orange;Weapons^reset;:	
-	Wand/Staff: ^green;+15% damage^reset;
-	Fists: ^red;-5% damage^reset;^reset;
-	Rapiers: ^green;+5% damage^reset;"
+	Wand/Staff: ^green;+15%^reset; damage
+	Fists: ^red;-5%^reset; damage
+	Rapiers: ^green;+5%^reset;" damage
     
 	^red;Weaknesses^reset;:	
-	^red;-50%^reset; Ice
 	^red;-5%^reset; Health	
+	^red;-50%^reset; Ice
     }
 ]
