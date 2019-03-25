@@ -1,0 +1,23 @@
+[
+    { "op": "replace", 
+    "path" : "/charCreationTooltip/description" ,
+    "value" : ""
+    },
+    { "op": "replace", 
+    "path" : "/charCreationTooltip/description" , 
+    "value" : "Pootis scrtption here.
+    
+    Diet: 
+    
+    ^orange;Perks^reset;:
+    Immune: 
+ 
+    ^orange;Environment^reset;:
+ 
+    ^orange;Weapons^reset;:
+   
+    
+    ^red;Weaknesses^reset;:
+"
+    }
+]
