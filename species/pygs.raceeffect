@@ -28,10 +28,6 @@
 			"amount": 0.1
 		},
 		{
-			"stat": "cosmicResistance",
-			"amount": 0
-		},
-		{
 			"stat": "fumudslowImmunity",
 			"amount": 1
 		},
@@ -54,10 +50,6 @@
 				"stat": "maxHealth",
 				"baseMultiplier": 1.2
 			},
-			{
-				"stat": "maxEnergy",
-				"baseMultiplier": 1
-			}
 		]
 	}],
 	"weaponEffects": [{
