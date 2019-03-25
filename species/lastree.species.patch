@@ -15,7 +15,7 @@
  
     ^orange;Weapons^reset;:
     Shield + Pistol: ^green;+15% Protection^reset;
-    Pistol/Machine Pistol: ^green;+10% Damage, +50% Knockback Resist, +0.25% Crit Chance^reset;"
+    Pistol/Machine Pistol: ^green;+10% Damage, +50% Knockback Resist, +0.25% Crit Chance^reset;
  
     ^red;Weaknesses^reset;:
     ^red;-10%^reset; Energy and Smaller Stomach
