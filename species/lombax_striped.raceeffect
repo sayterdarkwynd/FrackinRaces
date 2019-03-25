@@ -26,14 +26,6 @@
 		{
 			"stat": "electricResistance",
 			"amount": 0.2
-		},
-		{
-			"stat": "coldimmunity",
-			"amount": -0.3
-		},
-		{
-			"stat": "biomecoldImmunity",
-			"amount": -0.3
 		}
 	],
 	"controlModifiers": {
