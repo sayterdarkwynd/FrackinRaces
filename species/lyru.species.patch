@@ -7,7 +7,7 @@
     "path" : "/charCreationTooltip/description" , 
     "value" : "A mysterious race of cave dwellers known for their underground cities and love for treasure. Adapted to the deep underground, they can jump high and take less fall damage. Due to their impressive eyesight, they have higher precision with weapons.
     
- Diet: Specialist Omnivore
+ Diet: Omnivore, can eat raw meat.
   
  ^orange;Perks^reset;:
  +^green;15%^reset; Jump, +^green;5%^reset; Speed
