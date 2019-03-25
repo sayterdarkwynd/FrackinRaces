@@ -17,7 +17,7 @@
     
     ^orange;Weapons^reset;:
     Fist: ^green;+2%^reset; Crit, ^green;+5%^reset; Damage
-    Shortsword/Dagger: ^green;+10%^reset; Damage, ^green;+5%^reset; Protection"
+    Shortsword/Dagger: ^green;+10%^reset; Damage, ^green;+5%^reset; Protection
  
     ^red;Weaknesses^reset;:
     ^red;-20%^reset; Physical, Shadow, Cosmic and Radiation Resist
