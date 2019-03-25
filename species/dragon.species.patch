@@ -22,10 +22,11 @@
     ^orange;Weapons^reset;:
     Hammer/Mace: ^green;+2% Crit^reset;
     Wand/Staff: ^green;+12% Damage^reset;
-    Dagger: ^green;+20% Crit Damage^reset;"
+    Dagger: ^green;+20% Crit Damage^reset;
  
     ^red;Weaknesses^reset;:
     ^red;-20%^reset Health
     ^red;-40%^reset Poison, Ice Resist.
+    "
     }
 ]
