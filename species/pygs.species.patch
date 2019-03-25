@@ -15,7 +15,7 @@
     
     ^orange;Weapons^reset;:
     Axe/Greataxe: ^green;+10%^reset; Damage
-    Scythe: ^green;+25%^reset;" Damage
+    Scythe: ^green;+25%^reset; Damage
     Spear/Shortspear: ^green;+10%^reset; Damage & Speed
     Axe: Each hit fills ^green;+0.5%^reset; Hunger
  
