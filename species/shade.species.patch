@@ -23,8 +23,8 @@
  Dagger/Rapier: ^green;+6%^reset; Damage
 
  ^red;Weaknesses^reset;: 
- Increased metabolism requires frequent feeding
- ^red;40%^reset; Fire, Cosmic, Poison" 
+ ^red;+6%^reset; Hunger Rate 
+ ^red;30%^reset; Fire, Cosmic Poison" 
     }
 ]
 
