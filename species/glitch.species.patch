@@ -15,7 +15,7 @@
  ^green;Regen^reset; within ^green;Oil/Liquid Proto/Erchius^reset;
  
  ^orange;Weapons^reset;:
- Mace/Greataxes/Axe: Consumes food to increase Crit +^green;2%^reset;
+ Mace/Greataxes/Axe:+^green;2% Crit Chance^reset;
  1h combos increase defense by +^green;2^reset;
  Bow/Crossbow: ^green;+2%^reset; Crit Chance
  Shield: +^green;8%^reset; Health,+^green;2%^reset; Shield Bash, (Raised)+^green;3^reset; Protection,  (Raised)+^green;1%^reset; Regen
