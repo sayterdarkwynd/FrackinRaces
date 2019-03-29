@@ -18,8 +18,7 @@
  Energy Weapons: ^green;+3%^reset; Crit Chance, ^green;+25%^reset; Energy Regen
     
  ^red;Weaknesses^reset;:
- Weak: ^red;-20%^reset; Cosmic, ^red;-20%^reset; Poison"
- ^red;40%^reset; Smaller Stomach
- "
+ Weak: ^red;-20%^reset; Cosmic, ^red;-20%^reset; Poison
+ ^red;40%^reset; Smaller Stomach"
     }
 ]
