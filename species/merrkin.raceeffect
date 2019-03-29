@@ -27,17 +27,10 @@
 			"tidewater",
 			"tidewaterfloor"
 		],
-		"stats": [{
-				"stat": "maxHealth",
-				"baseMultiplier": 1.12
-			},
-			{
-				"stat": "maxEnergy",
-				"baseMultiplier": 1.12
-			},
+		"stats": [
 			{
 				"stat": "protection",
-				"baseMultiplier": 1.15
+				"baseMultiplier": 1.25
 			}
 		]
 	}],
@@ -76,13 +69,7 @@
 	],
 	"special": [ "swimboost2" ],
 	"liquidEffects": [{
-		"liquids": [
-			1,
-			6,
-			58,
-			12,
-			60
-		],
+		"liquids": [1,6,58,12,60],
 		"stats": [{
 				"stat": "maxHealth",
 				"baseMultiplier": 1.25
@@ -90,10 +77,6 @@
 			{
 				"stat": "physicalResistance",
 				"amount": 0.2
-			},
-			{
-				"stat": "perfectBlockLimit",
-				"amount": 2
 			},
 			{
 				"stat": "poisonStatusImmunity",

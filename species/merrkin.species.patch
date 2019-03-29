@@ -13,8 +13,8 @@
  Resist: ^green;40%^reset; Ice
  
  ^orange;Environment^reset;: 
- On ^green;oceanic^reset; and ^green;tidewater^reset; biomes, gain ^green;protection , health, energy^reset;
- In water/darkwater you gain +^green;4^reset; Protection, +^green;20^reset; Health, ^green;Swim Boost^reset;
+ On ^green;oceanic^reset; and ^green;tidewater^reset; biomes, gain ^green;+25% Protection^reset;
+ In water/darkwater you gain +^green;20^reset; Physical Resistance,and ^green;Poison Immunity^reset;
  Rain grants very slight regeneration.
  
  ^orange;Weapons^reset;:
