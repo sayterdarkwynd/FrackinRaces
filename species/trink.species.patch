@@ -6,20 +6,25 @@
     { "op": "replace", 
     "path" : "/charCreationTooltip/description" , 
     "value" : "Hyper-advanced machines.
+    
  Diet: Robotic 
  
  ^orange;Perks^reset;: 
- +^green;25%^reset; Energy, +^green;25%^reset; Knockback Resist, +^green;5%^reset; Speed
- Resist: ^green;25%^reset; Physical, ^green;50%^reset; Poison, ^green;50%^reset; Radiation
+ ^green;-97%^reset; Hunger Rate 
+ ^green;+30%^reset; Energy, ^green;+5%^reset; Speed
+ Resist: ^green;25%^reset; Physical, ^green;30%^reset; Ice, ^green;50%^reset; Poison, ^green;50%^reset; Radiation
  Immune: Cold, Snow, Ice, Slush, Poison, Breath
  
  ^orange;Environment^reset;: 
- On ^green;hot^reset; biomes you lose -^red;50%^reset; Energy Regen
- In ^green;cold^reset; biomes you gain ^green;extensive energy regen^reset;
+ ^red;-50%^reset; Energy Regen On hot biomes
+ ^green;25%^reset; Energy Regen on cold biomes
+ 
+ ^orange;Weapons^reset;: 
+ Shield: Perfect Blocks increase Energy
  
  ^red;Weaknesses^reset;: 
- -^red;50%^reset; Energy when Electrified
- Weak: -^red;100%^reset;Electric" 
+ ^red;-50%^reset; Energy when Electrified
+ Weak: ^red;-100%^reset;Electric" 
     }
 ]
 

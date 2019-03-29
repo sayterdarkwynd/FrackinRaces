@@ -16,6 +16,10 @@
 			"amount": -0.2
 		},
 		{
+			"stat": "maxFood",
+			"amount": 72
+		},			
+		{
 			"stat": "fireResistance",
 			"amount": -0.2
 		},

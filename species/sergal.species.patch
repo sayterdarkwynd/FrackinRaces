@@ -20,6 +20,6 @@ Dagger: ^green;+15%^reset; Damage, +1% Crit Chance
 Spear: ^green;+25^reset; Max Health, ^green;+15%^reset; Protection
     
 ^red;Weaknesses^reset;: 
-^red;50%^reset; Shadow, ^red;-20%^reset; Energy"
+^red;50%^reset; Shadow, Knockback Resist, ^red;-20%^reset; Energy"
     }
 ]

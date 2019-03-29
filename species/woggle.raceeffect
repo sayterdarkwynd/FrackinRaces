@@ -4,10 +4,6 @@
 			"amount": 1
 		},
 		{
-			"stat": "foodDelta",
-			"baseMultiplier": 1
-		},
-		{
 			"stat": "maxHealth",
 			"baseMultiplier": 0.8
 		},

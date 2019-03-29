@@ -6,27 +6,27 @@
     { "op": "replace", 
     "path" : "/charCreationTooltip/description" , 
     "value" : "Despite their fluffy appearance, this species is incredibly adaptive. They are no strangers to fighting and have their own unique power named Aura. In past they were guardians of their home world, and merged perfectly with the Protectorate.
-
-    ^red;Weak: -20% Fire, -30% Radiation, -30% Electric^reset;
-    ^red;-5% Health, -5% Protection^reset;
-    ^green;+8% speed and Fast Energy regen,
-    ^green;+5% Damage, +10% Energy, 20% Ice^reset;
-    ^yellow;Aura Resistance to ^green;Shadow (25%)^reset;
-    ^yellow;Immunity to ^green;Poison^reset;
-    ^green;Omnivore with preference for berries^reset;. ^yellow;Avoid mechanical food^reset;
-    Due to constant Aura generation ^red;requires more frequent feeding^reset;.
     
-    Pistol / Machinepistol: ^green;+15% Damage and Energy^reset;
-    Shortspear / Spear: ^green;+8% dmg, +5% Crit. Strike faster when full^reset;
-    Wands / Staves: ^green;5% Damage and Energy^reset;
-    Fists: ^green;+10 Damage^reset;
+    Diet: Omnivore
     
-    On ^yellow;hot^reset; biomes ^red;-20% protection^reset;
-    On ^yellow;forest/jungle^reset; biomes ^green;+5% Energy, +10% knockback^reset;
-    
-    Racial bonus: Aura Berserk (the more damage you take, the more dangerous you become,
-    up to ^green;+15% damage^reset; and ^red;-10% protection^reset;) 
-    
-    Playstyle: ^yellow;Damage^reset;"
+    ^orange;Perks^reset;
+    ^green;+10%^reset; Energy, ^green;+5%^reset; Damage, ^green;+8%^reset; Speed and Energy regen
+    ^green;+20%^reset; Ice Resist, ^green;+25%^reset; Shadow Resist
+    Aura Berserk (the more damage you take, the more dangerous you become, up to ^green;+15%^reset; damage and ^red;-10%^reset; protection) 
+    Immune: Poison
+ 
+    ^orange;Environment^reset;:
+ 
+    ^orange;Weapons^reset;:
+    Pistol / Machinepistol: ^green;+15%^reset; Damage and Energy
+    Shortspear / Spear: ^green;+8%^reset; dmg, +5%^reset; Crit. Strike faster when full
+    Wands / Staves: ^green;5%^reset; Damage and Energy
+    Fists: ^green;+10%^reset; Damage
+ 
+    ^red;Weaknesses^reset;:
+    ^red;-5%^reset; Health and Protection
+    ^red;+6%^reset; Hunger Rate
+    ^red;-30%^reset; Radioactivity
+"
     }
 ]

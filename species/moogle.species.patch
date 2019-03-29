@@ -6,17 +6,26 @@
     { "op": "replace", 
     "path" : "/charCreationTooltip/description" , 
     "value" : "Fluffy, adorable, cosmic-attuned lagomorphic critters from a distant world of fantasy that have a pom-pom, bat-like wings, and a thing for saying \"Kupo!\". They typically are very skilled machinists, but they sometimes choose to become a knight or a mage instead.
+        
+    Diet: Omnivore
     
-    ^orange;Omnivore, ^red;Slightly increased hunger^reset;
-    ^green;+10% Energy, +30% Cosmic/Ice Resist, +20% Electric Resist^reset;
-    ^red;-20% Life, -40% Shadow Resist, -20% Fire/Physical Resist^reset;
-    ^magenta;Immune: Electrified, Mud
-    ^violet;Adorable, ^green;Halved Fall Damage^reset;
-    ^green;+10% Speed, +20% Jump, ^red;Terrible swimmers^reset;
+    ^orange;Perks^reset;:
+    ^green;+10%^reset; Energy, Charisma, Speed
+    ^green;+20%^reset; Jump, ^green;-50%^reset; Fall Damage
+    ^green;+30%^reset; Cosmic/Ice Resist, ^green;+20%^reset; Electric Resist    
     ^cyan;Moogle Glide tech (Obtain in [C] Menu)^reset;
-    ^cyan;Extra craftable mech body upgrade (Built-In)^reset;
-    ^yellow;Shortswords, Staves, and Wands gain ^green;+5% damage^reset;
-    ^yellow;Pistols, Spears, and Daggers gain ^green;+10% damage, +1% crit^reset;
-    ^yellow;Energy Weapons gain ^green;+15% damage, +10% crit damage^reset;"
+    Immune: Electrified, Mud
+ 
+    ^orange;Weapons^reset;:
+    Shortswords, Staves, and Wands: ^green;+5%^reset; damage
+    Pistols, Spears, and Daggers: ^green;+10%^reset; damage, ^green;+1%^reset; crit
+    Energy Weapons: ^green;+15%^reset; damage, +10%^reset; crit damage
+ 
+    ^red;Weaknesses^reset;:   
+    Terrible swimmers
+    ^red;-6%^reset; Faster Hunger Rate, 
+    ^red;-20%^reset; Health,
+    ^red;-40%^reset; Shadow Resist, ^red;-20%^reset; Fire & Physical Resist
+"
     }
 ]

@@ -38,10 +38,6 @@
 		{
 			"stat": "perfectBlockLimitRegen",
 			"amount": 0.65
-		},
-		{
-			"stat": "shadowResistance",
-			"amount": 0.25
 		}
 	],
 	"controlModifiers": {

@@ -7,16 +7,17 @@
  
  ^orange;Perks^reset;: 
  +^green;20%^reset; Energy, +^green;25%^reset; Knockback Resist, +^green;5%^reset; Speed
- Resist: ^green;25%^reset; Fire, ^green;20%^reset; Ice, ^green;40%^reset; Radiation
+ Resist: ^green;+25%^reset; Fire, ^green;20%^reset; Ice, ^green;+40%^reset; Radiation
  Immune: Burning, Radiation Burn
  
  ^orange;Environment^reset;: 
  On ^green;Radioactive^reset; biomes gain ^green;15%^reset; Energy and Health
- ^green;Regenerate^reset; from sunlight when fed. Night regen ^red;consumes food^reset; and -^red;25%^reset; Energy 
+ ^green;Regenerate^reset; from sunlight when fed. ^green;+20%^reset; Energy Regen.
+ Night regen ^red;consumes food^reset; and -^red;25%^reset; Energy 
  
- ^orange;Weapons^reset;:    
- Pistols gain increased firing speed in daylight
- Pistol (dual): +^green;25%^reset; Knockback Resist, +^green;15%^reset; Energy
+ ^orange;Weapons^reset;:        
+ Pistol (single): +^green;9%^reset; Damage
+ Pistol (dual): +^green;25%^reset; Knockback Resist, +^green;15%^reset; Energy,  +^green;9%^reset; Damage
  Sniper: +^green;5%^reset; Crit and +^green;20%^reset; Crit Damage
  Shotgun: +^green;20%^reset; dmg, +^green;20%^reset; Crit Dmg
  Whip: +^green;15%^reset; Damage and +^green;10%^reset; Speed

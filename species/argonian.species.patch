@@ -7,17 +7,27 @@
     "path" : "/charCreationTooltip/description" , 
     "value" : "Sturdy reptilian people. They are resilient and agile, with the ability to thrive both on land and underwater. Amphibious life has increased their natural energy stores, but they are less hardy than land-based reptiles.
     
-    ^red;HP -12%, Energy -5%, Weak: 40% Ice and 20% Electric^reset; 
-    ^green;+40% Max Food, +6% speed and +11% jump^reset;
-    ^green;,+40% Poison, +10% Cosmic and +10% Radioactive Resist^reset;   
-    ^green;Gain a hefty health bonus in bogs, swamps and strange seas^reset;
-    ^green;Spears do +10% damage and +10% protection^reset; 
-    ^green;Short Spears get +15% crit damage and +10% damage^reset;
-    ^green;Crossbows and Harpoons get +5% crit and +15% damage^reset;
-    ^green;+1100 oxygen, Swim Boost^reset;
-    ^green;Immune: Poison^reset;"
+    Diet: Omnivorous, But can eat Raw Meat. 
+    
+    ^orange;Perks^reset;: 
+     ^green;+40%^reset; Max Food, ^green;+6% Speed^reset;, ^green;+11% Jump^reset;
+     ^green;+40%^reset; Poison, ^green;+10%^reset; Cosmic and ^green;+10%^reset; Radioactive Resist
+     ^green;+1100^reset; oxygen, Swim Boost.
+     Immunity: Poison
+    
+    ^orange;Environment^reset;: 
+     Gain ^green;+25%^reset; Health, ^green;+15%^reset; Speed on Bog, Swamp, and Strange Sea biomes.
+    
+    ^orange;Weapons^reset;:
+     Spears: ^green;+10%^reset;  Damage, ^green;+10%^reset;  Protection
+     Short Spears: ^green;+10% Damage^reset;, ^green;+15%^reset; Crit Damage
+     Crossbows/Harpoons: ^green;+15% Damage^reset;, ^green;+5%^reset; Crit Damage
+    
+    ^red;Weaknesses^reset;:
+     ^red;-12%^reset; Health, -5%^reset;Energy 
+     ^red;40%^reset; Ice, ^red;20%^reset; Electric
+     "
     }
-
 ]
 
 

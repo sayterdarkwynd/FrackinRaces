@@ -2,12 +2,24 @@
     { "op": "replace", 
     "path" : "/charCreationTooltip/description" , 
     "value" : "Resilient, cold-dwelling omnivorous creatures with a love for science.
+        
+    Diet: Omnivore
     
-    ^red;-12% Energy, 40% Weakness : Fire^reset;
-    ^green;+15% Health, +40% Ice Resist^reset;
-    ^green;25% Knockback Resistance, +5% Speed^reset;
-    ^green;On frozen biomes, gain 15% increased Health and Energy ^reset;
-    ^green;+5% Damage with all Firearms, and +5 Crit Damage^reset;
-    ^green;Immune: Liquid Nitrogen, Cold, Ice^reset;"
+    ^orange;Perks^reset;:
+    ^green;+15%^reset; Health,
+    ^green;+40%^reset; Ice Resist
+    ^green;+25%^reset; Knockback Resistance, ^green;+5%^reset; Speed
+    Immune: Liquid Nitrogen, Cold, Ice
+ 
+    ^orange;Environment^reset;:
+    On cold biomes, gain ^green;+15%^reset; increased Health and Energy
+ 
+    ^orange;Weapons^reset;:
+    ^green;+5%^reset; Damage with all Firearms, and ^green;+5%^reset; Crit Damage
+ 
+    ^red;Weaknesses^reset;:
+    ^red;-12%^reset; Energy
+    ^red;-40%^reset; Fire Resist
+    "
     }
 ]

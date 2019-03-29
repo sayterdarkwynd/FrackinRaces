@@ -6,13 +6,13 @@
 Diet: Omnivore 
  
 ^orange;Perks^reset;: 
-^green;+20%^reset; health, ^green;+10%^reset; Protection, +100% Max Food
+^green;+20%^reset; health, ^green;+10%^reset; Protection, +100% Max Food, ^green;2000 Breath
 Resist: ^green;30%^reset; Ice, ^green;20%^reset; Fire and Radiation 
 Immune: Wet
 
 ^orange;Environment^reset;: 
 Gain additional health and energy in ^green;oceanic^reset; biomes 
-In water you gain ^green;2000 Breath, +70% Breath Regen^reset; and ^green;minor health regen^reset;
+In water/healing water, you gain ^green;-50%^reset; Hunger Rate, ^green;+20%^reset; Poison Resist, and ^green;minor health regen^reset;
     
 ^orange;Weapons^reset;:
 Boltgun: ^green;+20^reset; Damage, ^green;+1%^reset; Crit Chance,^green;+3^reset; Crit Bonus Damage
