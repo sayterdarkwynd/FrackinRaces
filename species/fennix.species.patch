@@ -5,26 +5,18 @@
     
 	Diet: Omnivore
 	
-	^orange;Perks^reset;: 
-	^green;+35%^reset; speed, ^green;+10%^reset; jump height
-	^green;+15%^reset Energy, ^green;+10%^reset Attack
-	Resist: ^green;+50%^reset; Fire
-	Immune to L1 heat, fire, and sandstorms
+	^red;-5 Health^reset;, ^green;+15 Energy, +10 Attack^reset;
+	^red;Weak: 50% Ice^reset;
+	^green;Resist: 50% Fire^reset;
+	^green;+35% speed, +10% jump height^reset;
+	^green;Immune to biome heat, fire, and sandstorms^reset;
+	^green;+25% Health Regen / Energy in Lava^reset;
 	
-	^orange;Environment^reset;: 
-	Hot Biomes: ^green;+20%^reset; Health and Energy^reset;	
-	Cold Biomes: ^red;-30%^reset; Health and Energy, ^red-40%^reset; Attack, and ^red-50%^reset; Fire Resist
-	^green;+25%^reset Health Regen & Energy in Lava
-    
-	^orange;Weapons^reset;:	
-	Wand/Staff: ^green;+15%^reset; damage
-	Fists: ^red;-5%^reset; damage
-	Rapiers: ^green;+5%^reset;" damage
-	Perfect Blocks give +2 Power (up to a max of 16)
-    
-	^red;Weaknesses^reset;:	
-	^red;-5%^reset; Health	
-	^red;-50%^reset; Ice
-	"
+	Hot Biomes: ^green;+20% Health and Energy^reset;
+	Cold Biomes: ^red;-30% Health and Energy, -40% Attack, and -50% Fire Resist^reset;
+	
+	Wand/Staff: ^green;+15% damage^reset;
+	Fists: ^red;-5% damage^reset;^reset;
+	Rapiers: ^green;+5% damage^reset;"
     }
 ]
