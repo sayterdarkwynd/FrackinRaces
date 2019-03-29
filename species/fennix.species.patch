@@ -3,28 +3,28 @@
     "path" : "/charCreationTooltip/description" , 
     "value" : "Anthropomorphic Fennixes were created through artificial genetic mutation and have become more widespread in recent years. Their fiery bloodline allows them to survive immense heat.
     
-	Diet: Omnivore
-	
-	^orange;Perks^reset;: 
-	^green;+35%^reset; speed, ^green;+10%^reset; jump height
-	^green;+15%^reset Energy, ^green;+10%^reset Attack
-	Resist: ^green;+50%^reset; Fire
-	Immune to L1 heat, fire, and sandstorms
-	
-	^orange;Environment^reset;: 
-	Hot Biomes: ^green;+20%^reset; Health and Energy^reset;	
-	Cold Biomes: ^red;-30%^reset; Health and Energy, ^red-40%^reset; Attack, and ^red-50%^reset; Fire Resist
-	^green;+25%^reset Health Regen & Energy in Lava
+Diet: Omnivore
+
+^orange;Perks^reset;: 
+^green;+35%^reset; speed, ^green;+10%^reset; jump height
+^green;+15%^reset Energy, ^green;+10%^reset Attack
+Resist: ^green;+50%^reset; Fire
+Immune to L1 heat, fire, and sandstorms
+
+^orange;Environment^reset;: 
+Hot Biomes: ^green;+20%^reset; Health and Energy^reset;
+Cold Biomes: ^red;-30%^reset; Health and Energy, ^red-40%^reset; Attack, and ^red-50%^reset; Fire Resist
+^green;+25%^reset Health Regen & Energy in Lava
     
-	^orange;Weapons^reset;:	
-	Wand/Staff: ^green;+15%^reset; damage
-	Fists: ^red;-5%^reset; damage
-	Rapiers: ^green;+5%^reset;" damage
-	Perfect Blocks give +2 Power (up to a max of 16)
+^orange;Weapons^reset;:
+Wand/Staff: ^green;+15%^reset; damage
+Fists: ^red;-5%^reset; damage
+Rapiers: ^green;+5%^reset;" damage
+Perfect Blocks give +2 Power (up to a max of 16)
     
-	^red;Weaknesses^reset;:	
-	^red;-5%^reset; Health	
-	^red;-50%^reset; Ice
-	"
+^red;Weaknesses^reset;:
+^red;-5%^reset; Health
+^red;-50%^reset; Ice
+"
     }
 ]
