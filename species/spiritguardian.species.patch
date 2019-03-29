@@ -3,26 +3,23 @@
 "op": "replace", 
 "path" : "/charCreationTooltip/description", 
 "value" :
-"Biological descendants of ^#99BBFF;The Spirit Tree^reset; created via a unique asexual reproduction cycle. This cycle involves using a uniquely generated DNA template that has a select group of traits scrambled on the creation of a new guardian, simulating population diversity on a level unparalleled by conventional reproduction. Their origins are on a world known as \"Nibel\".
-These creatures exhibit extreme agility and exceptional capabilities in navigating and remembering the layout of natural areas. Unfortunately, this agile nature comes with a limited capability in withstanding physical trauma as well as low tolerance for toxic elements.
+"Biological descendants of ^#99BBFF;The Spirit Tree^reset; created via a unique randomized asexual reproduction cycle. These creatures exhibit extreme agility and low tolerance to harm.
 
 ^orange;Diet:^reset; Herbivorous
-
 ^orange;Immunities:^reset; Jungle Slow, Mud Slow
 
 ^orange;Stats:^reset;
 ^red;-20% Health^reset;
-^green;+20% Energy^reset;
-^green;+20% Speed, +20% Jump Height^reset;
+^green;+20% Energy, Speed, and Jump Height^reset;
 ^green;-20% Metabolism^reset;
-^green;-40% Fall Damage^reset;
+^green;-40% Falling Damage^reset;
 
 ^orange;Resistances:^reset;
 ^red;-30% Physical, Poison^reset;
 ^green;+10% Shadow, Cosmic^reset;
 
 ^orange;Enviornment:^reset;
-^yellow;Garden, Jungle:^reset; ^green;+15% Protection, +10% Health^reset;
+^yellow;Jungle, Forest, Bog, Arboreal:^reset; ^green;+15% Protection, +10% Health^reset;
 
 ^orange;Weapons:^reset;
 ^yellow;Wand, Staff:^reset; ^green;+30% Power, +10% Protection^reset;
