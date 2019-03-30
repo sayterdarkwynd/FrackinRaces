@@ -49,7 +49,7 @@
 		},
 		{
 			"stat": "fallDamageMultiplier",
-			"baseMultiplier": 0.35
+			"baseMultiplier": 0.30
 		},
 		{
 			"stat": "iceStatusImmunity",
