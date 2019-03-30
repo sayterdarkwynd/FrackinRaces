@@ -6,18 +6,18 @@ This is simply a template file for easy creation of organized species patches.  
     },
     { "op": "replace", 
     "path" : "/charCreationTooltip/description" , 
-    "value" : "Pootis scrtption here.
-    
-    Diet: 
-    
-    ^orange;Perks^reset;:
-    Immune: 
+    "value" : "Pootis crtption here.
+
+Diet: 
+
+^orange;Perks^reset;:
+Immune: 
  
-    ^orange;Environment^reset;:
+^orange;Environment^reset;:
  
-    ^orange;Weapons^reset;:
-    
-    ^red;Weaknesses^reset;:
+^orange;Weapons^reset;:
+
+^red;Weaknesses^reset;:
 "
     }
 ]
