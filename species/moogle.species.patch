@@ -23,8 +23,8 @@
  
     ^red;Weaknesses^reset;:   
     Terrible swimmers
-    ^red;-20%^reset; Max Food, 
-    ^red;-20%^reset; Health,
+    ^red;-20%^reset; Max Food
+    ^red;-20%^reset; Health
     ^red;-40%^reset; Shadow Resist, ^red;-20%^reset; Fire & Physical Resist
 "
     }
