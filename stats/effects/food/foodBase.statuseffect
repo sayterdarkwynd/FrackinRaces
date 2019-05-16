@@ -1,0 +1,14 @@
+{
+	"name" : "foodBase",
+
+	"effectConfig" : {
+		"foodTypes" : [ "MEAT_RAW" ],
+		"bonusStuff" : [ "meat_bonus" ],
+		"badStuff" : [ "meat_penalty" ]
+	},
+	"defaultDuration" : 0,
+
+	"scripts" : [
+		"foodBase.lua"
+	]
+}

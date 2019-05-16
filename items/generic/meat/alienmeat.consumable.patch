@@ -1,13 +1,8 @@
 [
 	{ 
-		"op":"replace", 
-		"path":"/effects", 
-		"value": [ ]
-	},
-	{ 
-		"op":"add", 
-		"path":"/effects/-", 
-		"value": [ { "effect" : "carnivorefood" } ]
+		"op" : "replace", 
+		"path" : "/effects", 
+		"value" : [ [ { "effect" : "foodBase" } ] ]
 	},
 	{
 		"op": "replace",
@@ -18,5 +13,10 @@
 		"op": "replace",
 		"path": "/description",
 		"value": "A raw slab of weird, stringy alien meat. Maybe I should cook it. ^red;Type: Raw Meat^reset;"
-	}
+	}/*,
+	{
+		"op" : "add",
+		"path" : "/scripts",
+		"value" : [ "/items/generic/meat/foodtest.lua" ]
+	}*/
 ]
