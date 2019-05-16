@@ -22,13 +22,12 @@ function init()
 	
 	if not self.goodFood then
 		for _,badStuff in pairs(config.getParameter("badStuff", {})) do
-			status.addEphemeralEffect(badStuff)
+			applyEffect(badStuff)
 		end
-		if status.resourcePercentage("food") > 0.85 then status.setResourcePercentage("food", 0.85) end
 		world.sendEntityMessage(entity.id(), "queueRadioMessage", "foodtype")
 	elseif self.applyBonus then
 		for _,bonusStuff in pairs(config.getParameter("bonusStuff", {})) do
-			status.addEphemeralEffect(bonusStuff)
+			applyEffect(bonusStuff)
 		end
 	end
 end
@@ -68,4 +67,18 @@ function checkFood(whitelist, blacklist, foodType)
 	end
 	-- Return true to indicate we should keep checking types
 	return true
+end
+
+function applyEffect(eff)
+	local effName = eff
+	local duration = effect.duration()
+	if type(eff) == "table" then
+		effName = eff.effect
+		duration = eff.duration
+	end
+	if duration > 0 then
+		status.addEphemeralEffect(effName, effect.duration())
+	else
+		status.addEphemeralEffect(effName)
+	end
 end

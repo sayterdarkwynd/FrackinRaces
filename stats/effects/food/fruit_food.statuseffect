@@ -1,0 +1,14 @@
+{
+	"name" : "fruit_food",
+
+	"effectConfig" : {
+		"foodTypes" : [ "FRUIT" ],
+		"bonusStuff" : [ "plant_bonus" ],
+		"badStuff" : [ "plant_penalty" ]
+	},
+	"defaultDuration" : 0,
+
+	"scripts" : [
+		"foodBase.lua"
+	]
+}

@@ -1,26 +1,22 @@
 [
-  {
-    "op": "add",
-    "path": "/effects",
-    "value": [
-      [
-        "robofood"
-      ]
-    ]
-  },
-  {
-    "op": "replace",
-    "path": "/maxStack",
-    "value": 20
-  },
-  {
-    "op": "replace",
-    "path": "/foodValue",
-    "value": 10
-  },
-  {
-    "op": "replace",
-    "path": "/description",
-    "value": "Automatoes! Be sure to spit out the screws. ^yellow;Type: Robot^reset;"
-  }
+	{
+		"op" : "add",
+		"path" : "/effects",
+		"value" : [ [ "robot_food" ] ]
+	},
+	{
+		"op" : "replace",
+		"path" : "/maxStack",
+		"value" : 20
+	},
+	{
+		"op" : "replace",
+		"path" : "/foodValue",
+		"value" : 10
+	},
+	{
+		"op" : "replace",
+		"path" : "/description",
+		"value" : "Automatoes! Be sure to spit out the screws. ^yellow;Type: Robot^reset;"
+	}
 ]

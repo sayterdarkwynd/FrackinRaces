@@ -1,5 +1,5 @@
 {
-	"name" : "meat_penalty",
+	"name" : "meat_raw_penalty",
 
 	"effectConfig" : {
 	},
@@ -9,7 +9,7 @@
 		"foodpenalty.lua"
 	],
 
-	//"animationConfig" : "carnivorefood.animation",
+	"animationConfig" : "foodpoison.animation",
 
 	"label" : "Eww, yuck, raw meat... you can't eat that!",
 	"icon" : "/interface/statuses/foodpoison.png"

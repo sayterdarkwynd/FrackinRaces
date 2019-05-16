@@ -2,21 +2,16 @@
 	{ 
 		"op" : "replace", 
 		"path" : "/effects", 
-		"value" : [ [ { "effect" : "foodBase" } ] ]
+		"value" : [ [ { "effect" : "meat_raw" } ] ]
 	},
 	{
-		"op": "replace",
-		"path": "/foodValue",
-		"value": 20
+		"op" : "replace",
+		"path" : "/foodValue",
+		"value" : 20
 	},
 	{
-		"op": "replace",
-		"path": "/description",
-		"value": "A raw slab of weird, stringy alien meat. Maybe I should cook it. ^red;Type: Raw Meat^reset;"
-	}/*,
-	{
-		"op" : "add",
-		"path" : "/scripts",
-		"value" : [ "/items/generic/meat/foodtest.lua" ]
-	}*/
+		"op" : "replace",
+		"path" : "/description",
+		"value" : "A raw slab of weird, stringy alien meat. Maybe I should cook it. ^red;Type: Raw Meat^reset;"
+	}
 ]

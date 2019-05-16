@@ -1,7 +1,7 @@
 function init()
 	self.movementParams = mcontroller.baseParameters()
-	self.tickDamagePercentage = 0.005
-	self.tickTime = 2
+	self.tickDamagePercentage = config.getParameter("poisonPercent", 0.005)
+	self.tickTime = config.getParameter("poisonSpeed", 2)
 	self.tickTimer = self.tickTime
 	script.setUpdateDelta(5)		
 end

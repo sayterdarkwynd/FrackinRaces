@@ -1,10 +1,10 @@
 {
-	"name" : "foodBase",
+	"name" : "meat_raw",
 
 	"effectConfig" : {
 		"foodTypes" : [ "MEAT_RAW" ],
-		"bonusStuff" : [ "meat_bonus" ],
-		"badStuff" : [ "meat_penalty" ]
+		"bonusStuff" : [ "meat_raw_bonus" ],
+		"badStuff" : [ "meat_raw_penalty" ]
 	},
 	"defaultDuration" : 0,
 

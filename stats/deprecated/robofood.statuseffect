@@ -1,19 +1,19 @@
 {
-  "name" : "robofood2",
+  "name" : "robofood",
 
   "effectConfig" : {
-  "healthBonus" : 0.04,
-  "energyBonus" : 0.06,
+  "healthBonus" : 1.03,
+  "energyBonus" : 1.04,
   "protectionBonus" : 2, 
-  "fallBonus" : -0.4
+  "fallBonus" : -0.2
   },
   "defaultDuration" : 120,
 
   "scripts" : [
-    "robofood.lua"
+    "deprecated.lua"
   ],
 
-  "animationConfig" : "robofood.animation",
+  //"animationConfig" : "robofood.animation",
 
   "label" : "Mechanical Food - only mechanical beings can digest this. Anything else will suffer for it.",
   "icon" : "/interface/statuses/autodrive.png"

@@ -1,5 +1,5 @@
 {
-	"name" : "meat_bonus",
+	"name" : "fish_bonus",
 
 	"effectConfig" : {
 		"stats" : [
@@ -14,8 +14,6 @@
 		"foodbonus.lua"
 	],
 
-	//"animationConfig" : "carnivorefood.animation",
-
-	"label" : "Mmmmm, tasty raw meat!",
-	"icon" : "/interface/statuses/foodpoisonfloran.png"
+	"label" : "All about that fishy stuff.",
+	"icon" : "/interface/statuses/rawfish.png"
 }

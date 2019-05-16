@@ -9,10 +9,10 @@
   "defaultDuration" : 120,
 
   "scripts" : [
-    "herbivorefood.lua"
+    "deprecated.lua"
   ],
 
-  "animationConfig" : "carnivorefood.animation",
+  //"animationConfig" : "carnivorefood.animation",
 
   "label" : "Herbivore Food - Meat eaters and robots get ill, but everyone else benefits.",
   "icon" : "/interface/statuses/foodpoisonherbivore.png"

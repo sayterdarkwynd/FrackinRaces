@@ -10,10 +10,10 @@
   "defaultDuration" : 120,
 
   "scripts" : [
-    "carnivorefoodcooked.lua"
+    "deprecated.lua"
   ],
 
-  "animationConfig" : "carnivorefoodcooked.animation",
+  //"animationConfig" : "carnivorefoodcooked.animation",
 
   "label" : "Cooked Meat - Delicious! Unless you're a herbivore or mechanical, I guess...",
   "icon" : "/interface/statuses/foodpoison.png"

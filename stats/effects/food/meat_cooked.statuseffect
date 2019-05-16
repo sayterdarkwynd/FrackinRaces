@@ -1,0 +1,14 @@
+{
+	"name" : "meat_cooked",
+
+	"effectConfig" : {
+		"foodTypes" : [ "MEAT_COOKED" ],
+		"bonusStuff" : [ "meat_cooked_bonus" ],
+		"badStuff" : [ "meat_cooked_penalty" ]
+	},
+	"defaultDuration" : 0,
+
+	"scripts" : [
+		"foodBase.lua"
+	]
+}

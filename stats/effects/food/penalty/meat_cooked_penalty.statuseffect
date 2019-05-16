@@ -1,0 +1,16 @@
+{
+	"name" : "meat_cooked_penalty",
+
+	"effectConfig" : {
+	},
+	"defaultDuration" : 120,
+
+	"scripts" : [
+		"foodpenalty.lua"
+	],
+
+	"animationConfig" : "foodpoison.animation",
+
+	"label" : "Eugh, who'd want to cook this, anyway? ...You don't feel too good.",
+	"icon" : "/interface/statuses/foodpoison.png"
+}

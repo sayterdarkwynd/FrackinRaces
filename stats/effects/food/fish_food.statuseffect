@@ -1,0 +1,14 @@
+{
+	"name" : "fish_food",
+
+	"effectConfig" : {
+		"foodTypes" : [ "FISH" ],
+		"bonusStuff" : [ "fish_bonus" ],
+		"badStuff" : [ "fish_penalty" ]
+	},
+	"defaultDuration" : 0,
+
+	"scripts" : [
+		"foodBase.lua"
+	]
+}

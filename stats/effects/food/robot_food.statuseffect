@@ -1,0 +1,14 @@
+{
+	"name" : "robot_food",
+
+	"effectConfig" : {
+		"foodTypes" : [ "ROBOT_PLANT" ],
+		"bonusStuff" : [ "robot_bonus" ],
+		"badStuff" : [ "robot_penalty" ]
+	},
+	"defaultDuration" : 0,
+
+	"scripts" : [
+		"foodBase.lua"
+	]
+}
