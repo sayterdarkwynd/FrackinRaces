@@ -1,9 +1,7 @@
-[{
-  "op": "add",
-  "path": "/effects",
-  "value": [
-    [
-        { "effect" : "herbivorefood" }
-    ]
-  ]
-}]
+[
+	{
+		"op" : "add",
+		"path" : "/effects",
+		"value" : [ [ "meat_plant" ] ]
+	}
+]
