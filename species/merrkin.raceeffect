@@ -51,7 +51,7 @@
 			}
 		},
 		{
-			"weapons": ["spear","trident"],a
+			"weapons": ["spear","trident"],
 			"scripts": [{
 				"script": "/scripts/fr_weaponscripts/healthybonus.lua",
 				"contexts": [
