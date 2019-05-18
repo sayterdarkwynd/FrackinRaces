@@ -40,7 +40,7 @@ function checkStance()
       animator.setParticleEmitterActive("defenseStance", false)
       status.clearPersistentEffects("nightarconshak") 
     end 
-    self.bombTimer = 10  
+    self.bombTimer = 8  
 end
 
 function update(args)
