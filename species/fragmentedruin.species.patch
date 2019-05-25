@@ -3,22 +3,26 @@
     "path" : "/charCreationTooltip/description" , 
     "value" : "Each member of this species is a small piece of universe-devouring Ruin.
   
- Diet: Carnivore
+ Diet: Omnivore
   
  ^orange;Perks^reset;:
  +^green;50^reset;% Max Food
- Resist: ^green;30%^reset; Shadow, ^green;30%^reset; Cosmic
+ +^green;25%^reset;% Energy 
+ Resist: ^green;20%^reset; Shadow, ^green;20%^reset; Cosmic
  Immune: Darkness
   
  ^orange;Environment^reset;: 
- Gain additional vitality and protection in ^green;Alien, Atropus, Tentacle, Bloodstone, Heck^reset; biomes
+ Heal in ^green;Poison^reset;, but take damage from ^green;Healing Water^reset;
+ Gain additional protection in ^green;Alien, Atropus, Tentacle, Bloodstone, Heck^reset; biomes
     
  ^orange;Weapons^reset;:
- Bio/Living: ^green;+15%^reset; Damage
+ Bioweapons: ^green;+15%^reset; Damage
  Mining Lasers: ^green;+50%^reset; Dmg
  Axe: ^green;+2%^reset; Crit Chance
     
  ^red;Weaknesses^reset;:
- Weak: ^red;30%^reset; Radiation, ^red;30%^reset; Ice"
+  ^red;-10%^reset; Protection
+ ^red;-25%^reset; Health
+ Weak: ^red;20%^reset; Radiation, ^red;20%^reset; Ice"
     }
 ]

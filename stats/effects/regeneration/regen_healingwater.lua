@@ -1,5 +1,5 @@
 function init()
-  if world.entitySpecies(entity.id()) == "fragmentedruin" then
+  if world.entitySpecies(entity.id()) == "apex" then
     animator.setParticleEmitterOffsetRegion("drips", mcontroller.boundBox())
     animator.setParticleEmitterActive("drips", true)
   else
@@ -17,7 +17,7 @@ function init()
 end
 
 function update(dt)
-  if world.entitySpecies(entity.id()) == "fragmentedruin" then
+  if world.entitySpecies(entity.id()) == "apex" then
 	  self.tickTimer = self.tickTimer - dt
 	  if self.tickTimer <= 0 then
 	    self.tickTimer = self.tickTime
