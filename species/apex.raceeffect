@@ -58,11 +58,11 @@
 			"stats": [
 				{
 					"stat": "maxHealth",
-					"baseMultiplier": 1.1
+					"effectiveMultiplier": 1.1
 				},
 				{
 					"stat": "maxEnergy",
-					"baseMultiplier": 1.15
+					"effectiveMultiplier": 1.15
 				}
 			]
 		}

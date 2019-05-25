@@ -1,0 +1,96 @@
+//ranged
+// - defense
+//omnivore
+//immunity: breath, poison
+//healing water harms, poison heals
+
+{
+	"stats": [
+		{
+			"stat": "isOmnivore",
+			"amount": 1
+		},
+		{
+			"stat": "maxFood",
+			"baseMultiplier": 1.5
+		},
+		{
+			"stat": "maxHealth",
+			"effectiveMultiplier": 0.85
+		},
+		{
+			"stat": "maxEnergy",
+			"effectiveMultiplier": 1.25
+		},		
+		{
+			"stat": "radioactiveResistance",
+			"amount": -0.3
+		},
+		{
+			"stat": "iceResistance",
+			"amount": -0.3
+		},
+		{
+			"stat": "shadowResistance",
+			"amount": 0.3
+		},
+		{
+			"stat": "cosmicResistance",
+			"amount": 0.3
+		},
+		{
+			"stat": "darknessImmunity",
+			"amount": 1
+		}
+	],
+	"controlModifiers": {},
+	"envEffects": [
+		{
+			"biomes": [
+				"alien",
+				"tentacle",
+				"atropus",
+				"atropusdark",
+				"bloodstone",
+				"bloodstonesea",
+				"heck"
+			],
+			"stats": [
+				{
+					"stat": "protection",
+					"effectiveMultiplier": 1.1
+				}
+			]
+		}
+	],
+	"weaponEffects": [
+		{
+			"weapons": [ "axe","greataxe" ],
+			"stats": [
+				{
+					"stat": "critChance",
+					"amount": 1
+				}
+			]
+		},
+		{
+			"weapons": [ "livingweapon","bio","bioweapon","blister" ],
+			"stats": [
+				{
+					"stat": "powerMultiplier",
+					"baseMultiplier": 1.15
+				}
+			]
+		},
+		{
+			"weapons": [ "mininglaser" ],
+			"stats": [
+				{
+					"stat": "powerMultiplier",
+					"baseMultiplier": 1.5
+				}
+			]
+		}
+	],
+	"scripts": []
+}
