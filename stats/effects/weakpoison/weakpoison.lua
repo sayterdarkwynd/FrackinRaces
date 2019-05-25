@@ -1,5 +1,5 @@
 function init()
-  if world.entitySpecies(entity.id()) == "apex" then
+  if world.entitySpecies(entity.id()) == "fragmentedruin" then
     animator.setParticleEmitterOffsetRegion("healing", mcontroller.boundBox())
     animator.setParticleEmitterActive("healing", config.getParameter("particles", true))  
   else
@@ -20,7 +20,7 @@ function init()
 end
 
 function update(dt)
-	if world.entitySpecies(entity.id()) == "apex" then
+	if world.entitySpecies(entity.id()) == "fragmentedruin" then
 	  status.modifyResource("health", (self.healingRate - self.penaltyRate) * dt)
 	else
 	  if (status.stat("poisonResistance",0) <= 0.45) then
