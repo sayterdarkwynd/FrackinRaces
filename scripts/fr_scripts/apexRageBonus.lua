@@ -15,7 +15,7 @@ require("/scripts/util.lua")
 		]
 	}
 ]]
-
+--[[
 function FRHelper:call(args, ...)
 	if not args or not args.healthRange then return end
 	
@@ -48,3 +48,4 @@ function FRHelper:call(args, ...)
 	
 	self:applyPersistent(stats, "FR_speciesRageBonus")
 end
+]]
