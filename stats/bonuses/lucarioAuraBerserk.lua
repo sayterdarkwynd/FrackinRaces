@@ -54,7 +54,7 @@ function update(dt)
 		self.critMod=0
 	end
 		-- make sure it doesn't get wonky by setting limits
-    if (self.powerMod) <= 1 then
+    if (self.powerMod) < 1 then
         self.powerMod = 1
 	elseif (self.powerMod) >= 1.15 then  -- max 15%
         self.powerMod = 1.15
