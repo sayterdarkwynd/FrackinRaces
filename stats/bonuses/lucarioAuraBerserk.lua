@@ -17,7 +17,10 @@ function init()
 		self.healthRangeMiConfig = self.specialConfig.healthRangeMi or nil
 		self.healthRangeLoConfig = self.specialConfig.healthRangeLo or nil
     end
-
+	
+	self.powerMod = 1
+	self.protectionMod = 1
+	self.critMod = 0
     script.setUpdateDelta(10)
 end
 
@@ -51,7 +54,7 @@ function update(dt)
 		self.critMod=0
 	end
 		-- make sure it doesn't get wonky by setting limits
-    if (self.powerMod) < 1 then
+    if (self.powerMod) <= 1 then
         self.powerMod = 1
 	elseif (self.powerMod) >= 1.15 then  -- max 15%
         self.powerMod = 1.15
