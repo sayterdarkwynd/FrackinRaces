@@ -18,8 +18,8 @@
 		},
 		{
 			"stat": "maxEnergy",
-			"effectiveMultiplier": 1.25
-		},		
+			"effectiveMultiplier": 1.15
+		},
 		{
 			"stat": "radioactiveResistance",
 			"amount": -0.2
@@ -35,11 +35,11 @@
 		{
 			"stat": "cosmicResistance",
 			"amount": 0.2
-		},
+		},	
 		{
-			"stat": "darknessImmunity",
+			"stat": "breathProtection",
 			"amount": 1
-		},		
+		},			
 		{
 			"stat": "darknessImmunity",
 			"amount": 1

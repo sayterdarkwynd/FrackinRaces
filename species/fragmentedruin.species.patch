@@ -9,7 +9,7 @@
  +^green;50^reset;% Max Food
  +^green;25%^reset;% Energy 
  Resist: ^green;20%^reset; Shadow, ^green;20%^reset; Cosmic
- Immune: Darkness
+ Immune: Darkness, Breath
   
  ^orange;Environment^reset;: 
  Heal in ^green;Poison^reset;, but take damage from ^green;Healing Water^reset;
