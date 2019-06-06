@@ -24,6 +24,10 @@
 			"amount": 0.4
 		},
 		{
+			"stat": "maxFood",
+			"amount": 75
+		},		
+		{
 			"stat": "grit",
 			"amount": 0.25
 		},
@@ -55,7 +59,7 @@
 				},
 				{
 					"stat": "critBonus",
-					"effectiveMultiplier": 1.05
+					"effectiveMultiplier": 1.01
 				}
 			]
 		}
