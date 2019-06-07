@@ -1,87 +1,119 @@
 {
 	"stats": [
-			{
-			"stat": "isRadien",
+		{
+			"stat": "isHerbivore",
 			"amount": 1
 		},
 		{
-			"stat": "isOmnivore",
+			"stat": "isRobot",
 			"amount": 1
-		},
+		},		
 		{
-			"stat": "maxFood",
-			"effectiveMultiplier": 2
-		},
-		{
-			"stat": "physicalResistance",
-			"amount": 0.1
-		},
-		{
-			"stat": "poisonResistance",
+			"stat": "fireResistance",
 			"amount": 0.3
 		},
 		{
-			"stat": "shadowResistance",
-			"amount": -0.1
+			"stat": "iceResistance",
+			"amount": 0.2
 		},
 		{
-			"stat": "radioactiveResistance",
-			"amount": -0.2
+			"stat": "cosmicResistance",
+			"amount": -0.25
+		},		
+		{
+			"stat": "shadowResistance",
+			"amount": -0.25
+		},
+		{
+			"stat": "maxFood",
+			"amount": 25
+		},		
+		{
+			"stat": "fireStatusImmunity",
+			"amount": 1
+		},		
+		{
+			"stat": "iceslipImmunity",
+			"amount": 1
+		},		
+		{
+			"stat": "snowslipImmunity",
+			"amount": 1
 		}
 	],
-	"envEffects": [{
+	"envEffects": [
+	{
 		"biomes": [
-			"bog",
+			"volcanic",
+			"magma",
 			"desert",
-			"garden",
-			"forest"
+			"infernus",
+			"infernusdark",
+			"desertwastes",
+			"desertwastesdark",
+			"volcanicdark",
+			"arboreal2",
+			"scorchedcity",
+			"tarball"
+		],
+		"controlModifiers": {
+			"speedModifier": 1.1
+		},		
+		"stats": []
+	},
+	{
+		"biomes": [
+			"arctic",
+			"tundra",
+			"nitrogensea",
+			"nitrogenseafloor",
+			"icewaste",
+			"icewastedark",
+			"icemoon",
+			"moon",
+			"moonvolcanic",
+			"moondesert",
+			"aethersea",
+			"penumbra"
+			
 		],
 		"stats": [{
 			"stat": "protection",
-			"effectiveMultiplier": 1.15
-		},
-		{
-			"stat": "maxHealth",
-			"effectiveMultiplier": 1.15
+			"effectiveMultiplier": 0.9
 		}
 		]
-	}],
+	}	
+	],
 	"weaponEffects": [{
-			"weapons": ["broadsword"],
+			"weapons": ["rocketlauncher","grenadelauncher","shotgun"],
 			"stats": [{
 					"stat": "powerMultiplier",
-					"baseMultiplier": 1.1
-				},
-				{
+					"baseMultiplier": 1.05
+				}
+			]
+		},
+		{
+			"weapons": ["qs","quartterstaff"],
+			"stats": [{
 					"stat": "protection",
-					"effectiveMultiplier": 1.1
-				}
-			]
-		},
-		{
-			"weapons": ["shortspear","spear"],
-			"stats": [{
-					"stat": "grit",
-					"effectiveMultiplier": 1.25
-				},
-				{
-					"stat": "critChance",
-					"amount": 2
-				}
-			]
-		},
-		{
-			"weapons": ["bow","crossbow"],
-			"stats": [{
-					"stat": "critChance",
-					"amount": 2
+					"effectiveMultiplier": 1.12
 				},
 				{
 					"stat": "powerMultiplier",
-					"baseMultiplier": 1.15
+					"baseMultiplier": 1.10
+				}
+			]
+		},		
+		{
+			"weapons": ["mace","hammer","dagger"],
+			"stats": [
+				{
+					"stat": "powerMultiplier",
+					"baseMultiplier": 1.12
 				}
 			]
 		}
 	],
-	"special": [ "argonianRegen" ]
+	"weaponScripts": [],	
+	"special": [ ]
 }
