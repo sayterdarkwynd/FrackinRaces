@@ -10,7 +10,8 @@
 
 ^orange;Stats:^reset;
 ^red;-20% Health^reset;
-^green;+20% Energy, Speed, and Jump Height^reset;
+^green;+10% Jump Height
+^green;+20% Energy and Speed^reset;
 ^green;-20% Metabolism^reset;
 ^green;-40% Falling Damage^reset;
 
