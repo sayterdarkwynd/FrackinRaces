@@ -27,7 +27,7 @@
             "type" : "textured",
             "image" : "/interface/statuses/juuxcharge.png",
             "size" : 1,
-            "color" : [55, 255, 55, 255]s,
+            "color" : [55, 255, 55, 255],
             "fade" : 1,
             "initialVelocity" : [0.0, 0.5],
             "rotation" : 0,
