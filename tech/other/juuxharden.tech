@@ -1,0 +1,14 @@
+{
+  "name" : "juuxharden",
+  "type" : "head",
+
+  "scripts" : ["juuxharden.lua"],
+  "animator" : "juuxharden.animation",
+
+  "description" : "Hold [Down] to activate superior defenses. Cannot move or attack.",
+  "shortDescription" : "Harden",
+  "rarity" : "Legendary",
+  "icon" : "/interface/statuses/conshak.png",
+  "chipCost" : 1,
+  "energyCostPerSecond" : 0.4
+}
