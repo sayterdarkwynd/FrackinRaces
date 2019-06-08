@@ -9,7 +9,7 @@
     "juuxhardenstat.lua"
   ],
 
-  "animationConfig" : "entropicward.animation",
+  "animationConfig" : "juuxward.animation",
   "label" : "Juux Hardening",
-  "icon" : "/interface/statuses/conshak.png"
+  "icon" : "/interface/statuses/defense2.png"
 }

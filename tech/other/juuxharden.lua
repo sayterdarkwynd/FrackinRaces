@@ -17,10 +17,8 @@ end
 function checkStance()
     animator.playSound("xibulbActivate")
     if self.pressDown then    
-       animator.setParticleEmitterActive("bulbStance", true)
        animator.playSound("xibulbCharge")
     else
-      animator.setParticleEmitterActive("bulbStance", false)
       status.clearPersistentEffects("juuxHarden") 
     end 
 end
@@ -43,15 +41,11 @@ function update(args)
 	  end
 	  if status.resource("energy") > 1 then
 	    if (self.pressDown) and not self.pressLeft and not self.pressRight and not self.pressUp and not self.pressJump then 
-		status.overConsumeResource("energy", config.getParameter("energyCostPerSecond"),0.5)
+		status.overConsumeResource("energy", config.getParameter("energyCostPerSecond"),0.1)
 		status.addEphemeralEffects{{effect = "juuxhardenstat", duration = 0.1}}
-	        animator.setParticleEmitterActive("bulbStance", true)
-
 	    end   
 	    
 	    else
-	        animator.setParticleEmitterActive("bulbStance", false)
-	        animator.setParticleEmitterActive("bulb", false)
 	        status.clearPersistentEffects("juuxHarden")
 	        self.bonus = 0	    
 	  end

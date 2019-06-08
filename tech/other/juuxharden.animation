@@ -25,20 +25,20 @@
         {
           "particle" : {
             "type" : "textured",
-            "image" : "/interface/statuses/xibulbcharge.png",
+            "image" : "/interface/statuses/juuxcharge.png",
             "size" : 1,
-            "color" : [255, 255, 255, 255],
-            "fade" : 0.9,
-            "initialVelocity" : [0.0, 2],
+            "color" : [55, 255, 55, 255]s,
+            "fade" : 1,
+            "initialVelocity" : [0.0, 0.5],
             "rotation" : 0,
             "angularVelocity" : 0,
-            "timeToLive" : 1,
+            "timeToLive" : 2,
             "destructionAction" : "shrink",
-            "destructionTime" : 0.5,
+            "destructionTime" : 1,
             "layer" : "back",
             "variance" : {
               "initialVelocity" : [1, 0.5],
-              "size" : 0.2,
+              "size" : 0.3,
               "rotation" : 180,
               "angularVelocity" : 180
             }
@@ -54,7 +54,7 @@
         {
           "particle" : {
             "type" : "textured",
-            "image" : "/interface/statuses/xibulbready.png",
+            "image" : "/interface/statuses/juuxcharge.png",
             "size" : 1,
             "color" : [255, 255, 255, 255],
             "fade" : 0.9,
