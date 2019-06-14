@@ -48,8 +48,7 @@
 			]
 		},
 		{
-			"combos": [[ "shortspear", "shield" ], 
-					   [ "shortsword", "shield" ]],
+			"combos": [[ "shortspear", "shield" ], [ "shortsword", "shield" ]],
 			"stats": [
 				{ "stat": "powerMultiplier", "baseMultiplier": 1.2 },
 				{ "stat": "protection", "effectiveMultiplier": 1.2 }

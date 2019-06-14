@@ -1,0 +1,31 @@
+[
+
+    { "op": "replace", 
+    "path" : "/charCreationTooltip/description" , 
+    "value" : "An unusual reptilian with exceptional heat resistance.
+
+ Diet: Special (Robot / Herbivore)
+ 
+ ^orange;Perks^reset;: 
+ +^green;25^reset; Max Food
+ Resist: ^green;30%^reset; Fire, ^green;20%^reset; Ice 
+ Immune: Slipping, Burning
+ Racial Tech (use Race Effect Enabler) : Harden (crouch)
+ 
+ ^orange;Environment^reset;: 
+ On ^green;hot^reset; biomes, gain ^green;10% speed^reset;
+ On ^red;cold^reset; biomes, lose ^green;10% Protection^reset;
+ 
+ ^orange;Weapons^reset;:
+ Rocket/Grenade Launcher: +^green;5%^reset; damage
+ Shotgun:  +^green;5%^reset; damage
+ Quarterstaff/Staff/Wand: +^green;10%^reset; Dmg, +^green;12%^reset; Protection
+ Mace/Hammer/Dagger: ^green;+12%^reset; Dmg
+    
+ ^red;Weaknesses^reset;: 
+ ^red;25%^reset; Cosmic and Shadow
+ ^red;-10%^reset; Charisma"   
+
+    }
+
+]

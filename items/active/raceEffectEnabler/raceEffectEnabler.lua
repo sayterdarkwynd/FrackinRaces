@@ -5,6 +5,10 @@ function activate(fireMode, shiftHeld)
         player.makeTechAvailable("flight_avian")
         player.enableTech("flight_avian")
         player.equipTech("flight_avian")
+      elseif self.species == "juux" then
+        player.makeTechAvailable("juuxharden")
+        player.enableTech("juuxharden")
+        player.equipTech("juuxharden")          
       elseif self.species == "veluu" then
         player.makeTechAvailable("veluuclaw")
         player.enableTech("veluuclaw")

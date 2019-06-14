@@ -12,7 +12,7 @@ Resist: ^green;40%^reset; Poison, ^green;20%^reset; Shadow
 Immunity: Insanity, Webs
  
 ^orange;Environment^reset;:
-Gain additional health and energy in ^green;dark biomes^reset; (Does not include "dark" variants of non-dark biomes.)
+Gain additional health and energy in ^green;dark biomes^reset; (Does not include 'dark' variants of non-dark biomes.)
  
 ^orange;Weapons^reset;:
 Spears: ^green;+10%^reset; Damage

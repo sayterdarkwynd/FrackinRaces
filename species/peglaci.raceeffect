@@ -13,12 +13,20 @@
 		},
 		{
 			"stat": "fireResistance",
-			"amount": -0.4
+			"amount": -0.3
 		},
+		{
+			"stat": "radioactiveResistance",
+			"amount": -0.1
+		},		
 		{
 			"stat": "iceResistance",
 			"amount": 0.4
 		},
+		{
+			"stat": "maxFood",
+			"amount": 75
+		},		
 		{
 			"stat": "grit",
 			"amount": 0.25
@@ -47,11 +55,11 @@
 		"args": {
 			"stats": [{
 					"stat": "powerMultiplier",
-					"amount": 0.05
+					"effectiveMultiplier": 1.10
 				},
 				{
 					"stat": "critBonus",
-					"amount": 5
+					"effectiveMultiplier": 1.01
 				}
 			]
 		}
@@ -60,11 +68,11 @@
 		"biomes": "cold",
 		"stats": [{
 				"stat": "maxHealth",
-				"baseMultiplier": 1.15
+				"effectiveMultiplier": 1.15
 			},
 			{
 				"stat": "maxEnergy",
-				"baseMultiplier": 1.15
+				"effectiveMultiplier": 1.15
 			}
 		]
 	}]
