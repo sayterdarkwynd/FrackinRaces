@@ -1,10 +1,20 @@
 function init()
 	self.foodTypes = config.getParameter("foodTypes")
-	self.dietConfig = root.assetJson("/scripts/fr_diets.config")
-	self.species = world.entitySpecies(entity.id())
-	self.diet = root.assetJson("/species/"..self.species..".raceeffect").diet
 	self.badEffects = config.getParameter("badStuff", {})
 	self.bonusEffects = config.getParameter("bonusStuff", {})
+	
+	self.dietConfig = root.assetJson("/scripts/fr_diets.config")
+	self.species = world.entitySpecies(entity.id())
+	local success
+	if self.species then
+		success, self.speciesConfig = pcall(
+			function () 
+				return root.assetJson(string.format("/species/%s.raceeffect", species))
+			end
+		)
+	end
+	if not success then self.speciesConfig = {} end
+	self.diet = self.speciesConfig.diet
 	if self.diet == nil then self.diet = "omnivore" end -- Treat races without diets as omnivores
 	
 	-- TODO: load scripts here
