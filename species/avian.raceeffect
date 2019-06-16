@@ -1,136 +1,87 @@
 {
-	"stats": [{
-			"stat": "isOmnivore",
-			"amount": 1
-		},
-		{
-			"stat": "maxHealth",
-			"baseMultiplier": 0.85
-		},
-		{
-			"stat": "maxEnergy",
-			"baseMultiplier": 1.1
-		},
-		{
-			"stat": "powerMultiplier",
-			"baseMultiplier": 1.05
-		},
-		{
-			"stat": "fallDamageMultiplier",
-			"baseMultiplier": 0.65
-		},
-		{
-			"stat": "physicalResistance",
-			"amount": -0.05
-		},
-		{
-			"stat": "electricResistance",
-			"amount": 0.25
-		},
-		{
-			"stat": "iceResistance",
-			"amount": -0.4
-		},
-		{
-			"stat": "poisonResistance",
-			"amount": -0.25
-		},
-		{
-			"stat": "shadowResistance",
-			"amount": 0.15
-		},
-		{
-			"stat": "cosmicResistance",
-			"amount": 0.25
-		}
+	"stats" : [
+		{ "stat" : "maxHealth", "baseMultiplier" : 0.85 },
+		{ "stat" : "maxEnergy", "baseMultiplier" : 1.1 },
+		{ "stat" : "powerMultiplier", "baseMultiplier" : 1.05 },
+		{ "stat" : "fallDamageMultiplier", "baseMultiplier" : 0.65 },
+		{ "stat" : "physicalResistance", "amount" : -0.05 },
+		{ "stat" : "electricResistance", "amount" : 0.25 },
+		{ "stat" : "iceResistance", "amount" : -0.4 },
+		{ "stat" : "poisonResistance", "amount" : -0.25 },
+		{ "stat" : "shadowResistance", "amount" : 0.15 },
+		{ "stat" : "cosmicResistance","amount" : 0.25 }
 	],
-	"controlModifiers": {
-		"airJumpModifier": 1.05
+	"diet" : "omnivore",
+	"controlModifiers" : {
+		"airJumpModifier" : 1.05
 	},
-	"controlParameters": {
-		"airJumpProfile": {
-			"jumpSpeed": 30
+	"controlParameters" : {
+		"airJumpProfile" : {
+			"jumpSpeed" : 30
 		}
 	},
-	"weaponEffects": [{
-			"weapons": [
-				"shortspear"
-			],
-			"stats": [{
-					"stat": "powerMultiplier",
-					"baseMultiplier": 1.06
-				},
-				{
-					"stat": "critChance",
-					"amount": 1
-				}
+	"weaponEffects" : [
+		{
+			"weapons" : [ "shortspear" ],
+			"stats" : [
+				{ "stat" : "powerMultiplier", "baseMultiplier" : 1.06 },
+				{ "stat" : "critChance", "amount" : 1 }
 			]
 		},
 		{
-			"weapons": [
-				"machinepistol"
-			],
-			"stats": [{
-				"stat": "critChance",
-				"baseMultiplier": 1
-			}]
+			"weapons" : [ "machinepistol" ],
+			"stats" : [
+				{ "stat" : "critChance", "baseMultiplier" : 1 }
+			]
 		}
 	],
-	"weaponScripts": [{
-			"script": "/scripts/fr_weaponscripts/aviancombo.lua",
-			"weapons": [
-				"dagger"
-			],
-			"contexts": [
+	"weaponScripts" : [
+		{
+			"script" : "/scripts/fr_weaponscripts/aviancombo.lua",
+			"weapons" : [ "dagger" ],
+			"contexts" : [
 				"meleeslash-fire"
 			]
 		},
 		{
-			"script": "/scripts/fr_weaponscripts/freebonus.lua",
-			"contexts": [
-				"staff-init"
-			],
-			"args": {
-				"stats": [{
-					"stat": "powerMultiplier",
-					"baseMultiplier": 1.2
-				}],
-				"scripts": [{
-					"script": "/scripts/fr_weaponscripts/wandresist.lua",
-					"args": {
-						"amount": 0.15
+			"script" : "/scripts/fr_weaponscripts/freebonus.lua",
+			"contexts" : [ "staff-init" ],
+			"args" : {
+				"stats" : [
+					{ "stat" : "powerMultiplier", "baseMultiplier" : 1.2 }
+				],
+				"scripts" : [
+					{
+						"script" : "/scripts/fr_weaponscripts/wandresist.lua",
+						"args" : {
+							"amount" : 0.15
+						}
 					}
-				}]
+				]
 			}
 		}
 	],
-	"aerialEffect": {
-		"airStats": {
-			"stats": [{
-				"stat": "powerMultiplier",
-				"baseMultiplier": 1.12
-			}]
+	"aerialEffect" : {
+		"airStats" : {
+			"stats" : [
+				{ "stat" : "powerMultiplier", "baseMultiplier" : 1.12 }
+			]
 		},
 
-		"windEffects": {
-			"windHigh": {
-				"speed": 60
+		"windEffects" : {
+			"windHigh" : {
+				"speed" : 60
 			},
-			"windLow": {
-				"speed": 5,
-				"stats": [{
-						"stat": "maxHealth",
-						"baseMultiplier": 1.15
-					},
-					{
-						"stat": "protection",
-						"baseMultiplier": 1.1
-					}
+			"windLow" : {
+				"speed" : 5,
+				"stats" : [
+					{ "stat" : "maxHealth", "baseMultiplier" : 1.15 },
+					{ "stat" : "protection", "baseMultiplier" : 1.1 }
 				],
-				"controlModifiers": {
-					"speedModifier": 1.19,
-					"airJumpModifier": 1.2,
-					"airForce": 86
+				"controlModifiers" : {
+					"speedModifier" : 1.19,
+					"airJumpModifier" : 1.2,
+					"airForce" : 86
 				}
 			}
 		}

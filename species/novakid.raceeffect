@@ -1,6 +1,5 @@
 {
 	"stats": [
-		{ "stat": "isOmnivore", "amount": 1 },
 		{ "stat": "maxHealth", "baseMultiplier": 0.9 },
 		{ "stat": "maxEnergy", "baseMultiplier": 1.2 },
 		{ "stat": "physicalResistance", "amount": -0.15 },
@@ -13,6 +12,7 @@
 		{ "stat": "fireStatusImmunity", "amount": 1 },
 		{ "stat": "radiationburnImmunity", "amount": 1 }
 	],
+	"diet" : "entity",
 	"controlModifiers": {
 		"speedModifier": 1.05
 	},

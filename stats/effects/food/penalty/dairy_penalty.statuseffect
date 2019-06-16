@@ -1,0 +1,16 @@
+{
+	"name" : "dairy_penalty",
+
+	"effectConfig" : {
+	},
+	"defaultDuration" : 120,
+
+	"scripts" : [
+		"foodpenalty.lua"
+	],
+
+	"animationConfig" : "foodpoison.animation",
+
+	"label" : "Was that milk rotten? Nah, it was you.",
+	"icon" : "/interface/statuses/foodpoison.png"
+}

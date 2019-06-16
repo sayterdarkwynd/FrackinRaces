@@ -1,8 +1,5 @@
 {
-	"stats": [{
-			"stat": "isHerbivore",
-			"amount": 1
-		},
+	"stats": [
 		{
 			"stat": "maxEnergy",
 			"baseMultiplier": 1.15
@@ -36,6 +33,7 @@
 			"amount": 1
 		}
 	],
+	"diet" : "herbivore",
 	"controlModifiers": {
 		"speedModifier": 0.95,
 		"airJumpModifier": 1.1

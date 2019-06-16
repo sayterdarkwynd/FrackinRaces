@@ -1,8 +1,5 @@
 {
-	"stats": [{
-			"stat": "isCarnivore",
-			"amount": 1
-		},
+	"stats": [
 		{
 			"stat": "maxEnergy",
 			"baseMultiplier": 0.8
@@ -24,6 +21,7 @@
 			"amount": -0.5
 		}
 	],
+	"diet" : "carnivore",
 	"controlModifiers": {
 		"speedModifier": 1.07,
 		"airJumpModifier": 1.06

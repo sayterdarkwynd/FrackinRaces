@@ -1,8 +1,5 @@
 {
-	"stats": [{
-			"stat": "isCarnivore",
-			"amount": 1
-		},
+	"stats": [
 		{
 			"stat": "fireResistance",
 			"amount": -0.4
@@ -28,7 +25,7 @@
 			"amount": 1
 		}
 	],
-
+	"diet" : "carnivore",
 	"controlModifiers": {
 		"speedModifier": 1.09,
 		"airJumpModifier": 1.09

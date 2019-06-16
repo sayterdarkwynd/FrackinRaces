@@ -1,8 +1,5 @@
 {
-	"stats": [{
-			"stat": "isRadien",
-			"amount": 1
-		},
+	"stats": [
 		{
 			"stat": "maxHealth",
 			"baseMultiplier": 0.90
@@ -25,7 +22,7 @@
 			"amount": 1
 		}
 	],
-
+	"diet" : "entity",
 	"special": [ "radienFoodBoost" ],
 	
 	"envEffects": [{

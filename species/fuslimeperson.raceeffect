@@ -1,15 +1,8 @@
 {
-	"stats": [{
-			"stat": "isCarnivore",
-			"amount": 1
-		},
+	"stats": [
 		{
 			"stat": "foodDelta",
 			"effectiveMultiplier": 1.25
-		},			
-		{
-			"stat": "isOmnivore",
-			"amount": 1
 		},
 		{
 			"stat": "healthRegen",
@@ -56,6 +49,7 @@
 			"amount": 1
 		}
 	],
+	"diet" : "raw_omnivore",
 	"envEffects": [{
 			"biomes": [
 				"arctic",

@@ -1,8 +1,5 @@
 {
-	"stats": [{
-			"stat": "isRobot",
-			"amount": 1
-		},
+	"stats": [
 		{
 			"stat": "maxHealth",
 			"baseMultiplier": 0.85
@@ -24,6 +21,7 @@
 			"amount": 1
 		}
 	],
+	"diet" : "robot",
 	"controlModifiers": {
 		"speedModifier": 1.04,
 		"airJumpModifier": 1.05,

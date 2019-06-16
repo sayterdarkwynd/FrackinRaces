@@ -1,8 +1,5 @@
 {
-	"stats": [{
-			"stat": "isSugar",
-			"amount": 1
-		},
+	"stats": [
 		{
 			"stat" : "maxHealth",
 			"baseMultiplier": 1.1
@@ -37,6 +34,7 @@
 			"amount": 1
 		}
 	],
+	"diet" : [ { "HIGH_GLUCOSE" : true, "FRUIT" : true } ],
 	"controlModifiers": {
 		"speedModifier": 0.9
 	},

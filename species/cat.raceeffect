@@ -1,10 +1,6 @@
 {
 	"stats": [
 		{
-			"stat": "isCarnivore",
-			"amount": 1
-		},
-		{
 			"stat": "iceResistance",
 			"amount": 0.20
 		},
@@ -33,6 +29,7 @@
 			"amount": 1
 		}	
 	],
+	"diet" : "carnivore",
 	"controlModifiers": {
 		"speedModifier": 1.08,
 		"airJumpModifier": 1.20

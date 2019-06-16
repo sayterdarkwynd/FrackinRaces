@@ -1,8 +1,5 @@
 {
-	"stats": [{
-			"stat": "isRobot",
-			"amount": 1
-		},
+	"stats": [
 		{
 			"stat": "maxHealth",
 			"baseMultiplier": 1.15
@@ -48,6 +45,7 @@
 			"amount": 1
 		}
 	],
+	"diet" : "robot",
 	"weaponEffects": [{
 			"weapons": [
 				"bow",

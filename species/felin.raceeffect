@@ -1,8 +1,5 @@
 {
-	"stats": [{
-			"stat": "isCarnivore",
-			"amount": 1
-		},
+	"stats": [
 		{
 			"stat": "maxHealth",
 			"baseMultiplier": 0.88
@@ -24,6 +21,7 @@
 			"amount": 0.4
 		}
 	],
+	"diet" : "carnivore",
 	"controlModifiers": {
 		"speedModifier": 1.06
 	},

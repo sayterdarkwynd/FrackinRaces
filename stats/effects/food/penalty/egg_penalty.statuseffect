@@ -1,0 +1,16 @@
+{
+	"name" : "egg_penalty",
+
+	"effectConfig" : {
+	},
+	"defaultDuration" : 120,
+
+	"scripts" : [
+		"foodpenalty.lua"
+	],
+
+	"animationConfig" : "foodpoison.animation",
+
+	"label" : "Just as inedible as actual gold, for you.",
+	"icon" : "/interface/statuses/foodpoison.png"
+}

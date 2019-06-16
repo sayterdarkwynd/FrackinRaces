@@ -1,12 +1,5 @@
 {
-	"stats": [{
-			"stat": "isCarnivore",
-			"amount": 1
-		},
-		{
-			"stat": "isOmnivore",
-			"amount": 1
-		},
+	"stats": [
 		{
 			"stat": "maxHealth",
 			"baseMultiplier": 1.15
@@ -56,6 +49,7 @@
 			"amount": 1
 		}
 	],
+	"diet" : [ { "ORGANIC" : false, "FISH" : true, "MEAT_RAW" : true } ],
 	"envEffects": [{
 		"biomes": "ocean",
 		"stats": [{

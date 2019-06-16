@@ -1,12 +1,5 @@
 {
-	"stats": [{
-			"stat": "isCarnivore",
-			"amount": 1
-		},
-		{
-			"stat": "isOmnivore",
-			"amount": 1
-		},
+	"stats": [
 		{
 			"stat": "grit",
 			"amount": -0.5
@@ -60,6 +53,7 @@
 			"amount": 1
 		}
 	],
+	"diet" : "raw_omnivore",
 	"controlModifiers": {
 		"speedModifier": 1.15,
 		"airJumpModifier": 1.15

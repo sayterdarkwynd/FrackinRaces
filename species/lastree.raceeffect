@@ -1,12 +1,5 @@
 {
-	"stats": [{
-			"stat": "isOmnivore",
-			"amount": 1
-		},
-		{
-			"stat": "isCarnivore",
-			"amount": 1
-		},
+	"stats": [
 		{
 			"stat": "foodDelta",
 			"baseMultiplier": 1.1
@@ -28,6 +21,7 @@
 			"amount": 0.3
 		}
 	],
+	"diet" : "raw_omnivore",
 	"special": [
 		"lastreeFoodBonus"
 	],

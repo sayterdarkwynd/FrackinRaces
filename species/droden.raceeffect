@@ -1,8 +1,5 @@
 {
-	"stats": [{
-			"stat": "isRobot",
-			"amount": 1
-		},
+	"stats": [
 		{
 			"stat": "maxFood",
 			"effectiveMultiplier": 2.5
@@ -40,6 +37,7 @@
 			"amount": 1
 		}
 	],
+	"diet" : "robot",
 	"controlModifiers": {
 		"speedModifier": 1.1
 	},

@@ -1,16 +1,5 @@
 {
-	"stats": [{
-			"stat": "isCarnivore",
-			"amount": 1
-		},
-		{
-			"stat": "isRobot",
-			"amount": 1
-		},
-		{
-			"stat": "isOmnivore",
-			"amount": 1
-		},
+	"stats": [
 		{
 			"stat": "grit",
 			"amount": 0.3
@@ -41,6 +30,7 @@
 			"amount": 0.2
 		}
 	],
+	"diet" : [ { "ORGANIC" : false, "ROBOT_PLANT" : false } ],
 	"envEffects": [{
 		"biomes": [
 			"sulphuric",

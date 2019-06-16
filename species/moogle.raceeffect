@@ -1,8 +1,5 @@
 {
-	"stats": [{
-			"stat": "isOmnivore",
-			"amount": 1
-		},
+	"stats": [
 		{
 			"stat": "maxFood",
 			"effectiveMultiplier": 0.8
@@ -56,6 +53,7 @@
 			"amount": 1
 		}
 	],
+	"diet" : "omnivore",
 	"weaponEffects": [{
 			"weapons": [
 				"shortsword",

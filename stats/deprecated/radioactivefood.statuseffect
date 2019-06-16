@@ -9,10 +9,10 @@
   "defaultDuration" : 200,
 
   "scripts" : [
-    "radioactivefood.lua"
+    "deprecated.lua"
   ],
 
-  "animationConfig" : "radioactivefood.animation",
+  //"animationConfig" : "radioactivefood.animation",
 
   "label" : "Radioactive Food - X'i get health regeneration, health and energy. Other races die painfully.",
   "icon" : "/interface/statuses/biomeradioactive.png"

@@ -5,7 +5,7 @@
   },
   { "op":"add",
 "path":"/effects/-",
-"value": [ { "effect" : "carnivorefoodnopoison" } ]
+"value": [ { "effect" : "bacon_pancakes_meal" } ]
   },
   {
     "op": "replace",

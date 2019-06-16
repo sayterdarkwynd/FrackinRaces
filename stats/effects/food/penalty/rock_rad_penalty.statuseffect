@@ -1,0 +1,17 @@
+{
+	"name" : "rock_rad_penalty",
+
+	"effectConfig" : {
+		"poisonPercent" : 0.01
+	},
+	"defaultDuration" : 200,
+
+	"scripts" : [
+		"foodpenalty.lua"
+	],
+
+	"animationConfig" : "foodpoison.animation",
+
+	"label" : "Congrats, you're dying of internal radiation poisoning.",
+	"icon" : "/interface/statuses/biomeradioactive.png"
+}

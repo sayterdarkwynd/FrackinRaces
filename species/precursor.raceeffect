@@ -1,13 +1,5 @@
 {
 	"stats": [
-			{
-			"stat": "isRadien",
-			"amount": 1
-		},
-		{
-			"stat": "isOmnivore",
-			"amount": 1
-		},
 		{
 			"stat": "foodDelta",
 			"baseMultiplier": 0.8
@@ -29,6 +21,7 @@
 			"amount": -0.2
 		}
 	],
+	"diet" : "entity",
 	"envEffects": [{
 		"biomes": [
 			"bog",

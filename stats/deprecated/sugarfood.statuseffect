@@ -5,10 +5,10 @@
   "defaultDuration" : 120,
 
   "scripts" : [
-    "sugarfood.lua"
+    "deprecated.lua"
   ],
 
-  "animationConfig" : "carnivorefood.animation",
+  //"animationConfig" : "carnivorefood.animation",
 
   "label" : "Sugar-rich food.",
   "icon" : "/interface/statuses/foodpoisonsugar.png"

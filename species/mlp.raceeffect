@@ -7,5 +7,6 @@
 			"stat": "maxEnergy",
 			"baseMultiplier": 0.01
 		}
-	]
+	],
+	"diet" : [ { "HUMAN_FLESH" : true } ]
 }

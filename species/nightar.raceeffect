@@ -1,8 +1,5 @@
 {
-	"stats": [{
-			"stat": "isOmnivore",
-			"amount": 1
-		},
+	"stats": [
 		{
 			"stat": "shadowResistance",
 			"amount": 0.4
@@ -32,7 +29,7 @@
 			"amount": 1
 		}
 	],
-	
+	"diet" : "omnivore",
 	"envEffects": [{
 		"biomes": [
 			"chromatic",
