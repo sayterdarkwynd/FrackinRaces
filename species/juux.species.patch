@@ -18,8 +18,8 @@
  
  ^orange;Weapons^reset;:
  Rocket/Grenade Launcher: +^green;5%^reset; damage
- Shotgun:  +^green;5%^reset; damage
- Quarterstaff/Staff/Wand: +^green;10%^reset; Dmg, +^green;12%^reset; Protection
+ Incendiary:  +^green;20%^reset; damage
+ Quarterstaff: +^green;10%^reset; Dmg, +^green;12%^reset; Protection
  Mace/Hammer/Dagger: ^green;+12%^reset; Dmg
     
  ^red;Weaknesses^reset;: 
