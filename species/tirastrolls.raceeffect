@@ -1,8 +1,5 @@
 {
-	"stats": [{
-			"stat": "isOmnivore",
-			"amount": 1
-		},
+	"stats": [
 		{
 			"stat": "physicalResistance",
 			"amount": 0.1
@@ -24,6 +21,7 @@
 			"amount": -0.15
 		}
 	],
+	"diet" : "omnivore",
 	"weaponEffects": [{
 			"combos": [
 				[

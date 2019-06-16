@@ -3,7 +3,7 @@
     "op": "add",
     "path": "/effects/0/0",
     "value": {
-      "effect": "robofood"
+      "effect": "herb_robo_meal"
     }
   },
   {

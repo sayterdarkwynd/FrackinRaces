@@ -1,8 +1,5 @@
 {
-	"stats": [{
-			"stat": "isOmnivore",
-			"amount": 1
-		},
+	"stats": [
 		{
 			"stat": "foodDelta",
 			"baseMultiplier": 0.8
@@ -40,6 +37,7 @@
 			"amount": 0.65
 		}
 	],
+	"diet" : "omnivore",
 	"controlModifiers": {
 		"speedModifier": 1.1,
 		"airJumpModifier": 1.1

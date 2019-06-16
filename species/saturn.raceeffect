@@ -1,12 +1,5 @@
 {
-	"stats": [{
-			"stat": "isHerbivore",
-			"amount": 1
-		},
-		{
-			"stat": "isSugar",
-			"amount": 1
-		},
+	"stats": [
 		{
 			"stat": "maxHealth",
 			"effectiveMultiplier": 0.75
@@ -32,6 +25,8 @@
 			"amount": -0.2
 		}
 	],
+	"diet" : [ { "ORGANIC" : false, "PLANT" : true, "HIGH_GLUCOSE" : true }, 
+			   { "MEAT" : true } ],
 	"controlModifiers": {
 		"airJumpModifier": 1.15
 	},

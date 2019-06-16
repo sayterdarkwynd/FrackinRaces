@@ -1,0 +1,16 @@
+{
+	"name" : "fish_penalty",
+
+	"effectConfig" : {
+	},
+	"defaultDuration" : 120,
+
+	"scripts" : [
+		"foodpenalty.lua"
+	],
+
+	"animationConfig" : "foodpoison.animation",
+
+	"label" : "Too fishy for you.",
+	"icon" : "/interface/statuses/foodpoisonfish.png"
+}

@@ -1,8 +1,5 @@
 {
 	"stats": [
-		{ "stat": "isCarnivore", "amount": 1 },
-		{ "stat": "isOmnivore", "amount": 1 },
-		{ "stat": "isRobot", "amount": 1 },
 		{ "stat": "maxHealth", "baseMultiplier": 1.2 },
 		{ "stat": "maxEnergy", "baseMultiplier": 0.8 },
 		{ "stat": "protection", "amount": 2 },
@@ -17,6 +14,7 @@
 		{ "stat": "biomecoldImmunity", "amount": 1 },
 		{ "stat": "biomeradiationImmunity", "amount": 1 }
 	],
+	"diet" : [ { "ORGANIC" : false, "ROBOT_PLANT" : false } ],
 	"envEffects": [
 		{
 			"biomes": [ "atropus", "atropusdark" ],

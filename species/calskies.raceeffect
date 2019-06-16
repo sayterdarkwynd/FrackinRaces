@@ -1,8 +1,5 @@
 {
-	"stats": [{
-			"stat": "isCarnivore",
-			"amount": 1
-		},
+	"stats": [
 		{
 			"stat": "maxFood",
 			"effectiveMultiplier": 0.6
@@ -69,6 +66,7 @@
 			"amount": 1
 		}
 	],
+	"diet" : "carnivore",
 	"envEffects": [{
 		"biomes": [
 			"garden",

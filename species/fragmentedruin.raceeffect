@@ -1,10 +1,6 @@
 {
 	"stats": [
 		{
-			"stat": "isOmnivore",
-			"amount": 1
-		},
-		{
 			"stat": "maxFood",
 			"baseMultiplier": 1.5
 		},
@@ -45,6 +41,7 @@
 			"amount": 1
 		}
 	],
+	"diet" : "omnivore",
 	"controlModifiers": {},
 	"envEffects": [
 		{

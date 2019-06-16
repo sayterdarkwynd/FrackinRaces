@@ -1,8 +1,5 @@
 {
-	"stats": [{
-			"stat": "isCarnivore",
-			"amount": 1
-		},
+	"stats": [
 		{
 			"stat": "grit",
 			"amount": 0.3
@@ -24,6 +21,8 @@
 			"amount": 1
 		}
 	],
+	"diet" : [ { "ORGANIC" : false, "MEAT_RAW" : true, "HUMAN_FLESH" : true, "BLOOD_OF_VIRGINS" : true },
+			   { "PLANT" : true } ]
 	"controlModifiers": {
 		"speedModifier": 1.25
 	}

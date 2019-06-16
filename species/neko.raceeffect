@@ -1,12 +1,5 @@
 {
-	"stats": [{
-			"stat": "isCarnivore",
-			"amount": 1
-		},
-		{
-			"stat": "isOmnivore",
-			"amount": 1
-		},
+	"stats": [
 		{
 			"stat": "powerMultiplier",
 			"baseMultiplier": 1.05
@@ -52,6 +45,7 @@
 			"amount": -0.2
 		}
 	],
+	"diet" : "raw_omnivore",
 	"controlModifiers": {
 		"speedModifier": 1.05,
 		"airJumpModifier": 1.1

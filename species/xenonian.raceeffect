@@ -1,10 +1,6 @@
 {
 	"stats": [
 		{
-			"stat": "isRadien",
-			"amount": 1
-		},
-		{
 			"stat": "poisonResistance",
 			"amount": 0.4
 		},
@@ -29,6 +25,7 @@
 				"amount": 1
 		}
 	],
+	"diet" : "entity",
 	"envEffects": [
 			{
 				"biomes": [

@@ -1,6 +1,5 @@
 {
 	"stats": [
-		{ "stat": "isOmnivore", "amount": 1 },
 		{ "stat": "maxEnergy", "baseMultiplier": 0.9 },
 		{ "stat": "poisonResistance", "amount": 0.1 },
 		{ "stat": "cosmicResistance", "amount": 0.1 },
@@ -13,6 +12,7 @@
 		{ "stat": "maxHealth", "baseMultiplier": 1.1 },
 		{ "stat": "powerMultiplier", "baseMultiplier": 1.1 }
 	],
+	"diet" : "omnivore",
 	"envEffects": [
 		{
 			"biomes": ["garden","forest","jungle","thickjungle","snow","snowdark","tundra","arctic","arcticdark"],

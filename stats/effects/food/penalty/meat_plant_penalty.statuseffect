@@ -1,0 +1,16 @@
+{
+	"name" : "meat_plant_penalty",
+
+	"effectConfig" : {
+	},
+	"defaultDuration" : 120,
+
+	"scripts" : [
+		"foodpenalty.lua"
+	],
+
+	"animationConfig" : "foodpoison.animation",
+
+	"label" : "What was that? Nothing you can eat, that's for sure.",
+	"icon" : "/interface/statuses/foodpoison.png"
+}

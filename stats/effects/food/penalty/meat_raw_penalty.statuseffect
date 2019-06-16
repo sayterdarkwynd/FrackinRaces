@@ -1,0 +1,16 @@
+{
+	"name" : "meat_raw_penalty",
+
+	"effectConfig" : {
+	},
+	"defaultDuration" : 120,
+
+	"scripts" : [
+		"foodpenalty.lua"
+	],
+
+	"animationConfig" : "foodpoison.animation",
+
+	"label" : "Eww, yuck, raw meat... you can't eat that!",
+	"icon" : "/interface/statuses/foodpoison.png"
+}

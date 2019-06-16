@@ -1,8 +1,5 @@
 {
-	"stats": [{
-			"stat": "isHerbivore",
-			"amount": 1
-		},
+	"stats": [
 		{
 			"stat": "fuCharisma",
 			"amount": 35
@@ -24,6 +21,7 @@
 			"amount": 0.2
 		}
 	],
+	"diet" : "herbivore",
 	"controlModifiers": {
 		"speedModifier": 1.08
 	},

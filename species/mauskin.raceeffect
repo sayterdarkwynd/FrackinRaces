@@ -1,8 +1,5 @@
 {
-	"stats": [{
-			"stat": "isOmnivore",
-			"amount": 1
-		},
+	"stats": [
 		{
 			"stat": "foodDelta",
 			"baseMultiplier": 0.75
@@ -40,6 +37,7 @@
 			"amount": 1
 		}
 	],
+	"diet" : "omnivore",
 	"special": [],
 	"weaponScripts": [{
 			"script": "/scripts/fr_weaponscripts/combobonus.lua",

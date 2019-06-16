@@ -1,8 +1,5 @@
 {
-	"stats": [{
-			"stat": "isCarnivore",
-			"amount": 1
-		},
+	"stats": [
 		{
 			"stat": "fireResistance",
 			"amount": 0.4
@@ -32,6 +29,7 @@
 			"amount": 1
 		}
 	],
+	"diet" : "carnivore",
 	"envEffects": [{
 			"biomes": "hot",
 			"stats": [{

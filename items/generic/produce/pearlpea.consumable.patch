@@ -1,21 +1,17 @@
 [
-  {
-    "op": "add",
-    "path": "/effects",
-    "value": [
-      [
-        "herbivorefood"
-      ]
-    ]
-  },
-  {
-    "op": "replace",
-    "path": "/maxStack",
-    "value": 20
-  },
-  {
-    "op": "replace",
-    "path": "/description",
-    "value": "Pearlpeas! I'll need to bite down hard. ^green;Type: Herbivore^reset;"
-  }
+	{
+		"op" : "add",
+		"path" : "/effects",
+		"value" : [ [ "plant_food" ] ]
+	},
+	{
+		"op" : "replace",
+		"path" : "/maxStack",
+		"value" : 20
+	},
+	{
+		"op" : "replace",
+		"path" : "/description",
+		"value" : "Pearlpeas! I'll need to bite down hard. ^green;Type: Plant^reset;"
+	}
 ]

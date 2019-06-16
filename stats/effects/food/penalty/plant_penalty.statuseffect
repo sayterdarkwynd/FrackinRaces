@@ -1,0 +1,16 @@
+{
+	"name" : "plant_penalty",
+
+	"effectConfig" : {
+	},
+	"defaultDuration" : 120,
+
+	"scripts" : [
+		"foodpenalty.lua"
+	],
+
+	"animationConfig" : "foodpoison.animation",
+
+	"label" : "Hey, wait, you can't eat this planty stuff, can you?",
+	"icon" : "/interface/statuses/foodpoisonherbivore.png"
+}

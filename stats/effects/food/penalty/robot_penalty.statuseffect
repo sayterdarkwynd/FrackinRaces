@@ -1,0 +1,16 @@
+{
+	"name" : "robot_penalty",
+
+	"effectConfig" : {
+	},
+	"defaultDuration" : 120,
+
+	"scripts" : [
+		"foodpenalty.lua"
+	],
+
+	"animationConfig" : "foodpoison.animation",
+
+	"label" : "Uh, was that food? You don't think that was food.",
+	"icon" : "/items/liquids/liquidpoisonicon.png"
+}

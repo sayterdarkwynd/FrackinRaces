@@ -1,14 +1,6 @@
 {
 	"stats": [
 		{
-			"stat": "isHerbivore",
-			"amount": 1
-		},
-		{
-			"stat": "isRobot",
-			"amount": 1
-		},		
-		{
 			"stat": "fireResistance",
 			"amount": 0.3
 		},
@@ -41,6 +33,7 @@
 			"amount": 1
 		}
 	],
+	"diet" : [ { "ORGANIC" : false, "PLANT" : true, "ROBOT_PLANT" : true }, { "MEAT" : true } ],
 	"envEffects": [
 	{
 		"biomes": [

@@ -1,14 +1,6 @@
 {
 	"stats": [
 		{
-			"stat": "isRadien",
-			"amount": 1
-		},
-		{
-			"stat": "isOmnivore",
-			"amount": 1
-		},
-		{
 			"stat": "protection",
 			"amount": 2
 		},
@@ -41,6 +33,7 @@
 			"amount": 0.2
 		}
 	],
+	"diet" : "entity",
 	"envEffects": [
 		{
 			"biomes": [
