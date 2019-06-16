@@ -9,7 +9,7 @@ function init()
 	if self.species then
 		success, self.speciesConfig = pcall(
 			function () 
-				return root.assetJson(string.format("/species/%s.raceeffect", species))
+				return root.assetJson(string.format("/species/%s.raceeffect", self.species))
 			end
 		)
 	end
