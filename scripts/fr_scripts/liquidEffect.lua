@@ -24,7 +24,19 @@ require("/scripts/util.lua")
 ]]
 
 function FRHelper:call(args, ...)
-    local mouthPosition = vec2.add(mcontroller.position(), status.statusProperty("mouthPosition"))
+	-- Investigative debug code
+	local pos = mcontroller.position()
+	local mouth = status.statusProperty("mouthPosition")
+	if pos == nil then 
+		sb.log("FR ERROR: MCONTROLLER POSITION NOT FOUND === PLEASE REPORT TO FU DISCORD SERVER\nENTITY TYPE: "..entity.entityType())
+		return
+	end
+	if mouth == nil then 
+		sb.log("FR ERROR: MOUTH POSITION NOT FOUND === PLEASE REPORT TO FU DISCORD SERVER\nENTITY TYPE: "..entity.entityType())
+		return
+	end
+	-- End investigative debug code
+    local mouthPosition = vec2.add(pos, mouth)
     for i,thing in ipairs(args or {}) do
         if thing.liquids then
             -- Liquid map translation, allows for easy file reading (put in "milk" instead of 7)
