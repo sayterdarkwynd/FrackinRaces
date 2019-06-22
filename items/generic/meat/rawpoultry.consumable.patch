@@ -1,7 +1,7 @@
 [  
 	{
-		"op" : "add", 
-		"path" : "/effects/-", 
+		"op" : "replace", 
+		"path" : "/effects", 
 		"value" : [ [ { "effect" : "meat_raw" } ] ]
 	},
 	{
