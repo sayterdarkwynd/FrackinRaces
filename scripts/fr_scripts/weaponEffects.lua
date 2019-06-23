@@ -24,6 +24,8 @@ function FRHelper:call(args)
     local primaryItem = world.entityHandItem(entity.id(), "primary")
     local altItem = world.entityHandItem(entity.id(), "alt")
     for i,weap in ipairs(args or {}) do
+		self:clearPersistent(weap.name or "FR_weaponComboEffect"..i)
+		self:clearPersistent(weap.name or "FR_weaponEffect"..i)
         if weap.combos then -- Weapon combos
             for _,combo in ipairs(weap.combos) do
                 if self:validCombo(primaryItem, altItem, combo) then
@@ -38,6 +40,6 @@ function FRHelper:call(args)
                     break
                 end
             end
-        end
+		end
     end
 end

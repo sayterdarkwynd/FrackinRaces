@@ -22,13 +22,18 @@ Structure:
 
 function FRHelper:call(args, main)
     for i,thing in ipairs(args or {}) do
+		local name = thing.name or "envEffect"..i
         if type(thing.biomes) == "string" then
             local groups = self.frconfig.biomeGroups[thing.biomes]
             if groups and contains(groups, world.type()) then
-                self:applyStats(thing, thing.name or "envEffect"..i)
-            end
+                self:applyStats(thing, name)
+            else
+				self:clearPersistent(name)
+			end
         elseif thing.biomes and contains(thing.biomes, world.type()) then
             self:applyStats(thing, thing.name or "envEffect"..i)
-        end
+        else
+			self:clearPersistent(name)
+		end
     end
 end
