@@ -1,12 +1,12 @@
 {
 	"stats": [
-		{"stat": "maxEnergy","baseMultiplier": 1.2},
+		{"stat": "maxEnergy","effectiveMultiplier": 1.2},
 		{"stat": "physicalResistance","amount": 0.1},
 		{"stat": "electricResistance","amount": -0.1},
 		{"stat": "fireResistance","amount": -0.4},
 		{"stat": "iceResistance","amount": 0.3},
 		{"stat": "poisonResistance","amount": 0.2},
-		{"stat": "maxBreath","amount": 1500}
+		{"stat": "maxBreath","amount": 2500}
 	],
 	"diet" : "omnivore",
 	"special": ["swimboost2"],
