@@ -21,5 +21,7 @@ function FRHelper:call(args, ...)
 	    else
 			self:clearPersistent(args.name or "FR_lightEffect")
 		end
+	else
+		self:clearPersistent(args.name or "FR_lightEffect")
 	end
 end
