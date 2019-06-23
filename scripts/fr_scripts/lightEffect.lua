@@ -17,5 +17,7 @@ function FRHelper:call(args, ...)
         self:applyStats(args, args.name or "FR_lightEffect", ...)
     elseif lightLevel <= args.lightLevel then
         self:applyStats(args, args.name or "FR_lightEffect", ...)
-    end
+    else
+		self:clearPersistent(args.name or "FR_lightEffect")
+	end
 end
