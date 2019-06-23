@@ -41,7 +41,7 @@ function update(dt)
 	end
 	
 	-- Update stuff
-	self.helper:clearPersistent()
+	--self.helper:clearPersistent()
 	self.helper:applyControlModifiers()
 	self.helper:runScripts("racialscript", self, dt)
 	
