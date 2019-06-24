@@ -1,5 +1,4 @@
 {
-<<<<<<< HEAD
 	"stats" : [
 		{ "stat" : "fallDamageMultiplier", "baseMultiplier" : 0.8 },
 		{ "stat" : "electricResistance", "amount" : 0.5 },
@@ -9,41 +8,6 @@
 		{ "stat" : "fireResistance", "amount" : -0.2 },
 		{ "stat" : "poisonResistance", "amount" : -0.25 },
 		{ "stat" : "fuCharisma", "amount" : 21 }
-=======
-	"stats": [
-		{
-			"stat": "fallDamageMultiplier",
-			"baseMultiplier": 0.8
-		},
-		{
-			"stat": "electricResistance",
-			"amount": 0.5
-		},
-		{
-			"stat": "cosmicResistance",
-			"amount": -0.2
-		},
-		{
-			"stat": "maxHealth",
-			"baseMultiplier": 0.9
-		},				
-		{
-			"stat": "maxFood",
-			"amount": 72
-		},			
-		{
-			"stat": "fireResistance",
-			"amount": -0.2
-		},
-		{
-			"stat": "poisonResistance",
-			"amount": -0.25
-		},
-		{
-			"stat": "fuCharisma",
-			"amount": 21
-		}
->>>>>>> 2b32467b8a0ae1e3d800f1e7fffbe0fd463fa17e
 	],
 	"diet" : "omnivore",
 	"controlModifiers" : {
