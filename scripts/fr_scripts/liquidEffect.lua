@@ -27,12 +27,10 @@ function FRHelper:call(args, ...)
 	-- Investigative debug code
 	local pos = mcontroller.position()
 	local mouth = status.statusProperty("mouthPosition")
-	if pos == nil then 
-		sb.logError("FR ERROR: MCONTROLLER POSITION NOT FOUND === PLEASE REPORT TO FU DISCORD SERVER\nENTITY TYPE: "..entity.entityType())
-		return
-	end
 	if mouth == nil then 
-		sb.logError("FR ERROR: MOUTH POSITION NOT FOUND === PLEASE REPORT TO FU DISCORD SERVER\nENTITY TYPE: "..entity.entityType())
+		sb.logError("FR ERROR: MOUTH POSITION NOT FOUND === PLEASE REPORT TO FU DISCORD SERVER"
+					.."\nNPC TYPE: "..world.npcType(entity.id())
+					.."\nSPECIES:  "..world.entitySpecies(entity.id()))
 		return
 	end
 	-- End investigative debug code
