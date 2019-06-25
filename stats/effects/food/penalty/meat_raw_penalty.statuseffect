@@ -2,7 +2,14 @@
 	"name" : "meat_raw_penalty",
 
 	"effectConfig" : {
-		"poisonPercent" : 0.01
+		"poisonPercent" : 0.01,
+		"stats" : [
+			{ "stat" : "maxHealth", "effectiveMultiplier" : 0.9 },
+			{ "stat" : "energyRegenBlockTime", "effectiveMultiplier" : 2 }
+		],
+		"controlModifiers" : {
+			"speedModifier" : 0.9
+		}
 	},
 	"defaultDuration" : 120,
 

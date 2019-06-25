@@ -2,7 +2,14 @@
 	"name" : "dairy_penalty",
 
 	"effectConfig" : {
-		"poisonPercent" : 0.01
+		"poisonPercent" : 0.01,
+		"stats" : [
+			{ "stat" : "maxHealth", "effectiveMultiplier" : 0.9 },
+			{ "stat" : "maxEnergy", "effectiveMultiplier" : 0.9 }
+		],
+		"controlModifiers" : {
+			"speedModifier" : 0.9
+		}
 	},
 	"defaultDuration" : 120,
 
@@ -12,6 +19,6 @@
 
 	"animationConfig" : "foodpoison.animation",
 
-	"label" : "Was that milk rotten? Nah, it was you.",
+	"label" : "Was that milk rotten? Nah, it was your digestive tract. Avoid lactose. You're intolerant.",
 	"icon" : "/interface/statuses/foodpoison.png"
 }

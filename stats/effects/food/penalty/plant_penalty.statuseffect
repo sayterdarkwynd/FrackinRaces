@@ -2,7 +2,14 @@
 	"name" : "plant_penalty",
 
 	"effectConfig" : {
-		"poisonPercent" : 0.01
+		"poisonPercent" : 0.01,
+		"stats" : [
+			{ "stat" : "energyRegenBlockTime", "effectiveMultiplier" : 1.5 },
+			{ "stat" : "maxEnergy", "effectiveMultiplier" : 0.85 }
+		],
+		"controlModifiers" : {
+			"speedModifier" : 0.9
+		}
 	},
 	"defaultDuration" : 120,
 
