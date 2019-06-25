@@ -23,8 +23,8 @@ function init()
 	if type(self.diet) == "string" then
 		self.diet = self.dietConfig.diets[self.diet]
 	end
-	self.whitelist = self.diet[1]
-	self.blacklist = self.diet[2]
+	self.whitelist = self.diet[1] or {}
+	self.blacklist = self.diet[2] or {}
 	
 	-- TODO: Add script hook here
 	
