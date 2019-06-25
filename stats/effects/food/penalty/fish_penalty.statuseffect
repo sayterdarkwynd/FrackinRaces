@@ -2,6 +2,7 @@
 	"name" : "fish_penalty",
 
 	"effectConfig" : {
+		"poisonPercent" : 0.01
 	},
 	"defaultDuration" : 120,
 
