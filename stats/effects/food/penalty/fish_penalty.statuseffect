@@ -2,6 +2,14 @@
 	"name" : "fish_penalty",
 
 	"effectConfig" : {
+		"poisonPercent" : 0.01,
+		"stats" : [
+			{ "stat" : "maxHealth", "effectiveMultiplier" : 0.9 },
+			{ "stat" : "maxBreath", "effectiveMultiplier" : 0.5 }
+		],
+		"controlModifiers" : {
+			"speedModifier" : 0.8
+		}
 	},
 	"defaultDuration" : 120,
 

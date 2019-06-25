@@ -3,6 +3,9 @@ function init()
 	self.tickDamagePercentage = config.getParameter("poisonPercent", 0.005)
 	self.tickTime = config.getParameter("poisonSpeed", 2)
 	self.tickTimer = self.tickTime
+	
+	effect.addStatModifierGroup(config.getParameter("stats", {}))
+	
 	script.setUpdateDelta(5)		
 end
 
@@ -21,6 +24,8 @@ function update(dt)
 		status.removeEphemeralEffect("wellfed")
 		if status.resourcePercentage("food") > 0.85 then status.setResourcePercentage("food", 0.85) end
 	end
+	
+	mcontroller.controlModifiers(config.getParameter("controlModifiers", {}))
 end
 
 function uninit()
