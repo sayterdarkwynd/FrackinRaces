@@ -4,7 +4,7 @@
 	"effectConfig" : {
 		"poisonPercent" : 0.01,
 		"stats" : [
-			{ "stat" : "healthRegen", "effectiveMultiplier" : 0 }
+			{ "stat" : "healthRegen", "effectiveMultiplier" : 0 },
 			{ "stat" : "maxHealth", "effectiveMultiplier" : 0.75 }
 		]
 	},

@@ -6,7 +6,7 @@
 		"stats" : [
 			{ "stat" : "maxHealth", "effectiveMultiplier" : 0.85 },
 			{ "stat" : "maxEnergy", "effectiveMultiplier" : 0.85 },
-			{ "stat" : "energyRegenPercentageRate", "effectiveMultiplier" : 1.5 }
+			{ "stat" : "energyRegenPercentageRate", "effectiveMultiplier" : 2 }
 		],
 		"controlModifiers" : {
 			"speedModifier" : 0.8
