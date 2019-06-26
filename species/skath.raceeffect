@@ -2,8 +2,10 @@
 	"stats": [
 		{"stat": "maxEnergy","effectiveMultiplier": 1.2},
 		{"stat": "physicalResistance","amount": 0.1},
-		{"stat": "electricResistance","amount": -0.1},
-		{"stat": "fireResistance","amount": -0.4},
+		{"stat": "electricResistance","amount": -0.3},
+		{"stat": "fireResistance","amount": -0.1},
+		{"stat": "radioactiveResistance","amount": -0.1},
+		{"stat": "shadowResistance","amount": -0.1},
 		{"stat": "iceResistance","amount": 0.3},
 		{"stat": "poisonResistance","amount": 0.2},
 		{"stat": "maxBreath","amount": 2500}

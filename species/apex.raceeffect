@@ -3,7 +3,7 @@
 		{ "stat" : "maxEnergy", "effectiveMultiplier" : 1.3 },
 		{ "stat" : "maxFood", "baseMultiplier" : 0.80 },
 		{ "stat" : "mentalProtection", "amount" : 0.2 },		
-		{ "stat" : "fireResistance", "amount" : -0.2 },
+		{ "stat" : "shadowResistance", "amount" : -0.2 },
 		{ "stat" : "cosmicResistance", "amount" : -0.2 },
 		{ "stat" : "radioactiveResistance", "amount" : -0.2 },		
 		{ "stat" : "iceResistance", "amount" : 0.3 },

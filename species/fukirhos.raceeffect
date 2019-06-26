@@ -5,7 +5,7 @@
 		{ "stat" : "cosmicResistance", "amount" : -0.2 },
 		{ "stat" : "maxHealth", "baseMultiplier" : 0.9 },
 		{ "stat" : "maxFood", "amount" : 72 },
-		{ "stat" : "fireResistance", "amount" : -0.2 },
+		{ "stat" : "radioactiveResistance", "amount" : -0.2 },
 		{ "stat" : "poisonResistance", "amount" : -0.25 },
 		{ "stat" : "fuCharisma", "amount" : 21 }
 	],
