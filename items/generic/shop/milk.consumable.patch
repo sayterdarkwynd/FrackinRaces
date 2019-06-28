@@ -2,7 +2,7 @@
   {
     "op": "add",
     "path": "/effects",
-    "value": [ [ "milk_food" ] ]
+    "value": [ [ "dairy_food" ] ]
   },
   {
     "op": "replace",
