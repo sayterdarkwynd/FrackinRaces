@@ -22,15 +22,19 @@ require("/scripts/util.lua")
     ]
 
 ]]
+liquideffect_errorLogged = false
 
 function FRHelper:call(args, ...)
 	-- Investigative debug code
 	local pos = mcontroller.position()
 	local mouth = status.statusProperty("mouthPosition")
-	if mouth == nil then 
-		sb.logError("FR ERROR: MOUTH POSITION NOT FOUND === PLEASE REPORT TO FU DISCORD SERVER"
-					.."\nNPC TYPE: "..world.npcType(entity.id())
-					.."\nSPECIES:  "..world.entitySpecies(entity.id()))
+	if mouth == nil then
+		if not liquideffect_errorLogged then
+			sb.logError("FR ERROR: MOUTH POSITION NOT FOUND - You got a mod conflict here, buddy. Somethin is messin up your NPCs."
+						.."\nNPC TYPE: "..world.npcType(entity.id())
+						.."\nSPECIES:  "..world.entitySpecies(entity.id()))
+			liquideffect_errorLogged = true
+		end
 		return
 	end
 	-- End investigative debug code
