@@ -21,7 +21,7 @@
 			"amount": -0.5
 		}
 	],
-	"diet" : "carnivore",
+	"diet" : "omnivore",
 	"controlModifiers": {
 		"speedModifier": 1.07,
 		"airJumpModifier": 1.06

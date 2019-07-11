@@ -4,7 +4,7 @@
 	"price" : 100,
 	"category" : "preparedFood",
 	"inventoryIcon" : "fulobstercooked.png",
-	"description" : "Delicious aquatic horror.",
+	"description" : "Delicious aquatic horror. ^green;Type: Cooked Seafood^reset;",
 	"shortdescription" : "Cooked Lobster",
 	"foodValue" : 15,
 	"tooltipKind" : "food",

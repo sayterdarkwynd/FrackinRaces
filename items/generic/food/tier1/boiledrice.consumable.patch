@@ -7,5 +7,10 @@
         "plant_food"
       ]
     ]
+  },
+  {
+    "op": "replace",
+    "path": "/description",
+    "value": "^green;Type: Herbivore^reset;"
   }
 ]

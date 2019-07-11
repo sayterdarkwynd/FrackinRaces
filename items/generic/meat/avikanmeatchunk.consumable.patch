@@ -2,6 +2,6 @@
 	{
 		"op" : "add",
 		"path" : "/effects",
-		"value" : [ [ { "effect" : "meat_raw" } ] ]
+		"value" : [ [ { "effect" : "meat_cooked" } ] ]
 	}
 ]
