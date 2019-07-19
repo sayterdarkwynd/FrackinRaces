@@ -82,5 +82,6 @@
 	}],
 	"special": [
 		"kazdraBonus"
-	]
+	],
+	"tech" : [ "dragonfireburst" ]
 }

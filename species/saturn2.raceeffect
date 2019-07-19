@@ -60,5 +60,6 @@
 			"weapons": ["scythe"],
 			"stats": [{"stat": "powerMultiplier","effectiveMultiplier": 1.12}]
 		}
-	]
+	],
+	"tech" : [ "flight_saturnianmoth" ]
 }

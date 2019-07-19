@@ -126,5 +126,6 @@
 				}
 			}
 		}
-	}
+	},
+	"tech" : [ "flight_moogle" ]
 }

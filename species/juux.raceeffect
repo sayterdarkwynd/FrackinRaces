@@ -121,5 +121,6 @@
 		}
 	],
 	"weaponScripts": [],	
-	"special": [ ]
+	"special": [ ],
+	"tech" : [ "juuxharden" ]
 }

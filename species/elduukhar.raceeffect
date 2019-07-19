@@ -129,5 +129,6 @@
 	],
 	"special": [
 		"elduukharBonus"
-	]
+	],
+	"tech" : [ "elduukharburst" ]
 }

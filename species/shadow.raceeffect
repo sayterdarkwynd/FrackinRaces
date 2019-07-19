@@ -84,5 +84,6 @@
 	"special": [
 		"shadowglow1",
 		"darkhunternightar"
-	]
+	],
+	"tech" : [ "tenebrhaeburst" ]
 }
