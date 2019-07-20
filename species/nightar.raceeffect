@@ -135,6 +135,6 @@
 		}
 	],
 	
-	"special": [ "nightarglow3", "darkhunternightar", "drainnightar"]
-	
+	"special": [ "nightarglow3", "darkhunternightar", "drainnightar"],
+	"tech" : [ "nightarconshak" ]
 }

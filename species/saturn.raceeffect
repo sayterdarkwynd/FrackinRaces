@@ -66,5 +66,6 @@
 				"effectiveMultiplier": 1.2
 			}]
 		}
-	]
+	],
+	"tech" : [ "flight_saturnian" ]
 }
