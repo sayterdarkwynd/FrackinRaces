@@ -10,7 +10,7 @@
  +^green;25^reset; Max Food
  Resist: ^green;30%^reset; Fire, ^green;20%^reset; Ice 
  Immune: Slipping, Burning
- Racial Tech (use Race Effect Enabler) : Harden (crouch)
+ Tech: ^green;Harden^reset;
  
  ^orange;Environment^reset;: 
  On ^green;hot^reset; biomes, gain ^green;10% speed^reset;
