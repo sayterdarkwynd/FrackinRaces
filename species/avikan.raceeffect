@@ -3,9 +3,9 @@
 		{ "stat" : "maxHealth", "baseMultiplier" : 1.15 },
 		{ "stat" : "maxEnergy", "baseMultiplier" : 1.15 },
 		{ "stat" : "protection", "effectiveMultiplier" : 1.05 },
-		{ "stat" : "fireResistance", "amount" : 0.5 },
-		{ "stat" : "iceResistance", "amount" : -0.5 },
-		{ "stat" : "radioactiveResistance", "amount" : 0.2 },
+		{ "stat" : "fireResistance", "amount" : 0.40 },
+		{ "stat" : "iceResistance", "amount" : -0.40 },
+		{ "stat" : "radioactiveResistance", "amount" : 0.10 },
 		{ "stat" : "grit", "amount" : 0.25 },
 		{ "stat" : "blacktarImmunity", "amount" : 1 },
 		{ "stat" : "tarImmunity", "amount" : 1 },
@@ -20,7 +20,7 @@
 			"stats" : [
 				{ "stat" : "maxHealth", "baseMultiplier" : 1.15 },
 				{ "stat" : "protection", "effectiveMultiplier" : 1.05 },
-				{ "stat" : "healthRegen", "amount" : 0.04 }
+				{ "stat" : "healthRegen", "amount" : 0.025 }
 			]
 		},
 		{
@@ -41,7 +41,6 @@
 		{
 			"weapons" : [ "energy" ],
 			"stats" : [
-				{ "stat" : "critChance", "amount" : 2 },
 				{ "stat" : "powerMultiplier", "baseMultiplier" : 1.15 }
 			]
 		}

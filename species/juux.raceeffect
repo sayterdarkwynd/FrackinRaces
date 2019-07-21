@@ -90,7 +90,7 @@
 			]
 		},
 		{
-			"weapons": ["pyreite","hellfire","incendiary","fire","flamethrower","incendiary"],
+			"weapons": ["pyreite","hellfire","incendiary","fire","flamethrower"],
 			"stats": [
 				{
 					"stat": "powerMultiplier",
