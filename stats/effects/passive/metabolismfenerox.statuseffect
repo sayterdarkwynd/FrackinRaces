@@ -1,9 +1,0 @@
-{
-  "name" : "metabolismfenerox",
-  "effectConfig" : {},
-  "defaultDuration" : 1,
-
-  "scripts" : [
-    "metabolismfenerox.lua"
-  ]
-}
