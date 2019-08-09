@@ -25,7 +25,7 @@ end
 
 function update(args)
   if not self.specialLast and args.moves["special1"] then
-    attemptActivation()
+    --attemptActivation()
     animator.playSound("activate")
   end
   
