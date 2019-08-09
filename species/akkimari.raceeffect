@@ -39,5 +39,12 @@
 			]
 		}
 	],
-	"special" : [ "argonianRegen" ]
+	"scripts" : [
+		{
+			"script" : "/scripts/fr_scripts/healthRegen.lua",
+			"args" : {
+				"healingRate" : 0.0001
+			}
+		}
+	]
 }

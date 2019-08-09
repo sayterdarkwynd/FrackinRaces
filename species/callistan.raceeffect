@@ -18,38 +18,33 @@
 		{ "stat" : "slushslowImmunity", "amount" : 1 }
 	],
 	"diet" : "carnivore",
-	"envEffects" : [{
-		"biomes" : [
-			"garden",
-			"forest",
-			"tundra",
-			"snow"
-		],
-		"stats" : [{
-				"stat" : "maxHealth",
-				"baseMultiplier" : 1.15
-			},
-			{
-				"stat" : "powerMultiplier",
-				"baseMultiplier" : 1.1
+	"envEffects" : [
+		{
+			"biomes" : [ "garden", "forest", "tundra", "snow" ],
+			"stats" : [
+				{ "stat" : "maxHealth", "baseMultiplier" : 1.15 },
+				{ "stat" : "powerMultiplier", "baseMultiplier" : 1.1 }
+			]
+		}
+	],
+	"weaponEffects" : [
+		{
+			"weapons" : [ "energy" ],
+			"stats" : [
+				{ "stat" : "energyRegenPercentageRate", "baseMultiplier" : 1.25 },
+				{ "stat" : "critChance", "amount" : 3 }
+			]
+		}
+	],
+	"scripts" : [
+		{
+			"script" : "/scripts/fr_scripts/foodRush.lua",
+			"args" : {
+				"foodDefault" : 0.5,
+				"speedFactor" : 4.25,
+				"minSpeed" : 0.0,
+				"maxSpeed" : 0.2
 			}
-		]
-	}],
-	"weaponEffects" : [{
-		"weapons" : [
-			"energy"
-		],
-		"stats" : [{
-				"stat" : "energyRegenPercentageRate",
-				"baseMultiplier" : 1.25
-			},
-			{
-				"stat" : "critChance",
-				"amount" : 3
-			}
-		]
-	}],
-	"special" : [
-		"callistanFoodRush"
+		}
 	]
 }
