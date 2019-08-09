@@ -1,8 +1,8 @@
 {
 	"stats": [
-		{ "stat": "maxHealth", "baseMultiplier": 1.05 },
-		{ "stat": "maxEnergy", "baseMultiplier": 1.2 },
-		{ "stat": "powerMultiplier", "baseMultiplier": 1.05 },
+		{ "stat": "maxHealth", "effectiveMultiplier": 1.05 },
+		{ "stat": "maxEnergy", "effectiveMultiplier": 1.2 },
+		{ "stat": "powerMultiplier", "effectiveMultiplier": 1.05 },
 		{ "stat": "electricResistance", "amount": 0.25 },
 		{ "stat": "fireResistance", "amount": -0.5 },
 		{ "stat": "iceResistance", "amount": 0.25 },
@@ -15,8 +15,8 @@
 		{
 			"biomes": "jungle",
 			"stats": [
-				{ "stat": "maxHealth", "baseMultiplier": 1.1 },
-				{ "stat": "maxEnergy", "baseMultiplier": 1.1 }
+				{ "stat": "maxHealth", "effectiveMultiplier": 1.1 },
+				{ "stat": "maxEnergy", "effectiveMultiplier": 1.1 }
 			]
 		}
 	],
@@ -34,14 +34,14 @@
 		{
 			"weapons": [ "dagger", "spear" ],
 			"stats": [
-				{ "stat": "powerMultiplier", "baseMultiplier": 1.08 },
+				{ "stat": "powerMultiplier", "effectiveMultiplier": 1.08 },
 				{ "stat": "critChance", "amount": 3 }
 			]
 		},
 		{
 			"weapons": [ "needler", "thrown", "floran" ],
 			"stats": [
-				{ "stat": "critChance", "baseMultiplier": 2 }
+				{ "stat": "critChance", "amount": 2 }
 			]
 		},
 		{
@@ -142,8 +142,8 @@
 				},
 				"nightConfig" : {
 					"stats" : [
-						{ "stat" : "maxHealth", "baseMultiplier" : 0.90 },
-						{ "stat" : "maxEnergy", "baseMultiplier" : 0.70 }
+						{ "stat" : "maxHealth", "effectiveMultiplier" : 0.90 },
+						{ "stat" : "maxEnergy", "effectiveMultiplier" : 0.70 }
 					],
 					"hungerLoss" : -0.0032,
 					"hungerLossLight" : -0.0019,
