@@ -14,7 +14,7 @@
 		},
 		{
 			"stat": "physicalResistance",
-			"amount": -0.5
+			"amount": -0.2
 		},
 		{
 			"stat": "poisonResistance",
@@ -30,7 +30,7 @@
 		},
 		{
 			"stat": "radioactiveResistance",
-			"amount": 0.2
+			"amount": 0.1
 		},
 		{
 			"stat": "biomeradiationImmunity",
@@ -39,8 +39,8 @@
 	],
 	"diet" : "omnivore",
 	"controlModifiers": {
-		"speedModifier": 1.15,
-		"airJumpModifier": 1.15
+		"speedModifier": 1.1,
+		"airJumpModifier": 1.1
 	},
 	"envEffects": [{
 			"biomes": [
@@ -49,8 +49,8 @@
 				"jungle"
 			],
 			"controlModifiers": {
-				"speedModifier": 1.1,
-				"airJumpModifier": 1.1
+				"speedModifier": 1.05,
+				"airJumpModifier": 1.05
 			}
 		},
 		{
@@ -59,11 +59,11 @@
 			],
 			"stats": [{
 					"stat": "fireResistance",
-					"amount": 0.15
+					"amount": 0.1
 				},
 				{
 					"stat": "iceResistance",
-					"amount": -0.15
+					"amount": -0.1
 				}
 			]
 		},
@@ -73,11 +73,11 @@
 			],
 			"stats": [{
 					"stat": "fireResistance",
-					"amount": -0.15
+					"amount": -0.1
 				},
 				{
 					"stat": "iceResistance",
-					"amount": 0.15
+					"amount": 0.1
 				}
 			]
 		}

@@ -14,11 +14,11 @@
 		},
 		{
 			"stat": "fireResistance",
-			"amount": 0.5
+			"amount": 0.2
 		},
 		{
 			"stat": "iceResistance",
-			"amount": -0.5
+			"amount": -0.2
 		},
 		{
 			"stat": "fireStatusImmunity",
@@ -35,8 +35,8 @@
 	],
 	"diet" : "omnivore",
 	"controlModifiers": {
-		"speedModifier": 1.35,
-		"airJumpModifier": 1.1
+		"speedModifier": 1.15,
+		"airJumpModifier": 1.05
 	},
 	"envEffects": [{
 			"biomes": [
@@ -58,19 +58,19 @@
 			],
 			"stats": [{
 					"stat": "maxHealth",
-					"baseMultiplier": 0.7
+					"baseMultiplier": 0.8
 				},
 				{
 					"stat": "maxEnergy",
-					"baseMultiplier": 0.7
+					"baseMultiplier": 0.8
 				},
 				{
 					"stat": "powerMultiplier",
-					"baseMultiplier": 0.6
+					"baseMultiplier": 0.8
 				},
 				{
 					"stat": "fireResistance",
-					"amount": -0.5
+					"amount": -0.2
 				}
 			]
 		}

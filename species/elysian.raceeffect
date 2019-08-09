@@ -26,11 +26,11 @@
 		},
 		{
 			"stat": "electricResistance",
-			"amount": 0.4
+			"amount": 0.25
 		},
 		{
 			"stat": "iceResistance",
-			"amount": -0.3
+			"amount": -0.15
 		},
 		{
 			"stat": "cosmicResistance",
@@ -38,7 +38,7 @@
 		},
 		{
 			"stat": "radioactiveResistance",
-			"amount": -0.3
+			"amount": -0.15
 		},
 		{
 			"stat": "electricStatusImmunity",
@@ -47,7 +47,7 @@
 	],
 	"diet" : "carnivore",
 	"controlModifiers": {
-		"speedModifier": 1.3,
+		"speedModifier": 1.1,
 		"airJumpModifier": 1.05
 	},
 	"envEffects": [{
@@ -76,7 +76,7 @@
 			],
 			"stats": [{
 					"stat": "maxEnergy",
-					"baseMultiplier": 0.5
+					"baseMultiplier": 0.75
 				},
 				{
 					"stat": "powerMultiplier",
