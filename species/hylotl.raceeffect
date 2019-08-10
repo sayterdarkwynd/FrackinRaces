@@ -92,8 +92,17 @@
 			}
 		}
 	],
-	"special": [ "swimboost2" ],
 	"liquidEffects": [
+		{
+			"controlModifiers" : {
+				"liquidImpedance" : 0.3,
+				"liquidForce" : 130,
+				"liquidJumpProfile" : {
+					"jumpSpeed" : 70.0
+				},
+				"speedModifier" : 1.8
+			}
+		},
 		{
 			"liquids": [ "water", "healingwater", "wastewater", "swampwater" ],
 			"stats": [
