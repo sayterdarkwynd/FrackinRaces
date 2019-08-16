@@ -1,101 +1,55 @@
 {
 	"stats": [
-		{
-			"stat": "maxHealth",
-			"baseMultiplier": 1.2
-		},
-		{
-			"stat": "powerMultiplier",
-			"baseMultiplier": 1.1
-		},
-		{
-			"stat": "electricResistance",
-			"amount": -0.4
-		},
-		{
-			"stat": "iceResistance",
-			"amount": 0.2
-		},
-		{
-			"stat": "shadowResistance",
-			"amount": -0.1
-		}
+		{ "stat": "maxHealth", "effectiveMultiplier": 1.2 },
+		{ "stat": "powerMultiplier", "effectiveMultiplier": 1.1 },
+		{ "stat": "electricResistance", "amount": -0.4 },
+		{ "stat": "iceResistance", "amount": 0.2 },
+		{ "stat": "shadowResistance", "amount": -0.1 }
 	],   // Omnivores, but these like fish!
 	"diet" : [ { "ORGANIC" : false, "FISH" : true }, { "MEAT_RAW" : true } ],
-	"envEffects": [{
-		"biomes": [
-			"ocean",
-			"oceanfloor"
-		],
-		"stats": [{
-				"stat": "maxHealth",
-				"baseMultiplier": 1.12
-			},
-			{
-				"stat": "maxEnergy",
-				"baseMultiplier": 1.12
-			},
-			{
-				"stat": "protection",
-				"baseMultiplier": 1.15
-			}
-		]
-	}],
-	"weaponEffects": [{
-			"weapons": [
-				"shortsword"
+	"envEffects": [
+		{
+			"biomes": [ "ocean", "oceanfloor" ],
+			"stats": [
+				{ "stat": "maxHealth", "effectiveMultiplier": 1.12 },
+				{ "stat": "maxEnergy", "effectiveMultiplier": 1.12 },
+				{ "stat": "protection", "effectiveMultiplier": 1.15 }
+			]
+		}
+	],
+	"weaponEffects": [
+		{
+			"weapons": [ "shortsword" ],
+			"stats": [
+				{ "stat": "powerMultiplier", "effectiveMultiplier": 1.06 }
 			],
-			"stats": [{
-				"stat": "powerMultiplier",
-				"baseMultiplier": 1.06
-			}],
 			"controlModifiers": {
 				"speedModifier": 1.04
 			}
 		},
 		{
-			"weapons": [
-				"quarterstaff"
+			"weapons": [ "quarterstaff" ],
+			"stats": [
+				{ "stat": "protection", "amount": 6 }
 			],
-			"stats": [{
-				"stat": "protection",
-				"amount": 6
-			}],
 			"controlModifiers": {
 				"speedModifier": 1.12
 			}
 		},
 		{
-			"combos": [
-				[
-					"katana"
-				]
-			],
-			"stats": [{
-					"stat": "powerMultiplier",
-					"baseMultiplier": 1.1
-				},
-				{
-					"stat": "critDamage",
-					"amount": 0.25
-				}
+			"combos": [ [ "katana" ] ],
+			"stats": [
+				{ "stat": "powerMultiplier", "effectiveMultiplier": 1.1 },
+				{ "stat": "critDamage", "amount": 0.25 }
 			]
 		},
 		{
 			"combos": [
-				[
-					"katana",
-					"dagger"
-				]
+				[ "katana", "dagger" ]
 			],
-			"stats": [{
-					"stat": "protection",
-					"amount": 4
-				},
-				{
-					"stat": "critChance",
-					"amount": 1
-				}
+			"stats": [
+				{ "stat": "protection", "amount": 4 },
+				{ "stat": "critChance", "amount": 1 }
 			],
 			"controlModifiers": {
 				"speedModifier": 1.08
@@ -108,63 +62,55 @@
 				"katana",
 				"longsword"
 			],
-			"scripts": [{
-				"script": "/scripts/fr_weaponscripts/healthybonus.lua",
-				"contexts": [
-					"healthyBonus"
-				],
-				"args": {
-					"healthReq": 0.75,
-					"stats": [{
-						"stat": "critChance",
-						"amount": 2
-					}]
+			"scripts": [
+				{
+					"script": "/scripts/fr_weaponscripts/healthybonus.lua",
+					"contexts": [ "healthyBonus" ],
+					"args": {
+						"healthReq": 0.75,
+						"stats": [
+							{ "stat": "critChance", "amount": 2 }
+						]
+					}
 				}
-			}]
+			]
 		}
 	],
-	"weaponScripts": [{
-		"script": "/scripts/fr_weaponscripts/perfectblockbonus.lua",
-		"contexts": [
-			"shield-perfectblock"
-		],
-		"args": {
-			"resources": {
-				"health": {
-					"base": 0.025,
-					"comboBase": 0.0008,
-					"max": 0.05
-				}
-			},
-			"particles": "bonusBlock"
-		}
-	}],
-	"special": [
-		"swimboost2"
-	],
-	"liquidEffects": [{
-		"liquids": [
-			1,
-			6,
-			58,
-			12
-		],
-		"stats": [{
-				"stat": "maxHealth",
-				"baseMultiplier": 1.25
-			},
-			{
-				"stat": "physicalResistance",
-				"amount": 0.2
-			},
-			{
-				"stat": "perfectBlockLimit",
-				"amount": 2
-			},
-			{
-				"stat": "maxBreath",
-				"amount": 1500
+	"weaponScripts": [
+		{
+			"script": "/scripts/fr_weaponscripts/perfectblockbonus.lua",
+			"contexts": [ "shield-perfectblock" ],
+			"args": {
+				"resources": {
+					"health": {
+						"base": 0.025,
+						"comboBase": 0.0008,
+						"max": 0.05
+					}
+				},
+				"particles": "bonusBlock"
 			}
-		]
-	}]
+		}
+	],
+	"liquidEffects": [
+		{
+			"controlModifiers" : {
+				"liquidImpedance" : 0.3,
+				"liquidForce" : 130,
+				"liquidJumpProfile" : {
+					"jumpSpeed" : 70.0
+				},
+				"speedModifier" : 1.8
+			}
+		},
+		{
+			"liquids": [ "water", "healingwater", "wastewater", "swampwater" ],
+			"stats": [
+				{ "stat": "maxHealth", "effectiveMultiplier": 1.25 },
+				{ "stat": "physicalResistance", "amount": 0.2 },
+				{ "stat": "perfectBlockLimit", "amount": 2 },
+				{ "stat": "maxBreath", "amount": 1500 }
+			]
+		}
+	]
 }

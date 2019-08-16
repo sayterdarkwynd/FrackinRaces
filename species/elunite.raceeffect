@@ -1,25 +1,10 @@
 {
 	"stats": [
-		{
-			"stat": "maxHealth",
-			"baseMultiplier": 0.85
-		},
-		{
-			"stat": "maxEnergy",
-			"baseMultiplier": 1.2
-		},
-		{
-			"stat": "electricResistance",
-			"amount": 0.4
-		},
-		{
-			"stat": "shadowResistance",
-			"amount": -0.5
-		},
-		{
-			"stat": "electricStatusImmunity",
-			"amount": 1
-		}
+		{ "stat": "maxHealth", "baseMultiplier": 0.85 },
+		{ "stat": "maxEnergy", "baseMultiplier": 1.2 },
+		{ "stat": "electricResistance", "amount": 0.4 },
+		{ "stat": "shadowResistance", "amount": -0.5 },
+		{ "stat": "electricStatusImmunity", "amount": 1 }
 	],
 	"diet" : "robot",
 	"controlModifiers": {
@@ -30,56 +15,31 @@
 		"liquidForce": 25,
 		"groundForce": 115
 	},
-	"weaponEffects": [{
-			"weapons": [
-				"dagger",
-				"shortsword",
-				"broadsword"
+	"weaponEffects": [
+		{
+			"weapons": [ "dagger", "shortsword", "broadsword"
 			],
-			"stats": [{
-					"stat": "protection",
-					"amount": 2
-				},
-				{
-					"stat": "energyRegenPercentageRate",
-					"amount": 0.48
-				}
+			"stats": [
+				{ "stat": "protection", "amount": 2 },
+				{ "stat": "energyRegenPercentageRate", "amount": 0.48 }
 			]
 		},
 		{
-			"weapons": [
-				"boomerang",
-				"chakram"
-			],
-			"stats": [{
-					"stat": "protection",
-					"amount": 2
-				},
-				{
-					"stat": "powerMultiplier",
-					"baseMultiplier": 1.125
-				}
+			"weapons": [ "boomerang", "chakram" ],
+			"stats": [
+				{ "stat": "protection", "amount": 2 },
+				{ "stat": "powerMultiplier", "baseMultiplier": 1.125 }
 			]
 		},
 		{
 			"combos": [
-				[
-					"boomerang",
-					"boomerang"
-				],
-				[
-					"boomerang",
-					"chakram"
-				],
-				[
-					"chakram",
-					"chakram"
-				]
+				[ "boomerang", "boomerang" ],
+				[ "boomerang", "chakram" ],
+				[ "chakram", "chakram" ]
 			],
-			"stats": [{
-				"stat": "powerMultiplier",
-				"baseMultiplier": 1.125
-			}]
+			"stats": [
+				{ "stat": "powerMultiplier", "baseMultiplier": 1.125 }
+			]
 		}
 	]
 }

@@ -24,6 +24,18 @@
 			}
 		}
 	],
+	"liquidEffects" : [
+		{
+			"controlModifiers" : {
+		  		"liquidImpedance" : 0.4,
+		  		"liquidForce" : 90,
+		  		"liquidJumpProfile" : {
+					"jumpSpeed" : 60.0
+		  		},
+		  		"speedModifier" : 1.37
+			}
+		}
+	],
 	"weaponEffects" : [
 		{
 			"weapons" : [ "spear" ],
@@ -47,5 +59,12 @@
 			]
 		}
 	],
-	"special" : [ "argonianRegen", "swimboost1" ]
+	"scripts" : [
+		{
+			"script" : "/scripts/fr_scripts/healthRegen.lua",
+			"args" : {
+				"healingRate" : 0.0001
+			}
+		}
+	]
 }
