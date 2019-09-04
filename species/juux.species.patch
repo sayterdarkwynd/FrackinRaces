@@ -2,7 +2,7 @@
 
     { "op": "replace", 
     "path" : "/charCreationTooltip/description" , 
-    "value" : "An unusual reptilian with exceptional heat resistance.
+    "value" : "An unusual psionic species of extremophiles.
 
  Diet: Special (Robot / Herbivore)
  
