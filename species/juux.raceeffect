@@ -37,7 +37,7 @@
 			"amount": -0.1
 		}
 	],
-	"diet" : [ { "ORGANIC" : false, "PLANT" : true, "ROBOT_PLANT" : true }, { "MEAT" : true } ],
+	"diet" : "entity",
 	"envEffects": [
 	{
 		"biomes": [
