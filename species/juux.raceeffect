@@ -99,7 +99,7 @@
 			]
 		},		
 		{
-			"weapons": ["qs","quartterstaff"],
+			"weapons": ["qs","quarterstaff"],
 			"stats": [{
 					"stat": "protection",
 					"effectiveMultiplier": 1.12
