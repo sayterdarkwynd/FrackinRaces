@@ -2,6 +2,7 @@
 	"stats": [
 		{ "stat": "maxFood", "effectiveMultiplier": 0.75 },
 		{ "stat": "maxHealth", "effectiveMultiplier": 0.9 },
+		{ "stat": "maxEnergy", "effectiveMultiplier": 1.1 },
 		{ "stat": "powerMultiplier", "effectiveMultiplier": 1.05 },
 		{ "stat": "electricResistance", "amount": 0.4 },
 		{ "stat": "fireResistance", "amount": -0.2 },
@@ -61,5 +62,6 @@
 			}
 		}
 	],
+	"special": [ "headlampveluu"],
 	"tech" : [ "huntersclaw" ]
 }
