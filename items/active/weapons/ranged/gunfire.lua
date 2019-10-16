@@ -190,7 +190,6 @@ self.reloadTime = config.getParameter("reloadTime") or 1		-- how long does reloa
 	    else
 	      self.magazineAmount = self.magazineAmount - 1
 	    end
-	    sb.logInfo(self.magazineAmount)
 	  end	
   
     local species = world.entitySpecies(activeItem.ownerEntityId())
@@ -228,7 +227,19 @@ self.reloadTime = config.getParameter("reloadTime") or 1		-- how long does reloa
 	    self.cooldownTimer = self.fireTime + self.reloadTime
 	    status.addEphemeralEffect("reloadReady", 0.25)
 	    self.magazineAmount = self.magazineSize
-	    animator.playSound("fuReload") -- adds new sound to reload 
+
+	    self.reloadTime = config.getParameter("reloadTime",0)
+	    if (self.reloadTime < 0.08) then
+	       animator.playSound("fuReload") -- adds new sound to reload 
+	    elseif (self.reloadTime >= 2.5) then
+	       animator.playSound("fuReload5") -- adds new sound to reload 
+	    elseif (self.reloadTime >= 2) then
+	       animator.playSound("fuReload4") -- adds new sound to reload 
+	    elseif (self.reloadTime >= 1.5) then
+	       animator.playSound("fuReload3") -- adds new sound to reload 	       
+	    elseif (self.reloadTime >= 1) then
+	       animator.playSound("fuReload2") -- adds new sound to reload 
+	    end
 	end
 	
 	self.weapon:setStance(self.stances.cooldown)
@@ -297,7 +308,20 @@ self.reloadTime = config.getParameter("reloadTime") or 1		-- how long does reloa
 	    self.cooldownTimer = ((self.fireTime - self.burstTime) * self.burstCount) + self.reloadTime
 	    status.addEphemeralEffect("reloadReady", 0.25)
 	    self.magazineAmount = self.magazineSize
-	    animator.playSound("fuReload") -- adds new sound to reload 
+	    
+	    self.reloadTime = config.getParameter("reloadTime",0)
+	    if (self.reloadTime < 0.08) then
+	       animator.playSound("fuReload") -- adds new sound to reload 
+	    elseif (self.reloadTime >= 2.5) then
+	       animator.playSound("fuReload5") -- adds new sound to reload 
+	    elseif (self.reloadTime >= 2) then
+	       animator.playSound("fuReload4") -- adds new sound to reload 
+	    elseif (self.reloadTime >= 1.5) then
+	       animator.playSound("fuReload3") -- adds new sound to reload 	       
+	    elseif (self.reloadTime >= 1) then
+	       animator.playSound("fuReload2") -- adds new sound to reload 
+	    end
+	    
 	    self.weapon:setStance(self.stances.cooldown)
 	    self:setState(self.cooldown)	    
 	end
