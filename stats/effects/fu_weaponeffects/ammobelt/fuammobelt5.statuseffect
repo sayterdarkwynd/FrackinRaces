@@ -1,0 +1,13 @@
+{
+  "name" : "fuammobelt5",
+
+  "effectConfig" : {
+    "ammoBoost" : 10,
+    "reloadBoost" : 0
+  },
+  "defaultDuration" : 5,
+
+  "scripts" : [
+    "fuammobelt.lua"
+  ]
+}
