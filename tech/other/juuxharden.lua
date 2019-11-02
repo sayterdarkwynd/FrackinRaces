@@ -31,6 +31,24 @@ function activeFlight()
     animator.setSoundVolume("recharge", 0.375,0)
     world.spawnProjectile("plasmafistrocketpharitu", self.mouthPosition, entity.id(), aimVector(), false, damageConfig)
 end
+function activeFlight2()
+    damageConfig()
+    local damageConfig = { power = totalVal, damageSourceKind = "cosmic" }
+    animator.playSound("activate",3)
+    animator.playSound("recharge")
+    animator.setSoundVolume("activate", 0.5,0)
+    animator.setSoundVolume("recharge", 0.375,0)
+    world.spawnProjectile("plasmafistrocketpharitu", self.mouthPosition, entity.id(), {0,-2}, false, damageConfig)
+end
+function activeFlight3()
+    damageConfig()
+    local damageConfig = { power = totalVal, damageSourceKind = "cosmic" }
+    animator.playSound("activate",3)
+    animator.playSound("recharge")
+    animator.setSoundVolume("activate", 0.5,0)
+    animator.setSoundVolume("recharge", 0.375,0)
+    world.spawnProjectile("plasmafistrocketpharitu", self.mouthPosition, entity.id(), {0,2}, false, damageConfig)
+end
 
 function aimVector()
   local aimVector = vec2.rotate({1, 0}, sb.nrand(0, 0))
@@ -59,7 +77,7 @@ function update(args)
         
         self.firetimer = math.max(0, self.firetimer - args.dt)
         
-	if args.moves["special1"] and status.overConsumeResource("energy", 0.001) then 
+	if args.moves["special1"] and not args.moves["down"] and not args.moves["up"] and status.overConsumeResource("energy", 0.001) then 
 	      if self.firetimer == 0 then
 	        status.overConsumeResource("energy", 2)
 	      
@@ -70,6 +88,28 @@ function update(args)
 	else
   	        animator.stopAllSounds("activate")	
 	end
+	if args.moves["down"] and args.moves["special1"] and status.overConsumeResource("energy", 0.001) then 
+	      if self.firetimer == 0 then
+	        status.overConsumeResource("energy", 2)
+	      
+		self.firetimer = 0.05
+		activeFlight2()
+	      end
+	    	
+	else
+  	        animator.stopAllSounds("activate")	
+	end
+	if args.moves["up"] and args.moves["special1"] and status.overConsumeResource("energy", 0.001) then 
+	      if self.firetimer == 0 then
+	        status.overConsumeResource("energy", 2)
+	      
+		self.firetimer = 0.05
+		activeFlight3()
+	      end
+	    	
+	else
+  	        animator.stopAllSounds("activate")	
+	end	
 end
 
 function idle()
