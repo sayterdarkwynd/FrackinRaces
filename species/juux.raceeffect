@@ -85,7 +85,7 @@
 			"weapons": ["rocketlauncher","grenadelauncher"],
 			"stats": [{
 					"stat": "powerMultiplier",
-					"baseMultiplier": 1.05
+					"effectiveMultiplier": 1.05
 				}
 			]
 		},
@@ -94,7 +94,7 @@
 			"stats": [
 				{
 					"stat": "powerMultiplier",
-					"baseMultiplier": 1.20
+					"effectiveMultiplier": 1.20
 				}
 			]
 		},		
@@ -106,7 +106,7 @@
 				},
 				{
 					"stat": "powerMultiplier",
-					"baseMultiplier": 1.10
+					"effectiveMultiplier": 1.10
 				}
 			]
 		},		
@@ -115,7 +115,7 @@
 			"stats": [
 				{
 					"stat": "powerMultiplier",
-					"baseMultiplier": 1.12
+					"effectiveMultiplier": 1.12
 				}
 			]
 		}

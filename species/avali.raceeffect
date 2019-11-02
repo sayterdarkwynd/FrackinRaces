@@ -42,7 +42,7 @@
 		{
 			"weapons" : [ "energy" ],
 			"stats" : [
-				{ "stat" : "powerMultiplier", "baseMultiplier" : 1.12 }
+				{ "stat" : "powerMultiplier", "effectiveMultiplier" : 1.12 }
 			]
 		},
 		{

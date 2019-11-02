@@ -46,9 +46,9 @@
         }
       ]
     },     
-    "bulb" : {
+    "dashParticles" : {
       "enabled" : false,
-      "emissionRate" : 10.0,
+      "emissionRate" : 40.0,
       "emissionRateVariance" : 7.5,
       "particles" : [      
         {
@@ -80,7 +80,8 @@
   "sounds" : {
     "activate" : [ "/sfx/objects/ancientconsole_on.ogg" ],
     "xibulbActivate" : [ "/sfx/tech/tech_sonicsphere_launch.ogg" ],
-    "xibulbCharge" : [ "/sfx/objects/ancientconsole_on.ogg" ]
+    "xibulbCharge" : [ "/sfx/objects/ancientconsole_on.ogg" ],
+    "recharge" : [ "/sfx/gun/flamethrower_stop.ogg" ]
   }
 
 }
