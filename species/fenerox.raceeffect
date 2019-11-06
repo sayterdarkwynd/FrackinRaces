@@ -36,6 +36,15 @@
 			"stats": [
 				{ "stat": "protection", "effectiveMultiplier": 1.2 }
 			]
+		},
+		{
+			"weapons" : [ "melee" ],
+			"scripts" : [
+				{
+					"script" : "/scripts/fr_weaponscripts/velocitybonus.lua",
+					"args" : {}
+				}
+			]
 		}
 	],
 	"weaponScripts": [
