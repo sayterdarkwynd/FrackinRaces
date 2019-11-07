@@ -36,6 +36,17 @@
 			"stats": [
 				{ "stat": "protection", "effectiveMultiplier": 1.2 }
 			]
+		},
+		{
+			"name" : "fr_velocitybonus",
+			"weapons" : [ "melee" ],
+			"scripts" : [
+				{
+					"script" : "/scripts/fr_weaponscripts/velocitybonus.lua",
+					"contexts" : [ "hey FR, i'm not passive, you retard" ],
+					"args" : {}
+				}
+			]
 		}
 	],
 	"weaponScripts": [
