@@ -2,8 +2,8 @@
 	"stats": [
 		{ "stat": "maxFood", "effectiveMultiplier": 1.5 },
 		{ "stat": "maxEnergy", "baseMultiplier": 1.25 },
-		{ "stat": "poisonResistance", "amount": 0.5 },
-		{ "stat": "radioactiveResistance", "amount": 0.5 },
+		{ "stat": "poisonResistance", "amount": 0.25 },
+		{ "stat": "radioactiveResistance", "amount": 0.25 },
 		{ "stat": "powerMultiplier", "amount": 0.9 },
 		{ "stat": "electricResistance", "amount": -0.5 },
 		{ "stat": "fireResistance", "amount": -0.5 },
