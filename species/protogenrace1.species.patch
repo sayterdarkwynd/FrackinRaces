@@ -11,8 +11,18 @@
 
  ^orange;Perks^reset;:
  
- +^green;25%^reset; Energy, ^green;+150%^reset; Max Food, +^green;25%^reset; Movement Speed
+ +^green;25%^reset; Energy
+ ^green;+150%^reset; Max Food
+ +^green;25%^reset; Movement Speed
  
- Resist: ^green;50%^reset; Poison, ^green;50%^reset; Radiation"
+ Resist: ^green;25%^reset; Poison, ^green;25%^reset; Radiation"
+ 
+ ^red;Weaknesses^reset;:
+ 
+ -^red;10%^reset; Damage
+ -^red;25%^reset; Physical Resistance
+ -^red;50%^reset; Electrical Resistance
+ -^red;50%^reset; Fire Resistance
+ -^red;50%^reset; Ice Resistance
     }
 ]
