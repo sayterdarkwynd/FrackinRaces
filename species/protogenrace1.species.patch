@@ -1,0 +1,18 @@
+[
+    { "op": "replace", 
+    "path" : "/charCreationTooltip/description" ,
+    "value" : ""
+    },
+    { "op": "replace", 
+    "path" : "/charCreationTooltip/description" , 
+    "value" : "In a top secret biotech facility, a race of superior beings have created a range of cyborg creatures, each with the intended purposes of exploring the unknown reaches of the universe.
+
+ Diet: Omnivore
+
+ ^orange;Perks^reset;:
+ 
+ +^green;25%^reset; Energy, ^green;+150%^reset; Max Food, +^green;25%^reset; Movement Speed
+ 
+ Resist: ^green;50%^reset; Poison, ^green;50%^reset; Radiation"
+    }
+]
