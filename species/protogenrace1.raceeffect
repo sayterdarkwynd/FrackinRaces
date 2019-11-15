@@ -4,7 +4,7 @@
 		{ "stat": "maxEnergy", "baseMultiplier": 1.25 },
 		{ "stat": "poisonResistance", "amount": 0.5 },
 		{ "stat": "radioactiveResistance", "amount": 0.5 },
-		{ "stat": "powerMultiplier", "amount": 0.8 },
+		{ "stat": "powerMultiplier", "amount": 0.9 },
 		{ "stat": "electricResistance", "amount": -0.5 },
 		{ "stat": "fireResistance", "amount": -0.5 },
 		{ "stat": "iceResistance", "amount": -0.5 },
