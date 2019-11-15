@@ -1,0 +1,12 @@
+{
+	"stats": [
+		{ "stat": "maxFood", "effectiveMultiplier": 1.5 },
+		{ "stat": "maxEnergy", "baseMultiplier": 1.25 },
+		{ "stat": "poisonResistance", "amount": 0.5 },
+		{ "stat": "radioactiveResistance", "amount": 0.5 }
+	],
+	"diet" : "omnivore",
+	"controlModifiers": {
+		"speedModifier": 1.25
+	}
+}
