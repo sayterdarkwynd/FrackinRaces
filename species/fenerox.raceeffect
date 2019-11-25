@@ -12,8 +12,8 @@
 	],
 	"diet" : "carnivore",
 	"controlModifiers": {
-		"speedModifier": 1.12,
-		"airJumpModifier": 1.11
+		"speedModifier": 1.06,
+		"airJumpModifier": 1.06
 	},
 	"envEffects": [
 		{

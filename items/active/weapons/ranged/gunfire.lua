@@ -406,12 +406,11 @@ function GunFire:aimVector(inaccuracy)
 end
 
 function GunFire:energyPerShot()
- -- if self.isAmmoBased then
- --   return (self.energyUsage * self.fireTime * (self.energyUsageMultiplier or 1.0))/2
- -- else
+ if self.isAmmoBased then
+    return (self.energyUsage * self.fireTime * (self.energyUsageMultiplier or 1.0))/2
+ else
     return self.energyUsage * self.fireTime * (self.energyUsageMultiplier or 1.0)
-  --end
-    	
+ end  	
 end
 
 function GunFire:damagePerShot()

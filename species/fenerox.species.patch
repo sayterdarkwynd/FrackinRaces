@@ -10,7 +10,7 @@
  Diet: Carnivorous
   
  ^orange;Perks^reset;:
- ^green;+12%^reset; Speed, ^green;+11%^reset; Jump 
+ ^green;+6%^reset; Speed, ^green;+6%^reset; Jump 
  ^green;Regenerate at night and gain energy regeneration^reset;
  Resist: ^green;40%^reset; Poison & Electric, ^green;25%^reset; Cosmic
  Tech: ^green;Hunter's Claw^reset;
@@ -22,6 +22,7 @@
  ^orange;Weapons^reset;:
  Boomerang/Chakram: ^green;+10%^reset; Damage, ^green;+2%^reset; Crit^reset;
  Spear: ^green;+10%^reset; Damage, ^green;+2%^reset; Crit^reset; ^green;+20%^reset; Protection
+ Spear: Increases movement speed, but consumes hunger when wielding.
  ^green;Add your current speed/4 as bonus melee damage.^reset;
     
  ^red;Weaknesses^reset;:
