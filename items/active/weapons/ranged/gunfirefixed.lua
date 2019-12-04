@@ -149,6 +149,13 @@ function GunFireFixed:update(dt, fireMode, shiftHeld)
   
   self.cooldownTimer = math.max(0, self.cooldownTimer - self.dt)
   
+  if self.loadingUp then
+  self.loadupTimer = math.max(0, self.loadupTimer - self.dt)
+  end
+  if self.cooldownTimer == 0 then 
+    activeItem.setCursor("/cursors/reticle0.cursor")
+  end
+  
     local species = world.entitySpecies(activeItem.ownerEntityId())
 
     if species then
@@ -282,6 +289,8 @@ function GunFireFixed:auto()
  	    status.addEphemeralEffect("reloadReady", 0.5)
  	    self.magazineAmount = self.magazineSize
 	    self.reloadTime = config.getParameter("reloadTime",0)
+            -- set the cursor to the Reload cursor
+            activeItem.setCursor("/cursors/cursor_reload.cursor")	    
 	    if (self.reloadTime < 1) then
 	       animator.playSound("fuReload") -- adds new sound to reload 
 	    elseif (self.reloadTime >= 2.5) then
@@ -369,6 +378,8 @@ function GunFireFixed:burst() -- burst auto should be a thing here
 	    status.addEphemeralEffect("reloadReady", 0.5)
 	    self.magazineAmount = self.magazineSize
 	    self.reloadTime = config.getParameter("reloadTime",0)
+            -- set the cursor to the Reload cursor
+            activeItem.setCursor("/cursors/cursor_reload.cursor")	    
 	    if (self.reloadTime < 0.08) then
 	       animator.playSound("fuReload") -- adds new sound to reload 
 	    elseif (self.reloadTime >= 2.5) then
@@ -381,7 +392,7 @@ function GunFireFixed:burst() -- burst auto should be a thing here
 	       animator.playSound("fuReload2") -- adds new sound to reload 
 	    end
 	    self.weapon:setStance(self.stances.cooldown)
-	    self:setState(self.cooldown)	    
+	    self:setState(self.cooldown)
 	end
 	  
 end
