@@ -7,7 +7,7 @@
 		{ "stat" : "fallDamageMultiplier", "baseMultiplier" : 0.35 },
 		{ "stat" : "iceStatusImmunity", "amount" : 1 }
 	],
-	"diet" : "carnivore",
+	"diet" : "omnivore",
 	"controlModifiers" : {
 		"speedModifier" : 1.09,
 		"airJumpModifier" : 1.09
