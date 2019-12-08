@@ -1,12 +1,12 @@
 {
 	"stats": [
 		{
-			"stat": "fireResistance",
-			"amount": 0.25
+			"stat": "electricResistance",
+			"amount": 0.30
 		},
 		{
 			"stat": "iceResistance",
-			"amount": 0.18
+			"amount": 0.15
 		},
 		{
 			"stat": "cosmicResistance",
@@ -29,6 +29,10 @@
 			"amount": 1
 		},		
 		{
+			"stat": "mentalProtection",
+			"amount": 0.2
+		},		
+		{
 			"stat": "fuCharisma",
 			"amount": -0.1
 		}
@@ -37,17 +41,13 @@
 	"envEffects": [
 	{
 		"biomes": [
-			"volcanic",
-			"magma",
-			"desert",
-			"infernus",
-			"infernusdark",
-			"desertwastes",
-			"desertwastesdark",
-			"volcanicdark",
-			"arboreal2",
-			"scorchedcity",
-			"tarball"
+			"crystalmoon",
+			"aethersea",
+			"sulphuric",
+			"sulphuricdark",
+			"fungal",
+			"protoworld",
+			"chromatic"
 		],
 		"controlModifiers": {
 			"speedModifier": 1.1

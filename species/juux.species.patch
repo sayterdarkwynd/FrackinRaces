@@ -7,12 +7,12 @@
  Diet: Any, including prepared Isotopes.
  
  ^orange;Perks^reset;: 
- Resist: ^green;25%^reset; Fire, ^green;18%^reset; Ice 
+ Resist: ^green;30%^reset; Electric, ^green;15%^reset; Ice , ^green;20%^reset; Mental Protection
  Immune: Slipping, Burning
  Tech: ^green;Psionic Wave^reset;
  
  ^orange;Environment^reset;: 
- On ^green;hot^reset; biomes, gain ^green;10% speed^reset;
+ On ^green;electrically charged or crystal^reset; biomes, gain ^green;10% speed^reset;
  On ^green;cold^reset; biomes, gain ^green;10% Protection^reset;
  
  ^orange;Weapons^reset;:
