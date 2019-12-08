@@ -2,23 +2,19 @@
 	"stats": [
 		{
 			"stat": "fireResistance",
-			"amount": 0.3
+			"amount": 0.25
 		},
 		{
 			"stat": "iceResistance",
-			"amount": 0.2
+			"amount": 0.18
 		},
 		{
 			"stat": "cosmicResistance",
-			"amount": -0.25
+			"amount": -0.23
 		},		
 		{
 			"stat": "shadowResistance",
-			"amount": -0.25
-		},
-		{
-			"stat": "maxFood",
-			"amount": 25
+			"amount": -0.23
 		},		
 		{
 			"stat": "fireStatusImmunity",
@@ -76,21 +72,14 @@
 		],
 		"stats": [{
 			"stat": "protection",
-			"effectiveMultiplier": 0.9
+			"effectiveMultiplier": 1.1
 		}
 		]
 	}	
 	],
-	"weaponEffects": [{
-			"weapons": ["rocketlauncher","grenadelauncher"],
-			"stats": [{
-					"stat": "powerMultiplier",
-					"effectiveMultiplier": 1.05
-				}
-			]
-		},
+	"weaponEffects": [
 		{
-			"weapons": ["pyreite","hellfire","incendiary","fire","flamethrower"],
+			"weapons": ["psionic"],
 			"stats": [
 				{
 					"stat": "powerMultiplier",
@@ -102,21 +91,25 @@
 			"weapons": ["qs","quarterstaff"],
 			"stats": [{
 					"stat": "protection",
-					"effectiveMultiplier": 1.12
+					"effectiveMultiplier": 1.10
 				},
 				{
 					"stat": "powerMultiplier",
-					"effectiveMultiplier": 1.10
+					"effectiveMultiplier": 1.15
 				}
 			]
 		},		
 		{
-			"weapons": ["mace","hammer","dagger"],
+			"weapons": ["magnorbs"],
 			"stats": [
 				{
 					"stat": "powerMultiplier",
-					"effectiveMultiplier": 1.12
-				}
+					"effectiveMultiplier": 1.15
+				},
+				{
+					"stat": "protection",
+					"effectiveMultiplier": 1.10
+				}				
 			]
 		}
 	],
