@@ -39,43 +39,21 @@
 	],
 	"diet" : "entity",
 	"envEffects": [
-	{
-		"biomes": [
-			"crystalmoon",
-			"aethersea",
-			"sulphuric",
-			"sulphuricdark",
-			"fungal",
-			"protoworld",
-			"chromatic"
-		],
-		"controlModifiers": {
-			"speedModifier": 1.1
-		},		
-		"stats": []
-	},
-	{
-		"biomes": [
-			"arctic",
-			"tundra",
-			"nitrogensea",
-			"nitrogenseafloor",
-			"icewaste",
-			"icewastedark",
-			"icemoon",
-			"moon",
-			"moonvolcanic",
-			"moondesert",
-			"aethersea",
-			"penumbra"
-			
-		],
-		"stats": [{
-			"stat": "protection",
-			"effectiveMultiplier": 1.1
-		}
-		]
-	}	
+		{
+			"biomes": "electric",
+			"controlModifiers": {
+				"speedModifier": 1.1
+			},		
+			"stats": []
+		},
+		{
+			"biomes": "cold",
+			"stats": [{
+				"stat": "protection",
+				"effectiveMultiplier": 1.1
+			}
+			]
+		}	
 	],
 	"weaponEffects": [
 		{
