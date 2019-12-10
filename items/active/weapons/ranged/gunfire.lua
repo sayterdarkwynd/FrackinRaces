@@ -8,6 +8,7 @@ GunFire = WeaponAbility:new()
 
 function GunFire:init()
 -- FU additions
+
   --weapon types
   self.isReloader = config.getParameter("isReloader",0)  					-- is this a shotgun style reload?
   self.isCrossbow = config.getParameter("isCrossbow",0)  					-- is this a crossbow?
@@ -72,65 +73,16 @@ end
 function GunFire:update(dt, fireMode, shiftHeld)
 	WeaponAbility.update(self, dt, fireMode, shiftHeld)
 	
--- *** FU Weapon Additions
+  -- *** FU Weapon Additions
   if self.magazineAmount < 0 or not self.magazineAmount then --make certain that ammo never ends up in negative numbers
     self.magazineAmount = 0 
   end
-
-  if self.timeBeforeCritBoost <= 0 then
-  	  self.isCrossbow = config.getParameter("isCrossbow",0) -- is this a crossbow?
-	  if self.isCrossbow >= 1 then
-		self.countdownDelay = (self.countdownDelay or 0) + 1
-		self.weaponBonus = (self.weaponBonus or 0)
-		self.firedWeapon = (self.firedWeapon or 0)
-		if self.firedWeapon > 0 then
-			if self.countdownDelay > 20 then
-				self.weaponBonus = 0
-				self.countdownDelay = 0
-				self.firedWeapon = 0
-			end 	
-		else
-			if self.countdownDelay > 20 then
-				self.weaponBonus = (self.weaponBonus or 0) + (config.getParameter("critBonus") or 1)
-				self.countdownDelay = 0
-			end 	
-		end
-
-		if self.weaponBonus >= 50 then --limit max value for crits and let player know they maxed
-			self.weaponBonus = 50
-			status.setPersistentEffects("critCharged", {{stat = "isCharged", amount = 1}})
-			status.addEphemeralEffect("critReady", 0.25)
-		end
-		status.setPersistentEffects("weaponBonus", {{stat = "critChance", amount = self.weaponBonus}})
-	  end
-	  self.isSniper = config.getParameter("isSniper",0) -- is this a sniper rifle?
-	  if self.isSniper >= 1 then
-		self.countdownDelay = (self.countdownDelay or 0) + 1
-		self.weaponBonus = (self.weaponBonus or 0)
-		self.firedWeapon = (self.firedWeapon or 0)
-		if self.firedWeapon > 0 then
-			if self.countdownDelay > 10 then
-				self.weaponBonus = 0
-				self.countdownDelay = 0
-				self.firedWeapon = 0
-			end 	
-		else
-			if self.countdownDelay > 10 then
-				self.weaponBonus = (self.weaponBonus or 0) + (config.getParameter("critBonus") or 1)
-				self.countdownDelay = 0
-			end 	
-		end
-
-		if self.weaponBonus >= 80 then --limit max value for crits and let player know they maxed
-			self.weaponBonus = 80
-			status.setPersistentEffects("critCharged", {{stat = "isCharged", amount = 1}})
-			status.addEphemeralEffect("critReady", 0.25)
-		end
-		status.setPersistentEffects("weaponBonus", {{stat = "critChance", amount = self.weaponBonus}})
-	  end             
+  if self.timeBeforeCritBoost <= 0 then  --check sniper/crossbow crit bonus
+      self:isChargeUp()
   else
     self.timeBeforeCritBoost = self.timeBeforeCritBoost -dt
   end
+
 
     self.cooldownTimer = math.max(0, self.cooldownTimer - self.dt )
   if self.loadingUp then
@@ -176,20 +128,6 @@ self.reloadTime = config.getParameter("reloadTime") or 1		-- how long does reloa
 -- ***********************************************************************************************************
 -- FR SPECIALS	(Weapon speed and other such things)
 -- ***********************************************************************************************************
-    --Crossbows
-  	self.isCrossbow = config.getParameter("isCrossbow",0) -- is this a crossbow?
-  	  if (self.isCrossbow) >= 1 then 
-	    self.firedWeapon = 1
-	    self.timeBeforeCritBoost = 2
-	    status.setPersistentEffects("critCharged", {{stat = "isCharged", amount = 0}})
-	  end 
-    --Snipers	  
-  	self.isSniper = config.getParameter("isSniper",0) -- is this a sniper rifle?
-  	  if (self.isSniper) >= 1 then 
-	    self.firedWeapon = 1
-	    self.timeBeforeCritBoost = 2
-	    status.setPersistentEffects("critCharged", {{stat = "isCharged", amount = 0}})
-	  end 	
     --ammo		
   	  self.magazineSize = config.getParameter("magazineSize",1) + (self.playerMagBonus or 0)		-- total count of the magazine    
           self.magazineAmount = (self.magazineAmount or 0)-- current number of bullets in the magazine
@@ -261,19 +199,7 @@ end
 
 function GunFire:burst()
 
-self.reloadTime = config.getParameter("reloadTime") or 1		-- how long does reloading mag take?
-    --Crossbows
-  	self.isCrossbow = config.getParameter("isCrossbow",0) -- is this a crossbow?
-  	  if (self.isCrossbow) >= 1 then 
-	    self.firedWeapon = 1
-	    self.timeBeforeCritBoost = 2
-	  end 
-    --Snipers	  
-  	self.isSniper = config.getParameter("isSniper",0) -- is this a sniper rifle?
-  	  if (self.isSniper) >= 1 then 
-	    self.firedWeapon = 1
-	    self.timeBeforeCritBoost = 2
-	  end 	
+self.reloadTime = config.getParameter("reloadTime") or 1		-- how long does reloading mag take?	
     --ammo	
           self.magazineSize = config.getParameter("magazineSize",1) + (self.playerMagBonus or 0)		-- total count of the magazine  
           self.magazineAmount = (self.magazineAmount or 0)-- current number of bullets in the magazine
@@ -367,7 +293,6 @@ function GunFire:muzzleFlash()
 	animator.setAnimationState("firing", "fire")
 	animator.burstParticleEmitter("muzzleFlash")
 	animator.playSound("fire")
-
 	animator.setLightActive("muzzleFlash", true)
 end
 
@@ -378,6 +303,18 @@ function GunFire:fireProjectile(projectileType, projectileParams, inaccuracy, fi
 	params.powerMultiplier = activeItem.ownerPowerMultiplier()
 	params.speed = util.randomInRange(params.speed)
 
+    --Crossbows
+  	self.isCrossbow = config.getParameter("isCrossbow",0) -- is this a crossbow?
+  	  if (self.isCrossbow) >= 1 then 
+	    self.firedWeapon = 1
+	    self.timeBeforeCritBoost = 2
+	  end      
+    --Snipers	  
+  	self.isSniper = config.getParameter("isSniper",0) -- is this a sniper rifle?
+  	  if (self.isSniper) >= 1 then 
+	    self.firedWeapon = 1
+	    self.timeBeforeCritBoost = 2
+	  end	
 	if not projectileType then
         projectileType = self.projectileType
 	end
@@ -400,8 +337,7 @@ function GunFire:fireProjectile(projectileType, projectileParams, inaccuracy, fi
             params
         )
     end
-
-	return projectileId
+    return projectileId
 end
 
 function GunFire:firePosition()
@@ -432,4 +368,52 @@ function GunFire:uninit()
         self.helper:clearPersistent()
     end
     status.clearPersistentEffects("weaponBonus")
+end
+
+
+function GunFire:isChargeUp()
+  if (self.isCrossbow >= 1) or (self.isSniper >= 1) then
+  
+	  self.isCrossbow = config.getParameter("isCrossbow",0) -- is this a crossbow?
+	  self.isSniper = config.getParameter("isSniper",0) -- is this a sniper rifle?
+	  self.countdownDelay = (self.countdownDelay or 0) + 1
+	  self.weaponBonus = (self.weaponBonus or 0)
+	  self.firedWeapon = (self.firedWeapon or 0)  
+	if (self.firedWeapon >= 1) then
+		if (self.isCrossbow == 1) then
+			if self.countdownDelay > 20 then
+				self.weaponBonus = 0
+				self.countdownDelay = 0
+				self.firedWeapon = 0
+			end 		
+		end
+		
+		if (self.isSniper == 1) then
+			if self.countdownDelay > 10 then
+				self.weaponBonus = 0
+				self.countdownDelay = 0
+				self.firedWeapon = 0
+			end 			
+		end
+	else
+		if self.countdownDelay > 20 then
+			self.weaponBonus = (self.weaponBonus or 0) + (config.getParameter("critBonus") or 1)
+			self.countdownDelay = 0
+		end 	
+	end
+	
+	if (self.isSniper == 1) and (self.weaponBonus >= 80) then --limit max value for crits and let player know they maxed
+		self.weaponBonus = 80
+		status.setPersistentEffects("critCharged", {{stat = "isCharged", amount = 1}})
+		status.addEphemeralEffect("critReady")
+		sb.logInfo(self.isSniper)
+	end
+	
+	if (self.isCrossbow == 1) and (self.weaponBonus >= 50) then --limit max value for crits and let player know they maxed
+		self.weaponBonus = 50
+		status.setPersistentEffects("critCharged", {{stat = "isCharged", amount = 1}})
+		status.addEphemeralEffect("critReady")
+	end
+	status.setPersistentEffects("weaponBonus", {{stat = "critChance", amount = self.weaponBonus}}) -- set final bonus value
+  end  
 end
