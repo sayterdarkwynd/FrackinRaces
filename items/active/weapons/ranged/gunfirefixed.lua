@@ -392,7 +392,6 @@ function GunFireFixed:isChargeUp()
 		self.weaponBonus = 80
 		status.setPersistentEffects("critCharged", {{stat = "isCharged", amount = 1}})
 		status.addEphemeralEffect("critReady")
-		sb.logInfo(self.isSniper)
 	end
 	
 	if (self.isCrossbow == 1) and (self.weaponBonus >= 50) then --limit max value for crits and let player know they maxed
