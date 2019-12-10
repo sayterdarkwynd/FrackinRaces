@@ -84,10 +84,12 @@ function GunFire:update(dt, fireMode, shiftHeld)
   end
 
 
-    self.cooldownTimer = math.max(0, self.cooldownTimer - self.dt )
-  if self.loadingUp then
-  self.loadupTimer = math.max(0, self.loadupTimer - self.dt)
+  self.cooldownTimer = math.max(0, self.cooldownTimer - self.dt )
+  
+  if self.loadingUp then  --reloading ammo
+    self.loadupTimer = math.max(0, self.loadupTimer - self.dt)
   end
+  
   if self.cooldownTimer == 0 then 
     -- set the cursor to the Reload cursor
     activeItem.setCursor("/cursors/reticle0.cursor")
@@ -123,26 +125,15 @@ end
 
 
 function GunFire:auto()
-
-self.reloadTime = config.getParameter("reloadTime") or 1		-- how long does reloading mag take?
 -- ***********************************************************************************************************
 -- FR SPECIALS	(Weapon speed and other such things)
 -- ***********************************************************************************************************
-    --ammo		
-  	  self.magazineSize = config.getParameter("magazineSize",1) + (self.playerMagBonus or 0)		-- total count of the magazine    
-          self.magazineAmount = (self.magazineAmount or 0)-- current number of bullets in the magazine
-	  self.isAmmoBased = config.getParameter("isAmmoBased",0)   
-	  if (self.isAmmoBased == 1) then 
-	    if self.magazineAmount <= 0 then
-	        self.weapon:setStance(self.stances.cooldown)
-		self:setState(self.cooldown)
-	    else
-	      self.magazineAmount = self.magazineAmount - 1
-	    end
-	  end	
+
+    --ammo	
+    self.reloadTime = config.getParameter("reloadTime") or 1		-- how long does reloading mag take?	
+    self:checkMagazine()--ammo system magazine check	
   
     local species = world.entitySpecies(activeItem.ownerEntityId())
-
     if species then
         if not self.helper then
             self.helper = FRHelper:new(species)
@@ -152,7 +143,6 @@ self.reloadTime = config.getParameter("reloadTime") or 1		-- how long does reloa
     end
 
 	self.weapon:setStance(self.stances.fire)
-
 
 	self:fireProjectile()
 	self:muzzleFlash()
@@ -165,33 +155,10 @@ self.reloadTime = config.getParameter("reloadTime") or 1		-- how long does reloa
 
         self.cooldownTimer = self.fireTime --* self.energymax
         
-        self.isReloader = config.getParameter("isReloader",0)  		-- is this a shotgun style reload?
-  	if self.isReloader >= 1 then
-  	  animator.playSound("cooldown") -- adds sound to shotgun reload
-		if (self.isAmmoBased==1) and (self.magazineAmount <= 0) then 
-		    animator.playSound("fuReload") -- adds new sound to reload 
-		end  	  
-	end	
-	if (self.isAmmoBased==1) and (self.magazineAmount <= 0) then 
-	    self.cooldownTimer = self.fireTime + self.reloadTime
-	    status.addEphemeralEffect("reloadReady", 0.25)
-	    self.magazineAmount = self.magazineSize
-	    self.reloadTime = config.getParameter("reloadTime",0)
-            -- set the cursor to the Reload cursor
-            activeItem.setCursor("/cursors/cursor_reload.cursor")	    
-	    if (self.reloadTime < 1) then
-	       animator.playSound("fuReload") -- adds new sound to reload 
-	    elseif (self.reloadTime >= 2.5) then
-	       animator.playSound("fuReload5") -- adds new sound to reload 
-	    elseif (self.reloadTime >= 2) then
-	       animator.playSound("fuReload4") -- adds new sound to reload 
-	    elseif (self.reloadTime >= 1.5) then
-	       animator.playSound("fuReload3") -- adds new sound to reload 	       
-	    elseif (self.reloadTime >= 1) then
-	       animator.playSound("fuReload2") -- adds new sound to reload 
-	    end
-	end
-	
+ 	--FU/FR special checks
+        self:hasShotgunReload()--reloads as a shotgun?
+        self:checkAmmo() --is it an ammo user?
+
 	self.weapon:setStance(self.stances.cooldown)
 	self:setState(self.cooldown)
 
@@ -199,19 +166,9 @@ end
 
 function GunFire:burst()
 
-self.reloadTime = config.getParameter("reloadTime") or 1		-- how long does reloading mag take?	
     --ammo	
-          self.magazineSize = config.getParameter("magazineSize",1) + (self.playerMagBonus or 0)		-- total count of the magazine  
-          self.magazineAmount = (self.magazineAmount or 0)-- current number of bullets in the magazine
-	  self.isAmmoBased = config.getParameter("isAmmoBased",0) -- is this a pistol?	      	  
-	  if (self.isAmmoBased == 1) then 
-	    if self.magazineAmount <= 0 then
-	        self.weapon:setStance(self.stances.cooldown)
-		self:setState(self.cooldown)
-	    else
-	      self.magazineAmount = self.magazineAmount - 1
-	    end
-	  end	
+    self.reloadTime = config.getParameter("reloadTime") or 1		-- how long does reloading mag take?	
+    self:checkMagazine()--ammo system magazine check	
 	  
     local species = world.entitySpecies(activeItem.ownerEntityId())
 
@@ -236,35 +193,10 @@ self.reloadTime = config.getParameter("reloadTime") or 1		-- how long does reloa
 	end
 
         self.cooldownTimer = (self.fireTime - self.burstTime) * self.burstCount
-        self.isReloader = config.getParameter("isReloader",0)  		-- is this a shotgun style reload?
-  	if self.isReloader >= 1 then
-  	  animator.playSound("cooldown") -- adds sound to shotgun reload
-		if (self.isAmmoBased==1) and (self.magazineAmount <= 0) then 
-		    animator.playSound("fuReload") -- adds new sound to reload 
-		end  	  
-	end	
-	if (self.isAmmoBased==1) and (self.magazineAmount <= 0) then 
-	    self.cooldownTimer = ((self.fireTime - self.burstTime) * self.burstCount) + self.reloadTime
-	    status.addEphemeralEffect("reloadReady", 0.25)
-	    self.magazineAmount = self.magazineSize
-	    self.reloadTime = config.getParameter("reloadTime",0)
-            -- set the cursor to the Reload cursor
-            activeItem.setCursor("/cursors/cursor_reload.cursor")	    
-	    if (self.reloadTime < 0.08) then
-	       animator.playSound("fuReload") -- adds new sound to reload 
-	    elseif (self.reloadTime >= 2.5) then
-	       animator.playSound("fuReload5") -- adds new sound to reload 
-	    elseif (self.reloadTime >= 2) then
-	       animator.playSound("fuReload4") -- adds new sound to reload 
-	    elseif (self.reloadTime >= 1.5) then
-	       animator.playSound("fuReload3") -- adds new sound to reload 	       
-	    elseif (self.reloadTime >= 1) then
-	       animator.playSound("fuReload2") -- adds new sound to reload 
-	    end
-	    
-	    self.weapon:setStance(self.stances.cooldown)
-	    self:setState(self.cooldown)	    
-	end
+        
+        --FU/FR checking for special features
+        self:hasShotgunAnimation() -- check for shotgun reload
+        self:checkAmmo() --does the weapon use ammo?
 
   	
         if self.helper then self.helper:runScripts("gunfire-postburst", self) end
@@ -363,7 +295,8 @@ function GunFire:isResetting()
   -- FR/FU crossbow/sniper specials get reset here
   if (self.isSniper == 1) or (self.isCrossbow == 1) then
     self.firedWeapon = 1
-    self.timeBeforeCritBoost = 2      
+    self.timeBeforeCritBoost = 2   
+    status.setPersistentEffects("critCharged", {{stat = "isCharged", amount = 0}})
   end
 end
 
@@ -414,3 +347,55 @@ function GunFire:isChargeUp()
 	status.setPersistentEffects("weaponBonus", {{stat = "critChance", amount = self.weaponBonus}}) -- set final bonus value
   end  
 end
+
+function GunFire:hasShotgunReload()
+        self.isReloader = config.getParameter("isReloader",0)  		-- is this a shotgun style reload?
+  	if self.isReloader >= 1 then
+  	  animator.playSound("cooldown") -- adds sound to shotgun reload
+		if (self.isAmmoBased==1) and (self.magazineAmount <= 0) then 
+		    animator.playSound("fuReload") -- adds new sound to reload 
+		end  	  
+	end
+end
+
+function GunFire:checkAmmo()	
+	if (self.isAmmoBased==1) and (self.magazineAmount <= 0) then 
+	    if self.burstCooldown then
+	      self.cooldownTimer = self.burstCooldown + self.reloadTime
+	    else
+	      self.cooldownTimer = self.fireTime + self.reloadTime
+	    end  	    
+	    status.addEphemeralEffect("reloadReady", 0.5)
+	    self.magazineAmount = self.magazineSize
+	    self.reloadTime = config.getParameter("reloadTime",0)
+            -- set the cursor to the Reload cursor
+            activeItem.setCursor("/cursors/cursor_reload.cursor")	    
+	    if (self.reloadTime < 0.08) then
+	       animator.playSound("fuReload") -- adds new sound to reload 
+	    elseif (self.reloadTime >= 2.5) then
+	       animator.playSound("fuReload5") -- adds new sound to reload 
+	    elseif (self.reloadTime >= 2) then
+	       animator.playSound("fuReload4") -- adds new sound to reload 
+	    elseif (self.reloadTime >= 1.5) then
+	       animator.playSound("fuReload3") -- adds new sound to reload 	       
+	    elseif (self.reloadTime >= 1) then
+	       animator.playSound("fuReload2") -- adds new sound to reload 
+	    end
+	    self.weapon:setStance(self.stances.cooldown)
+	    self:setState(self.cooldown)
+	end
+end
+
+function GunFire:checkMagazine()
+  self.magazineSize = config.getParameter("magazineSize",1) + (self.playerMagBonus or 0)		-- total count of the magazine    
+  self.magazineAmount = (self.magazineAmount or 0)-- current number of bullets in the magazine
+  self.isAmmoBased = config.getParameter("isAmmoBased",0)   
+  if (self.isAmmoBased == 1) then 
+    if self.magazineAmount <= 0 then
+	self.weapon:setStance(self.stances.cooldown)
+	self:setState(self.cooldown)
+    else
+      self.magazineAmount = self.magazineAmount - 1
+    end
+  end
+end	
