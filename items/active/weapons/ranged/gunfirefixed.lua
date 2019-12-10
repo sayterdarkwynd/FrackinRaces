@@ -452,17 +452,15 @@ end
 function GunFireFixed:isResetting()
   -- FR/FU crossbow/sniper specials get reset here
   if (self.isSniper == 1) or (self.isCrossbow == 1) then
-    self.isCrossbow = config.getParameter("isCrossbow",0) -- is this a crossbow?
-    self.isSniper = config.getParameter("isSniper",0) -- is this a sniper rifle?
     self.firedWeapon = 1
     self.timeBeforeCritBoost = 2      
   end
 end
 
 function GunFireFixed:isChargeUp()
+  self.isCrossbow = config.getParameter("isCrossbow",0) -- is this a crossbow?
+  self.isSniper = config.getParameter("isSniper",0) -- is this a sniper rifle?
   if (self.isCrossbow >= 1) or (self.isSniper >= 1) then
-	  self.isCrossbow = config.getParameter("isCrossbow",0) -- is this a crossbow?
-	  self.isSniper = config.getParameter("isSniper",0) -- is this a sniper rifle?
 	  self.countdownDelay = (self.countdownDelay or 0) + 1
 	  self.weaponBonus = (self.weaponBonus or 0)
 	  self.firedWeapon = (self.firedWeapon or 0)  
