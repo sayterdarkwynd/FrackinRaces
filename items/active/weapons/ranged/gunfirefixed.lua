@@ -17,7 +17,6 @@ GunFireFixed = WeaponAbility:new()
 
 function GunFireFixed:init()
 -- FU additions
-  self.damageListener = damageListener("damageTaken", checkDamage) --taking damage cancels the crit bonuses
   self.isReloader = config.getParameter("isReloader",0)  					-- is this a shotgun style reload?
   self.isCrossbow = config.getParameter("isCrossbow",0)  					-- is this a crossbow?
   self.isSniper = config.getParameter("isSniper",0)  						-- is this a sniper rifle?
@@ -97,8 +96,6 @@ function GunFireFixed:update(dt, fireMode, shiftHeld)
     self.magazineAmount = 0 
   end
   
-  
-  self.damageListener:update() --if we get hit, cancel the crit bonuses
   if self.timeBeforeCritBoost <= 0 then  --check sniper/crossbow crit bonus
       self:isChargeUp()
   else
