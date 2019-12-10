@@ -303,18 +303,14 @@ function GunFire:fireProjectile(projectileType, projectileParams, inaccuracy, fi
 	params.powerMultiplier = activeItem.ownerPowerMultiplier()
 	params.speed = util.randomInRange(params.speed)
 
-    --Crossbows
-  	self.isCrossbow = config.getParameter("isCrossbow",0) -- is this a crossbow?
-  	  if (self.isCrossbow) >= 1 then 
+	  -- FR/FU crossbow/sniper specials get reset here
+	  if (self.isSniper == 1) or (self.isCrossbow == 1)
+	    self.isCrossbow = config.getParameter("isCrossbow",0) -- is this a crossbow?
+	    self.isSniper = config.getParameter("isSniper",0) -- is this a sniper rifle?
 	    self.firedWeapon = 1
-	    self.timeBeforeCritBoost = 2
-	  end      
-    --Snipers	  
-  	self.isSniper = config.getParameter("isSniper",0) -- is this a sniper rifle?
-  	  if (self.isSniper) >= 1 then 
-	    self.firedWeapon = 1
-	    self.timeBeforeCritBoost = 2
-	  end	
+	    self.timeBeforeCritBoost = 2      
+	  end
+
 	if not projectileType then
         projectileType = self.projectileType
 	end
@@ -374,11 +370,13 @@ end
 function GunFire:isChargeUp()
   if (self.isCrossbow >= 1) or (self.isSniper >= 1) then
   
+      -- setting core params
 	  self.isCrossbow = config.getParameter("isCrossbow",0) -- is this a crossbow?
 	  self.isSniper = config.getParameter("isSniper",0) -- is this a sniper rifle?
-	  self.countdownDelay = (self.countdownDelay or 0) + 1
-	  self.weaponBonus = (self.weaponBonus or 0)
-	  self.firedWeapon = (self.firedWeapon or 0)  
+	  self.countdownDelay = (self.countdownDelay or 0) + 1 --increase chargeup Count each time this is called
+	  self.weaponBonus = (self.weaponBonus or 0) -- default is 0
+	  self.firedWeapon = (self.firedWeapon or 0) -- default is 0
+	  
 	if (self.firedWeapon >= 1) then
 		if (self.isCrossbow == 1) then
 			if self.countdownDelay > 20 then

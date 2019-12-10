@@ -394,18 +394,13 @@ function GunFireFixed:fireProjectile(projectileType, projectileParams, inaccurac
   params.powerMultiplier = activeItem.ownerPowerMultiplier() 
   params.speed = util.randomInRange(params.speed)
 
-    --Crossbows
-  	self.isCrossbow = config.getParameter("isCrossbow",0) -- is this a crossbow?
-  	  if (self.isCrossbow) >= 1 then 
-	    self.firedWeapon = 1
-	    self.timeBeforeCritBoost = 2
-	  end      
-    --Snipers	  
-  	self.isSniper = config.getParameter("isSniper",0) -- is this a sniper rifle?
-  	  if (self.isSniper) >= 1 then 
-	    self.firedWeapon = 1
-	    self.timeBeforeCritBoost = 2
-	  end	
+  -- FR/FU crossbow/sniper specials get reset here
+  if (self.isSniper == 1) or (self.isCrossbow == 1)
+    self.isCrossbow = config.getParameter("isCrossbow",0) -- is this a crossbow?
+    self.isSniper = config.getParameter("isSniper",0) -- is this a sniper rifle?
+    self.firedWeapon = 1
+    self.timeBeforeCritBoost = 2      
+  end
 	  
   if not projectileType then
     projectileType = self.projectileType
