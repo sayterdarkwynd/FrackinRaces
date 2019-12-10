@@ -194,9 +194,9 @@ function GunFire:burst()
 
         self.cooldownTimer = (self.fireTime - self.burstTime) * self.burstCount
         
-        --FU/FR checking for special features
-        self:hasShotgunAnimation() -- check for shotgun reload
-        self:checkAmmo() --does the weapon use ammo?
+ 	--FU/FR special checks
+        self:hasShotgunReload()--reloads as a shotgun?
+        self:checkAmmo() --is it an ammo user?
 
   	
         if self.helper then self.helper:runScripts("gunfire-postburst", self) end
