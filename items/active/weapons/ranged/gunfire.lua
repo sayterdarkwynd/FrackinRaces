@@ -1,3 +1,6 @@
+--activeItem.setInstanceValue() can be used to set a property on the active item  (ammo reload pause if discarding)
+--and the property should be accessible via config.getParameter()
+
 require "/scripts/util.lua"
 require "/scripts/interp.lua"
 require "/scripts/FRHelper.lua"
@@ -120,7 +123,6 @@ function GunFire:update(dt, fireMode, shiftHeld)
 		    self:setState(self.burst)
 		end
 	end
-	
 end
 
 
@@ -273,7 +275,7 @@ function GunFire:aimVector(inaccuracy)
 end
 
 function GunFire:energyPerShot()
- if self.isAmmoBased then
+ if (self.isAmmoBased == 1) and not (self.fireMode == "alt") then
     return (self.energyUsage * self.fireTime * (self.energyUsageMultiplier or 1.0))/2
  else
     return self.energyUsage * self.fireTime * (self.energyUsageMultiplier or 1.0)
@@ -357,7 +359,7 @@ function GunFire:hasShotgunReload()
 	end
 end
 
-function GunFire:checkAmmo()	
+function GunFire:checkAmmo()
 	if (self.isAmmoBased==1) and (self.magazineAmount <= 0) then 
 	    if self.burstCooldown then
 	      self.cooldownTimer = self.burstCooldown + self.reloadTime
