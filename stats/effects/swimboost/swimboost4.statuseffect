@@ -1,8 +1,8 @@
 {
-  "name" : "swimboost3",
+  "name" : "swimboost4",
   "effectConfig" : {
-    "boostAmount" : 1.8,
-    "riseAmount" : 1.8
+    "boostAmount" : 2.2,
+    "riseAmount" : 2.2
   },
   "defaultDuration" : 220,
 
@@ -10,6 +10,6 @@
     "swimboost1.lua"
   ],
   "animationConfig" : "swimboost1.animation",
-  "label" : "Swim 3",
+  "label" : "Swim 4",
   "icon" : "/interface/statuses/swimboost.png"
 }

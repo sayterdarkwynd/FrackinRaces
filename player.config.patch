@@ -13,6 +13,12 @@
 		"path": "/statusControllerSettings/stats/maxFood",
 		"value": { "baseValue": 70 }
 	},
+	{
+		"op": "add",
+		"path": "/statusControllerSettings/stats/boostAmount",
+		"value": { "baseValue": 1 }
+	},
+	
     { "op" : "add", "path" : "/defaultBlueprints/tier1/-", "value" : {"item": "robosnax"} },
     //{ "op" : "add", "path" : "/defaultBlueprints/tier1/-", "value" : {"item": "raceEffectEnabler"} },
     { "op" : "add", "path" : "/defaultBlueprints/tier1/-", "value" : {"item": "meatkibble"} },   
