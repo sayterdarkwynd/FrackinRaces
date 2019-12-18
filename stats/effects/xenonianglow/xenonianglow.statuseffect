@@ -1,9 +1,0 @@
-{
-  "name" : "xenonianglow",
-  "effectConfig" : {},
-  "defaultDuration" : 5,
-
-  "scripts" : [],
-
-  "animationConfig" : "xenonianglow.animation"
-}
