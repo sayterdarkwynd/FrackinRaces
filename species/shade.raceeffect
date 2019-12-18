@@ -1,8 +1,5 @@
 {
-	"stats": [{
-			"stat": "isRadien",
-			"amount": 1
-		},
+	"stats": [
 		{
 			"stat": "foodDelta",
 			"baseMultiplier": 1.06146
@@ -36,7 +33,7 @@
 			"amount": 1
 		}
 	],
-	
+	"diet" : "entity",
 	"envEffects": [{
 		"biomes": [
 			"shadow",

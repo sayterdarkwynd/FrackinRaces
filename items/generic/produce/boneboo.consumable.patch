@@ -1,21 +1,17 @@
 [
-  {
-    "op": "add",
-    "path": "/effects",
-    "value": [
-      [
-        "carnivorefood"
-      ]
-    ]
-  },
-  {
-    "op": "replace",
-    "path": "/maxStack",
-    "value": 20
-  },
-  {
-    "op": "replace",
-    "path": "/description",
-    "value": "Spooky. ^green;Type: Carnivore^reset;"
-  }
+	{
+		"op" : "add",
+		"path" : "/effects",
+		"value" : [ [ "meat_plant" ] ]
+	},
+	{
+		"op" : "replace",
+		"path" : "/maxStack",
+		"value" : 20
+	},
+	{
+		"op" : "replace",
+		"path" : "/description",
+		"value" : "Spooky. ^green;Type: Meaty Plant?^reset;"
+	}
 ]

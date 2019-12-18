@@ -1,19 +1,26 @@
 [
     { "op": "replace", 
-    "path" : "/charCreationTooltip/description" ,
-    "value" : ""
-    },
-    { "op": "replace", 
     "path" : "/charCreationTooltip/description" , 
-    "value" : "Love having a whale of a time!
+    "value" : "A sapient race of Orca-like people.
     
-    ^red;Weak: 30% Electric, 20% Poison^reset;
-    ^green;+30% Health, +10% Protection, 30% Ice Resist, +20% Fire and Rad Resist^reset;
-    ^green;On ocean biomes, gain additional 20% Health and Energy^reset; 
-    ^green;In Water: +2000 Breath, +70% Breath Regen, minor health regen^reset; 
-    ^green;Consume less food and gain Poison Resist and Speed in Water/Healing Water^reset;
-    Spear: ^green;+20% damage and +3% Crit^reset;
-    Immune: ^green;Wet^reset;"
+Diet: Omnivore 
+ 
+^orange;Perks^reset;: 
+^green;+20%^reset; health, ^green;+10%^reset; Protection, +100% Max Food, ^green;2000 Breath
+Resist: ^green;30%^reset; Ice, ^green;20%^reset; Fire and Radiation 
+Immune: Wet
+
+^orange;Environment^reset;: 
+Gain additional health and energy in ^green;oceanic^reset; biomes 
+In water/healing water, you gain ^green;-50%^reset; Hunger Rate, ^green;+20%^reset; Poison Resist, and ^green;minor health regen^reset;
+    
+^orange;Weapons^reset;:
+Boltgun: ^green;+20^reset; Damage, ^green;+1%^reset; Crit Chance,^green;+3^reset; Crit Bonus Damage
+Trident: ^green;+10^reset; Damage, ^green;+3%^reset; Crit Chance, ^green;+5^reset; Crit Bonus Damage
+Spear: ^green;+20^reset; Damage
+
+^red;Weaknesses^reset;: 
+^red;30%^reset; Electric, ^red;20%^reset; Poison"
     }
 
 ]

@@ -1,17 +1,5 @@
 {
 	"stats": [
-		{ 
-			"stat": "isCarnivore",
-			"amount": 1 
-		},
-		{
-			"stat": "isOmnivore",
-			"amount": 1 
-		},
-		{
-			"stat": "maxHealth",
-			"baseMultiplier": 0.8
-		},			
 		{
 			"stat": "fireResistance",
 			"amount": 0.2
@@ -25,10 +13,6 @@
 			"amount": 0.1
 		},
 		{
-			"stat": "radioactiveResistance",
-			"amount": -0.15
-		},
-		{
 			"stat": "electricResistance",
 			"amount": -0.3
 		},			
@@ -37,10 +21,11 @@
 			"baseMultiplier" : 0.5
 		},
 		{
-			"stat" : "erchiusImmunity",
-			"amount" : 1
+			"stat": "erchiusImmunity",
+			"amount": 1
 		}
 	],
+	"diet" : "raw_omnivore",
 	"controlModifiers": {
 		"speedModifier": 1.05,
 		"airJumpModifier": 1.15
@@ -89,22 +74,7 @@
 			]
 		}
 	],
-	"weaponScripts" : [
-		{
-			"script" : "/scripts/fr_weaponscripts/perfectblockbonus.lua",
-			"contexts" : [ "shield-perfectblock" ],
-			"args" : {
-				"stats" : [
-					{ "stat" : "protection", "amount" : 0 }
-				],
-				"statCombos" : {
-					"powerMultiplier" : {
-						"comboBase" : 2,
-						"max" : 16
-					}
-				},
-				"particles" : "bonusBlock4"
-			}
-		}
-	]
+	
+	"special": [ "darkvision", "underworlder" ]
+	
 }

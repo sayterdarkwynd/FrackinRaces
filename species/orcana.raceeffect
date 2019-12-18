@@ -1,16 +1,17 @@
 {
-	"stats": [{
-			"stat": "isCarnivore",
-			"amount": 1
-		},
+	"stats": [
 		{
 			"stat": "maxHealth",
-			"baseMultiplier": 1.3
+			"baseMultiplier": 1.2
 		},
 		{
 			"stat": "protection",
 			"effectiveMultiplier": 1.1
 		},
+		{
+			"stat": "maxFood",
+			"effectiveMultiplier": 2
+		},		
 		{
 			"stat": "maxBreath",
 			"amount": 2000
@@ -44,32 +45,63 @@
 			"amount": 1
 		}
 	],
-	"envEffects": [{
+	"diet" : [ { "ORGANIC" : false, "FISH" : true }, 
+			   { "MEAT_RAW" : true } ],
+	"envEffects": [
+	{
 		"biomes": "ocean",
 		"stats": [{
 				"stat": "maxHealth",
-				"baseMultiplier": 1.2
+				"baseMultiplier": 1.15
 			},
 			{
 				"stat": "maxEnergy",
 				"baseMultiplier": 1.2
 			}
 		]
-	}],
-	"weaponEffects": [{
-		"weapons": [
-			"spear"
-		],
-		"stats": [{
+	}
+	],
+	"weaponEffects": [
+	{
+		"weapons": ["trident"],
+		"stats": [
+			{
+				"stat": "powerMultiplier",
+				"baseMultiplier": 1.1
+			},
+			{
+				"stat": "critChance",
+				"amount": 3
+			},
+			{
+				"stat": "critBonus",
+				"amount": 3
+			}
+		]
+	},
+	{
+		"weapons": ["spear"],
+		"stats": [
+			{
 				"stat": "powerMultiplier",
 				"baseMultiplier": 1.2
+			}
+		]
+	},	
+	{
+		"weapons": ["boltgun"],
+		"stats": [
+			{
+				"stat": "critBonus",
+				"amount": 3
 			},
 			{
 				"stat": "critChance",
 				"amount": 3
 			}
 		]
-	}],
+	}	
+	],
 	"special": [
 		"swimboost3"
 	],

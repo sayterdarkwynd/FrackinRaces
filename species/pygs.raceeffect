@@ -1,15 +1,12 @@
 {
-	"stats": [{
-			"stat": "isHerbivore",
-			"amount": 1
-		},
+	"stats": [
 		{
 			"stat": "maxEnergy",
-			"baseMultiplier": 1.2
+			"baseMultiplier": 1.15
 		},
 		{
-			"stat": "maxEnergy",
-			"baseMultiplier": 1
+			"stat": "maxhealth",
+			"baseMultiplier": 1.20
 		},
 		{
 			"stat": "foodDelta",
@@ -28,10 +25,6 @@
 			"amount": 0.1
 		},
 		{
-			"stat": "cosmicResistance",
-			"amount": 0
-		},
-		{
 			"stat": "fumudslowImmunity",
 			"amount": 1
 		},
@@ -40,6 +33,7 @@
 			"amount": 1
 		}
 	],
+	"diet" : "herbivore",
 	"controlModifiers": {
 		"speedModifier": 0.95,
 		"airJumpModifier": 1.1
@@ -54,10 +48,6 @@
 				"stat": "maxHealth",
 				"baseMultiplier": 1.2
 			},
-			{
-				"stat": "maxEnergy",
-				"baseMultiplier": 1
-			}
 		]
 	}],
 	"weaponEffects": [{

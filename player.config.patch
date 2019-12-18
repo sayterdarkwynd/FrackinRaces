@@ -1,8 +1,27 @@
 [
-
-    { "op": "add", "path": "/defaultBlueprints/tier1/-", "value": {"item": "robosnax"} },
-    { "op": "add", "path": "/defaultBlueprints/tier1/-", "value": {"item": "raceEffectEnabler"} },
-    { "op": "add", "path": "/defaultBlueprints/tier1/-", "value": {"item": "meatkibble"} },   
-    { "op": "add", "path" : "/statusControllerSettings/primaryScriptSources/-" , "value" : "/scripts/raceEffects.lua" }
-
+	{
+		"op": "remove",
+		"path": "/statusControllerSettings/resources/food/maxValue"
+	},
+	{
+		"op": "add",
+		"path": "/statusControllerSettings/resources/food/maxStat",
+		"value": "maxFood"
+	},
+	{
+		"op": "add",
+		"path": "/statusControllerSettings/stats/maxFood",
+		"value": { "baseValue": 70 }
+	},
+	{
+		"op": "add",
+		"path": "/statusControllerSettings/stats/boostAmount",
+		"value": { "baseValue": 1 }
+	},
+	
+    { "op" : "add", "path" : "/defaultBlueprints/tier1/-", "value" : {"item": "robosnax"} },
+    //{ "op" : "add", "path" : "/defaultBlueprints/tier1/-", "value" : {"item": "raceEffectEnabler"} },
+    { "op" : "add", "path" : "/defaultBlueprints/tier1/-", "value" : {"item": "meatkibble"} },   
+    { "op" : "add", "path" : "/statusControllerSettings/primaryScriptSources/-" , "value" : "/scripts/raceEffects.lua" },
+	{ "op" : "add", "path" : "/companionsConfig/scripts/-", "value" : "/scripts/techHandler.lua" }
 ]

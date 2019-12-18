@@ -1,0 +1,14 @@
+[
+  {
+    "op": "add",
+    "path": "/effects/0/0",
+    "value": {
+      "effect": "plant_food"
+    }
+  },
+  {
+    "op": "replace",
+    "path": "/description",
+    "value": "A cold sweet drink. ^green;Type: Herbivore^reset;"
+  }
+]

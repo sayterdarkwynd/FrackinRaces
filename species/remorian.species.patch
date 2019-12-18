@@ -1,0 +1,33 @@
+[
+    { "op": "replace", 
+    "path" : "/charCreationTooltip/description" ,
+    "value" : ""
+    },
+    { "op": "replace", 
+    "path" : "/charCreationTooltip/description" , 
+    "value" : "The Remorian are a species of aquatic dragonoid people with an aptitude for magical energy. They tend to be somewhat more feeble physically than other races, but make up for it in their magical potential, which they draw from the ocean and other humid environments.
+
+Diet: Omnivore
+
+^orange;Perks^reset;
+^green;+10%^reset; Energy, ^green;+5%^reset; Damage, ^green;+10%^reset; Speed, ^green;+15%^reset; Energy regen
+^green;+15%^reset; Shadow Resist, ^green;+20%^reset; Fire Resist, Wet Immunity
+^red;Weaknesses^reset;:
+^red;-5%^reset; Health
+^red;-10%^reset; Protection
+^red;+5%^reset; Hunger Rate
+^red;-20%^reset; Radioactivity
+^red;-30%^reset; Electricity
+ 
+^orange;Environment^reset;:
+Ocean Biomes: ^green;+10% Max Energy^reset; ^green;+10% Speed^reset;
+Jungle Biomes: ^green;+5% Max Energy^reset;
+ 
+^orange;Weapons^reset;:
+Shortspear / Spear: ^green;+10%^reset; Damage, +15%^reset; Protection
+Wands / Staves: ^green;8%^reset; Damage and Energy
+Broadswords / Shortswords / Daggers: ^green;+15%^reset; Damage, ^green;+5%^reset; Critical Chance
+Playstyle: ^yellow;Fighting^reset;
+"
+    }
+]

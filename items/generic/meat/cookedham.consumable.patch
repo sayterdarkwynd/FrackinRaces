@@ -1,15 +1,12 @@
 [
-  { "op":"add", 
-"path":"/effects", 
-"value": [ ]
-  },
-  { "op":"add", 
-"path":"/effects/-", 
-"value": [{ "effect" : "carnivorefoodcooked" }]
-  },
-  {
-    "op": "replace",
-    "path": "/description",
-    "value": "A haunch of roasted alien ham. ^orange;Type: Cooked Meat^reset;"
-  }
+	{ 
+		"op" : "add", 
+		"path" : "/effects", 
+		"value" : [ [ { "effect" : "meat_cooked" } ] ]
+	},
+	{
+		"op" : "replace",
+		"path" : "/description",
+		"value" : "A haunch of roasted alien ham. ^orange;Type: Cooked Meat^reset;"
+	}
 ]

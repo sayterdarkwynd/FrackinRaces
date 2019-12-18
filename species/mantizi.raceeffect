@@ -1,14 +1,16 @@
 {
 	"stats": [
-		{ "stat": "isMantizi", "amount": 1 },
 		{ "stat": "grit", "amount": 0.3 },
 		{ "stat": "fuCharisma", "amount": -0.25 },
 		{ "stat": "protection", "amount": 5 },
 		{ "stat": "fireResistance", "amount": -0.3 },
+		{ "stat": "maxFood", "effectiveMultiplier": 1.5 },
 		{ "stat": "iceResistance", "amount": -0.2 },
 		{ "stat": "electricResistance", "amount": 0.2 },
 		{ "stat": "radioactiveResistance", "amount": 0.2 }
 	],
+	"diet" : [ { "ORGANIC" : false, "INORGANIC" : false, "ROBOT_PLANT" : false }, 
+			   { "ROCK_RAD" : true } ],
 	"controlModifiers": {
 		"speedModifier": 1.07,
 		"airJumpModifier": 1.07
@@ -47,8 +49,7 @@
 			]
 		},
 		{
-			"combos": [[ "shortspear", "shield" ], 
-					   [ "shortsword", "shield" ]],
+			"combos": [[ "shortspear", "shield" ], [ "shortsword", "shield" ]],
 			"stats": [
 				{ "stat": "powerMultiplier", "baseMultiplier": 1.2 },
 				{ "stat": "protection", "effectiveMultiplier": 1.2 }

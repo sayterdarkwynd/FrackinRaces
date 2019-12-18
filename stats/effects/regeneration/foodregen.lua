@@ -1,16 +1,24 @@
 function init()
   local bounds = mcontroller.boundBox()
   script.setUpdateDelta(5)
-  local foodvalue = status.resource("food")
+  if world.entityType(entity.id()) == "npc" then
+   local foodvalue = 35
+  else
+   local foodvalue = status.resource("food")
+  end
+  
 end
 
 function update(dt)
 
 if self.foodvalue == nil then 
-foodvalue=1 
+  foodvalue=1 
 end
-
-  self.foodvalue = status.resource("food")
+  if world.entityType(entity.id()) == "npc" then
+   self.foodvalue = 35
+  else
+   self.foodvalue = status.resource("food")
+  end
 
   if self.foodvalue > 50 then
    self.healingRate = 1.0005 / config.getParameter("healTime", 140)

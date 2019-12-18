@@ -12,7 +12,9 @@ function init()
 	self.active = false
 	self.cooldownTimer = config.getParameter("cooldownTime")
 	self.activeTimer = 0
-
+	
+	self.animationData = config.getParameter("animationCustom", {})
+	
 	self.level = config.getParameter("level", 1)
 	self.baseShieldHealth = config.getParameter("baseShieldHealth", 1)
 	self.knockback = config.getParameter("knockback", 0)
@@ -49,37 +51,38 @@ function init()
 	self.critBonus = config.getParameter("critBonus", 0)
 	self.shieldBonusShield = config.getParameter("shieldBonusShield", 0)	-- bonus shield HP
 	self.shieldBonusRegen = config.getParameter("shieldBonusRegen", 0)	-- bonus shield regen time
- 		self.shieldHealthRegen = config.getParameter("shieldHealthRegen", 0)
- 		shieldStamina = config.getParameter("shieldStamina",0)
- 		protectionBee = config.getParameter("protectionBee",0)
- 		protectionAcid = config.getParameter("protectionAcid",0)
- 		protectionBlackTar = config.getParameter("protectionBlackTar",0)
- 		protectionBioooze = config.getParameter("protectionBioooze",0)
- 		protectionPoison = config.getParameter("protectionPoison",0)
- 		protectionInsanity = config.getParameter("protectionInsanity",0)
- 		protectionShock = config.getParameter("protectionShock",0)
- 		protectionSlime = config.getParameter("protectionSlime",0)
- 		protectionLava = config.getParameter("protectionLava",0)
- 		protectionFire = config.getParameter("protectionFire",0)
- 		protectionProto = config.getParameter("protectionProto",0)
- 		protectionAcid = config.getParameter("protectionAcid",0)
- 		protectionBlackTar = config.getParameter("protectionBlackTar",0)
- 		protectionBioooze = config.getParameter("protectionBioooze",0)
- 		protectionPoison = config.getParameter("protectionPoison",0)
- 		protectionInsanity = config.getParameter("protectionInsanity",0)
- 		protectionShock = config.getParameter("protectionShock",0)
- 		protectionSlime = config.getParameter("protectionSlime",0)
- 		protectionLava = config.getParameter("protectionLava",0)
- 		protectionFire = config.getParameter("protectionFire",0)
- 		protectionProto = config.getParameter("protectionProto",0)
- 		protectionCold = config.getParameter("protectionCold",0)
- 		protectionXCold = config.getParameter("protectionXCold",0)
- 		protectionHeat = config.getParameter("protectionHeat",0)
- 		protectionXHeat = config.getParameter("protectionXHeat",0)
- 		protectionRads = config.getParameter("protectionRads",0)
- 		protectionXRads = config.getParameter("protectionXRads",0)
- 		shieldBash = config.getParameter("shieldBash",0)
- 		shieldBashPush = config.getParameter("shieldBashPush",0)
+	self.shieldHealthRegen = config.getParameter("shieldHealthRegen", 0)
+	shieldStamina = config.getParameter("shieldStamina",0)
+	protectionBee = config.getParameter("protectionBee",0)
+	protectionAcid = config.getParameter("protectionAcid",0)
+	protectionBlackTar = config.getParameter("protectionBlackTar",0)
+	protectionBioooze = config.getParameter("protectionBioooze",0)
+	protectionPoison = config.getParameter("protectionPoison",0)
+	protectionInsanity = config.getParameter("protectionInsanity",0)
+	protectionShock = config.getParameter("protectionShock",0)
+	protectionSlime = config.getParameter("protectionSlime",0)
+	protectionLava = config.getParameter("protectionLava",0)
+	protectionFire = config.getParameter("protectionFire",0)
+	protectionProto = config.getParameter("protectionProto",0)
+	protectionAcid = config.getParameter("protectionAcid",0)
+	protectionBlackTar = config.getParameter("protectionBlackTar",0)
+	protectionBioooze = config.getParameter("protectionBioooze",0)
+	protectionPoison = config.getParameter("protectionPoison",0)
+	protectionInsanity = config.getParameter("protectionInsanity",0)
+	protectionShock = config.getParameter("protectionShock",0)
+	protectionSlime = config.getParameter("protectionSlime",0)
+	protectionLava = config.getParameter("protectionLava",0)
+	protectionFire = config.getParameter("protectionFire",0)
+	protectionProto = config.getParameter("protectionProto",0)
+	protectionCold = config.getParameter("protectionCold",0)
+	protectionXCold = config.getParameter("protectionXCold",0)
+	protectionHeat = config.getParameter("protectionHeat",0)
+	protectionXHeat = config.getParameter("protectionXHeat",0)
+	protectionRads = config.getParameter("protectionRads",0)
+	protectionXRads = config.getParameter("protectionXRads",0)
+	stunChance = config.getParameter("stunChance", 0)
+	shieldBash = config.getParameter("shieldBash",0)
+	shieldBashPush = config.getParameter("shieldBashPush",0)
 
  	        --shieldBonusApply()
 	-- end FU special effects
@@ -97,9 +100,23 @@ function init()
 end
 
 
-function shieldBonusApply()
+function shieldBonusApplyPartial()
+	status.setPersistentEffects("shieldEffects", {
+ 		{stat = "maxHealth", amount = config.getParameter("shieldHealthBonus",0)*(status.resourceMax("health"))},
+ 		{stat = "maxEnergy", amount = config.getParameter("shieldEnergyBonus",0)*(status.resourceMax("energy"))},
+ 		{stat = "protection", amount = config.getParameter("shieldProtection",0)},
+ 		{stat = "shieldStaminaRegen", amount = shieldStamina},
+ 		{stat = "fallDamageMultiplier", amount = config.getParameter("shieldFalling",0)},
+ 		{stat = "stunChance", amount =  stunChance},
+ 		{stat = "shieldBash", amount =  shieldBash},
+ 		{stat = "shieldBashPush", amount =  shieldBashPush},
+ 		{stat = "critChance", amount =  self.critChance},
+ 		{stat = "critChance", amount =  self.critBonus} 		
+ 	})
+end
 
-status.setPersistentEffects("shieldEffects", {
+function shieldBonusApply()
+	status.setPersistentEffects("shieldEffects", {
  		{stat = "baseShieldHealth", amount = config.getParameter("shieldBonusShield", 0) },
  		{stat = "energyRegenPercentageRate", amount = config.getParameter("shieldEnergyRegen",0)},
  		{stat = "maxHealth", amount = config.getParameter("shieldHealthBonus",0)*(status.resourceMax("health"))},
@@ -135,7 +152,6 @@ status.setPersistentEffects("shieldEffects", {
  		{stat = "shieldBash", amount = shieldBash},
  		{stat = "shieldBashPush", amount = shieldBashPush}
  	})
- 	
 end
 
 function isShield(name) -- detect if they have a shield equipped for racial tag checks
@@ -146,6 +162,7 @@ function isShield(name) -- detect if they have a shield equipped for racial tag 
 end
 
 function update(dt, fireMode, shiftHeld)
+shieldBonusApplyPartial()
     if not species then init() end
     if self.helper then self.helper:runScripts("shield-update", self, dt, fireMode, shiftHeld) end
 
@@ -168,6 +185,7 @@ function update(dt, fireMode, shiftHeld)
 
         self.damageListener:update()
 
+	
         -- ************************************** FU SPECIALS **************************************
         status.modifyResourcePercentage("health", self.shieldHealthRegen * dt)
         -- *****************************************************************************************
@@ -198,6 +216,8 @@ function uninit()
         self.raisedhelper:clearPersistent()
         self.blockhelper:clearPersistent()
     end
+	status.clearPersistentEffects("shieldBonus")
+	status.clearPersistentEffects("shieldEffects")    
 	status.clearPersistentEffects(activeItem.hand().."Shield")
 	activeItem.setItemShieldPolys({})
 	activeItem.setItemDamageSources({})
@@ -275,9 +295,13 @@ function raiseShield()
                     if (self.energyval) >= 50 and (self.randomBash) >= 50 then -- greater chance to Shield Bash when perfect blocking
                         bashEnemy()
                     end
-
-                    animator.playSound("perfectBlock")
-                    animator.burstParticleEmitter("perfectBlock")
+					
+					--No catch case for this sound since it's required by vanilla.
+					animator.playSound("perfectBlock")
+					
+					if self.animationData.particleEmitters and self.animationData.particleEmitters.perfectBlock then
+						animator.burstParticleEmitter("perfectBlock")
+					end
 
 
                     -- *******************************************************
@@ -343,8 +367,17 @@ function bashEnemy()
     local params = { speed=20, power = self.damageLimit , damageKind = "default", knockback = self.pushBack } -- Shield Bash
     world.spawnProjectile("fu_genericBlankProjectile",mcontroller.position(),activeItem.ownerEntityId(),{0,0},false,params)
     status.modifyResource("energy", self.energyValue * -0.2 )	-- consume energy
-    animator.playSound("shieldBash")
-    animator.burstParticleEmitter("shieldBashHit")
+	
+	if animator.hasSound("shieldBash") then
+		--Protection for if the user hasn't specified shield bash sounds
+		animator.playSound("shieldBash")
+	end
+
+	--Alright Bob I'll take "Slapping chucklefish for not offering animator.hasParticle" for $500.
+	if self.animationData.particleEmitters and self.animationData.particleEmitters.shieldBashHit then
+		--Protection for if the user hasn't specified shield bash partiles
+		animator.burstParticleEmitter("shieldBashHit")
+	end
 end
 
 function clearEffects()

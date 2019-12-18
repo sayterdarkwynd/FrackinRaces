@@ -7,16 +7,25 @@
     "path" : "/charCreationTooltip/description" , 
     "value" : "The Tauren are a towering, strong and noble race of bovine humanoids from a distant world, with soft, short fur, hooves, tails and imposing horns. They value their shamanistic and druidic culture highly, and they are talented hunters, but aren't quite as proficient with modern weaponry. Nomadic by nature, they can adapt to their surroundings.
 
-    ^red;Larger body demands twice as much food^reset;
-    ^red;Heavy. -10% Speed, -10% Jump^reset;
-    ^red;Weak: 50% Fire, 20% Shadow, 20% Radiation^reset;
-    Machine Pistol, Pistol, Assault Rifle, Shotgun, Grenade Launcher, Rocket Launcher: ^red;-10% Damage^reset;
-    ^green;+30 Health, +5 Protection, +10% Damage, 10% Electric Resist, 20% Poison Resist, 30% Ice Resist^reset;
-    ^green;Omnivore, but avoid raw meat and mechanical food^reset;
-    ^green;In Jungle, Forest, Snow, Savannah and Garden biomes, gain increased Speed and Jump^reset;
-    Shortspear / Spear / Axe: ^green;+8% dmg, +5% Crit.^reset;
-    Hammer / Greataxe / Broadsword: ^green;5% Damage, +3% Crit, +15% Crit Damage^reset;
-    Bows / Wands / Staves: ^green;10% Damage and Energy^reset;
-    ^green;Immunities: Jungle Tiles, Desert Heat^reset;"
+Diet: Omnivore
+
+^orange;Perks^reset;:
+^green;+30 Health, ^green;+5 Protection, ^green;+10%^reset; Damage,
+^green;+10%^reset; Electric Resist, ^green;+20%^reset; Poison Resist, ^green;+30%^reset; Ice Resist
+Immune: 
+ 
+^orange;Environment^reset;:
+^green;+15%^reset; Health, Speed, and Jump in Jungle, Forest, Snow, Savannah and Lush biomes
+ 
+^orange;Weapons^reset;:
+Guns, Grenade Launcher, Rocket Launcher: ^red;-10%^reset; Damage
+Shortspear / Spear / Axe: ^green;+8%^reset; dmg, ^green;+5%^reset; Crit.
+Hammer / Greataxe / Broadsword: ^green;5%^reset; Damage, ^green;+3%^reset; Crit, ^green;+15%^reset; Crit Damage
+Bows / Wands / Staves: ^green;10%^reset; Damage and Energy
+
+^red;Weaknesses^reset;:
+^red;2x^reset; Hunger Rate
+^red;-50%^reset; Fire, ^red;-20%^reset; Shadow, Radiation Resists
+"
     }
 ]

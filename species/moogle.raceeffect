@@ -1,11 +1,8 @@
 {
-	"stats": [{
-			"stat": "isOmnivore",
-			"amount": 1
-		},
+	"stats": [
 		{
-			"stat": "foodDelta",
-			"baseMultiplier": 1.06146
+			"stat": "maxFood",
+			"effectiveMultiplier": 0.8
 		},
 		{
 			"stat": "maxHealth",
@@ -56,6 +53,7 @@
 			"amount": 1
 		}
 	],
+	"diet" : "omnivore",
 	"weaponEffects": [{
 			"weapons": [
 				"shortsword",
@@ -89,7 +87,7 @@
 			],
 			"stats": [{
 					"stat": "powerMultiplier",
-					"baseMultiplier": 1.15
+					"effectiveMultiplier": 1.1
 				},
 				{
 					"stat": "critDamage",
@@ -128,5 +126,6 @@
 				}
 			}
 		}
-	}
+	},
+	"tech" : [ "flight_moogle" ]
 }

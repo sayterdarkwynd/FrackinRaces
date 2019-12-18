@@ -1,26 +1,22 @@
 [
-  {
-    "op": "add",
-    "path": "/effects",
-    "value": [
-      [
-        "robofood"
-      ]
-    ]
-  },
-  {
-    "op": "replace",
-    "path": "/maxStack",
-    "value": 20
-  },
-  {
-    "op": "replace",
-    "path": "/foodValue",
-    "value": 20
-  },
-  {
-    "op": "replace",
-    "path": "/description",
-    "value": "Currentcorn, full of acid. Not good for fleshy creatures. ^yellow;Type: Robot^reset;"
-  }
+	{
+		"op" : "add",
+		"path" : "/effects",
+		"value" : [ [ "robot_food" ] ]
+	},
+	{
+		"op" : "replace",
+		"path" : "/maxStack",
+		"value" : 20
+	},
+	{
+		"op" : "replace",
+		"path" : "/foodValue",
+		"value" : 20
+	},
+	{
+		"op" : "replace",
+		"path" : "/description",
+		"value" : "Currentcorn, full of acid. Not good for fleshy creatures. ^yellow;Type: Robot^reset;"
+	}
 ]

@@ -1,26 +1,22 @@
 [
-  {
-    "op": "add",
-    "path": "/effects",
-    "value": [
-      [
-        "robofood"
-      ]
-    ]
-  },
-  {
-    "op": "replace",
-    "path": "/maxStack",
-    "value": 20
-  },
-  {
-    "op": "replace",
-    "path": "/foodValue",
-    "value": 15
-  },
-  {
-    "op": "replace",
-    "path": "/description",
-    "value": "Boltbulb! Surprisingly soft. ^yellow;Type: Robot^reset;"
-  }
+	{
+		"op" : "add",
+		"path" : "/effects",
+		"value" : [ [ "robot_food" ] ]
+	},
+	{
+		"op" : "replace",
+		"path" : "/maxStack",
+		"value" : 20
+	},
+	{
+		"op" : "replace",
+		"path" : "/foodValue",
+		"value" : 15
+	},
+	{
+		"op" : "replace",
+		"path" : "/description",
+		"value" : "Boltbulb! Surprisingly soft. ^yellow;Type: Robot^reset;"
+	}
 ]

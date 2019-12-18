@@ -1,8 +1,5 @@
 {
-	"stats": [{
-			"stat": "isRobot",
-			"amount": 1
-		},
+	"stats": [
 		{
 			"stat": "foodDelta",
 			"baseMultiplier": 0.03
@@ -60,6 +57,7 @@
 			"amount": 1
 		}
 	],
+	"diet" : "robot",
 	"envEffects": [{
 			"biomes": "cold",
 			"stats": [{

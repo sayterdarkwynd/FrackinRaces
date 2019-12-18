@@ -13,7 +13,7 @@
  +^green;30%^reset; Health, +^green;40%^reset; Hunger Reduction 
  Resist: ^green;50%^reset; Fire, ^green;15%^reset; Physical
  Immunity: Burning
- Tech: ^green;Fire Breath - build in [C] menu^reset;
+ Tech: ^green;Fire Breath ^reset;
  
  ^orange;Environment^reset;:
  ^red;Cold^reset; biomes sap your health and protection.

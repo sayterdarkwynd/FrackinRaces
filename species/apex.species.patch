@@ -6,14 +6,13 @@
  Diet: Omnivorous
   
  ^orange;Perks^reset;:
- +^green;1^reset; Radius Matter Manipulator
- Taking Damage ^red;decreases Energy^reset; but ^green;increases Protection, Damage and Crit Chance^reset;
- +^green;8%^reset; speed and +^green;15%^reset; jump, Resist: ^green;30%^reset; Cold, ^green;10%^reset; Poison
+ +^green;1^reset; Radius Matter Manipulator, +^green;30%^reset; Max Energy.
+ +^green;8%^reset; speed and +^green;15%^reset; jump, Resist: ^#e43774;20%^reset; Madness, ^green;20%^reset; Cold, ^green;10%^reset; Poison
  Immune: Jungle Dirt and Mud
   
  ^orange;Environment^reset;: 
  Gain additional vitality and protection in ^green;Jungle, Primeval, Forest, Rainforest, Snow^reset; biomes
-    
+ 
  ^orange;Weapons^reset;:
  Fists: ^green;+1%^reset; Crit Chance
  Hammers: ^green;+10%^reset; Dmg
@@ -21,7 +20,7 @@
  Magnorb/Thrown: ^green;+12%^reset; Dmg, +Protection
     
  ^red;Weaknesses^reset;:
- Metabolism requires more food
- Weak: ^red;30%^reset; Fire, ^red;10%^reset; Cosmic"
+ ^red;20%^reset; Smaller stomache,
+ Weak: ^red;20%^reset; Shadow, ^red;20%^reset; Cosmic,^red;20%^reset; Radioactive"
     }
 ]

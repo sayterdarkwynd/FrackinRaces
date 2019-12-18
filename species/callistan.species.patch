@@ -6,8 +6,8 @@
  Diet: Carnivore
   
  ^orange;Perks^reset;:
- +^green;Staying fed ^green;increases movement^reset; (max 16.6%)
- +^green;5% ^green;power, +^green;12%^reset; Energy^reset;
+ Staying fed increases movement (max  +^green;16.6%^reset;)
+ ^green;+5%^reset; Damage, ^green;+12%^reset; Energy
  Resist: ^green;20%^reset; Shadow, ^green;20%^reset; Radiation
  Immune: Slush, Snow, Soil, Mud, Web and Sandstorm effects
   
@@ -16,9 +16,10 @@
  ^green;40% Hunger Reduction^reset;
  
  ^orange;Weapons^reset;:
- Firearms: ^green;+3%^reset; Crit Chance, ^green;+25%^reset; Energy Regen
+ Energy Weapons: ^green;+3%^reset; Crit Chance, ^green;+25%^reset; Energy Regen
     
  ^red;Weaknesses^reset;:
- Weak: ^red;20%^reset; Cosmic, ^red;-20%^reset; Poison"
+ Weak: ^red;20%^reset; Cosmic, ^red;-20%^reset; Poison
+ ^red;40%^reset; Smaller Stomach"
     }
 ]
