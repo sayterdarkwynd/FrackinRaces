@@ -12,7 +12,7 @@
 ^red;-20% Health^reset;
 ^green;+20% Energy, Speed, and Jump Height^reset;
 ^green;-20% Metabolism^reset;
-^green;-40% Falling Damage^reset;
+^green;-100% Falling Damage^reset;
 
 ^orange;Resistances:^reset;
 ^red;-30% Physical, Poison^reset;
