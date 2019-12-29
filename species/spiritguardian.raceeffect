@@ -11,7 +11,7 @@
 		{ "stat": "cosmicResistance", "amount": 0.1 },
 		{ "stat": "jungleslowImmunity", "amount": 1 },
 		{ "stat": "fumudslowImmunity", "amount": 1 },
-		{ "stat": "fallDamageMultiplier", "baseMultiplier": 0.6 }
+		{ "stat": "fallDamageMultiplier", "baseMultiplier": 0 }
 	],
 	"diet" : "herbivore",
 	"controlModifiers": {
