@@ -53,7 +53,9 @@
 	"envEffects": [{
 			"biomes": [
 				"ocean",
-				"oceanfloor"
+				"oceanfloor",
+				"flooded",
+                                "floodedoceanfloor"
 			],
 			"stats": [{
 					"stat": "maxHealth",
