@@ -103,8 +103,12 @@ function GunFire:update(dt, fireMode, shiftHeld)
   end
   
   if self.cooldownTimer == 0 then 
-    -- set the cursor to the Reload cursor
-    activeItem.setCursor("/cursors/reticle0.cursor")
+    -- set the cursor to the FU White cursor
+    if (self.isAmmoBased == 1) then
+      activeItem.setCursor("/cursors/fureticle0.cursor")
+    else
+      activeItem.setCursor("/cursors/reticle0.cursor")
+    end
   end
   
     local species = world.entitySpecies(activeItem.ownerEntityId())
@@ -370,6 +374,37 @@ function GunFire:hasShotgunReload()
 end
 
 function GunFire:checkAmmo()
+             -- set the cursor to the Reload cursor
+	if (self.isAmmoBased==1) then  -- ammo bar color check
+		if self.currentAmmoPercent <= 0 then
+			self.barColor = {0,0,0,255}
+		end	
+		if self.currentAmmoPercent > 0.75 then
+			self.barColor = {0,250,112,125}
+			activeItem.setCursor("/cursors/fureticle1.cursor")
+		end	
+		if self.currentAmmoPercent <= 0.75 then
+			self.barColor = {130,201,49,125}
+			activeItem.setCursor("/cursors/fureticle1.cursor")
+		end	
+		if self.currentAmmoPercent <= 0.65 then
+			self.barColor = {167,201,49,125}
+			activeItem.setCursor("/cursors/fureticle2.cursor")
+		end		
+		if self.currentAmmoPercent <= 0.55 then
+			self.barColor = {201,179,49,125}
+			activeItem.setCursor("/cursors/fureticle3.cursor")
+		end		
+		if self.currentAmmoPercent <= 0.45 then
+			self.barColor = {201,133,49,125}
+			activeItem.setCursor("/cursors/fureticle4.cursor")
+		end	
+		if self.currentAmmoPercent <= 0.25 then
+			self.barColor = {201,49,49,125}	
+			activeItem.setCursor("/cursors/fureticle5.cursor")
+		end 	
+        end	
+        
 	if (self.isAmmoBased==1) and (self.magazineAmount <= 0) then 
 	    if self.burstCooldown then
 	      self.cooldownTimer = self.burstCooldown + self.reloadTime
@@ -379,8 +414,10 @@ function GunFire:checkAmmo()
 	    status.addEphemeralEffect("reloadReady", 0.5)
 	    self.magazineAmount = self.magazineSize
 	    self.reloadTime = config.getParameter("reloadTime",0)
+	    
             -- set the cursor to the Reload cursor
-            activeItem.setCursor("/cursors/cursor_reload.cursor")	    
+            activeItem.setCursor("/cursors/cursor_reload.cursor")	
+            
 	    if (self.reloadTime < 1) then
 	       animator.playSound("fuReload") -- adds new sound to reload 
 	    elseif (self.reloadTime >= 2.5) then
@@ -415,19 +452,7 @@ function GunFire:checkMagazine()
   if (self.isAmmoBased == 1) then 
   	--check current ammo and create an ammo bar to inform the user
   	self.currentAmmoPercent = self.magazineAmount / self.magazineSize
-        sb.logInfo("current ammo: "..self.currentAmmoPercent)
-        sb.logInfo("max ammo: "..self.magazineSize)
-	if self.currentAmmoPercent <= 0 then
-		self.barColor = {0,0,0,125}
-  	elseif self.currentAmmoPercent > 0.75 then
-  		self.barColor = {0,255,0,125}
-  	elseif self.currentAmmoPercent <= 0.75 then
-		self.barColor = {125,255,0,125}  
-	elseif self.currentAmmoPercent <= 0.50 then
-		self.barColor = {255,255,0,125}	
-	elseif self.currentAmmoPercent <= 0.25 then
-		self.barColor = {255,0,0,125}		
-	end           
+        
 
   	world.sendEntityMessage(
   	  self.playerId,
@@ -436,6 +461,7 @@ function GunFire:checkMagazine()
   	  self.currentAmmoPercent,
   	  self.barColor
 	)  
+		
 	if self.magazineAmount <= 0 then
 	  self.weapon:setStance(self.stances.cooldown)
 	  self:setState(self.cooldown)
