@@ -1,5 +1,10 @@
 [
 	{
+	    "op": "add",
+	    "path": "/statusControllerSettings/primaryScriptSources/-",
+	    "value": "/stats/player_primary_bars.lua"
+	},
+	{
 		"op": "remove",
 		"path": "/statusControllerSettings/resources/food/maxValue"
 	},
