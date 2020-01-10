@@ -29,7 +29,7 @@ function GunFire:init()
   self.magazineSize = (config.getParameter("magazineSize",1) + (self.playerMagBonus or 0) or 6) -- total count of the magazine  
   self.magazineAmount = (self.magazineSize or 0) 						-- current number of bullets in the magazine
   self.reloadTime = config.getParameter("reloadTime",1)	+ (self.playerReloadBonus or 0) 	-- how long does reloading mag take?
-
+  self.timerReloadBar = 0
 
   self.playerId = entity.id()
   self.currentAmmoPercent = self.magazineAmount / self.magazineSize
@@ -37,7 +37,7 @@ function GunFire:init()
     self.currentAmmoPercent = 1
   end  
   self.barName = "ammoBar"
-  self.barColor = {200,200,200,255}
+  self.barColor = {0,250,112,125}
 
     -- **** FR ADDITIONS
 	daytime = daytimeCheck()
@@ -86,6 +86,17 @@ function GunFire:update(dt, fireMode, shiftHeld)
 	WeaponAbility.update(self, dt, fireMode, shiftHeld)
 
   -- *** FU Weapon Additions
+  
+  --check if ammo bar should vanish
+  self.timerReloadBar = self.timerReloadBar + dt
+  if (self.timerReloadBar >=5) then
+    self.timerReloadBar = 5
+  end
+  if (self.timerReloadBar == 5) then -- is reload bar timer expired?
+    world.sendEntityMessage(self.playerId,"removeBar","ammoBar")   --clear ammo bar  
+    self.timerReloadBar = 0
+  end
+  
   if self.magazineAmount < 0 or not self.magazineAmount then --make certain that ammo never ends up in negative numbers
     self.magazineAmount = 0 
   end
@@ -244,12 +255,11 @@ function GunFire:muzzleFlash()
 end
 
 function GunFire:fireProjectile(projectileType, projectileParams, inaccuracy, firePosition, projectileCount)
-
 	local params = sb.jsonMerge(self.projectileParameters, projectileParams or {})
 	params.power = self:damagePerShot()
 	params.powerMultiplier = activeItem.ownerPowerMultiplier()
 	params.speed = util.randomInRange(params.speed)
-
+        self.timerReloadBar = 0 -- reset reload timer
 	self:isResetting() --check if we reset the FU/FR crit bonus for crossbow and sniper
 
 	if not projectileType then
@@ -304,7 +314,6 @@ function GunFire:uninit()
 	  self.helper:clearPersistent()
 	end
 	status.clearPersistentEffects("weaponBonus") --clear bonuses
-	world.sendEntityMessage(self.playerId,"removeBar","ammoBar")   --clear ammo bar  
 end
 
 function GunFire:isResetting()
@@ -431,7 +440,7 @@ function GunFire:checkAmmo()
 	    end
   	--check current ammo and create an ammo bar to inform the user
   	self.currentAmmoPercent = 1
-  	self.barColor = {255,0,0,125}
+  	self.barColor = {0,250,112,125}
 
   	world.sendEntityMessage(
   	  self.playerId,
