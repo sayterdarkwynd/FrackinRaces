@@ -84,14 +84,10 @@ end
 -- ***********************************************************************************************************
 -- ***********************************************************************************************************
 
-
 function GunFire:update(dt, fireMode, shiftHeld)
   WeaponAbility.update(self, dt, fireMode, shiftHeld)
 
   -- *** FU Weapon Additions
-  if self.magazineAmount < 0 or not self.magazineAmount then --make certain that ammo never ends up in negative numbers
-    self.magazineAmount = 0 
-  end
   if self.timeBeforeCritBoost <= 0 then  --check sniper/crossbow crit bonus
       self:isChargeUp()
   else
@@ -374,6 +370,7 @@ function GunFire:hasShotgunReload()
 	end
 end
 
+
 function GunFire:checkAmmo()
              -- set the cursor to the Reload cursor
 	if (self.isAmmoBased==1) then  -- ammo bar color check
@@ -469,6 +466,7 @@ function GunFire:checkMagazine()
 	if self.magazineAmount <= 0 then
 	  self.weapon:setStance(self.stances.cooldown)
 	  self:setState(self.cooldown)
+	  self.magazineAmount = 0 
 	else
 	  self.magazineAmount = self.magazineAmount - 1
 	end
