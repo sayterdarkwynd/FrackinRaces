@@ -316,9 +316,6 @@ function GunFire:uninit()
 	  self.helper:clearPersistent()
 	end
 	status.clearPersistentEffects("weaponBonus") --clear bonuses
-    if (self.isAmmoBased == 1) then
-      world.sendEntityMessage(self.playerId,"removeBar","ammoBar")   --clear ammo bar  
-    end	
 end
 
 function GunFire:isResetting()
