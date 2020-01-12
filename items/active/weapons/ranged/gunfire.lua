@@ -35,13 +35,13 @@ function GunFire:init()
   if self.currentAmmoPercent > 1.0 then
     self.currentAmmoPercent = 1
   end  
-
-  self.barName = "ammoBar"
-  self.barColor = {0,250,112,125}
-  
   if (self.isAmmoBased == 1) then
     self.timerRemoveAmmoBar = 0 
   end
+  self.barName = "ammoBar"
+  self.barColor = {0,250,112,125}
+  
+
     -- **** FR ADDITIONS
 	daytime = daytimeCheck()
 	underground = undergroundCheck()

@@ -36,14 +36,13 @@ function GunFireFixed:init()
   self.magazineAmount = (self.magazineSize or 0) 						-- current number of bullets in the magazine
   self.reloadTime = config.getParameter("reloadTime",1)	+ (self.playerReloadBonus or 0) 	-- how long does reloading mag take?
 
-  
-  if (self.isAmmoBased == 1) then
-    self.timerRemoveAmmoBar = 0 
-  end
   self.playerId = entity.id()
   self.currentAmmoPercent = self.magazineAmount / self.magazineSize
   if self.currentAmmoPercent > 1.0 then
     self.currentAmmoPercent = 1
+  end  
+  if (self.isAmmoBased == 1) then
+    self.timerRemoveAmmoBar = 0 
   end  
   self.barName = "ammoBar"
   self.barColor = {0,250,112,125}
