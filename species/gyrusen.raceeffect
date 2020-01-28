@@ -17,9 +17,13 @@
 			"amount": 1
 		},
 		{
-			"stat": "fireResistance",
+			"stat": "physicalResistance",
 			"amount": 0.25
 		},
+		{
+			"stat": "electricResistance",
+			"amount": 0.10
+		},		
 		{
 			"stat": "iceResistance",
 			"amount": -0.35
