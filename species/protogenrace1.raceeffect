@@ -8,6 +8,6 @@
 	],
 	"diet" : "omnivore",
 	"controlModifiers": {
-		"airJumpModifier" : 1.1
+		"airJumpModifier" : 1.0
 	}
 }
