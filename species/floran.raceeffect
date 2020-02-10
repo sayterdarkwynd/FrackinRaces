@@ -24,8 +24,12 @@
 		{
 			"weapons": [ "bow" ],
 			"stats": [
-				{ "stat": "critChance", "amount": 4 },
-				{ "stat": "critDamage", "amount": 0.2 }
+				{ "stat": "critChance", "amount": 2 },
+				{ "stat": "critDamage", "amount": 0.2 },
+				    {
+				      "stat" : "bowDrawTimeBonus",
+				      "amount" : 0.1
+				    }				
 			],
 			"controlModifiers": {
 				"speedModifier": 1.15
