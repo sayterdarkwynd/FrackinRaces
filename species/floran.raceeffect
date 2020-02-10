@@ -8,7 +8,8 @@
 		{ "stat": "iceResistance", "amount": 0.25 },
 		{ "stat": "poisonResistance", "amount": -0.25 },
 		{ "stat": "radioactiveResistance", "amount": 0.2 },
-		{ "stat": "electricStatusImmunity", "amount": 1 }
+		{ "stat": "electricStatusImmunity", "amount": 1 },
+		{ "stat" : "bowDrawTimeBonus", "amount": 0.1 }	
 	],
 	"diet" : "carnivore",
 	"envEffects": [
@@ -24,9 +25,8 @@
 		{
 			"weapons": [ "bow" ],
 			"stats": [
-				{ "stat": "critDamage", "amount": 0.2 },
-				{ "stat" : "bowDrawTimeBonus", "amount" : 0.1 },
-				{ "stat" : "nebsrngbowdamagebonus", "amount" : 1.12 }					
+				{ "stat" : "critBonus", "effectiveMultiplier": 1.2 },
+				{ "stat" : "powerMultiplier", "effectiveMultiplier" : 1.12}				
 			],
 			"controlModifiers": { "speedModifier": 1.05 }
 		},
