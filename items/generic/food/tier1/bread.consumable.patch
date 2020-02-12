@@ -3,12 +3,12 @@
     "op": "add",
     "path": "/effects/0/0",
     "value": {
-      "effect": "herbivorefood"
+      "effect": "plant_food"
     }
   },
   {
     "op": "replace",
     "path": "/description",
-    "value": "It is bread. ^green;Type: Herbivore^reset;"
+    "value": "It is bread. ^green;Type: Grain^reset;"
   }
 ]

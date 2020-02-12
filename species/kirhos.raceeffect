@@ -1,8 +1,5 @@
 {
-	"stats": [{
-			"stat": "isOmnivore",
-			"amount": 1
-		},
+	"stats": [
 		{
 			"stat": "fallDamageMultiplier",
 			"baseMultiplier": 0.8
@@ -16,6 +13,14 @@
 			"amount": -0.2
 		},
 		{
+			"stat": "maxHealth",
+			"baseMultiplier": 0.9
+		},				
+		{
+			"stat": "maxFood",
+			"amount": 72
+		},			
+		{
 			"stat": "fireResistance",
 			"amount": -0.2
 		},
@@ -28,6 +33,7 @@
 			"amount": 21
 		}
 	],
+	"diet" : "omnivore",
 	"controlModifiers": {
 		"speedModifier": 1.1,
 		"airJumpModifier": 1.1

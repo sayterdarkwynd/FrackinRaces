@@ -1,9 +1,0 @@
-{
-  "name" : "nightarglow2",
-  "effectConfig" : {},
-  "defaultDuration" : 5,
-
-  "scripts" : [],
-
-  "animationConfig" : "nightarglow2.animation"
-}

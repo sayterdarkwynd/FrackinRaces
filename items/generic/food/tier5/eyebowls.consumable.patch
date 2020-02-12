@@ -3,12 +3,12 @@
     "op": "add",
     "path": "/effects/0/0",
     "value": {
-      "effect": "carnivorefood"
+      "effect": "meat_plant"
     }
   },
   {
     "op": "replace",
     "path": "/description",
-    "value": "Oculemon stuffed inside half an eggshoot, ^red;Type: Raw Meat^reset;"
+    "value": "Oculemon stuffed inside half an eggshoot. ^red;Type: Raw Meat^reset;"
   }
 ]

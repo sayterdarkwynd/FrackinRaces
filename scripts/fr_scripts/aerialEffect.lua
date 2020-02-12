@@ -36,10 +36,15 @@ function FRHelper:call(args)
 
     -- Effects while in the air
     if aerialEffect and not mcontroller.onGround() then
+		self:clearPersistent("groundStats")
         self:applyStats(aerialEffect, "aerialStats")
 	elseif groundEffect then
+		self:clearPersistent("aerialStats")
         self:applyStats(groundEffect, "groundStats")
-    end
+    else
+		self:clearPersistent("aerialStats")
+		self:clearPersistent("groundStats")
+	end
 
     -- Effects while falling
 	if fallEffect and mcontroller.falling() then
@@ -47,7 +52,9 @@ function FRHelper:call(args)
         if fallEffect.maxFallSpeed then
             mcontroller.setYVelocity(math.max(mcontroller.yVelocity(), fallEffect.maxFallSpeed))
         end
-    end
+    else
+		self:clearPersistent("fallStats")
+	end
 
     -- Wind effects
     local windLevel = world.windLevel(mcontroller.position())
@@ -55,5 +62,7 @@ function FRHelper:call(args)
         self:applyStats(windEffects.windHigh, "windStats")
 	elseif windEffects and windEffects.windLow and windLevel >= windEffects.windLow.speed then
         self:applyStats(windEffects.windHigh, "windStats")
-    end
+    else
+		self:clearPersistent("windStats")
+	end
 end

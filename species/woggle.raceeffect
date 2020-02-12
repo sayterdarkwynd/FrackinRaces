@@ -1,12 +1,5 @@
 {
-	"stats": [{
-			"stat": "isHerbivore",
-			"amount": 1
-		},
-		{
-			"stat": "foodDelta",
-			"baseMultiplier": 1
-		},
+	"stats": [
 		{
 			"stat": "maxHealth",
 			"baseMultiplier": 0.8
@@ -56,6 +49,7 @@
 			"amount": 1
 		}
 	],
+	"diet" : "herbivore",
 	"envEffects": [{
 		"biomes": [
 			"atropus"

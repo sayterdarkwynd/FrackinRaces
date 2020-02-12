@@ -3,12 +3,12 @@
     "op": "add",
     "path": "/effects/0/0",
     "value": {
-      "effect": "carnivorefoodnopoison"
+      "effect": "meatc_plant_meal"
     }
   },
   {
     "op": "replace",
     "path": "/description",
-    "value": "A juicy hamburger. ^orange;Type: Cooked Meat^reset;"
+    "value": "A juicy hamburger. ^orange;Type: Cooked Meat + Vegetables^reset;"
   }
 ]

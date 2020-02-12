@@ -1,9 +1,0 @@
-{
-  "name" : "biooozeimmunity",
-  "effectConfig" : {},
-  "defaultDuration" : 120,
-
-  "scripts" : [
-    "biooozeimmunity.lua"
-  ]
-}

@@ -17,7 +17,10 @@ function init()
 		self.healthRangeMiConfig = self.specialConfig.healthRangeMi or nil
 		self.healthRangeLoConfig = self.specialConfig.healthRangeLo or nil
     end
-
+	
+	self.powerMod = 1
+	self.protectionMod = 1
+	self.critMod = 0
     script.setUpdateDelta(10)
 end
 

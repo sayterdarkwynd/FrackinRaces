@@ -49,7 +49,7 @@ function FRHelper:call(args, main, ...)
 
     local newargs = {stats={}}
     for _,stuff in ipairs(args.stats or {}) do
-        local newStat = {stat=stuff.stat, baseMultiplier=stuff.baseMultiplier or nil, amount=stuff.amount or nil}
+        local newStat = {stat=stuff.stat, baseMultiplier=stuff.baseMultiplier or nil, amount=stuff.amount or nil, effectiveMultiplier=stuff.effectiveMultiplier or nil}
         if args.statCombos[stuff.stat] then
             local data = args.statCombos[stuff.stat]
             if newStat.amount then
@@ -57,10 +57,15 @@ function FRHelper:call(args, main, ...)
                 if data.max then
                     newStat.amount = math.min(newStat.amount, data.max)
                 end
-            else
+            elseif newStat.baseMultiplier then
                 newStat.baseMultiplier = newStat.baseMultiplier + data.comboBase * (data.comboMult or 1) * main.blockCountShield
                 if data.max then
                     newStat.baseMultiplier = math.min(newStat.baseMultiplier, data.max)
+                end
+            else
+                newStat.baseMultiplier = newStat.effectiveMultiplier + data.comboBase * (data.comboMult or 1) * main.blockCountShield
+                if data.max then
+                    newStat.effectiveMultiplier = math.min(newStat.effectiveMultiplier, data.max)
                 end
             end
         end

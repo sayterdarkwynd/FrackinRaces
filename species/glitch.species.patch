@@ -4,7 +4,7 @@
     "path" : "/charCreationTooltip/description" , 
     "value" : "Their creation is lost to history. This suits them just fine, as they prefer a primitive state of being. Their medieval culture favors training with shields, maces and crossbows.
 
- Diet: Robotic 
+ Diet: Robotic/Omnivore
  
  ^orange;Perks^reset;: 
  ^green;+15%^reset; Health, +^green;5%^reset; Energy, +^green;5%^reset; Protection
@@ -15,7 +15,7 @@
  ^green;Regen^reset; within ^green;Oil/Liquid Proto/Erchius^reset;
  
  ^orange;Weapons^reset;:
- Mace/Greataxes/Axe: Consumes food to increase Crit +^green;2%^reset;
+ Mace/Greataxes/Axe:+^green;2% Crit Chance, +5 to Crit Damage^reset;
  1h combos increase defense by +^green;2^reset;
  Bow/Crossbow: ^green;+2%^reset; Crit Chance
  Shield: +^green;8%^reset; Health,+^green;2%^reset; Shield Bash, (Raised)+^green;3^reset; Protection,  (Raised)+^green;1%^reset; Regen

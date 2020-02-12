@@ -11,8 +11,8 @@
  
  ^orange;Perks^reset;: 
  +^green;10%^reset; Speed, +^green;10%^reset; Jump
- Resist: ^green;50%^reset; Electric, ^green;20%^reset; Ice, ^green;40%^reset; Radiation
- Great Traders: +^green;21%^reset; Charisma 
+ Resist: ^green;50%^reset; Electric
+ Great Traders: +^green;21%^reset; Charisma, +500 Start Cash
  Immune: Electrified
  
  ^orange;Weapons^reset;:    

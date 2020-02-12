@@ -1,8 +1,5 @@
 {
-	"stats": [{
-			"stat": "isOmnivore",
-			"amount": 1
-		},
+	"stats": [
 		{
 			"stat": "maxHealth",
 			"baseMultiplier": 0.75
@@ -26,16 +23,9 @@
 		{
 			"stat": "electricResistance",
 			"amount": 0.2
-		},
-		{
-			"stat": "coldimmunity",
-			"amount": -0.3
-		},
-		{
-			"stat": "biomecoldImmunity",
-			"amount": -0.3
 		}
 	],
+	"diet" : "omnivore",
 	"controlModifiers": {
 		"speedModifier": 1.1,
 		"airJumpModifier": 1.15

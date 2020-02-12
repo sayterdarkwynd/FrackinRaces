@@ -5,7 +5,7 @@
     },
     { "op": "replace", 
     "path" : "/charCreationTooltip/description" , 
-    "value" : "Stoic, calm and mysterious, the Elduukhar prefer to take the role of artisans or philosophers. Their solid belief that work is reward makes them busy and always seeking discovery and enlightenment.
+    "value" : "Stoic, calm and mysterious, the Elduukhar prefer to take the role of artisans or philosophers. They seek discovery and enlightenment.
     
  Diet: Can eat almost anything
  
@@ -13,10 +13,10 @@
  +^green;10%^reset; Energy, +^green;2^reset; Protection
  Advantages: When at 50% HP, emit slowing ice clouds. +30% Max Food
  Resist: ^green;20%^reset; Fire, ^green;20%^reset; Shadow, ^green;20%^reset; Ice
- Tech: ^green;Crystal Breath - build in [C] menu^reset;
+ Tech: ^green;Crystal Breath^reset;
  
  ^orange;Environment^reset;:
- ^green;Aether Sea, Crystalline, Chromatic, Red Desert^reset; biomes increase your health and crit damage.
+ ^green;Aether Sea, Crystal, Chromatic, Red Desert^reset; biomes increase health and crit dmg.
  ^green;Hot^reset; biomes increase ^green;15% protection^reset; and ^green;25% health^reset;.
  ^red;Cold^reset; biomes decrease ^red;15% protection^reset; and ^red;25% health^reset;.
  

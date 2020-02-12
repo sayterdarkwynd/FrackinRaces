@@ -41,6 +41,7 @@ function FRHelper:call(args, main, dt, ...)
 	-- Night penalties
 	if not daytime then
 		local nightConfig = args.nightConfig
+		self:clearPersistent("FR_novakidDaytime")
 		self:applyStats(nightConfig, "FR_novakidNight", main, dt, ...)
 		if hungerPerc > nightConfig.hungerThreshold and status.resourcePercentage("health") < 1.0 then
 			if hungerEnabled then
@@ -51,6 +52,7 @@ function FRHelper:call(args, main, dt, ...)
 	else
 	-- Daytime Abilities
 		local dayConfig = args.daytimeConfig
+		self:clearPersistent("FR_novakidNight")
 		self:applyStats(dayConfig, "FR_novakidDaytime", main, dt, ...)
 		
 		local hungerCalc = math.min(1, (hungerPerc - dayConfig.minHunger) / (dayConfig.maxHunger - dayConfig.minHunger))

@@ -1,8 +1,5 @@
 {
-	"stats": [{
-			"stat": "isOmnivore",
-			"amount": 1
-		},
+	"stats": [
 		{
 			"stat": "foodDelta",
 			"baseMultiplier": 0.8
@@ -38,39 +35,70 @@
 		{
 			"stat": "perfectBlockLimitRegen",
 			"amount": 0.65
-		},
-		{
-			"stat": "shadowResistance",
-			"amount": 0.25
 		}
 	],
+	"diet" : "omnivore",
 	"controlModifiers": {
 		"speedModifier": 1.1,
 		"airJumpModifier": 1.1
 	},
-	"weaponEffects": [{
-		"weapons": ["dagger","shortsword"],
-		"stats": [{
-			"stat": "critChance",
-			"amount": 3
-		},
+	"envEffects": [{
+			"biomes": [
+				"forest",
+				"jungle",
+				"rainforest",
+				"arboreal",
+				"arborealdark",
+				"arboreal2",
+				"tundra",
+				"snow",
+				"lush"
+			],
+			"stats": [{
+				"stat": "protection",
+				"effectiveMultiplier": 1.10
+			},
+			{
+				"stat": "maxHealth",
+				"effectiveMultiplier": 1.15
+			}
+			]
+		}
+	],	
+	"weaponEffects": [
+	
 		{
-		"weapons": ["quarterstaff"],
-		"stats": [{
+			"weapons": ["dagger","shortsword" ],
+			"stats": [
+				{
+				"stat": "critChance",
+				"amount": 3
+				}
+			]
+		},	
+		{
+			"weapons": [ "quarterstaff" ],
+			"stats": [
+			{
 				"stat": "protection",
 				"effectiveMultiplier": 1.2
 			},
 			{
 				"stat": "powerMultiplier",
 				"baseMultiplier": 1.15
-			}]
-		},
+			}
+			]
+		},	
 		{
-		"weapons": ["hammer","mace"],
-		"stats": [{"stat": "stunChance","amount": 15}]
+			"weapons": [ "hammer" ],
+			"stats": [
+				{
+				"stat": "stunChance",
+				"amount": 15
+				}
+			]
 		}
-		]
-	}],
+	],
 	"weaponScripts": [{
 			"script": "/scripts/fr_weaponscripts/combobonus.lua",
 			"contexts": [
@@ -110,28 +138,6 @@
 				}
 			}
 		}
-	],
-		"envEffects": [{
-			"biomes": [
-				"forest",
-				"jungle",
-				"rainforest",
-				"arboreal",
-				"arborealdark",
-				"arboreal2",
-				"tundra",
-				"snow",
-				"lush"
-			],
-			"stats": [{
-				"stat": "protection",
-				"effectiveMultiplier": 1.10
-			},
-			{
-				"stat": "maxHealth",
-				"effectiveMultiplier": 1.15
-			}
-			]
-		}
 	]
+		
 }

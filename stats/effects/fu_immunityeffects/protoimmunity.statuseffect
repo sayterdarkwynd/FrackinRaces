@@ -1,9 +1,0 @@
-{
-  "name" : "protoimmunity",
-  "effectConfig" : {},
-  "defaultDuration" : 60,
-
-  "scripts" : [
-    "protoimmunity.lua"
-  ]
-}
