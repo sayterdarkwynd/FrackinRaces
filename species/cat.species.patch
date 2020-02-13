@@ -18,7 +18,8 @@
  Fists, Daggers, Shortswords: ^green;+1%^reset; Crit Chance
  Thrown Weapons: ^green;+25%^reset; Dmg
  Magnorb: ^green;+2%^reset; Crit Chance
- Arm Cannon: ^green;+15%^reset; Protection,^green;+15%^reset; Damage  
+ Arm Cannon: ^green;+15%^reset; Protection,^green;+15%^reset; Damage 
+ Bow: -^green;0.1^reset;s Draw Time 
  
  ^red;Weaknesses^reset;:
  Weak: ^red;20%^reset; Cosmic and Electric"
