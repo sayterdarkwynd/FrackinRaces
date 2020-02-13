@@ -13,6 +13,10 @@
 			"baseMultiplier": 1.1
 		},
 		{
+			"stat": "maxBreath",
+			"amount": 1500
+		},
+		{
 			"stat": "foodDelta",
 			"baseMultiplier": 1.05
 		},
@@ -26,15 +30,15 @@
 		},
 		{
 			"stat": "fireResistance",
-			"amount": 0.2
-		},
-		{
-			"stat": "iceResistance",
 			"amount": 0.0
 		},
 		{
+			"stat": "iceResistance",
+			"amount": 0.1
+		},
+		{
 			"stat": "shadowResistance",
-			"amount": 0.15
+			"amount": 0.20
 		},
 		{
 			"stat": "radioactiveResistance",
@@ -53,11 +57,11 @@
 	"controlModifiers": {
 		"speedModifier": 1.1
 	},
-	"weaponEffects": [{
-			"weapons": [
-				"shortspear, spear"
-			],
-			"stats": [{
+	"weaponEffects": [
+		{
+			"weapons": [ "shortspear", "spear" ],
+			"stats": [
+				{
 					"stat": "powerMultiplier",
 					"baseMultiplier": 1.1
 				},
@@ -68,10 +72,9 @@
 			]
 		},
 		{
-			"weapons": [
-				"wand, staff"
-			],
-			"stats": [{
+			"weapons": [ "wand", "staff" ],
+			"stats": [
+				{
 					"stat": "powerMultiplier",
 					"baseMultiplier": 1.08
 				},
@@ -82,34 +85,53 @@
 			]
 		},
 		{
-			"weapons": [
-				"broadsword, shortsword, dagger"
-			],
-			"stats": [{
-				"stat": "powerMultiplier",
-				"baseMultiplier": 1.15
-			},
-			{
-				"stat": "critChance",
-				"amount": 5
-			}]
+			"weapons": [ "broadsword", "shortsword", "dagger" ],
+			"stats": [
+				{
+					"stat": "powerMultiplier",
+					"baseMultiplier": 1.15
+				},
+				{
+					"stat": "critChance",
+					"amount": 5
+				}
+			]
 		}
 	],
-	"envEffects": [{
-			"biomes": "jungle",
+	"special": {
+		"swimboost2"
+	],
+	"envEffects": [
+		{
+			"biomes": [ "scorchedcity", "desert", "desertwastes", "desertwastesdark", "magma", "magmadark", "volcanic", "volcanicdark" ],
+			"stats": [{
+					"stat": "maxEnergy",
+					"baseMultiplier": 0.85
+				},
+				{
+					"stat": "maxHealth",
+					"baseMultiplier": 0.85
+				},
+				{
+					"stat": "energyRegenPercentageRate",
+					"baseMultiplier": 0.70
+				}]
+		},
+		{
+			"biomes": [ "jungle", "penumbra", "bog", "rainforest" ],
 			"stats": [{
 					"stat": "maxEnergy",
 					"baseMultiplier": 1.05
 			}]
 		},
 		{
-			"biomes": "ocean",
+			"biomes": [ "ocean", "oceanfloor", "flooded", "floodedoceanfloor", "arctic", "arcticdark", "tidewater" ],
 			"stats": [{
 					"stat": "maxEnergy",
 					"baseMultiplier": 1.1
 				}],
 				"controlModifiers": {
-					"speedModifier": 1.1
+					"speedModifier": 1.2
 				}
 			]
 		}
