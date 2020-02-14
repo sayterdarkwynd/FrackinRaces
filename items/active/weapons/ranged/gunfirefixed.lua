@@ -336,10 +336,10 @@ function GunFireFixed:fireProjectile(projectileType, projectileParams, inaccurac
         params
       )
   end
-	  
-  return projectileId
   --Recoil here
-  self:applyRecoil()  
+  self:applyRecoil()  	  
+  return projectileId
+
 end
 
 function GunFireFixed:firePosition()
@@ -544,7 +544,7 @@ function GunFireFixed:checkMagazine()
   end
 end
 
-function GunFire:applyRecoil()
+function GunFireFixed:applyRecoil()
   --Recoil here
   if (self.hasRecoil == 1) then  						--does the weapon have recoil?
     if (self.fireMode == "primary") then					--is it primary fire?
@@ -559,7 +559,7 @@ function GunFire:applyRecoil()
   end
 end
 
-function GunFire:adjustRecoil()		-- if we are not grounded, we halve the force of the recoil				
+function GunFireFixed:adjustRecoil()		-- if we are not grounded, we halve the force of the recoil				
     if not mcontroller.onGround() then						
      self.recoilForce = self.recoilForce * 0.5
     end    
