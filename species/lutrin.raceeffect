@@ -39,7 +39,7 @@
 			"controlModifiers": {"speedModifier":1.0}
 		},
 		{
-			"biomes": ["arctic", "arcticdark", "arcticoceanfloor", "breakwater", "coralreef", "coralreefdark", "deepseavent", "deepseaventdark", "extraoceanfloormission", "ffcoralcave", "fucoralcavern", "kelpforest", "kelpforestdark", "ocean", "oceanfloor", "tidewater", "tidewaterfloor", "tidewaterunderground"],
+			"biomes": ["arctic", "arcticdark", "arcticoceanfloor", "breakwater", "coralreef", "coralreefdark", "deepseavent", "deepseaventdark", "extraoceanfloormission", "ffcoralcave", "flooded", "floodedoceanfloor", "fucoralcavern", "kelpforest", "kelpforestdark", "ocean", "oceanfloor", "tidewater", "tidewaterfloor", "tidewaterunderground"],
 			"stats": [
 				{ "stat" : "powerMultiplier", "effectiveMultiplier" : 1.2 },
 				{ "stat" : "maxEnergy", "effectiveMultiplier" : 1.2 }],
