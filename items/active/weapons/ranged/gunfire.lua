@@ -139,7 +139,6 @@ function GunFire:update(dt, fireMode, shiftHeld)
 		    self:setState(self.burst)
 		end
 	end
-
 end
 
 
