@@ -59,7 +59,11 @@ function GunFire:init()
 	self.weapon.onLeaveAbility = function()
         self.weapon:setStance(self.stances.idle)
 	end
-
+	
+  self.hasRecoil = (config.getParameter("hasRecoil",0))--when fired, does the weapon have recoil?
+  self.recoilSpeed = (config.getParameter("recoilSpeed",0))-- speed of recoil. Ideal is around 200 on the item. Default is 1 here
+  self.recoilForce = (config.getParameter("recoilForce",0)) --force of recoil. Ideal is around 1500 on the item but can be whatever you desire
+  
 end
 
 
@@ -146,6 +150,9 @@ function GunFire:auto()
     --ammo	
     self.reloadTime = config.getParameter("reloadTime") or 1		-- how long does reloading mag take?	
     self:checkMagazine()--ammo system magazine check	
+    -- recoil
+    self.recoilSpeed = (config.getParameter("recoilSpeed",0))-- speed of recoil. Ideal is around 200 on the item. Default is 1 here
+    self.recoilForce = (config.getParameter("recoilForce",0)) --force of recoil. Ideal is around 1500 on the item but can be whatever you desire
   
     local species = world.entitySpecies(activeItem.ownerEntityId())
     if species then
@@ -172,7 +179,7 @@ function GunFire:auto()
  	--FU/FR special checks
         self:hasShotgunReload()--reloads as a shotgun?
         self:checkAmmo() --is it an ammo user?
-
+        
 	self.weapon:setStance(self.stances.cooldown)
 	self:setState(self.cooldown)
 
@@ -183,7 +190,10 @@ function GunFire:burst()
     --ammo	
     self.reloadTime = config.getParameter("reloadTime") or 1		-- how long does reloading mag take?	
     self:checkMagazine()--ammo system magazine check	
-	  
+    -- recoil stats reset every time we shoot so that it is consistent
+    self.recoilSpeed = (config.getParameter("recoilSpeed",0))
+    self.recoilForce = (config.getParameter("recoilForce",0)) 
+    
     local species = world.entitySpecies(activeItem.ownerEntityId())
 
     if species then
@@ -253,25 +263,30 @@ function GunFire:fireProjectile(projectileType, projectileParams, inaccuracy, fi
 	if not projectileType then
         projectileType = self.projectileType
 	end
+	
 	if type(projectileType) == "table" then
         projectileType = projectileType[math.random(#projectileType)]
 	end
 
 	local projectileId = 0
 	for i = 1, (projectileCount or self.projectileCount) do
-        if params.timeToLive then
+          if params.timeToLive then
             params.timeToLive = util.randomInRange(params.timeToLive)
-        end
+          end
 
-        projectileId = world.spawnProjectile(
+          projectileId = world.spawnProjectile(
             projectileType,
             firePosition or self:firePosition(),
             activeItem.ownerEntityId(),
             self:aimVector(inaccuracy or self.inaccuracy),
             false,
             params
-        )
-    end
+          )
+        end
+    
+  --Recoil here
+  self:applyRecoil()
+  
     return projectileId
 end
 
@@ -369,7 +384,6 @@ function GunFire:hasShotgunReload()
 		end  	  
 	end
 end
-
 
 function GunFire:checkAmmo()
              -- set the cursor to the Reload cursor
@@ -472,3 +486,27 @@ function GunFire:checkMagazine()
 	end
   end
 end	
+
+function GunFire:applyRecoil()
+  --Recoil here
+  if (self.hasRecoil == 1) then  						--does the weapon have recoil?
+    if (self.fireMode == "primary") then					--is it primary fire?
+      self.recoilForce = self.recoilForce * self.fireTime
+      self:adjustRecoil()
+    else
+      self.recoilForce = self.recoilForce * 0.15
+      self:adjustRecoil()
+    end
+    local recoilDirection = mcontroller.facingDirection() == 1 and self.weapon.aimAngle + math.pi or -self.weapon.aimAngle
+    mcontroller.controlApproachVelocityAlongAngle(recoilDirection, self.recoilSpeed, self.recoilForce, true)    
+  end
+end
+
+function GunFire:adjustRecoil()		-- if we are not grounded, we halve the force of the recoil				
+    if not mcontroller.onGround() then						
+     self.recoilForce = self.recoilForce * 0.5
+    end      
+    if mcontroller.crouching() then
+     self.recoilForce = self.recoilForce * 0.25
+    end      
+end
