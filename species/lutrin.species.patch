@@ -7,22 +7,22 @@
     "path" : "/charCreationTooltip/description" ,
     "value" : "Enemies-turned-allies of the Hylotl, these massive otters can prove a formidable opponent in the water, though they are not ones to be trifled with on land, either.
 
-^orange;Diet^reset;: Semi-Carnivore, and the fresher the food, the better... for the most part. They can handle fruits, they just won't get any bonuses as a result.
+^orange;Diet^reset;: Semi-Carnivore, and the fresher the food, the better... for the most part.
 
 ^orange;Perks^reset;:
-(Built-In) ^orange;Large Profile^reset; (5 blocks tall). You may have to force the untransforming at times, as a heads-up. Just hold the tech key and it'll do it.
+(Built-In) ^orange;Large Profile^reset; (5 blocks tall). If you get stuck, hold the tech key.
 ^green;+20%^reset; health, ^green;+10%^reset; Power, ^green;1500^reset; Breath, ^green;+100%^reset; breath regen
 ^green;+50% Max Food^reset;
 Immune: Wet
 ^orange;Swim boost 2^reset;
 
 ^orange;Environment^reset;:
-Gain ^green;+10%^reset;, ^green;+15%^reset; or ^green;+20%^reset; additional strength and energy and drop the speed penalty in ^cyan;watery^reset;, ^blue;riverine^reset;, or ^indigo;oceanic^reset; biomes, respectively. Additionally, you gain an additional ^green;5%^reset; speed buff in the last of those three biome types.
-Lose ^red;10%^reset; or ^red;20%^reset; of your strength and energy in ^orange;hot^reset; or ^red;active volcanic^reset; biomes, respectively, and have an additional ^red;5%^reset; slowdown in these biomes.
+Gain ^green;+10%^reset;, ^green;+15%^reset; or ^green;+20%^reset; additional strength and energy and drop the speed penalty or gain a 5% above-average speed in ^cyan;watery^reset; or ^blue;riverine^reset;, or ^indigo;oceanic^reset; biomes, respectively.
+Lose ^red;10%^reset; or ^red;20%^reset; of your strength and energy and have an additional ^red;5%^reset; slowdown in ^orange;hot^reset; or ^red;active volcanic^reset; biomes, respectively.
 
 ^orange;Weapons^reset;:
-Melee: +5% increased damage
-Fists: +10% increased damage, +3% crit rate
+Melee: +5% increased damage.
+Fists: +10% increased damage, +3% crit rate.
 Shortspears: ^green;+10%^reset; Increased damage and protection.
 Quarterstaves and Spears: ^green;+20%^reset; Increased damage and protection.
 
