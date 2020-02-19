@@ -41,7 +41,6 @@
 			"amount": 0.15
 		},
 		{
--
 			"stat": "biomeheatImmunity",
 			"amount": 1
 		}
@@ -87,8 +86,6 @@
 				"stat": "powerMultiplier",
 				"baseMultiplier": 1.2
 			}]
-		},
-		{
 		}
-	],
+	]
 }
