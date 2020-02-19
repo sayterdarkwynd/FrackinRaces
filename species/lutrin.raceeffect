@@ -5,25 +5,18 @@
 		{ "stat": "breathDepletionRate", "baseMultiplier": 1.5 },
 		{ "stat": "breathRegenerationRate", "baseMultiplier": 1.1 },
 		{ "stat": "maxHealth", "baseMultiplier": 1.2 },
-		{	"stat": "maxEnergy", "baseMultiplier": 0.75 },
+		{	"stat": "maxEnergy", "baseMultiplier": 0.8 },
 		{ "stat": "powerMultiplier", "baseMultiplier": 1.1 },
-		{	"stat": "protection",	"baseMultiplier": 1.1 },
-		{ "stat": "electricResistance", "amount": -0.1 },
-		{ "stat": "iceResistance", "amount": 0.1 },
-		{ "stat": "fireResistance", "amount": -0.3 },
+		{	"stat": "physicalResistance",	"amount": 0.1 },
+		{ "stat": "iceResistance", "amount": 0.25 },
+		{ "stat": "fireResistance", "amount": -0.25 },
 		{ "stat": "poisonResistance", "amount": -0.1 },
-		{ "stat": "cosmicResistance", "amount": -0.2 },
-		{ "stat": "darknessResistance", "amount": -0.1 },
-		{ "stat": "radioactiveResistance", "amount": -0.2 },
-		{ "stat": "fallDamageMultiplier", "baseMultiplier": 2.0 },
+		{ "stat": "radioactiveResistance", "amount": -0.25 },
+		{ "stat": "fallDamageMultiplier", "baseMultiplier": 1.5 },
 		{ "stat": "wetImmunity", "amount": 1 }],// While these guys are carnivores and thusly shouldn't eat plants and should try for as fresh of a food as possible, their bodies are starting to adapt, so they can handle fruits.
 	"diet" : [{"ORGANIC":false, "MEAT_RAW":true, "FISH":true, "DAIRY":true, "EGG":true},{"PLANT":true, "FRUIT":false}],
 	"controlModifiers": { "speedModifier": 0.95 },
 	"envEffects": [
-		{
-			"biomes": ["frozenvolcanic", "frozenvolcanicunderground", "icefire"],
-			"stats": [{ "stat" : "maxEnergy", "effectiveMultiplier" : 1.25 }]
-		},
 		{
 			"biomes": ["alienforest", "bioluminescence", "birchforest", "bog", "bogunderground", "cloudforest", "clourful", "desertoasis", "eden", "extraswampmission", "flowerforest", "flowers", "forest", "giantflowers", "glacial", "hotsprings", "luminouscaves", "oasis", "pineforest", "prism", "rainbowforest", "snowyforest", "spring", "steamspring", "tabularasa", "wilderness"],
 			"stats": [
@@ -82,12 +75,7 @@
 			"weapons": ["spear", "quarterstaff"],
 			"stats": [
 				{"stat" : "powerMultiplier", "effectiveMultiplier" : 1.2},
-				{"stat" : "protection", "effectiveMultiplier" : 1.1}]
+				{"stat" : "protection", "effectiveMultiplier" : 1.2}]
 		}],
-	"special": ["swimboost2"],
-	"liquidEffects": [{
-		"liquids": [1,5,6,7,11,12,13,20,40,42,43,44,45,53,54,55,57,58,59,60,61,65,67,68,69,100],
-		"stats": [{"stat": "fallDamageMultiplier", "effectiveMultiplier": 0 }]
-		}
-	]
+	"special": ["swimboost2"]
 }
