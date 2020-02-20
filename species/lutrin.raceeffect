@@ -12,7 +12,7 @@
 		{ "stat": "fireResistance", "amount": -0.25 },
 		{ "stat": "poisonResistance", "amount": -0.1 },
 		{ "stat": "radioactiveResistance", "amount": -0.25 },
-		{ "stat": "fallDamageMultiplier", "baseMultiplier": 1.5 },
+		{ "stat": "fallDamageMultiplier", "baseMultiplier": 1.15 },
 		{ "stat": "wetImmunity", "amount": 1 }],// While these guys are carnivores and thusly shouldn't eat plants and should try for as fresh of a food as possible, their bodies are starting to adapt, so they can handle fruits.
 	"diet" : [{"ORGANIC":false, "MEAT_RAW":true, "FISH":true, "DAIRY":true, "EGG":true},{"PLANT":true, "FRUIT":false}],
 	"controlModifiers": { "speedModifier": 0.95 },
@@ -54,10 +54,6 @@
 		}
 	],
 	"weaponEffects": [
-		{
-			"weapons": ["melee"],
-			"stats": [{"stat" : "powerMultiplier", "effectiveMultiplier" : 1.05}]
-		},
 		{
 			"weapons": ["fist"],
 			"stats": [
