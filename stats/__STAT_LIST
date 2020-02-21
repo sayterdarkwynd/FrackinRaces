@@ -1,0 +1,114 @@
+FU STATS:
+    fuCharisma                      [baseMultiplier] 
+
+RESISTANCES:
+    RESISTANCES::ELEMENTAL:
+        fireResistance              [amount] 
+        radioactiveResistance       [amount] 
+        shadowResistance            [amount] 
+        cosmicResistance            [amount] 
+        poisonResistance            [amount] 
+        iceResistance               [amount] 
+        electricResistance          [amount] 
+        darknessResistance          [amount] 
+        physicalResistance          [amount]
+
+
+IMMUNITIES -- ALL AMOUNT VALUES MUST BE 0 FOR OFF OR 1 FOR ON:
+    IMMUNITIES::MOBILITY:
+        fumudslowImmunity           [amount]
+        fuclayslowImmunity          [amount]
+        mudslowImmunity             [amount] 
+        jungleslowImmunity          [amount] 
+        
+        slushslowImmunity           [amount] 
+        snowslowImmunity            [amount] 
+        snowslipImmunity            [amount] 
+        iceslipImmunity             [amount] 
+        
+        tarImmunity                 [amount] 
+        tarStatusImmunity           [amount]
+        blacktarImmunity            [amount]
+        quicksandImmunity           [amount]
+        
+        slimefrictionImmunity       [amount] 
+        honeyslowImmunity           [amount]
+        webstickImmunity            [amount] 
+        slimestickImmunity          [amount] 
+        stunImmunity                [amount]
+        
+        
+    IMMUNITIES::ENVIRONMENT_AND_WEATHER:
+        biomecoldImmunity           [amount]
+        biomeheatImmunity           [amount]
+        biomeradiationImmunity      [amount]
+        sandstormImmunity           [amount]
+        breathProtection            [amount]
+        waterbreathProtection       [amount]
+        pressureProtection          [amount]
+        extremepressureProtection   [amount]
+        beestingImmunity            [amount] 
+        erchiusImmunity             [amount]
+        lavaImmunity                [amount]
+        biooozeImmunity             [amount] 
+        slimeImmunity               [amount]
+        waterImmunity               [amount]
+        wetImmunity                 [amount]
+        
+        
+    IMMUNITIES::ELEMENTAL:
+        poisonStatusImmunity        [amount] 
+        
+        ffextremeradiationImmunity  [amount]
+        radiationburnImmunity       [amount]     
+        
+        fireStatusImmunity          [amount] 
+        
+        iceStatusImmunity           [amount] 
+        ffextremecoldImmunity       [amount]
+        liquidnitrogenImmunity      [amount]
+        coldimmunity                [amount] 
+        
+        electricStatusImmunity      [amount] 
+        
+        aetherImmunity              [amount]
+    
+        shadowImmunity              [amount]
+        
+        darknessImmunity            [amount] 
+        insanityImmunity            [amount]
+        
+        
+    IMMUNITIES::MISC:
+        specialStatusImmunity       [amount]
+        healingStatusImmunity       [amount]        
+    
+
+OTHER:
+    maxHealth                       [baseMultiplier] 
+    maxEnergy                       [baseMultiplier] 
+    maxFood                         [effectiveMultiplier] 
+    maxBreath                       [amount]
+    
+    noFood                          [amount] 
+    foodDelta                       [baseMultiplier] 
+    
+    energyRegenBlockTime            [baseMultiplier] 
+    shieldRegen                     [amount] 
+    perfectBlockLimitRegen          [amount] 
+    energyRegenPercentageRate       [baseMultiplier] 
+    
+    healthRegen                     [amount] 
+    
+    physicalResisance               [amount]
+    fallDamageMultiplier            [baseMultiplier] 
+    protection                      [effectiveMultiplier] 
+    grit                            [amount]
+    powerMultiplier                 [baseMultiplier]
+    
+    bowDrawTimeBonus                [amount] 
+    
+    breathDepletionRate             [baseMultiplier] 
+    breathRegenerationRate          [amount] 
+    
+    mentalProtection                [amount] 
