@@ -5,14 +5,13 @@ RESISTANCES:
     RESISTANCES::ELEMENTAL:
         fireResistance              [amount] 
         radioactiveResistance       [amount] 
-        shadowResistance            [amount] 
-        cosmicResistance            [amount] 
         poisonResistance            [amount] 
         iceResistance               [amount] 
         electricResistance          [amount] 
+        shadowResistance            [amount] 
         darknessResistance          [amount] 
+        cosmicResistance            [amount]
         physicalResistance          [amount]
-
 
 IMMUNITIES -- ALL AMOUNT VALUES MUST BE 0 FOR OFF OR 1 FOR ON:
     IMMUNITIES::MOBILITY:
