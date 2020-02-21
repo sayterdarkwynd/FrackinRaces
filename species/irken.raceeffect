@@ -55,7 +55,7 @@
 			"biomes": [ "snow", "snowdark", "tundra", "arctic", "arcticdark", "nitrogensea", "icemoon", "frozenvolcanic", "icewaste", "icewastedark" ],
 			"stats": [
 				{ "stat": "protection", "effectiveMultiplier": -0.7 },
-				{ "stat": "maxHealth", "effectiveMultiplier": -0.8 }
+				{ "stat": "maxHealth", "effectiveMultiplier": -0.8 },
 				{ "stat": "healthRegen", "effectiveMultiplier": -0.6 }
 			]
 		}
