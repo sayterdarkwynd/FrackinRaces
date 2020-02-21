@@ -37,7 +37,7 @@
 			"amount": -0.40
 		},
 		{
-			"stat: "cosmicResistance"
+			"stat": "cosmicResistance",
 			"amount": 0.15
 		},
 		{
