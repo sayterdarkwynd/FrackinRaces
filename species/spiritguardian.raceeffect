@@ -4,20 +4,26 @@
 		{ "stat": "maxEnergy", "baseMultiplier": 1.30 },
 		
 		{ "stat": "fallDamageMultiplier", "baseMultiplier": 0 },
-		{ "stat": "foodDelta", "baseMultiplier": 1.07 },
+		{ "stat": "foodDelta", "baseMultiplier": 0.9 },
+		{ "stat": "maxFood", "effectiveMultiplier": 0.8 },
 		
 		{ "stat": "jungleslowImmunity", "amount": 1 },
 		{ "stat": "fumudslowImmunity", "amount": 1 },
+		{ "stat": "mudslowImmunity", "amount": 1 },
+		{ "stat": "fuclayslowImmunity", "amount": 1},
 		
 		{ "stat": "iceResistance", "amount": 0.1 },
-		{ "stat": "shadowResistance", "amount": 0.1 },
+		{ "stat": "shadowResistance", "amount": 0.2 },
+		{ "stat": "darknessResistance", "amount": 0.2 },
 		{ "stat": "cosmicResistance", "amount": 0.1 },
 		
 		{ "stat": "physicalResistance", "amount": -0.3 },
 		{ "stat": "radioactiveResistance", "amount": -0.3 },
 		{ "stat": "poisonResistance", "amount": -0.3 },
 		{ "stat": "electricResistance", "amount": -0.1 },
-		{ "stat": "fireResistance", "amount": -0.1 }
+		{ "stat": "fireResistance", "amount": -0.1 },
+		
+		{ "stat": "mentalProtection", "amount": -0.1 }
 	],
 	"diet" : "herbivore",
 	
