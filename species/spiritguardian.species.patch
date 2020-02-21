@@ -6,18 +6,21 @@
 "Biological descendants of ^#99BBFF;The Spirit Tree^reset; created via a unique randomized asexual reproduction cycle. These creatures exhibit extreme agility and low tolerance to harm.
 
 ^orange;Diet:^reset; Herbivore
-^orange;Immunities:^reset; Jungle Slow, Mud Slow, Fall Damage
+^orange;Immunities:^reset; Jungle Slow, Mud Slow, Clay Slow, Fall Damage
 
 ^orange;Stats:^reset;
 ^green;+20% Move Speed, Jump Height^reset;
 ^green;+30% Energy^reset;
+^green;+10% Metabolism ^#666666;(Hunger Decreases 10% Slower)^reset;
 ^red;-20% Max Health^reset;
-^red;-7% Metabolism ^gray;(Hunger Decreases 7% Faster)^reset;
+^red;-20% Stomach Size^reset;
 
 ^orange;Resistances:^reset;
-^green;+10% Shadow, Cosmic, Ice^reset;
+^green;+10% Shadow, Darkness^reset;
+^green;+20% Cosmic (Aether), Ice^reset;
 ^red;-30% Physical, Poison, Radioactive^reset;
 ^red;-10% Electric, Fire^reset;
+^red;-10% Mental Protection ^#666666;(Go insane 10% faster)^reset;
 
 ^orange;Enviornmental Bonuses:^reset;
 ^yellow;Jungle, Forest, Bog, Arboreal:^reset; ^green;+15% Protection, +10% Health^reset;
