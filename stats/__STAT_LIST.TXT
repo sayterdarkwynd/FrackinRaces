@@ -103,7 +103,6 @@ OTHER:
     
     healthRegen                     [amount] 
     
-    physicalResisance               [amount]
     fallDamageMultiplier            [baseMultiplier] 
     protection                      [effectiveMultiplier] 
     grit                            [amount]
