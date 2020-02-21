@@ -1,3 +1,7 @@
+NOTICE: 
+ > YES, THERE ARE SOME REDUNDANT STATS IN HERE.
+ > YES, THEY ARE ALL NEEDED. For instance, if you want to add immunity to something like mudslow, add fumudslow AND mudslow.
+
 FU STATS:
     fuCharisma                      [baseMultiplier] 
 
