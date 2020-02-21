@@ -5,7 +5,7 @@
 			"baseMultiplier": 1.15
 		},
 		{
-			"stat": "maxhealth",
+			"stat": "maxHealth",
 			"baseMultiplier": 1.20
 		},
 		{
