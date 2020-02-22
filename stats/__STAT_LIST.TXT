@@ -39,7 +39,7 @@ IMMUNITIES
         
         slimefrictionImmunity       [amount] [Boolean]
         honeyslowImmunity           [amount] [Boolean]
-        webstickImmunity            [amount] [Boolean] 
+        webstickImmunity            [amount] [Boolean]
         slimestickImmunity          [amount] [Boolean]
         stunImmunity                [amount] [Boolean]
         
@@ -91,29 +91,29 @@ IMMUNITIES
     
 
 OTHER:
-    maxHealth                       [baseMultiplier] 
-    maxEnergy                       [baseMultiplier] 
-    maxFood                         [effectiveMultiplier] 
+    maxHealth                       [baseMultiplier]      [1-Relative]
+    maxEnergy                       [baseMultiplier]      [1-Relative]
+    maxFood                         [effectiveMultiplier] [1-Relative]
     maxBreath                       [amount]              [Static Number]
     
     noFood                          [amount]              [Boolean]
-    foodDelta                       [baseMultiplier] 
+    foodDelta                       [baseMultiplier]      [1-Relative]
     
-    energyRegenBlockTime            [baseMultiplier] 
-    shieldRegen                     [amount] 
-    perfectBlockLimitRegen          [amount] 
-    energyRegenPercentageRate       [baseMultiplier]
+    energyRegenBlockTime            [baseMultiplier]      [1-Relative]
+    shieldRegen                     [amount]              [Unknown]
+    perfectBlockLimitRegen          [amount]              [Unknown]
+    energyRegenPercentageRate       [baseMultiplier]      [1-Relative]
     
     healthRegen                     [amount]              [Boolean]
     
-    fallDamageMultiplier            [baseMultiplier]
-    protection                      [effectiveMultiplier]
+    fallDamageMultiplier            [baseMultiplier]      [1-Relative]
+    protection                      [effectiveMultiplier] [1-Relative]
     grit                            [amount]              [Unknown, and I don't even know what this stat does]
-    powerMultiplier                 [baseMultiplier] 
+    powerMultiplier                 [baseMultiplier]      [1-Relative]
     
     bowDrawTimeBonus                [amount]              [Unknown.]
     
-    breathDepletionRate             [baseMultiplier]
+    breathDepletionRate             [baseMultiplier]      [1-Relative]
     breathRegenerationRate          [amount]              [Static Number. Unit unknown. Breath/sec?]
     
     mentalProtection                [amount]              [Unknown. Probably boolean?]
