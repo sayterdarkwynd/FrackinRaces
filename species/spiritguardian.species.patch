@@ -16,10 +16,10 @@
 ^red;-20% Stomach Size^reset;
 
 ^orange;Resistances:^reset;
-^green;+10% Shadow, Darkness^reset;
-^green;+20% Cosmic (Aether), Ice^reset;
-^red;-30% Physical, Poison, Radioactive^reset;
-^red;-10% Electric, Fire^reset;
+^green;+20% Darkness, Shadow^reset;
+^green;+10% Ice^reset;
+^red;-23% Poison, Radioactive, Electric, Fire^reset;
+^red;-15% Physical^reset;
 ^red;-10% Mental Protection ^#666666;(Go insane 10% faster)^reset;
 
 ^orange;Enviornmental Bonuses:^reset;
@@ -30,5 +30,6 @@
 
 ^orange;Misc:^reset;
 ^green;Bioluminescent^reset;"
+^green;Passive Health Regeneration^reset;
 }
 ]
