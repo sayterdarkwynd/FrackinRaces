@@ -26,12 +26,6 @@
 	],
 	"diet" : "herbivore",
 	
-	// Much faster, much more nimble.
-	"controlModifiers": {
-		"speedModifier": 1.25,
-		"airJumpModifier": 1.175
-	},
-	
 	// All natural environments grant buffs.
 	"envEffects": [
 		{	
