@@ -6,7 +6,7 @@ NOTICE:
  > [Boolean] means that THE VALUE IS A SWITCH, AND MUST BE OFF (0) OR ON (1). No other values are legal.
 
 FU STATS:
-    fuCharisma                      [baseMultiplier] 
+    fuCharisma                      [baseMultiplier] [1-Relative]
 
 RESISTANCES:
     RESISTANCES::ELEMENTAL:
