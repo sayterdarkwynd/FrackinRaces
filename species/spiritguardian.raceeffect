@@ -10,18 +10,19 @@
 		{ "stat": "jungleslowImmunity", "amount": 1 },
 		{ "stat": "fumudslowImmunity", "amount": 1 },
 		{ "stat": "mudslowImmunity", "amount": 1 },
-		{ "stat": "fuclayslowImmunity", "amount": 1},
+		{ "stat": "fuclayslowImmunity", "amount": 1 },
 		
 		{ "stat": "iceResistance", "amount": 0.1 },
 		{ "stat": "shadowResistance", "amount": 0.2 },
 		{ "stat": "darknessResistance", "amount": 0.2 },
-		{ "stat": "cosmicResistance", "amount": 0.1 },
 		
-		{ "stat": "physicalResistance", "amount": -0.3 },
-		{ "stat": "radioactiveResistance", "amount": -0.3 },
-		{ "stat": "poisonResistance", "amount": -0.3 },
-		{ "stat": "electricResistance", "amount": -0.1 },
-		{ "stat": "fireResistance", "amount": -0.1 },
+		{ "stat": "physicalResistance", "amount": -0.15 },
+		{ "stat": "radioactiveResistance", "amount": -0.23 },
+		{ "stat": "poisonResistance", "amount": -0.23 },
+		{ "stat": "electricResistance", "amount": -0.23 },
+		{ "stat": "fireResistance", "amount": -0.23 },
+		
+		{ "stat": "healthRegen", "amount": 1 },
 		
 		{ "stat": "mentalProtection", "amount": -0.1 }
 	],
@@ -29,8 +30,8 @@
 	
 	// Much faster, much more nimble.
 	"controlModifiers": {
-		"speedModifier": 1.2,
-		"airJumpModifier": 1.2
+		"speedModifier": 1.25,
+		"airJumpModifier": 1.175
 	},
 	
 	// All natural environments grant buffs.
