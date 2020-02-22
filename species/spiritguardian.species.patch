@@ -20,6 +20,7 @@
 ^green;+10% Ice^reset;
 ^red;-23% Poison, Radioactive, Electric, Fire^reset;
 ^red;-15% Physical^reset;
+^red;-10% Mental Protection ^#666666;(Go insane 10% faster)^reset;
 
 ^orange;Enviornmental Bonuses:^reset;
 ^yellow;Jungle, Forest, Bog, Arboreal:^reset; ^green;+15% Protection, +10% Health^reset;
@@ -28,7 +29,7 @@
 ^yellow;Wand, Staff:^reset; ^green;+12% Power^reset;
 
 ^orange;Misc:^reset;
-^green;Bioluminescent^reset;"
-^green;Passive Health Regeneration^reset;
+^green;Bioluminescent^reset;
+^green;Passive Health Regeneration^reset;"
 }
 ]
