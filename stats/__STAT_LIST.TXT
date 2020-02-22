@@ -1,116 +1,119 @@
 NOTICE: 
  > YES, THERE ARE SOME REDUNDANT STATS IN HERE.
  > YES, THEY ARE ALL NEEDED. For instance, if you want to add immunity to something like mudslow, add fumudslow AND mudslow.
+ > [0-Relative] means that THE STATS ARE ORIENTED AROUND 0. This means that the default state is 0. Values < 0 subtract from this stat, and values > 0 add to this stat. (e.g. -0.2 means "This stat -20% of its base value")
+ > [1-Relative] means that THE STATS ARE ORIENTED AROUND 1. This means that the default state is 1 (100%). Values < 1 subtract from this stat, and values > 1 add to this stat. (e.g. 0.5 means "50% of this stat's value")
+ > [Boolean] means that THE VALUE IS A SWITCH, AND MUST BE OFF (0) OR ON (1). No other values are legal.
 
 FU STATS:
     fuCharisma                      [baseMultiplier] 
 
 RESISTANCES:
     RESISTANCES::ELEMENTAL:
-        fireResistance              [amount] 
-        radioactiveResistance       [amount] 
-        poisonResistance            [amount] 
-        iceResistance               [amount] 
-        electricResistance          [amount] 
-        shadowResistance            [amount] 
-        darknessResistance          [amount] 
-        cosmicResistance            [amount]
-        physicalResistance          [amount]
+        fireResistance              [amount] [0-Relative]
+        radioactiveResistance       [amount] [0-Relative]
+        poisonResistance            [amount] [0-Relative]
+        iceResistance               [amount] [0-Relative]
+        electricResistance          [amount] [0-Relative]
+        shadowResistance            [amount] [0-Relative]
+        darknessResistance          [amount] [0-Relative]
+        cosmicResistance            [amount] [0-Relative]
+        physicalResistance          [amount] [0-Relative]
 
-IMMUNITIES -- ALL AMOUNT VALUES MUST BE 0 FOR OFF OR 1 FOR ON:
+IMMUNITIES
     IMMUNITIES::MOBILITY:
-        fumudslowImmunity           [amount]
-        fuclayslowImmunity          [amount]
-        mudslowImmunity             [amount] 
-        jungleslowImmunity          [amount] 
+        fumudslowImmunity           [amount] [Boolean]
+        fuclayslowImmunity          [amount] [Boolean]
+        mudslowImmunity             [amount] [Boolean]
+        jungleslowImmunity          [amount] [Boolean]
         
-        slushslowImmunity           [amount] 
-        snowslowImmunity            [amount] 
-        snowslipImmunity            [amount] 
-        iceslipImmunity             [amount] 
+        slushslowImmunity           [amount] [Boolean]
+        snowslowImmunity            [amount] [Boolean]
+        snowslipImmunity            [amount] [Boolean]
+        iceslipImmunity             [amount] [Boolean]
         
-        tarImmunity                 [amount] 
-        tarStatusImmunity           [amount]
-        blacktarImmunity            [amount]
-        quicksandImmunity           [amount]
+        tarImmunity                 [amount] [Boolean]
+        tarStatusImmunity           [amount] [Boolean]
+        blacktarImmunity            [amount] [Boolean]
+        quicksandImmunity           [amount] [Boolean]
         
-        slimefrictionImmunity       [amount] 
-        honeyslowImmunity           [amount]
-        webstickImmunity            [amount] 
-        slimestickImmunity          [amount] 
-        stunImmunity                [amount]
+        slimefrictionImmunity       [amount] [Boolean]
+        honeyslowImmunity           [amount] [Boolean]
+        webstickImmunity            [amount] [Boolean] 
+        slimestickImmunity          [amount] [Boolean]
+        stunImmunity                [amount] [Boolean]
         
         
     IMMUNITIES::ENVIRONMENT_AND_WEATHER:
-        biomecoldImmunity           [amount]
-        biomeheatImmunity           [amount]
-        biomeradiationImmunity      [amount]
-        sandstormImmunity           [amount]
-        breathProtection            [amount]
-        waterbreathProtection       [amount]
-        pressureProtection          [amount]
-        extremepressureProtection   [amount]
-        beestingImmunity            [amount] 
-        erchiusImmunity             [amount]
-        lavaImmunity                [amount]
-        biooozeImmunity             [amount] 
-        slimeImmunity               [amount]
-        waterImmunity               [amount]
-        wetImmunity                 [amount]
+        biomecoldImmunity           [amount] [Boolean]
+        biomeheatImmunity           [amount] [Boolean]
+        biomeradiationImmunity      [amount] [Boolean]
+        sandstormImmunity           [amount] [Boolean]
+        breathProtection            [amount] [Boolean]
+        waterbreathProtection       [amount] [Boolean]
+        pressureProtection          [amount] [Boolean]
+        extremepressureProtection   [amount] [Boolean]
+        beestingImmunity            [amount] [Boolean]
+        erchiusImmunity             [amount] [Boolean]
+        lavaImmunity                [amount] [Boolean]
+        biooozeImmunity             [amount] [Boolean]
+        slimeImmunity               [amount] [Boolean]
+        waterImmunity               [amount] [Boolean]
+        wetImmunity                 [amount] [Boolean]
         
         
     IMMUNITIES::ELEMENTAL:
-        poisonStatusImmunity        [amount] 
+        poisonStatusImmunity        [amount] [Boolean]
         
-        ffextremeradiationImmunity  [amount]
-        radiationburnImmunity       [amount]     
+        ffextremeradiationImmunity  [amount] [Boolean]
+        radiationburnImmunity       [amount] [Boolean]
         
-        fireStatusImmunity          [amount] 
+        fireStatusImmunity          [amount] [Boolean]
         
-        iceStatusImmunity           [amount] 
-        ffextremecoldImmunity       [amount]
-        liquidnitrogenImmunity      [amount]
-        coldimmunity                [amount] 
+        iceStatusImmunity           [amount] [Boolean]
+        ffextremecoldImmunity       [amount] [Boolean]
+        liquidnitrogenImmunity      [amount] [Boolean]
+        coldimmunity                [amount] [Boolean]
         
-        electricStatusImmunity      [amount] 
+        electricStatusImmunity      [amount] [Boolean]
         
-        aetherImmunity              [amount]
+        aetherImmunity              [amount] [Boolean]
     
-        shadowImmunity              [amount]
+        shadowImmunity              [amount] [Boolean]
         
-        darknessImmunity            [amount] 
-        insanityImmunity            [amount]
+        darknessImmunity            [amount] [Boolean]
+        insanityImmunity            [amount] [Boolean]
         
         
     IMMUNITIES::MISC:
-        specialStatusImmunity       [amount]
-        healingStatusImmunity       [amount]        
+        specialStatusImmunity       [amount] [Boolean]
+        healingStatusImmunity       [amount] [Boolean]     
     
 
 OTHER:
     maxHealth                       [baseMultiplier] 
     maxEnergy                       [baseMultiplier] 
     maxFood                         [effectiveMultiplier] 
-    maxBreath                       [amount]
+    maxBreath                       [amount]              [Static Number]
     
-    noFood                          [amount] 
+    noFood                          [amount]              [Boolean]
     foodDelta                       [baseMultiplier] 
     
     energyRegenBlockTime            [baseMultiplier] 
     shieldRegen                     [amount] 
     perfectBlockLimitRegen          [amount] 
-    energyRegenPercentageRate       [baseMultiplier] 
+    energyRegenPercentageRate       [baseMultiplier]
     
-    healthRegen                     [amount] 
+    healthRegen                     [amount]              [Boolean]
     
-    fallDamageMultiplier            [baseMultiplier] 
-    protection                      [effectiveMultiplier] 
-    grit                            [amount]
-    powerMultiplier                 [baseMultiplier]
+    fallDamageMultiplier            [baseMultiplier]
+    protection                      [effectiveMultiplier]
+    grit                            [amount]              [Unknown, and I don't even know what this stat does]
+    powerMultiplier                 [baseMultiplier] 
     
-    bowDrawTimeBonus                [amount] 
+    bowDrawTimeBonus                [amount]              [Unknown.]
     
-    breathDepletionRate             [baseMultiplier] 
-    breathRegenerationRate          [amount] 
+    breathDepletionRate             [baseMultiplier]
+    breathRegenerationRate          [amount]              [Static Number. Unit unknown. Breath/sec?]
     
-    mentalProtection                [amount] 
+    mentalProtection                [amount]              [Unknown. Probably boolean?]
