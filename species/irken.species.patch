@@ -11,12 +11,12 @@
     
     ^orange;Perks^reset;:
     ^green;^reset; always regenerating health
-    ^green;+50%^reset; fire Resist
-    ^green;+15%^reset; electric Resist
-    ^green;+15%^reset; cosmic Resistance
+    ^green;+30%^reset; fire Resist
+    ^green;+20%^reset; electric Resist
+    ^green;+20%^reset; cosmic Resistance
     ^green;+20%^reset; energy
-    ^green;+15%^reset; faster speed
-    ^green;+14%^reset; jump hieght
+    ^green;+14%^reset; faster speed
+    ^green;+12%^reset; jump hieght
     Immune: Insanity, heat
  
     ^orange;Weapons^reset;:
@@ -25,10 +25,11 @@
     assult rifles: ^green;+20%^reset; Damage
  
     ^red;Weaknesses^reset;:
-    ^red;-10%^reset; max health"
-    ^red;-10%^reset; physical Resist
-    ^red;-60%^reset; Ice Resist
-    ^red;-40%^reset; poison Resist"
+    ^red;-15%^reset; max health"
+    ^red;-15%^reset; physical Resist
+    ^red;-35%^reset; Ice Resist
+    ^red;-35%^reset; poison Resist"
+    ^red;-15%^reset; shadow resist"
     ^red;-7%^reset; protection in cold biomes
     ^red;-8%^reset; max health in cold biomes 
     ^red;^reset; loose the health regen in cold biomes
