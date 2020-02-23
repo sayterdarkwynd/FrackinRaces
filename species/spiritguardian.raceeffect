@@ -1,37 +1,48 @@
 {
 	"stats": [
-		{ "stat": "foodDelta", "baseMultiplier": 0.8 },
+		{ "stat": "maxHealth", "baseMultiplier": 0.80 },
+		{ "stat": "maxEnergy", "baseMultiplier": 1.30 },
 		
-		{ "stat": "maxHealth", "baseMultiplier": 0.8 },
-		{ "stat": "maxEnergy", "baseMultiplier": 1.2 },
+		{ "stat": "fallDamageMultiplier", "baseMultiplier": 0 },
+		{ "stat": "foodDelta", "baseMultiplier": 0.9 },
+		{ "stat": "maxFood", "effectiveMultiplier": 0.8 },
 		
-		{ "stat": "physicalResistance", "amount": -0.3 },
-		{ "stat": "poisonResistance", "amount": -0.3 },
-		{ "stat": "shadowResistance", "amount": 0.1 },
-		{ "stat": "cosmicResistance", "amount": 0.1 },
 		{ "stat": "jungleslowImmunity", "amount": 1 },
 		{ "stat": "fumudslowImmunity", "amount": 1 },
-		{ "stat": "fallDamageMultiplier", "baseMultiplier": 0 }
+		{ "stat": "mudslowImmunity", "amount": 1 },
+		{ "stat": "fuclayslowImmunity", "amount": 1 },
+		
+		{ "stat": "iceResistance", "amount": 0.1 },
+		{ "stat": "shadowResistance", "amount": 0.2 },
+		{ "stat": "darknessResistance", "amount": 0.2 },
+		
+		{ "stat": "physicalResistance", "amount": -0.15 },
+		{ "stat": "radioactiveResistance", "amount": -0.23 },
+		{ "stat": "poisonResistance", "amount": -0.23 },
+		{ "stat": "electricResistance", "amount": -0.23 },
+		{ "stat": "fireResistance", "amount": -0.23 },
+		
+		{ "stat": "healthRegen", "amount": 1 }
 	],
 	"diet" : "herbivore",
-	"controlModifiers": {
-		"speedModifier": 1.20,
-		"airJumpModifier": 1.2
-	},
+	
+	// All natural environments grant buffs.
 	"envEffects": [
-		{
+		{	
 			"biomes": [ "garden", "thickjungle", "forest", "jungle", "bog", "arboreal", "arborealdark" ],
 			"stats": [
 				{ "stat": "protection", "effectiveMultiplier": 1.15 },
-				{ "stat": "maxHealth", "effectiveMultiplier": 1.15 }
+				{ "stat": "maxHealth", "effectiveMultiplier": 1.1 }
 			]
 		}
 	],
+	
+	// Wands / Staves grant bonus power.
 	"weaponEffects": [
-		{ "weapons": [ "wand", "staff" ],
+		{
+			"weapons": [ "wand", "staff" ],
 			"stats": [
-				{ "stat": "powerMultiplier", "baseMultiplier": 1.3 },
-				{ "stat": "protection", "effectiveMultiplier": 1.1 }
+				{ "stat": "powerMultiplier", "baseMultiplier": 1.12 }
 			]
 		}
 	]
