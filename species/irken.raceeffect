@@ -2,7 +2,7 @@
 	"stats": [
 		{
 			"stat": "maxHealth",
-			"baseMultiplier": 0.9
+			"baseMultiplier": 0.85
 		},
 		{
 			"stat": "maxEnergy",
@@ -10,7 +10,7 @@
 		},
 		{
 			"stat": "healthRegen",
-			"amount": 0.6
+			"amount": 0.65
 		},
 		{
 			"stat": "insanityImmunity",
@@ -18,38 +18,42 @@
 		},
 		{
 			"stat": "physicalResistance",
-			"amount": -0.10
+			"amount": -0.15
 		},
 		{
 			"stat": "electricResistance",
-			"amount": 0.15
+			"amount": 0.20
 		},	
 		{
 			"stat": "fireResistance",
-			"amount": 0.50
+			"amount": 0.30
 		},
 		{
 			"stat": "iceResistance",
-			"amount": -0.60
+			"amount": -0.35
 		},
 		{
 			"stat": "poisonResistance",
-			"amount": -0.40
+			"amount": -0.35
 		},
 		{
 			"stat: "cosmicResistance"
-			"amount": 0.15
+			"amount": 0.20
 		},
 		{
 -
-			"stat": "biomeheatImmunity",
+			"stat": "ffextremecoldImmunity",
 			"amount": 1
+		},
+		{
+			"stat": "shadowResistance",
+			"amount": -0.15
 		}
 	],
 	"diet" : "herbivore",
 	"controlModifiers": {
-		"speedModifier": 1.15,
-		"airJumpModifier": 1.14
+		"speedModifier": 1.14,
+		"airJumpModifier": 1.12
 	},
 	"envEffects": [
 		{
@@ -57,7 +61,7 @@
 			"stats": [
 				{ "stat": "protection", "effectiveMultiplier": -0.7 },
 				{ "stat": "maxHealth", "effectiveMultiplier": -0.8 }
-				{ "stat": "healthRegen"", "effectiveMultiplier": -0.6 }
+				{ "stat": "healthRegen"", "effectiveMultiplier": -0.65 }
 			]
 		}
 	],
