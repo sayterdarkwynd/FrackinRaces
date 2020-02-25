@@ -38,7 +38,7 @@
 		},
 		{
 			"stat": "cosmicResistance",
-			"amount": 0.15
+			"amount": 0.20
 		},
 		{
 			"stat": "ffextremeheatImmunity",
