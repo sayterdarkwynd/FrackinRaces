@@ -42,7 +42,7 @@
 		},
 		{
 -
-			"stat": "ffextremecoldImmunity",
+			"stat": "ffextremeheatImmunity",
 			"amount": 1
 		},
 		{
