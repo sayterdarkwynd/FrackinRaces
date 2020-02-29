@@ -5,18 +5,18 @@
     },
     { "op": "replace", 
     "path" : "/charCreationTooltip/description" , 
-    "value" : "the irken are a proud race of insectiod lifeforms. beware, despite their size, they are known to invade multiple planets in a n event known as operation impending doom in order to please their leaders. the almighty tallests
+    "value" : "the irken are a proud race of insectiod lifeforms. Despite their size, they are known to invade multiple planets in an event known as operation impending doom in order to please their leaders. 
     
     Diet: Herbivore
     
     ^orange;Perks^reset;:
     ^green;^reset; always regenerating health
-    ^green;+50%^reset; fire Resist
-    ^green;+15%^reset; electric Resist
-    ^green;+15%^reset; cosmic Resistance
-    ^green;+20%^reset; energy
-    ^green;+15%^reset; faster speed
-    ^green;+14%^reset; jump hieght
+    ^green;+50%^reset; Fire Resist
+    ^green;+15%^reset; Electric Resist
+    ^green;+15%^reset; Cosmic Resistance
+    ^green;+20%^reset; Energy
+    ^green;+15%^reset; Faster Speed
+    ^green;+14%^reset; Jump Height
     Immune: Insanity, heat
  
     ^orange;Weapons^reset;:
@@ -25,13 +25,13 @@
     assult rifles: ^green;+20%^reset; Damage
  
     ^red;Weaknesses^reset;:
-    ^red;-10%^reset; max health"
+    ^red;-10%^reset; max health
     ^red;-10%^reset; physical Resist
     ^red;-60%^reset; Ice Resist
-    ^red;-40%^reset; poison Resist"
+    ^red;-40%^reset; poison Resist
     ^red;-7%^reset; protection in cold biomes
     ^red;-8%^reset; max health in cold biomes 
-    ^red;^reset; loose the health regen in cold biomes
+    ^red;^reset; loose the health regen in cold biomes"
     }
 
 ]

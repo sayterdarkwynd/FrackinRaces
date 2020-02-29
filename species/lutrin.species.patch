@@ -1,35 +1,25 @@
- [
-    { "op": "replace",
-    "path" : "/charCreationTooltip/description" ,
-    "value" : ""
-    },
-    { "op": "replace",
-    "path" : "/charCreationTooltip/description" ,
-    "value" : "Enemies-turned-allies of the Hylotl, these massive otters can prove a formidable opponent in the water, though they are not ones to be trifled with on land, either. You know how the Hylotl have an honored warrior tradition? These guys are partially to blame for why that's so pronounced; the two races have a rather rocky history with each other. Mind you, neither are they too fond of the Florans, and for the same reason, no less...
-
-Diet: Semi-Carnivore, and the fresher the food, the better... for the most part. Fruits are on the menu for them, though their best bonuses still come from fresh animal products.
-
+[
+   { "op": "replace",
+   "path" : "/charCreationTooltip/description" ,
+   "value" : ""
+   },
+   { "op": "replace",
+   "path" : "/charCreationTooltip/description" ,
+   "value" : "Enemies-turned-allies of the Hylotl, these massive otters can prove a formidable opponent in the water, though they aren't to be trifled with on land, either.
+^orange;Diet^reset;:
+Semi-Carnivore, and the fresher the food, the better... for the most part. Fruits don't harm you, but other plant foods will.
 ^orange;Perks^reset;:
-(Built-In) ^orange;Large Profile^reset; (5 blocks tall).
-^green;+20%^reset; health, ^green;+10%^reset; Power, ^green;+10%^reset; Protection, ^green;2000^reset; Breath, ^green;+100%^reset; breath regen
-^green;+50% Max Food^reset;
-Immune: Wet
-^green;No^reset; fall damage when submerged.
-Note: you'll have to force the un-morphing in the Vanilla Apex story mission in order to progress at one point. Just keep holding the tech key to do so.
-
+(Built-In) ^orange;Large Profile^reset; (5 blocks tall). If you get stuck, you can hold the tech key to forcefully untransform.
+^green;+20%^reset; health, ^green;+10%^reset; Power, ^green;1500^reset; Breath, ^green;+100%^reset; breath regen, ^green;+50% Max Food^reset;, ^orange;Swim boost 2^reset;, ^orange;Immune to Wet^reset;.
 ^orange;Environment^reset;:
-Gain ^green;+10%^reset;, ^green;+15%^reset; or ^green;+20%^reset; additional strength and energy and drop the speed penalty in ^cyan;watery^reset;, ^blue;riverine^reset;, or ^indigo;oceanic^reset; biomes, respectively. Additionally, you gain an additional ^green;5%^reset; speed buff in the last of those three biome types.
-Lose ^red;10%^reset; or ^red;20%^reset; of your strength and energy in ^orange;hot^reset; or ^red;active volcanic^reset; biomes, respectively, and have an additional ^red;5%^reset; slowdown in these biomes.
-Gain ^green;+25%^reset; additional energy in ^purple;thermal-clash^reset; biomes, such as frozen volcanic and the like.
-
+Gain ^cyan;+10%^reset;, ^blue;+15%^reset; or ^indigo;+20%^reset; additional strength and energy and ^cyan;drop the ^blue;speed penalty^reset; or ^indigo;gain an additional +5% speed^reset; in ^cyan;watery^reset;, ^blue;riverine^reset;, or ^indigo;oceanic^reset; biomes.
+Lose ^orange;10%^reset; or ^red;20%^reset; of your strength and energy, and gain an additional ^red;5%^reset; slowdown in ^orange;arid^reset; or ^red;active volcanic^reset; biomes.
 ^orange;Weapons^reset;:
-Melee: +5% increased damage
-Fists: +10% increased damage, +3% crit rate
+Fists: +10% increased damage, +3% crit rate.
 Shortspears: ^green;+10%^reset; Increased damage and protection.
-Quarterstaves and Spears: ^green;+20%^reset; Increased damage, ^green;+10%^reset protection.
-
+Quarterstaves and Spears: ^green;+20%^reset; Increased damage and protection.
 ^red;Weaknesses^reset;:
-^red;+100%^reset; hunger point usage rate, ^red;+100%^reset; fall damage under most circumstances, ^red;-25%^reset; max energy
+^red;+100%^reset; hunger point usage rate, ^red;+15%^reset; fall damage, ^red;-20%^reset; max energy.
 "
-    }
+   }
 ]
