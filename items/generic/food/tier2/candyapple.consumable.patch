@@ -6,7 +6,7 @@
   { "op":"add",
 "path":"/effects/-",
 "value": [
-    { "effect" : "herb_dessert" }
+    { "effect" : "fruit_dessert" }
   ]
   },
   {
