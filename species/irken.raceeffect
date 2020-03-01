@@ -6,15 +6,15 @@
 		},
 		{
 			"stat": "maxEnergy",
-			"baseMultiplier": 1.2
+			"baseMultiplier": 1.15
 		},
 		{
 			"stat": "healthRegen",
-			"amount": 0.6
+			"amount": 0.03
 		},
 		{
-			"stat": "insanityImmunity",
-			"amount": 1
+			"stat": "madnessResistance",
+			"amount": 0.30
 		},
 		{
 			"stat": "physicalResistance",
@@ -26,15 +26,15 @@
 		},	
 		{
 			"stat": "fireResistance",
-			"amount": 0.50
+			"amount": 0.30
 		},
 		{
 			"stat": "iceResistance",
-			"amount": -0.60
+			"amount": -0.30
 		},
 		{
 			"stat": "poisonResistance",
-			"amount": -0.40
+			"amount": -0.20
 		},
 		{
 			"stat": "cosmicResistance",
@@ -45,18 +45,18 @@
 			"amount": 1
 		}
 	],
-	"diet" : "herbivore",
+	"diet" : "omnivore",
 	"controlModifiers": {
-		"speedModifier": 1.15,
-		"airJumpModifier": 1.14
+		"speedModifier": 1.08,
+		"airJumpModifier": 1.08
 	},
 	"envEffects": [
 		{
 			"biomes": [ "snow", "snowdark", "tundra", "arctic", "arcticdark", "nitrogensea", "icemoon", "frozenvolcanic", "icewaste", "icewastedark" ],
 			"stats": [
-				{ "stat": "protection", "effectiveMultiplier": -0.7 },
-				{ "stat": "maxHealth", "effectiveMultiplier": -0.8 },
-				{ "stat": "healthRegen", "effectiveMultiplier": -0.6 }
+				{ "stat": "protection", "effectiveMultiplier": -0.4 },
+				{ "stat": "maxHealth", "effectiveMultiplier": -0.25 },
+				{ "stat": "healthRegen", "baseMultiplier": 0 }
 			]
 		}
 	],
@@ -66,7 +66,7 @@
 			],
 			"stats": [{
 				"stat": "powerMultiplier",
-				"baseMultiplier": 1.3
+				"baseMultiplier": 1.25
 			}]
 		},
 		{
