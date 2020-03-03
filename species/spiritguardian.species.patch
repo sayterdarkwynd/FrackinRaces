@@ -12,6 +12,7 @@
 ^green;+20% Move Speed, Jump Height^reset;
 ^green;+30% Energy^reset;
 ^green;+10% Metabolism ^#666666;(Hunger Decreases 10% Slower)^reset;
+^green;Passive Health Regeneration (Slow)^reset;
 ^red;-20% Max Health^reset;
 ^red;-20% Stomach Size^reset;
 
