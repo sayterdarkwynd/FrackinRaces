@@ -2,7 +2,7 @@
 	"stats": [
 		{
 			"stat": "maxHealth",
-			"baseMultiplier": 1.15
+			"baseMultiplier": 1.10
 		},	
 		{
 			"stat": "maxEnergy",
@@ -14,7 +14,7 @@
 		},
 		{
 			"stat": "iceResistance",
-			"amount": 0.30
+			"amount": 0.40
 		},
 		{
 			"stat": "shadowResistance",

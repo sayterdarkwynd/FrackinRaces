@@ -7,8 +7,8 @@
  Diet: Any 
  
  ^orange;Perks^reset;: 
- ^green;+15%^reset; Health, +^green;5%^reset; Energy
- Resist: ^green;30%^reset; Shadow, Ice
+ ^green;+10%^reset; Health, +^green;5%^reset; Energy
+ Resist: ^green;30%^reset; Shadow,  ^cyan;40%^reset; Ice
  Immune: Darkness/Shadow
  Tech: ^green;Shadow Burst^reset;
  
