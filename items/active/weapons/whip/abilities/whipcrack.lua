@@ -26,6 +26,7 @@ function WhipCrack:init()
 	self.anchor = nil
 
 	self.snapDistance = config.getParameter("snapDistance", 3.0)
+	self.blockPiercing = config.getParameter("blockPiercing", false)
 end
 
 -- Ticks on every update regardless if this is the active ability
@@ -35,11 +36,11 @@ function WhipCrack:update(dt, fireMode, shiftHeld)
 	self.cooldownTimer = math.max(0, self.cooldownTimer - self.dt)
 
 	if self.fireMode == "primary" and self:canStartAttack() then
-        self:setState(self.windup)
-        self.fireHeld = true
+          self:setState(self.windup)
+          self.fireHeld = true
 	elseif self.fireMode ~= "primary" and self.fireHeld then
-        self.fireHeld = false
-        self:disconnect()
+          self.fireHeld = false
+          self:disconnect()
 	end
 end
 

@@ -1,28 +1,36 @@
 {
 	"stats": [
 		{
+			"stat": "maxHealth",
+			"baseMultiplier": 1.15
+		},	
+		{
+			"stat": "maxEnergy",
+			"baseMultiplier": 1.05
+		},		
+		{
 			"stat": "foodDelta",
 			"baseMultiplier": 1.06146
 		},
 		{
 			"stat": "iceResistance",
-			"amount": 0.4
+			"amount": 0.30
 		},
 		{
 			"stat": "shadowResistance",
-			"amount": 0.4
+			"amount": 0.30
 		},
 		{
 			"stat": "poisonResistance",
-			"amount": -0.3
+			"amount": -0.25
 		},
 		{
 			"stat": "cosmicResistance",
-			"amount": -0.3
+			"amount": -0.25
 		},
 		{
 			"stat": "fireResistance",
-			"amount": -0.3
+			"amount": -0.25
 		},
 		{
 			"stat": "shadowImmunity",
@@ -81,9 +89,6 @@
 		}
 	],
 
-	"special": [
-		"shadowglow1",
-		"darkhunternightar"
-	],
+	"special": [ "shadowglow1","darkhunternightar" ],
 	"tech" : [ "tenebrhaeburst" ]
 }
