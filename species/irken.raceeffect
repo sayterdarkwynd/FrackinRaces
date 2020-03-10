@@ -54,8 +54,8 @@
 		{
 			"biomes": [ "snow", "snowdark", "tundra", "arctic", "arcticdark", "nitrogensea", "icemoon", "frozenvolcanic", "icewaste", "icewastedark" ],
 			"stats": [
-				{ "stat": "protection", "effectiveMultiplier": -0.4 },
-				{ "stat": "maxHealth", "effectiveMultiplier": -0.25 },
+				{ "stat": "protection", "effectiveMultiplier": 0.4 },
+				{ "stat": "maxHealth", "effectiveMultiplier": 0.75 },
 				{ "stat": "healthRegen", "baseMultiplier": 0 }
 			]
 		}
@@ -66,7 +66,7 @@
 			],
 			"stats": [{
 				"stat": "powerMultiplier",
-				"baseMultiplier": 1.25
+				"effectiveMultiplier": 1.25
 			}]
 		},
 		{
@@ -75,7 +75,7 @@
 			],
 			"stats": [{
 				"stat": "powerMultiplier",
-				"baseMultiplier": 1.1
+				"effectiveMultiplier": 1.1
 			}]
 		},
 		{
@@ -84,7 +84,7 @@
 			],
 			"stats": [{
 				"stat": "powerMultiplier",
-				"baseMultiplier": 1.2
+				"effectiveMultiplier": 1.2
 			}]
 		}
 	]
