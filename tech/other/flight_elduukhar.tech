@@ -17,8 +17,8 @@
   "fallingParameters" : {
     "gravityMultiplier" : -0.025,
     "airForce" : 35,
-    "runSpeed" : 15,
-    "walkSpeed" : 15,
-    "flySpeed" : 15
+    "runSpeed" : 35,
+    "walkSpeed" : 35,
+    "flySpeed" : 35
   }
 }
