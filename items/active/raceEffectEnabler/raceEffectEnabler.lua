@@ -61,6 +61,8 @@ function activate(fireMode, shiftHeld)
 	player.makeTechAvailable("elduukharburst")
 	player.enableTech("elduukharburst")
 	player.equipTech("elduukharburst")
+	player.enableTech("flight_elduukhar")
+	player.equipTech("flight_elduukhar")	
       elseif self.species == "nightar" then
         player.makeTechAvailable("nightarconshak")
         player.enableTech("nightarconshak")

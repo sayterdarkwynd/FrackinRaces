@@ -1,13 +1,12 @@
 {
 	"stats": [
-		{ "stat": "protection", "amount": 2 },
-		{ "stat": "maxEnergy", "effectiveMultiplier": 1.10 },
 		{ "stat": "maxFood", "effectiveMultiplier": 1.30 },
+		{ "stat": "protection", "amount": 5 },
 		{ "stat": "poisonResistance", "amount": -0.2 },
 		{ "stat": "electricResistance", "amount": -0.2 },
-		{ "stat": "shadowResistance", "amount": 0.2 },
-		{ "stat": "fireResistance", "amount": 0.2 },
-		{ "stat": "iceResistance", "amount": 0.2 }
+		{ "stat": "shadowResistance", "amount": -0.1 },
+		{ "stat": "physicalResistance", "amount": 0.20 },
+		{ "stat": "iceResistance", "amount": 0.25 }
 	],
 	"diet" : "entity",
 	"envEffects": [
@@ -32,14 +31,14 @@
 		{
 			"biomes": "hot",
 			"stats": [
-				{ "stat": "maxHealth", "effectiveMultiplier": 1.25 },
+				{ "stat": "maxHealth", "effectiveMultiplier": 0.75 },
 				{ "stat": "protection", "effectiveMultiplier": 1.15 }
 			]
 		},
 		{
 			"biomes": "cold",
 			"stats": [
-				{ "stat": "maxHealth", "effectiveMultiplier": 0.75 },
+				{ "stat": "maxHealth", "effectiveMultiplier": 1.25 },
 				{ "stat": "protection", "effectiveMultiplier": 0.85 }
 			]
 		}
@@ -48,22 +47,22 @@
 		{
 			"weapons": [ "longsword", "axe", "greataxe" ],
 			"stats": [
-				{ "stat": "maxHealth", "effectiveMultiplier": 1.15 },
-				{ "stat": "protection", "effectiveMultiplier": 1.15 }
+				{ "stat": "maxHealth", "effectiveMultiplier": 1.12 },
+				{ "stat": "protection", "effectiveMultiplier": 1.12 }
 			]
 		},
 		{
 			"weapons": [ "whip", "chakram", "boomerang" ],
 			"stats": [
-				{ "stat": "powerMultiplier", "effectiveMultiplier": 1.20 },
-				{ "stat": "maxEnergy", "effectiveMultiplier": 1.15 }
+				{ "stat": "powerMultiplier", "effectiveMultiplier": 1.12 },
+				{ "stat": "maxEnergy", "effectiveMultiplier": 1.12 }
 			]
 		},
 		{
 			"weapons": [ "lunari" ],
 			"stats": [
 				{ "stat": "powerMultiplier", "effectiveMultiplier": 1.12 },
-				{ "stat": "maxEnergy", "effectiveMultiplier": 1.25 }
+				{ "stat": "maxEnergy", "effectiveMultiplier": 1.12 }
 			]
 		}
 	],
@@ -80,5 +79,5 @@
 			}
 		}
 	],
-	"tech" : [ "elduukharburst" ]
+	"tech" : [ "elduukharburst","flight_elduukhar" ]
 }
