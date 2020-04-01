@@ -13,7 +13,7 @@
   "flippable" : true,
   "damageKind" : "bow",
   "knockback" : 12,
-  "statusEffects" : [ "bleedingshort" ],
+  "statusEffects" : [ ],
   "actionOnReap" : [
     {
       "action" : "explosion",

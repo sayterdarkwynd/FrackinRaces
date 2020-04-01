@@ -14,7 +14,7 @@
         "effect" : "maxenergyscalingboostfood",
         "duration" : 428
     },
-    { "effect" : "carnivorefoodcooked" }
+    { "effect" : "cheeseburger_meal" }
   ]
   },
   {

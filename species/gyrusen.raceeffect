@@ -1,8 +1,5 @@
 {
-	"stats": [{
-			"stat": "isOmnivore",
-			"amount": 1
-		},
+	"stats": [
 		{
 			"stat": "foodDelta",
 			"baseMultiplier": 0.7
@@ -20,14 +17,19 @@
 			"amount": 1
 		},
 		{
-			"stat": "fireResistance",
+			"stat": "physicalResistance",
 			"amount": 0.25
 		},
+		{
+			"stat": "electricResistance",
+			"amount": 0.10
+		},		
 		{
 			"stat": "iceResistance",
 			"amount": -0.35
 		}
 	],
+	"diet" : "omnivore",
 	"weaponEffects": [{
 			"weapons": [
 				"axe",
@@ -68,5 +70,6 @@
 				"baseMultiplier": 1.15
 			}]
 		}
-	]
+	],
+	"tech" : [ "minersclaw" ]
 }

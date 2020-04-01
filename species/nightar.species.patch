@@ -1,13 +1,13 @@
 [
     { "op": "replace", 
     "path" : "/charCreationTooltip/description" , 
-    "value" : "Evolved in the depths of a Penumbral world, the Nightar dislike light intensely. They are noble warriors of Shadow.
+    "value" : "Evolved in the depths of a Penumbral world, the Nightar dislike light intensely. They are able warriors and capable spies.
   
  Diet: Omnivorous
   
  ^orange;Perks^reset;:
- ^green;Darkness^reset; increases ^green;Physical Resistance^reset; and ^green;Damage^reset; and enables Vampiric strikes.
- Racial Tech: ^green;Conshak^reset;: Kneel for 10s, in darkness. +Resistances and Thorns for 60s.
+ ^green;Darkness^reset; increases ^green;Physical Resistance^reset; and ^green;Damage^reset; and enables Draining strikes.
+ Tech: ^green;Conshak^reset;
  Resist: ^green;40%^reset; Shadow, ^green;10%^reset; Ice
  Immune: Bio-Ooze, Poison
   
@@ -22,6 +22,6 @@
     
  ^red;Weaknesses^reset;:
  Weak: ^red;20%^reset; Cosmic, ^red;20%^reset; Radiation, ^red;20%^reset; Electric
- ^red;Light^reset; reduces ^red;Energy, Health, Physical Resistance and Damage^reset; and cancels ^red;Vampiric effect^reset; of attacks."
+ ^red;Light^reset; reduces ^red;Energy, Health, Physical Resistance and Damage^reset; and cancels ^red;Drain effect^reset; of attacks."
     }
 ]

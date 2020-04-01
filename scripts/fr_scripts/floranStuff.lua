@@ -48,6 +48,7 @@ function FRHelper:call(args, main, dt, ...)
 	
 		-- Florans lose HP and Energy when the sun is not out
 		self:applyPersistent(nightConfig.stats, "FR_floranNight")
+		self:clearPersistent("FR_floranDaytime")
 		
 		-- when the sun is down, florans lose food
 		if hungerEnabled and hungerPerc < 1.0 then
@@ -64,9 +65,12 @@ function FRHelper:call(args, main, dt, ...)
 		local underground = world.underground(mcontroller.position())
 		local dayConfig = args.daytimeConfig
 		
+		self:clearPersistent("FR_floranNight")
 		-- when a floran is in the sun, has full health and full food, their energy regen rate increases
 		if (hungerPerc >= 0.98) and status.resourcePercentage("health") >= 0.98 then
 			self:applyPersistent(dayConfig.stats, "FR_floranDaytime")
+		else
+			self:clearPersistent("FR_floranDaytime")
 		end
 		
 		-- when the sun is out, florans regenerate food

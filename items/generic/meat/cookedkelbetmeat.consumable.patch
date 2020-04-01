@@ -1,16 +1,7 @@
 [
-  { "op":"add", 
-"path":"/effects", 
-"value": [ ]
-  },
-  {
-  "op": "add",
-  "path": "/effects",
-  "value": [
-    [
-        {
-          "effect" : "carnivorefoodnopoison"
-        }
-    ]
-  ]
-}]
+	{
+		"op" : "add",
+		"path" : "/effects",
+		"value" : [ [ { "effect" : "meat_cooked" } ] ]
+	}
+]

@@ -43,7 +43,8 @@
 			"stat": "cosmicResistance",
 			"amount": 0.2
 		}
-	],
+	], // Indix don't eat and therefore can't eat anything
+	"diet" : [ {}, { "ORGANIC" : true, "INORGANIC" : true, "ROBOT_PLANT" : true } ],
 	"controlModifiers": {
 		"speedModifier": 1.15
 	},

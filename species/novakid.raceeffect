@@ -1,8 +1,7 @@
 {
 	"stats": [
-		{ "stat": "isOmnivore", "amount": 1 },
-		{ "stat": "maxHealth", "baseMultiplier": 0.9 },
-		{ "stat": "maxEnergy", "baseMultiplier": 1.2 },
+		{ "stat": "maxHealth", "effectiveMultiplier": 0.9 },
+		{ "stat": "maxEnergy", "effectiveMultiplier": 1.2 },
 		{ "stat": "physicalResistance", "amount": -0.15 },
 		{ "stat": "electricResistance", "amount": -0.2 },
 		{ "stat": "fireResistance", "amount": 0.25 },
@@ -13,6 +12,7 @@
 		{ "stat": "fireStatusImmunity", "amount": 1 },
 		{ "stat": "radiationburnImmunity", "amount": 1 }
 	],
+	"diet" : "entity",
 	"controlModifiers": {
 		"speedModifier": 1.05
 	},
@@ -29,7 +29,7 @@
 		{
 			"weapons": [ "pistol" ],
 			"stats": [
-				{ "stat": "powerMultiplier", "amount": 0.09 }
+				{ "stat": "powerMultiplier", "effectiveMultiplier": 1.09 }
 			]
 		},
 		{
@@ -42,7 +42,7 @@
 		{
 			"weapons": [ "shotgun" ],
 			"stats": [
-				{ "stat": "powerMultiplier", "baseMultiplier": 1.2 },
+				{ "stat": "powerMultiplier", "effectiveMultiplier": 1.2 },
 				{ "stat": "critDamage", "amount": 0.2 }
 			]
 		},
@@ -51,7 +51,7 @@
 			"stats": [
 				{ "stat": "grit", "amount": 0.25 },
 				{ "stat": "maxEnergy", "effectiveMultiplier": 1.15 },
-				{ "stat": "powerMultiplier", "amount": 0.09 }
+				{ "stat": "powerMultiplier", "effectiveMultiplier": 1.09 }
 			],
 			"controlModifiers": {
 				"speedModifier": 1.08,
@@ -61,7 +61,7 @@
 		{
 			"weapons": [ "whip" ],
 			"stats": [
-				{ "stat": "powerMultiplier", "baseMultiplier": 1.15 }
+				{ "stat": "powerMultiplier", "effectiveMultiplier": 1.15 }
 			],
 			"controlModifiers": {
 				"speedModifier": 1.1

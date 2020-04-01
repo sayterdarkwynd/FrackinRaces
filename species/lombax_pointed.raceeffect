@@ -1,8 +1,5 @@
 {
-	"stats": [{
-			"stat": "isOmnivore",
-			"amount": 1
-		},
+	"stats": [
 		{
 			"stat": "maxHealth",
 			"baseMultiplier": 0.75
@@ -28,6 +25,7 @@
 			"amount": 0.2
 		}
 	],
+	"diet" : "omnivore",
 	"controlModifiers": {
 		"speedModifier": 1.1,
 		"airJumpModifier": 1.15

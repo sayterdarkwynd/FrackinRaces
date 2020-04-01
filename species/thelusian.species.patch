@@ -10,10 +10,10 @@
  Diet: Carnivore 
  
  ^orange;Perks^reset;: 
- +^green;20%^reset; Health, take ^green;-40%^reset; fall damage
+ +^green;15%^reset; Health, take ^green;-40%^reset; fall damage
  Resist: ^green;15%^reset; Physical, ^green;20%^reset; Radiation, ^green;30%^reset; Shadow
  Immune: Insanity
- Tech: Craft Thelusian Warrior tech via Racial Tech Enabler ^green;[C]^reset;
+ Tech: ^green;Warrior Instincts^reset;
  
  ^orange;Environment^reset;: 
  On ^green;hot^reset; biomes gain ^green;10%^reset; Health

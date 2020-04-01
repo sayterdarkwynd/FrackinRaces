@@ -1,22 +1,17 @@
-[
-
-  { "op":"replace", 
-"path":"/effects", 
-"value": [ ]
-  },
-  
-  { "op":"add", 
-"path":"/effects/-", 
-"value": [{ "effect" : "carnivorefood" }]
-  },
-  {
-    "op": "replace",
-    "path": "/foodValue",
-    "value": 20
-  },
-  {
-    "op": "replace",
-    "path": "/description",
-    "value": "Raw poultry. Might wanna cook it first... ^red;Type: Raw Meat^reset;"
-  }
+[  
+	{
+		"op" : "replace", 
+		"path" : "/effects", 
+		"value" : [ [ { "effect" : "meat_raw" } ] ]
+	},
+	{
+		"op" : "replace",
+		"path" : "/foodValue",
+		"value" : 20
+	},
+	{
+		"op" : "replace",
+		"path" : "/description",
+		"value" : "Raw poultry. Might wanna cook it first... ^red;Type: Raw Meat^reset;"
+	}
 ]

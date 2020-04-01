@@ -13,7 +13,7 @@
     ^green;+10%^reset; Energy, Charisma, Speed
     ^green;+20%^reset; Jump, ^green;-50%^reset; Fall Damage
     ^green;+30%^reset; Cosmic & Ice Resist, ^green;+20%^reset; Electric Resist    
-    ^cyan;Moogle Glide tech (Obtain in [C] Menu)^reset;
+    Tech: ^green;Glide^reset;
     Immune: Electrified, Mud
  
     ^orange;Weapons^reset;:

@@ -101,7 +101,7 @@ function update(args)
 	
 	if args.moves["special1"] and self.firetimer == 0 and not (primaryItem and root.itemHasTag(primaryItem, "weapon")) and not (altItem and root.itemHasTag(altItem, "weapon")) then 
 		if self.foodValue > 10 then
-		    status.addEphemeralEffects{{effect = "foodcostclaw", duration = 0.01}}
+		    status.addEphemeralEffects{{effect = "foodcostclaw", duration = 0.005}}
 		else
 		    status.overConsumeResource("energy", 3)
 		end	

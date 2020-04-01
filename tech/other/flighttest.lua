@@ -53,11 +53,13 @@ function update(args)
 		    self.timer = 1
 		  end
 		end	
-		if self.foodValue > 15 then
-		    status.addEphemeralEffects{{effect = "foodcost", duration = 0.1}}
-		else
-		    status.overConsumeResource("energy", config.getParameter("energyCostPerSecond"),1)
-		end	
+		--if not (self.species == "avian") then
+			if self.foodValue > 15 then
+			    status.addEphemeralEffects{{effect = "foodcost", duration = 0.1}}
+			else
+			    status.overConsumeResource("energy", config.getParameter("energyCostPerSecond"),1)
+			end		
+		--end
 	    	activeFlight()
 	else
   	    idle()

@@ -1,15 +1,12 @@
 [
-  { "op":"add", 
-"path":"/effects", 
-"value": [ ]
-  },
-  { "op":"add", 
-"path":"/effects/-", 
-"value": [{ "effect" : "carnivorefoodcooked" }]
-  },
-  {
-    "op": "replace",
-    "path": "/description",
-    "value": "Pass the barbecue sauce! ^orange;Type: Cooked Meat^reset;"
-  }
+	{
+		"op" : "add", 
+		"path" : "/effects", 
+		"value" : [ [ { "effect" : "meat_cooked" } ] ]
+	},
+	{
+		"op" : "replace",
+		"path" : "/description",
+		"value" : "Pass the barbecue sauce! ^orange;Type: Cooked Meat^reset;"
+	}
 ]

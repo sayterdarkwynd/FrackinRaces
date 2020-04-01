@@ -9,7 +9,7 @@
  Very nimble. Gain ^green;20%^reset; Jump and ^green;8%^reset; Run Speed^reset;
  ^green;+20%^reset; Cold Resist, ^green;-50%^reset; Fall Damage
  Night Vision
- Race Tech: Veluu's Claws ^yellow;(use Race Effect Enabler in [C]rafting menu)^reset;
+ Tech: ^green;Veluu's Claws ^reset;
  Immune: Jungle Dirt and Mud
   
  ^orange;Environment^reset;: 
@@ -19,7 +19,8 @@
  Fists, Daggers, Shortswords: ^green;+1%^reset; Crit Chance
  Thrown Weapons/Grenades: ^green;+25%^reset; Dmg
  Magnorb: ^green;+2%^reset; Crit Chance
- Arm Cannon: ^green;+15%^reset; Protection,^green;+15%^reset; Damage  
+ Arm Cannon: ^green;+15%^reset; Protection,^green;+15%^reset; Damage 
+ Bow: -^green;0.1^reset;s Draw Time
  
  ^red;Weaknesses^reset;:
  Weak: ^red;20%^reset; Cosmic and Electric"

@@ -15,6 +15,7 @@ function init()
   self.flashCooldownTimer = 0
   self.halted = 0
   checkFood()
+  self.currentBonus = 0
 end
 
 function uninit()
@@ -50,13 +51,20 @@ function damageConfig()
   foodVal = (self.foodValue / 20)
   healthVal = status.resource("health") / 30
   worldLevel = world.threatLevel()
-  totalVal = (foodVal + healthVal) + worldLevel 
+  totalVal = (self.currentBonus  + foodVal + healthVal) + worldLevel
 end
 
 function activeFlight()
     damageConfig()
     local damageConfig = { power = totalVal}
-    world.spawnProjectile("veluuclaw", mcontroller.position(), entity.id(), aimVector(), false, damageConfig)
+    if self.currentBonus < 6 then
+      world.spawnProjectile("veluuclaw", mcontroller.position(), entity.id(), aimVector(), false, damageConfig) 
+      self.currentBonus = self.currentBonus +1
+    else
+      animator.playSound("powerAttack")
+      world.spawnProjectile("veluuclaw2", mcontroller.position(), entity.id(), aimVector(), false, damageConfig) 
+      self.currentBonus = 0
+    end   
 end
 
 function aimVector()
@@ -74,6 +82,7 @@ end
 
     
 function update(args)
+
         local primaryItem = world.entityHandItem(entity.id(), "primary")
         local altItem = world.entityHandItem(entity.id(), "alt")       
         self.firetimer = math.max(0, self.firetimer - args.dt)

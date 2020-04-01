@@ -1,8 +1,5 @@
 {
-	"stats": [{
-			"stat": "isOmnivore",
-			"amount": 1
-		},
+	"stats": [
 		{
 			"stat": "grit",
 			"amount": 0.1
@@ -12,6 +9,7 @@
 			"amount": 1
 		}
 	],
+	"diet" : "omnivore",
 	"controlParameters": {
 		"liquidJumpProfile": {
 			"jumpHoldTime": 0.275

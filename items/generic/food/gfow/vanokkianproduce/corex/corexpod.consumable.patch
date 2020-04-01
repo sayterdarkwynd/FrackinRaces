@@ -1,10 +1,7 @@
 [
-  {
-  "op": "add",
-  "path": "/effects",
-  "value": [
-    [
-        { "effect" : "carnivorefood" }
-    ]
-  ]
-}]
+	{
+		"op" : "add",
+		"path" : "/effects",
+		"value" : [ [ "meat_raw" ] ]
+	}
+]

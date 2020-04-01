@@ -2,8 +2,7 @@
   { "op":"add",
 "path":"/effects/-",
 "value": [
-    { "effect" : "herbivorefood" },
-    { "effect" : "sugarfood" }
+    { "effect" : "herb_dessert" }
   ]
   }
 ]

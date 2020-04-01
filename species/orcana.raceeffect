@@ -1,19 +1,12 @@
 {
-	"stats": [{
-			"stat": "isOmnivore",
-			"amount": 1
-		},
+	"stats": [
 		{
 			"stat": "maxHealth",
 			"baseMultiplier": 1.2
 		},
 		{
-			"stat": "protection",
-			"effectiveMultiplier": 1.1
-		},
-		{
 			"stat": "maxFood",
-			"effectiveMultiplier": 2
+			"effectiveMultiplier": 1.4
 		},		
 		{
 			"stat": "maxBreath",
@@ -48,6 +41,8 @@
 			"amount": 1
 		}
 	],
+	"diet" : [ { "ORGANIC" : false, "FISH" : true }, 
+			   { "MEAT_RAW" : true } ],
 	"envEffects": [
 	{
 		"biomes": "ocean",
@@ -72,11 +67,11 @@
 			},
 			{
 				"stat": "critChance",
-				"amount": 3
+				"amount": 2
 			},
 			{
 				"stat": "critBonus",
-				"amount": 3
+				"amount": 5
 			}
 		]
 	},
@@ -94,23 +89,18 @@
 		"stats": [
 			{
 				"stat": "critBonus",
-				"amount": 3
+				"amount": 2
 			},
 			{
 				"stat": "critChance",
-				"amount": 3
+				"amount": 5
 			}
 		]
 	}	
 	],
-	"special": [
-		"swimboost3"
-	],
+	"special": ["swimboost2"],
 	"liquidEffects": [{
-		"liquids": [
-			1,
-			6
-		],
+		"liquids": [1,6],
 		"stats": [{
 				"stat": "foodDelta",
 				"baseMultiplier": 0.5
@@ -124,8 +114,6 @@
 				"amount": 0.2
 			}
 		],
-		"statusEffects": [
-			"regenerationminor"
-		]
+		"statusEffects": ["regenerationminor"]
 	}]
 }

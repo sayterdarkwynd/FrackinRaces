@@ -5,26 +5,31 @@
 "value" :
 "Biological descendants of ^#99BBFF;The Spirit Tree^reset; created via a unique randomized asexual reproduction cycle. These creatures exhibit extreme agility and low tolerance to harm.
 
-^orange;Diet:^reset; Herbivorous
-^orange;Immunities:^reset; Jungle Slow, Mud Slow
+^orange;Diet:^reset; Herbivore
+^orange;Immunities:^reset; Jungle Slow, Mud Slow, Clay Slow, Fall Damage
 
 ^orange;Stats:^reset;
-^red;-20% Health^reset;
-^green;+20% Energy, Speed, and Jump Height^reset;
-^green;-20% Metabolism^reset;
-^green;-40% Falling Damage^reset;
+^green;+20% Move Speed, Jump Height^reset;
+^green;+30% Energy^reset;
+^green;+10% Metabolism ^#666666;(Hunger Decreases 10% Slower)^reset;
+^green;Passive Health Regeneration (Slow)^reset;
+^red;-20% Max Health^reset;
+^red;-20% Stomach Size^reset;
 
 ^orange;Resistances:^reset;
-^red;-30% Physical, Poison^reset;
-^green;+10% Shadow, Cosmic^reset;
+^green;+20% Darkness, Shadow^reset;
+^green;+10% Ice^reset;
+^red;-23% Poison, Radioactive, Electric, Fire^reset;
+^red;-15% Physical^reset;
 
-^orange;Enviornment:^reset;
+^orange;Enviornmental Bonuses:^reset;
 ^yellow;Jungle, Forest, Bog, Arboreal:^reset; ^green;+15% Protection, +10% Health^reset;
 
-^orange;Weapons:^reset;
-^yellow;Wand, Staff:^reset; ^green;+30% Power, +10% Protection^reset;
+^orange;Weapon Bonuses:^reset;
+^yellow;Wand, Staff:^reset; ^green;+12% Power^reset;
 
-^orange;Other:^reset;
-^green;Bioluminescent^reset;"
+^orange;Misc:^reset;
+^green;Bioluminescent^reset;
+^green;Passive Health Regeneration^reset;"
 }
 ]

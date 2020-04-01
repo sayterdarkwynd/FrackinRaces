@@ -1,20 +1,17 @@
 [
-  { "op":"add", 
-"path":"/effects", 
-"value": [ ]
-  },
-  { "op":"add", 
-"path":"/effects/-", 
-"value": [{ "effect" : "carnivorefoodnopoison" }]
-  },
-  {
-    "op": "replace",
-    "path": "/foodValue",
-    "value": 20
-  },
-  {
-    "op": "replace",
-    "path": "/description",
-    "value": "A fillet of raw fish...slimy. Type: Raw Meat ^red;Type: Raw Meat^reset;"
-  }
+	{
+		"op" : "add", 
+		"path" : "/effects", 
+		"value" : [ [ { "effect" : "fish_food" } ] ]
+	},
+	{
+		"op" : "replace",
+		"path" : "/foodValue",
+		"value" : 20
+	},
+	{
+		"op" : "replace",
+		"path" : "/description",
+		"value" : "A fillet of raw fish...slimy. ^red;Type: Fish^reset;"
+	}
 ]

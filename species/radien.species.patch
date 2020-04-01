@@ -36,14 +36,14 @@
   },
     { "op": "replace", 
     "path" : "/charCreationTooltip/description" , 
-    "value" : "A race of shy radioactive beings with a disputed origin. This species is intended for Survival or Hardcore modes, and will recieve 50% reduced benefits without Hunger. Challenge is high.
+    "value" : "A race of shy radioactive beings with a disputed origin. This species is intended for Survival or Hardcore modes and ^red;*requires*^reset; FrackinRaces, and will recieve 50% reduced benefits without Hunger. Challenge is high.
  
  Diet: Any, including prepared Isotopes.
  
  ^orange;Perks^reset;: 
  +^green;10%^reset; Energy
  Resist: ^green;40%^reset; Radiation, 10% Ice & Electric, 7% Cosmic
- Tech: Generate Seed Bulb (craft with Race Tech Enabler [C])
+ Tech: Seed Bulb
  Immune: Radiation Burn
  
  ^orange;Environment^reset;: 

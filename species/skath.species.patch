@@ -10,9 +10,8 @@
 Diet: Omnivore
 
 ^orange;Perks^reset;:
-^green;+20%^reset; Energy, ^green;+1500s Breath
+^green;+20%^reset; Energy, ^green;+2500 Breath
 ^green;+30%^reset; Ice Resist, ^green;+20%^reset; Poison Resist, ^green;+10%^reset; Physical Resist
-Immune: 
  
 ^orange;Environment^reset;:
 ^green;+25%^reset; Health and ^green;+6^reset; Protection on Ocean biomes
@@ -24,6 +23,6 @@ Energy (ranged): ^green;+2%^reset; Crit, ^green;+15%^reset; Dmg
 Assault Rifle: ^green;+1%^reset; Crit
  
 ^red;Weaknesses^reset;:
-^red;-40%^reset; Fire Resist, ^red;-10%^reset; Electric Resist"
+^red;-10%^reset; Fire, Radioactive, Shadow , ^red;-30%^reset; Electric Resist"
     }
 ]

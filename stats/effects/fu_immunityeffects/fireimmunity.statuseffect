@@ -1,9 +1,0 @@
-{
-  "name" : "fireStatusImmunity",
-  "effectConfig" : {},
-  "defaultDuration" : 60,
-
-  "scripts" : [
-    "fireimmunity.lua"
-  ]
-}
