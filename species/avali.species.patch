@@ -18,7 +18,7 @@
  
  ^orange;Environment^reset;: 
  On ^green;hot^reset; biomes lose air damage bonus, speed bonus and -^red;25%^reset; health
- On ^green;cold^reset;biomes gain +^green;5%^reset; speed and +^green;15%^reset; health
+ On ^green;cold^reset; biomes gain +^green;5%^reset; speed and +^green;15%^reset; health
  High winds grant additional agility
  
  ^orange;Weapons^reset;:
