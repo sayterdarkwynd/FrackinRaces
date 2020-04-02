@@ -92,7 +92,7 @@
 		"airStats": {
 			"stats": [{
 				"stat": "powerMultiplier",
-				"baseMultiplier": 1.1
+				"effectiveMultiplier": 1.1
 			}],
 			"scripts": [{
 				"script": "/scripts/fr_scripts/envEffects.lua",
