@@ -56,10 +56,15 @@ function applyEffects()
     status.setPersistentEffects("floranpower1", { {stat = "healthRegen", amount = self.appliedHeal },{stat = "foodDelta", effectiveMultiplier = -self.appliedHunger} })
 
     --radiens dont get full when near these plants. eat up!
-    
-    self.foodValue = status.resourcePercentage("food")
+    if status.isResource("food") then
+		self.foodValue = status.resourcePercentage("food")
+	else
+		self.foodValue = 0.50
+	end
     status.removeEphemeralEffect("wellfed")
-    if status.resourcePercentage("food") > 0.99 then status.setResourcePercentage("food", 0.99) end    
+	if status.isResource("food") then
+		if status.resourcePercentage("food") > 0.99 then status.setResourcePercentage("food", 0.99) end
+	end
 end
 
 function uninit()
