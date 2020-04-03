@@ -4,6 +4,7 @@
 		{ "stat": "maxEnergy", "baseMultiplier": 0.95 },
 		{ "stat": "powerMultiplier", "baseMultiplier": 1.05 },
 		{ "stat": "poisonResistance", "amount": -0.4 },
+		{ "stat" : "fallDamageMultiplier", "baseMultiplier" : 0.25 },
 		{ "stat": "shadowResistance", "amount": 0.4 }
 	],
 	"diet" : "carnivore",
