@@ -11,7 +11,7 @@
  Diet: Carnivore 
  
  ^orange;Perks^reset;: 
- ^green;+75%^reset; Fall Resistance 
+ -^green;75%^reset; Fall Dmg
  ^green;+25%^reset; Jump, ^green;+6%^reset; Speed
  ^green;+45%^reset; Shadow Resist
 Tech: ^green;Hunter's Claw^reset;
