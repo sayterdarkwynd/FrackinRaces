@@ -43,8 +43,8 @@
 	],
 	"diet" : "herbivore",
 	"controlModifiers": {
-		"speedModifier": 1.2,
-		"airJumpModifier": 1.1
+		"speedModifier": 1.1,
+		"airJumpModifier": 1.05
 	},
 	"envEffects":
 	[
@@ -67,8 +67,8 @@
 		],
 		"controlModifiers":
 			{
-					"speedModifier": 1.1,
-					"airJumpModifier": 1.1
+					"speedModifier": 1.07,
+					"airJumpModifier": 1.07
 			}
 		},
 		{
@@ -88,8 +88,8 @@
 			],
 			"controlModifiers":
 			{
-					"speedModifier": 0.85,
-					"airJumpModifier": 0.85
+					"speedModifier": 0.9,
+					"airJumpModifier": 0.9
 			}
 		},
 		{
@@ -105,7 +105,7 @@
 			],
 				"controlModifiers":
 			{
-					"speedModifier": 1.1,
+					"speedModifier": 0.85,
 			}
 		}
 	],
@@ -145,7 +145,7 @@
 		},
 		{
 			"weapon": [ "assaultrifle" ],
-			"controlModifiers": { "speedModifier": 1.15 }
+			"controlModifiers": { "speedModifier": 1.07 }
 		}
 	]
 }
