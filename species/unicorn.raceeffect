@@ -15,7 +15,7 @@
 		"stats": [{ "stat" : "physicalResistance", "amount" : 0.1 },
 			{ "stat" : "maxEnergy", "baseMultiplier" : 1.1 }
 		],
-		"controlModifiers": { "speedModifier": 1.1, "airJumpModifier": 1.1 }
+		"controlModifiers": { "speedModifier": 1.03, "airJumpModifier": 1.03 }
 		},
 		{
 		"biomes": [ "alien", "atropus", "atropusdark", "tentacle", "bloodstonesea", "bloodstoneseafloor", "strangesea", "strangeseafloor" ],
