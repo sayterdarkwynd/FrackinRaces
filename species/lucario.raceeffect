@@ -45,6 +45,10 @@
 			"amount": 1
 		},
 		{
+			"stat": "protoImmunity",
+			"amount": 0.4
+		},
+		{
 			"stat": "energyRegenPercentageRate",
 			"baseMultiplier": 1.25
 		}
