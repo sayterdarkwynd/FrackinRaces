@@ -14,7 +14,7 @@ Skilled: ^green;+30%^reset; Energy, ^green;+15%^reset; Damage & Energy Regen
 Resist: ^green;+40%^reset; Cosmic
  
 ^orange;Environment^reset;:
-In Lush, Jungle, Primeval, Forest and Savannah biomes, ^green;+10%^reset; Energy, ^green;+10%^reset; Speed & Jump and ^green;+10%^reset; Physical Resist.
+In Lush, Jungle, Primeval, Forest and Savannah biomes, ^green;+10%^reset; Energy, ^green;+3%^reset; Speed & Jump and ^green;+10%^reset; Physical Resist.
 Lose ^red;34%^reset; Energy Regen and ^red;20%^reset; Damage & Energy in Alien, Heck or fleshy biomes.
 
 ^orange;Weapons^reset;:
