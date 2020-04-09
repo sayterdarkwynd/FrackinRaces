@@ -44,8 +44,8 @@
 	],
 	"diet" : "herbivore",
 	"controlModifiers": {
-		"speedModifier": 1.15,
-		"airJumpModifier": 1.15
+		"speedModifier": 1.07,
+		"airJumpModifier": 1.07
 	},
 	"envEffects": [{
 		"biomes": [
@@ -62,8 +62,8 @@
 		],
 		"controlModifiers":
 			{
-					"speedModifier": 1.1,
-					"airJumpModifier": 1.1
+					"speedModifier": 1.07,
+					"airJumpModifier": 1.07
 			}
 	},
 	{
@@ -77,8 +77,8 @@
 			}
 		],
 		"controlModifiers": {
-			"speedModifier": 0.8,
-			"airJumpModifier": 0.8
+			"speedModifier": 0.9,
+			"airJumpModifier": 0.9
 			}
 	}
 ],
@@ -121,7 +121,7 @@
 					"amount": 0.5
 				}
 			],
-			"controlModifiers":{"speedMultiplier": 0.75}
+			"controlModifiers":{"speedMultiplier": 0.8}
 		},
 		{
 			"weapons": [ "whip" ],
