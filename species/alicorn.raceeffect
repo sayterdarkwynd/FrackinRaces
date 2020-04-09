@@ -66,8 +66,8 @@
 		],
 		"controlModifiers":
 			{
-					"speedModifier": 1.1,
-					"airJumpModifier": 1.1
+					"speedModifier": 1.05,
+					"airJumpModifier": 1.05
 			}
 		},
 		{
@@ -107,8 +107,8 @@
 			],
 			"controlModifiers":
 			{
-					"speedModifier": 0.85,
-					"airJumpModifier": 0.85
+					"speedModifier": 0.88,
+					"airJumpModifier": 0.88
 			}
 		}
 	],
@@ -129,14 +129,14 @@
 		},
 		{
 			"weapon": [ "thrown" ],
-			"controlModifiers": {"speedModifier": 1.1}
+			"controlModifiers": {"speedModifier": 1.06}
 		},
 		{
 			"weapon": [ "magnorb" ],
 			"stats": [
 				{
 				"stat": "critDamage",
-				"amount": 0.2
+				"amount": 0.15
 				}
 			]
 		},
@@ -145,7 +145,7 @@
 			"stats": [
 				{
 				"stat": "powerMultiplier",
-				"baseMultiplier": 1.15
+				"baseMultiplier": 1.12
 				},
 				{
 				"stat": "grit",
