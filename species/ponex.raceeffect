@@ -21,8 +21,12 @@
 			"amount": -0.2
 		},
 		{
-			"stat": "cosmiceResistance",
+			"stat": "cosmicResistance",
 			"amount": -0.2
+		},
+		{
+			"stat": "fireResistance",
+			"amount": -1
 		},
 		{
 			"stat": "radiationburnImmunity"
