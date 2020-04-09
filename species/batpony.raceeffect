@@ -94,8 +94,8 @@
 		],
 		"controlModifiers":
 			{
-					"speedModifier": 1.1,
-					"airJumpModifier": 1.1
+					"speedModifier": 1.05,
+					"airJumpModifier": 1.05
 			}
 		},
 		{
@@ -135,8 +135,8 @@
 			],
 			"controlModifiers":
 			{
-					"speedModifier": 0.8,
-					"airJumpModifier": 0.8
+					"speedModifier": 0.87,
+					"airJumpModifier": 0.87
 			}
 		}
 	],
@@ -174,10 +174,10 @@
 		"stats": [ 
 			{
 				"stat": "critDamage",
-				"amount:" 0.25
+				"amount:" 0.175
 			}
 		]
-		"controlModifiers": {speedModifier: 1.10}
+		"controlModifiers": {speedModifier: 1.06}
 		}
 	]
 }
