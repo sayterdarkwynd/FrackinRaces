@@ -45,8 +45,8 @@
 			"amount": 1
 		},
 		{
-			"stat": "protoImmunity",
-			"amount": 0.4
+			"stat": "poisonResistance",
+			"amount": 0.5
 		},
 		{
 			"stat": "energyRegenPercentageRate",
