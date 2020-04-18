@@ -35,27 +35,25 @@
 		{
 			"weapons": [ "sniperrifle", "rifle" ],
 			"stats": [
-				{ "stat": "critChance", "amount": 5 },
+				{ "stat": "critChance", "amount": 2 },
 				{ "stat": "critDamage", "amount": 0.2 }
 			]
 		},
 		{
 			"weapons": [ "shotgun" ],
 			"stats": [
-				{ "stat": "powerMultiplier", "effectiveMultiplier": 1.2 },
-				{ "stat": "critDamage", "amount": 0.2 }
+				{ "stat": "powerMultiplier", "effectiveMultiplier": 1.15 },
+				{ "stat": "critDamage", "amount": 0.12 }
 			]
 		},
 		{
 			"combos": [ [ "pistol", "pistol" ] ],
 			"stats": [
 				{ "stat": "grit", "amount": 0.25 },
-				{ "stat": "maxEnergy", "effectiveMultiplier": 1.15 },
 				{ "stat": "powerMultiplier", "effectiveMultiplier": 1.09 }
 			],
 			"controlModifiers": {
-				"speedModifier": 1.08,
-				"airJumpModifier": 1.05
+				"speedModifier": 1.08
 			}
 		},
 		{
