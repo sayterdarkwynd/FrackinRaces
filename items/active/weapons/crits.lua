@@ -27,7 +27,9 @@ function Crits:setCritDamage(damage)
                     damage = damage + math.random(10) + 2  -- 1d10 + 2 bonus damage
                 end
 
-                status.addEphemeralEffect("crithit", 0.3, activeItem.ownerEntityId())
+
+				--disabled because eyesore
+                --status.addEphemeralEffect("crithit", 0.3, activeItem.ownerEntityId())
                 -- *****************************************************************
                 --	weapon specific crit abilities!
                 -- *****************************************************************
