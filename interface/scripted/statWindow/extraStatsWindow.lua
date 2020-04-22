@@ -40,13 +40,23 @@ function update()
 			widget.setText(stat, value)
 			
 		elseif type == "food" then
-			--value = tostring(math.abs(shorten(1 / (value / status.stat("maxFood")) * 0.01)))
-			value = tostring(math.abs(shorten((value / status.stat("maxFood")) * 0.01)))
-			widget.setText(stat, value)
+			local foodVal=status.isResource("food") and status.resourceMax("food") or 0
+			if foodVal~=0 then
+				value = tostring(math.abs(shorten(1 / (value / status.resourceMax("food")) * 0.01)))
+				if value % 1 == 0 then
+					widget.setText(stat, math.floor(value))
+				else
+					widget.setText(stat, value)
+				end
+			else
+				widget.setText(stat, "0")
+			end
+			
 		elseif type == "breath" then
 			breathRate = value
 			if breathMax > 0 then
 				-- Why divided by 2 you ask? Fuck if I know, it returns double the right value otherwise.
+				--khe: that's because breath timer is decremented twice per update.
 				widget.setText("breathMaxTime", breathMax / breathRate / 2)
 				widget.setText("breathRegenTime", breathMax / breatRegen / 2)
 			end
