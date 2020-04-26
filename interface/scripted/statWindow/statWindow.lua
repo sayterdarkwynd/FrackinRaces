@@ -25,7 +25,6 @@ function init()
 		
 		populateRacialDescription(playerRace)
 	else
-		widget.setVisible("expandButton8", false)
 		widget.setText("racialLabel", "ERROR - UNRECOGNIZED SPECIES")
 	end
 end
