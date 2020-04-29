@@ -7,7 +7,7 @@
 		{
 			"stat": "iceResistance",
 			"amount": -0.4
-		}
+		},
 		{
 			"stat" : "poisonResistance",
 			"amount" : 0.1

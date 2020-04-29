@@ -13,6 +13,6 @@
 	{
 		"op": "replace",
 		"path": "/description",
-		"value": "Simple fish dumplings, steamed and lightly seasoned. ^orange;Type: Cooked Seafood^reset;"
+		"value": "Simple fish dumplings, steamed and lightly seasoned. ^orange;Type: Cooked Seafood + Vegetable^reset;"
 	}
 ]
