@@ -45,6 +45,10 @@
 			"amount": 1
 		},
 		{
+			"stat": "poisonResistance",
+			"amount": 0.5
+		},
+		{
 			"stat": "energyRegenPercentageRate",
 			"baseMultiplier": 1.25
 		}
