@@ -156,3 +156,7 @@ function populateRacialDescription(race)
 		widget.setText(listItem..".trait", lists[i])
 	end
 end
+
+function upgradeEquipmentMenu()
+	player.interact("ScriptPane", "/interface/scripted/fu_multiupgrade/fu_multiupgrade.config", player.id())
+end
