@@ -5,8 +5,8 @@
   "scripts" : ["veluuclaw.lua"],
   "animator" : "veluuclaw.animation",
 
-  "description" : "Use ^green;[F]^reset; to slash with razor-sharp claws. Hunting damage.",
-  "shortDescription" : "Veluu Claws",
+  "description" : "Claws slash: ^green;[F]^reset;. Hunting damage. Scales based on Damage, Health and Food.",
+  "shortDescription" : "Razor Claws",
   "rarity" : "Legendary",
   "icon" : "/interface/statuses/rage.png",
   "chipCost" : 1,
