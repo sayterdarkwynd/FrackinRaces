@@ -5,7 +5,7 @@
   "scripts" : ["veluuclaw.lua"],
   "animator" : "veluuclaw.animation",
 
-  "description" : "Claw slash: ^green;[F]^reset;. Hunting damage. Scales based on Damage, Health and Food.",
+  "description" : "Claw slash: ^green;[F]^reset;. Hunting damage based on Dmg, HP and Food.",
   "shortDescription" : "Razor Claws",
   "rarity" : "Legendary",
   "icon" : "/interface/statuses/rage.png",
