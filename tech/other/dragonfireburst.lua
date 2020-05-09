@@ -11,34 +11,31 @@ function init()
   checkFood()
 end
 
-function uninit()
+--[[function uninit()
 
-end
+end]]
 
 function checkFood()
+	local foodValue=15
 	if status.isResource("food") then
-		self.foodValue = status.resource("food")		
-	else
-		self.foodValue = 15
-	end
+		foodValue = status.resource("food")		
+	end	
+	return foodValue
 end
 
-function damageConfig()
-  foodVal = self.foodValue /60
-  energyVal = status.resource("energy")/150
-  defenseVal =  status.stat("protection") /250
-  totalVal = foodVal + energyVal + defenseVal
-end
+--[[function damageConfig()
+  totalVal = 
+end]]
 
 function activeFlight()
-    damageConfig()
-    local damageConfig = { power = totalVal, damageSourceKind = "fire" }
+    --damageConfig()
+    --local damageConfig = 
     --sb.logInfo("power value from food, energy and protection = "..damageConfig.power)
     animator.playSound("activate",3)
     animator.playSound("recharge")
     animator.setSoundVolume("activate", 0.5,0)
     animator.setSoundVolume("recharge", 0.375,0)
-    world.spawnProjectile("flamethrower", self.mouthPosition, entity.id(), aimVector(), false, damageConfig)
+    world.spawnProjectile("flamethrower", self.mouthPosition, entity.id(), aimVector(), false, { power = ((self.foodValue /60) + (status.resource("energy")/150) + (status.stat("protection") /250)), damageSourceKind = "fire" })
 end
 
 function aimVector()
@@ -49,7 +46,7 @@ end
 
 
 function update(args)
-        checkFood()
+        --checkFood()
         
         if mcontroller.facingDirection() == 1 then -- what direction are we facing?
            if args.moves["down"] then -- are we crouching?
@@ -68,7 +65,7 @@ function update(args)
         
         self.firetimer = math.max(0, self.firetimer - args.dt)
 	if args.moves["special1"] and status.overConsumeResource("energy", 0.001) then 
-		if self.foodValue > 15 then
+		if checkFood() > 15 then
 		    status.addEphemeralEffects{{effect = "foodcostfire", duration = 0.02}}
 		else
 		    status.overConsumeResource("energy", 0.6)
@@ -84,6 +81,7 @@ function update(args)
 	end
 end
 
+--[[
 function idle()
 
-end
+end]]
