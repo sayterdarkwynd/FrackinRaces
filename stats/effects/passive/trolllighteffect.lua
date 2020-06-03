@@ -1,5 +1,4 @@
 function init()
-  local bounds = mcontroller.boundBox()
   self.powerBonus = 0.1
   script.setUpdateDelta(10)
 end

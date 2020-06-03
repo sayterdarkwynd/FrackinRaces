@@ -5,16 +5,16 @@ local FR_old_init = init
 local FR_old_update = update
 
 function init()
+	
 	FR_old_init()
 	self.lastYPosition = 0
 	self.lastYVelocity = 0
 	self.fallDistance = 0
-	local bounds = mcontroller.boundBox() --Mcontroller for movement
 end
 
 function update(dt)
 	FR_old_update(dt)
-	
+	self.isNpc=world.isNpc(entity.id())
 	if not self.species then
 		self.species = world.entitySpecies(entity.id())
 		self.helper = FRHelper:new(self.species, world.entityGender(entity.id()))
@@ -37,6 +37,10 @@ function update(dt)
 			for _,thing in pairs(self.helper.speciesConfig.special) do
 				status.addEphemeralEffect(thing,math.huge)
 			end
+		end
+		
+		if self.isNpc then
+			status.addEphemeralEffect("frnpcspecialhandler",math.huge)
 		end
 	end
 	
