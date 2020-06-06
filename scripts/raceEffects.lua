@@ -5,18 +5,35 @@ local FR_old_init = init
 local FR_old_update = update
 
 function init()
-	
 	FR_old_init()
 	self.lastYPosition = 0
 	self.lastYVelocity = 0
 	self.fallDistance = 0
+
+	message.setHandler("FR_getSpecies", function() return self.species end)
 end
 
 function update(dt)
 	FR_old_update(dt)
 	self.isNpc=world.isNpc(entity.id())
-	if not self.species then
-		self.species = world.entitySpecies(entity.id())
+	local enabled = status.statusProperty("fr_enabled")
+	local race = enabled and status.statusProperty("fr_race") or "_default"
+	if enabled == nil then
+		status.setStatusProperty("fr_enabled", true)
+		race = world.entitySpecies(entity.id())
+		status.setStatusProperty("fr_race", race)
+	end
+	
+	if not self.helper or not self.species or self.species ~= race then
+		-- If we've done this before, then we're switching races and need to clear these
+		if self.helper then
+			for _, eff in pairs(self.helper.speciesConfig.special or {}) do
+				status.removeEphemeralEffect(eff)
+			end
+			self.helper:clearPersistent()
+		end
+
+		self.species = race
 		self.helper = FRHelper:new(self.species, world.entityGender(entity.id()))
 		
 		-- Script setup
@@ -37,7 +54,7 @@ function update(dt)
 			for _,thing in pairs(self.helper.speciesConfig.special) do
 				status.addEphemeralEffect(thing,math.huge)
 			end
-		end
+		end	
 		
 		if self.isNpc then
 			status.addEphemeralEffect("frnpcspecialhandler",math.huge)
