@@ -1,0 +1,9 @@
+{
+  "itemName" : "idiotitem",
+  "rarity" : "rare",
+  "price" : 100,
+  "category" : "preparedFood",
+  "inventoryIcon" : "plutoniumore.png",
+  "description" : "Uninstall Frackin Races. Next time, read mod descriptions.",
+  "shortdescription" : "Idiot Item"
+}
